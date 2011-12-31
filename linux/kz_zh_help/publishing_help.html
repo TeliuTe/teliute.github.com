@@ -1,0 +1,705 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+ <a href="#publishing_a_document">发布一个文档</a>
+ <a href="#publishing_settings">发布设置</a>
+ <a href="#solving_common_publishing_problems">解决常见错误</a>
+</div>
+
+<h1 id="publishing_web_pages_with_nvu">用 KompoZer 发布网页</h1>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<p>如果页面仅保存在您的本地硬盘，只有您可以查看这个 HTML 页面，KompoZer 允许您
+发布网页到一个被称作网站服务器的远程计算机上</p>
+
+<p>当你发布页面到网站服务器上，KompoZer 复制(上传)您的页面到一个可以让其他人访问
+的计算机上。大多数 ISP 提供网站空间用于发布网页。要查找发布网页的网站服务器，可以询问您的 ISP 或是系统管理员。</p>
+
+<h2 id="publishing_a_document">发布文档</h2>
+
+<p>要发布一个文档:</p>
+
+<ol>
+  <li>打开您想发布的 HTML 文档，或者新建一个 KompoZer 文档。</li>
+
+  <li>当你准备发布文档到远程计算机时，点击发布按钮 <img src="images/publish.png" />。
+  </li>
+
+  <ul>
+    <li>如果您之前已经发布过这个文档， KompoZer 会记住文档的发布设置，立即开始发布，
+在发布过程中，KompoZer 会显示一个发布进度条。</li>
+
+    <li>如果您之前还未发布过这个文档， KompoZer 会在发布对话框里显示设置标签，
+以便您能够输入发布此文档的远程信息。更多信息请参阅: <a
+    href="#publish_page_settings">发布页面 - 设置</a>。当您完成信息输入，点发布即可。</li>
+
+  </ul>
+  
+  <li>要浏览您的发布页面，点击浏览按钮，测试页面链接确保没有缺失的图片。</li>
+
+  <li>可能您会继续编辑这个页面，当您编辑好要更新远程页面时，点击发布按钮即可。</li>
+</ol>
+
+<p>当您首次发布文档时，KompoZer 会更改文档里的 <tt>file:///</tt> 地址为一个
+ <tt>http://</tt> 地址，指示您正在编辑的是要发布文档。如果您想保存文档到本地
+(在您的计算机硬盘上)，点保存按钮，您将会看到一个提示，输入文件名和保存位置。</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="avoiding_broken_links_or_images">防止断开链接或缺失图片的小提示</h3>
+
+<ul>
+  <li>确保 KompoZer 文件名是以 .html 或 .htm 结尾的扩展名。
+确保图片文件名是以 .JPG, .GIF, 或 .PNG 结尾的扩展名。
+不要使用空格或其他特殊符号(如汉字)做文件名。
+保持您的文件名较短，并且只用小写或大写字母和数字。</li>
+
+  <li>如果您在网站上浏览您发布的页面时，发现图片没有出现，或是一个出现错误标记，
+这可能是您忘了发布包含的图片。打开文件菜单，选择 发布为 命令，显示发布对话框，在
+发布标签，确保选中了“包括图片和其他文件”然后点发布按钮。</li>
+</ul>
+
+<p>更多错误提示，请参阅
+<a href="#solving_common_publishing_problems">解决常见发布错误</a>.</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="updating_a_published_document">上传已发布的文档</h3>
+
+<p>要上传一个已发布的文档:</p>
+
+<ol>
+  <li>在 KompoZer 窗口中，打开文件菜单，然后选择最近打开页面，
+然后从列表中选择文档。
+ <p>另外，要想浏览您想更新的文档，在浏览器的地址栏中输入文档的 HTTP 地址(页面的网址)。</p></li>
+  
+  <li>打开文件菜单，打开要编辑页面。</li>
+
+  <li>根据需要进行编辑。</li>
+
+  <li>当你准备发布文档到远程计算机时，点击工具栏上的发布按钮。</li>
+</ol>
+
+<p id="deleting_a_published_page_or_image"><strong>小提示</strong>: 要
+从网站上删除已经发布的网页或图片，您必须使用 FTP(文件传输协议)程序，如果您想创建
+子目录或者重命名网站上的文件，您也必须要用 FTP 程序。问一下服务提供商，如果他们
+推荐了一个特定的 FTP 程序，您一般可以在网络提供商网站的帮助和支持里，找到 FTP 的
+相关信息，FTP 程序也可以在一些共享站点像 ZDNet 上找到。</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="changing_the_filename_or_publishing_location">更改文件名或发布位置</h3>
+
+<p>要更改文档的名称和发布位置:</p>
+
+<ol>
+  <li>在 KompoZer 窗口中，打开文件菜单，然后选择最近打开页面，从列表中选择这个文档。
+<p>另外，要想浏览您想更新的文档，在浏览器的地址栏中输入文档的 HTTP 地址(页面的网址)。</p></li>
+  
+  <li>打开文件菜单，打开要编辑页面。</li>
+  
+  <li>根据需要进行编辑。</li>
+
+  <li>打开 KompoZer 的文件菜单，然后选择 发布为，KompoZer 在发布页面对话框
+显示发布标签。</li>
+
+  <li>如果需要的话，输入一个不同的标题。</li>
+
+  <li>如果需要的话，输入一个不同的文件名。</li>
+
+  <li>在站点名称列表里，选择发布的位置，要设置一个新的发布位置，点击新建站点按钮，
+更多相关信息，请参阅: <a href="#publish_page_settings">发布页面 - 设置</a>
+  </li>
+
+  <li>点发布保存文档到新的位置。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="creating_a_new_publishing_site">创建一个新的发布站点</h3>
+
+<p>如果您计划发布文档到几个远程位置，您可以设置 KompoZer 为每个远程位置保存
+发布信息，这样在发布时，您就不必每次都要输入信息。</p>
+
+<p>要创建一个新的发布站点，在 KompoZer 窗口操作如下:</p>
+
+<ol>
+  <li>打开编辑菜单，选择发布站点设置 KompoZer 显示发布设置对话框</li>
+
+  <li>点击 新建站点。</li>
+
+  <li>在“站点名称”中输入一个昵称，它代表您要发布到的站点。
+
+  <p>例如，如果您想要在新站点发布与“Meteor”项目相关的页面，您可以使用站点的名称
+“Meteor”，站点名称可以提醒您要发布的文档类型。</p> </li>
+
+  <li>在“发布地址“中，输入完整的由 ISP、系统管理员或是网站主机提供商您的地址，这
+个地址必须由 <tt>ftp://</tt> 或 <tt>http://</tt> 开头。
+
+  <p>发布地址是指文档发布(上传)的位置，如果您不确定是什么，请询问您的 ISP 或系统管理员。
+  </p> </li>
+
+  <li>在“您的主页 HTTP 地址”中，输入完整的用浏览器访问页面时的地址，不要在地址中包括
+文件名或子目录。
+
+  <p>这个地址必须以 <tt>http://</tt> 开头，在某些情况下，这个地址跟发布地址相同，如果
+您不确定是什么， 请询问您的 ISP 或系统管理员，或者保持为空。
+  </p> </li>
+
+  <li>在用户名中，输入您登录 ISP 或网站主机服务所使用的用户名。</li>
+
+  <li>在密码中，输入跟用户名对应的密码。</li>
+
+  <li>选中“保存密码”，将使用密码管理器安全保存您的密码，这样您发布页面时，不必每次都输入。</li>
+
+  <li>点确定完成。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="changing_the_default_publishing_site">更改默认的发布站点</h3>
+
+<p>如果您设置了多个发布站点，但您通常有一个使用最多的，您可以把这个最常用的站点作为默认站点。
+KompoZer 将使用默认发布站点发布您所有的文档，除非您指定了一个别的站点。</p>
+
+<p>不管您设置了多少站点，您总是可以通过在文件菜单里的 发布为 命令，发布文档到指定的站点。更多
+相关信息，请参阅: <a
+href="#changing_the_filename_or_publishing_location">更改文件名或发布位置</a>。</p>
+
+<p>要设定默认的发布站点，在 KompoZer 窗口中，按如下操作:</p>
+
+<ol>
+  <li>打开编辑菜单，然后选择发布站点设置，KompoZer 显示发布设置对话框。</li>
+
+  <li>从列表中选择一个发布站点。
+
+  <p>如果您只有一个发布站点，KompoZer 将使用它作为默认站点。</p> </li>
+
+  <li>点击 设为默认。</li>
+
+<li>点确定完成您的更改。</li> </ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h3 id="deleting_a_publishing_site">删除一个发布站点</h3>
+
+<p>在KompoZer 中删除发布站点，删除发布设置，如果您以后想发布到此站点，您必须
+要重新输入站点的设置。</p>
+
+<p>要删除一个发布站点设置，在 KompoZer 中，操作如下:</p>
+
+<ol>
+  <li>打开编辑菜单，选择发布站点设置，KompoZer 显示发布设置对话框。</li>
+  
+  <li>从列表中选择一个发布站点</li>
+  
+  <li>点删除站点。
+  <p>KompoZer 只删除站点设置，站点本身并不会受到影响。
+  </p></li>
+
+  <li>点确定完成更改。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">返回到开头</a> ]</p>
+
+<h2 id="publishing_settings">发布设置</h2>
+
+<p>这一章讲述 KompoZer 的发布设置，更多 KompoZer 的常规和新页设置，
+请参阅: <a href="composer_help.html#composer_preferences">KompoZer 首选项</a>。</p>
+
+<h3 id="publish_page_publish">发布页面 - 发布</h3>
+
+<p>发布页面 - 在发布标签中，您可以指定文档发布的位置，这个设置只应用于当前文档</p>
+
+<p>如果您还没有看到发布页面 - 发布标签，请按下面步骤操作:</p>
+
+<ol>
+  <li>打开文件擦掉，然后选择 发布为，出来发布页面对话框。</li>
+
+  <li>点击发布标签。</li>
+</ol>
+
+<ul> <li><strong>站点名称:</strong> 列出所有您创建的发布站点，您可以选择一个发布，
+要创建一个新站点，点 新建站点。</li>
+
+<li><strong>页面标题:</strong> 指定文档的页面标题，它将出现在访问者浏览器的标题栏中。
+文档页面标题，也出现在您的书签列表里，如果您添加了书签。</li>
+
+<li><strong>文件名:</strong> 指定文档的文件名，确保文件的扩展名是  .html 或 .htm</li>
+
+<li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p><strong>警告</strong>: 如果远程发布站点上已经
+存在您要发布的同名文件，新上传的文件会替换原来已经存在的，您会被提示确认覆盖操作。
+  </p> </li>
+
+<li><strong>发布页面到子目录:</strong> 如果此项为空，KompoZer 将发布页面到
+主目录(根目录)中。如果您想发布页面到一个远程子目录中，在这里输入子目录，或者从目录中选择
+一个。KompoZer 会跟踪您在这儿输入的位置，因此您可以从已经使用过的远程位置里边中
+选择一个，注意子目录的名称是区分大小写的。
+</li>
+
+<li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p><strong>注意:</strong> 您选择的站点子目录必须是存在的。</p>
+</li>
+
+<li><strong>包括图片和其他文件</strong>: 选中此项，KompoZer 将同时发布此页面链接
+的所有图片和其他文件，您可以选择发布到同一位置，或者发布到已经存在的站点子目录中。
+</li>
+
+</ul>
+
+<p><strong>小提示</strong>: 要创建一个远程子目录，或者删除已经发布的网页或图片，
+您必须使用 FTP(文件传输协议)程序，问一下服务提供商，如果他们
+推荐了一个特定的 FTP 程序，您一般可以在网络提供商网站的帮助和支持里，找到 FTP 的
+相关信息，FTP 程序也可以在一些共享站点像 ZDNet 上找到。</p>
+
+<p class="publishing_settings">[ <a
+href="#">返回到开头</a> ]</p>
+
+<h3 id="publish_page_settings">发布页面 - 设置</h3>
+
+<p>发布页面 - 设置标签，允许您指定您在这个发布站点上的登录信息，跟发布设置一样。
+这个设置应用于当前文档和其他要发布到这个位置上的文件。</p>
+
+<p>如果您还没有看到发布页面 - 设置标签，请按如下操作:</p>
+
+<ol>
+  <li>打开文件菜单，然后选择发布为，出来发布对话框。</li>
+
+  <li>点设置标签。</li>
+</ol>
+
+<ul>
+  <li><strong>站点名称</strong>: 指定您想发布站点的昵称，输入一个较短的名称
+作为此发布站点的标识。</li>
+
+  <li id="host_name_for_publishingSDX"><strong>发布地址</strong>: 输入
+完整的由 ISP、系统管理员提供给您的地址，这个地址必须由 <tt>ftp://</tt> 或 <tt>http://</tt> 开头。这个名称问我作为“主机名”或“主机服务器名”。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;">
+    <p>发布地址是指文档发布(上传)的位置，如果您不确定是什么，请询问您的 ISP 或系统管理员。
+  </p></li>
+
+  <li><strong>您的主页 HTTP 地址</strong>: 指定您发布主目录的完整地址，这是您网站主目录的
+网址，不要在地址中包括文件名或子目录。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;">
+    <p>这个地址必须以 <tt>http://</tt> 开头。在某些情况下，这个地址跟发布地址相同，如果
+您不确定是什么， 请询问您的 ISP 或系统管理员，或者保持为空。</p></li>
+
+  <li><strong>用户名</strong>: 指定您用来登录 ISP 或网络的用户名称。</li>
+
+  <li><strong>密码</strong>: 指定跟用户名对应的密码。</li>
+
+  <li><strong>保存密码</strong>: 选中此项，将使用密码管理器加密保存您的密码，这样您发布页面时，不必每次都输入密码。</li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#publishing_settings">返回到开头</a> ]</p>
+
+<h3 id="publish_settings">发布设置</h3>
+
+<p>发布设置对话框允许您创建、编辑和删除发布站点设置，也允许您设定默认发布站点。</p>
+
+<p>如果您还没有看到发布设置对话框，请按如下操作:</p>
+
+<ol>
+  <li>打开编辑菜单，然后选择发布站点设置 KompoZer 显示发布设置对话框。</li>
+</ol>
+
+<ul>
+  <li><strong>新建站点</strong>: 允许您设定一个新的发布站点。KompoZer 添加
+新的发布站点到可用站点列表中。</li>
+
+  <li><strong>设为默认</strong>: 设置选中的发布站点成为默认的发布站点。通常，
+默认发布站点是您最常用的发布站点。所有您创建和编辑的文档会发布到这个站点，除非您
+在发布页面对话框选择了其他发布站点。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>要发布文档到一个不同的远程位置，打开文件
+菜单，然后选择 发布为，选择一个不同的发布位置。</p>
+  </li>
+
+  <li><strong>删除站点</strong>: 从 KompoZer 中删除选中的站点和它的设置。</li>
+
+  <li><strong>站点名称</strong>: 指定您想指向发布站点的名称。</li>
+
+  <li><strong>发布地址</strong>: 输入
+完整的由 ISP、系统管理员提供给您的地址，这个地址必须由 <tt>ftp://</tt> 或 <tt>http://</tt> 开头。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>发布地址是指文档发布(上传)的位置，如果您不确定是什么，请询问您的 ISP 或系统管理员。</p>
+  </li>
+
+  <li><strong>您的主页 HTTP 地址</strong>: 指定您发布主目录的 HTTP 地址，不要在地址中包括文件名或子目录。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>这个地址必须以 <tt>http://</tt> 开头。在某些情况下，这个地址跟发布地址相同，如果您不确定是什么， 请询问您的 ISP 或系统管理员，或者保持为空。</p> </li>
+
+  <li><strong>用户名</strong>: 指定您用来登录 ISP 或网络的用户名称。</li>
+
+  <li><strong>密码</strong>: 指定跟用户名对应的密码。</li>
+
+  <li><strong>保存密码</strong>: 选中此项，将使用密码管理器安全地保存您的密码，这样您发布页面时，不必每次都输入密码。</li>
+</ul>
+
+<p>[ <a href="#publishing_settings">返回到开头</a> ]</p>
+
+
+<h2 id="solving_common_publishing_problems">解决常见问题</h2>
+
+<p>如果文件发布失败，发布状态对话框会显示一条错误信息，提示错误原因以及如何修复它。
+点击错误诊断按钮，获得解决发布错误的帮助。</p>
+
+<p>如果您仍然不能发布文件，打开 KompoZer 的文件菜单选择保存，保存文件到本地硬盘，
+您可以稍后重试发布它，要快速打开这个文件，打开 KompoZer 的文件菜单，然后选择最近
+打开页面。</p>
+
+<h3 id="verifying_your_publishing_settings">验证您的发布设置</h3>
+
+<p>要验证您的发布设置:</p>
+
+<ol>
+  <li>关闭发布状态对话框，如果它是开着的话。</li>
+
+  <li>打开编辑菜单，然后选择发布站点设置。</li>
+
+  <li>在发布设置对话框中，检查站点设置是否正确，如果您不确定，可以询问 ISP 或主机提供商。</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>检查您正确输入了发布设置</strong>您可能在设置中出现了错误的拼写。</li>
+
+      <li><strong>检查您是否正确输入了发布地址。</strong> 网站主机或 ISP 可以把发布地址
+用“服务器名称”、“主机名称”或者是“服务器/ 主机”来表示。他们常常指定发布位置为
+ <tt>ftp.myisp.com/username</tt>，这儿的 <tt>username</tt> 是您的用户名。
+
+      <p>如果发布地址是正确的，您必须要加上 <tt>ftp://</tt> 或者
+      <tt>http://</tt>。例如，正确的发布地址应该是这样的
+      <tt>ftp://ftp.myisp.com/username</tt>。</p> </li>
+      </ul>
+  </li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">返回到开头</a> ]</p>
+
+<h3 id="checking_your_filenames">检查文件名</h3>
+
+<p>检查各个发布失败的文件名，确保那些文件名:</p>
+
+<ul>
+  <li>仅使用数字、小写字母、大写字母，如果创建的可接受文件名是大写字母，您可能会用小写而发生错误。
+
+  <p>当您发布文件到网站上，文件名是大小写敏感的，记住那些只有大写或者大小写混合的文件名是很
+困难的。</p>
+
+  <p>例如，当你试图中浏览器中输入网页的地址文件名时，您必须输入精确的，使用大小写组合的文件名。</p> </li>
+
+  <li>不要使用标点符号或空格，下划线( _ ) 和连字符( - ) 是可以的。</li>
+
+  <li>文件名结尾是 .html 或 .htm (对于 KompoZer 文件名)。</li>
+
+  <li>不要超过32个字符。</li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">返回到开头</a> ]</p>
+
+<h3 id="fixing_publishing_errors">修复发布错误</h3>
+
+<p>如果文件发布失败，仔细查看 KompoZer 在发布状态对话框里的错误提示。
+您可以通过错误消息帮助检测错误原因以及该如何解决。</p>
+
+<div class="errorMessage"> <p id="file_not_found"><strong>错误消息:</strong></p>
+
+<div class="errorBox">
+  <tt><var>文件</var> 未找到</tt>
+  <p>或者</p>
+<tt><var>Y</var> 的 <var>X</var> 发布失败</tt> </div>
+
+<p><strong>错误描述:</strong> 一个或几个图片文件或 CSS 文件发布失败，原因是
+ KompoZer 未能找到它们，可能的原因是:</p>
+
+<ul>
+  <li>您输入的文件位置错误。</li>
+  
+  <li>网站上的文件位置不允许访问。</li>
+
+  <li>文件位置改变，或者文件被删除或移动到其他位置。</li>
+</ul>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>在页面中查找缺失的图片，缺失图片显示有这样的图标 <img src="images/broken.gif" />，要纠正图片地址，双击这个图片，中出来的图片属性对话框中，
+输入正确的图片地址。</li>
+
+  <li>要删除缺失的图片，点击选中图片标记，然后按退格键或 Delete 键。</li>
+
+  <li>如果图片不可用是因为服务器暂时不可用，可以在稍后重试。</li>
+
+  <li>如果是缺失了 CSS 文件，您首先要验证 CSS 文件的位置。要在  KompoZer 中修复地址错误，
+点击 HTML 源代码标签，在代码方式下编辑文件的位置。如果您对 HTML 标记比较熟悉，可以只编辑 HTML 源代码。</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="subdir_not_found"><strong>错误消息:</strong></p>
+
+<div class="errorBox">
+  <tt>子目录<var>directory name</var> 不存在或没有这个文件名
+  <var>filename</var> 已经被其他子目录使用</tt>
+  <p>或者</p>
+  <tt>文件名 <var>filename</var> 已经被其他子目录使用</tt> </div>
+
+<p><strong>错误描述:</strong> 您指定的远程发布站点子目录不存在，KompoZer 只能发布
+到一个已经存在的子目录中。或者，您指定的文件名已经有一个同名的子目录使用。</p>
+
+<p>例如，中发布页面对话框的发布标签中:</p>
+
+<ul>
+  <li>“使用站点子目录”，您可能输入了一个远程站点上，不存在的子目录名称。</li>
+
+  <li>如果您选中了“包括图片和其他文件”，然后您输入了一个不存在的子目录名称。</li>
+
+  <li>您试图发布的一个文件名，在发布站点上有相同的，已经作为子目录的名称。</li>
+</ul>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>使用单独的 FTP 程序，在发布站点上进行创建、重命名或者删除子目录，
+问一下服务提供商，如果他们
+推荐了一个特定的 FTP 程序，您一般可以在网络提供商网站的帮助和支持里，找到 FTP 的
+相关信息，FTP 程序也可以在一些共享站点像 ZDNet 上找到。</li>
+
+  <li>子目录的名称不要用“.html”或“.htm”做扩展名，只是 KompoZer
+  的文件名使用“.html”或“.htm”</li>
+
+  <li>子目录的名称是区分大小写的，因此确保输入的子目录名称是精确匹配发布站点上的位置。</li>
+</ul>
+</div>
+
+<div class="errorMessage"> <p id="server_not_found"><strong>错误消息:</strong></p>
+
+<div class="errorBox">
+  <tt>服务器不可用，请检查您的网络链接，稍后重试。</tt> </div>
+
+<p><strong>错误描述:</strong> 这个错误可能由许多原因造成，例如:</p>
+
+<ul>
+  <li>您的发布站点设置可能不正确。</li>
+
+  <li>您的网络链接可能断开。</li>
+
+  <li>您的调制解调器或其他网络连接设备出故障。</li>
+
+  <li>发布站点可能出现技术问题，或者发生未知错误。</li>
+
+  <li>您的 ISP 或主机服务商可能出现技术问题。</li>
+</ul>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>检查您的发布设置是否正确，您的输入也是正确的。更多信息请参阅: 
+ <a href="#verifying_your_publishing_settings">检查您的发布设置</a>。
+  </li>
+
+  <li>确保您的网络连接工作正常，尝试用浏览器访问站点，确认您可以成功访问
+  <tt>http://www.mozilla.org</tt>。</li>
+
+  <li>如果您的网络连接不能工作，检查各个硬件、电话连接、调制解调器是功能正常的。</li>
+
+  <li>使用浏览器尝试访问发布站点的某个页面，如果能成功访问其他网站，但不能浏览发布站点里的页面，
+那么您的 ISP 或主机提供商可能出现技术问题。</li>
+
+  <li>稍后重新尝试发布，您的 ISP 或主机提供商可能暂时出现问题。</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="no_permission"><strong>错误信息:</strong></p>
+
+<div class="errorBox">
+  <tt>您没有发布到这个位置的权限。</tt>
+</div>
+
+<p><strong>错误描述:</strong> 您要发布的位置不允许使用，您只能发布到 ISP 或主机提供商允许访问的站点。</p>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>检查您在发布站点设置对话框，是否输入了正确的用户名和密码。</li>
+
+  <li>联系您的 ISP，查询您可以在哪个站点发布网页。</li>
+
+  <li>搜索一个可以发布网页的主机服务网站，在浏览器中，搜索“网站主机”。</li>
+
+  <li>使用 KompoZer 我的网页  <a href="http://mywebpage.netscape.com/"
+  target="_blank"><tt>http://mywebpage.netscape.com/</tt></a>
+发布网页，免费提供 20M 空间。</li>
+</ul>
+</div>
+
+<div class="errorMessage"> <p id="offline_error"><strong>错误消息:</strong></p>
+
+<div class="errorBox">
+  <tt>您当前处于脱机状态，点窗口右下角的图标进行联机。</tt> </div>
+
+<p><strong>错误描述:</strong> 您正准备发布，但您的 KompoZer
+网络连接当前是“脱机”状态，必须是“联机”状态(连接到互联网)才能发布页面。</p>
+
+<p>通过右下角的联机/脱机图标，检查您的网络连接，如果当前脱机状态，会显示
+一个图标: <img src="images/offline.gif"  />。</p>
+<!--发布完成后打开此窗口，改成继续显示此窗口
+增加两个联机和脱机的图标，用网络连接图标-->
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>点击联机/脱机图标连接网络，联机状态的图标应该这样显示: <img src="images/online.gif" />。</li>
+
+  <li>通过浏览器访问网页，确保您的网络连接是工作正常的，例如，您可以访问这一页来确认: 
+  <tt>http://www.mozilla.org</tt>。</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="no_disk_space"><strong>错误信息:</strong></p>
+
+<div class="errorBox">
+  <tt>没有足够的可用空间来保存文件
+<var>filename</var>。</tt> </div>
+
+<p><strong>错误描述:</strong> 远程站点磁盘空间已满，或者您可以使用的空间已用完。</p>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>使用单独的 FTP 程序，在发布站点上删除不需要的文件子目录，
+问一下服务提供商，如果他们
+推荐了一个特定的 FTP 程序，您一般可以在网络提供商网站的帮助和支持里，找到 FTP 的
+相关信息，FTP 程序也可以在一些共享站点像 ZDNet 上找到。</li>
+
+  <li>联系您的 ISP 或主机提供商，增加您的可用磁盘空间，或者使用其他的站点。</li>
+
+  <li>如果服务器是在您的公司或学校，联系网络管理员，询问是否可以发布到有更多磁盘空间的位置。
+或者您请求增加您当前发布位置的可用磁盘空间。</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="name_too_long"><strong>错误信息:</strong></p>
+
+<div class="errorBox">
+<tt>文件名或子目录名太长。</tt> </div>
+
+<p><strong>错误描述:</strong> 您要发布的文件名或子目录名太长，超过了站点服务器支持的字符书。</p>
+
+<p><strong>解决方案:</strong></p>
+
+<ul>
+  <li>减少文件名或子目录名少于32个字符，一些操作系统不支持超过32个字符的文件名。</li>
+</ul> </div>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">返回到开头</a> ]</p>
+
+  <p>[<a href="index.html">返回目录</a>] [<a href="links.html">上一页</a>] [<a href="preferences.html">下一页</a>]</p>
+
+<div class="copyrightBox"><em>TeliuTe, 2009年6月26日</em></div>
+
+<p>&copy; Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

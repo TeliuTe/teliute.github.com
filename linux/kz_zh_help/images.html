@@ -1,0 +1,233 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表为网页增加样式</a>
+
+  <a href="tables.html">为网页添加表格</a>
+
+  <a href="images.html">为网页添加图片</a>
+
+  <a href="toc.html">用目录表格设计您的网页</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 里创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h2 id="adding_pictures_to_your_web_page">为网页添加图片</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<h3 id="inserting_an_image_into_your_page">在网页中插入一幅图片</h3>
+
+<p>您可以在网页中插入 GIF, JPEG, BMP 和 PNG (便携网络图片)格式图片，
+您还可以使用它们作为 <a href="#using_images_as_links">图片链接</a>。当您插入一幅图片，
+KompoZer 将在页面中保存一个图片的位置。</p>
+
+<p><strong>注意</strong>: 如果您想把页面发布到网上，最好不要用 BMP 格式图片。</p>
+
+<p><strong>小提示</strong>: 在插入图片前，最好先保存或发布一下网页，这将允许 KompoZer 自动使用图片的相对地址。</p>
+
+<p>插入图片:</p>
+
+<ol>
+  <li>点击您想插入图片的位置。</li>
+
+  <li>点击工具栏上的图片按钮 <img src="images/image.png" />，或者点插入菜单选择图片，出来插入图片属性对话框。</li>
+
+  <li>输入图片的位置和文件名，或者点浏览按钮选择一幅本机或网络上的图片。</li>
+
+  <li>输入简短的描述作为图片的替代文本，这会出现在纯文本浏览器中(和其他浏览器一样)，
+  在图片正在加载或禁用图片时，会显示这个文本。
+  <p>另外，您也可以选择不包括替代文本。</p>
+  </li>
+
+  <li>如果需要， 在 <a href="#editing_image_properties">图片属性</a> 对话框里， 点击其他标签，进行相应设置(例如对齐方式)。</li> </ol>
+
+<p><strong>小提示</strong>: 快速插入一幅图片: 拖动一幅图片到页面中。</p>
+
+<p><strong>小提示</strong>: 在所有图片段落后面插入一个换行，在插入菜单中选图片下方换行。</p>
+
+<p class="returnToSection">[ <a
+href="#adding_pictures_to_your_web_page">返回到开头</a> ]</p>
+
+<h3 id="editing_image_properties">编辑图片属性</h3>
+
+<p>一旦您插入一幅图片到页面中，您就可以编辑它的属性设置层，像高度、宽度、空白，
+以及文字对齐等。如果您还没有打开图片属性对话框，请按下面步骤操作:</p>
+
+<p>编辑选中图片的属性:</p>
+
+<ol>
+
+  <li>双击图片，或者选种它再点工具栏上的图片按钮  <img src="images/image.png" />，
+  显示图片属性对话框。</li>
+
+  <li>点击位置标签编辑这些属性:
+
+  <ul>
+    <li><strong>图片位置</strong>: 输入图片文件名和位置，点浏览按钮选择本机或网络上的图片。</li>
+    
+    <li><strong>URL 是相对地址</strong>: 选中此项， KompoZer 转换网址为一个相对地址，
+这在您计划发布页面到网络上，让其他人访问时非常有用。使用相对地址您可以把所有的文件归在一起，保持相对路径，
+不用考虑它们在本机和网络上的位置差异。
+    <p>不选中此复选框，KompoZer 会转换所有地址为全称(绝对)地址。
+    一般在引用网络上的图片时，使用绝对地址(不存储在您的本机中)。</p>
+    <p>如果您还没有保存或发布页面，您必须先保存一下，以便激活此复选框
+(如果您在消息窗口打开图片属性对话框，这个复选框也是不可用的)。</p></li>
+
+    <li><strong>替代文本</strong>: 输入一个位于原来图片位置的文本，例如，一个标题或者简要的图片描述。
+    这是一个好习惯，对于使用纯文本浏览器，或禁用图片浏览器的访问者，很有帮助。</li>
+    
+    <li><strong>不使用替代文本</strong>: 如果图片不需要替代文本，或者您不想包括此项，则选中它。</li>
+    
+  </ul>
+  </li>
+  <li>点击大小标签编辑下列属性:
+  <ul>
+    <li><strong>实际大小</strong>: 选中此项，恢复到图片原始大小。</li>
+    
+    <li><strong>自定义大小</strong>: 选中此项指定新的高度和宽度，用百分比或像素。这个设置不影响图片的原始文件，仅仅是在页面显示。</li>
+
+    <li><strong>保持纵横比</strong>: 如果您改变了图片的大小，选择此项将保持图片的外观比例(以便图像不失真)，选中此项您只需更改高度或宽度中的一项即可。</li>
+    
+  </ul>
+  </li>
+  <li>点外观标签可以编辑下列的选项:
+  <ul>
+    <li><strong>边距</strong>: 指定图片四周的空白，当它周围有文字相邻时，您也可以指定图片四周有一个实线边框，并指定边框线的大小(像素)，0 是无边框。</li>
+
+    <li><strong>对齐文本到图片</strong>: 如果图片周围有许多文本，您可以选择一种文本和图片的对齐方式。</li>
+
+    <li><strong>图片映射</strong>: 点击删除按钮，删除所有图片映射设置。</li>
+
+  </ul>
+  </li>
+  <li>点链接标签设置下列属性:
+  <ul>
+    <li><strong>输入一个网页位置</strong>: 如果您想用这幅图片定义一个超链接，输入本地或远程地址，或者从下拉列表中选择一个锚点、标题。点浏览按钮从本机或网络上选择一个文件。</li>
+    
+    <li><strong>URL 是相对地址</strong>:选中此项， KompoZer 转换网址为一个相对地址，
+这在您计划发布页面到网络上，让其他人访问时非常有用。使用相对地址您可以把所有的文件归在一起，保持相对路径，不用考虑它们在本机和网络上的位置差异。
+    <p>不选中此复选框，KompoZer 会转换所有地址为全称(绝对)地址。
+    一般在引用网络上的图片时，使用绝对地址(不存储在您的本机中)。</p>
+    <p>如果您还没有保存或发布页面，您必须先保存一下，以便激活此复选框
+(如果您在消息窗口打开图片属性对话框，这个复选框也是不可用的)。</p></li>
+
+    <li><strong>在链接图片周围显示边框</strong>: 选中此项，在图片周围显示高亮颜色。</li>
+  </ul>
+  </li>
+  
+  <li>要应用额外的属性或 JavaScript 事件，点击高级编辑按钮，显示 <a href="#using_the_advanced_property_editor">高级属性编辑器</a>.</li>
+
+  <li>点确定完成更改。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#adding_pictures_to_your_web_page">返回到开头</a> ]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="tables.html">上一页</a>] [<a href="toc.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月24日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

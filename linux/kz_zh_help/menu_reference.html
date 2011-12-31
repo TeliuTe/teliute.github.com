@@ -1,0 +1,672 @@
+<!--
+Original Author:
+"KDS Sahambi" <ksahambi@yahoo.com>
+Contributor(s):
+  Teliute <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|KompoZer 菜单索引</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+  <div id="contentsBox">在这一章里:
+  <a href="#file">文件</a>
+  <a href="#edit">编辑</a>
+  <a href="#view">查看</a>
+  <a href="#insert">插入</a>
+  <a href="#format">格式</a>
+  <a href="#table">表格</a>
+  <a href="#tools">工具</a>
+  <a href="#help">帮助</a>
+  </div>
+
+  <h1 id="menu_reference">KompoZer 菜单索引</h1>
+
+  <p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+  <div>这里讲述了 KompoZer 窗口的各个菜单项。</div>
+
+  <h2 id="file">文件</h2>
+
+  <h3 id="new_window">新建</h3>
+  <p>创建一个新的 KompoZer 标签或窗口。</p>
+
+  <h3 id="open_file">打开文件...</h3>
+  <p>显示打开对话框，您可以选择打开一个磁盘上的文件。
+在 KompoZer 中，您可以查看 HTML 文件、HTML 模板文件和文本文件。</p>
+
+  <h3 id="open_web_location">打开网络位置...</h3>
+  <p>显示打开网络位置对话框，您可以输入一个网址或选择打开一个本地文件。</p>
+
+  <h3 id="recent_pages">最近打开</h3>
+  <p>显示最近编辑文件列表。</p>
+  
+  <h3 id="close">关闭</h3>
+  <p>关闭当前窗口。</p>
+
+  <h3 id="close_all">全部关闭</h3>
+  <p>关闭当前窗口打开的所有标签。</p>
+  
+  <h3 id="save">保存</h3>
+  <p>保存当前标签页打开的文件。</p>
+  
+  <h3 id="save_as">另存为...</h3>
+  <p>用一个不同的文件名保存当前编辑的页面。</p>
+
+  <h3 id="save_character_encoding">保存并设置字符编码</h3>
+  <p>在显示“另存为”对话框前，给出一个更改“字符编码”的对话框选项。</p>
+
+  <h3 id="publish">发布</h3>
+  <p>打开当前编辑文档的发布对话框。</p>
+
+  <h3 id="publish_as">发布为...</h3>
+  <p>打开当前编辑文档的发布对话框，操作跟发布相同。</p>
+
+  <h3 id="revert">恢复</h3>
+  <p>撤销最近一次保存以来的所有更改，恢复到最近一次保存时的文档。</p>
+
+  <h3 id="export_to_text">导出为文本文档...</h3>
+  <p>导出当前文档的内容为文本文档。</p>
+
+  <h3 id="browse_page">在浏览器中预览</h3>
+  <p>在默认的浏览器中查看当前页面</p>
+
+  <h3 id="page_setup">页面设置...</h3>
+  <p>打开页面设置选项对话框，配置打印选项。</p>
+  
+  <h3 id="print_preview">打印预览</h3>
+  <p>打开一个窗口，显示文档打印到纸张上的效果。</p>
+
+  <h3 id="print">打印...</h3> 
+  <p>显示打印对话框，您可以在这里选择打印机，打印份数等等，点 <em>确定</em> 开始打印。</p>
+
+  <h3 id="exit">退出</h3>
+  <p>关闭所有 KompoZer 窗口，包括打开的各个标签，完全退出 KompoZer。
+如果您还要未保存的文档，KompoZer 将询问您是否真的要退出，防止偶尔关闭窗口。</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">返回到开头</a> ]</p>
+
+  <h2 id="edit">编辑</h2>
+
+  <h3 id="undo">撤销</h3>
+  <p>撤销当前文档的最近一次操作，如果您又不想撤销了，可以使用重做命令。</p>
+
+  <h3 id="redo">重做</h3>
+  <p>重做最近一次撤销的操作。</p>
+
+  <h3 id="cut">剪切</h3>
+  <p>剪切文档中选中的文本，存储到剪贴板中，在别处使用粘贴命令粘贴文本。</p>
+
+  <h3 id="copy">复制</h3>
+  <p>复制选中的文本到剪贴板中，在别处使用粘贴命令粘贴文本。</p>
+  
+  <h3 id="paste">粘贴</h3>
+  <p>把剪贴板中使用剪切或复制的文本，粘贴到当前光标位置。</p>
+
+  <h3 id="paste_without_formatting">粘贴(不含格式)</h3>
+  <p>只粘贴剪贴板中的文本到当前位置，格式信息被丢弃。</p>
+  
+  <h3 id="delete">删除</h3>
+  <p>删除当前选中的文本。</p>
+
+  <h3 id="select_all">全选</h3>
+  <p>选中当前文档的所有文本。</p>
+
+  <h3 id="find_and_replace">查找和替换...</h3>
+  <p>显示一个对话框，您可以在里面熟人要查找和替换的字符串，只在当前文档中进行搜索。</p>
+
+  <h3 id="find_again">查找下一个</h3>
+  <p>执行 <em>查找和替换...</em> 命令，继续查找下一个匹配项，只在当前文档中进行搜索。</p>
+
+  <h3 id="find_previous">查找上一个</h3>
+  <p>搜索上一个 <em>查找和替换...</em> 命令的匹配项。</p>
+
+  <h3 id="check_spelling">检查拼写</h3>
+  <p>打开拼写检查器，对当前页文本进行拼写检查。</p>
+
+  <h3 id="detach_from_template">从模板中分离</h3>
+  <p>把当前文档从模板中分离出来，保存为一个 <em>html</em> 页面。</p>
+
+  <h3 id="publish_site_settings">网站发布设置</h3>
+  <p>打开站点管理器配置或更改发布站点设置。</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">返回到开头</a> ]</p>
+
+  <h2 id="view">查看</h2>
+
+  <h3 id="show_hide">显示/隐藏</h3>
+
+  <h4 id="composition_toolbar">常用工具栏</h4>
+  <p>显示或隐藏常用工具栏，包含常用的按钮(锚点、链接、图片等)。</p>
+
+  <h4 id="format_toolbar">格式工具栏</h4>
+  <p>显示或隐藏格式工具栏，包含各种格式按钮。</p>
+
+  <h4 id="edit_mode_toolbar">编辑模式工具栏</h4>
+  <p>显示或隐藏编辑模式工具栏，它在 KompoZer 窗口的底部，状态栏的上面。您可以用它切换不同视图方式，比如 <em>HTML Tags view</em>,
+  <em>HTML 源代码</em> 等视图。</p>
+  <h4 id="status_bar">状态栏</h4>
+  <p>显示或隐藏 KompoZer 窗口底部的状态栏。</p>
+  <h4 id="rulers">标尺</h4>
+  <p>显示或隐藏水平标尺和垂直标尺。</p>
+
+  <h4 id="customize_toolbar">自定义工具栏</h4>
+
+  <h5 id="main_toolbar">主工具栏</h5>
+  <p>打开定制主工具栏面板，您可以从面板拖动按钮到主工具栏，以增加新的按钮，反之删除一个按钮。</p>
+
+  <h5 id="format_toolbar">格式工具栏</h5>
+  <p>打开定制格式工具栏面板，您可以从面板拖动按钮到主工具栏，以增加新的按钮，反之删除一个按钮。</p>
+
+  <h4 id="site_manager">站点管理器</h4>
+  <p>显示或隐藏 KompoZer 窗口里的 <em>站点管理器</em>。</p>
+
+  <h3 id="normal_edit_mode">普通编辑模式</h3>
+  <p>切换到普通编辑模式下。</p>
+
+  <h3 id="html_tags">HTML 标记</h3>
+  <p>切换到 HTML 标记视图模式。</p>
+
+  <h3 id="html_source">HTML 源代码</h3>
+  <p>切换到 HTML 源代码视图模式。</p>
+
+  <h3 id="preview">预览</h3>
+  <p>切换到预览视图模式。</p>
+
+  <h3 id="carriage_returns">回车标记</h3>
+  <p>显示或隐藏回车标记。</p>
+
+  <h3 id="block_outline">块标记</h3>
+  <p>显示或隐藏块级别元素的边框。</p>
+
+  <h3 id="text_zoom">文本缩放</h3>
+
+  <h4 id="text_zoom_smaller">缩小</h4>
+  <p>使得页面中的文本减小，您也可以使用鼠标来操作(请参阅文本大小一章)。要恢复文本原来的大小，按组合键 <kbd>Ctrl</kbd>+<kbd>0</kbd>。</p>
+
+  <h4 id="text_zoom_larger">放大</h4>
+  <p>增大显示页面中的文本，您也可以使用鼠标来操作，按住 <kbd>Ctrl</kbd> 键，然后转动鼠标滚轮，或者按 <kbd>+</kbd> 或 <kbd>-</kbd>，增大减小文本大小。要恢复文本原来的大小，按组合键 <kbd>Ctrl</kbd>+<kbd>0</kbd>。</p>
+
+  <h3 id="character_encoding">字符编码</h3>
+  <p>允许您手动更改网页里的字符编码。 KompoZer 通常自动检测完成。</p>
+
+  <h2 id="insert">插入</h2>
+
+  <p>插入菜单允许您向当前文档中插入各种 HTML 元素。</p>
+
+  <h3 id="insert_image">图片...</h3>
+  <p>打开插入图片对话框，插入一幅图片到当前文档。</p>
+
+  <h3 id="insert_table">表格...</h3>
+  <p>打开插入表格对话框，插入一个表格到当前文档。</p>
+
+  <h3 id="insert_form">表单...</h3>
+  <p></p>
+
+  <h3 id="insert_link">链接...</h3>
+  <p>打开链接对话框，创建一个超级链接，如果之前选中里一段文本，选中的文本将变成链接，您也可以通过点击“更多属性”，定义友情链接(XFN)。</p>
+
+  <h3 id="named_anchor">锚点...</h3>
+  <p>打开锚点对话框，在光标处插入一个锚点。</p>
+
+  <h3 id="horizontal_line">水平线</h3>
+  <p>在当前位置插入一条水平线。</p>
+
+  <h3 id="html">HTML...</h3>
+  <p>打开一个对话框，您可以输入 HTML 源代码，这也可以插入注释、脚本代码等等。</p>
+
+  <h3 id="character_and_symbols">字符和符号...</h3>
+  <p>打开一个对话框，选择指定的字符或符号，插入到当前位置。</p>
+
+  <h3 id="table_of_contents">目录表...</h3>
+  <p>打开插入目录表窗口，在当前位置插入目录表，目录表(TOC)可以用标题1到标题6,一个 &lt;div&gt; 或  &lt;p&gt; 标记。</p>
+
+  <h3 id="smart_widgets">小组件</h3>
+  <p>在文档中插入小组件(Smart Widgets)。</p>
+
+  <h4 id="made_with_nvu">KompoZer 制作</h4>
+  <p>在当前文档，插入一个"由 KompoZer 制作" 按钮。</p>
+
+  <h4 id="calendar">日历</h4>
+  <p>在当前文档，插入一个日历控件。</p>
+
+  <h3 id="templates">模板</h3>
+  <p>当使用模板时，您可以使用这个菜单项来插入一个可编辑区域。</p>
+
+  <h3 id="php_code">PHP 代码</h3>
+  <p>在 HTML 文档中，插入 PHP 代码。</p>
+
+  <h3 id="comment">注释</h3>
+  <p>在 HTML 文档中，插入注释内容。</p>
+
+  <h3 id="break_below_images">图片下换行</h3>
+  <p>在图片下面插入一个换行，使得输入的文本出现在图片下方。</p>
+
+  <h2 id="format">格式</h2>
+
+  <p>这个菜单包含设置文本格式的各个选项。</p>
+
+  <h3 id="font">字体</h3>
+
+  <p>您可以为选中的文本选择字体，从系统安装的字体列表中选择所需的字体。</p>
+
+  <h3 id="size">大小</h3>
+  <p>更改字体的大小，选择较小或较大。</p>
+  <p>为选中的文本选择较小、小、中等、大、较大或者最大的文本大小。</p>
+
+  <h3 id="text_style">文本样式</h3>
+  <p>您可以为选中的文本选择 HTML 文本样式。</p>
+
+  <h4 id="text_style_bold">粗体</h4>
+
+  <p>使选中的文本加粗显示，例如:  <b>粗体文本</b></p>
+
+  <h4 id="text_style_italic">斜体</h4>
+
+  <p>使选中的文本斜体显示，例如: <i>斜体文本</i></p>
+
+  <h4 id="text_style_italic">下划线</h4>
+
+  <p>为选中的文本添加下划线，例如: <u>下划线文本</u></p>
+
+  <h4 id="text_style_strikethrough">删除线</h4>
+
+  <p>为选中的文本添加下划线，例如: <span
+  style="text-decoration: line-through;">删除线文本</span></p>
+
+  <h4 id="text_style_superscript">上标</h4>
+
+  <p>使选中的文本显示为上标，例如: <sup>上标</sup> 文本。</p>
+
+  <h4 id="text_style_subscript">下标</h4>
+
+  <p>使选中的文本显示为下标，例如: <sub>下标</sub>文本。</p>
+
+  <h4 id="text_style_fixed_width">固定宽度</h4>
+
+  <p>使选中的文本固定宽度显示，例如: <span
+  style="font-family: monospace;">固定宽度文本</span>。</p>
+
+  <h4 id="text_style_non_breaking">不换行</h4>
+
+  <p>HTML 会将多个连续空格看作使一个空格，要标记不换行空格，在选中多个空格后，
+使用此选项 ，例如: 三个不换行空格&nbsp;&nbsp;&nbsp; 到这里。</p>
+
+  <h4 id="text_style_emphasis">强调</h4>
+
+  <p>强调显示文本，例如: <em>强调文本</em></p>
+
+  <h4 id="text_style_stronger_emphasis">特别强调</h4>
+
+  <p>特别强调显示文本，例如: <strong>特别强调</strong> 的文本。</p>
+
+  <h4 id="text_style_citation">引用</h4>
+
+  <p>将选中的文本定义为引用，例如: <cite>引用文本</cite></p>
+
+  <h4 id="text_style_abbreviation">缩写</h4>
+
+  <p>指示文本是一个缩写，例如: <abbr>UN</abbr></p>
+
+  <h4 id="text_style_acronym">首字母缩写词</h4>
+
+  <p>定义一个缩写词，例如: <acronym>WWW</acronym></p>
+
+  <h4 id="text_style_code">代码</h4>
+
+  <p>定义选中的文本是计算机代码文本，例如: <code>code
+  text</code></p>
+
+  <h4 id="text_style_sample_output">样例输出</h4>
+
+  <p>定义选中的文本作为一个计算机代码输出样例，例如: <samp>sample code</samp></p>
+
+  <h4 id="text_style_variable">变量</h4>
+
+  <p>定义选中的文本作为变量名称，例如: <var>variable</var></p>
+
+  <h3 id="text_color">文本颜色...</h3>
+
+  <p>打开拾色器窗口，为选中的文本选择一个颜色。</p>
+
+  <h3 id="writing_direction">书写方向</h3>
+
+  <p>设定选中的文本书写方向为从左到右，或者是从右到左。选中的文本应该是块一级别的，而不是内联的文本。</p>
+
+  <h3 id="discontinue_text_styles">取消文本样式</h3>
+
+  <p>取消所有当前位置的文本样式。</p>
+
+  <h3 id="discontinue_link">取消链接</h3>
+
+  <p>取消当前位置文本的链接属性。</p>
+
+  <h3 id="remove_named_anchors">删除锚点</h3>
+
+  <p>删除选中的锚点。</p>
+
+  <h3 id="paragraph">段落</h3>
+
+  <p>设定选中文本的样式为正文、段落、标题1到标题6,地址或预格式化文本。</p>
+
+  <h3 id="list">列表</h3>
+
+  <p>用一个选项来指定不同类型的列表，也就是符号列表、编号列表、组或定义，
+选择列表属性打开一个对话框，手动编辑列表属性。</p>
+
+  <h3 id="increase_indent">增大缩进</h3>
+
+  <p>对选中的文本块增加缩进。</p>
+
+  <h3 id="decrease_indent">减小缩进</h3>
+
+  <p>对选中的文本块减少缩进。</p>
+
+  <h3 id="align">对齐方式</h3>
+
+  <p>对选中的文本指定对齐方式，您可以让文本居中、左对齐、右对齐或两端对齐。</p>
+
+  <h3 id="positioning_grid">定位网格</h3>
+
+  <p>打开一个对话框，设定移动一个层的像素值。</p>
+
+  <h3 id="advanced_properties">高级属性</h3>
+
+  <p>打开“高级属性编辑器”，您可以手动编辑/添加 HTML 属性、内联样式或者 Javascript 事件。</p>
+
+  <h3 id="page_colors_and_background">背景和颜色...</h3>
+
+  <p>打开设定页面颜色和背景的窗口，用户可以设定普通文本、链接文本，激活链接、已经访问链接
+的颜色，您也可以设定页面背景色或是选择一幅背景图片。</p>
+
+  <h3 id="page_title_and_properties">页面标题和属性...</h3>
+
+  <p>打开“页面属性”窗口，您可以为页面添加标题、作者和描述信息，
+您也可以为当前页指定语言和书写方向。要设置此页为一个模板，可以选中“模板页”复选框。</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">返回到开头</a> ]</p>
+
+  <h2 id="table">表格</h2>
+
+  <p>这个菜单项允许您在 HTML 文档中创建/编辑表格。</p>
+
+  <h3 id="table_insert">插入</h3>
+
+  <p>打开一个子菜单，可以选择各项表格编辑/创建选项。</p>
+
+  <h4 id="insert_table">表格</h4>
+
+  <p>打开一个对话框可以在当前位置选择各种表格属性。用户可以通过点击表格线设定表格大小，或者精确设定表格大小。其他单元格属性像内边距、外边距等等，也可以在这里设置。</p>
+
+  <h4 id="insert_row_above">上面一行</h4>
+
+  <p>在当前行的 <em>上面</em> 插入一个空行。</p>
+
+  <h4 id="insert_row_below">下面一行</h4>
+  
+  <p>在当前行的 <em>下面</em> 插入一个空行。</p>
+
+  <h4 id="insert_column_before">左一列</h4>
+
+  <p>在当前列的 <em>左边</em> 插入空的一列。</p>
+
+  <h4 id="insert_column_after">右边一列</h4>
+
+  <p>在当前列的 <em>右边</em> 插入空的一列。</p>
+
+  <h4 id="insert_cell_before">左边一格</h4>
+
+  <p>在当前单元格的 <em>左边</em> 插入一个空单元格。</p>
+
+  <h4 id="insert_cell_after">右边一格</h4>
+
+  <p>在当前单元格的 <em>左边</em> 插入一个空单元格。</p>
+
+  <h3 id="table_select">选择</h3>
+  
+  <p>选择当前表格的各个元素。</p>
+
+  <h4 id="select_table">表格</h4>
+
+  <p>选择整个表格。</p>
+
+  <h4 id="select_row">行</h4>
+
+  <p>选中当前行。</p>
+
+  <h4 id="select_column">列</h4>
+
+  <p>选中当前列。</p>
+
+  <h4 id="select_all_cells">所有单元格</h4>
+
+  <p>选中所有单元格，这跟选中整个表格不同，此时的操作只针对所有单元格，不影响表格。</p>
+
+  <h3 id="table_delete">删除</h3>
+
+  <p>打开子菜单，删除各个表格组件。</p>
+
+  <h4 id="delete_table">表格</h4>
+
+  <p>删除当前的表格，会出来一个警告，所有表格数据将丢失。</p>
+
+  <h4 id="delete_rows">行</h4>
+
+  <p>删除当前行或选中的多行。</p>
+
+  <h4 id="delete_columns">列</h4>
+
+  <p>删除当前列或选中的多列。</p>
+
+  <h4 id="delete_cells">单元格</h4>
+
+  <p>删除当前单元格或选中的多个单元格。</p>
+
+  <h4 id="delete_cell_contents">单元格内容</h4>
+
+  <p>删除当前单元格的所有内容。</p>
+
+  <h3 id="join_with_cell_to_the_right">向右合并单元格</h3>
+
+  <p>合并当前单元格和它右边的单元格。</p>
+
+  <h3 id="split_cell">拆分单元格</h3>
+
+  <p>拆分 <tt>colspan</tt> 值大于 1 的单元格。</p>
+
+  <h3 id="create_table_from_selection">从选中文本创建表格</h3>
+
+  <p>把选中的文本转换成表格，每个段落作为一行，列的分隔可以选择用逗号(,)、空格( )，或自定义一个字符。</p>
+
+  <h3 id="table_or_cell_background_color">表格或单元格背景色...</h3>
+
+  <p>打开一个对话框，编辑表格或单元格的背景色。</p>
+
+  <h3 id="table_properties">表格属性...</h3>
+
+  <p>打开表格或单元格属性编辑窗口，您可以使用一个图形界面，更改所有表格或单元格属性。</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">返回到开头</a> ]</p>
+
+  <h2 id="tools">工具</h2>
+
+  <h3 id="markup_cleaner">清理标记</h3>
+
+  <p>打开清理标记窗口，可以删除多于的 &lt;br&gt; 标记，空的区域块等。</p>
+
+  <h3 id="validate_html">验证 HTML</h3>
+
+  <p>打开一个窗口 ，通过 <a href="http://validator.w3.org">W3C HTML 校验网站</a>，显示当前文档的验证结果。</p>
+
+  <h3 id="css_editor">CSS 编辑器</h3>
+
+  <p>打开内置的 CSS 编辑器，编辑 CSS 样式style
+  rules.</p>
+
+  <h3 id="extensions">附加组件</h3>
+
+  <p>打开扩展管理器，您可以安装或删除扩展，扩展可以向 KompoZer 添加新特性。</p>
+
+  <h3 id="themes">主题</h3>
+  
+  <p>打开主题管理器，您可以安装或删除 KompoZer 主题。</p>
+
+  <h3 id="web_development">网站开发工具</h3>
+
+  <p>打开各种用于网站开发的 KompoZer 工具包。</p>
+
+  <h4 id="javascript_console">Javascript 控制台</h4>
+
+  <p>打开 Javascript 控制台窗口。</p>
+
+  <h4 id="java_console">Java 控制台</h4>
+
+  <p>打开 Java 控制台窗口。</p>
+
+  <!-- h4 id="dom_inspector">DOM Inspector</h4>
+
+  <p>Opens the Document Object Model (DOM) Inspector.</p>
+
+  <h4 id="javascript_debugger">Javascript Debugger</h4>
+
+  <p>Opens the Javascript debugger Venkman for debugging javascript
+  code in the document.</p -->
+
+  <h3 id="preferences">首选项</h3>
+  <p>打开 <em>首选项</em> 窗口，更改个人使用 KompoZer 的选项设置。</p>
+
+  <h2 id="help">帮助</h2>
+
+  <h3 id="help_contents">帮助主题</h3>
+
+  <p>打开帮助窗口。</p>
+
+  <h3 id="nvu_website">KompoZer 网站</h3>
+
+  <p>用默认的浏览器打开 KompoZer 网站。</p>
+
+  <h3 id="nvu_faq">常见问题(FAQ)</h3>
+
+  <p>用默认的浏览器打开 KompoZer 的 FAQ 页面。</p>
+
+  <h3 id="bug_reports_and_suggestions">错误报告和意见反馈</h3>
+
+  <p>用默认的浏览器打开 KompoZer 的错误报告和意见反馈页面。</p>
+
+  <h3 id="developers_community">开发者社区</h3>
+
+  <p>用默认的浏览器打开 KompoZer 的开发者网站。</p>
+
+  <h3 id="localizing_nvu">翻译 KompoZer </h3>
+
+  <p>打开一个页面，指导您如何开始 KompoZer 的本地化进程。</p>
+
+  <h3 id="forums">论坛</h3>
+
+  <p>用默认的浏览器打开  KompoZer 论坛站点。</p>
+
+  <h3 id="tip_of_day">日积月累</h3>
+
+  <p>打开一个 <em>每日提示</em>小窗口。</p>
+
+  <h3 id="about_nvu">关于 KompoZer</h3>
+
+  <p>显示一个对话框，包括 KompoZer 当前版本和贡献者列表</p>
+
+  <p class="returnToSection">[ <a href="#menu_reference">返回到开头</a> ]</p>
+
+  <p>[<a href="index.html">返回目录</a>] [<a href="shortcuts.html">上一页</a>] [<a href="glossary.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年7月2日</em></div>
+
+  <p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+
+</html>

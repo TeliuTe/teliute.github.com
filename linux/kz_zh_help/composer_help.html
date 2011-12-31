@@ -1,0 +1,259 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表为网页增加样式</a>
+
+  <a href="tables.html">为网页添加表格</a>
+
+  <a href="images.html">为网页添加图片</a>
+
+  <a href="toc.html">用目录表格设计您的网页</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 里创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h1 id="creating_web_pages_with_composer">用 KompoZer 创建网页</h1>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<p>KompoZer 帮助您创建自己的网页并发布到网络上，使用 KompoZer 您不需要懂得太多，使用它就像使用词语一样简单。</p>
+
+<p>您可以使用工具栏上的按钮，从而很方便地添加列表、表格、图片、超链接到其他页面，设置颜色、字体样式等。
+您可以在创建时看到页面发布时的外观，您也可以很方便地与其他人分享您的文档，不必担心他们使用何种浏览器，
+或者他们使用的是哪一种电子邮件处理程序。</p>
+
+<h2 id="starting_a_new_page">创建一个新页面</h2>
+
+<h3 id="creating_a_new_page">创建一个新页面</h3>
+
+<p>KompoZer 是一个 HTML(超文本标记语言)编辑器，它允许您
+创建和编辑网页。KompoZer 是一个 <em>WYSIWYG</em>(所见即所得)
+编辑器，因此您在创建的时候，就可以看到页面发布的样子。它不需要您懂得
+HTML，因为绝大部分 HTML 功能都可以用工具栏上的按钮和菜单完成。</p>
+
+<p>KompoZer 也可以让你编辑 HTML 源代码，如果你愿意的话。
+要查看或编辑 HTML 源代码，打开查看菜单，然后选择 HTML 源代码，或者
+在下边的编辑模式工具栏中，点击 &lt;HTML&gt; 源代码标签。</p>
+
+<p>要创建一个网页，可以使用下面讲述的任一种方法，当您打开一个页面，您
+可以在一个文本编辑器里添加或编辑您想要的文本。</p>
+
+<p><strong>要在 KompoZer 里创建新页</strong>:</p>
+
+<ul>
+  <li>点击 KompoZer 工具栏上的新建按钮。</li>
+</ul>
+
+<p><strong>保存 HTML 文件到本地磁盘上</strong>:</p>
+
+<ol>
+  <li>打开窗口菜单，选择 KompoZer，会出来 KompoZer 窗口</li>
+
+  <li>点击 <span class="menuPath">文件</span> 菜单然后选择
+  <span class="menuPath">打开</span> 命令，出来打开文件对话框。</li>
+
+  <li>在磁盘上找到您想编辑的文件。</li>
+
+  <li>点 <span class="menuPath">打开</span> 按钮，在 KompoZer 
+  窗口中就显示了这个文件。</li>
+</ol>
+
+<p><strong>要编辑网页</strong>:</p>
+
+<ol>
+  <li>打开 KompoZer</li>
+
+  <li>点 <span class="menuPath">文件</span> 菜单，然后选
+  <span class="menuPath">打开位置</span> 命令，出来一个打开网络位置的对话框。</li>
+
+  <li>输入您想编辑页面的网址(例如，
+  <tt>http://www.mozilla.org</tt>) 然后点创建按钮。您会看到页面显示在 KompoZer 中。</li> 
+</ol>
+
+<p>KompoZer 也给出一个创建新页面的选项，使用 <acronym title="扩展超文本标记语言">XHTML</acronym> 格式
+来创建一个 XHTML 文档，在 <em>创建新文档或模板</em> 对话框里勾选 "创建 XHTML 文档"。</p>
+
+<p><strong>小提示</strong>: 在 KompoZer 窗口里，您可以通过打开文件菜单，选择
+最近访问页面，在打开的最近访问文件列表中，选择您想要打开的文件。</p>
+
+<p>[ <a href="#starting_a_new_page">返回到开头</a>
+]</p>
+
+<h3 id="tabs_editing_multiple_documents">标签 - 编辑多个文档</h3>
+
+<p>KompoZer 允许您同时编辑多个文档，而不用在一个个窗口之间切换，
+ KompoZer 提供了 <strong>标签</strong> 的特性。
+ 在一个 KompoZer 窗口里可以同时打开多个文档，分别放在不同的标签中。</p>
+
+<p>新标签可以通过按组合键 <kbd>Ctrl+T</kbd> 打开，或者在文件菜单里，
+点 <em>新建标签</em>。 对于打开的多个标签，每一个都是相对独立的，每个
+文档有一个标题显示，例如，如果该页面需要保存，就在对应的标签用一个用红色图标指示。</p>
+
+<p>[ <a href="#starting_a_new_page">返回到开头</a> ]</p>
+
+<h3 id="saving_and_browsing_your_new_page">保存并浏览页面</h3>
+
+<p>您可以用 HTML 或纯文本格式保存 KompoZer 文档。保存 HTML 格式将
+保留文档的格式，例如文本样式(像粗体或斜体)、表格、链接和图片等。保存成纯文本
+将删除所有 HTML 标记，只保留文本内容。</p>
+
+<p>保存成 HTML 文件:</p>
+
+<ul> 
+  <li>打开文件菜单，然后选择保存命令，或者点击工具栏上的保存按钮。
+
+  <p>如果您还没有给页面设定标题，KompoZer 会提示您完成。
+  KompoZer 会在窗口的标题栏上显示页面标题，如果您添加了书签，文档的页面标题
+ 也会出现在您的书签列表中。</p>
+
+  <p>然后 KompoZer 提示您输入文件名并指定文件的保存位置。确保您保留了 .html 
+  扩展名，如果编辑保存的是 XHTML 文档，文件的扩展名应当是 <tt>.html</tt>。
+ 文件的扩展名是 <tt>.html</tt> 但使用了XHTML DOCTYPE 则不会认为是 <tt>xhtml</tt> 文档。</p>
+  </li>
+</ul>
+
+<p>要更改文件名或保存文件到另外一个位置:</p>
+
+<ul>
+  <li>点菜单 <span class="menuPath">文件 > 另存为</span> 然后选择不同的文件名或位置。</li>
+</ul>
+
+<p>当您用 KompoZer 保存页面，所有的页面部分
+(HTML, 图片和其他文件，像声音和样式表)，都会保存到您的硬盘上。如果您仅仅想保存页面的 HTML 部分，
+您需要更改 KompoZer 保存页面的首选项，更多相关信息，请参阅 
+<a href="preferences.html">KompoZer 首选项</a>。</p>
+
+<p>如果一个图片位置是绝对地址(以"http://"开头)而您又正连接到互联网，
+那么您还可以在 KompoZer 中看到这幅图片并访问它。但是，如果图片位置是
+相对地址(以"file:///"开头)，那么您就不能在本地文件中看到图片。</p>
+
+<p>保存纯文本文件:</p>
+
+<ol>
+  <li>点 <span class="menuPath">文件</span> 菜单，然后选择 <span class="menuPath">导出文本文件</span>。</li>
+
+  <li>输入文件名然后指定文件的保存位置。</li>
+</ol>
+
+<p><strong>注意</strong>: 图片不会保存到纯文本格式文件中。</p>
+
+<p><strong>小提示</strong>: 您可以在文件菜单中选择恢复命令，
+复原到最近一次保存的文件，但您之后的更改将会丢失。</p>
+
+<p>要在浏览器中查看页面以便测试您的链接:</p>
+
+<ul>
+  <li>点文件菜单，然后选择浏览页面(或者点击工具栏上的浏览按钮)。如果文件还没有保存，
+KompoZer 会提示输入页面标题、文件名和位置。浏览器窗口会挡在 KompoZer 窗口的前面。</li>
+</ul>
+
+<p>[ <a href="#starting_a_new_page">返回到开头</a> ]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="composer_tutorial.html">上一页</a>] [<a href="formatting_webpages.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月19日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

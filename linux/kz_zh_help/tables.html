@@ -1,0 +1,362 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章节里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表设置页面样式</a>
+
+  <a href="tables.html">给页面添加表格</a>
+
+  <a href="images.html">给页面添加图片</a>
+
+  <a href="toc.html">在页面中使用目录表</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 中创建超链接</a>
+
+  <a href="customize.html">定制  KompoZer</a>
+
+</div>
+
+<h2 id="adding_tables_to_your_web_page">给页面添加表格</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<h3 id="inserting_a_table">插入表格</h3>
+
+<p>表格对于按行列放置文本、图片、数据是非常有用的:</p>
+
+<ol>
+  <li>点击要插入表格的位置，把光标插入点放在那儿。</li>
+
+  <li>点击常用工具栏上的表格按钮
+  <img src="images/table.png" />，出来插入表格对话框。</li>
+
+  <li>输入表格的行和列。
+  <ul>
+    <li>(可选)输入表格的宽度，选择占窗口的百分比或像素。</li>
+  </ul>
+  </li>
+
+  <li>输入边框宽度值(像素)，0 是无边框。
+  <p><strong>注意</strong>: KompoZer 使用红线表示无边框的表格，抓页面浏览的时候不会显示这些红点线。</p></li>
+
+  <li>要应用额外的表格属性或 JavaScript，点高级属性，显示 <a href="#using_the_advanced_property_editor">高级属性编辑器</a>。</li>
+
+  <li>点确定完成设置，查看一下表格。</li>
+</ol>
+
+<p>要更改表格额外的属性，请参阅:
+<a href="#changing_a_tables_properties">更改表格属性</a>。</p>
+
+<p><strong>小提示</strong>: 要在表格内继续插入一个表格，点插入菜单，然后选择表格命令。</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">返回到开头</a> ]</p>
+
+<h3 id="changing_a_tables_properties">更改表格属性</h3>
+
+<p>这一章讲述了如何设置表格项的属性，比如行、列、单元格，如果您还没有打开表格属性对话框，请按下面步骤操作:</p>
+
+<ol>
+  <li>选中表格，或者在表格里点一下鼠标。</li>
+
+  <li>点击常用工具栏上的表格按钮
+  <img src="images/table.png" />，或者打开表格菜单选择表格属性命令，表格属性对话框包括两个标签: 表格和单元格。</li>
+
+  <li>点击表格标签可以编辑下面的属性:
+  <ul>
+    <li><strong>大小</strong>: 指定行和列的值，输入表格宽度并选择“% 的窗口”或“像素”。 
+    如果您指定的是百分比，KompoZer 窗口或浏览器窗口改变时，表格的宽度也会改变。</li>
+
+    <li><strong>边框和边距</strong>: 指定边框线的宽度(像素)，边距包括两个单元格之间，单元格里面内容和边框线之间的距离。
+    <p><strong>注意</strong>: KompoZer 用虚线表示边框为 0 的表格，在浏览器中浏览时不会显示。</p></li>
+
+    <li><strong>表格对齐</strong>: 设置表格在页面里的对齐方式，从下拉列表中选择一个。</li>
+
+    <li><strong>标题</strong>: 从下拉列表中选择标题的位置。</li>
+
+    <li><strong>背景色</strong>: 给表格设定一个背景色，或者让它是透明的。</li>
+
+  </ul>
+  </li>
+
+  <li>要应用额外的属性或者 JavaScript 事件，点击高级编辑按钮，显示 <a href="#using_the_advanced_property_editor">高级属性编辑器</a>。</li>
+
+  <li>点应用按钮按钮预览一下效果，不关闭对话框，点确定按钮应用更改并关闭对话框。</li>
+</ol>
+
+<p>查看一个或多个单元格的属性，或者更改、添加属性:</p>
+
+<ol>
+  <li>选中这一行、列或单元格，然后打开表格菜单，选表格属性命令，出来表格属性对话框。</li>
+
+  <li>点击单元格标签，编辑下面的属性:
+  <ul>
+    <li><strong>选区</strong>: 从下拉列表中选择单元格、行、列，点击上一个或下一个按钮，设定其他行、列、单元格。</li>
+
+    <li><strong>大小</strong>: 输入高度和宽度值，再选择“% 的表格”或“像素”。</li>
+
+    <li><strong>对齐方式</strong>: 设定单元格内容的垂直和水平对齐方式。</li>
+
+    <li><strong>单元格样式</strong>: 从下拉列表中选择标题(文本会居中和加粗)，或者选择普通。</li>
+
+    <li><strong>文本环绕</strong>: 从下拉列表中选择“不换行”保持文本一直不换行，直到您插入一个段落标记，相反的就是换行。</li>
+
+    <li><strong>背景色</strong>:为单元格选择一种背景颜色，或者让它透明。
+    <p><strong>注意</strong>: 要应用额外的属性或 JavaScript 事件，点击高级编辑显示
+    <a href="#using_the_advanced_property_editor">高级属性编辑器</a></p></li>
+  </ul>
+  </li>
+  <li>点应用按钮按钮预览一下效果，不关闭对话框，点确定按钮应用更改并关闭对话框。</li>
+</ol>
+
+<p><strong>小提示</strong>: 要更改一个或多个选中单元格的文本颜色或背景色，选中它们后点格式工具栏上的颜色图标。</p>
+
+<p><strong>小提示</strong>: 要设置单元格颜色为上次使用的颜色，选中它们后，按住 Shift 键，然后点击背景色图标，这在给不同单元格设置同一颜色时很有用。</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">返回到开头</a> ]</p>
+
+<h3 id="adding_and_deleting_rows_columns_and_cells">添加或删除行、列、单元格</h3>
+
+<p>KompoZer 允许您快速删除一个表格里的单元格、行、列，另外，您可以设置选项，在修改时保持表格的原始的结构。</p>
+
+<p>向表格中添加单元格、行和列:</p>
+
+<ol>
+  <li>点击您想添加单元格(行、列)的位置。</li>
+
+  <li>打开表格菜单，然后选择插入菜单项</li>
+
+  <li>选择一个单元格操作命令。(您也可以在单元格插入新的表格。)</li>
+</ol>
+
+<p>删除一个单元格、行和列:</p>
+
+<ol>
+  <li>点击这一行、列或单元格，把光标插入点放在里面，或者选中相邻的单元格以便删除多个。要选中多个单元格，在单元格里拖动选中您想要删除的。要选中不连续的多个单元格，按住 Ctrl 键(Windows、 Linux、Unix)或者是 Command 键(Mac OS)，然后分别点击您想要选中的单元格。</li>
+
+  <li>打开表格菜单然后选择删除项。</li>
+
+  <li>选择您想要的删除。</li>
+</ol>
+
+<p>要向右加入(或合并)一个单元格:</p>
+
+<ul>
+  <li>点击左边的单元格，打开表格菜单，然后选择向右合并单元格。</li>
+</ul>
+
+<p>加入(或合并)相邻的单元格:</p>
+
+<ul>
+  <li>通过拖动选中相邻的单元格。</li>
+
+  <li>打开表格菜单，选择合并选中的单元格。</li> 
+</ul>
+
+<p>分割合并的单元格为两个或多个单元格:</p>
+
+<ul>
+  <li>点击合并的单元格，打开表格菜单，然后选分割单元格命令， KompoZer 把合并的单元格的内容放到拆分后的第一个单元格内。</li>
+</ul>
+
+<p>访问 <a href="#selecting_table_elements">选择表格元素</a> 以获得更多如何选中多个不相邻的单元格、行或列。</p>
+
+<h3 id="changing_the_default_table_table_editing_behavior">更改默认的表格编辑行为</h3>
+
+<p>默认地，当你删除一个或多个单元格后，KompoZer
+通过添加尾行来维持表格结构，无论是否需要。这就允许您删除一个或多个单元格后，
+表格仍然保持原来的矩形样式或结构。否则，删除单元格后，会导致表格空白，
+或者表格线出现不规则，单元格数目出错。</p>
+
+<p>要更改默认的表格编辑行为，在 KompoZer 窗口中操作如下:</p>
+
+<ol>
+  <li>打开工具/编辑菜单(Mac OS X 是 Mozilla 菜单)，选择首选项，然后选择 KompoZer 常规。</li>
+
+  <li>在表格编辑中，设置下面的的选项:
+
+  <ul>
+    <li>确保“插入和删除单元格时，保持表格布局”是选中的，以便您不用担心表格形状出错。</li>
+  </ul>
+  </li>
+
+  <li>点确定。</li> 
+</ol>
+
+<p>请参阅: <a
+href="preferences.html#preferences_general_settings">设置
+KompoZer 常规首选项</a>.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">返回到开头</a> ]</p>
+
+<h3 id="selecting_table_elements">选择表格元素</h3>
+
+<p>您可以用下面的一种或两种方法，快速选中表格、单元格和一组单元格:</p>
+
+<ul>
+  <li>在表格里点击，打开表格菜单，点“单元格－选择”，然后选择里面的一项。
+例如，要选中表格，在表格的任一地方点击，打开表格菜单，点选择，选择表格。</li>
+
+  <li>或者，您可以通过鼠标作为选择工具:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li>要选择一组相邻的单元格:
+      点击第一个单元格，然后拖动选择您想选中的单元格，左右拖动选择一行，上下拖动选择一列。</li>
+
+      <li>要选择不相邻的单元格: 按住 Ctrl 键(Windows、Linux、Unix)或者
+      Command 键(Mac OS)，然后点击单元格，按住 Ctrl 键不松开(Windows、Linux、Unix) 或者 Command 键(Mac OS)，继续点击选中其它的单元格。</li>
+
+      <li>要扩展选择连续的单元格: 在一个单元格里点击，然后拖动选择扩展选区。</li>
+
+      <li>选择一个和多个相邻的列或行: 向上或向下拖动一列或一行，然后向左右拖动，
+      选中相邻的列或行，按住 Shift 键向右拖动增加一行，按住 Shift 键向上拖动选择一列。</li>
+      </ul>
+  </li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">返回到开头</a> ]</p>
+
+<h3 id="moving_copying_and_deleting_tables">移动、复制和删除表格</h3>
+
+<p>移动表格:</p>
+
+<ol>
+  <li>在表格内点击一下。</li>
+
+  <li>打开表格菜单，继续点选择，然后选表格。</li>
+</ol>
+
+<ul> 
+  <li>复制或移动表格: 使用编辑菜单里的剪切、复制和粘贴选项。</li>
+
+  <li>删除表格: 打开表格菜单，继续点删除，然后选表格。</li>
+</ul>
+
+<h3 id="converting_text_into_a_table">转换文本到一个表格</h3>
+
+<p>把文本转换成表格:</p>
+
+<ol>
+  <li>选中您想转换的文本，注意 KompoZer 把每一段转换成一行</li>
+
+  <li>打开表格菜单，然后选择从选中文本创建表格，出来一个转换到表格对话框。</li>
+
+  <li>选择一个 KompoZer 用来分隔列的字符，或者自己指定一个字符。如果您选择空格作为列分隔字符，还可以继续选择，是否忽略多个空格字符，把它们看作是一个空格。</li>
+
+  <li>如果选中了“删除分隔字符”复选框，转换完成后，KompoZer 将删除分隔字符，
+  如果您不想让 KompoZer 删除分隔字符，则不选中此项。</li>
+
+  <li>点确定完成。</li>
+</ol>
+
+<p><strong>注意</strong>: 转换成表格后，文本的格式会被删除。</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">返回到开头</a> ]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="css.html">上一页</a>] [<a href="images.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月23日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

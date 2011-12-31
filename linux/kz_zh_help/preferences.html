@@ -1,0 +1,390 @@
+<!--
+Contributor(s):
+"KDS Sahambi" <kds.sahambi AT gmail DOT com>
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|KompoZer 首选项</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+  <div id="contentsBox">
+
+    <a href="#preferences_general_settings">常规设置</a>
+
+    <a href="#preferences_fonts">字体</a>
+
+    <a href="#preferences_new_page_settings">新页设置</a>
+
+    <a href="#preferences_advanced_settings">高级设置</a>
+
+  </div>
+
+  <h1 id="preferences">KompoZer 首选项</h1>
+
+  <p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+  <p>KompoZer 的首选项面板中有几个重要的设置项，用户可以根据需要设置，
+KompoZer 每次启动时会检查并使用这些设置。</p>
+
+  <p>这一章讲述了 KompoZer 的设置面板，如果您当前还没看到它，请按如下操作:</p>
+
+  <ol>
+
+    <li>点菜单 <span class="menuPath">工具 > 首选项</span>(Mac OS X 是 Mozilla 菜单)，打开首选项(选项)面板。</li>
+
+    <li>点击各个 KompoZer 类别项，显示对应的设置项目。</li>
+  </ol>
+
+  <p>更多 KompoZer 的发布设置，请参阅: <a
+  href="publishing_help.html#publishing_settings">发布设置</a> 一章。</p>
+
+  <h2 id="preferences_general_settings">常规设置</h2>
+
+  <p>在常规设置里，您可以指定文件保存和表格编辑选项，这些设置将应用到您创建的所有文档。</p>
+
+  <p>如果您还没有看到 KompoZer 常规首选项，请按如下步骤操作:</p>
+
+  <ol>
+    <li>打开工具菜单(Mac OS X 是 Mozilla 菜单) ，然后选择 首选项。</li>
+
+    <li>在侧栏中点击常规项。</li>
+  </ol>
+
+  <h3 id="preferences_general_settings_recent">最近打开页面</h3>
+
+  <p><strong>列表显示页面的最大数:</strong> 指定文件菜单中最近访问页面的显示数量。</p>
+
+  <h3 id="preferences_general_settings_saving_publishing">保存或发布页面时</h3>
+
+  <ul>
+
+    <li><strong>保留原来的代码格式</strong>: 这个选项保留 HTML 源代码里换行和页面原始的格式，
+选中此项保留空格(额外的行、Tab 等等)，使 HTML 源代码更具有可读性。这个选项不影响页面在浏览器中的显示效果。</li>
+
+    <li><strong>重排 HTML 代码格式</strong>: 这个选项将重排 HTML 源代码格式，通过插入空行和
+缩进，使代码更具有可读性。这个选项不影响页面在浏览器中的显示效果。</li>
+
+    <li><strong>当保存页面时也保存图片和其他相关的文件</strong>: 选中此项，所有图片、 JavaScript (JS)、 
+层叠样式表(CSS)，以及其他相关的文件都随同页面一起保存到相同的位置，如果不选此项，只是保存 HTML 文件。</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p>例如，当编辑一个远程页面，这项设置确保您保存远程页面到本地时，
+所有相关联的文件也一同保存下来。</p> </li>
+
+    <li><strong>发布时，总是显示发布对话框</strong>: 选中此项，当您点击发布按钮或者从文件菜单选择发布命令时，KompoZer 总是显示发布页面对话框。如果没有选中，KompoZer 只是在需要更多发布信息时，才显示此对话框。</li>
+
+  </ul>
+
+  [<a href="#preferences_general_settings">返回到开头</a>]
+
+  <h3 id="preferences_general_settings_table_editing">表格编辑</h3>
+
+  <p><strong>插入或删除单元格时，保持表格布局</strong>: 选中此项，KompoZer 总是根据需要添加单元格，以便保持表格布局(也就是保持表格的矩形)。如果未选中此项，当您删除单元格时，
+KompoZer 也删除边框，这将导致表格出现空白，或者边框线出现错误，产生突出的单元格。</p>
+
+  [<a href="#preferences_general_settings">返回到开头</a>]
+
+  <h3
+  id="preferences_general_settings_cascading_style_sheets_editing">层叠样式表(CSS)编辑</h3>
+
+  <p><strong>使用 CSS 样式替代 HTML 元素和属性</strong>: 在 KompoZer  文档中，使用层叠样式表 (CSS)格式。启用此项，KompoZer 用 CSS 内联样式生成 HTML 4.01 格式元素。</p>
+
+  <p>如果不选中此项，KompoZer 生成不带有 CSS 的 HTML 4.01 格式元素。</p>
+
+  <p>相比单纯 HTML 格式、CSS HTML 格式更加简洁、更便于维护、具有更好的浏览器兼容性。
+如果您启用此项，在编辑一个没有使用 CSS 的文档时，KompoZer 会用 CSS 替代那些 HTML 元素。</p>
+
+  <p>如果您启用 CSS 样式，您可以使用工具栏上的文本高亮按钮突出显示选中的文本。
+您也可以为页面的各个元素选择不同的背景色(这些特性只有启用此选项才能使用)。</p>
+
+  [<a href="#preferences_general_settings">返回到开头</a>]
+
+  <h3 id="preferences_general_settings_site_manager">站点管理器</h3>
+
+
+  <p><strong>总是在新标签打开文档</strong>: 选中此项，在站点管理器中打开一个文档时，会在一个新标签中打开这个文档。如果未选中，将会在新窗口打开这个文档。</p>
+
+  <p class="returnToSection">[ <a href="#preferences">返回到开头</a> ]</p>
+
+  <h2 id="preferences_fonts">字体</h2>
+
+  <!-- The documentation for the Fonts section has been blatantly
+       copied from Firefox Help and then an attempt was made to
+       conform it to Nvu realm. -->
+
+  <p>KompoZer  中的字体显示，既可以由程序默认，也可以由用户自定义。</p>
+
+  <h3 id="preferences_fonts_fonts_for">字体用于</h3>
+
+  <p>字体可以在 <em>字体用于:</em> 里定义。要更改默认的字体显示:</p>
+
+  <ol>
+
+    <li>点击 <em>字体用于</em> 下拉列表，选择一个字符设置，例如，要设置默认的西方 (罗马)字符，
+选择 <em>西方</em>。</li>
+
+    <li>选择比例文本为衬线字体(serif，类似“Times New Roman”)或无衬线字体(sans-serif 类似“Arial”)，然后指定您需要的比例文本的字体大小。</li>
+
+    <li>指定衬线字体(Serif)、无衬线字体(Sans-serif)、梦幻字体(Cursive Fantasy)和等宽字体(Monospace)使用的字体。同时您可以更改等宽字体的字体大小。您还可以更改 <tt>等宽字体(Monospace)</tt> 字体的大小。</li>
+
+  </ol>
+
+  <p>您还可以设置字体显示的 <em>最小字体e</em>，设置最小值，可以帮助查看编辑页面是非常小的字体，阅读比较困难的时候。</p>
+
+  <p>您还可以指定显示分辨率，通常是 96dpi，您可以选择一个预设值，例如  72dpi，或者 96dpi，或者您也可以选择 <em>系统设置</em>，或者是点 <em>其他...</em> 手动设置。</p>
+
+  <p class="returnToSection">[ <a href="#preferences">返回到开头</a> ]</p>
+
+  <h2 id="preferences_new_page_settings">新页面设置</h2>
+
+  <p>新页面设置允许您指定新建页面的背景色、背景图。</p>
+
+  <p>如果您还没有看到新页面设置，请按如下步骤操作:</p>
+
+  <ol> <li>点工具菜单(Mac OS X 是 Mozilla 菜单)，然后选择首选项。</li>
+
+  <li>点击侧栏的新页面选项图标</li>
+  </ol>
+
+  <h3 id="preferences_new_page_settings_author">作者</h3>
+
+  <p>输入您的姓名，这将添加您的姓名到每个新建页面的 HTML 源代码中，姓名会添加到
+ &lt;head&gt;  区域中，在页面中是不可见的。</p>
+
+  [<a href="#preferences_new_page_settings">返回到开头</a>]
+
+  <h3 id="preferences_new_page_settings_markup">标记</h3>
+
+  <ul>
+
+    <li><strong>语言</strong>: 选择创建新页时，哪一种语言作为默认语言，可以选择
+    <acronym title="Hyper Text Document Language">HTML</acronym>4.0 或
+    <acronym title="Xtensible Hyper Text
+    Language">XHTML</acronym>1.0.</li>
+
+    <li><strong>DTD</strong>: 选择用于新建页面的 <acronym title="Document Type
+    Definition">DTD</acronym>，定义页面是 <em>Transitional</em> 或者 <em>Strict</em>。</li>
+
+  </ul>
+
+  [<a href="#preferences_new_page_settings">返回到开头</a>]
+
+  <h3
+  id="preferences_new_page_settings_default_page_appearance">默认页面外观</h3>
+
+  <ul>
+
+    <li><strong>访问者默认颜色</strong>: 选中此项，总是使用访问者的浏览器设置。</li>
+
+    <li><strong>使用自定义颜色</strong>: 选中此项，您可以指定应用于文本和链接元素的颜色。
+对于每一个元素，可以通过点击旁边的颜色按钮进行设置。</li>
+
+    <li><strong>背景图片</strong>: 输入图片的位置和文件名，也可以点击浏览选择本地或网络上的图片。
+
+    <p><strong>注意</strong>: 背景图片会平铺并覆盖背景色设置。</p> </li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+	       list-style-image: none;">
+
+      <p>要更改某一页的作者: 打开格式菜单，选择页面标题和属性。</p>
+
+      <p>要更改某一页的背景色和背景图片: 打开格式菜单，然后选择背景和颜色。</p></li>
+
+  </ul>
+
+  [<a href="#preferences_new_page_settings">返回到开头</a>]
+
+  <h3
+  id="preferences_new_page_settings_internationalization">本地化</h3>
+
+  <ul>
+
+    <li><strong>语言</strong>: 选择您的 html 文档编写的语言。</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p>例如，如果文档是用加拿大法语书写，选择“French/Canada[fr-ca]”将指示浏览器，这个文档是用加拿大法语书写的，在 html 源代码中将包含 <tt>&lt;html
+    lang="fr-ca"&gt;</tt> 作为文档语言标记。</p></li>
+
+    <li><strong>书写方向</strong>: 根据您使用的语言，选择书写方向。这可以解决使用从右往左书写的语言创建的页面显示问题。例如，阿拉伯语，乌尔都语等。</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+	       list-style-image: none;">
+
+      <p>要更改某一页的语言:打开格式菜单，选择页面标题和属性，然后在本地化中更改语言选项。</p>
+
+      <p>要更改某一页的书写方向: 打开格式菜单，选择页面标题和属性，然后在本地化中更改书写方向。</p></li>
+
+    <li><strong>字符编码</strong>: 字符编码设置，决定了您的 <acronym title="Hyper
+    Text Markup Language">HTML</acronym> 文档的内容是如何存储和重现的，通过这个选项，您可以设置使用哪一种字符编码，默认是 <em>ISO-8859-1</em> 字符编码，您也可以使用 <em>UTF-8</em>、<em>ISO-8859-15</em> 等，或者用户自定义一个字符编码。</li>
+
+  </ul>
+
+  <p class="returnToSection">[ <a href="#preferences_settings">返回到开头</a> ]</p>
+
+  <h2 id="preferences_advanced_settings">高级设置</h2>
+
+  <h3
+      id="preferences_advanced_settings_connection">连接</h3>
+
+  <p>这一段讲述如何使用代理选项，如果您还没有看到它，请按如下操作:</p>
+
+  <ol>
+    <li>>点工具菜单(Mac OS X 是 Mozilla 菜单)，然后选择首选项。</li>
+
+    <li>在高级面板项，点连接设置。</li>
+  </ol>
+
+  <p>代理选项面板允许您设置 KompoZer 使用代理:</p>
+
+  <p><strong>在操作前:</strong> 询问您的网络管理员，是否有一个代理配置文件或代理服务器的名称和端口号。</p>
+
+  <ul>
+
+    <li><strong>直接连接到互联网</strong>: 选择此项，表示不使用代理。</li>
+
+    <li><strong>手动配置代理</strong>: 选择此项，表示没有自动代理地址(URL)。
+    <ul>
+
+      <li><strong>HTTP 代理</strong>、<strong>SSL 代理</strong>、<strong>FTP 代理、Gopher 代理</strong>: 输入代理服务器的名称或 IP 地址，在端口中输入端口号。</li>
+
+      <li><strong>SOCKS 主机</strong>: 输入代理服务器的名称或 IP 地址，在端口中输入端口号。</li>
+      <ul>
+
+	<li><strong>SOCKS4, SOCKS5</strong>: 输入 SOCK 主机后，选择 &quot;SOCKS v4&quot; 或 &quot;SOCKS v5,&quot;，这取决于代理服务器使用的 SOCKS 版本。</li>
+      </ul>
+
+      <li><strong>不代理</strong>: 输入您不想使用代理的域名和/IP 地址，用英文逗号分割(例如: .yourcompany.com,
+      .yourcompany.co.nz, 192.168.1.0/24)</li>
+    </ul>
+    </li>
+
+    <li><strong>自动代理配置地址(URL)</strong>: 如果您有一个代理配置文件或 URL，那么在此输入配置文件地址(URL)。</li>
+
+  </ul>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">返回到开头</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_return_key_behaviour">回车键的行为</h3>
+
+  <p>“在段落中按回车键，总是创建一个新段落”选项，
+定义了回车键的行为。选中此项，如果您在一个段落中按回车键，会创建一个新段落。
+不选中此项，按回车键产生一个 &lt;br&gt; 标记。</p>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">返回到开头</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_spellcheck">实时拼写检查</h3>
+
+  <p>勾选“用下划线标记拼写错误的词”选项，启用
+  <strong>实时</strong> 拼写检查，KompoZer 用下划线标记拼写错误的词。
+  这会给用户一个视觉提示，重现检查拼写。</p>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">返回到开头</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_special_characters">特殊字符</h3>
+
+  <p>这个选项允许用户选中哪些特殊字符是作为代码项，选择一个选项:</p>
+
+  <ul><li>只有 &amp; &lt; &gt; &apos; 和不断行的空格</li>
+
+  <li>上面的和 Latin-1 字符</li>
+
+  <li>HTML 4.0 规范的所有特殊字符</li>
+
+  <li>使用 &amp;#..; 标记的所有非 ASCII 字符</li>
+  </ul>
+
+  <p class="returnToSection">[ <a href="#preferences">返回到开头</a> ]</p>
+
+  <p>[<a href="index.html">返回目录</a>] [<a href="publishing_help.html">上一页</a>] [<a href="customize.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月29日</em></div>
+
+  <p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

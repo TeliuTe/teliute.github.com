@@ -1,0 +1,170 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表为网页增加样式</a>
+
+  <a href="tables.html">为网页添加表格</a>
+
+  <a href="images.html">为网页添加图片</a>
+
+  <a href="toc.html">用目录表格设计您的网页</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 里创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h2 id="working_with_templates">使用模板</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<p>HTML 模板在设计外观相同，只是内容不同的多个页面时，非常有用。
+在 KompoZer 中，您可以设计自己的模板，使用它们作为一个页面的基础。</p>
+
+<h3 id="creating_a_template">创建模板</h3>
+
+<ol>
+  <li>要创建模板:
+  <ul>
+    <li>点菜单 <span class="menPath">文件 > 新建</span>，或者点工具栏新建按钮旁边的箭头，选“更多选项”</li>
+    <li>选择 <strong>空模板</strong> 然后点 "创建”按钮</li>
+  </ul></li>
+  <li>就像普通页面一样，添加所有页面相同的内容并设置好格式。</li>
+  <li>对于各个页面不同的内容部分，可以通过点菜单 插入 > 模板 > 可编辑区域，
+创建可编辑区域。可可编辑区域的选项有:
+  <ul>
+    <li>普通区域</li>
+    <li>可重复区域</li>
+    <li>可移动区域</li>
+  </ul></li>
+  <li>保存文件为 .mzt 模板文件。</li>
+</ol>
+
+<p><strong>小提示</strong>: 你可以使用状态栏删除或更改可编辑区域。更多细节请参阅: <a
+href="#using_status_bar_for_formatting_your_web_page">使用状态栏格式化您的网页</a>。</p>
+
+<p class="returnToSection">[ <a href="#working_with_templates">返回到开头</a> ]</p>
+
+<h3 id="using_a_template">使用模板</h3>
+
+<p>用模板制作网页:</p>
+
+<ol><!--Ctrl+N似乎没用，检查快捷键-->
+  <li>点菜单 <span class="menuPath">文件 > 新建</span> 或者按快捷键“Ctrl+N”</li>
+  <li>选择“套用模板的新文档"，然后点“浏览”按钮选择一个模板</li>
+  <li>点 <span class="menuPath">创建</span></li>
+  <li>在可编辑区域内输入内容。</li>
+  <li>保存文件为一个 <i>html</i> 文档。</li>
+</ol>
+
+<p><strong>小提示</strong>: 点击 <span class="menuPath">编辑 > 从模板中分离</span> 使文档从它套用的模板中分离出来。</p>
+
+<p><strong>小提示</strong>: 转换一个现有的文档为模板页，可以点菜单 格式 > 页面标题和属性，选中“模板页”选项，反之亦然。</p>
+
+<p class="returnToSection">[ <a href="#working_with_templates">返回到开头</a> ]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="toc.html">上一页</a>] [<a href="page_properties.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月25日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

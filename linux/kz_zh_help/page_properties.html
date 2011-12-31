@@ -1,0 +1,197 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表为网页增加样式</a>
+
+  <a href="tables.html">为网页添加表格</a>
+
+  <a href="images.html">为网页添加图片</a>
+
+  <a href="toc.html">用目录表格设计您的网页</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 里创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h2 id="setting_page_properties">设置页面属性</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<h3 id="setting_page_properties_and_meta_tags">设置页面属性和 Meta 元标记</h3>
+
+<p>在页面属性对话框里，您可以设置网页的各个属性，例如标题、作者、文档描述等，如果您计划
+将页面发布到网络上，那么会很有用处，因为搜索引擎会使用这些信息来索引您的网页，您可以在浏
+览器查看打开查看菜单，然后选页面信息来查看它们。</p>
+
+<ol> 
+  <li>打开格式菜单，然后选页面标题和属性命令。</li>
+
+  <li>编辑下面的这些项目:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>标题</strong>: 这个内容会出现在
+浏览器的窗口标题栏上，许多搜索工具也用它来定位网页，因此设置一个跟页面内容相关的标题。</li>
+
+      <li><strong>作者</strong>: 输入创建该文档的作者姓名，这个信息对用姓名搜索
+网页的访问者非常有用。
+
+      <blockquote> <p><strong>小提示</strong>: 如果您在 KompoZer 的 <a
+      href="preferences.html#preferences_new_page_settings">首选项</a> 里输入了作者姓名，
+那么您每次创建新页时不必在输入它。</p> </blockquote> </li>
+
+      <li><strong>描述</strong>: 输入网页内容的简要描述。</li>
+      </ul>
+  </li>
+</ol>
+
+<p class="returnToSection">[ <a href="#setting_page_properties">返回到开头</a> ]</p>
+
+<h3 id="setting_page_colors_and_backgrounds">设置页面颜色和背景</h3>
+
+<p>您可以更改网页的背景色和指定一幅背景图，这些更改会影响到页面浏览时的文本和链接。</p>
+
+<p>要设置页面的背景色，在 KompoZer 窗口中，按下列操作：</p>
+
+<ol>
+  <li>打开格式菜单，然后选择背景和颜色。</li>
+
+  <li>编辑下面的属性:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>浏览器使用的默认颜色</strong>: 使用此项，将使用访问者的浏览器中对文本和颜色的设置。</li>
+
+      <li><strong>使用自定义颜色</strong>: 选择此项，将使用您指定的文本和链接颜色。
+对每一个元素，从下拉列表中选择一个颜色，右边的面板里显示了颜色样例。</li>
+
+      <li><strong>背景图片</strong>: 选择此项，您可以选择一幅图片作为页面背景，
+输入图片文件的名称，或者点浏览按钮选择一个本地文件或网络文件。
+
+      <p><strong>注意</strong>: 背景图会平铺并覆盖背景色设置。</p> </li>
+
+      <li><strong>上面的 URL 是相对地址</strong>: 选中此项，KompoZer 转换网址为一个相对地址，
+这在您计划发布页面到网络上，让其他人访问时非常有用。
+
+      <p>使用相对地址您可以把所有的文件归在一起，保持相对路径，不用考虑它们在本机和网络上的位置差异。</p>
+
+      <p>不选中此复选框，KompoZer 会转换所有地址为全称(绝对)地址。
+    一般在引用网络上的图片时，使用绝对地址(不存储在您的本机中)。</p>
+
+      <p>如果您还没有保存或发布页面，您必须先保存一下，以便激活此复选框。</p>
+      </li>
+      </ul>
+  </li>
+</ol>
+
+<p><strong>注意</strong>: 要应用额外的属性或 JavaScript 事件，点击高级编辑按钮，显示 <a href="#using_the_advanced_property_editor">高级属性编辑器</a>。</p>
+
+<p>您也可以为每个新建页面设置 <a
+href="preferences.html#preferences_new_page_settings">默认页面背景和颜色</a>。</p>
+
+<p class="returnToSection">[ <a href="#setting_page_properties">返回到开头</a> ]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="templates.html">上一页</a>] [<a href="links.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月26日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

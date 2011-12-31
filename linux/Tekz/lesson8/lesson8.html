@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+  <meta name="description" content="TeliuTe系列教程之KompoZer基础教程" />
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="一步一步教你学会使用KompoZer制作网页" />
+  <meta name="keywords" content="电脑,KompoZer,TeliuTe,86团学校,教程,基础,入门" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" />
+  
+<title>KompoZer 教程|插入Flash</title>
+</head>
+<body style="direction: ltr;"><p class="title">KompoZer操作基础教程</p>
+<p class="green">作者：Teliute　来源：基础教程网</p>
+<span class="tblue">八、插入Flash</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<p>　这一节我们来学习如何在页面插入Flash动画，Flash动画格式有swf和Flv，下面我们来看一个练习；</p>
+<p class="tblue">　1、启动KompoZer</p>
+<p>　1）点左上角<span class="brown">菜单</span>&ldquo;应用程序－编程－KompoZer&rdquo;，就可以启动KompoZer程序；</p>
+<p>　2）点菜单&ldquo;<span class="brown">格式</span>－页面标题&rdquo;，修改标题为&ldquo;插入Flash&rdquo;，然后点菜单&ldquo;文件－<span class="brown">保存</span>&rdquo;命令，以&ldquo;flash.html&rdquo;保存到<span class="brown">qqc</span>文件夹中；</p>
+<p class="tblue">　2、插入动画</p>
+<p>　1）在站点侧栏中，点<span class="brown">新建文件夹</span>按钮，在出来的对话框中输入 <span class="brown">swf</span>，这个文件夹也在 qqc 里，用来存放动画；</p>
+<p>　<img src="images/b1xj.gif" alt="b1xj.gif"></p>
+<p>　</p>
+<p>　2）找一个flash动画复制到swf文件夹里，中文文件名要<span class="brown">改成</span>英文，</p>
+<p>　本课images文件夹里有一个 <a href=images/xin.swf>xin.swf</a> ；</p>
+<p>　3）<span class="brown">回到</span>KompoZer里，在左边刷新一下站点<img src="images/b3ann.gif" alt="b3ann.gif">(点两下加号也行)，看看新建的<span class="brown">swf</span>文件夹；</p>
+<p>　<img src="images/b3wjj.gif" alt="b3wjj.gif"></p>
+<p>　</p>
+<p>　4）<span class="brown">保存</span>一下文件，点下边的标签&ldquo;<span class="brown">源代码</span>&rdquo;，进入到代码窗口里面(下面的例子是进入“<span class="brown">拆分</span>”)；</p>
+<p>　<img src="images/b4ydm.gif" alt="b4ydm.gif"></p>
+<p>　</p>
+<p>　5）在上面代码的最后一行里找到&lt;/body&gt;&lt;/html&gt;，在<span class="brown">&lt;/body&gt;</span>前面点一下鼠标左键，然后按两下回车键，中间出来一行空白；</p>
+<p>　<img src="images/b5chr.gif" alt="b5chr.gif"></p>
+<p>　</p>
+<p>　6）在空行里输入下面的代码，可以<span class="brown">复制粘贴</span>进去，红色为音乐<span class="brown">地址</span>，这儿是相对地址；</p>
+<p><div style="text-align: left; background-color: rgb(255, 255, 255); width: 476px; height: 120px;">
+<span style="color:green;">&lt;object type="application/x-shockwave-flash"<br />
+&nbsp; data="</span><span style="color:red">swf/xin.swf</span><span style="color:green;">"<br />
+&nbsp;&nbsp;width="200" height="145" id="xin"&gt;<br />
+&nbsp; &lt;param name="movie" value="</span><span style="color:red">swf/xin.swf</span><span style="color:green;">"/&gt;<br />
+&lt;/object&gt;<br /></span>
+</div></p>
+<p>　7）<span class="brown">保存</span>一下文件，点浏览按钮，看一看动画效果；</p>
+<p><object type="application/x-shockwave-flash" data="images/xin.swf" id="xin" height="145" width="200">
+<param name="movie" value="images/xin.swf"></object></p>
+<p>　8）插入<span class="brown">flv视频</span>的方法，需要一个swf播放器，这儿使用google的，也可以自己制作一个放进去，下面代码供参考；</p><p>　
+这儿使用的播放器，可以到本站<span class="brown">常用教具</span>中下载：<a href="http://teliute.org/jiaoju/index.htm">http://www.laxjyj.com/teliute/jiaoju/index.htm</a></p>
+<p><div style="text-align: left; background-color: rgb(255, 255, 255); width: 796px; height: 320px;">
+<span style="color:green;">&lt;object style="width: 320px; height: 240px;" id="hui" type="application/x-shockwave-flash"
+data="</span><span style="color:red">http://teliute.org/TeacHtm/Tekz/lesson8/ggplayer.swf?videoUrl=http://www.laxjyj.com/teliute/TeacHtm/Tekz/lesson8/hui.flv</span><span style="color:green;">&amp;playerMode=normal"
+height="14" width="14"&gt;<br />&lt;param
+name="allowScriptAccess" value="sameDomain"&gt;<br />&lt;param
+name="movie"
+value="</span><span style="color:red">http://teliute.org/TeacHtm/Tekz/lesson8/ggplayer.swf?videoUrl=http://www.laxjyj.com/teliute/TeacHtm/Tekz/lesson8/hui.flv</span>
+<span style="color:green;"><br />
+&amp;playerMode=normal"&gt;<br />
+&lt;param name="quality" value="best"&gt;<br />
+&lt;param name="bgcolor" value="#ffffff"&gt;<br />
+&lt;param name="scale" value="noScale"&gt;<br />
+ &lt;param name="wmode" value="window"&gt;<br />
+&lt;param name="salign" value="TL"&gt;<br />
+&lt;/object&gt;<br /></span>
+</div></p>
+<p>　<span class="tblue">本节</span>学习了KompoZer中插入Flash动画和flv视频的基本方法，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+</body></html>

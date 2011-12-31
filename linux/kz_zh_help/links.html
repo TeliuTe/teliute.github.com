@@ -1,0 +1,283 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="formatting_webpages.html">设置网页格式</a>
+
+  <a href="css.html">使用样式表为网页增加样式</a>
+
+  <a href="tables.html">为网页添加表格</a>
+
+  <a href="images.html">为网页添加图片</a>
+
+  <a href="toc.html">用目录表格设计您的网页</a>
+
+  <a href="templates.html">使用模板</a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 里创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h2 id="creating_links_in_composer">在 KompoZer 里创建超链接</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<h3 id="creating_links_within_the_same_page">用 KompoZer 创建页内超链接</h3>
+
+<p>要创建一个内面内部的超链接，这样读者就可以快速在不同章节之间跳转，您必须要创建 <em>锚点</em>
+(目标位置)，然后创建指向这个锚点的，锚点也叫<em>书签</em>.</p>
+
+<ol>
+  <li>点击您想要放置锚点的行开头，把光标插入点放在那儿，或者选中一些文本。</li>
+  
+  <li>点击工具栏上的锚点按钮 <img src="images/anchor.png" />，或者点插入菜单，选择锚点，出来锚点属性对话框。</li>
+  
+  <li>在名称文本框输入锚点的名称，注意不能重名(30字符以内)，如果使用了空格，会被转换为下划线(_)，如果在第一步选中了一些文字，那么这儿已经包含了一个默认的名称。</li>
+  
+  <li>点确定按钮，文档中对应位置出现一个锚点标记: <img src="images/anchor-in-doc.gif" /></li>
+</ol>
+
+<p>创建能够跳转到锚点的链接:</p>
+
+<ol>
+  <li>选中要创建链接的文本或图片，这将指向锚点。</li>
+
+  <li>点击工具栏上的链接按钮，或者点插入菜单，然后选择链接，出来一个链接属性对话框。
+  
+  <ul>
+    <li>如果您要链接到其他页面，点浏览选择这个文件。</li>
+    
+    <li>如果您要创建指向锚点的链接，点下拉按钮，列表中会显示可用的锚点。</li>
+    
+    <li>如果您要创建指向标题的链接(如标题1 - 标题6)，从下拉列表中选择当前可用的标题。</li>
+    
+  </ul>
+  </li>
+  
+  <li>点确定完成。</li> 
+</ol>
+
+<p><strong>注意</strong>: 要测试您创建的链接，点文件菜单选择浏览页面，然后点击测试链接。</p>
+
+<p><strong>小提示</strong>: 如果您不是首次创建锚点，您可以使用链接对话框创建链接到已有的标题。</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">返回到开头</a>
+]</p>
+
+<h3 id="creating_links_to_other_pages">创建指向其他页面的链接</h3>
+
+<p>您在页面内可以创建链接到本机的页面，或者是网络工作组的页面，也可以是远程的网页。</p>
+
+<p><strong>小提示</strong>: 在创建链接前，最好先保存或发布一下页面
+这样 KompoZer 可以自动创建地址为相对地址。</p>
+
+<p id="to_create_a_link_to_another_page">创建指向其他页面的链接:</p>
+
+<ol>
+  <li>点击您想要创建链接的位置，把光标插入点放在那儿，或者选中一些文本或图片。</li>
+  
+  <li>点击工具栏上的链接按钮，出来一个链接属性对话框。</li>
+  
+  <li>设置链接:
+  
+  <ul>
+    <li><strong>链接文本</strong>: 如果您选中了图片文件或者一些文本，选中的文本或文件
+选中的文本或文件会出现在这里，否则您就要在这里输入一段文本，作为链接显示的文本。</li>
+
+    <li><strong>链接位置</strong>: 输入本地文件名或远程页面的地址，如果您不太清楚文件路径，可以点浏览按钮，在本机中查找文件。对于远程页面网址，您可以采用复制粘贴的方法。另外您可以从下拉列表中选择当前页面的锚点或标题。</li>
+
+    <li><strong>URL 是相对地址</strong>: 选中此项，KompoZer 转换网址为一个相对地址，
+这在您计划发布页面到网络上，让其他人访问时非常有用。使用相对地址您可以把所有的文件归在一起，保持相对路径，不用考虑它们在本机和网络上的位置差异。
+    <p>不选中此复选框，KompoZer 会转换所有地址为全称(绝对)地址。
+    一般在引用网络上的图片时，使用绝对地址(不存储在您的本机中)。</p>
+    <p>如果您还没有保存或发布页面，您必须先保存一下，以便激活此复选框。</p></li>
+    
+  </ul>
+  </li>
+  <li>要应用额外的属性或 JavaScript 事件，点击高级编辑按钮，显示 <a href="#using_the_advanced_property_editor">高级属性编辑器</a>。</li>
+  
+  <li>点确定完成。</li>
+  
+  <li>要测试您创建的链接，点浏览按钮，然后测试链接是否正确。</li>
+</ol>
+
+<p><strong>小提示</strong>: 您可以从其他窗口拖动链接到页面，以便快速添加一个链接
+例如，您可以从网页、书签和邮件窗口中，点击并拖动链接到页面。您也可以用右键点击链接(
+在 Mac OS 中是 Control+点击)，然后在出来的菜单中选择复制链接地址，然后粘贴到链接属性
+对话框的位置文本框里。</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">返回到开头</a>
+]</p>
+
+<h3 id="adding_xfn_information_within_your_links">在链接中添加 XFN 信息</h3>
+
+<p>在创建指向其他网页的链接时，KompoZer 提供了一个特性，可以包括 <a target="_blank"
+href="http://gmpg.org/xfn/">XFN</a> (XHTML 友情链接)信息。XFN 使用超级链接来表达
+人们之间的相互关系，要添加 XFN 信息:</p>
+
+<ol>
+  <li>在您想添加 XFN 信息的链接上点右键。</li>
+  <li>选择“链接属性”。</li>
+  <li>在“链接属性”对话框里，点击“更多属性”。</li>
+  <li>在“友情链接”段，选择合适的项目，从而添加 XFN 信息。</li>
+  <li>点“确定”完成。</li>
+  <li>点“保存”按钮，保存文档的更改。</li>
+</ol>
+
+<p><strong>注意:</strong> 一些 XFN 属性是单选按钮，只能选一项，另外一些是复选框，可以选多项。</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">返回到开头</a>
+]</p>
+
+<h3 id="using_images_as_links">使用图片作链接</h3>
+
+<p>您给页面中的图片添加链接，比如 JPEG, GIF, PNG 图片文件。当点击图片时，
+浏览器窗口打开链接指向的页面。</p>
+
+<ol>
+  <li>在页面中选择一幅图片。</li>
+
+  <li>点击工具栏上的链接按钮 <img src="images/link.png" />，或者点插入
+菜单选择链接。</li>
+
+  <li>在链接属性对话框里，设置链接图片到 <a
+  href="#creating_links_within_the_same_page">页内的锚点或标题</a>，或者链接到 <a
+  href="#creating_links_to_other_pages">本地或远程页面</a>。</li>
+</ol>
+
+<p><strong>小提示</strong>: 在浏览器中拖动一幅图片到 KompoZer 窗口，将会
+复制图片地址和它指向的链接。</p>
+
+<p><strong>注意</strong>: 要删除链接图片周围的蓝色边框，打开链接属性对话框，
+点击链接标签，不选中“显示链接图片周围的边框”。</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">返回到开头</a>
+]</p>
+
+<h3 id="removing_or_discontinuing_links">删除或取消链接</h3>
+
+<p>删除链接:</p>
+
+<ol>
+  <li>选中链接文本(通常是蓝色带下划线)或图片。</li>
+
+  <li>打开格式菜单然后选择删除链接命令。</li>
+</ol>
+
+<p>要取消一个链接，使得链接文本恢复到普通文本:</p>
+
+<ol>
+  <li>在链接上点一下，把光标插入点放置其中。</li>
+
+  <li>打开格式菜单，选择取消链接命令。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">返回到开头</a>
+]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="page_properties.html">上一页</a>] [<a href="publishing_help.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月25日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

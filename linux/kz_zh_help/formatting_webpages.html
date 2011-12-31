@@ -1,0 +1,608 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|用 KompoZer 创建网页</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">在这一章里:
+  <a href="composer_help.html#starting_a_new_page">开始一个新页面</a>
+
+  <a href="#">设置网页格式</a>
+
+  <a href="css.html">使用样式表设置页面样式</a>
+
+  <a href="tables.html">给页面添加表格</a>
+
+  <a href="images.html">给页面添加图片</a>
+
+  <a href="toc.html">在页面中使用目录表</a>
+
+  <a href="templates.html">使用模板 </a>
+
+  <a href="page_properties.html">设置页面属性</a>
+
+  <a href="links.html">在 KompoZer 中创建超链接</a>
+
+  <a href="customize.html">定制 KompoZer</a>
+
+</div>
+
+<h2 id="formatting_your_web_pages">设置网页格式</h2>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<h3 id="formatting_paragraphs_heading_and_lists">设置段落、标题、列表格式</h3>
+
+<p>要在 KompoZer 中给段落、标题、列表应用格式，请按以下操作:</p>
+
+<ol>
+  <li>点击要设置格式的位置，把光标插入点放在其中，或者选中要设置格式的文本。</li>
+
+  <li>在格式工具栏中点击下拉列表，选择段落格式:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>正文</strong>: 使用默认的字体和样式显示正常的文本，在文本的前后没有空白。</li>
+
+      <li><strong>段落</strong>: 插入一个段落标记(并开始一个新的段落)，段落上下方有空白 。</li>
+
+      <li><strong>标题 1</strong> - <strong>标题 6</strong>: 把段落设置为标题，标题 1 是最高一级标题，标题 6 是最低一级标题。</li>
+
+      <li><strong>地址</strong>: 可以用来“标识”一个网页，指示页面的作者或联系人，例如: <tt>user@example.com</tt>
+
+      <p>您可能想包括日期和版权声明，这个格式通常出现在页面的底部一条水平线的下面，地址显示为斜体格式。</p>
+      </li>
+
+      <li><strong>预格式化</strong>: 这通常用于一些元素，例如，代码示例、列数据、邮件消息等您想用固定宽度字体显示的内容。对于普通文本，大多数浏览器会删除多余的空格、制表符和段落回车，但是，使用预格式化样式，则会显示原来的完整空格样式。</li>
+      </ul>
+  </li>
+</ol>
+
+<p>设置文本为一个标题:</p>
+
+<ol>
+  <li>点击要设为标题的文本，把光标插入点放在文本内。</li>
+
+  <li>点击格式工具栏上的下拉列表，选择您想设置的标题级别，从1(最大)到6(最小)。选择“标题1”用于您的主标题，“标题2”用于下一级标题，依此类推。</li>
+</ol>
+
+<p>给列表项应用格式:</p>
+
+<ol>
+  <li>点击要设为标题的行，把光标插入点放在文本内。</li>
+
+  <li>打开格式菜单，然后选择列表。</li>
+
+  <li>选择列表样式:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>符号</strong>: 每个项目前面都有一个符号(在这个列表里)。</li>
+
+      <li><strong>编号</strong>: 项目是排序的。</li>
+
+      <li><strong>组</strong> 和 <strong>自定义</strong>: 这两个样式一同工作，创建一个词汇样式。使用组标记定义词，使用自定义标记设定词的描述，组定义的词左对齐，而自定义标记缩进一些。</li>
+      </ul>
+  </li>
+</ol>
+
+<p><strong>小提示</strong>: 您可以选中一个文本块，然后点击工具栏上的编号样式按钮
+
+<img src="images/numbers.png" width="21" height="21" alt="" />
+或者符号样式按钮
+<img src="images/bullets.png" width="21" height="21" alt="" />
+快速设置样式列表。</p>
+
+<p>更改符号样式或编号样式:</p>
+
+<ol>
+  <li>点击想要更改的列表，把光标插入点放在文本内，或者选择一个或多个想要应用新样式的列表项。</li>
+
+  <li>点击格式菜单选择列表属性。</li>
+
+  <li>在下拉列表中选择符号或编号样式，对于编号列表，您可以指定一个起始值，对于符号列表，您可以改变符号样式。</li>
+</ol>
+
+<p><strong>小提示</strong>: 您也可以双击一个列表的符号或编号，在出来的属性对话框中修改。</p>
+
+<p>给页面里的一个段落或文本设置对齐方式，例如，居中、左对齐、右对齐:</p>
+
+<ol>
+  <li>点击想要设置对齐的段落或文本，把光标插入点放在段落内。</li>
+
+  <li>点击格式菜单选择对齐，然后选择一种对齐方式选项。</li>
+</ol>
+
+<p><strong>注意</strong>: 您也可以使用格式工具栏中的按钮来设置对齐方式。</p>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="working_with_lists">使用列表</h3>
+
+<p>结束列表继续输入正文:</p>
+
+<ul>
+  <li>点击列表结尾，把光标插入点放在列表最后，然后按回车键两次(Mac 系统是 Return 键)结束列表。</li>
+</ul>
+
+<p>把一个或多个列表项更改为正文:</p>
+
+<ol>
+  <li>点击列表把光标插入点放到列表里，或者选中列表项。</li>
+
+  <li>在编号样式列表里，点击格式工具栏上的编号按钮(或者符号列表里点击符号按钮)</li>
+</ol>
+
+<p>在列表项下一行，继续输入缩进文本:</p>
+
+<ol>
+  <li>点击列表把光标放入列表中或行尾。</li>
+
+  <li>按组合键 Shift + 回车键 创建一个悬挂缩进。</li>
+
+  <li>继续输入文本内容。</li>
+
+  <li>继续按 Shift + 回车键 创建另一个缩进段落，或者按回车键创建下一列表项。</li>
+</ol>
+
+<p id="increase_or_decrease_the_indentation_of_list_items"><strong>小提示</strong>:
+ 您可以点击工具栏上的相应按钮，来增加或减少缩进，先要把光标定位到列表项中，另外，按 Tab 键也可以增加一个缩进级别，按 Shift+Tab 减小一个缩进级别。</p>
+
+<p>合并两个相邻的列表:</p>
+
+<ol>
+  <li>选中两个列表，确保选中了所有列表项，注意在这两个列表之间的文本也会被合并进来。</li>
+
+  <li>点击工具栏上的符号列表或编号列表按钮，从而合并两个列表。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="changing_text_color_style_and_font">更改文本颜色、样式、字体。</h3>
+
+<p>改变选中文本的样式、颜色、字体:</p>
+
+<ol>
+  <li>选中要更改的文本。</li>
+
+  <li>点格式菜单，选择下面的一项菜单:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;">
+    <ul>
+      <li><strong>字体</strong>:这个菜单选择字体，如果您想让访问者的浏览器指定，请选择可变宽度或固定宽度。
+
+      <p><strong>注意</strong>: 不是所有您计算机上的字体都能显示，相反有些特殊的字体，不能在所有访问者的网页中显示，最好的方法就是在菜单里选择一种，可以在各种系统上都能显示的字体。例如， Helvetica, Arial, Times, Courier 字体，在各种计算机上看着基本相同，如果您选择其他字体，浏览者在不同的计算机上，有可能页面看着就不相同。</p> </li>
+
+      <li><strong>大小</strong>: 这个菜单设定 <em>相对</em> 字体大小，选择增大或减小文本大小(相对于周围的文本)。</li>
+
+      <li><strong>文本样式</strong>: 这个菜单选择文本的样式，比如斜体、粗体、下划线，或是应用一个结构样式，像代码等。</li>
+
+      <li><strong>文本颜色</strong>: 这个菜单将从拾色器里选择一个颜色。如果您知道 HTML 十六进制颜色代码，也可以直接输入，或者输入颜色的名称(例如蓝色是"blue")。您可以在这里找到  <a href="http://builder.com.com/1200-31-5087779.html"
+      target="_blank">颜色代码转换</a>。</li>
+    </ul>
+  </li>
+</ol>
+
+<p>改变页面背景色:</p>
+
+<ol>
+  <li>在页面里点一下鼠标。</li>
+
+  <li>点击工具栏上的背景颜色块。</li>
+
+  <li>在出来的背景颜色对话框里选择一种颜色。</li>
+
+  <li>点确定。</li>
+</ol>
+
+<p><strong>小提示</strong>: 要快速更改文本颜色为上次使用的颜色，按住 Shift 键点工具栏上的文本颜色按钮。这在您想对两个不同行的文本，使用同一种颜色时很方便。</p>
+
+<p>您也可以使用一幅图片作为背景，请参阅: <a
+href="#setting_page_colors_and_backgrounds">设置页面颜色和背景</a>。</p>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="removing_or_discontinuing_text_styles">删除或取消文本样式</h3>
+
+<p>要删除选中文本的所有样式(粗体、斜体等等):</p>
+
+<ol>
+  <li>选中此文本。</li>
+
+  <li>点格式菜单，然后选删除所有文本样式。</li>
+
+  <li>继续输入。</li>
+</ol>
+
+<p>接着输入没有样式的文本:</p>
+
+<ol>
+  <li>把光标定位到要输入没有样式文本的地方。</li>
+
+  <li>点格式菜单，然后选取消文本样式。</li>
+
+  <li>继续输入的就是无格式文本了。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="finding_and_replacing_text">查找和替换文本</h3>
+
+<p>在当前页查找文本:</p>
+
+<ol>
+  <li>把光标定位到您想开始搜索的地方。</li>
+
+  <li>点编辑菜单，然后选查找和替换，出来一个查找替换对话框。</li>
+
+  <li>在“查找”框里输入您想查找的文本，要缩小搜索范围，打勾选中下面的选项:
+
+  <ul>
+    <li><strong>匹配大小写</strong>: 指定搜索内容是区分大小写的。</li>
+
+    <li><strong>循环</strong>: 指定搜索到页尾后，返回到开头继续搜索。</li>
+
+    <li><strong>反向搜索</strong>: 指定搜索方向是从光标位置向前搜索。</li>
+
+  </ul>
+  </li>
+  <li>点击查找下一个开始搜索，当 KompoZer
+  定位到第一个匹配项时，点查找下一个定位到第二个匹配项。</li>
+  <li>完成后点关闭结束查找。</li>
+</ol>
+
+<p>查找并替换当前页的文本:</p>
+
+<ol>
+  <li>把光标定位到您想开始搜索的地方。</li>
+
+  <li>点击编辑菜单，然后选择查找和替换，出来一个查找替换对话框。</li>
+
+  <li>分别输入您想查找以及要替换的文本。</li>
+
+  <li>要缩小搜索范围，打勾选中下面的一个或几个选项:
+
+  <ul>
+    <li><strong>匹配大小写</strong>: 指定搜索内容是区分大小写的。如果您不选中此项，搜索出来的文本包括大写和小写字母。</li>
+
+    <li><strong>循环</strong>:指定搜索到页尾后，返回到开头继续搜索。 </li>
+
+    <li><strong>反向搜索</strong>:指定搜索方向是从光标位置向前搜索。</li>
+
+  </ul>
+  </li>
+
+  <li>点击查找下一个搜索下一个匹配项， KompoZer 选中下一个匹配项文本。</li>
+
+  <li>点击替换按钮，替换选中的匹配项。点替换并继续查找，替换选中的文本然后查找下一个匹配项，点全部替换将会替换所有的匹配项文本。</li>
+
+  <li>点关闭完成查找替换。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="inserting_horizontal_lines">插入水平线</h3>
+
+<p>水平线是文档中典型的一种分割章节的元素。要在文档中插入一条水平线(也称为<em>标尺</em>)，在 KompoZer 窗口中如下操作:</p>
+
+<ol>
+  <li>把光标定位到您想插入水平线的位置。</li>
+
+  <li>点击插入菜单，然后选择水平线。</li>
+</ol>
+
+<h3 id="setting_horizontal_line_properties">设置水平线属性。</h3>
+
+<p>您可以自定义水平线的高度、长度、宽度、对齐和阴影。</p>
+
+<ol>
+  <li>瞄准水平线双击，就会出来属性对话框。</li>
+
+  <li>编辑下面的这些属性:
+
+  <ul>
+    <li><strong>宽度</strong>: 输入宽度并选择 "% 的窗口" 或 "像素"，如果您指定的是百分比，当 KompoZer 窗口或者浏览器窗口大小改变时，水平线的宽度也会改变。</li>
+
+    <li><strong>高度</strong>: 输入一个数指定水平线的高度 (像素)。</li>
+
+    <li><strong>3-D 阴影</strong>: 选择此项为水平线添加一个立体阴影效果。</li>
+
+    <li><strong>对齐</strong>: 指定水平线的对齐方式(左、居中、右对齐)。</li>
+  </ul>
+  </li>
+
+  <li>点击设为默认值，下次添加水平线自动使用这些设置。</li>
+
+  <li>要手动编辑水平线的属性，点高级编辑，更多信息请参阅: <a
+  href="#using_the_advanced_property_editor">高级属性编辑器</a>。</li>
+</ol>
+
+<p><strong>小提示:</strong> 您可以在查看菜单中选择“HTML 标记”，所有的 HTML 元素显示为黄色小盒子，点击黄色标记，就会选中这个标签里的所有内容，双击标记就会显示 <a
+href="#using_the_advanced_property_editor">高级属性编辑器</a> 对话框。</p>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="inserting_special_characters">插入特殊字符</h3>
+
+<p>要插入特殊字符比如重音符号，版权符号或者货币符号:</p>
+
+<ol>
+  <li>把光标定位到您想插入特殊字符的位置。</li>
+
+  <li>点击插入菜单，然后选特殊字符和符号，出来一个插入字符对话框。</li>
+
+  <li>选择一个字符分类。
+
+  <ul> <li>如果您选择了大写重音或者小写重音，在字符下拉列表中也会是相应的字符。 (注意: 不是所有的字符具有重音格式。) 选择通用符号插入特殊字符，例如版权符号或分数等。</li>
+  </ul>
+  </li>
+
+  <li>在字符下拉列表中，选择您想要插入的字符。</li>
+
+  <li>点击插入按钮。
+
+  <p>您可以继续您的文档(或者在一个邮件编写窗口)，而保持这个对话框开着，以方便您下一次插入字符。</p> </li>
+
+  <li>点击关闭按钮完成字符插入。</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="inserting_html_elements_and_attributes">插入 HTML
+元素和属性</h3>
+
+<p>如果您不太明白如何在  HTML 源代码方式下操作，您可以在页面插入额外的标记、样式属性和 JavaScript。如果您不确定如何使用 HTML 源代码，最好是别动它，要使用 HTML 源代码，可以使用下面的一种方法:</p>
+
+<ul>
+  <li>把光标定位到您想插入 HTML 代码的位置，或者选中您想编辑的文本，然后点插入菜单，选择 HTML，在插入 HTML 对话框中，输入 HTML 标记和文本，然后点插入按钮。</li>
+
+  <li>选择一个元素，比如一个表格、锚点、图片、链接或者水平线，双击这个元素，打开关联的属性对话框，点高级编辑按钮打开高级属性编辑器，您可以使用高级属性编辑器来添加 HTML 属性、JavaScript、CSS。</li>
+
+  <li>点查看菜单，然后选择 HTML 源代码，或者点击 KompoZer 窗口底部，编辑模式工具栏里的  &lt;HTML&gt; 源代码标签S(如果您没有看到编辑模式工具栏，点查看菜单选择显示/隐藏，确保编辑模式工具栏是勾选的。)</li>
+</ul>
+
+<h3 id="using_the_advanced_property_editor">使用高级属性编辑器</h3>
+
+<p>要给对象添加 HTML 属性和 JavaScript，例如表格、图片和水平线，您可以使用高级属性编辑器。</p>
+
+<p><strong>注意</strong>: 除非您非常清楚如何添加、删除、修改 HTML 属性和它们相关的值，否则请最好别动它们。</p>
+
+<p>如果你正在查看高级属性编辑器，请按照下面的步骤操作:</p>
+
+<ol>
+  <li>点查看菜单(或者编辑模式工具栏)，选择 HTML 标记。</li>
+
+  <li>双击您想修改的对象，打开属性对话框。</li>
+
+  <li>点高级编辑按钮打开对象的高级属性编辑器，高级属性编辑器有三个标签，分别列出了当前对象的不同属性:
+
+  <ul>
+    <li><strong>HTML 属性</strong>: 点击此标签查看或输入额外的 HTML 属性。</li>
+
+    <li><strong>内联样式</strong>: 点击此标签查看或输入额外的 CSS(层叠样式表)
+    &lt;style&gt; 属性。更多 KompoZer 中使用 CSS 样式表的信息，请参阅: <a
+    href="preferences.html">KompoZer
+    首选项</a>。</li>
+
+    <li><strong>JavaScript 事件</strong>: 点击此标签查看或输入 JavaScript 事件。</li>
+
+  </ul>
+  </li>
+
+  <li>要编辑三个标签里的属性，选中您想编辑的属性，然后在对话框底部的文本框中编辑属性的名称和它的值。要添加一个新的属性，只要输入它的名称，在输入它的值后新属性将自动添加到列表中。要删除一个属性，在列表中选中它，然后点删除按钮。 <p><strong>注意</strong>: 需要先在列表中选中使它高亮显示。</p></li>
+
+  <li>点确定按钮应用更改，关闭高级属性编辑器。</li>
+
+  <li>再点确定按钮退出属性对话框。</li>
+</ol>
+
+<p>KompoZer 自动选中标记包含的属性文本。</p>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="validating_the_html">验证 HTML</h3>
+
+<p>在您上传您的文档之前(例如发布它)，一个好的经验是先检查一下文档的 HTML 格式
+以确保它与网站标准相一致，文档不符合 HTML 标准容易造成不同的浏览器出现错误。只是
+用您喜欢的浏览器检查网页外观，不能确保其他浏览器也能正确显示。</p>
+
+<p>KompoZer 提供了一个方便的方法让您检查文档是否符合W3C(World Wide Web 规范)
+HTML标准。KompoZer 使用 W3C HTML 验证服务，可以检查文档的 HTML 格式是否符合 HTML 4.01 标准。这个服务还提供如何纠正错误的信息。</p>
+
+<p><strong>注意</strong>: 您需要连接到互联网才能使用这个特性。</p>
+
+<p>验证您文档的 HTML 格式:</p>
+
+<ol>
+  <li>点工具菜单，然后选择验证 HTML，如果您还没有保存更改，KompoZer 会要求您操作前先保存文档。</li>
+
+  <li>KompoZer 将打开另一个窗口，当 W3C 验证服务程序分析完您的文件后，会显示验证结果在这里。</li>
+
+</ol>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="choosing_the_right_editing_mode">选择正确的编辑模式</h3>
+
+<p>一般地，您不需要更改标记默认的普通编辑模式，当然，如果您需要编辑 HTML 源代码，
+您可能想更改编辑模式。</p>
+
+<p>KompoZer 允许您在四个编辑模式或视图之间快速切换，每一种模式都允许您
+继续编辑文档，但是显示不同的 HTML 标记(和标记图标)。</p>
+
+<p>在您选择一种编辑模式前:</p>
+
+<ul>
+  <li>点击查看菜单，选择显示/隐藏，确保勾选了编辑模式工具栏。</li>
+</ul>
+
+<p>编辑模式工具栏有六个标签:</p>
+
+<ul>
+  <li><strong>普通</strong>: 选择此编辑模式，您将会看到文档在浏览时的外观样式，
+  显示表格的边框线和锚点标记，而其他的 HTML 标记会隐藏。</li>
+
+  <li><strong>HTML 标记</strong>: 选择此模式会显示所有 HTML 标记图标。</li>
+
+  <li><strong>&lt;HTML&gt; 源代码</strong>: 选择此模式查看并编辑没有格式的 HTML 源代码，在您保存文档时，自动回到普通编辑模式。</li>
+
+  <li><strong>预览</strong>: 选择此模式，显示为在浏览器窗口中查看的效果，只是链接和 JavaScript 功能还不能使用。</li>
+</ul>
+
+<p><strong>注意</strong>: JavaScript 功能、表单、链接、Java、元标记对象、GIF 动画文件，在任何一个模式里都不能激活，要显示这些项目的激活状态，点常用工具栏上的浏览按钮，在浏览器窗口中查看它们。</p>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>
+]</p>
+
+<h3 id="using_status_bar_for_formatting_your_web_page">使用状态栏设置网页格式</h3>
+
+<p>KompoZer 有一个新特性，通过状态栏给选中的文本编辑和应用类或 id 内联样式。 除了使用 <strong>&lt;HTML&gt; 源代码</strong> 模式外，状态栏也可以编辑全部的样式。</p>
+
+<ul>
+  <li><strong>选择</strong> 点击一个“选择器”将会选中这个标记包含的文本项。</li>
+  <li><strong>删除标记</strong> 点击“删除标记”将会删除样式标记，这个标记的所有样式都被删除。</li>
+
+  <li><strong>更改标记</strong> 使用此选项，用户可以更改标记使用最近一次的效果，点击“更改标记”标签的文本变为可编辑状态，输入另外的标记然后按回车键，将会给标记应用网页默认的属性.</li>
+
+  <li><strong>内联样式</strong>，在普通、HTML 标记或预览模式中，光标所在位置的标记显示在状态栏中，通过上下文菜单可以更改样式属性，要更改内联样式属性:
+
+  <ol>
+    <li>在状态栏的标记上点右键。</li>
+    <li>选择“内联样式” </li>
+    <li>选择您想编辑的属性:
+    <ul>
+      <li>文本属性</li>
+      <li>边框属性</li>
+      <li>背景属性</li>
+      <li>盒属性</li>
+      <li>声音属性</li>
+      <li>提取并创建普通样式</li>
+    </ul></li>
+  </ol>
+  <p>除了最后一个，点击其他选项将打开 CaScadeS CSS 编辑器(更多 CaScadeS 相关在 <a href="#using_style_sheets_for_your_web_pages">使用样式表</a> 章节)。在打开的面板里，用户可以创建自己的样式，这些会保存为符合 W3C CSS 代码的样式。</p>
+
+  <p><strong>提取并创建普通样式</strong> 选项允许用户提取样式信息，并保存为一个外部/内部样式表。</p></li>
+
+  <li><strong>模板</strong> 提供了两个选项，“可编辑”和“可删除区域”，用在模板中。更多相关信息请参阅: <a href="#working_with_templates">使用模板</a>。</li>
+
+  <li><strong>ID</strong> 从当前样式表显示 ID 标记(如果可用)，要给选中的文本应用一个特定的标记，只要点击那个 ID 标记即可。</li>
+
+  <li><strong>类</strong> 从当前样式表显示类标记(如果可用)，要给选中的文本应用一个类，只要点击那个类标记即可。</li>
+
+  <li><strong>高级属性</strong> 允许您使用高级属性编辑器，给一个对象添加 HTML 属性和 Javascript，例如表格、图片、链接等等。更多相关信息，请参阅: <a
+  href="#using_the_advanced_property_editor">高级属性编辑器</a>。</li>
+
+</ul>
+
+<p class="returnToSection">[ <a
+href="#formatting_your_web_pages">返回到开头</a>]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="composer_help.html">上一页</a>] [<a href="css.html">下一页</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 2009年6月22日</em></div>
+
+<p>&copy; 2004-2009 Nvu, KompoZer 帮助文档项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,305 @@
+
+<!-- Original text: Mozilla Help Viewer Documentation Project,
+     Nvu relevance changes: Nvu Help Viewer Documentation Project,
+Contributor(s):
+  KDS Sahambi <ksahambi@yahoo.com>
+  Teliute <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer 帮助文档" name="description" /> 
+<meta content="TeliuTe,基础教程网,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,教程,基础" name="keywords" />
+<title>KompoZer 帮助|词汇表</title>
+  <link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="80"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">显示/隐藏</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" width="32" height="32" alt="KompoZer" align="center"/></td><td align="center"><span id="topText">KompoZer 帮助中心</span></td>
+</tr>
+</table>
+<div id="contentsBox"></div>
+
+<p style="color:blue;">译者：TeliuTe  来源：基础教程网</p>
+
+<p>词汇表只提供信息，它不是官方完整的权威定义，和(或)安全保密的技术描述。</p>
+
+<hr/>
+
+<h1 id="glossary">词汇表</h1>
+
+<dl>
+
+<dt id="secure_shell_file_transfer_protocol">sFTP</dt>
+<dd>安全的文件传输协议(sFTP)类似于 <a
+href="#file_transfer_protocol">FTP</a>，不同之处在于会话是经过加密的，因而更安全。</dd>
+
+<dt id="secure_site">安全站点</dt>
+<dd>使用 <a href="#encryption">加密</a> 连接的站点，阻止恶意的互联网用户查看传输
+数据。当您访问安全站点时，浏览器显示一个小锁图标在 <a href="#Status_Bar">状态栏</a> 和  <a href="#location_bar">地址栏</a>.上。浏览器也在状态栏上显示站点域名(防止
+恶意站点盗取您的数据)，并且地址栏的背景色变成黄色。</dd>
+<dd>一些站点可能既有安全信息也包括不安全信息，这些不安全的信息通常不是隐私数据，
+但也不能保证是这样，对于这些网站，浏览器将在状态栏和地址栏显示一个小锁和斜线，
+将 <em>不在</em> 地址栏显示站点的域名，以便您指定当前网站不是完全安全的。</dd>
+
+<dt id="SSL">安全套接层(SSL)</dt>
+<dd>一种协议，允许  <a href="#client">客户端</a> 和 <a href="#server">服务器端</a>相互验证，
+从而建立一个验证和加密的连接。SSL 运行在 TCP/IP 之上，在 HTTP、LDAP、IMAP、NNTP、和其他
+高级网络协议下层。新的互联网工程任务组(IETF)标准称作安全传输层协议(TLS)，是基于 SSL。请参阅: <a href="#authentication">验证</a>，
+  <a href="#encryption">加密</a>。</dd>
+
+
+<dt id="helper_application">帮助程序</dt>
+<dd>一些应用程序习惯由浏览器打开或查看下载的文件。
+ <a href="#plug-in">插件</a> 是一个特定种类的帮助程序，它安装自己到浏览器的主目录，并且可以随浏览器打开而开启。Microsoft Word、Adobe Photoshop 和其他一些外部应用程序，使用帮助程序但不是插件，因为他们没有安装到浏览器目录，但可以在下载对话框打开。</dd>
+
+
+<dt id="css">层叠样式表(CSS)</dt>
+<dd>CSS 是一个简单添加样式的方法，例如给网页设置字体、颜色、位置等。CSS 可以完整而高校控制超文本文档的样式。</dd>
+
+<dt id="plug-in">插件</dt>
+<dd><a href="#helper_application">帮助程序</a> 一类的小程序，给浏览器添加新的功能，比如播放音频或视频文件。不像其他的帮助程序，插件安装它自己到
+ 浏览器主程序的安装目录中，并且随着浏览器的启动而启动。
+例如，一个音乐插件可以让你听网页中的或是邮件中的音乐。Adobe Flash 播放器和 Java 都是插件程序。</dd>
+
+<dt id="Hypertext_Markup_Language">超文本标记语言(HTML)</dt>
+<dd>网页使用的文档格式。HTML 标准定义标记或代码，用于定义文本层次、字体、样式、图片和其他元素，组成一个网页。</dd>
+
+<dt id="TCP_IP">传输控制协议/网际协议 (TCP/IP)</dt>
+<dd>一个 Unix 协议，用于连接运行不同操作系统的计算机。
+  TCP/IP 是一个必需的互联网协议，已经成为全球标准。</dd>
+
+
+<dt id="proxy">代理</dt>
+<dd>一个中转或 &quot;转发&quot; 程序，扮演  <a href="#server">服务器</a> 和 <a href="#client">客户端</a>，用于处理其他客户端的请求。</dd>
+
+
+<dt id="FIPS_PUBS_140-1">FIPS PUBS 140-1</dt>
+<dd>联邦资讯处理标准(FIPS PUBS)第140-1号，是美国国家标准实施加密模块 &mdash;
+  硬件或软件来加密和解密数据，或者执行其他密码操作(比如创建或验证数字签名)。
+许多销售给美国政府的产品，必须符合一条更多的 FIPS 标准。</dd>
+
+<dt id="publish">发布</dt>
+<dd><em>上传</em> 网页到一个<a
+href="#web_server">网络服务器</a> 的进程被称作发布。只有发布您的网页到
+ <a href="#web_server">网络服务器</a> 上，其他人才能用他们的 <a
+href="#client">客户端</a> 来访问。在 KompoZer 中，<a
+href="#site_manager">站点管理器</a> 完成发布任务。</dd>
+
+<dt id="server">服务器</dt>
+<dd>接收 <a href="#client">客户端</a> 的请求并发送回信息的软件(例如提供网页服务的软件)，
+通常运行在不同的计算机，一个运行服务器软件的计算机也称作服务器。</dd>
+
+
+<dt id="Internet">互联网</dt>
+<dd>一个由无数电脑组成的世界范围网络，相互之间用标准协议通讯，比如
+  <a href="#Transmission_Control_Protocol_Internet_Protocol">TCP/IP</a>。
+最早是1969年由美国军方开发， 互联网慢慢成长起来，包括教育和科研单位，
+在1990年后，大量商业、组织和个人也加入。今天，互联网用于电子邮件、浏览
+ <a href="#World_Wide_Web">WWW</a>，即时通讯，邮件列表，邮件组，和其他应用。</dd>
+
+<dt id="Internet_protocol_address">互联网协议地址 (IP 地址)</dt>
+<dd>在 <a href="#Transmission_Control_Protocol_Internet_Protocol">TCP/IP</a> 协议网络中的计算机地址。
+每个互联网上的计算机都有一个 IP 地址。<a href="#client">客户端</a>可以使用固定IP地址或动态地址，每次连接到互联网时都会改变。</dd>
+
+<dt id="cache">缓存</dt>
+<dd>收集网页副本，保存到您的计算机硬盘上，或者保存到随机存储器(RAM)中。 浏览器在您浏览网页时，存储这些副本，当您点击一个链接或者输入一个
+  <a href="#Uniform_Resource_Locator">网址</a>， 访问已经缓存过副本的网页时，浏览器对比缓存和原始网页，如果二者相同，浏览器使用缓存的副本而不是重新下载，节省了操作时间。</dd>
+
+
+<dt id="Java">Java</dt>
+<dd>一个由 Sun Microsystems 公司开发的程序语言，单个的 Java 程序可以运行只多种计算机上，
+这可以避免为不同的计算机创建不同的程序版本，安装 Java 后，浏览器可以自动下载
+和运行 Java 程序(也叫小程序)。</dd>
+
+<dt id="JavaScript">JavaScript</dt>
+<dd>用在网页中的一种通用脚本语言，使用 JavaScript 语言使得网页可以交互操作， JavaScript 
+常用于动态验证表单和选择按钮，JavaScript 可用于 Java，但它是一种独立的语言，Java 不需要 JavaScript也可以正常工作。</dd>
+
+
+<dt id="encryption">加密</dt>
+<dd>加密是将明文信息扰乱，隐藏原来的意思。例如，计算机之间通过的加密连接传送信息，
+使得第三方很难破译或 <em>解密</em>，只能由拥有相关密钥者解密。</dd>
+
+<dt id="decryption">解密</dt>
+<dd>恢复加密数据的原始形态的过程，请参阅: 
+  <a href="#encryption">加密</a>。</dd>
+
+
+<dt id="client">客户端</dt>
+<dd>向一个 <a href="#server">服务器</a>发送和接收信息的软件(比如网络浏览器)，
+可以运行只各种计算机，通常运行客户端软件的计算机也被称作客户端。</dd>
+
+<dt id="XML">扩展标记语言(XML)</dt>
+<dd>一个开放标准的描述语言，跟 HTML 不同，XML 允许开发者定义特殊标记，更多信息请参阅 W3C 在线文档:  <a href="http://www.w3.org/XML/">扩展标记语言(XML)</a>。</dd>
+
+
+<dt id="navigation_toolbar">浏览工具栏</dt>
+<dd>靠近浏览器窗口顶部的工具栏，包括
+ <em>后退</em> 和 <em>前进</em> 按钮。</dd>
+
+
+<dt id="cryptography">密码</dt>
+<dd>扰乱信息的操作(加密)和恢复原状(解密)。例如，在商业网站之间传送加密和解密信息。</dd>
+
+<dt id="Password_Manager">密码管理器</dt>
+<dd>KompoZer 的一部分，可以帮助您记住一些用户名和密码，
+它们保存在您的计算机当中，在您下次访问这些站点时会自动输入。</dd>
+
+
+<dt id="PKCS_11">PKCS #11</dt>
+<dd>公钥密码标准，管理像智能卡一类的安全设备。</dd>
+
+
+<dt id="private_key">私钥</dt>
+<dd>跟公钥成对匹配的密钥，私钥用于保密，常用于解密用公钥加密的数据。</dd>
+
+<dt id="digital_ID">数字 ID</dt>
+<dd>请参阅 <a href="#certificate">证书</a>.</dd>
+
+<dt id="search_engine">搜索引擎</dt>
+<dd>基于网络的程序，允许用户从互联网上搜索指定信息，
+搜索引擎可以搜索完整的网页信息，或者根据关键字列表搜索，
+它也可以使用手动索引建立检索目录。一般地，用户只搜索框
+中输入关键字，然后搜索引擎显示相关的网页链接。</dd>
+
+
+<dt id="TLS">TLS</dt>
+<dd>请参阅 <a href="#Secure_Sockets_Layer">安全套接协议层(SSL)</a>。</dd>
+
+<dt id="Uniform_Resource_Locator">统一资源定位符(URL)</dt>
+<dd>是一个标准地址，告诉浏览器如何定位网络上的文件或其他资源，
+(例如 <tt>http://www.mozilla.org</tt>)。
+ 在地址栏输入 URL 可以访问这个网页，URL 也可以用于链接其他网页，也称作网址。</dd>
+
+
+<dt id="w3c">W3C</dt>
+<dd>万维网联盟(W3C)是一个制定 <a
+href="world_wide_web">万维网</a> 推荐标准的 <em>协会</em>。符合
+<strong>W3C</strong>， “万维网联盟(W3C)开发交互技术(规范、准则、软件和工具)
+引领网络发展进步”，这些推荐标准有 HTML 4.01、XHTML 1.1、CSS 2.1 等等，常常称作 <em>网站标准</em>。</dd>
+
+<dt id="web_page">网页</dt>
+<dd>用于互联网上的文档，具有独一无二的地址或 URL，网页中可以包含文本、超级链接和图像。</dd>
+
+<dt id="world_wide_web">万维网</dt>
+<dd>也被认为是网络，互联网的一部分，由保存在网络上的网站 <a href="#server">服务器</a> 组成，
+由 <a href="#client">客户端</a> 的浏览器显示(如 Firefox)。</dd>
+
+<dt id="web_server">网络服务</dt>
+<dd>网络服务是指运行网络服务器软件(如 <a
+href="http://httpd.apache.org">Apache</a>)的计算机。它为 <a href="#client">客户端</a> 提供各种
+网页文档。网络服务器软件响应我们的请求发送数据，这样我们就可以在浏览器中看到 <a href="#web_site">网站</a>。</dd>
+
+<dt id="web_site">网站</dt>
+<dd>由一个公司、组织或个人创建和管理的一组相关网页。网站可以包括文本、图片、音乐和视频文件，也可以链接到其他网站。</dd>
+
+<dt id="file_transfer_protocol">文件传输协议(FTP)</dt>
+<dd>文件传输协议(FTP)是在网络中，不同计算机之间传输文件的协议标准。
+远程计算机，FTP 服务器接受其他计算机的访问，其他计算机称作客户端。
+一旦建立连接，客户端可以从服务器获取文件或是存放文件，这依赖于登录账号的权限。
+然而，它有一个安全漏洞，密码是用明文发送，不像 <a
+href="#secure_file_transfer_protocol">sFTP</a>。KompoZer 站点管理器使用 FTP 发布网页。</dd>
+
+
+<dt id="authentication">验证</dt>
+<dd>使用密码、证书、个人识别号(PIN)，或者其他信息在计算机网络上验证标识。</dd>
+
+
+<dt id="site_manager">站点管理器</dt>
+<dd>KompoZer 的一部分，管理网页的上传和下载，站点管理器与 <a href="#web_server">网络服务器</a> 之间使用 <a href="#file_transfer_protocol">FTP</a> 传输网页。</dd>
+
+<dt id="certificate">证书</dt>
+<dd>等同于一个数字 ID 卡，证书特指一个用户、公司或者其他实体的名称，证明一个包含证书，属于那个实体的公钥。当您标识一个信息或其他信息，使用私钥来加密标识这个信息，可以用您证书的公钥来验证。</dd>
+
+<dt id="master_password">主密码</dt>
+<dd>这个密码用于保护已保存的密码和其他隐私数据。当您想访问这些数据时，Firefox会提示输入主密码。如果您有多个安全设备，每个设备
+需要一个单独的主密码。</dd>
+
+<dt id="Status_Bar">状态栏</dt>
+<dd>出现在 KompoZer 窗口底部的工具栏，它显示了光标当前位置的标记信息。</dd>
+
+</dl>
+
+<p>[&nbsp;<a href="#glossary">返回到开头</a>&nbsp;]</p>
+
+<p>[<a href="index.html">返回目录</a>] [<a href="menu_reference.html">上一页</a>]</p>
+
+<div class="copyrightBox"><em>TeliuTe, 2009年7月3日</em></div>
+<p>&copy; 2003-2009 Mozilla 帮助查看器项目贡献者，版权所有。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>
