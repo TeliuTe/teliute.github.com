@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" /> 
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之 Launchpad 翻译指南" />
+  <meta name="keywords" content="Launchpad,翻译,教程,TeliuTe,教学,基础,入门" />
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" /><title>Launchpad 翻译|帮助</title>
+</head>
+<body style="direction: ltr;">
+<p class="title">欢迎使用帮助文档</p>
+<p><a href="./index.html">返回目录</a>　<span class="tblue">许可协议</span></p>
+<p>遵守：GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本；转载或引用本指南内容，请保留版权信息和本站链接。</p>
+<p class="tblue"> 版权通告</p>
+
+<p>　对于本文档的复制、分发和/或修改必须遵循自由软件基金会 (Free Software Foundation) 发布的 GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本， 该许可证没有固定的部分、没有封面和背页文本。您可以在此<a rel="license" href="GFDL-1.2">链接</a>上或在随本手册一起分发的 COPYING-DOCS 文件中找到 GFDL 的副本。</p>
+
+<p>　本文档以及文档的修改版本都是在遵循 GNU 自由文档许可证的条款下提供，这表示具有以下含义： </p>
+<p>  </p>
+<p>　文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档修改版本存在缺陷，您（而 不是最初的编写者、作者或撰写人）将承担所有必需的服务、维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，那么您就没有权利使用任何文档或文档的修改版本；并且无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写者、任何撰写人或任何分发者，或者任意这些方的任何提供 者都不对任何人由于使用本文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失承担任何民事（包括疏忽）、合同或其它方面的 责任，这些损失包括但不限于信誉损失、工作停止、计算机失败或故障，或任 何以及所有其它损失或由此引发的或与之相关的损失，即使这些方已被告知存在出现此类损失的可能性时也是如此。</p>
+<p>美丽的校园……</p>
+<p>长江后浪推前浪，自古英雄出少年；</p>
+<p>三更灯火五更鸡，正是男儿用功时；</p>
+<p>梅花香自苦寒来，宝剑锋从磨砺出；</p>
+<p>莫愁前路无知己，天下谁人不识君；</p>
+<p>　</p>
+<p><span class="tblue">日志</span></p>
+<p>　2011-12-15 13:46</p>
+<p>　完成第2课创建SSH密钥，第一课用以前的注册lp</p>
+<p>　2011年12月15日 22:36</p>
+<p>　完成第1课注册账号，把以前的指南前面拿过来</p>
+<p>　2011年12月15日 23:57</p>
+<p>　完成第3课创建项目，项目似乎不能删除，有一个沙盒可以试试</p>
+<p>　2011年12月17日 01:38</p>
+<p>　完成第4课用bzr上传，直接从项目地址进要方便</p>
+<p>　2011年12月17日 14:47</p>
+<p>　回头重新审视第1课，操作已经过期，重新注册一个账号抓图，后面再用它把操作过一遍，再加上一课，上传多个翻译包，构建翻译列表和版本系列</p>
+<p>　累了，心累，心痛</p>
+<p>　2011年12月18日 00:22</p>
+<p>　把课程过了一遍用新号，结果翻译列表死活不出来，原来是BSD协议没勾上，费了半天功夫，还有登录用命令去掉上一个的登录号</p>
+<p>　2011年12月18日 12:33</p>
+<p>　完成第5课创建列表，发现语言是怎么回事了，选择了就可以看到，后面再来一课翻译操作帮助的就可以完成了</p>
+<p>　2011年12月18日 18:53</p>
+<p>　完成第6课翻译文件，总算是弄完了，下面就是具体实践，把3.2和3.4的传上去也好</p>
+<p>　</p>
+<p>9:36 2005-4-11</p>
+<p><span class="tblue">FAQ：</span></p>
+<p>　Q：为什么1.0免费？</p>
+<p>　A：大家都来关心、支持、做贡献， 创建一个学习、互助的好环境；</p>
+<p>　Q：为什么还有收费的？</p>
+<p>　A：免费课程侧重于普及、分享、入门，10课以后需10元注册，作为学习的动力和对作者劳动的支持；</p>
+<p>　Q：做软件有什么体会？</p>
+<p>　A：先是充满好奇和诱惑，然后埋头苦学、生怕学不会，然后跃跃欲试做出一些自己才会用的东东，</p>
+<p>然后想到对别人也会有所帮助的；</p>
+<p>　</p>
+<p><span class="tblue">§告一段落§</span></p>
+<p>名称：Launchpad 翻译指南</p>
+<p>作者：TeliuTe</p>
+<p>版本：1.0.0.0</p>
+<p>授权：GFDL</p>
+<p>邮箱：TeliuTe@163.com</p>
+<p>简介：一步一步教你学会 Launchpad 翻译</p>
+<p>　</p>
+<p><span class="tblue">致谢：</span></p>
+<p>Ubuntu 10.10</p>
+<p>KompoZer 0.8b3</p>
+<p>leafpad 0.8.17</p>
+<p>Gimp 2.6</p>
+<p>fcitx 输入法</p>
+<p><a href="./index.html">返回目录</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.laxjyj.com">http://teliute.org</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js" />
+<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript></p>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+</div></body></html>
