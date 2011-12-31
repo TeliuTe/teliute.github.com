@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head> <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之分区编辑器" name="description"> 
+<meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> 
+<meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用分区编辑器" name="description">
+<meta content="gparted,分区编辑器,TeliuTe,86团学校,教程,基础,入门" name="keywords">
+<meta content="TeliuTe" name="author"> 
+
+<style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style>
+
+<title>分区编辑器|改变分区大小和移动</title></head>
+<body style="direction: ltr;"><p class="title">Gparted 分区编辑器基础</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">四、改变分区大小和移动</span>　<a href="../index.html">返回目录</a>　<a href="../lesson5/lesson5.html">下一课</a>
+<p>　使用分区编辑器可以调整分区的大小，操作前应备份重要数据，操作过程不会丢失分区里的数据，下面我们来看一个练习；</p>
+<p class="tblue">　1、改变分区大小</p>
+<p>　1）点<span class="brown">菜单</span>“系统－系统管理－分区编辑器”打开 Gparted 窗口；</p><p>　2）找到要改变大小的分区，如果显示有<span class="brown">钥匙</span>，则点右键先<span class="brown">卸载</span>该分区；</p>
+<p>　3）选中这个分区，点<span class="brown">工具栏</span>上的“改变分区大小/移动”按钮<img src="images/a3ann.gif" alt="a3ann.gif">；</p><p>　<img src="images/a3xz.gif" alt="a3xz.gif"></p>
+<p>　</p><p>　4）出来一个面板，上面<span class="brown">彩色框</span>显示了使用情况和空白情况，</p><p>　可以在下面的“之后”框里直接<span class="brown">输入</span>新分区大小，也可以拖动上边彩色框右边的<span class="brown">黑三角</span>按钮来改变分区大小；</p>　<img src="images/a4mb.gif" alt="a4mb.gif"><p>　</p><p>　5）拖动上边的按钮，或直接<span class="brown">输入</span>新分区的大小，然后点右下角的“<span class="brown">更改大小/移动</span>”按钮；</p><p>　<img src="images/a5td.gif" alt="a5td.gif"></p>
+<p>　</p><p>　6）返回到窗口中，点<span class="brown">菜单</span>“编辑－应用所有操作”命令，出来一个提示，</p><p>　<img src="images/a5yy.gif" alt="a5yy.gif">　<img src="images/b2qr.gif" alt="b2qr.gif"></p><p>　这儿是练习，点“<span class="brown">取消</span>”返回窗口，然后点“编辑－<span class="brown">清除</span>所有的操作”，</p><p></p><p>　<span class="brown">如果</span>点“应用”即可开始执行更改，这儿可能需要较长的时间；</p><p>　<img src="images/a6zhx.gif" alt="a6zhx.gif">　</p>
+<p>　</p><p>　7）操作过程中<span class="brown">耐心</span>等待，不要干扰或出现<span class="brown">停电</span>等意外情况，最后出来提示完成操作，点“关闭”返回；</p><p>　<img src="images/a7wch.gif" alt="a7wch.gif"></p><p>　</p><p>　然后在列表中显示一个<span class="brown">未分配</span>的新分区，大小是刚才划分的，位置在后面；</p><p>　<img src="images/a7wch1.gif" alt="a7wch1.gif"></p>
+<p>　</p><p>　<span class="tblue">2、移动分区</span></p>
+
+<p>　1）要移动分区的前面或后面有<span class="brown">未分配</span>的空间，就可以移动这个分区；</p>
+<p>　2）<span class="brown">选中</span>要移动的分区，例如上面的 ext2分区 sdb6，然后点<span class="brown">工具栏</span>上的“更改大小/移动”按钮；</p>
+<p>　<img src="images/a3ann.gif" alt="a3ann.gif"></p>
+<p>　</p><p>　3）在出来的面板中，<span class="brown">拖动</span>上面彩色分区，向后面灰色未分配空间拖动，一直拖动到<span class="brown">最右边</span>；</p><p>　<img src="images/b3yd.gif" alt="b3yd.gif"></p>
+<p>　</p><p>　4）然后点右下角“更改大小/移动”按钮，回到窗口<span class="brown">点菜单</span>“编辑－应用所有操作”，这儿是练习点“<span class="brown">取消</span>”按钮，</p><p>　<img src="images/b4gq.gif" alt="b4gq.gif"></p><p>　</p><p>　<span class="brown">如果</span>点“应用”就可以移动了，移动分区需要<span class="brown">很长</span>的时间，操作中不要断电或其他干扰操作；</p><p>　<img src="images/b4zhx1.gif" alt="b4zhx1.gif">　<img src="images/b4zhx2.gif" alt="b4zhx2.gif"></p><p>　</p><p>　5）耐心等待最后提示所有操作<span class="brown">成功</span>完成；</p><p>　<img src="images/a7wch.gif" alt="a7wch.gif"></p><p>　</p><p>　6）这时候，<span class="brown">未分配</span>空间到上面了，这个分区移动到了最后，关闭窗口退出；</p><p>　<img src="images/b6wch.gif" alt="b6wch.gif"></p>　<span class="tblue">本节</span>学习了Ubuntu分区编辑器中改变分区大小和移动分区的基本操作，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson5/lesson5.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br><br>
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>
