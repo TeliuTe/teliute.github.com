@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" dir="ltr" lang="zh-cn"><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="author" content="TeliuTe">
+  <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description">
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright">
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description">
+  <meta content="Ubuntu,TeliuTe,安装,教程,基础,入门" name="keywords">
+  <meta content="TeliuTe" name="author">
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style><title>Ubuntu安装|安装Ubuntu9.04</title></head>
+<body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="smlgren">作者：Teliute　来源：基础教程网</p>
+<span class="tblue">十五、安装Ubuntu9.04</span>　<a href="../index.html">返回目录</a>　<a href="../lesson16/lesson16.html">下一课</a>
+<p>　9.04 版安装与前面版本类似，学习中遇到不清楚的地方，可以参考一下前面的内容，操作中注意细心，下面来看一个练习；</p><p>　<span class="tblue">1、进入 live cd 桌面 <br>
+</span></p><p>　1）设置好<span class="brown">启动</span>后，重启动计算机，可以用硬盘启动，也可以刻成光盘启动，下载地址：</p><p>　进入后找蓝色链接点击下载，如&nbsp;<span class="tblue">PC (Intel x86) desktop CD</span>：</p><a class="postlink" href="http://cn.releases.ubuntu.com/9.04/">http://cn.releases.ubuntu.com/9.04/</a><!-- m -->　<p>　</p><p>　2）启动后稍等，在出来的列表中，用<span class="brown">方向键</span>选择中文(简体)，按回车键进入继续；</p><p>　<img src="images/a1jt.gif" alt="a1jt.gif"></p>
+<p>　<br>
+　3）在出来的安装菜单里，按<span class="brown">回车键</span>，进入第一项“试用 Ubuntu”，耐心等待进入桌面；</p>
+<p>　<img src="images/a2shy.gif" alt="a2shy.gif"><br>
+　<br>
+</p>
+　4）再等一会就进入一个桌面，这就是试用的 live cd 桌面，<span class="brown">桌面</span>左上边有有两个图标，右上角是“<span class="brown">关机</span>”按钮；<p>　<img src="images/a3zm.jpg" alt="a3zm.jpg"></p><p>　</p><p>　5）对于<span class="brown">硬盘</span>安装，点左上角菜单： Application－Accessories－Terminal 进入终端，中文是“应用程序－附件－终端”；</p><p>　<img src="images/a4zhd.gif" alt="a4zhd.gif"></p><p>　</p><p>　6）输入命令 sudo umount -l /isodevice 然后按一下<span class="brown">回车键</span>，没什么提示就是成功了；</p><p>　<img src="images/a6xz.gif" alt="a6xz.gif"></p><p>　</p><p>　<span class="tblue">2、安装系统</span></p><p>　1）双击桌面“<span class="brown">安装</span>”图标，稍等出来一个“欢迎”面板，点右下角“<span class="brown">Forward</span>”前进按钮继续；</p><p>　<img src="images/b1hy.gif" alt="b1hy.gif"></p><p>　</p><p>　2）<span class="brown">第2步</span>是询问所在地，默认选的是上海(shanghai)，这些可以安装好了再调整，<span class="brown">直接</span>点“Forward”继续；</p><p>　<img src="images/b2dq.gif" alt="b2dq.gif"></p><p>　</p><p>　3）接下来<span class="brown">第3步</span>是询问键盘布局，检查一下是 China 或者 USA，直接点“<span class="brown"></span>Forward<span class="brown"></span>”前进按钮即可；</p><p>　<img src="images/b3jp.gif" alt="b3jp.gif"></p><p>　前面这三步都可以选默认的<span class="brown">直接</span>前进，第四步分区开始要细致耐心；</p><p>　</p><p>　4）在第4步出来的分区面板里，选择下边的“<span class="brown">手动</span>”，点“Froward”继续；</p><p>　<img src="images/b4fq.gif" alt="b4fq.gif"></p><p>　</p><p>　5）点“<span class="brown">前进</span>”按钮，出来一个磁盘扫描滚动条，然后显示整个硬盘的分区情况，</p><p>　<img src="images/b5fqb.gif" alt="b5fqb.gif"></p><p>　</p><p>　6）新建分区可以参考前面的第7课和第13课，这儿是<span class="brown">覆盖</span>安装原先的 Ubuntu 8.04，</p><p>　点击选中原来的 ext3 主分区，然后点下边的“<span class="brown">编辑分区</span>”按钮；</p><p>　<img src="images/b6bj.gif" alt="b6bj.gif"></p><p>　</p><p>　7）在出来的对话框中，点“用于”右边的<span class="brown">下拉列表</span>，选择 Ext4，“格式化”右边<span class="brown">打勾</span>选中，“挂载点”右边选 /</p><p>　<span class="brown">注意</span>，如果不打勾“格式化”，分区里的内容不会被删除，原来的 /home 分区<span class="brown">不要</span>打勾，还挂载在 /home 上； </p><p>　<img src="images/b7bj.gif" alt="b7bj.gif"></p><p>　</p><p>　8）原来的 swap分区<span class="brown">不用</span>再编辑，检查一下各个分区都编辑好了，点“Forward”继续，</p><p>　出来一个个人信息面板，<span class="brown">依次</span>输入自己的用户名、密码、计算机名，然后点“Forward”继续，密码可以记到一个本子上；</p><p>　<img src="images/b8xx.gif" alt="b8xx.gif"></p><p>　</p><p>　9）如果提示密码太简单，可以换一个，或者点“<span class="brown">继续</span>”仍然使用，出来一个小结面板，下面提示那些分区要被格式化，</p><p>　如果有Windows双系统，不想破坏原来的引导记录，可以点右下角的“<span class="brown">高级</span>”，把引导程序装到别的分区，参考前面课程；</p><p>　<img src="images/b9zhb.gif" alt="b9zhb.gif"></p><p>　</p><p>　10）检查好确认无误，点右下角的“安装”按钮，开始安装；</p><p>　<img src="images/ba10anzh.gif" alt="ba10anzh.gif"></p><p>　</p><p>　11）耐心等待完成，然后出来一个对话框，点“<span class="brown">现在重启</span>”完成安装；</p><p>　<img src="images/ba11chq.gif" alt="ba11chq.gif"></p><p>　</p><p>　12）然后提示取出光盘，然后按回车键，重新启动计算机，安装完成；</p><p>　<img src="images/ba12gp.gif" alt="ba12gp.gif"></p><p>　</p><p>　<span class="tblue">3、运行系统</span></p><p>　１）重新启动后，进入一个<span class="brown">登录</span>界面，输入用户名按回车键，再输入密码按回车键，进入系统；</p><p>　<img src="images/c1dl.jpg" alt="c1dl.jpg"></p><p>　</p><p>　2）进入桌面后先连网，找到<span class="brown">右上角</span>一个网络的图标，瞄准点右键，选“Edit Connections..”；</p><p>　<img src="images/c2wl.gif" alt="c2wl.gif"></p><p>　</p><p>　3）对于<span class="brown">局域网</span>上网，在出来的对话框里，选中点“Auto eth0”，点右边的“Edit..”按钮，</p><p>　先出来一个认证对话框，输入自己的<span class="brown">密码</span>点右下角按钮；</p><p>　<img src="images/c3bj.gif" alt="c3bj.gif">　<img src="images/c3rzh.gif" alt="c3rzh.gif"></p><p>　</p><p>　4）在出来的对话框里，选择 IPV4 Setting <span class="brown">标签</span>，在下面的 Method 里选“Manual”手动，再点下边的 ＋Add 按钮，</p><p>　在出来的文本框里，依次输入 IP 地址、子网掩码、网关，然后按<span class="brown">回车键</span>确定，在下面的 DNS 里输入 DNS 服务器地址，</p><p>　检查一下，点右下角的“Apply”应用按钮；</p><p>　<img src="images/c4ipv4.gif" alt="c4ipv4.gif"></p><p>　回到原来对话框点“Close”关闭，<span class="brown">重新</span>启动计算机就可以上网了；</p><p>　</p><p>　5）对于ADSL拨号宽带上网，在上面第3步出来的对话框右边，点 DSL 标签，然后点 ＋Add 按钮；</p><p>　<img src="images/c5dsl.gif" alt="c5dsl.gif"></p><p>　</p><p>　6）在出来的对话框里，先<span class="brown">打勾</span>上边的 “Connect automatically”自动连接，然后在 usename里输入ADSL宽带<span class="brown">用户名</span>，</p><p>　下面的 password 里，输入宽带<span class="brown">密码</span>，然后点右下角的“Apply”应用按钮；</p><p>　<img src="images/c6yh.gif" alt="c6yh.gif"></p><p>　关闭对话框以后，<span class="brown">重新</span>启动计算机(Restart..)，就可以上网了，命令行使用 sudo pppoeconf 命令也可以；</p><p>　</p><p>　<span class="tblue">4、更新系统</span></p><p>　1）连接好网络后先<span class="brown">换源</span>，可以参考前面的第9课；<span class="brown"></span></p><p>　</p><p>　2）安装语言包，在出来的“不完整<span class="brown">语言支持</span>”对话框中，点左下角的“Run this action now”，安装语言包，</p><p>　也可以参考前面的课程；</p><p>　<img src="images/d2yy.gif" alt="d2yy.gif"></p><p>　</p><p>　3）如果出来缺少<span class="brown">语言信息</span>对话框，点“Update”更新，出来一个认证密码框，输入自己的密码，按回车键；</p><p>　<img src="images/d3xz.gif" alt="d3xz.gif">　<img src="images/d3mm.gif" alt="d3mm.gif"></p><p>　4）待语言包更新后，在出来的<span class="brown">语言支持</span>安装对话框中，点右下角的“Install”，然后耐心等待完成；</p><p>　<img src="images/d4anzh.gif" alt="d4anzh.gif">　<img src="images/d4anzh1.gif" alt="d4anzh1.gif"></p><p>　</p><p>　5）安装完成后，<span class="brown">关闭</span>两个对话框，</p><p>　<img src="images/d5gb.gif" alt="d5gb.gif">　<img src="images/d5gb1.gif" alt="d5gb1.gif"></p><p>　</p><p>　6）然后点<span class="brown">右上角</span>的退出按钮，选择“Log Out..”注销退出，重新登录后就是中文界面了，</p><p>　<img src="images/d6zhx.gif" alt="d6zhx.gif"></p><p>　</p><p>　如果出来<span class="brown">更新</span>管理器，也更新一下；</p><p>　<img src="images/d6gx.gif" alt="d6gx.gif"></p><p>　</p>　<span class="tblue">本节</span>学习了安装 ubuntu 9.04 的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson16/lesson16.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a
+href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border: medium none ;"
+height="20" width="20"></a> </noscript></font><br><br>
+<div>
+
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tbody><tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>

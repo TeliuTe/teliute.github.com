@@ -1,0 +1,7 @@
+title Install Ubuntu
+
+root (hd0,0)
+
+kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-10.10-desktop-i386.iso quiet splash ro locale=zh_CN.UTF-8 noprompt --
+
+initrd /initrd.lz 

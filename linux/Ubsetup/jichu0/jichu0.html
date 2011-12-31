@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" />
+  <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright" />
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description" />
+  <meta content="Ubuntu,TeliuTe,安装,教程,基础,入门" name="keywords" />
+  <meta content="TeliuTe" name="author" />
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.green { 
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style><title>Ubuntu安装|硬盘安装 Ubuntu</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">硬盘安装 Ubuntu</span>　<a href="../index.html">返回目录</a>　<a href="../lesson1/lesson1.html">下一课</a>
+<p class="tblue">　1、复制引导文件</p>
+<p>　1）下载 Ubuntu 的 desktop 光盘镜像iso文件，如 ubuntu-10.10-desktop-i386.iso：<a href="http://mirrors.sohu.com/ubuntu-releases/10.10/">http://mirrors.sohu.com/ubuntu-releases/10.10/</a></p>
+<p>　2）双击下载的ISO镜像文件，用 WinRAR 或 7-zip 打开它，如果打不开，就先打开WinRAR程序窗口，再把下载的ISO镜像文件拖到WinRAR窗口中；</p>
+<p>　<img src="images/b2chk.gif" alt="b2chk.gif"></p>
+<p>　</p>
+<p>　3）在窗口中找到上面的casper文件夹，双击打开这个文件夹，里面有一个in打头和vm打头的文件，</p>
+<p>　<img src="images/b3lg.gif" alt="b3lg.gif"></p>
+<p>　</p>
+<p>　这两个initrd.lz和vmlinuz就是系统引导文件，需要把他们解压出来，放到第一个分区中；</p>
+<p>　4）单击选中initrd.lz文件，然后点菜单“文件－复制文件到剪贴板”，按Ctrl＋C组合键也行；</p>
+<p>　<img src="images/b4dj.png" alt="b4dj.png">　<img src="images/b4cd.gif" alt="b4cd.gif"></p>
+<p>　</p>
+<p>　5）在“我的电脑”图标上点右键，选择“资源管理器”命令，然后在左边找到C:盘，瞄准点右键选“粘贴”命令，把initrd.lz粘贴到C:盘里头，</p>
+<p>　<img src="images/b5cd.gif" alt="b5cd.gif"></p>
+<p>　</p>
+<p>　同样把vmlinuz文件也复制到C:盘里头，关闭 WrinRAR窗口，把这个ISO镜像文件也复制到C:盘里头去；</p>
+<p>　</p>
+<p class="tblue">　2、制作menu.lst文件</p>
+<p>　1）打开记事本，输入下面的内容，也可以复制粘贴进去，把第三行中文件名改成对应的，本课文件夹中有这个<a href="./menu.lst">menu.lst</a>文件；</p>
+<div style="background-color: rgb(255, 255, 255); padding-left:20px; width:1024px; color: green;">title Install Ubuntu
+<br />
+<br />
+root (hd0,0)<br />
+<br />
+kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-<span style="color: rgb(255, 0, 0);">10.10</span>-desktop-i386.iso quiet splash ro locale=zh_CN.UTF-8 noprompt --
+<br />
+<br />
+initrd /initrd.lz
+</div>
+<p>　2）点菜单“文件－保存”，位置保存在C:盘，文件名输入 "menu.lst" ，注意有一对英文的双引号；</p>
+<p>　<img src="images/c1bc.gif" alt="c1bc.gif"></p>
+<p>　</p>
+<p>　3）再下载一个grldr文件：<a href="http://code.google.com/p/grub4dos-chenall/downloads/list">http://code.google.com/p/grub4dos-chenall/downloads/list</a>，也复制到C:盘中，本课的文件夹里有这个<a href="grldr">grldr</a>，</p>
+<p>　这样在C:盘里面就有5个复制过来的文件了，仔细检查一下；</p>
+<p>　<img src="images/c2wj.gif" alt="c2wj.gif"></p>
+<p>　</p>
+<p>　<span class="tblue">3、修改WinXP的启动文件boot.ini</span></p>
+<p>　1）WinXP的启动配置文件，是一个boot.ini文件，打开这个文件，修改里面的timeout=0，把0改成3，添加下面这句即可：（本课有个<a href="./boot.ini">boot.ini</a>范例）</p>
+<div style="background-color: rgb(255, 255, 255); padding-left:20px; width:1024px; color: green;">timeout=3<br /><br />
+c:\grldr="Install Ubuntu"</div>
+<p>　2）关于修改boot.ini的详细操作，请参看：<a href="http://teliute.org/TeacHtm/TeComput/lesson33/lesson33.html">http://teliute.org/TeacHtm/TeComput/lesson33/lesson33.html</a></p>
+<p>　3）重新启动计算机，在出现启动菜单时，按方向键选择“Install Ubuntu”，按回车键进入后开始安装；</p>
+<p>　<img src="images/c3cd.png" alt="c3cd.png"></p>
+<p>　</p>
+　<span class="tblue">本节</span>学习了硬盘安装 Ubuntu 的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson1/lesson1.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js" />
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript><br /><br />
+<div>
+
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tbody><tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br />
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br />
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br />
+</td>
+  </tr>
+</tbody></table>
+</div>
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+</body></html>

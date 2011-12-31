@@ -1,0 +1,22 @@
+default		0
+timeout		5
+#hiddenmenu
+
+title        Ubuntu 9.04, kernel 2.6.28-11-generic
+uuid        d74bf5df-df2e-4f34-aa86-893c8f742cb3
+kernel        /boot/vmlinuz-2.6.28-11-generic root=UUID=d74bf5df-df2e-4f34-aa86-893c8f742cb3 ro quiet splash
+initrd        /boot/initrd.img-2.6.28-11-generic
+quiet
+
+title        Ubuntu 8.10, kernel 2.6.27-14-generic
+uuid        7dfaee14-6135-4d2c-8c7e-2cd39d5eb195
+kernel        /boot/vmlinuz-2.6.27-14-generic root=UUID=7dfaee14-6135-4d2c-8c7e-2cd39d5eb195 ro quiet
+initrd        /boot/initrd.img-2.6.27-14-generic
+quiet
+
+title        Ubuntu 8.04.2, kernel 2.6.24-23-generic (on /dev/sda2)
+root        (hd0,1)
+kernel        /boot/vmlinuz-2.6.24-23-generic root=UUID=b35610c1-2a0e-4a01-a25b-5683f5e90ed4 ro quiet splash
+initrd        /boot/initrd.img-2.6.24-23-generic
+savedefault
+boot

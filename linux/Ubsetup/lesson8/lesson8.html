@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head> <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description"> <meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description"><meta content="电脑,Nvu,TeliuTe,86团学校,教程,基础,入门" name="keywords"><meta content="TeliuTe" name="author"> <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style><title>Ubuntu安装|连网设置</title></head>
+<body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="smlgren">作者：Teliute　来源：基础教程网</p>
+<span class="tblue">八、连网设置</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>　<a href="../lesson13/lesson13.html">Ubuntu8.10 系统</a>　<a href="../lesson15/lesson15.html">Ubuntu9.04 系统</a>
+<p>　Ubuntu跟网络密切相联系，许多应用程序都是从网络中获得，也可以用DVD光盘安装，下面我们来看一个练
+习；</p>
+<p class="tblue">　1、连接网络</p>
+<p>　1）在上边面板条上点<span class="brown">系统菜单</span>“System－系统管理－网络”，出来一个网络面板；</p>
+<p>　<img src="images/a1cd.gif" alt="a1cd.gif"></p>
+<p>　2）在面板下面点“<span class="brown">Unlock</span>”按钮，在出来的密码框中输入<span class="brown">自己的</span>密码，然后点右下角的<span class="brown">Authen按钮</span>解锁；</p><p>　<img src="images/a2lock.gif" alt="a2lock.gif">　<img src="images/a2lock1.gif" alt="a2lock1.gif"></p><p>　3）对于<span class="brown">局域网</span>上网或路由器上网，点第一个Wired connection(有线连接)，如果是用<span class="brown">ADSL</span>宽带猫上网，则选下面的Point to point connection(点对点)，</p><p>　然后点<span class="brown">右边的</span>“Properties”属性按钮；</p><p>　<img src="images/a3shx.gif" alt="a3shx.gif"></p><p>　4）对于局域网上网，<span class="brown">去掉</span>上面的勾，点第一个<span class="brown">下拉框</span>，选择static IP adress，静态IP地址，</p><p>　在下面的<span class="brown">第一行</span>输入本地IP地址，如192.168.1.250，<span class="brown">第二行</span>点一下自动输入子网掩码255.255.255.0，<span class="brown">第三行</span>输入网关192.168.1.1</p><p>　这些可以问问管理员，或者自己查一下WinXP里的；</p>　<img src="images/a3shx1.gif" alt="a3shx1.gif"><p>　5）点下边<span class="brown">绿色</span>的OK按钮，回到前面的面板，再点上边的“<span class="brown">DNS</span>”标签，</p><p>　在DNS面板里，<span class="brown">点两下</span>第一行，出来一闪一闪的光标，输入自己的DNS地址，输完<span class="brown">按一下</span>回车键，这可以从上网提供商那儿询问，或自己查一下本地区的域名解析服务器；</p><p>　<img src="images/a3shx2.gif" alt="a3shx2.gif"></p>
+<p>　3）点“close”关闭按钮，就设置好了，试试如果还不能上网，就<span class="brown">重启动</span>一下，</p><p>　如果是ADSL宽带猫上网，选选第二个以后，也点右边的“<span class="brown">Properties</span>”属性按钮，打勾第一行“Enable this connection”先，然后下面选<span class="brown"> PPPoE</span>，下面的文本框里输入帐号和密码；</p>
+<p>　<img src="images/a4pppoe.gif" alt="a4pppoe.gif"></p><p>　4）再点上边第二个Modem标签，在中间<span class="brown">列表框</span>点一下，选eth0；</p><p>　<img src="images/a4pppoe0.gif" alt="a4pppoe0.gif"></p>
+<p>　5）再点上边的“<span class="brown">Options</span>”选项面板，把里面的<span class="brown">几个勾</span>都打上；</p>
+<p>　<img src="images/a4pppoe1.gif" alt="a4pppoe1.gif"></p>
+<p>　<span class="tblue">2、常见问题</span></p><p>　1）如果设置好以后还不能上网，则重新回去<span class="brown">检查一下</span>，局域网的IP地址、网关、DNS，</p><p>　宽带猫检查帐号、密码，以及Option里的几个打勾，试试重启动一下；</p><p>　2）如果检查后仍然不行，则可以使用<span class="brown">终端</span>命令；</p><p>　点上边面板条左上角的“应用程序”<span class="brown">菜单</span>“Applications－附件－终端”命令，出来一个命令窗口；</p><p>　3）对于<span class="brown">局域网</span>上网，输入命令 sudo ifconfig eth0 192.168.1.250 netmask 255.255.255.0&nbsp;</p><p>　然后<span class="brown">按一下</span>回车键，先输入密码，输的时候看不到，输完按一下回车键，</p><p>　再输入<span class="brown">命令</span> sudo route add default gw 192.168.1.1 然后按一下回车键；</p><p>　<img src="images/b3ml.gif" alt="b3ml.gif"></p><p>　注意，输入的命令是从 <span class="brown">$</span> 符号后面开始的，输入的密码<span class="brown">不会</span>显示，输完按回车键即可；</p><p>　4）对于ADSL宽带猫上网，输入命令 sudo pppoeconf<span class="postbody"> 然后</span><span class="brown">按一下</span>回车键，同样先要输入密码，输完<span class="brown">按一下</span>回车键；</p><p>　看清楚提示，选“<span class="brown">是</span>”一步一步往下走，到ADSL<span class="brown">用户名</span>那儿注意，输入自己的帐号和密码，如果有原来的User用户，删除了它，更多方法可以在网上搜索一下；<span class="postbody"></span></p>
+<p>　Ubuntu 8.10系统的联网设置，请参阅第13课第4条：<a href="../lesson13/lesson13.html">Ubuntu8.10安装</a></p>
+<p>　Ubuntu 9.04系统的联网设置，请参阅第15课第3条：<a href="../lesson15/lesson15.html">Ubuntu9.04安装</a></p>
+　<span class="tblue">本节</span>学习了在Ubuntu系统中，连接上网的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br /><br />
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>

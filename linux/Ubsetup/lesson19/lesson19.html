@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" />
+  <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright" />
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description" />
+  <meta content="Ubuntu,TeliuTe,安装,教程,基础,入门" name="keywords" />
+  <meta content="TeliuTe" name="author" />
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.green { 
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style><title>Ubuntu安装|安装Ubuntu10.04</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十九、安装Ubuntu10.04</span>　<a href="../index.html">返回目录</a>　<a href="../lesson20/lesson20.html">下一课</a>
+<p>　10.04 版安装与前面版本类似，学习中遇到不清楚的地方，可以参考一下前面的内容，操作中注意细心，下面来看一个练习；</p>
+<p>　<span class="tblue">1、进入 live cd 桌面 
+</span></p>
+<p>　1）设置好<span class="brown">启动</span>后，重启动计算机，可以用硬盘启动，也可以刻成光盘启动，下载地址：</p>
+<p>　进入后找蓝色链接点击下载，如&nbsp;PC (Intel x86) desktop CD：<a href="http://mirrors.sohu.com/ubuntu-releases/10.04/">http://mirrors.sohu.com/ubuntu-releases/10.04/</a></p>
+<p>　</p>
+<p>　2）启动后稍等，系统自动运行；</p>
+<p>　<img src="images/a1jt.png" alt="a1jt.png" /></p>
+<p>　</p>
+<p>　3）等一会就进入一个桌面，这就是试用的 live cd 桌面，<span class="brown">桌面</span>左上边有有两个图标，右上角是“<span class="brown">关机</span>”按钮；</p>
+<p>　<img src="images/a3zm.jpg" alt="a3zm.jpg" /></p>
+<p>　</p>
+<p>　4）对于<span class="brown">硬盘</span>安装，点左上角菜单： Application－Accessories－Terminal 进入终端，中文是“应用程序－附件－终端”；</p>
+<p>　<img src="images/a4zd.png" alt="a4zd.png" /></p>
+<p>　</p>
+<p>　5）输入命令 sudo umount -l /isodevice 然后按一下<span class="brown">回车键</span>，没什么提示就是成功了；</p>
+<p>　<img src="images/a5xz.png" alt="a5xz.png" /></p>
+<p>　</p>
+<p>　<span class="tblue">2、安装系统</span></p>
+<p>　1）双击桌面“<span class="brown">安装Ubuntu10.04</span>”图标，稍等出来一个“欢迎”面板，点右下角“<span class="brown">前进</span>”按钮继续；</p>
+<p>　<img src="images/b1hy.png" alt="b1hy.png" /></p>
+<p>　</p>
+<p>　2）第2步是询问所在地，<span class="brown">默认</span>选的是中国(上海)，这些可以安装好了再调整，<span class="brown">直接</span>点“前进”按钮继续；</p>
+<p>　<img src="images/b2dq.png" alt="b2dq.png" /></p>
+<p>　</p>
+<p>　3）接下来<span class="brown">第3步</span>是询问键盘布局，检查一下是 China 或者 USA，直接点“<span class="brown">前进</span>”按钮即可；</p>
+<p>　<img src="images/b3jp.png" alt="b3jp.png" /></p>
+<p>　前面这三步都可以选默认的<span class="brown">直接</span>前进，第四步分区开始要细致耐心；</p>
+<p>　</p>
+<p>　4）在第4步出来的分区面板里，选择下边的“<span class="brown">手动</span>”，点“前进”继续；</p>
+<p>　<img src="images/b4sd.png" alt="b4sd.png" /></p>
+<p>　</p>
+<p>　5）新建分区和转换可以参考前面的第7、13、15、16课，这儿是<span class="brown">安装</span>到之前的8.04分区上，</p>
+<p>　点击选中原来的boot分区，注意看清大小，然后点下边的“<span class="brown">更改</span>”按钮；</p>
+<p>　<img src="images/b5sc.png" alt="b5sc.png" /></p>
+<p>　</p>
+<p>　6）在出来的对话框中，设定<span class="brown">用于</span>分区的格式Ext4，在“挂载点”右边点一下，选 /boot，点“OK”确定</p>
+<p>　<span class="brown">注意</span>，/ boot分区也可以不要； </p>
+<p>　<img src="images/b7cjg.png" alt="b7cjg.png" /></p>
+<p>　</p>
+<p>　7）回到分区面板，再<span class="brown">选中</span>原来的/分区，继续点下面的“更改”，这次的挂载点选“/”，用于Ext4日志文件系统，点“OK”确定返回；</p>
+<p>　<img src="images/b8tj.png" alt="b8tj.png" />　<img src="images/b8jh.png" alt="b8jh.png" /></p>
+<p>　</p>
+<p>　8）检查一下各个<span class="brown">分区</span>都编辑好了，点“前进”继续，如果有/home，按原来的设，<span class="brown">不要<span>打勾“格式化”；</p>
+<p>　<img src="images/b9fqwc.png" alt="b9fqwc.png" /></p>
+<p>　</p>
+<p>　9）出来一个个人信息面板，<span class="brown">依次</span>输入自己的用户名、密码、计算机名，然后点“前进”继续，密码可以记到一个本子上；</p>
+<p>　<img src="images/b10yhxx.png" alt="byhxx.png" /></p>
+<p>　</p>
+<p>　10）然后出来一个小结面板，下面提示那些分区要被格式化，</p>
+<p>　<img src="images/b10zj.png" alt="byhxx.png" /></p>
+<p>　</p>
+<p>　11）如果有Windows双系统，不想破坏原来的引导记录，可以点右下角的“<span class="brown">高级</span>”，把引导程序装到 / 或 /boot所在的分区，参考前面课程；</p>
+<p>　<img src="images/b11gj.png" alt="b10gj.png" /></p>
+<p>　</p>
+<p>　12）检查好确认无误，点右下角的“<span class="brown">安装</span>”按钮，开始安装；</p>
+<p>　<img src="images/b12az.png" alt="ba12az.png" /></p>
+<p>　</p>
+<p>　13）耐心等待完成，然后出来一个对话框，点“<span class="brown">现在重启</span>”完成安装；</p>
+<p>　<img src="images/b13cq.png" alt="ba13cq.png" /></p>
+<p>　</p>
+<p>　14）稍等提示取出光盘，然后按<span class="brown">回车键</span>，重新启动计算机，安装完成；</p>
+<p>　<img src="images/b14hc.png" alt="b14hc.png" /></p>
+<p>　</p>
+
+<p>　<span class="tblue">3、连网换源</span></p>
+<p>　１）重新启动后，停在一个<span class="brown">登录</span>界面，点击自己的用户名，输入密码后按回车，或点“Log in”键，进入系统；</p>
+<p>　<img src="images/c1dl.jpg" alt="c1dl.jpg" />　<img src="images/c1mm.png" alt="c1mm.png" /></p>
+<p>　</p>
+<p>　2）进入桌面后会出来一个“<span class="brown">不完整</span>语言支持”的提示对话框，先不关闭拖到一边后面要用；</p>
+<p>　<img src="images/c2bwz.png" alt="c2bwz.png" /></p>
+<p>　</p>
+<p>　3）先连网，找到屏幕<span class="brown">右上角</span>喇叭旁边的一个网络图标，瞄准点<span class="brown">右键</span>，选“Edit Connetions..”编辑连接；</p>
+<p>　<img src="images/c3bjlj.png" alt="c3bjlj.png" /></p>
+<p>　</p>
+<p>　4）对于ADSL拨号宽带连接上网，在出来的对话框右边，点&nbsp;<span class="brown">DSL</span> 标签，然后点添加；</p>
+<p>　<img src="images/c6dsltj.png" alt="c6dsltj.png" /></p>
+<p>　</p>
+<p>　5）在出来的对话框里，先<span class="brown">打勾</span>上边的 “Connect automatically”自动连接，然后在用户名里输入ADSL宽带<span class="brown">用户名</span>，</p>
+<p>　下面的密码里，输入宽带<span class="brown">密码</span>，然后点右下角的“Apply”应用按钮，在出来的密码框中输入密码；</p>
+<p>　<img src="images/c7dsl.png" alt="c7dsl.png" /></p>
+<p>　</p>
+<p>　关闭对话框以后，再用<span class="brown">左键</span>点上边的网络图标，选“DSL connection 1 ”，就可以连上网了，</p>
+<p>　<img src="images/c7dsl1.png" alt="c7dsl1.png" /></p>
+<p>　</p>
+<p>　也可以<span class="brown">重新</span>启动计算机(Restart)，命令行使用 sudo pppoeconf 命令也可以；</p>
+<p>　</p>
+<p>　(下面6-7是局域网的，宽带用户不要设置)</p>
+<p>　6）如果是<span class="brown">局域网</span>上网，在出来的对话框里，选中点“Auto eth0”，点右边的“Edit...”编辑按钮；</p>
+<p>　<img src="images/c4bj.png" alt="c4bj.png" /></p>
+<p>　</p>
+<p>　7）在出来的对话框里，选择 <span class="brown">IPV4 设置</span>标签，在下面的方法里选“手动”，再点下边的“添加”按钮，</p>
+<p>　在出来的文本框里，<span class="brown">依次</span>输入 IP 地址、子网掩码、网关，然后按<span class="brown">回车键</span>确定，在下面的 DNS 里输入 DNS 服务器地址，</p>
+<p>　检查一下，点右下角的“<span class="brown">应用</span>”按钮，在出来的认证中，输入自己的密码；</p>
+<p>　<img src="images/c5ipv4.png" alt="c5ipv4.png" /></p>
+<p>　</p>
+<p>　回到原来对话框点“关闭”，再用左键点上面的“网络”图标，选<span class="brown">Auto eth0</span>，就可以上网了，也可以重新启动计算机；</p>
+<p>　<img src="images/c5lw.png" alt="c5iw.png" /></p>
+<p>　</p>
+<p>　8）连接好网络后先<span class="brown">换源</span>，点左上角菜单“Applications － Accessories － Terminal”，打开终端窗口；</p>
+<p>　<img src="images/a4zd.png" alt="a4zd.png" /></p>
+<p>　</p>
+<p>　输入命令，按回车键后，先输入<span class="brown">自己</span>登录的密码，密码不显示，盲打输入后再按回车键，这是备份命令</p>
+<p>sudo cp /etc/apt/sources.list /etc/apt/sources.list_backup</p>
+<p>　再输入命令，按回车键</p>
+<p>sudo gedit /etc/apt/sources.list</p>
+<p>　在出来的文本编辑器窗口中，先删除<span class="brown">所有</span>内容，再复制下面的这一组源进去，这是新疆用的，其他请参考第9课；</p>
+<p>deb http://mirrors.sohu.com/ubuntu/ lucid main universe restricted multiverse</p>
+<p>deb-src http://mirrors.sohu.com/ubuntu/ lucid main universe restricted multiverse</p>
+<p>deb http://mirrors.sohu.com/ubuntu/ lucid-security universe main multiverse restricted</p>
+<p>deb-src http://mirrors.sohu.com/ubuntu/ lucid-security universe main multiverse restricted</p>
+<p>deb http://mirrors.sohu.com/ubuntu/ lucid-updates universe main multiverse restricted</p>
+<p>deb http://mirrors.sohu.com/ubuntu/ lucid-proposed universe main multiverse restricted</p>
+<p>deb-src http://mirrors.sohu.com/ubuntu/ lucid-proposed universe main multiverse restricted</p>
+<p>deb http://mirrors.sohu.com/ubuntu/ lucid-backports universe main multiverse restricted</p>
+<p>deb-src http://mirrors.sohu.com/ubuntu/ lucid-backports universe main multiverse restricted</p>
+<p>deb-src http://mirrors.sohu.com/ubuntu/ lucid-updates universe main multiverse restricted</p>
+
+<p>　保存关闭，回到终端窗口，再执行下面命令，这是更新源；</p>
+<p>sudo apt-get update</p>
+<p>　<img src="images/c8gxy.png" alt="c8gxy.png" /></p>
+<p>　</p>
+<p>　<span class="tblue">4、更新系统</span></p>
+<p>　1）回到最开头的“<span class="brown">不完整</span>语言支持”对话框，如果没了就点上边的菜单“System－Administration－Language Support”，都选择“汉语”，点左下角的“Run this action now”；</p>
+<p>　<img src="images/d1yyzc.png" alt="d1yyzc.png" />　<img src="images/d1run.png" alt="d1run.png" /></p>
+<p>　</p>
+<p>　2）在出来的“The language support..”<span class="brown">不完整</span>语言支持对话框中，点“Install”，安装语言包；</p>
+<p>　<img src="images/d2install.png" alt="d2install.png" /></p>
+<p>　</p>
+<p>　3）然后开始下载语言包，耐心<span class="brown">等待</span>下载完成，然后接着安装这些包；</p>
+<p>　<img src="images/d3dw.png" alt="d3dw.png" />　<img src="images/d3az.png" alt="d3az.png" /></p>
+<p>　4）待语言包安装完成后，点<span class="brown">Close</span>和叉关闭各个对话框中；</p>
+<p>　<img src="images/d4gb.png" alt="d4gb.png" /></p>
+<p>　</p>
+<p>　5）过一会还会出来更新管理器对话框，点<span class="brown">安装更新</span>按钮；</p>
+<p>　<img src="images/d5gx.png" alt="d5gx.png" /></p>
+<p>　</p>
+<p>　6）然后在出来的密码框中，输入自己的密码，点<span class="brown">确定</span>；</p>
+<p>　<img src="images/d6mm.png" alt="d6mm.png" /></p>
+<p>　</p>
+<p>　7）接下来就是下载和安装，这儿<span class="brown">耐心</span>等待即可；</p>
+<p>　<img src="images/d3dw.png" alt="d3dw.png" /></p>
+<p>　</p>
+<p>　8）安装完成后，关闭对话框，点<span class="brown">右上角</span>的关机按钮，再点“Restart”重启动电脑；</p>
+<p>　<img src="images/d8cq.png" alt="d8cq.png" /></p>
+<p>　</p>
+<p>　9）重新启动后，菜单和程序就是中文的了；</p>
+<p>　<img src="images/d9zm.jpg" alt="d9zm.jpg" /></p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了安装 ubuntu 10.04 的基本方法，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson20/lesson20.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a
+href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border: medium none ;"
+height="20" width="20"></a> </noscript></font><br /><br />
+<div>
+
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tbody><tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+</tbody></table>
+</div>
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+</body></html>

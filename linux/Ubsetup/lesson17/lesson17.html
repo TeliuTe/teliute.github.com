@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" />
+  <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright" />
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description" />
+  <meta content="Ubuntu,TeliuTe,安装,教程,基础,入门" name="keywords" />
+  <meta content="TeliuTe" name="author" />
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.green { 
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style><title>Ubuntu安装|编辑Windows7启动菜单</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十七、Windows7启动菜单</span>　<a href="../index.html">返回目录</a>　<a href="../lesson18/lesson18.html">下一课</a>
+<p>　在Windows 7 中，使用bcdedit来管理启动菜单，下面我们来看一个练习；</p>
+
+<p class="tblue">　1、准备引导项</p>
+<p>　1）下载grub4dos，解压文件，<span class="brown">复制</span>里面的两个文件 grldr.mbr 和 grldr 到 C:盘下；</p>
+<p>　<img src="images/a1grldr.png" alt="a1grldr.png" /></p>
+<p>　</p>
+<p>　2）grldr.mbr是主引导录文件，grldr用于搜索和加载操作系统；</p>
+<p>　</p>
+<p>　3）放在C:盘的<span class="brown">根目录</span>下路径是 C:\grldr.mbr 和 C:\grldr</p>
+<p>　</p>
+<p>　<span class="tblue">2、BCDEdit 添加菜单项</span></p>
+<p>　1）点左下角“开始-所有程序-附件”找到命令提示符，瞄准<span class="brown">点右键</span>，选“以管理员身份运行”；</p>
+<p>　<img src="images/b1gly.png" alt="b1gly.png" /></p>
+<p>　</p>
+<p>　2）在出来的运行对话框里点“<span class="brown">是</span>”，用管理员身份打开命令行窗口；</p>
+<p>　<img src="images/b2yh.png" alt="b2yh.png" /></p>
+<p>　</p>
+<p>　3）在出来的窗口中<span class="brown">输入</span>下面的命令，可以复制了粘贴到里面，按回车键执行；</p>
+<p>bcdedit /create /d "Ubuntu Linux" /application bootsector</p>
+<p>　<img src="images/b3ml.png" alt="b3ml.png" /></p>
+<p>　</p>
+<p>　4）成功运行后出来一行数字，点<span class="brown">窗口</span>左上角黑按钮，选“编辑－标记”；</p>
+<p>　<img src="images/b4cd.png" alt="b4cd.png" /></p>
+<p>　</p>
+<p>　5）小心把鼠标移到左括号后面，按住<span class="brown">拖选</span>中这一行后面一个括号前面，如果错了就重新来过，</p>
+<p>　选好已后<span class="brown">按一下</span>回车键，复制括号里的这行内容，也可以点按钮菜单选“复制”；</p>
+<p>　<img src="images/b5bj.png" alt="b5bj.png" /></p>
+<p>　</p>
+<p>　6）打开一个记事本，把复制的这串内容<span class="brown">粘贴</span>进去，再复制下面的三行进去，然后分别<span class="brown">替换</span>掉里面三行括号里的内容；</p>
+<p>bcdedit /set  {249c5723-1926-11df-b04d-9a47af0f82cb}  device partition=C:<br />
+<br />
+bcdedit /set  {249c5723-1926-11df-b04d-9a47af0f82cb}  path \grldr.mbr<br />
+<br />
+bcdedit /displayorder  {249c5723-1926-11df-b04d-9a47af0f82cb}  /addlast</p>
+<p>　<img src="images/b6jsb.png" alt="b6jsb.png" /></p>
+<p>　</p>
+<p>　7）这样就准备好了三行命令，里面的GUID都已经<span class="brown">替换</span>成了自己第一个命令里的；</p>
+<p>　</p>
+<p>　8）依次复制每一行命令，然后在命令行窗口中<span class="brown">点右键</span>选粘贴，按回车键运行；</p>
+<p>　<img src="images/b8zt.png" alt="b8zt.png" /></p>
+<p>　</p>
+<p>　9）粘贴好以后，按回车键运行，<span class="brown">同样</span>执行另外两条命令；</p>
+<p>　<img src="images/b9ml.png" alt="b9ml.png" /></p>
+<p>　</p>
+<p>　10）重新启动系统，就会出现一个启动菜单，按<span class="brown">方向键</span>选择Ubuntu就可以进入grub环境，引导Ubutnu系统；</p>
+<p>　<img src="images/b10qdcd.png" alt="b10qdcd.png" /></p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了在Windows7中添加启动菜单项的基本操作，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson18/lesson18.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a
+href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border: medium none ;"
+height="20" width="20"></a> </noscript></font><br><br>
+<div>
+
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tbody><tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br>
+</td>
+  </tr>
+</tbody></table>
+</div>
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+</body></html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head> <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description"> <meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description"><meta content="电脑,Nvu,TeliuTe,86团学校,教程,基础,入门" name="keywords"><meta content="TeliuTe" name="author"> <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style><title>Ubuntu安装|安装系统</title></head>
+<body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="smlgren">作者：Teliute　来源：基础教程网</p>
+<span class="tblue">七、安装系统</span>　<a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a>
+<p>　进入到live CD以后，我们既可以先试试各项操作，也可以继续安装Ubuntu系统，下面我们来看一个练
+习；</p>
+<p class="tblue">　1、安装系统</p>
+<p>　在桌面左上角找到“<span class="brown">安装</span>”图标，双击打开它，这儿要<span class="brown">耐心</span>稍等一会，也可以点击系统菜单“System－系统管理－安装；</p>
+<p>　<img src="images/a1anzh.gif" alt="a1anzh.gif"></p>
+<p>　1）首先<span class="brown">第一步</span>出来的是欢迎面板，检查一下左边栏应该选中了“中文(简体)”，点“前进”按钮继续；</p><p>　<img src="images/a1hy.gif" alt="a1hy.gif"></p><p>　2）<span class="brown">第二步</span>是询问所在的城市，这儿默认选择的是上海(shanghai)，时间可以安装好了再调整，<span class="brown">直接</span>点“前进”继续；</p><p>　<img src="images/a2df.gif" alt="a2df.gif"></p><p>　3）接下来<span class="brown">第三步</span>是询问键盘布局，检查一下左边是USA，直接点“前进”按钮即可；
+</p><p>　<img src="images/a3jp.gif" alt="a3jp.gif"></p><p>　前面这三步都可以选默认的<span class="brown">直接</span>前进，第四步分区开始要细致耐心；</p><p>　<span class="tblue">2、分区操作</span></p>
+<p>　1）在第四步出来的分区面板里，选择下边的“<span class="brown">手动</span>”分区；</p>
+<p>　<img src="images/b4fq1.gif" alt="b4fq1.gif"></p>
+<p>　2）点“<span class="brown">前进</span>”按钮，出来一个磁盘扫描滚动条，然后显示整个硬盘的分区情况，</p><p>　<img src="images/b4fq2a.gif" alt="b4fq2a.gif"></p><p>　里面的<span class="brown">/dev/sda</span>就是硬盘，后面的数字代表各个分区，注意最后有一个free space是我们前面预留的<span class="brown">空闲分区</span>空间；</p><p>　<img src="images/b4fq2b.gif" alt="b4fq2b.gif"></p><p>　3）选中“<span class="brown">free space</span>”，点下面的<span class="brown"> New partition</span> 新建分区按钮，出来一个创建分区面板，</p><p>　从上到下顺序，分区类型默认即可，分区容量至少在4G以上，“<span class="brown">用于</span>”那儿点一下选Ext3，“<span class="brown">挂载点</span>”那儿点一下选 / ；</p><p>　<img src="images/b4fq3.gif" alt="b4fq3.gif"></p><p>　检查一下没什么错误，点<span class="brown">绿色</span>“OK”按钮确定，这个分区用于安装系统文件；</p><p>　4）然后出来磁盘扫描，过一会回到分区面板，<span class="brown">再次</span>选中“free space”、点“New partition”进入分区面板，</p><p>　这次的容量输入 128 ，“<span class="brown">用于</span>”选 Ext3 ，“<span class="brown">挂载点</span>”选/boot，这个分区用于存放系统的引导文件；</p><p>　<img src="images/b4fq4.gif" alt="b4fq4.gif"></p><p>　5）点“OK”确定按钮，出来磁盘扫描，然后回到分区面板，<span class="brown">再次</span>选中“free space”、点“New partition”进入分区面板，</p><p>　这次的容量根据内存大小，至少要跟<span class="brown">内存大小</span>相同或多一些，“<span class="brown">用于</span>”选 交换空间 ，“<span class="brown">挂载点</span>”省略，这个分区是用来休眠和虚拟内存用的；</p><p>　<img src="images/b4fq5.gif" alt="b4fq5.gif"></p><p>　6）点“OK”确定按钮，回到分区面板后，<span class="brown">再次</span>选中“free space”，点“New partition”创建分区，</p><p>　剩下的空间可以都划分给/home，“<span class="brown">用于</span>”选 Ext2 ，“<span class="brown">挂载点</span>” 选 /home，这个分区是用来存放用户文件，像文档、图片、歌曲等等，容量别太小；</p><p>　<img src="images/b4fq6.gif" alt="b4fq6.gif"></p><p>　点“OK”确定按钮，回到分区面板，分区操作<span class="brown">完成</span>，回到分区面板检查一下，然后点“前进”按钮继续；</p><p>　<img src="images/b4fq7.gif" alt="b4fq7.gif"></p><p>　<span class="tblue">3、用户信息</span></p><p>　1）经过分区操作以后，<span class="brown">第五步</span>是用户身份，第一行输入名称，用户名那儿要输入英文小写字母，</p><p>　密码输入两遍相同的，找个本子<span class="brown">记一下</span>，后面要经常用到，计算机名称也可以修改一下；</p><p>　<img src="images/c5shf.gif" alt="c5shf.gif"></p><p>　2）点“前进”到<span class="brown">第6步</span>“迁移向导”，直接点“前进”继续下一步，这儿是导入WinXP系统的文件，先不导入；</p><p>　<img src="images/c6qy.gif" alt="c6qy.gif"></p><p>　3）点“<span class="brown">前进</span>”到第7步准备安装，这儿要细心<span class="brown">检查</span>一下，确保没有错误，</p><p>　<img src="images/c7zhb.gif" alt="c7zhb.gif"></p><p>　右边有一个“高级”按钮，可以把系统引导程序安装到其他分区，如果系统中安装了特殊程序(如还原精灵)，可以把引导程序安装到/boot所在的磁盘分区(但需要手动添加才能启动)；</p><p>　<img src="images/c7zhb1.gif" alt="c7zhb1.gif"></p><p>　检查好以后，点“<span class="brown">安装</span>”按钮，开始安装系统，这时候耐心等待即可，</p><p>　4）安装完成后出来一个对话框，提示继续使用live CD，还是重启动计算机，点“<span class="brown">现在重启</span>”重启动即可；</p><p>　<img src="images/c8chq.gif" alt="c8chq.gif"></p><p>　以后重启，注意<span class="brown">关机</span>按钮在右上角，一个<span class="brown">红色</span>的按钮，点击出来关机面板，再选择<span class="brown">两个圆箭头</span>的重启动按钮；</p><p>　<img src="images/c8chq1.gif" alt="c8chq1.gif"></p>　<span class="tblue">本节</span>学习了安装Ubuntu系统的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br /><br />
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>
