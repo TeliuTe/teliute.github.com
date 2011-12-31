@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head> <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之电脑操作基础(Ubuntu操作系统)" name="description"> 
+<meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> 
+<meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description">
+<meta content="电脑,TeliuTe,86团学校,教程,基础,入门" name="keywords">
+<meta content="TeliuTe" name="author"> 
+
+<style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style>
+
+<title>电脑基础|内核升级和删除</title></head>
+<body style="direction: ltr;"><p class="title">电脑操作基础</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十七、内核升级和删除</span>　<a href="../index.html">返回目录</a>　<a href="../lesson18/lesson18.html">下一课</a>
+<p>　内核是操作系统中的核心，主要负责把用户的操作传递给计算机各个硬件，下面我们来看一个练习；</p>
+<p class="tblue">　1、升级内核</p>
+<p>　1）安装Ubuntu时安装了一个操作系统<span class="brown">内核</span>，如8.04的内核版本是2.6.24.16；</p><p>　2）查看内核的方法是，<span class="brown">点菜单</span>“系统－系统监视器－系统”，可以查看系统的内核版本；</p><p>　<img src="images/a1nh.gif" alt="a1nh.gif"></p><p>　3）还可以查看<span style="font-weight: bold;" class="brown">menu.lst</span>的第一个启动项，这是当前加载的内核版本，一般数字是最大的，下面可能还有较小的数字，这是旧的内核；</p><p>　<img src="images/a2nh.gif" alt="a2nh.gif"></p><p>　<span class="tblue">2、升级内核</span></p><p>　1）当软件库里有新的内核时，在上边面板提示区域，会给出一个<span class="brown">升级</span>提示图标，</p><p>　<img src="images/b1tb.gif" alt="b1tb.gif">;</p><p>　在这个图标上单击左键，就进入更新管理器，点右下角的“安装更新”即可；</p><p>　<img src="images/b2gx.gif" alt="b2gx.gif"></p><p>　2）内核升级后，/boot/grub里的启动配置文件<span style="font-weight: bold;" class="brown">menu.lst</span>，也会自动更新，</p><p>　如果你是在WinXP里用<span style="font-weight: bold;" class="brown">grldr</span>来引导Ubuntu，则还要自己把这个文件复制到C:盘的根目录下；</p><p>　</p><p>　<span class="tblue">3、删除旧内核</span></p><p>　1）由于启动只<span class="brown">需要</span>一个内核，新内核使用一段时间，没有什么问题，可以<span class="brown">删除</span>其他不用的旧内核；</p><p>　</p><p>　2）点菜单“<span class="brown">系统</span>－系统管理－新立得软件包管理器”，输入密码后进入；</p><p>　</p><p>　3）以2.6.24-16版本的内核为例，<span class="brown">内核</span>文
+件里包括：linux-headers-2.6.24-16、linux-headers-2.6.24-16-generic、linux-image
+-2.6.24-16-generic、linux-restricted-modules-2.6.24-16-generic、linux-ubuntu-modules-2.6.24-16-generic；</p><p>　</p><p>　4）在新立得中，点<span class="brown">工具栏</span>上的“搜索”按钮，在出来的搜索框中输入 linux 2.6.24-16 ，<span class="brown">注意</span>linux后面有一个空格，</p><p>　然后点下面的<span class="brown">搜索位置</span>，选“名称”，点“搜索”按钮开始搜索；</p><p>　<img src="images/c4ss.gif" alt="c4ss.gif"></p><p>　5）在出来的搜索结果中，找到“linux-headers-2.6.24-16”，瞄准<span class="brown">点右键</span>，选“标记以便彻底删除“，</p><p>　<span class="brown">提示</span>同时也会删除另外一个headers文件，点“标记”，这两个软件包变成<span class="brown">红色</span>；</p><p>　<img src="images/c5bj.gif" alt="c5bj.gif">　<img src="images/c5bj1.gif" alt="c5bj1.gif"></p><p>　6）往下继续找到“linux-image-2.6.24-16-generic”，同样<span class="brown">点右键</span>选“标记以便彻底删除”，</p><p>　<span class="brown">提示</span>也会删除其他几个文件，点“标记”；</p><p>　<img src="images/c6bj.gif" alt="c6bj.gif"></p><p>　7）<span class="brown">再检查</span>一下要删除的确实是旧内核，如果错了，<span class="brown">点菜单</span>“编辑－取消所有标记”，重新标记，</p><p>　如果检查无误，点工具栏上的“<span class="brown">应用</span>”按钮，删除旧内核；</p><p>　<img src="images/c7chx.gif" alt="c7chx.gif"></p><p>　8）删除旧内核，系统也会自动更新/boot/grub里的配置文件menu.lst；</p>　<span class="tblue">本节</span>学习了在Ubuntu中升级和删除旧内核的基本操作，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson18/lesson18.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="smlgren">基础教程网：<a href="http://www.laxjyj.com/teliute/">http://www.laxjyj.com/teliute/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br><br>
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之电脑操作基础(Ubuntu操作系统)" name="description"> 
+<meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> 
+<meta content="电脑,TeliuTe,86团学校,教程,基础,入门" name="keywords">
+
+<style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style><title>电脑基础|运行 Grub4Dos</title></head><body style="direction: ltr;"><p class="title">电脑操作基础</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">二十五、运行 Grub4Dos</span>　<a href="../index.html">返回目录</a>　<a href="../lesson26/lesson26.html">下一课</a>
+<p>　gurb4dos 是一个多系统启动引导管理器，使用它可以引导多种操作系统，下面我们来看一个练习；</p>
+<p class="tblue">　1、grub4dos 简介</p>
+<p>　1）grub4dos 是一个<span class="brown">软件包</span>，包括 grub.exe、grldr、bootloace.com、grldr.mbr、menu.lst 等重要文件；</p><p>　2）grub.exe、grldr 和 grldr.mbr 都是启动<span class="brown">管理器</span>，bootlace.com 是MBR写入工具；</p><p>　3）下载 grub4dos 软件包：<span style="color: green;"></span><a href="http://download.gna.org/grub4dos/" target="_blank">http://download.gna.org/grub4dos/</a></p>
+<p>　<a href="http://code.google.com/p/grub4dos-chenall/downloads/list">http://code.google.com/p/grub4dos-chenall/downloads/list</a></p>
+<p>　<span class="tblue">2、纯 Dos/windows9x 系统中运行</span></p><p>　1、在命令提示符 C:\&gt;_ 或者 A:\&gt;_ ，输入 grub.exe，然后按回车键，就可以进入grub4dos引导管理器；</p><p>　2、在自动批处理 Atuoexec.bat 中，加入一行 grub.exe</p>　3、在配置文件 Config.sys 中，加入一行 device=grub.exe<br><p>　4、复制 menu.lst 文件</p><p>　<span class="brown">注意</span>，提前要把 grub.exe 复制到磁盘的根目录下面，比如 复制到 C:\ 下面；</p><p>　<span class="tblue">3、在 Windows 2000/XP/2003 中加载</span></p><p>　1）复制 grldr 到 C: 盘的根目录下面，就是复制到 C: 盘里；</p><p>　2）然后修改C:盘下面的 boot.ini文件，在里面加入一行 C:\grldr=grub4dos</p><p>　2）复制 menu.lst 文件到 C: 盘的根目录下面；</p><p>　<span class="tblue">4、在 Windows&nbsp;Vista 中加载</span></p><p>　1）复制 grldr.mbr 和 grldr 到 C: 盘根目录下面；</p><p>　2）用 bcdedit添加一个菜单项到 vista 的启动菜单中；</p><p>　3)复制 menu.lst 文件到 C: 盘的根目录下面；</p><p>　<span class="tblue">5、在 Linux /Ubutnu 中加载</span></p><p>　1）使用命令 # kexec -l grub.exe 和 # kexec -e </p><p>　2）使用 syslinux，在 syslinux.cfg 中，加上 kernel grub.exe</p><p>　3）在GNU Grub 中，运行 linux /grub.exe 旧版的是 kernel (DEVICE)/PATH/grub.exe 也可以添加到 menu.lst中，</p><p>　例如 linux (hd0,5)/g4d/grub.exe</p><p>　4）在 lilo 里，修改&nbsp;lilo.conf ，添加&nbsp;image=/boot/grub.exe</p><p>　<span class="tblue">6、安装到 MBR</span></p><p>　1）MBR 是主引导记录，它负责搜索操作系统所在的磁盘分区；</p><p>　2）在 DOS/Windows9x下，运行 bootlace 0x80</p><p>　3）在 Windows2000/XP下，运行 grubinst (hd0)&nbsp;</p><p>　4）在&nbsp;Linux 下运行 bootlace.com&nbsp; /dev/hda</p><p>　安装到 MBR 中，还需要在分区根目录下复制 grldr 和 menu.lst</p><p>　<span class="tblue">7、一个 menu.lst 范例</span></p>default 0
+<br>timeout 3
+<br>
+<br>title Windows NT/2K/XP
+<br>find --set-root /ntldr
+<br>chainloader /ntldr
+<br>
+<br>title		Ubuntu 8.04.1, kernel 2.6.24-19-generic
+<br>root		(hd0,5)
+<br>kernel		/boot/vmlinuz-2.6.24-19-generic root=UUID=e815c574-
+<br>
+4eec-43f0-9e05-579d82f2b5fa ro quiet splash
+<br>initrd		/boot/initrd.img-2.6.24-19-generic
+<br>quiet
+<br><br><br>title qi dong ISO 
+<br>find --set-root /deepinxp6.iso
+<br>map /deepinxp6.iso (hd32)
+<br>map --hook
+<br>chainloader (hd32)
+<br>
+<br>title		Windows 95/98/NT/2000
+<br>
+<br>root		(hd0,0)
+<br>makeactive
+<br>chainloader	+1
+<br>
+<br>title grub4dos
+<br>find --set-root /grub.exe
+<br>linux /grub.exe<br><p></p><p>也可以参考 grub4dos 软件包中的 menu.lst 范例；</p>　<span class="tblue">本节</span>学习了运行和安装 grub4dos 的基本操作，如果你成功地完成了练习，请继续学习下一课内容；
+<p><a href="../index.html">返回目录</a>　<a href="../lesson26/lesson26.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有，商业用途请与作者联系</p>
+<p class="smlgren">基础教程网：<a href="http://www.laxjyj.com/teliute/">http://www.laxjyj.com/teliute/</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border: medium none ;" height="20" width="20"></a> </noscript>
+</font><br><br>
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+</body></html>
