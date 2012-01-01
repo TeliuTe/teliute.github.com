@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之c++基础" name="description"> 
+<meta content="TeliuTe,基础教程网" name="Copyright"> 
+<meta content="c++,C＋＋,TeliuTe,编程,教程,基础,入门" name="keywords">
+
+<link rel="stylesheet" href="../css/css.css" type="text/css">
+
+
+<title>c++教程|常见数据类型</title><link rel="Shortcut  Icon" href="../css/qcqy.ico"></head>
+<body style="direction: ltr;">
+
+<p class="title">C++ 编程基础教程</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">一、常见数据类型</span>　<a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p>　程序可以处理各种数据，我们给程序提供数据，然后得到预期的结果，下面我们来看一个练习；</p>
+<p class="tblue">　1、启动 Geany</p>
+<p>　1）<span class="brown">点菜单</span>“应用程序－编程－Geany”启动 Geany ，<span class="brown">新建</span>一个 c++ 源程序；</p>
+<p>　2）点菜单“文件－另存为”命令，以“<span class="brown">shuju</span>”为文件名，保存文件到自己的文件夹；</p>
+<p>　</p>
+<p>　<span class="tblue">2、输入程序代码</span></p>
+<p>　1）在下面的蓝色代码区域里，输入一行“cout &lt;&lt; 18;”(<span class="brown">读作</span> c-out，最后的分号别漏了)；</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 150px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+#include &lt;iostream&gt;<br />
+using namespace std;<br /><br />
+
+int main(int argc, char** argv)<br />
+{<br />
+&nbsp;&nbsp; &nbsp;cout &lt;&lt; 18;<br />
+&nbsp;&nbsp; &nbsp;return 0;<br />
+}<br />
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　2）保存，编译，生成后，<span class="brown">运行</span>将显示一个数字18，这就是<span class="brown">数值</span>数据；</p>
+<p>　<img src="images/a3yx.gif" alt="a3yx.gif"></p>
+<p>　3）关闭返回到程序窗口，在 cout <span class="brown">前面</span>按回车键，插入一行，</p><p>　输入一行“cout &lt;&lt; "2*9=";”分号别漏了；</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 40px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp; &nbsp;cout &lt;&lt; "2*9=";<br />
+&nbsp;&nbsp; &nbsp;cout &lt;&lt; 18;
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　4）保存，编译，生成，运行，这次前面加上了带<span class="brown">双引号</span>的叫字符串数据；</p>
+<p>　<img src="images/a4yx.gif" alt="a4yx.gif"></p>
+<p>　5）再在第一个 cout <span class="brown">前面</span>按一下回车键，插入一个空行，输入“cout &lt;&lt; "9+9=" &lt;&lt; 9+9 &lt;&lt; endl;”；</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 40px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp; &nbsp;cout &lt;&lt; "9+9=" &lt;&lt; 9+9;<br />
+&nbsp;&nbsp; &nbsp;cout &lt;&lt; endl;
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　6）这一行前面的双引号是<span class="brown">字符串</span>，后面的是数字加法运算，</p><p>　下一行的 endl 是回车<span class="brown">换行符</span>，如果不加就跟下一行连一起了；</p>
+<p>　</p>
+<p>　7）保存，编译、生成后运行，现在<span class="brown">显示</span>的是两行了；</p>
+<p>　<img src="images/a5ys.gif" alt="a5ys.gif"></p>
+<p>　8）这儿要求<span class="brown">记住</span>：加了双引号的都是<span class="brown">字符串</span>，里面可以有字母、数字、符号，而0～9所组成的是<span class="brown">数字</span>；</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 40px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+#include &lt;iostream&gt;<br />
+using namespace std;<br /><br />
+int main(int argc, char** argv)<br />
+{<br />
+&nbsp;&nbsp;&nbsp; cout &lt;&lt; "9+9=" &lt;&lt; 9+9;<br />
+&nbsp;&nbsp;&nbsp; cout&lt;&lt;endl;<br />
+&nbsp;&nbsp;&nbsp; <br />
+&nbsp;&nbsp;&nbsp; cout &lt;&lt; "2*9=";<br />
+&nbsp;&nbsp;&nbsp; cout &lt;&lt; 18;<br />
+&nbsp;&nbsp;&nbsp; return 0;<br />}
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　<span class="tblue">本节</span>学习了 c++ 中常见的数值和字符串数据类型，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body></html>

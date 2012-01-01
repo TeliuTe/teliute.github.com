@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之css基础" name="description"> 
+<meta content="TeliuTe,基础教程网" name="Copyright"> 
+<meta content="css,TeliuTe,教程,基础,入门" name="keywords">
+
+<link rel="stylesheet" href="../css/css.css" type="text/css">
+
+
+<title>css教程|ul 列表</title><link rel="Shortcut  Icon" href="../css/qcqy.ico"></head>
+<body style="direction: ltr;">
+
+<p class="title">CSS 基础入门教程</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">七、ul 列表</span>　<a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a></p>
+<p>　对于排列有序的条目，可以使用列表来实现，下面我们来看一个练习；</p>
+
+<p class="tblue">　1、文本编辑器</p><p>　1）打开记事本或 <span class="brown">gedit</span>、leafpad 文本编辑器，gedit 在查看菜单里选择“HTML”；</p>
+<p>　2）点菜单“文件－保存”命令，以“<span class="brown">lx8.html</span>”为文件名，类型所有文件，编码 UTF-8，保存到自己的文件夹；</p>　3）按照基础02课的方法，<span class="brown">输入</span> &lt;html&gt; 、 &lt;head&gt; 和 &lt;body&gt; 的内容；
+<p>　</p>
+<p>　<span class="tblue">2、使用列表</span></p>
+<p>　1）在 &lt;body&gt; 后面接着<span class="brown">输入</span>下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green;">
+<p>&lt;ul&gt;<br />&lt;li&gt;&lt;a href="lx1.html"&gt;第一课&lt;a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="lx2.html"&gt;第二课&lt;a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="lx3.html"&gt;第三课&lt;a&gt;&lt;/li&gt;<br />&lt;/ul&gt;</p>
+</div>
+<p>　</p>
+
+<p>　2）前面的 &lt;ul&gt; 建立一个列表，里面的各个 &lt;li&gt; 是<span class="brown">列表项</span>，各个列表项排列对齐缩进，前面有一个圆点列表符号，</p>
+<p>　<span class="brown">保存</span>一下文件，到自己文件夹里，打开 <span class="brown">lx7</span> 网页，看看列表的效果，这儿加了 &lt;a&gt; 超级链接；</p><p>　<img src="images/a1llq.gif" alt="a1llq.gif"></p><p>　</p>
+<p>　3）如果要<span class="brown">去掉</span>前面的圆点，可以在 ul 的样式里设定，前面的<span class="brown">缩进</span>也可以设定内边距为 0，输入下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green;">
+<p>&lt;ul style="list-style-type:none; padding:0px;"&gt;<br />&lt;li&gt;&lt;a href="lx1.html"&gt;第一课&lt;a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="lx2.html"&gt;第二课&lt;a&gt;&lt;/li&gt;<br />&lt;li&gt;&lt;a href="lx3.html"&gt;第三课&lt;a&gt;&lt;/li&gt;<br />&lt;/ul&gt;</p>
+</div>
+<p>　</p>
+
+<p>　4）<span class="brown">保存</span>一下，再到浏览器里看一下，三个列表都排到了左边对齐；</p>
+<p>　<img src="images/a2llq.gif" alt="a2llq.gif"></p><p>　　</p>
+<p>　5）如果要排列成横向水平的菜单样式，可以在每个列表项里加上 float 属性，防止重叠再设定一个宽度，代码如下；</p>
+<div style="background-color: rgb(255, 255, 255); width: 600px; color: green;">
+<p>&lt;ul style="list-style-type:none; padding:0px;"&gt;<br />&lt;li style="float:left; width:100px;"&gt;&lt;a href="lx1.html"&gt;第一课&lt;a&gt;&lt;/li&gt;<br />&lt;li style="float:left; width:100px;"&gt;&lt;a href="lx2.html"&gt;第二课&lt;a&gt;&lt;/li&gt;<br />&lt;li style="float:left; width:100px;"&gt;&lt;a href="lx3.html"&gt;第三课&lt;a&gt;&lt;/li&gt;<br />&lt;/ul&gt;</p>
+</div>
+<p>　</p>
+
+<p>　6）<span class="brown">保存</span>一下，再到浏览器里看一下，三个列表项都水平排列了；</p>
+<p>　<img src="images/a3llq.gif" alt="a3llq.gif"></p><p>　　</p>
+
+<p>　<span class="tblue">本节</span>学习了列表的基本使用方法，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body></html>

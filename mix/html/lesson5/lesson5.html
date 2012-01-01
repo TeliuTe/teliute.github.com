@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="description" content="TeliuTe系列教程之HTML基础入门教程" />
+<meta name="keywords" content="基础教程网,TeliuTe,HTML,基础教程" />
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+
+<title>HTML 音画基础|播放音乐</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #CCFFFF;
+}
+.STYLE1 {
+	font-family: "华文彩云", Arial;
+	color: #FF0000;
+	font-size: 28px;
+}
+
+.STYLE3 {
+    font-family: Arial}
+.STYLE4 {color: #800000}
+.STYLE2 {	font-size: 12px;
+	line-height: 10%;
+	color: #008000;
+}
+.STYLE5 {	color: #0000FF;
+}
+-->
+</style>
+</head>
+
+<body>
+<p align="center" class="STYLE1" style="MARGIN: 0px; LINE-HEIGHT: 150%"><span class="STYLE3">HTML</span> 基础入门教程 </p>
+<p><span class="STYLE5">五、播放音乐　</span><a href="../index.html">返回</a></p>
+<p>　前面我们学习的是文字效果，这一节来学习播放音乐，音乐一般用embed标签，下面我们来看一个练习；</p>
+<p class="STYLE5">　1、启动记事本</p>
+<p>　1）<span style="MARGIN: 0px; LINE-HEIGHT: 150%">点击“<span class="STYLE4">开始</span>－所有程序－附件－记事本”</span>；</p>
+<p>　<img src="images/1jshb.gif" width="463" height="62" /></p>
+<p>　2）记事本的<span class="STYLE4">窗口</span>主要包括标题栏、菜单栏、<span class="STYLE4">工作区</span>，左上角有一个一闪一闪的光标<span class="STYLE4">插入点</span>竖线；</p>
+<p>　<img src="images/1jshb1.gif" width="490" height="334" /></p>
+<p>　3）点<span class="STYLE4">菜单</span>“文件－保存”命令，以“<span class="STYLE4">播放音乐.html</span>”为文件名，类型为“<span class="STYLE4">所有文件</span>”，保存文件到<span class="STYLE4">自己的</span>文件夹，注意文件名后缀为英文字母； </p>
+<p>　<span class="STYLE5">2、输入内容</span></p>
+<p>　1）在工作区中输入下列内容，输入的时候细心，看清英文字母：</p>
+<p>　<img src="images/2dm.gif" width="547" height="122" /></p>
+<p>&lt;embed src=&quot;http://teliute.org/wma/ifhappy.mp3&quot; <br />
+  width=&quot;300&quot; height=&quot;45&quot; type=&quot;audio/x-pn-realaudio-plugin&quot; <br />
+controls=&quot;ControlPanel&quot; autostart=&quot;0&quot; loop=&quot;-1&quot;&gt;&lt;/embed&gt;</p>
+<p>　这儿的<span class="STYLE4">src</span>标后面是音乐地址，<span class="STYLE4">autostart</span>是自动开始，<span class="STYLE4">loop</span>是循环，如果要隐藏播放器，可以加一个<span class="STYLE4">hidden=&quot;-1&quot;</span>，或者简单的把宽度和高度设为&quot;0&quot;；</p>
+<p>　2）音乐必须是发到<span class="STYLE4">网上</span>的有效链接地址，得到音乐地址的方法是，在<span class="STYLE4">播放器</span>上敲右键，选“属性”命令，复制中间<span class="STYLE4">最长的</span>；</p>
+<p>　<img src="images/2shx.gif" width="403" height="374" /></p>
+<p>　3）按<span class="STYLE4">Ctrl＋S</span>组合键保存一下文件，在自己的文件夹中找到“播放音乐”文件，双击打开，看一下页面效果；</p>
+<div id="m1">　<embed src="http://teliute.org/wma/ifhappy.mp3" 
+width="300" height="45" type="audio/x-pn-realaudio-plugin" 
+controls="ControlPanel" autostart="0" loop="-1"></embed></div>
+<p>　如果提示“<span class="STYLE4">安全警报</span>”，点一下黄色的安全条，选“允许阻止的内容”，然后点击播放按钮即可；</p>
+<p><br />
+　<img src="images/2aq.gif" width="458" height="302" />　<img src="images/2aq1.gif" width="458" height="302" /></p>
+<p>　如果音乐不能播放，提示错误或“准备就绪”，就换一个<span class="STYLE4">有效</span>的音乐地址；</p>
+<p>　<span class="STYLE4">注意：</span>如果不能上网，则按下列操作： </p>
+<p>　1）把本课文件夹中的 <span class="STYLE4">ifhappy</span> 文件复制到自己的文件夹中， </p>
+<p>　2）把代码中第一行改成 <span class="STYLE4">&lt;embed src=&quot;ifhappy.mp3&quot;</span></p>
+<div id="m2">　<embed src="ifhappy.mp3" 
+width="300" height="45" type="audio/x-pn-realaudio-plugin" 
+controls="ControlPanel" autostart="0" loop="-1"></embed></div>
+<p>　<span class="STYLE5">本节</span>学习了播放音乐的基本方法，如果你成功地完成了练习，请继续学习下一课内容； </p>
+<p><a href="../index.html">返回</a></p>
+<p class="STYLE2">本教程由86团学校TeliuTe制作|著作权所有 </p>
+<p class="STYLE2">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="STYLE2">美丽的校园…… </p>
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body>
+</html>

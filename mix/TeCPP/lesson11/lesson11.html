@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之c++ 基础" name="description"> 
+<meta content="TeliuTe,基础教程网" name="Copyright"> 
+<meta content="c++,TeliuTe,编程,教程,基础,入门" name="keywords">
+
+<link rel="stylesheet" href="../css/css.css" type="text/css">
+
+
+<title>c++ 教程|堆内存</title><link rel="Shortcut  Icon" href="../css/qcqy.ico"></head>
+<body style="direction: ltr;">
+
+<p class="title">C++ 编程基础教程</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">十一、堆内存、</span>　<a href="../index.html">返回目录</a></p>
+<p>　堆内存可以动态分配所需的内存空间大小，而数组必须要在程序运行前指定空间大小，下面我们来看一个练习；</p>
+<p class="tblue">　1、启动 Geany</p>
+<p>　1）<span class="brown">点菜单</span>“应用程序－编程－Geany”启动 Geany ，<span class="brown">新建</span>一个 c++  源程序；</p>
+<p>　2）点菜单“文件－另存为”命令，以“<span class="brown">heap</span>”为文件名，保存文件到<span class="brown">自己的</span>文件夹；</p>
+<p>　</p>
+<p>　<span class="tblue">2、分配堆内存</span></p>
+<p>　1）使用 new 操作符来<span class="brown">获得</span>需要的内存大小，它返回指定类型的内存空间指针，</p><p>　接着输入下面的代码，准备要用到的变量，第三个是指针变量，存放将来内存地址：</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 20px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; int i = 0;<br />&nbsp;&nbsp; &nbsp;int a = 0;<br />&nbsp;&nbsp; &nbsp;int *score = NULL;
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　</p><p>　2）接下来输入一个数给 a，<span class="brown">指定</span>要申请的内存空间大小；</p><table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 20px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; cout &lt;&lt; "Input a number: ";<br />&nbsp;&nbsp; &nbsp;cin &gt;&gt; a;
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　</p><p>　3）接下来按整型 int 申请内存大小，如果<span class="brown">成功</span>了，就把地址给 score 指针变量，否则给它的是“空” NULL；</p><table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 40px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; score = new int [a];
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　</p><p>　4）如果 score 不为空，就给它的各个单元<span class="brown">赋值</span> i ，内存一般是连续的，可以当数组来使用；</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 300px; height: 20px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;a; i++)<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;score[i] = i;<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}
+</span></td>
+</tr>
+</tbody>
+</table>
+<p>　</p>
+
+<p>　5）赋值完毕以后，再<span class="brown">显示</span>一下各个单元的值；　</p>
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 357px; height: 130px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;cout &lt;&lt;&nbsp; "score[" &lt;&lt; a &lt;&lt; "] = ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;a; i++)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; score[i] &lt;&lt; " ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span><span style="color: rgb(0, 80, 0);"></span></td></tr></tbody></table><p>　</p>
+
+<p>　6）使用完毕后，<span class="brown">归还</span>申请的内存，释放内存后，score 指针也<span class="brown">应该</span>让指向空 NULL；　</p><table style="text-align: left; background-color: rgb(255, 255, 255); width: 371px; height: 40px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(0, 80, 0);">
+&nbsp;&nbsp;&nbsp; </span><span style="color: rgb(0, 80, 0);">free(score);<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;score = NULL;</span></td></tr></tbody></table><p>　</p><p>　7）编译、<span class="brown">生成</span>、运行后，显示分配的内存单元和值；</p><p>　<img src="images/a1yx.gif" alt="a1yx.gif"></p><p>　</p>
+
+<table style="text-align: left; background-color: rgb(255, 255, 255); width: 500px; height: 20px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td><span style="color: rgb(0, 80, 0);">
+#include &lt;iostream&gt;<br />using namespace std;<br /><br />int main(int argc, char** argv)<br />{<br />&nbsp;&nbsp; &nbsp;int a = 0;<br />&nbsp;&nbsp; &nbsp;int *score = NULL;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;cout &lt;&lt; "Input a number: ";<br />&nbsp;&nbsp; &nbsp;cin &gt;&gt; a;<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;score = new int [a];<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;if (score != NULL)<br />&nbsp;&nbsp; &nbsp;{<br />&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;a; i++)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score[i] = i;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt;&nbsp; "score[" &lt;&lt; a &lt;&lt; "] = ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0; i&lt;a; i++)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout &lt;&lt; score[i] &lt;&lt; " ";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delete[] score;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; score = NULL;<br />&nbsp;&nbsp; &nbsp;}<br />&nbsp;&nbsp; &nbsp;<br />&nbsp;&nbsp; &nbsp;return 0;<br />}</span></td>
+</tr>
+</tbody>
+</table>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了堆内存使用的基本操作，如果你成功地完成了练习，请继续学习；
+</p>
+<p><a href="../index.html">返回目录</a><a href="../lesson/lesson.html"></a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="smlgren">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body></html>

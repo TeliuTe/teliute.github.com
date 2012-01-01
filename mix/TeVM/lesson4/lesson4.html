@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn">
+<head>
+
+
+  
+  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+  
+  
+  <meta name="author" content="TeliuTe">
+
+
+  
+  
+  <meta content="TeliuTe系列教程之VMware虚拟机基础" name="description">
+
+
+  
+  
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright">
+
+
+  
+  
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用VM虚拟机" name="description">
+
+
+  
+  
+  <meta content="基础教程网,TeliuTe,VMware,使用,操作" name="keywords">
+
+
+  
+  
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style>
+  
+  
+  <title>VMware基础|Fdisk分区</title>
+</head>
+
+
+<body style="direction: ltr;">
+
+
+<p class="title">VMware 虚拟机基础入门教程</p>
+
+
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+
+
+<span class="tblue">四、磁盘分区</span>　<a href="../index.html">返回目录</a>　<a href="../lesson5/lesson5.html">下一课</a>
+<p>　新建的磁盘需要分区后才行，原版的WinXP带有分区程序，我们也可以用工具来先分区，下面我们来看一个练习；</p>
+
+
+<p class="tblue">　1、Fidsk分区</p>
+
+
+<p>　1）插入Win98启动软盘或加载软盘镜像，然后启动虚拟机到DOS下；</p>
+
+
+<p>　
+<img src="images/a1rq.gif" alt="a1rq.gif"></p>
+
+
+<p>　2）启动成功后会有一篇英文，大意是没找到硬盘，最下面出来一个<span class="brown">A:\&gt;</span>，新建的硬盘需要分区后才能用；</p>
+
+
+<p>　
+<img src="images/a2dos.gif" alt="a2dos.gif"></p>
+
+<p>　3）从键盘输入<span style="font-weight: bold;" class="brown">fdisk</span>然后按一下回车，出来一篇英文，最下面一行有个白亮的<span style="font-weight: bold;" class="brown">Y</span>，直接按一下<span class="brown">回车键</span>确认；</p>
+
+<p>　
+<img src="images/a3fdsk.gif" alt="a3fdsk.gif"></p>
+
+<p>　4）然后出来几排英文，最下面一行有个白亮的<span style="font-weight: bold;" class="brown">1</span>，直接按一下<span class="brown">回车键</span>确认，这儿是创建分区；</p>
+
+<p>　
+<img src="images/a4chj.gif" alt="a4chj.gif"></p>
+
+<p>　5）然后出来一个还是白亮的<span style="font-weight: bold;" class="brown">1</span>，直接按<span class="brown">回车键</span>，这儿是创建主分区；</p>
+
+<p>　
+<img src="images/a5zhfq.gif" alt="a5zhfq.gif"></p>
+
+<p>　6）然后很快的闪动几下，出来一个提示白亮的<span style="font-weight: bold;" class="brown">Y</span>，直接按<span class="brown">回车键</span>确认，这儿是分区大小设为最大；</p>
+
+<p>　
+<img src="images/a6dx.gif" alt="a6dx.gif"></p>
+
+<p>　7）然后还是很快闪动，出来一篇英文提示，最下面有一行白亮<span style="font-weight: bold;" class="brown">ESC</span>，按一下ESC键返回；</p>
+
+<p>　
+<img src="images/a7fh.gif" alt="a7fh.gif"></p>
+
+<p>　8）<span class="brown">同时按</span>键盘左下角的Ctrl和Alt键，出现鼠标指针后，点窗口工具来左边的<span class="brown">停止</span>按钮，关闭虚拟机，分区也成功了，</p>
+
+<p>　
+<img src="images/a8gj.gif" alt="a8gj.gif"></p>
+
+<p>　DOS下面可以直接关闭虚拟机，Windows是执行关机命令，Ctrl+Alt组合键是切换鼠标热键；</p>
+
+
+<p>　<span class="tblue">2、用PQ分区</span></p>
+
+
+<p>　1）如果能找到XP工具盘，里面有<span class="brown">PQ</span>工具，也可以用来分区，插入光盘或者加载镜像文件，然后启动虚拟机；</p>
+
+
+<p>　
+<img src="images/b1cd.gif" alt="b1cd.gif"></p>
+
+
+<p>　2）稍等进入窗口后，点上边的<span class="brown">菜单</span>&ldquo;作业&rdquo;（或者&ldquo;操作&rdquo;），选择&ldquo;<span class="brown">建立</span>&rdquo;（或&ldquo;创建&rdquo;）菜单；</p>
+
+
+<p>　
+<img src="images/b2cx.gif" alt="b2cx.gif"></p>
+
+
+<p>　3）接下来点上面的下拉按钮，选择&ldquo;<span class="brown">主分区</span>&rdquo;，然后点下面的&ldquo;确定&rdquo;；</p>
+
+
+<p>　
+<img src="images/b3zhfq.gif" alt="b3zhfq.gif"></p>
+
+
+<p>　4）回到窗口后，点下面的&ldquo;<span class="brown">执行</span>&rdquo;或应用按钮，在出来的提示中点&ldquo;是&rdquo;，然后很快完成，关闭窗口后完成分区；</p>
+
+
+<p>　
+<img src="images/b4zhx.gif" alt="b4zhx.gif"></p>
+
+<p>　<span class="tblue">本节</span>学习了新建磁盘分区的基本操作，如果你成功地
+完成了练习，请继续学习下一课内容；</p>
+
+
+<p><a href="../index.html">返回目录</a>　<a href="../lesson5/lesson5.html">下一课</a></p>
+
+
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">本教程由86团学校TeliuTe制作|著作权所有 </font> </p>
+
+
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org</a></font></p>
+
+
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">美丽的校园&hellip;&hellip; </font><br>
+
+
+<font style="font-size: 12px;" color="green">
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+
+
+</font><br>
+
+<br>
+
+</p>
+
+
+
+<div>
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+
+
+  <tbody>
+
+
+    <tr>
+
+
+      <td>
+      
+      
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>      
+      
+      
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td>      
+      
+      
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>      
+      
+      
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+
+
+    </tr>
+
+
+    <tr>
+
+
+      <td>      
+      
+      
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>      
+      
+      
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+
+
+    </tr>
+
+  
+  
+  
+  </tbody>
+</table>
+
+
+</div>
+
+
+<p></p>
+
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+</body>
+</html>

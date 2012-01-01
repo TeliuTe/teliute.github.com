@@ -1,0 +1,15 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>五路小棋盘</title>
+</head>
+<body bgcolor="#ffffff">
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="800" height="600" id="weiqi0" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="weiqi0.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="weiqi0.swf" quality="high" bgcolor="#ffffff" width="800" height="600" name="weiqi0" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object><p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022" target="_blank">
+<img alt="

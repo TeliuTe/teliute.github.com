@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>  
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="author" content="TeliuTe">
+  <meta content="TeliuTe系列教程之VMware虚拟机基础" name="description">
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright">
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用VBox虚拟机" name="description">
+  <meta content="基础教程网,TeliuTe,VirtualBox,使用,操作" name="keywords">
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style>  
+  
+  <title>VirtualBox基础|下载安装</title></head>
+<body style="direction: ltr;">
+
+<p class="title">VirtualBox 虚拟机基础入门教程</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">一、下载和安装</span>　<a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p><p>　VirtualBox是一款免费的虚拟机软件，使用它可以很方便地创建虚拟机系统，下面我们来看一个练习；</p>
+<p class="tblue">　1、下载安装包</p>
+<p>　1）官方下载：<a href="http://www.virtualbox.org/wiki/Downloads">http://www.virtualbox.org/wiki/Downloads</a>，在页面中找到<span class="brown">windows</span>版本或者<span class="brown">Linux</span>版本，点蓝色链接进入下载页面；</p><p>　<img src="images/a1gf.gif" alt="a1gf.gif"></p>
+<p>　霏凡软件站：<a href="http://www.crsky.com/soft/9441.html">http://www.crsky.com/soft/9441.html</a>，windows版本下载；</p>
+<p>　2）Ubuntu中可以进入<span class="brown">新立得</span>，搜索“virtualbox”，然后点右键选“标记以便安装”，然后点上面工具栏的“<span class="brown">应用</span>”按钮；</p>
+<p>　<img src="images/a2xld.gif" alt="a2xld.gif"></p>
+　<span class="tblue">2、Ｗindows里面安装VirtualBox</span>
+<p>　1）下载以后如果是压缩包先解压，得到一个安装程序，<span class="brown">双击运行</span>后开始安装；</p>
+<p>　<img src="images/b1tb.gif" alt="b1tb.gif"></p>
+<p>　2）在安装向导里点“<span class="brown">Next</span>”继续下一步；</p>
+<p>　<img src="images/b2next.gif" alt="b2next.gif"></p>
+<p>　3）接下来的<span class="brown">许可协议</span>里选“I accetp”同意，然后点Next继续；</p>
+<p>　<img src="images/b3wty.gif" alt="b3wty.gif"></p>
+<p>　4）接下来点“<span class="brown">Install</span>”，稍等一会到“Finish”就安装完成了；</p>
+<p>　<img src="images/b4wch.gif" alt="b4wch.gif"></p>
+<p>　5）安装好以后<span class="brown">点菜单</span>“开始－所有程序－Sun xVM VirtualBox-VirtualBox”运行虚拟机程序；</p><p>　<img src="images/b5chx.gif" alt="b5chx.gif"></p><p>　6）先出来一个<span class="brown">注册</span>提示，输入自己的邮箱，发送出去就可以，也可以点“取消”，以后再注册，</p><p>　然后进入到<span class="brown">主程序</span>窗口中，工具栏左边是一个“<span class="brown">新建</span>”按钮，下面还是空的；</p><p>　<img src="images/b6chk.gif" alt="b6chk.gif"></p><p>　<span class="tblue">3、Ubuntu中安装驱动</span></p><p>　1）由于内核不断升级，对应的VBox驱动也要升级，通过自己的<span class="brown">编译</span>来完成；</p><p>　2）点<span class="brown">左上角</span>菜单“应用程序－附件－终端”进入终端窗口，运行下面的命令，</p><p>　<img src="images/c0cd.gif" alt="c0cd.gif"></p><p>　sudo命令要先<span class="brown">输密码</span>后回车，每一行输入后按一下<span class="brown">回车键</span>，可以用复制粘贴的方法；</p>
+<div id=b1 style="background-color:#ffffff">
+<span style="color: green;">sudo apt-get install virtualbox-ose-source</span><br style="color: green;"><span style="color: green;">cd /usr/src</span><br style="color: green;"><span style="color: green;">sudo tar xjvf virtualbox*.bz2</span><br style="color: green;"><span style="color: green;">cd modules/virtualbox-ose</span><br style="color: green;"><span style="color: green;">sudo ./build_in_tmp install</span><br style="color: green;"><span style="color: green;">sudo /etc/init.d/vboxdrv restart</span>
+</div>
+<p>　3）设置VBox驱动<span class="brown">权限</span>，输入下面的命令；</p>
+<div id=b2 style="background-color:#ffffff">
+<span style="color: green;">sudo chmod ugo+rw /dev/vboxdrv</span>
+</div>
+<p>　4）运行VBox的方法是，点<span class="brown">左上角</span>菜单“应用程序－系统工具－Sun xVM VirutalBox”，</p><p>　如果没有“系统工具”菜单项，在“应用程序”上点右键，选编辑菜单，打勾系统工具菜单项；</p><p>　<img src="images/c1cd.gif" alt="c1cd.gif"></p>　<span class="tblue">本节</span>学习了下载和安装运行VirtualBox的基本操作，如果你成功地完成了练习，请继续学习下一课内容；
+
+<p><a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">本教程由86团学校TeliuTe制作|著作权所有 </font> </p>
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org</a></font></p>
+<p style="line-height: 150%; margin-top: 0pt; margin-bottom: 0pt;">
+<font color="#008000" size="1">美丽的校园…… </font><br>
+<font style="font-size: 12px;" color="green">
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br><br>
+
+</p>
+
+<div>
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+  <tbody>
+    <tr>
+      <td>
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>   
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+    </tr>
+    <tr>
+      <td> 
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>   
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+    </tr>
+    <tr>
+      <td>   
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script> 
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<p></p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body></html>
