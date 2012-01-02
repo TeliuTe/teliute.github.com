@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="TeliuTe系列教程之Flash脚本实例教程" name="description" /> 
+<meta content="TeliuTe,基础教程网" name="Copyright" /> 
+<meta content="Flash脚本,TeliuTe,教程,实例,入门" name="keywords" />
+
+<link rel="stylesheet" href="../css/css.css" type="text/css" /><title>Flash脚本实例|输入代码</title>
+
+<link rel="Shortcut  Icon" href="../css/qcqy.ico" /></head><body style="direction: ltr;">
+
+<p class="title">Flash脚本实例《打字》制作教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">九、输入代码</span>　<a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a></p>
+<p>　这一课我们来设计输入框的代码，下面我们来看一个练习；</p>
+<p class="tblue">　1、启动计时器</p>
+<p>　1）首先在代码图层的第二帧，插入一个<span class="brown">空白</span>关键帧，其他层插入帧，在代码图层的第二帧里输入代码；</p>
+<p>　<img src="images/a1z.gif" alt="a1z.gif" /></p>
+<p>　</p>
+<p>　2）输入下面的代码，启动定时器；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+stop();//停在这一帧上 <br />
+intervalId = setInterval(this, "CounTime", 1000);//定时器，每隔一秒调用 CounTime函数 <br />
+</div>
+<p>　</p>
+<p class="tblue">　2、加载篇章字符串</p>
+<p>　1）切割好的字符串，存放在<span class="brown">数组</span>中，按照数组的规律，每次加载3行；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+if (strAll_array.length &gt; (intPage*3+0))//开始页数为0,数组从0开始计数小段 <br />
+{ <br />
+&nbsp;&nbsp; &nbsp;lb1_txt.text&nbsp; = strAll_array[intPage*3+0];
+//加载第一段； <br />
+} <br />
+&nbsp;&nbsp; &nbsp; <br />
+if (strAll_array.length &gt; (intPage*3+1)) <br />
+{ <br />
+&nbsp;&nbsp; &nbsp;lb2_txt.text&nbsp; = strAll_array[intPage*3+1];
+//加载第二段； <br />
+} <br />
+&nbsp;&nbsp; &nbsp; <br />
+if (strAll_array.length &gt; (intPage*3+2)) <br />
+{ <br />
+&nbsp;&nbsp; &nbsp;lb3_txt.text&nbsp; = strAll_array[intPage*3+2];
+//加载第三段； <br />
+} 
+</div>
+<p>　</p>
+<p>　2）加载完成后，把<span class="brown">光标</span>定在第一行输入框，准备输入，继续输入下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+//把输入焦点给第一个输入文本框 <br />
+in1_txt.type ="input"; <br />
+in1_txt.focusEnabled = true; <br />
+Selection.setFocus(in1_txt); <br />
+&nbsp;<br />
+in2_txt.type ="dynamic"; //先锁定下面两个 <br />
+in3_txt.type ="dynamic"; 
+</div>
+<p>　</p>
+<p><span class="tblue">　3、输入框代码</span></p>
+<p>　1）从第一个输入框开始，分别输入各自代码，<span class="brown">统计</span>各个输入框，继续输入下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+//******************************************************* <br />
+//有字符输入，输入框1内容改变 <br />
+//******************************************************* <br />
+in1_txt.onChanged = function(textfield_txt:TextField) <br />
+{ <br />
+&nbsp;&nbsp; &nbsp;//“输入”的总数， 前面输入的字符总数加上现在这一行里的 <br />
+&nbsp;&nbsp; &nbsp;strInTotal = String(intInTotal +
+in1_txt.length);&nbsp; //换成字符形式 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;intlb = lb1_txt.length; //标签里的字符数，最后一行可能小于40 <br />
+&nbsp;&nbsp; &nbsp;intIn = in1_txt.text.length;&nbsp;
+//输入框的文本长度，存一下用着方便 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;inA_txt = in1_txt.text.substr(-1,1); //取出输入框的最后一个字符 <br />
+&nbsp;&nbsp; &nbsp;lbA_txt = lb1_txt.text.charAt(intIn - 1); //从0开始计算 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;if (err1_txt._visible) //错误标志先不可见 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err1_txt._visible = false; <br />
+&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;//正误判断，比一下同一个字符是否相同 <br />
+&nbsp;&nbsp; &nbsp;if (inA_txt != lbA_txt) //如果输入的字母跟标签上不同，并且不是退格键 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err1_txt._visible = true;//显示错误标志
+<br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intTmp &lt; intIn)
+//正常情况下是小于，还没有赋值给 intTmp <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intErr =
+intErr + 1; //错误数加一 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;strErrTotal =
+String(intErr); //显示失误的字符数 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intErr &gt; (intAll *
+0.33))&nbsp; //1/3的错误 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;lb1_txt.text
+=("false."); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in1_txt.type ="dynamic"; //锁定不允许输入了 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;}//end if !=, 结束正误判断 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;intTmp = intIn;//输入正确的话，Tmp 的值一直跟着 In1 往前走 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//按退格键的话，Tmp
+的值会大于 In1 的值 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;//检查是否换行，若是就锁定本行 <br />
+&nbsp;&nbsp; &nbsp;if (intIn == intlb) //已经输完全部字符 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intInTotal = intInTotal +
+in1_txt.length; //总共输入的是前面的加这一行的； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intTmp = 0; //初始化给下一个用 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err1_txt._visible =
+false;//取消错误标志 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in1_txt.type ="dynamic";
+//改为动态，锁定不让输入了； <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//第二个准备输入，把输入焦点给第二个输入文本框 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (lb2_txt.text != "") //还有字符 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in2_txt.type
+="input"; //改为输入 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in2_txt.focusEnabled = true; <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;Selection.setFocus(in2_txt); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else //输完了 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in1_txt.type ="dynamic";//改为动态，锁定不让输入了；<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;}//已经输完 <br />
+&nbsp;<br />
+}; //end in1_txt.onChanged <br />
+</div>
+<p>　2）第二个输入框的代码，跟第一个<span class="brown">相同</span>，继续输入下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+//******************************************************* <br />
+//第2个输入框 <br />
+//******************************************************* <br />
+in2_txt.onChanged = function(textfield_txt:TextField) &nbsp;<br />
+{ <br />
+&nbsp;&nbsp; &nbsp;//已经输入的总数，前面输入的加这一行的 <br />
+&nbsp;&nbsp; &nbsp;strInTotal = String(intInTotal + in2_txt.length);
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp; <br />
+&nbsp;&nbsp; &nbsp;intlb = lb2_txt.length; //标签里的字符数，最后一行可能小于40 <br />
+&nbsp;&nbsp; &nbsp;intIn = in2_txt.text.length;&nbsp;
+//输入框的文本长度，存一下用着方便 <br />
+&nbsp;&nbsp; &nbsp;inA_txt = in2_txt.text.substr(-1,1); //取出最后一个字符 <br />
+&nbsp;&nbsp; &nbsp;lbA_txt = lb2_txt.text.charAt(intIn-1); <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;if (err2_txt._visible) //错误标志先不可见 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err2_txt._visible = false; <br />
+&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;//找出标签里的同一个字符，比一下是否相同 <br />
+&nbsp;&nbsp; &nbsp;if (inA_txt != lbA_txt) //如果输入的字母跟标签上不同，并且不是退格键 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err2_txt._visible = true;//显示错误标志
+<br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intTmp &lt; intIn)
+//正常情况下是小于，还没有赋值给 intTmp <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intErr =
+intErr + 1; //错误数加一 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;strErrTotal =
+String(intErr); //显示失误的字符数 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intErr &gt; (intAll *
+0.33))&nbsp; //1/3的错误 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;lb2_txt.text
+=("false."); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in2_txt.type ="dynamic"; //锁定不允许输入了  <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;}//end if !=, 结束正误判断 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;intTmp = intIn;//输入正确的话，Tmp 的值一直跟着 In1 往前走 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//按退格键的话，Tmp
+的值会大于 In1 的值 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;//检查是否换行，锁定本行 <br />
+&nbsp;&nbsp; &nbsp;if (intIn == intlb) //比一下是否已经数完全部字符 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intInTotal = intInTotal +
+in2_txt.length; //总共输入的是前面的加这一行又输入的； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in2_txt.type ="dynamic";
+//改为动态，锁定不让输入了； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intTmp = 0; //初始化给下一个用 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err2_txt._visible =
+false;//取消错误标志 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//把输入焦点给第三个输入文本框 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (lb3_txt.text != "") //还有字符 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in3_txt.type
+="input"; //改为输入，准备输入 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in3_txt.focusEnabled = true; <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;Selection.setFocus(in3_txt); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else //输完了已经 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in2_txt.type ="dynamic";//改为动态，锁定不让输入了；<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+}; //end in2_txt.onChanged <br />
+</div>
+<p>　3）第三个输入框的代码，跟第一个<span class="brown">相似</span>，多了一个翻页动作，继续输入下面的代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 850px; color: green;">
+//******************************************************* <br />
+//第3个输入框<br />
+//******************************************************* <br />
+in3_txt.onChanged = function(textfield_txt:TextField) &nbsp;<br />
+{ <br />
+&nbsp;&nbsp; &nbsp;//已经输入的总数，前面输入的加这一行的 <br />
+&nbsp;&nbsp; &nbsp;strInTotal = String(intInTotal + in3_txt.length);
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;intlb = lb3_txt.length; //标签里的字符数，最后一行可能小于40 <br />
+&nbsp;&nbsp; &nbsp;intIn = in3_txt.text.length;&nbsp;
+//输入框的文本长度，存一下用着方便 <br />
+&nbsp;&nbsp; &nbsp;inA_txt = in3_txt.text.substr(-1,1); //取出最后一个字符 <br />
+&nbsp;&nbsp; &nbsp;lbA_txt = lb3_txt.text .charAt(intIn-1); <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;if (err3_txt._visible) //错误标志先不可见 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err3_txt._visible = false; <br />
+&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;//找出标签里的同一个字符，比一下是否相同 <br />
+&nbsp;&nbsp; &nbsp;if (inA_txt != lbA_txt) //如果输入的字母跟标签上不同，并且不是退格键 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err3_txt._visible = true;//显示错误标志
+<br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intTmp &lt; intIn)
+//正常情况下是小于，还没有赋值给 intTmp <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intErr =
+intErr + 1; //错误数加一 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;strErrTotal =
+String(intErr); //显示失误的字符数 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intErr &gt; (intAll *
+0.33))&nbsp; //1/3的错误 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;lb3_txt.text
+=("false."); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in3_txt.type ="dynamic"; //锁定不允许输入了  <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;}//end if !=, 结束正误判断 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;intTmp = intIn;//输入正确的话，Tmp 的值一直跟着 In1 往前走 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//按退格键的话，Tmp
+的值会大于 In1 的值 <br />
+&nbsp;&nbsp; &nbsp; <br />
+&nbsp;&nbsp; &nbsp;//检查是否换行，锁定本行 <br />
+&nbsp;&nbsp; &nbsp;if (intIn == intlb) //已经输完全部字符 <br />
+&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intInTotal = intInTotal +
+in3_txt.length; //总共输入的是前面的加这一行的； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in3_txt.type ="dynamic";
+//改为动态，锁定不让输入了； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intTmp = 0; //初始化给下一个用 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;err3_txt._visible =
+false;//取消错误标志 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if (intAll &gt; intInTotal)
+//还没输完 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;intPage =
+intPage + 1;//下一页了 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;lb1_txt.text =
+lb2_txt.text = lb3_txt.text = ""; <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if
+(strAll_array.length &gt; (intPage*3+0)) <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;lb1_txt.text&nbsp; = strAll_array[intPage+0]; //加载第一段； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if
+(strAll_array.length &gt; (intPage*3+1)) <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;lb2_txt.text&nbsp; = strAll_array[intPage*3+1]; //加载第二段； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;if
+(strAll_array.length &gt; (intPage*3+2)) <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;lb3_txt.text&nbsp; = strAll_array[intPage*3+2]; //加载第三段； <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;//清空原来的输入文本框 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in1_txt.text
+=""; <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in2_txt.text
+=""; <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in3_txt.text
+=""; <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;//把输入焦点给第一个输入文本框 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in1_txt.type
+="input"; &nbsp;<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;in1_txt.focusEnabled = true; <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;Selection.setFocus(in1_txt); <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;} <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;else//输完了 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;{ <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;clearInterval(intervalId);//定时器关闭 <br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;in3_txt.type ="dynamic";//改为动态，锁定不让输入了；<br />
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;}//end if (intAll &gt;
+intInTotal) 还没输完 <br />
+&nbsp;<br />
+&nbsp;&nbsp; &nbsp;}//end if (intIn == intlb) <br />
+&nbsp;<br />
+}; //end in3_txt.onChanged
+</div>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了输入框代码设计，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+</body></html>

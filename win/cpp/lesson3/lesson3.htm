@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>VC++基础|使用鼠标</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+<p align="center"><b><font color="#FF0000" size="6" face="华文中宋">Windows </font></b><font face="华文彩云" color="#FF0000" size="6">编程</font><font face="华文彩云" color="#FF0000" size="6">基础</font></p> 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">三、使用鼠标</font>　<a href="../index.htm">返回</a></p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">&nbsp;<font color="#0000FF">　</font>鼠标在系统中显示为一个斜向的<font color="#800000">箭头<img border="0" src="images/shbzhzh.gif" width="15" height="26"></font>，发生鼠标动作时<font color="#800000">系统</font>产生相应的事件消息，应用程序<font color="#800000">接收</font>到消息后作出恰当的<font color="#800000">回应</font>，从而<span lang="zh-cn">完成命令操作</span>；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">1、鼠标动作</font>包括单击、双击、移动等，系统已经定义好了它们的<font color="#800000">标识符</font>，分别如下：</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>             
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">1）单击：</font>鼠标的单击动作是指按键<font color="#800000">轻巧地</font>按下去又抬起来，包括按下和抬起两个动作，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　有左键和右键之分，左键按下的标识符是<b><font face="宋体">W</font><font face="Arial">M</font><font face="宋体">_LBUTTONDOWN</font></b>，右键是<b><font face="宋体">W</font><font face="Arial">M</font><font face="宋体">_RBUTTONDOWN</font></b>，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　而抬起则是把后面的<font color="#800000">单词</font><b><font face="宋体">DOWN</font></b>改成成<b><font face="宋体">UP</font></b>即可，当鼠标单击时系统就会<font color="#800000">发送</font>这两个消息给应用程序，而应用程序的消息处理过程<font color="#800000">MainWndProc</font>里头加入一段这两个消息的处理代码；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>            
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">2）双击：</font>双击一般指鼠标左键，<font color="#800000">迅速的</font>两次单击，系统默认是0.5秒内，否则就是两次单击，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　双击时系统发送一个<b><font face="宋体">W</font><font face="Arial">M</font><font face="宋体">_LBUTTONDBLCLK</font></b>消息给应用程序，然后应用程序的MainWndProc里头加上一段<font color="#800000">代码</font>来处理这个消息；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">3）移动：</font>在没有按键的情况下，移动鼠标，这时屏幕上的箭头鼠标<font color="#800000">指针</font>也发生移动，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　这时系统将发送一个<b><font face="宋体">W</font><font face="Arial">M</font><font face="宋体">_</font><font face="Arial">M</font><font face="宋体">OUSE</font><font face="Arial">M</font><font face="宋体">OVE</font></b>消息，应用程序也可以加上一段代码来响应这个鼠标事件，如果应用程序中没有这一段代码，这个消息将由系统处理代为处理；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">4）鼠标的</font>其他情况还包括拖动、同时按住组合键、进入、穿越、离开程序的窗口，这些动作也有<font color="#800000">相应的</font>处理程序代码；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>             
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">2、鼠标消息</font>            
+鼠标消息是一种<font color="#800000">结构</font>类型，它在指明鼠标动作的同时还<font color="#800000">携带</font>一些附加信息，其中的<font color="#800000">lParam</font>参数中携带了鼠标的<font color="#800000">位置</font>信息，另一个参数wParam则判断是否有键盘上的组合键按下；</p> 
+<p style="line-height: 150%; margin: 0" align="left">　</p>             
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　下面我们通过一个程序来看看鼠标的使用方法：</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">1）新建</font>一个名为<font color="#800000">Mouse</font>的Win32             
+Application工程，再新建一个名为<font color="#800000"><font face="Arial">M</font>ouse</font>的C/C＋＋头文件和一个名为<font color="#800000"><font face="Arial">M</font>ouse</font>的C＋＋源程序，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　输入程序的框架代码，框架代码经常用到，每次提前<font color="#800000">抄到</font>本子上，或者打印下来，复制粘贴有时出现莫名其妙的“<font face="宋体"><b>unexpected end</b></font>”错误，还是输进去的 
+可靠些</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　（<font color="#008000">绿色部分是注释，必须以双斜杠“//”开头</font>），有的一行太长会自动折到下一行：</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">头文件</font><font color="#800000">Mouse.h</font>的内容是：</p>
+<p style="line-height: 150%; margin: 0" align="left">&nbsp;&nbsp;<br>          
+<font color="#008000">//申明函数原型</font><br>
+<b><font face="宋体">LRESULT CALLBACK </font><font face="Arial">M</font><font face="宋体">ainWndProc(HWND,UINT,WP</font><font face="Arial">A</font><font face="宋体">R</font><font face="Arial">AM</font><font face="宋体">,</font><font face="Arial">LPARAM</font><font face="宋体">);<br>          
+BOOL Init</font><font face="Arial">A</font><font face="宋体">pplication(HINST</font><font face="Arial">A</font><font face="宋体">NCE);<br>           
+BOOL InitInstance(HINST</font><font face="Arial">A</font><font face="宋体">NCE,int);</font></b></p>            
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">源程序</font><font color="#800000">Mouse.cpp</font>的内容是：</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>           
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><font color="#0000FF">#include</font> &lt;windows.h>&nbsp;</font></b></p>             
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><font color="#0000FF">#include</font> &lt;string.h>&nbsp;<br>           
+<font color="#0000FF">   
+#include</font> &quot;</font><font face="Arial">M</font><font face="宋体">ouse.h&quot;</font></b>           
+</p>  
+<p style="line-height: 150%; margin: 0" align="left"><br>      
+<b><font face="宋体">HINST</font><font face="Arial">A</font><font face="宋体">NCE hInst;</font></b>       
+</p>  
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">HWND hWnd</font><font face="Arial">M</font><font face="宋体">ain;</font></b></p>    
+<p style="line-height: 150%; margin: 0" align="left"><br>
+<b><font face="宋体"><font color="#0000FF">int</font>   
+</font><font face="Arial">A</font><font face="宋体">PIENTRY Win</font><font face="Arial">M</font><font face="宋体">ain(<br>  
+</font></b>&nbsp;&nbsp;&nbsp;<b><font face="宋体"> HINSTANCE hInstance,<br>           
+&nbsp;&nbsp;&nbsp; HINST</font><font face="Arial">A</font><font face="宋体">NCE hPrevInstance,<br>           
+&nbsp;&nbsp;&nbsp; LPSTR lpCmdLine,</font></b></p>             
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">&nbsp;&nbsp;&nbsp; 
+<font color="#0000FF">int</font> nCmdShow)<br> 
+{<br>
+&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">SG msg;</font></b>/<font color="#008000">/定义一个消息结构msg</font><br> 
+<br>
+&nbsp;&nbsp;&nbsp; <b><font face="宋体"><font color="#0000FF">if</font>(!Init</font><font face="Arial">A</font><font face="宋体">pplication(hInstance))<br>          
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>  
+(F</font><font face="Arial">A</font><font face="宋体">LSE);<br>            
+</font></b></p>  
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">&nbsp;&nbsp;&nbsp;        
+<font color="#0000FF">if</font>(!InitInstance(hInstance,nCmdShow))<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> (F</font><font face="Arial">A</font><font face="宋体">LSE);<br>            
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">while</font> (Get</font><font face="Arial">M</font><font face="宋体">essage(&amp;msg,NULL,0,0))<br>            
+&nbsp;&nbsp;&nbsp; {<br>           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Translate</font><font face="Arial">M</font><font face="宋体">ess</font></b><b><font face="宋体">age(&amp;msg);<br>           
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dispatch</font><font face="Arial">M</font><font face="宋体">essage(&amp;msg);<br>           
+&nbsp;&nbsp;&nbsp; }<br>           
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> (msg.wParam);<br>           
+}<br>
+<br>
+BOOL Init</font><font face="Arial">A</font><font face="宋体">pplication(HINST</font><font face="Arial">A</font><font face="宋体">NCE hInstance)<br>           
+{</font></b></p>  
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">&nbsp;&nbsp;&nbsp;            
+WNDCLASS wc</font><font face="Arial">M</font><font face="宋体">ouse;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.style=0;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.lpfnWndProc=(WNDPROC)</font><font face="Arial">M</font><font face="宋体">ainWndProc;<br>           
+&nbsp;&nbsp;&nbsp; </font><font face="Arial">wcMouse</font><font face="宋体">.cbClsExtra=0;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.cbWndExtra=0;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.hInstance=hInstance;<br>           
+&nbsp;&nbsp;&nbsp;</font></b><b><font face="宋体"> wc</font><font face="Arial">M</font><font face="宋体">ouse.hInstance=hInstance;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.hIcon =LoadIcon(hInstance,IDI_</font><font face="Arial">A</font><font face="宋体">PPLICATION);<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.hCursor=LoadCursor(NULL,IDC_</font><font face="Arial">A</font><font face="宋体">RROW);<br>           
+<br>
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.hbrBackground=(HBRUSH)(14);<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.lpsz</font><font face="Arial">M</font><font face="宋体">enuName=NULL;<br>           
+&nbsp;&nbsp;&nbsp; wc</font><font face="Arial">M</font><font face="宋体">ouse.lpszClassName="</font><font face="Arial">M</font><font face="宋体">ouseWClass&quot;;<br>           
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> (RegisterClass(&amp;wc</font><font face="Arial">M</font><font face="宋体">ouse));<br>            
+}<br>
+<br>
+BOOL InitInstance(<br>           
+&nbsp;&nbsp;&nbsp; HINST</font><font face="Arial">A</font><font face="宋体">NCE hInstance, <font color="#0000FF"> int</font> nCmdShow)<br>           
+{</font></b>    
+</p>  
+<p style="line-height: 150%; margin: 0" align="left">&nbsp;&nbsp;&nbsp;<font face="宋体"><b> 
+hInst=hInstance;</b></font>        
+<b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp; hWnd</font><font face="Arial">M</font><font face="宋体">ain=CreateWindow(<br>          
+&nbsp;&nbsp;&nbsp; "</font><font face="Arial">M</font><font face="宋体">ouseWClass&quot;,"使用鼠标&quot;,<br>           
+&nbsp;&nbsp;&nbsp; WS_OVERL</font><font face="Arial">A</font><font face="宋体">PPEDWINDOW,<br>           
+&nbsp;&nbsp;&nbsp; CW_USEDEF</font><font face="Arial">A</font><font face="宋体">ULT,CW_USEDEF</font><font face="Arial">A</font><font face="宋体">ULT,<br>           
+&nbsp;&nbsp;&nbsp; CW_USEDEF</font><font face="Arial">A</font><font face="宋体">ULT,CW_USEDEF</font><font face="Arial">A</font><font face="宋体">ULT,<br>           
+&nbsp;&nbsp;&nbsp; NULL,NULL,hInstance,NULL);</font></b>           
+</p>  
+<p style="line-height: 150%; margin: 0" align="left">　     
+</p>  
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">&nbsp;&nbsp;&nbsp;          
+ShowWindow(hWnd</font><font face="Arial">M</font><font face="宋体">ain,nCmdShow);<br>
+&nbsp;&nbsp;&nbsp; UpdateWindow(hWnd</font><font face="Arial">M</font><font face="宋体">ain);<br>         
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return </font> (TRUE);<br>        
+}</font></b></p>
+<p style="line-height: 150%; margin: 0" align="left"><br>
+</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">再接着</font>加入<font color="#800000">消息处理</font>过程，这是本节<font color="#800000">关键</font>知识，代码如下：</p>         
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><br>
+LRESULT </font><font face="Arial">A</font><font face="宋体">PIENTRY </font> 
+<font face="Arial">M</font><font face="宋体">ainWndProc(<br>      
+HWND hWnd,UINT message,</font><font face="Arial">WPARAM</font><font face="宋体"> wParam,</font><font face="Arial">LPARAM</font><font face="宋体"> lParam)<br>       
+{<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">char</font> szTitle[50];</font></b><font color="#008000">//存放标题字符串</font><b><font face="宋体"><br>      
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font>(message)<br>     
+&nbsp;&nbsp;&nbsp; {<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> W</font><font face="Arial">M</font><font face="宋体">_LBUTTONDOWN:</font></b><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+SetWindowText(hWnd</font><font face="Arial">M</font><font face="宋体">ain,&quot;按下鼠标&quot;);</font></b><font color="#008000">//替换标题栏显示</font><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font face="Arial">M</font><font face="宋体">essageBox(hWnd,&quot;你按下的是鼠标左键！","提示&quot;,</font><font face="Arial">M</font><font face="宋体">B_OK|</font><font face="Arial">M</font><font face="宋体">B_ICONINFOR</font><font face="Arial">M</font><font face="宋体">ATION);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b><b><font color="#0000FF" face="宋体"> 
+break</font></b><b><font face="宋体">;<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> W</font><font face="Arial">M</font><font face="宋体">_RBUTTONDOWN:<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+SetWindowText(hWnd</font><font face="Arial">M</font><font face="宋体">ain,&quot;按下鼠标");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font>
+<font face="Arial">M</font><font face="宋体">essageBox(hWnd,&quot;你按下的是鼠标右键！","提示&quot;,</font><font face="Arial">M</font><font face="宋体">B_OK|</font><font face="Arial">M</font><font face="宋体">B_ICONINFOR</font><font face="Arial">MA</font><font face="宋体">TION);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> W</font><font face="Arial">M</font><font face="宋体">_</font><font face="Arial">M</font><font face="宋体">OUSE</font><font face="Arial">M</font><font face="宋体">OVE:<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+wsprintf(szTitle,&quot;%s(%d,%d)&quot;,&quot;鼠标位置&quot;,</font></b>
+</p>
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b>&nbsp;&nbsp;&nbsp;     
+LOWORD(lParam),HIWORD(lParam));</b></font> <font color="#008000">//将鼠标位置存入一个字符串数组szTitle中</font><br>        
+<b>       
+<font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          
+SetWindowText(hWnd</font><font face="Arial">M</font><font face="宋体">ain,szTitle);</font></b><font color="#008000">//字符串显示到标题栏上</font><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> W</font><font face="Arial">M</font><font face="宋体">_DESTROY:<br>         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PostQuit</font><font face="Arial">M</font><font face="宋体">essage(0);<br>         
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">default</font>:<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>(DefWindowProc(hWnd,message,wParam,lParam));<br>     
+&nbsp;&nbsp;&nbsp; }<br>         
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> 0;&nbsp;<br>         
+}</font></b><br>
+</p>
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#800000">保存</font>一下文件<img border="0" src="images/bcann.gif" width="23" height="22">，单击编译条上的“<font color="#800000">构建</font>”按钮<img border="0" src="images/gjann.gif" width="23" height="23">，构建程序，如果出现了错误，就在仔细<font color="#800000">检查</font>一下，</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　通过后再单击“<font color="#800000">执行</font>”按钮<img border="0" src="images/zhxann.gif" width="23" height="23">，运行一下自己的程序，分别单击左右按键和移动鼠标，看看程序的响应效果；</p>
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+<p style="line-height: 150%; margin: 0" align="left">&nbsp;<font color="#0000FF"> 
+本节</font>学习了鼠标操作的编程知识，如果你成功地完成了练习，请继续学习下一课内容；</p> 
+<p style="line-height: 150%; margin: 0" align="left"><a href="../index.htm">返回</a></p>     
+<p style="line-height: 150%; margin: 0" align="left">　</p>     
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">&nbsp; <a href="images/Mouse.exe">形影相随</a><font size="2">（在弹出的对话框中选择“<font color="#800000">运行</font>”、“<font color="#800000">运行</font>”）</font>&nbsp;&nbsp;</p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>  
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+本教程由86团学校TeliuTe制作|著作权所有</font></p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font> </p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+美丽的校园……  
+</font>        
+               
+                
+</p>  
+               
+                
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+               
+                
+                     
+                     
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                     

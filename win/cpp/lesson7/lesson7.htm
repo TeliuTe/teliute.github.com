@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>VC++基础|创建菜单</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+<p align="center"><b><font color="#FF0000" size="6" face="华文中宋">Windows </font></b><font face="华文彩云" color="#FF0000" size="6">编程</font><font face="华文彩云" color="#FF0000" size="6">基础</font></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">七、创建菜单　</font><font face="宋体"><a href="../index.htm">返回</a></font>          
+          
+               
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　          
+          
+               
+</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　Windows窗口一般都带有一个<font color="#800000">菜单栏</font>，包含了许多操作命令，这种菜单称为下拉式菜单，<font color="#800000">单击</font>一个菜单会弹出一个<font color="#800000">下拉</font>列表菜单项，<font color="#800000">单击</font>菜单项就可以选择这个命令；</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　菜单栏中第一个一般是“<font color="#800000">文件</font>”最后一个是“<font color="#800000">帮助</font>”，我们通过一个例子来学习如何在自己的窗口中添加菜单；</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　1、菜单属于一种<font color="#800000">资源</font>，因此在资源文件中定义，同时菜单是<font color="#800000">分级</font>的，如果菜单项右侧带有一个<font color="#800000">小黒三角按钮<img border="0" src="images/xjcd.gif" width="182" height="25"></font>，就表示包含下一级菜单；</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　2、启动VC，新建一个名为<font color="#800000">Menu</font>的<b><font face="宋体">Win32 
+</font><font face="Arial">A</font><font face="宋体">pplication</font></b>工程，再新建一个相同名称的<font color="#800000">头文件</font>和<font color="#800000">源程序</font>文件，</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　在头文件中输入函数的申明，在源程序中输入窗口框架代码（输好多遍了吧？）Menu.h代码如下：</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><font color="#008000">//函数原型申明<br>
+</font><b>LRESULT </font><font face="Arial">A</font><font face="宋体">PIENTRY </font><font face="Arial">M</font><font face="宋体">ainWndProc(HWND,UINT,WPAR</font><font face="Arial">AM</font><font face="宋体">,LPAR</font><font face="Arial">AM</font><font face="宋体">);<br>        
+BOOL InitApplication(HINST</font><font face="Arial">A</font><font face="宋体">NCE);<br>       
+BOOL InitInstance(HINST</font><font face="Arial">A</font><font face="宋体">NCE,</font><font color="#0000FF">int</font><font face="宋体">);<br>      
+<br>
+</font></b><font face="宋体"><font color="#008000">//菜单标识符<br>
+</font></font><b><font color="#0000FF">#define</font><font face="宋体">   ID</font><font face="Arial">M</font><font face="宋体">_NEW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+201</font></b><font face="宋体"><font color="#008000">//新建</font><b><br>
+</font><font color="#0000FF">#define</font><font face="宋体">   ID</font><font face="Arial">M</font><font face="宋体">_EXIT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         
+202</font></b><font face="宋体"><font color="#008000">//退出</font><b><br>
+</b><font color="#008000">//"编辑菜单"<br>
+</font></font><b><font color="#0000FF">#define</font><font face="宋体">   ID</font><font face="Arial">M</font><font face="宋体">_EDITCOPY&nbsp;         
+211</font></b><font face="宋体"><font color="#008000">//复制</font><b><br>
+</font><font color="#0000FF">#define</font><font face="宋体">  IDM_EDITPASTE 
+212</font></b><font face="宋体"><font color="#008000">//粘贴</font><b><br>
+</b><font color="#008000">//帮助菜单<br>
+</font></font><b><font color="#0000FF">#define</font><font face="宋体">   ID</font><font face="Arial">M</font><font face="宋体">_</font><font face="Arial">A</font><font face="宋体">BOUT&nbsp;&nbsp;&nbsp;&nbsp;         
+221</font></b><font face="宋体"><font color="#008000">//关于</font></font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　在源程序Menu.cpp里的InitApplication函数中加入使用菜单代码，修改其中一句，加入资源文件中定义的菜单标识符<b><font face="宋体">wcex</font><font face="Arial">M</font><font face="宋体">enuApp.lpsz</font><font face="Arial">M</font><font face="宋体">enuName       
+=&quot;</font><font face="Arial">M</font><font face="宋体">enu</font><font face="Arial">A</font><font face="宋体">pp</font><font face="Arial">M</font><font face="宋体">enu&quot;;</font></b></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　3、启动记事本，单击<font color="#800000">保存</font>命令，保存在Menu文件夹中，文件名为Menu.rc类型为“所有文件”，即<font color="#800000">新建</font>一个资源文件，输入菜单的代码，菜单由一对<b><font face="宋体">BEGIN</font></b>和<b><font face="宋体">END</font></b>定义一个菜单列表，菜单列表的表头用<b><font face="宋体">POPUP</font></b>定义，代码如下：</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><b><font color="#0000FF">#include</font><font face="宋体">  
+&quot;</font><font face="Arial">M</font><font face="宋体">enu.h&quot;</font></b><font face="宋体"><font color="#008000">//要用头文件中申明的标识符</font></font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><font color="#008000">//      
+下面定义菜单资源<br>
+</font><b></font><font face="Arial">M</font><font face="宋体">ENU</font><font face="Arial">A</font><font face="宋体">PP</font><font face="Arial">M</font><font face="宋体">ENU 
+</font><font face="Arial">M</font><font face="宋体">ENU DISC</font><font face="Arial">A</font><font face="宋体">RD</font><font face="Arial">A</font><font face="宋体">BLE 
+</font> </b><font face="宋体"><font color="#008000">//菜单标识符</font><b><br>     
+BEGIN<br>
+&nbsp;&nbsp;&nbsp; POPUP "文件(&amp;F)"<br>        
+&nbsp;&nbsp;&nbsp; BEGIN<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font><b><font face="Arial">M</font><font face="宋体">ENUITEM "新建(&amp;N)",  
+ID</font><font face="Arial">M</font><font face="宋体">_NEW<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITEM  
+</font><font face="Arial">SEPARATOR</font></b><font face="宋体"><font color="#008000">//分隔条</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITE</font><font face="Arial">M</font><font face="宋体"> "退出(&amp;X)",  
+ID</font><font face="Arial">M</font><font face="宋体">_EXIT<br>      
+&nbsp;&nbsp;&nbsp; END<br>       
+&nbsp;&nbsp;&nbsp; POPUP "编辑(&amp;E)"<br>        
+&nbsp;&nbsp;&nbsp; BEGIN<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITE</font><font face="Arial">M</font><font face="宋体"> "复制(&amp;C)",  
+ID</font><font face="Arial">M</font><font face="宋体">_EDITCOPY<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITE</font><font face="Arial">M</font><font face="宋体">  
+SEP</font><font face="Arial">A</font><font face="宋体">R</font><font face="Arial">A</font><font face="宋体">TOR<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITE</font><font face="Arial">M</font><font face="宋体"> "粘贴(&amp;P)",  
+ID</font><font face="Arial">M</font><font face="宋体">_EDITPASTE, </font><font face="Arial">G</font><font face="宋体">RAYED</font></b></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+</b><font color="#008000">//开始是灰色的，不可用</font><b><br>
+&nbsp;&nbsp;&nbsp; END<br>       
+&nbsp;&nbsp;&nbsp; POPUP "帮助(&amp;H)"<br>        
+&nbsp;&nbsp;&nbsp; BEGIN<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font face="Arial">M</font><font face="宋体">ENUITE</font><font face="Arial">M</font><font face="宋体"> "关于(&amp;</font><font face="Arial">A</font><font face="宋体">)...\tF1&quot;,  
+ID</font><font face="Arial">M</font><font face="宋体">_ABOUT<br>      
+&nbsp;&nbsp;&nbsp; END<br>       
+END</font></b></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　<font color="#800000">保存</font>一下文件，然后关闭记事本，在VC窗口中单击“<font color="#800000">工程</font>”菜单选择“<font color="#800000">添加工程</font>”－“<font color="#800000">Files...</font>”，选择其中的资源文件<font color="#800000">Menu.rc</font>单击“确定”，把资源文件加入工程当中；</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　4、单击菜单时会发送一个<font color="#800000">命令</font>消息，下面再加入消息处理过程的代码（<font color="#008000">绿色双斜杠部分是注释</font>），有的一行太长会自动折到下一行，代码如下：</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体">LRESULT </font><font face="Arial">A</font><font face="宋体">PIENTRY </font><font face="Arial">M</font><font face="宋体">ainWndProc(<br>       
+&nbsp;&nbsp;&nbsp; HWND hWnd,UINT message,WP</font><font face="Arial">A</font><font face="宋体">R</font><font face="Arial">AM</font><font face="宋体">  
+wParam,LP</font><font face="Arial">A</font><font face="宋体">R</font><font face="Arial">AM</font><font face="宋体"> lParam)<br>        
+{<br>
+&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">static</font><font face="宋体"> CHAR        
+szBuf[20];</font></b><font face="宋体"><font color="#008000">//标题文字字符串</font><b><br>
+&nbsp;&nbsp;&nbsp; HDC hdc;</b><font color="#008000">//设备描述表</font><b><br>       
+&nbsp;&nbsp;&nbsp; PAINTSTRUCT ps;</b><font color="#008000">//绘图对象</font><b><br>       
+&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">static</font><font face="宋体"> BOOL bNew=TRUE;</font></b><font face="宋体"><font color="#008000">//新建菜单的切换</font><b><br>       
+<br>
+&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">switch</font><font face="宋体">(message)<br>       
+&nbsp;&nbsp;&nbsp; {<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+W</font><font face="Arial">M</font><font face="宋体">_P</font><font face="Arial">A</font><font face="宋体">INT:</font></b><font face="宋体"><font color="#008000">//封面显示</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CH</font><font face="Arial">A</font><font face="宋体">R szText[]="请选择一个菜单项。";<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hdc=BeginPaint(hWnd,&amp;ps);<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+TextOut(hdc,80,40,szText,lstrlen(szText));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextOut(hdc,100,60,"美丽心情！   ",lstrlen("美丽心情！   "));<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EndPaint(hWnd,&amp;ps);<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">break</font><font face="宋体">;<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+W</font><font face="Arial">M</font><font face="宋体">_CO</font><font face="Arial">MMA</font><font face="宋体">ND:</font></b><font face="宋体"><font color="#008000">//</font><font color="#008000">处理菜单命令的消息</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">switch</font><font face="宋体">(LOWORD(wParam))</font></b><font face="宋体"><font color="#008000">//取低位字节判断</font><b><br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+ID</font><font face="Arial">M</font><font face="宋体">_NEW:</font></b><font face="宋体"><font color="#008000">//新建命令</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+InvalidateRect(hWnd,NULL,TRUE);</b><font color="#008000">//更新整个屏幕区域</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+hdc=BeginPaint(hWnd,&amp;ps);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+SetTextColor(hdc, RGB(255,255,0));<br>        
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+SetBk</font><font face="Arial">M</font><font face="宋体">ode(hdc,TR</font><font face="Arial">A</font><font face="宋体">NSP</font><font face="Arial">A</font><font face="宋体">RENT);</font></b><font face="宋体"><font color="#008000">//</font><font color="#008000">背景模式为透明背景；</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</b> 
+</font><b><font color="#0000FF">if</font><font face="宋体"> (bNew)</b><font color="#008000">//输出一句话</font><b><br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+TextOut(hdc,80,60,"千山万水，在哪儿？？",lstrlen("千山万水，在哪儿？？"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+TextOut(hdc,80,60,"万水千山，在这里！！",lstrlen("万水千山，在这里！！"));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+EndPaint(hWnd,&amp;ps);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        
+bNew=!bNew;</b></font><font face="宋体"><font color="#008000">//新建换一句话</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font color="#0000FF">break</font><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+ID</font><font face="Arial">M</font><font face="宋体">_EXIT:</font></b><font face="宋体"><font color="#008000">//退出命令</font><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+DestroyWindow(hWnd);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font color="#0000FF">break</font><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+ID</font><font face="Arial">M</font><font face="宋体">_EDITCOPY:</font></b><font face="宋体"><font color="#008000">//复制命令</font><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+Enable</font><font face="Arial">M</font><font face="宋体">enuItem(Get</font><font face="Arial">M</font><font face="宋体">enu(hWnd),<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+ID</font><font face="Arial">M</font><font face="宋体">_EDITP</font><font face="Arial">A</font><font face="宋体">STE,</font><font face="Arial">M</font><font face="宋体">F_BYCO</font><font face="Arial">MM</font><font face="宋体">AND|MF_EN</font><font face="Arial">A</font><font face="宋体">BLED);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font color="#0000FF">break</font><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+ID</font><font face="Arial">M</font><font face="宋体">_EDITP</font><font face="Arial">A</font><font face="宋体">STE:</font></b><font face="宋体"><font color="#008000">//粘贴命令</font><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font face="Arial">M</font><font face="宋体">essageBox(NULL,&quot;“粘贴”命令的演示。" , "提示" ,       
+</font><font face="Arial">M</font><font face="宋体">B_OK|</font><font face="Arial">M</font><font face="宋体">B_ICONINFOR</font><font face="Arial">MA</font><font face="宋体">TION);<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font color="#0000FF">break</font><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+ID</font><font face="Arial">M</font><font face="宋体">_</font><font face="Arial">A</font><font face="宋体">BOUT:</font></b><font face="宋体"><font color="#008000">//关于命令</font><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font face="Arial">M</font><font face="宋体">essageBox(hWnd,"\n创建菜单的示范程序！       \n\n编写：刘桂明    2004.8",<br>       
+					"关于",</font><font face="Arial">M</font><font face="宋体">B_OK|</font><font face="Arial">M</font><font face="宋体">B_ICONINFOR</font><font face="Arial">MA</font><font face="宋体">TION);</font></b><font face="宋体"><font color="#008000">//\n是输入一个回车</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+</font><font color="#0000FF">break</font><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">default</font><font face="宋体">:<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font><font color="#0000FF">return</font><font face="宋体">(DefWindowProc(hWnd,message,wParam,lParam));<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">break</font><font face="宋体">;<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font><font color="#0000FF">case</font><font face="宋体">   
+W</font><font face="Arial">M</font><font face="宋体">_DESTROY:<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+PostQuit</font><font face="Arial">M</font><font face="宋体">essage(0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+</font></b><font color="#0000FF"><b>break</b></font><b><font face="宋体">;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></b><font color="#0000FF"><b>default</b></font><b><font face="宋体">:<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b><font color="#0000FF"> 
+<b>return</b></font><b><font face="宋体"> (DefWindowProc(hWnd,message,wParam,lParam));<br>      
+&nbsp;&nbsp;&nbsp; }<br>      
+&nbsp;&nbsp;&nbsp; </font></b><font color="#0000FF"><b>return</b></font><b><font face="宋体">(0);<br>      
+}
+</font></b></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b><br>
+</b><font color="#800000">　</font></font><font face="宋体"><font color="#800000">保存</font>一下文件<img border="0" src="images/bcann.gif" width="23" height="22">，单击编译条上的“</font><font color="#800000">构建</font><font face="宋体">”按钮<img border="0" src="images/gjann.gif" width="23" height="23">，如果出现错误就仔细检查一下，然后单击“</font><font color="#800000">执行</font><font face="宋体">”按钮<img border="0" src="images/zhxann.gif" width="23" height="23">，看看前进中的的程序窗口；</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">本节</font><font face="宋体">学习了在程序窗口中加入菜单栏的代码设计，如果你成功地完成了练习，请继续学习下一课内容；</font></p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><a href="../index.htm">返回</a></font></p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+<p style="line-height: 150%; margin: 0" align="left">　<a href="images/menu.exe">弹指一挥</a>  
+<font size="2">（在弹出的对话框中选择“<font color="#800000">运行</font>”、“<font color="#800000">运行</font>”）</font></p>    
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+本教程由86团学校TeliuTe制作|著作权所有</font></p>  
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font></p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+美丽的校园……  
+</font>        
+               
+                
+</p>  
+               
+                
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+               
+                
+                     
+                     
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                     

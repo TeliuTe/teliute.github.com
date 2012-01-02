@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>Flash8脚本|退出代码</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+ <p align="center" style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font color="#FF0000" size="6"><b>Flash 
+</b>8.0<font face="华文彩云">   脚本基础</font></font></p>                                            
+                
+                 
+ <p style="line-height: 150%; margin: 0" align="left"><font color="#0000FF" size="4">七、退出代码&nbsp; 
+	<a href="../index.htm">返回</a></font></p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">&nbsp; <font color="#0000FF">有时候</font>我们希望在动画最后加一个退出动画的按钮，这样可以在全屏状态下，控制动画的退出，而不需要我们再按ESC键退出全屏；                                                       
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　                                                
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">&nbsp;    
+下面我们通过一个练习来看看怎样实现；                                                
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　                                                
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">1、创建按钮</font>                                                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 1）启动Flash，打开上一课的动画“全屏代码”，在时间轴上选中第2帧；                                                        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                               
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 2）选择<font color="#800000">文本工具</font><img border="0" src="images/wbgj.gif" width="24" height="24">，在工作区中点一下，将字号设为36，在工作区中输入红色文字“退出”；                                                
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+　                                              
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                           
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 3）用<font color="#800000">箭头工具</font><img border="0" src="images/jtgj.gif" width="24" height="24">选择红色的“退出”文本，点击菜单“修改－转换为元件”命令，在弹出的对话框中，把名称改为“<font color="#800000">退出</font>”，类型选择“<font color="#800000">按钮</font>”，然后点确定；                                                   
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                                 
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/zhhwyj.gif" width="408" height="130">
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+　                                                
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 
+ 保存一下文件，这时候就把文本转换为一个按钮了，下面给按钮输入脚本代码；
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">2</font><font color="#0000FF">、输入脚本代码</font>                                                      
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 1）折叠属性面板，在“<font color="#800000">退出</font>”按钮上单击一下只选中它，然后打开“动作”面板，关闭脚本助手，打开行号，输入下列代码：                                                
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                         
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/zh2jb1.gif" width="215" height="67">                                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; on是按钮脚本的代码，绿色的quit是退出的意思；                                             
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                        
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; <font color="#800000">保存</font>一下文件，按Ctrl＋回车键测试一下影片，点击播放按钮，然后点“退出”按钮，窗口并没有关闭，这是为什么？         
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　        
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 
+ 退出跟全屏一样，需要<font color="#800000">在外面</font>播放时才能看到，最小化Flash窗口，打开自己的文件夹，在里面找到<font color="#800000">蓝色的</font>“全屏代码”文件，双击打开运行，看看效果；        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 
+ 在脚本助手方式下是选择“全局函数－浏览器/网络－fscommand”                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/qjhsh.gif" width="146" height="95">                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 
+ 然后在右边的脚本助手中单击“独立播放器命令”，选择下面的quit就可以了；                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/dlbfq.gif" width="505" height="311">                                     
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">本节</font>学习了退出代码，也是用fscommand函数，如果你成功地理解并完成了练习，请继续学习下一课内容；                                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                                     
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="ShockwaveFlash1" width="200" height="90">
+  <param name="_cx" value="5292">
+  <param name="_cy" value="2381">
+  <param name="FlashVars" value>
+  <param name="Movie" value="images/qpdm.swf">
+  <param name="Src" value="images/qpdm.swf">
+  <param name="WMode" value="Window">
+  <param name="Play" value="-1">
+  <param name="Loop" value="-1">
+  <param name="Quality" value="High">
+  <param name="SAlign" value>
+  <param name="Menu" value="-1">
+  <param name="Base" value="images/qpdm.swf">
+  <param name="AllowScriptAccess" value="always">
+  <param name="Scale" value="ShowAll">
+  <param name="DeviceFont" value="0">
+  <param name="EmbedMovie" value="0">
+  <param name="BGColor" value>
+  <param name="SWRemote" value>
+  <param name="MovieData" value>
+  <param name="SeamlessTabbing" value="1">
+  <param name="Profile" value="0">
+  <param name="ProfileAddress" value>
+  <param name="ProfilePort" value="0">
+  <param name="AllowNetworking" value="all">
+</object>
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF" size="4">
+<a href="../index.htm">返回</a></font>　                                    
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+本教程由86团学校TeliuTe制作|著作权所有 
+</font>       
+              
+               
+</p> 
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+ <font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font>        
+              
+               
+</p> 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+美丽的校园…… 
+</font>       
+              
+               
+</p> 
+              
+               
+	<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+              
+               
+                    
+                    
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                    

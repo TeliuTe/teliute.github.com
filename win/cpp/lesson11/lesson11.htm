@@ -1,0 +1,383 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>VC++基础|对话框控件</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+<p align="center"><b><font color="#FF0000" size="6" face="华文中宋">Windows </font></b><font face="华文彩云" color="#FF0000" size="6">编程</font><font face="华文彩云" color="#FF0000" size="6">基础</font></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">十一、对话框　</font><font face="宋体"><a href="../index.htm">返回</a></font>          
+          
+               
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　          
+          
+               
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">通过</font>前面的学习，我们已经能够<font color="#800000" face="宋体">创建</font>一个属于自己的窗口，一个温暖的小屋，接下来该怎么<font color="#800000" face="宋体">布置</font>，让她充满生机、<font color="#800000" face="宋体">透出</font>灵气与和谐，<font color="#800000" face="宋体">自然</font>的内在流露呢？</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">控件</font>是组装好的一些常用Windows基本组件，就像我们房间里各种家具、各种电器，我们并<font color="#800000" face="宋体">不需要</font>自己去制作，只要会精挑细选，准有最<font color="#800000" face="宋体">适合</font>自己的一款；</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">在VC</font>中系统已经准备好了各种<font color="#800000" face="宋体">控件</font>，比如各种<font color="#800000" face="宋体">按钮</font>、标签、列表框、滚动条、工具栏等等都是一些常用的控件，程序中的控件将作为一个构成程序的<font color="#800000" face="宋体">对象</font>，可以对它进行一些设计和修饰；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">控件</font>是基于对话框的，也就是<font color="#800000" face="宋体">控件</font>一般放在对话框当中，<font color="#800000" face="宋体">对话框</font>（Dialog）是一种资源，它的定义放在资源文件里，</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　当打开项目控制台的“资源”标签中的“Dialog”项，就可以看到文件区的一个对话框，同时右边还有一个<font color="#800000" face="宋体">工具箱</font>，里面放了各种控件，使用时先<font color="#800000" face="宋体">选中</font>，再画到对话框里头就可以了；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">下面</font>我们来学习如何在资源文件中<font color="#800000" face="宋体">创建</font>一个对话框，并学习最基本的控件——按钮的使用方法；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　<font color="#0000FF">1、启动</font>VC，新建一个名为<font color="#800000">Dialog</font>的<b><font face="宋体">Win32 
+</font><font face="Arial">A</font><font face="宋体">pplication</font></b>工程，再新建一个相同名称的<font color="#800000">头文件</font>和<font color="#800000">源程序</font>文件，在头文件中输入函数的<font color="#800000">申明</font>，在源程序中输入窗口<font color="#800000">框架</font>代码；</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　<font color="#0000FF">2、在</font>头文件中输入函数申明，再加入资源中各个对象的<font color="#800000">标识符</font>申明，代码如下：</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><b><font face="宋体">BOOL  
+</font><font face="Arial">A</font><font face="宋体">PIENTRY 
+DlgWndProc(HWND,UINT,WPAR</font><font face="Arial">AM</font><font face="宋体">,</font><font face="Arial">LPARAM</font><font face="宋体">);</font></b><br>      
+<font color="#008000" face="宋体">//对话框的消息处理过程</font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b>HWND        
+hWndDlg;</b><font color="#008000">//对话框窗口的标识句柄</font><b><br>
+BOOL btxtRed,btxtBlue;</b><font color="#008000">//文本的颜色布尔值</font></font></p>          
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>
+<font color="#0000FF">#define</font> ID_RED     301<br>        
+<font color="#0000FF">#define</font> ID_BLUE 302</b><font color="#008000">//两个颜色按钮标识符</font></font></p>          
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　<font color="#0000FF">3</font><font color="#0000FF">、用</font>记事本新建一个相同文件名的资源文件<font color="#800000">Dialog.rc</font>输入对话框的<font color="#800000">定义</font>：</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><font color="#0000FF">#include        
+</font>&quot;Dialog.h&quot;</b></font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><font color="#0000FF">#include</font> 
+&quot;afxres.h&quot;</b><font color="#008000">//还需要这个头文件</font></font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><font color="#008000">//       
+定义一个对话框资源</font><b><br>
+COLORBOX DI</font><font face="Arial">A</font><font face="宋体">LOGEX 5, 28, 162, 85</font></b><font face="宋体"><font color="#008000">//定义对话框的标识符和位置、大小</font></font></p>     
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+STYLE DS_</b></font><b><font face="Arial">M</font><font face="宋体">ODALFR</font><font face="Arial">AM</font><font face="宋体">E | WS_POPUP |  
+WS_C</font><font face="Arial">A</font><font face="宋体">PTION | WS_SYS</font><font face="Arial">M</font><font face="宋体">ENU</font></b><font face="宋体"><font color="#008000">//对话框风格</font></font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+CAPTION "颜色对话框"&nbsp; </b><font color="#008000">//对话框标题</font></font></p>     
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+FONT 14, "仿宋"</b><font color="#008000">//文本字体</font></font></p>     
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+BEGIN</b></font><br>
+<b><font face="宋体">&nbsp;&nbsp;&nbsp;</font></b> <font face="宋体"><b>PUSHBUTTON "红色&quot;,ID_RED,16,61,50,14</b><font color="#008000">//按钮的位置、大小</font><b><br>       
+&nbsp;&nbsp;&nbsp;PUSHBUTTON "蓝色",ID_BLUE,77,61,50,14</b></font><font face="宋体"><b><br>      
+END</b></font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体">　</font><font face="宋体"><font color="#800000">保存</font>并关闭文件，使用</font>工程菜单中的“<font color="#800000">添加工程</font>”命令将资源文件Dialog.rc加入到工程中<font face="宋体">；</font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　<font color="#0000FF">4、接下来</font><font face="宋体">加入主窗口的消息处理过程，我们<font color="#800000">设定</font>在单击鼠标<font color="#800000">左键</font>时调出对话框，代码如下：</font></p>       
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><br>    
+<b>LRESULT </font><font face="Arial">A</font><font face="宋体">PIENTRY </font><font face="Arial">M</font><font face="宋体">ainWndProc(<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HWND hWnd,UINT message,</font><font face="Arial">WPARAM</font><font face="宋体">  
+wParam,</font><font face="Arial">LPARAM</font><font face="宋体"> lParam)<br>       
+{<br>
+&nbsp;&nbsp;&nbsp; HDC hdc;<br>       
+&nbsp;&nbsp;&nbsp; P</font><font face="Arial">A</font><font face="宋体">INTSTRUCT ps;</font></b><font face="宋体"><font color="#008000">//用于输出文本</font></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font>(message)<br>      
+&nbsp;&nbsp;&nbsp; {<br>      
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</b></font><b><font face="Arial">M</font><font face="宋体">_P</font><font face="Arial">A</font><font face="宋体">INT:  
+</font></b><font face="宋体"><font color="#008000">//输出一行提示</font><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hdc=BeginPaint(hWnd,&amp;ps);</b></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">if</font>(btxtRed)&nbsp;<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetTextColor(hdc,RGB(255,0,0));</b><font color="#008000">//红色</font></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">if</font>(btxtBlue)<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetTextColor(hdc,RGB(0,0,255));</b><font color="#008000">//蓝色</font></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TextOut(hdc,20,20,"单击鼠标左键调出对话框",lstrlen("单击鼠标左键调出对话框"));</b></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		EndPaint(hWnd,&amp;ps);<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>      
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</b></font><b><font face="Arial">M</font><font face="宋体">_LBUTTONDOWN:</font></b><font face="宋体"><font color="#008000">//左键按下了</font></font></p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+DialogBox(hInst,&quot;COLORBOX&quot;,hWnd,(DLGPROC)DlgWndProc);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><font color="#008000"> //调用创建对话框的函数</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InvalidateRect(hWnd,NULL,TRUE);</b><font color="#008000">//主窗口的提示更新一下</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;</b></font></p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b><br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</b></font><b><font face="Arial">M</font><font face="宋体">_DESTROY:<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PostQuitMessage(0);<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;&nbsp;</font></b></p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">default</font>:<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>(DefWindowProc(hWnd,message,wParam,lParam));<br>  
+&nbsp;&nbsp;&nbsp; }<br>  
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> (0);<br>   
+}<br>
+<br>
+</font></b><font face="宋体">　</font><font color="#0000FF">4、对话框</font><font face="宋体">本身也是一个窗口，有<font color="#800000">自己的</font>标题栏和框架，它也有<font color="#800000">自己的</font>消息处理过程函数，代码如下：</font></p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font color="#008000">//对话框消息处理过程</font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><b><font face="宋体">BOOL APIENTRY       
+DlgWndProc(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HWND hDlg,UINT message,</font><font face="Arial">WPARAM</font><font face="宋体">  
+wParam,</font><font face="Arial">LPARAM</font><font face="宋体">      
+lParam)<br> 
+{<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font>(message)<br>      
+&nbsp;&nbsp;&nbsp; {<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</font><font face="Arial">M</font><font face="宋体">_INITDIALOG:</font></b></p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+<font color="#0000FF">return</font>(TRUE);</b><font color="#008000">//要求创建对话框</font><b><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  </font><font face="Arial"> WM_COMMAND</font><font face="宋体">:</font></b><font face="宋体"><font color="#008000">//对话框的按钮消息</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font>(LOWORD(wParam))<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>       
+ID_RED:</b><font color="#008000">//单击“红色”按钮</font><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btxtRed=TRUE;</b><font color="#008000">//红色为真</font><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btxtBlue=FALSE;</b><font color="#008000">//蓝色为假</font><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+EndDialog(hDlg,FALSE);</b><font color="#008000">//退出对话框</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;</b></font></p>     
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case       
+</font>ID_BLUE:</b><font color="#008000">//单击“蓝色”按钮</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btxtBlue=TRUE;<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; btxtRed=FALSE;<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+EndDialog(hDlg,FALSE);</b><font color="#008000">//结束模式对话框</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>      
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>       
+ W</font><font face="Arial">M</font><font face="宋体">_DESTROY:</font></b><font face="宋体"><font color="#008000">//退出对话框</font><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+EndDialog(hDlg,FALSE);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;&nbsp;</b></font></p>     
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font face="宋体"><b><br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return       
+</font> (TRUE);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>      
+&nbsp;&nbsp;&nbsp; }<br>      
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>(F</b></font><b><font face="Arial">A</font><font face="宋体">LSE);<br>     
+}</font></b></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#800000" face="宋体">　</font><font face="宋体"><font color="#800000">保存</font>一下文件<img border="0" src="images/bcann.gif" width="23" height="22">，单击编译条上的“</font><font color="#800000">构建</font><font face="宋体">”按钮<img border="0" src="images/gjann.gif" width="23" height="23">，如果出现错误就仔细检查一下，然后单击“</font><font color="#800000">执行</font><font face="宋体">”按钮<img border="0" src="images/zhxann.gif" width="23" height="24">，看看包含有两个窗口的应用程序程序窗口；</font></p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">对话框</font><font face="宋体">当中也可以放置其他的控件对象，我们可以在里面绘制两个图片框，然后把图片框“<font color="#800000">属性</font>”中的“<font color="#800000">类型</font>”设为“Bitmap”，再在“<font color="#800000">图像</font>”中选一个图片资源，从而加入图片，更多更详细的操作我们将会在MFC编程中学习；</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">本节</font><font face="宋体">学习了在用户区输出文字的代码设计，如果你成功地完成了练习，有关Windows编程基础的学习顺利结束，我们已步入视窗程序设计的广阔天地。</font></p>    
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><a href="../index.htm">返回</a></font></p>    
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+<p style="line-height: 150%; margin: 0" align="left">　<a href="images/dialog.exe">蓝天白云</a> 
+<font size="2">（在弹出的对话框中选择“<font color="#800000">运行</font>”、“<font color="#800000">运行</font>”）</font></p>    
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+本教程由86团学校TeliuTe制作|著作权所有</font></p>  
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font></p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+美丽的校园……  
+</font>        
+               
+                
+</p>  
+               
+                
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+               
+                
+                     
+                     
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                     

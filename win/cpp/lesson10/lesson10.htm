@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>VC++基础|绘制直线</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+<p align="center"><b><font color="#FF0000" size="6" face="华文中宋">Windows </font></b><font face="华文彩云" color="#FF0000" size="6">编程</font><font face="华文彩云" color="#FF0000" size="6">基础</font></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">十、绘制直线　<font face="宋体"><a href="../index.htm">返回</a></font></font>          
+          
+               
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　          
+          
+               
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">学会了</font>画点，下一步就该是画线了，线是由<font color="#800000">点</font>组成的，每个点的位置用<font color="#800000">两个</font>数来表示<font face="宋体"><b>(x,y)</b></font>，即平面直角<font color="#800000">坐标</font>系，</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　一条直线有两个点，或者说<font color="#800000">两点</font>确定一条直线，一个是<font color="#800000">起点</font>，一个是<font color="#800000">终点</font>，如果连续画线，<font color="#800000">上一次</font>的终点就是<font color="#800000">下一次</font>的起点，弄明白了这两个点，我们就来来学习一下，怎样在自己的窗口中画出<font color="#800000">漂亮的</font>线条来；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　画线也用到设备，画线的函数是<font face="宋体"><b>LineTo(hdc,(x,y));</b></font>其中的<font color="#800000">(x,y）</font>是终点，起点用<font color="#800000">上次</font>的终点，第一次起点是(0,0)，屏幕的<font color="#800000">左上角</font>，</p>    
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>    
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　另一个是移动函数<font face="宋体"><b>MoveToEx(hdc,(x,y),NULL);</b></font>把起点设为上一次的终点，下面我们来编制程序：</p>    
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">　</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">1、启动</font>VC，新建一个名为<font color="#800000">Line</font>的<font face="宋体"><b>Win32          
+Application</b></font>工程，再新建一个相同名称的<font color="#800000">头文件</font>和<font color="#800000">源程序</font>文件，在头文件中输入函数的<font color="#800000">申明</font>，在源程序中输入窗口<font color="#800000">框架</font>代码；</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">2、画线</font>的鼠标指针是十字形的，把第3课中的指针文件<font color="#800000">curMouse</font>拷贝到Line文件夹中，</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　在头文件中加入一句<font color="#800000">标识符</font>申明<font face="宋体"><b><font color="#0000FF">#define</font> IDC_MYCUR       201</b></font>       
+</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　再用记事本新建一个相同文件名的资源文件<font color="#800000">Line.rc</font>输入鼠标指针的<font color="#800000">定义</font>：<font face="宋体"><b>IDC_MYCUR               CURSOR  
+DISCARDABLE       
+&quot;curMouse.cur&quot; </b><font color="#800000">保存</font>并关闭文件；</font></p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">3、使用</font>工程菜单中的“<font color="#800000">添加工程</font>”命令将资源文件Line.rc加入到工程中，</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　再在<font color="#800000">InitApplication</font>函数中修改加载鼠标指针一句为<font face="宋体"><b>wcexLine.hCursor=LoadCursor(hInstance,MAKEINTRESOURCE(201));</b></font></p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b>　</b></font>其中wcexLine是窗口<font color="#800000">类名</font>，根据自己的代码修改<font color="#800000">一致</font>，注意标识符<font color="#800000">前后</font>一致；</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">4、加入</font>消息处理函数过程，画线是用鼠标，因此需要处理鼠标<font color="#800000">按键</font>消息<font face="宋体"><b>WM_LBUTTONDOWN</b></font>以及鼠标拖动的消息<font face="宋体"><b>WM_MOUSEMOVE</b></font>，还有鼠标抬起<font face="宋体"><b>WM_LBUTTONUP</b></font>消息；</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>       
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　消息处理过程MainWndProc（<font color="#008000">绿色双斜杠部分是注释</font>），有的一行太长会自动折到下一行，代码如下，细细品味每一行的<font color="#800000">作用</font>是铺垫呢，还是操作；是给谁铺垫，操作结果又是什么呢？</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><br>   
+<b><font face="宋体">LRESULT APIENTRY MainWndProc(<br>       
+&nbsp;&nbsp;&nbsp; HWND hWnd,UINT message,WPARAM wParam,LPARAM lParam)<br>       
+{<br>
+&nbsp;&nbsp;&nbsp; HDC hdc;</font></b></p>     
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">   
+<b><font face="宋体"><br>     
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">static</font> HPEN hpenBlue;</font></b><font color="#008000">//申明一支彩色笔；</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">static</font> POINT pointBegin,pointEnd,point;</b></font><font color="#008000">//保存起点和终点,当前点；</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">static</font> <font color="#0000FF"> int</font>       
+x1,y1;</font></b><font color="#008000">//单击鼠标画线的终点位置</font><font face="宋体"><b><br>      
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font> (message)<br>       
+&nbsp;&nbsp;&nbsp; {<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> WM_CREATE: </b></font><font color="#008000">  // 创建一支彩色笔&nbsp;</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hpenBlue = CreatePen(PS_SOLID, 1, RGB(0,0,255));<br>       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF">&nbsp; break</font>;<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> WM_LBUTTONDOWN:</font></b><font color="#008000">//左键按下</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointBegin.x =LOWORD(lParam);</b></font><font color="#008000">//初始化起点x</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointBegin.y=HIWORD(lParam);</font></b><font color="#008000">//初始化起点y</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointEnd.x=LOWORD(lParam);</b></font><font color="#008000">//初始化终点x</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointEnd.y=HIWORD(lParam);</font></b><font color="#008000">//初始化终点y</font><font face="宋体"><b><br>      
+</b></font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //当前点的位置用默认为屏幕左上角（0，0）      
+</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#008000"><br>    
+</font><b><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetCapture(hWnd);</font></b><font color="#008000">//一直跟着鼠标</font><font face="宋体"><b>&nbsp;<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>      
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case WM_MOUSEMOVE:</b></font><font color="#008000">//进入鼠标移动消息；</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">if</font>(wParam &amp; MK_LBUTTON)</font></b><font color="#008000">//检测左键是否按下；</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {</b></font><font color="#008000">//进入鼠标拖动；</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; point.x =LOWORD(lParam);</font></b><font color="#008000">//当前鼠标的位置x；</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; point.y=HIWORD(lParam);</b></font><font color="#008000">//当前鼠标的位置y；</font><b><font face="宋体"><br>      
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hdc=GetDC(hWnd);&nbsp;<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SetROP2(hdc,R2_NOT);</font></b><font color="#008000">//使用与背景色相反的颜色；</font><font face="宋体"><b><br>      
+</b></font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+//第二次用与背景色相反的颜色绘制，可以擦去原来的线条（双重否定）；<br>
+</font><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MoveToEx(hdc,pointBegin.x,pointBegin.y,NULL);<br>      
+</font></b><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+//画线起点是单击左键时的鼠标的位置
+</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#008000"><br>
+</font><font face="宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+LineTo(hdc,pointEnd.x,pointEnd.y);<br>
+</b></font><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+//擦除上次绘出的直线；&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //第二次移动时，先把第一次的线擦除，然后下面画这次移动的线；<br>      
+</font><font face="宋体"><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MoveToEx(hdc,pointBegin.x,pointBegin.y,NULL);</b></font><font color="#008000">//原来鼠标的位置</font><b><font face="宋体"><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LineTo(hdc,point.x,point.y);</font></b><font color="#008000">//point是当前鼠标的位置</font><font face="宋体"><b><br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></font><font color="#008000"> 
+//这两条语句将绘制一条从起点到当前鼠标位置的线；</font><b><font face="宋体"><br>      
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pointEnd.x=point.x;  pointEnd.y=point.y;<br>       
+</font></b><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+//这两条语句保存当前鼠标位置，以便于鼠标移动后可以擦除这次绘制的直线
+</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#008000"><br>
+</font><b><font face="宋体">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;       
+ReleaseDC(hWnd,hdc);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>      
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> WM_LBUTTONUP:<br>       
+</font></b><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //如果是单击画图将会用彩色笔     
+</font></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#008000"><br>   
+</font><font face="宋体"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      
+ReleaseCapture();</b></font><font color="#008000">//解除鼠标跟踪</font><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hdc=GetDC(hWnd);<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectObject(hdc, hpenBlue);</font></b><font color="#008000">//换上彩色笔</font><font face="宋体"><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MoveToEx(hdc,point.x,point.y,NULL);<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font><font color="#008000">//设定起点，在鼠标移动消息中修改了point</font><b><font face="宋体"><br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x1=LOWORD(lParam);</font></b><font color="#008000">//画线终点x；</font><font face="宋体"><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y1=HIWORD(lParam);</b></font><font color="#008000">//画线终点y；</font><b><font face="宋体"><br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LineTo(hdc,x1,y1);</font></b><font color="#008000">//从起点到当前点画线</font><b><font face="宋体"><br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></b><font color="#008000"><b>//point.x=x1;</b>//修改当前点的位置为这次的结束位置，</font><font face="宋体"><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b></font><font color="#008000"><b>//point.y=y1;</b>//</font><font color="#008000">不修改就一直用同一个起点（星形）</font><font face="宋体"><b><br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ReleaseDC(hWnd,hdc);&nbsp;<br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font> WM_DESTROY:</b></font><font color="#008000">//</font><font color="#008000">退出应用程序；</font><font face="宋体"><b><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PostQuitMessage(0);</b></font><font color="#008000">//向系统发送一条WM_QUIT消息，</font><b><font face="宋体"><br>     
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<br>     
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">default</font>:      
+</font></b><font color="#008000"> //让系统帮着处理的消息</font><b><font face="宋体"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> (DefWindowProc(hWnd,message,wParam,lParam));<br>      
+&nbsp;&nbsp;&nbsp; }<br>     
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font> 0;&nbsp;<br>     
+}</font></b></p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#800000" face="宋体">　</font><font face="宋体"><font color="#800000">保存</font>一下文件<img border="0" src="images/bcann.gif" width="23" height="22">，单击编译条上的“</font><font color="#800000">构建</font><font face="宋体">”按钮<img border="0" src="images/gjann.gif" width="23" height="23">，如果出现错误就仔细检查一下，然后单击“</font><font color="#800000">执行</font><font face="宋体">”按钮<img border="0" src="images/zhxann.gif" width="23" height="23">，看看又前进一步的程序窗口；</font></p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">本节</font><font face="宋体">学习了在用户区用鼠标画线的代码设计，如果你成功地完成了练习，请继续学习下一课内容；</font></p>   
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><a href="../index.htm">返回</a></font></p>   
+<p style="line-height: 150%; margin: 0" align="left">　</p>   
+<p style="line-height: 150%; margin: 0" align="left">　<a href="images/line.exe">余音绕梁</a>  
+<font size="2">（在弹出的对话框中选择“<font color="#800000">运行</font>”、“<font color="#800000">运行</font>”）</font></p>   
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+本教程由86团学校TeliuTe制作|著作权所有</font></p>  
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font></p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+美丽的校园……  
+</font>        
+               
+                
+</p>  
+               
+                
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+               
+                
+                     
+                     
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                     

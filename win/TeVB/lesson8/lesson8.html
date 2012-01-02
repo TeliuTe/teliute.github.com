@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" /> 
+  <meta name="description" content="TeliuTe系列教程之VB基础" /> 
+  <meta name="Copyright" content="TeliuTe,基础教程网" /> 
+  <meta name="keywords" content="VB,TeliuTe,程序,教程,基础,入门" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" />
+  <title>VB基础|框架控件</title>
+</head>
+<body style="direction: ltr;">
+<p class="title">VB程序设计基础</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">八、使用框架</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p>　框架可以对控件进行分组，将相同的对象进行归类，下面我们来看一个练习；</p>
+<p class="tblue">　1、启动VB</p>
+<p>　1）双击桌面上的图标，或者点开始菜单，运行VB；</p>
+<p>　<img src="images/a1tb.gif" alt="a1tb.gif"></p>
+<p>　2）在出来的新建窗口中，点“<span class="brown">打开</span>”按钮，新建一个标准EXE工程，然后进入主窗口，以 <span class="brown">Frame</span> 为文件名保存文件到自己的文件夹；</p>
+<p>　</p>
+<p>　3）在<span class="brown">属性</span>窗口中设置背景色，把<span class="brown">标题</span>改为“框架”，设定Icon图标选项；</p>
+<p>　</p>
+<p>　<span class="tblue">2、使用框架</span></p>
+<p>　1）在窗体中<span class="brown">添加</span>一个标签、两个框架，一个里面放两个单选按钮，另一个里面放两个复选框，一个文本框、一个命令按钮，排列整齐；</p>
+<p>　修改<span class="brown">标题</span>：标签改成“我的框架”，框架<span class="brown">分别</span>改成“性别、爱好”、里面的按钮分别是“男、女，音乐、运动”，文本框为空，按钮改成“退出”；</p>
+<p>　<img src="images/b1kj.gif" alt="b1kj.gif"></p>
+<p>　</p>
+<p>　2）<span class="brown">保存</span>一下，运行程序看看效果，试着点击各个按钮；</p>
+<p>　</p>
+<p>　<span class="tblue">3、输入代码</span></p>
+<p>　1）进入代码窗口，在<span class="brown">左边</span>列表选择两个单选按钮，分别输入代码；</p>
+<p>Private Sub Option1_Click()<br />
+&nbsp; Text1.Text = Option1.Caption<br />
+End Sub<br />
+<br />
+Private Sub Option2_Click()<br />
+&nbsp; Text1.Text = Option2.Caption<br />
+End Sub</p>
+
+<p>　2）再分别选择两个<span class="brown">复选框</span>，输入各自代码，中间的空格用来分隔；</p>
+<p>Private Sub Check1_Click()<br />
+&nbsp; Text1.Text = Text1.Text + " " + Check1.Caption<br />
+End Sub<br />
+<br />
+Private Sub Check2_Click()<br />
+&nbsp; Text1.Text = Text1.Text + " " + Check2.Caption<br />
+End Sub</p>
+
+<p>　<img src="images/c1dm.gif" alt="c1dm.gif"></p>
+<p>　3）再输入退出按钮的代码，<span class="brown">保存</span>一下文件，运行程序看看效果；</p>
+<p>　<img src="images/c2yx.gif" alt="c2yx.gif"></p>
+<p>　</p><p>　<a href="images/frame.exe">框架范例</a>(在弹出的对话框中点“运行、运行”)</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了框架使用的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body></html>

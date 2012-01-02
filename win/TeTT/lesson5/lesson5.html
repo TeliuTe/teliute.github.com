@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="TeliuTe系列教程之Flash脚本实例教程" name="description" /> 
+<meta content="TeliuTe,基础教程网" name="Copyright" /> 
+<meta content="Flash脚本,TeliuTe,教程,实例,入门" name="keywords" />
+
+<link rel="stylesheet" href="../css/css.css" type="text/css" /><title>Flash脚本实例|准备变量</title>
+
+
+<link rel="Shortcut  Icon" href="../css/qcqy.ico" /></head><body style="direction: ltr;">
+
+<p class="title">Flash脚本实例《打字》制作教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">五、准备变量</span>　<a href="../index.html">返回目录</a>　<a href="../lesson6/lesson6.html">下一课</a></p>
+<p>　打字程序要处理字符和统计数据，需要字符变量和数值变量，下面我们来看一个练习；</p>
+
+<p class="tblue">　1、字符变量</p>
+<p>　1）跟字符有关的<span class="brown">变量</span>有：输入的字符，标签行里的字符，整个标签行里的字符，整篇字符，</p>
+<p>　字符变量<span class="brown">存放</span>字母标点符号等文字类数据；</p>
+<p>　</p>
+<p>　2）在<span class="brown">图层</span>面板中插入一个新图层，把图层名称改为“代码”，锁定其他图层；</p>
+<p>　<img src="images/a2xztc.gif" alt="a2xztc.gif" /></p>
+<p>　</p>
+<p>　3）点击展开下边的“<span class="brown">动作</span>”面板，如果没有就到“窗口”菜单中打勾选中；</p>
+<p>　<img src="images/a3dzmb.gif" alt="a3dzmb.gif" /></p>
+<p>　</p>
+<p>　4）输入下面的代码，<span class="brown">定义</span>五个字符变量；</p>
+<div style="background-color: rgb(255, 255, 255); width: 600px; color: green;">
+var inA_txt:String =""; //存放刚输入的一个字符<br />
+var lbA_txt:String =""; //存放标签上的同一个位置的一个字符<br />
+var strLb1_txt:String =""; //存放正在输入这一行的字符串<br />
+var strAll:String =""; //存放整篇字符<br />
+var strTitle:String =""; //存放篇章名
+</div>
+<p>　</p>
+<p>　5）var 是定义一个变量，空格后面是<span class="brown">变量名</span>，str是字符串缩写，冒号后面是变量类型，双引号括起来的是变量值，双斜杠后面是注释；</p>
+<p>　</p>
+<p>　<span class="tblue">2、数值变量</span></p>
+<p>　1）跟数值有关的<span class="brown">变量</span>有：字符总数，已输入字符数，标签行序号，当前行已经输入的字符数，当前页数，错误数，临时变量，得分；</p>
+<p>　</p>
+<p>　2）接着上面的字符串变量，再<span class="brown">输入</span>下面的数值变量定义代码；</p>
+<div style="background-color: rgb(255, 255, 255); width: 600px; color: green;">
+var intAll:Number = 0; //保存这一篇总共的字符数<br />
+var intInTotal:Number =0; //保存已经输入的字符数<br />
+var intlb:Number =0; //保存当前标签行中，需要输入的字符数<br />
+var intIn:Number =0; //保存正在输入这一行，已经输入的字符数<br />
+var intPage:Number =0; //已经输入的页数<br />
+var intErr:Number =0; //错误的字符数<br />
+var intTmp:Number =0; //临时变量，存着比较一下是不是退格键；<br />
+var intScore:Number =0;//计算得分<br />
+</div>
+<p>　</p>
+<p>　3）int 是整型的缩写，<span class="brown">冒号</span>后面表示数值变量，后面的分号表示一句结束；</p>
+<p>　<span class="brown">保存</span>一下文件</p>
+<p>　<img src="images/b3dm.gif" alt="b3dm.gif" /></p>
+
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了定义字符和数值变量的操作，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson6/lesson6.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+</body></html>

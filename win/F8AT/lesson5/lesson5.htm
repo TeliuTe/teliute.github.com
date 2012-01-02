@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>Flash8脚本|动态文本</title>
+</head>
+
+<body bgcolor="#CCFFFF">
+
+<p align="center" style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font color="#FF0000"><b><font size="6">Flash 
+8.0</font></b><font face="华文彩云" size="6"> 脚本基础</font></font></p>                      
+                
+                 
+<p style="line-height: 150%; margin: 0"><font color="#0000FF" size="4">五、动态文本</font>&nbsp; <font color="#0000FF" size="4">
+<a href="../index.htm">返回</a></font></p>         
+                
+                 
+<p style="line-height: 150%; margin: 0"><br>
+&nbsp; <font color="#0000FF">有时候</font>我们需要在一个窗口中，逐个显示一段文字，这样的文字往往具有更加强烈的效果；                                        
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0">　                                   
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0">
+&nbsp; 分析一下：文字应该放在一个<font color="#800000">动态</font>文本框中，并且每次增加一个字进去；                                       
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0">　                                   
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0">
+&nbsp; 用到的代码：<font color="#800000"><b>substr</b></font>是取出几个字符的函数，<b><font color="#800000">length</font></b>是字符串的长度属性；                                        
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0">　                                   
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">&nbsp;        
+1、创建动态文本框</font>                               
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 1）启动Flash，新建一个空白文档，双击时间轴中的12.0fps把背景色改为黑色，以“<font color="#800000">动态文本</font>”为文件名，<font color="#800000">保存文件</font>到自己的文件夹；                                    
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                               
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 2）在<font color="#800000">第2帧</font>上单击鼠标右键，选择“插入关键帧”命令，第1帧留着后面用；                                    
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                               
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 3）选择文本工具<img border="0" src="images/wbgj.gif" width="24" height="24">，在工作区中点一下，在下面的属性面板中，从左到右依次将“<font color="#800000">静态文本</font>”类型改为“动态文本”、黑体、10、红色，                           
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 把下面的“宽、高”调为500、200，“<font color="#800000">单行</font>”改为“多行”，                           
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 再在“变量”里输入“<font color="#800000">txtWin</font>”，给文本框起个名字，动态文本框就建好了，<font color="#800000">保存一下</font>文件；                            
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/wbshx.gif" width="465" height="107">                 
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                 
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">&nbsp;        
+2、输入脚本代码语言</font>                             
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                             
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 1）单击选中第1帧，再打开“<font color="#800000">动作</font>”面板，准备输入语言代码；                              
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 2）在右侧单击鼠标，出现<font color="#800000">插入点</font>光标，输入下列代码，<font color="#800000">注意</font>最后都有一个英文的分号结束，这里是给所需的<font color="#800000">变量</font>初始化赋值，<font color="#800000">保存一下</font>文件；                          
+            
+                 
+</p>  <p></P>       
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <img border="0" src="images/zh1jb.gif" width="413" height="75">                        
+            
+                 
+</p>         <p></P>
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 3）单击第2帧，在动作面板的右侧加入下列代码（灰色部分是<font color="#800000">注释</font>）：                             
+            
+                 
+</p>        <p></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <img border="0" src="images/zh2jb.gif" width="511" height="154">                            
+            
+                 
+</p>        <p></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><br>
+&nbsp;&nbsp; 4）在第4帧上单击右键，选择“<font color="#800000">插入帧</font>”命令，把第2帧加长一些，动画至少要两帧；再在第5帧“插入空白关键帧”，准备在这儿输入脚本代码，<font color="#800000">保存一下</font>文件；                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 5）在动作面板右侧输入        
+gotoAndPlay(2); <font color="#666666">//回去接着显示</font>；                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 6）<font color="#800000">保存一下</font>，然后按Ctrl＋回车键，测试一下影片，看看心动的效果；                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                     
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　
+<object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="ShockwaveFlash1" width="200" height="90">
+  <param name="_cx" value="5292">
+  <param name="_cy" value="2381">
+  <param name="FlashVars" value>
+  <param name="Movie" value="images/dtwb.swf">
+  <param name="Src" value="images/dtwb.swf">
+  <param name="WMode" value="Window">
+  <param name="Play" value="-1">
+  <param name="Loop" value="-1">
+  <param name="Quality" value="High">
+  <param name="SAlign" value>
+  <param name="Menu" value="-1">
+  <param name="Base" value="images/dtwb.swf">
+  <param name="AllowScriptAccess" value="always">
+  <param name="Scale" value="ShowAll">
+  <param name="DeviceFont" value="0">
+  <param name="EmbedMovie" value="0">
+  <param name="BGColor" value>
+  <param name="SWRemote" value>
+  <param name="MovieData" value>
+  <param name="SeamlessTabbing" value="1">
+  <param name="Profile" value="0">
+  <param name="ProfileAddress" value>
+  <param name="ProfilePort" value="0">
+  <param name="AllowNetworking" value="all">
+</object>
+            
+                 
+</p>
+<p align="left" style="line-height: 150%; margin: 0">
+<font color="#0000FF" size="4"><a href="../index.htm">返回</a></font></p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+本教程由86团学校TeliuTe制作|著作权所有 
+</font>       
+              
+               
+</p> 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+ <font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font>        
+              
+               
+</p>
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+美丽的校园…… 
+</font>       
+              
+               
+</p> 
+              
+               
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div> 
+              
+               
+                    
+                    
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                    

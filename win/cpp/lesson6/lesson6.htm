@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>VC++基础|加载图片</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+<p align="center"><b><font color="#FF0000" size="6" face="华文中宋">Windows </font></b><font face="华文彩云" color="#FF0000" size="6">编程</font><font face="华文彩云" color="#FF0000" size="6">基础</font></p> 
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF">六、加载图片　</font><font face="宋体"><a href="../index.htm">返回</a></font>          
+          
+               
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　          
+          
+               
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">上一节</font>我们学会了在窗口中显示出文字，那么漂亮的图片又是怎样显示的呢？我们通过一个例子来学习：</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">1、图片</font>是一种资源，因此要在<font color="#800000">资源</font>文件中定义，每个资源都有一个<font color="#800000">标识符</font>，在程序调用时可以使用标识符，</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　也可以使用标识符的<font color="#800000">值</font>，标识符在<font color="#800000">头文件</font>中申明，VC会自动产生一个<b><font face="宋体">Resource.h</font></b>头文件来存放标识符申明；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">2、首先</font>准备两幅图片，本文件夹中带了两个图片（Sun和Moon），在<font color="#800000">自己</font>文件夹中新建一个名为<font color="#800000">loadPic</font>的文件夹，把这两幅图片拷贝到这个文件夹中；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">3、启动</font>VC，新建一个名为loadPic的<b><font face="宋体">Win32        
+Application</font></b><font color="#800000">工程</font>文件，位置在自己的文件夹，新建一个相同名称的<font color="#800000">头文件</font>和<font color="#800000">源程序</font>文件，输入程序框架代码，</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　在头文件中还要<font color="#800000">加入</font>资源的申明代码为：</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><font color="#0000FF">#define</font> IDB_SUN&nbsp;        
+101<br>
+<font color="#0000FF">
+#define</font>  IDB_</font><font face="Arial">M</font><font face="宋体">OON           102</font>        
+</b></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　在源程序文件的主函数WinMain之前加入几个<font color="#800000">全局</font>变量的申明，代码为：</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><br>
+<b>
+<font face="宋体">HINST</font><font face="Arial">A</font><font face="宋体">NCE hInst;</font></b><font face="宋体"><font color="#008000">//保存实例句柄</font><b><br>    
+HWND hWnd</font><font face="Arial">M</font><font face="宋体">ain =NULL;</font></b><font face="宋体"><font color="#008000">//主窗口句柄</font><b><br>    
+HBIT</font><font face="Arial">MA</font><font face="宋体">P hSun,h</font><font face="Arial">M</font><font face="宋体">oon;</font></b><font face="宋体"><font color="#008000">//用于绘图</font><b><br>   
+HDC hdc,h</font><font face="Arial">M</font><font face="宋体">emDc;</font></b><font color="#008000" face="宋体">//用于绘图</font>&nbsp;&nbsp;</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">4、图片</font>也要同窗口一同显示，因此<font color="#800000">加载</font>图片的代码就应该放在<b><font face="宋体">W</font><font face="Arial">M</font><font face="宋体">_P</font><font face="Arial">A</font><font face="宋体">INT</font></b>消息中，</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　图片的使用跟文字输出相似，需要<font color="#800000">申请</font>设备，然后将图片从硬盘<font color="#800000">加载</font>到内存，还要从内存<font color="#800000">复制</font>到应用窗口当中，所以占用了较多的资源；</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　5、启动记事本，单击<font color="#800000">保存</font>命令，保存在loadPic文件夹中，文件名为loadPic.rc类型为“所有文件”，即新建一个资源文件，输入代码为：</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>        
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b><font color="#0000FF">#include</font>   
+&quot;loadPic.h&quot;</b><b> </b></font><font face="宋体"><font color="#008000">//要用头文件中申明的标识符</font></font></p>     
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#008000" face="宋体">//     
+下面定义位图资源<br> 
+</font><b><font face="宋体">IDB_SUN BIT</font><font face="Arial">M</font><font face="宋体">AP 
+DISC</font><font face="Arial">A</font><font face="宋体">RD</font><font face="Arial">A</font><font face="宋体">BLE &quot;sun.bmp&quot;    
+</font></b></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体" color="#008000">//标识符，位图，内存清除，&nbsp;&nbsp;    
+位图文件名</font></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><b><font face="宋体"><br> 
+IDB_</font><font face="Arial">M</font><font face="宋体">OON BIT</font><font face="Arial">MA</font><font face="宋体">P 
+DISC</font><font face="Arial">A</font><font face="宋体">RD</font><font face="Arial">A</font><font face="宋体">BLE 
+&quot;moon.bmp&quot;    
+</font></b></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><b><br> 
+</b></font>　<font color="#800000">保存</font>一下文件，然后关闭记事本，在VC窗口中单击“<font color="#800000">工程</font>”菜单选择“<font color="#800000">添加工程</font>”－“<font color="#800000">Files...</font>”，选择其中的资源文件<font color="#800000">loadPic.rc</font>单击“确定”，把资源文件加入工程当中；</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>    
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">5、消息</font>处理过程的代码如下（<font color="#008000">绿色双斜杠部分是注释</font>），有的一行太长会自动折到下一行：</p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><br>  
+<b>  
+<font face="宋体">LRESULT </font><font face="Arial">A</font><font face="宋体">PIENTRY 
+</font><font face="Arial">M</font><font face="宋体">ainWndProc(<br>   
+&nbsp;&nbsp;&nbsp; HWND hWnd,UINT message,WP</font><font face="Arial">A</font><font face="宋体">RAM 
+wParam,LP</font><font face="Arial">A</font><font face="宋体">R</font><font face="Arial">AM</font><font face="宋体"> lParam)<br>    
+{<br>
+&nbsp;&nbsp;&nbsp; P</font><font face="Arial">A</font><font face="宋体">INTSTRUCT ps;</font></b><font face="宋体"><font color="#008000">//绘图所需参数结构</font><b><br>   
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">switch</font>(message)<br>   
+&nbsp;&nbsp;&nbsp; {<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;<font color="#0000FF"> case</font>  W</font><font face="Arial">M</font><font face="宋体">_P</font><font face="Arial">A</font><font face="宋体">INT:</font></b><font face="宋体"><font color="#008000">//重绘窗口</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b><font color="#008000">//加载图片&nbsp;</font><b><br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hSun =LoadBitmap(hInst,</font><font face="Arial">MA</font><font face="宋体">KEINTRESOURCE(101));</font></b><font face="宋体"><font color="#008000">//&quot;IDB_SUN";</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h</font><font face="Arial">M</font><font face="宋体">oon=LoadBitmap(hInst,</font><font face="Arial">MA</font><font face="宋体">KEINTRESOURCE(102));</font></b><font face="宋体"><font color="#008000">//&quot;IDB_MOON&quot;;</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; InvalidateRect(hWnd</font><font face="Arial">M</font><font face="宋体">ain,NULL,TRUE);</font></b><font face="宋体"><font color="#008000">//更新矩形区域，主窗口句柄hWndMain<br>  
+</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; hdc=BeginPaint(hWndMain,&amp;ps);</b><font color="#008000">//获取设备描述句柄</font><b><br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h</font><font face="Arial">M</font><font face="宋体">emDc=CreateCompatibleDC(hdc);</font></b><font face="宋体"><font color="#008000">//获取内存设备描述表句柄，使得&nbsp;    
+位图能在内存中保存下来</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectObject(h</font><font face="Arial">M</font><font face="宋体">emDc,hSun);</font></b><font face="宋体"><font color="#008000">//选择位图对象，送入内存设备描述表；</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BitBlt(hdc,120,8,96,136,h</font><font face="Arial">M</font><font face="宋体">emDc,0,0,SRCCOPY);</font></b><font face="宋体"><font color="#008000">//把位图从内存复制到窗口<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //图像大小：（x,y）96×136<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //第二幅图</font><b><br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SelectObject(h</font><font face="Arial">M</font><font face="宋体">emDc,h</font><font face="Arial">M</font><font face="宋体">oon);</font></b><font face="宋体"><font color="#008000">//选择位图对象，送入内存设备描述表；</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; BitBlt(hdc,300,80,96,136,h</font><font face="Arial">M</font><font face="宋体">emDc,0,0,SRCCOPY);</font></b><font face="宋体"><font color="#008000">//</font><font color="#008000">把位图从内存复制到窗口</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </b><font color="#008000">//图像大小：（x,y）96×136</font><b><br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DeleteDC(h</font><font face="Arial">M</font><font face="宋体">emDc);</font></b><font face="宋体"><font color="#008000">//删除设备内存描述表中的位图</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EndPaint(hWnd</font><font face="Arial">M</font><font face="宋体">ain,&amp;ps);</font></b><font face="宋体"><font color="#008000">//结束设备使用</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; break;<br>   
+<br>
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</font><font face="Arial">M</font><font face="宋体">_CO</font><font face="Arial">MMA</font><font face="宋体">ND:<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">case</font>  W</font><font face="Arial">M</font><font face="宋体">_DESTROY:</font></b><font face="宋体"><font color="#008000">//退出</font><b><br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+DeleteObject(hSun);</b><font color="#008000">//删除对象释放资源</font><b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+DeleteObject(h</font><font face="Arial">M</font><font face="宋体">oon);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PostQuit</font><font face="Arial">M</font><font face="宋体">essage(0);<br>  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">break</font>;<font color="#0000FF"><br>   
+</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">default</font>:<br>   
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>(DefWindowProc(hWnd,message,wParam,lParam));<br>   
+&nbsp;&nbsp;&nbsp; }<br>   
+&nbsp;&nbsp;&nbsp; <font color="#0000FF">return </font> (0);<br>   
+}<br>
+</font>
+</b></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#800000" face="宋体">　</font><font face="宋体"><font color="#800000">保存</font>一下文件，单击编译条上的“</font><font color="#800000">构建</font><font face="宋体">”按钮<img border="0" src="images/gjann.gif" width="23" height="23">，如果出现错误就仔细检查一下，换一种方法试一下，然后单击“</font><font color="#800000">执行</font><font face="宋体">”按钮<img border="0" src="images/zhxann.gif" width="23" height="23">，看看生动美丽的程序窗口；</font></p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">本节</font><font face="宋体">学习了在用户区中加入图片的代码设计，如果你成功地完成了练习，请继续学习下一课内容；</font></p>  
+<p style="line-height: 150%; margin: 0" align="left"><font face="宋体"><a href="../index.htm">返回</a></font></p>  
+<p style="line-height: 150%; margin: 0" align="left">　</p>  
+<p style="line-height: 150%; margin: 0" align="left">　<a href="images/loadPic.exe">心雨星愿</a> <font size="2">
+（在弹出的对话框中选择“<font color="#800000">运行</font>”，“<font color="#800000">运行</font>”）</font></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p> 
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+本教程由86团学校TeliuTe制作|著作权所有</font></p>  
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font></p>  
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">          
+                 
+                  
+<font SIZE="1" color="#008000">  
+美丽的校园……  
+</font>        
+               
+                
+</p>  
+               
+                
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+               
+                
+                     
+                     
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                     

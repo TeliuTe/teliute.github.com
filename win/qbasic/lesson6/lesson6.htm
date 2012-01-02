@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,电脑,计算机,教程,基础,入门" />
+<title>basic基础|Do循环</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+ <p align="center" style="line-height: 200%; margin-top: 0; margin-bottom: 0">
+	<font color="#FF0000"><b><font size="6">Basic</font></b><font color="#FF0000" size="6" face="华文彩云">  
+    基础入门教程</font></font></p>                                  
+                
+                 
+ <p style="line-height: 150%; margin: 0" align="left">
+	<font color="#0000FF" size="4">六、Do循环&nbsp; <span lang="zh-cn"><a href="../index.htm">返回</a></span></font></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">
+　我们继续来看另一中循环，它跟前面的For循环区别在于，For循环一般知道循环次数，在第一行里头就指明了，而Do循环一般不知道循环次数，下面我们通过一个练习来学习
+；                                                   
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　<font color="#0000FF">1、
+运行qbasic</font>                                                   
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>
+ <p align="left" style="line-height: 150%; margin: 0">　1）进入qbasic文件夹，双击运行<font color="#800000">qbasic</font>，
+	按ESC键进入编辑窗口 
+	；</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　2）光标在<font color="#800000">左上角</font>一闪一闪，表示可以输入程序代码；                                              
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　3）<font color="#800000">第一行</font>是清屏和注释代码，表明程序的作用；</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　<font color="#0000FF">2、输入程序代码</font></p>
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　1）输入下列代码，单引号后面是<font color="#800000">注释</font>，<span style="font-family: 宋体">双引号</span><span style="FONT-FAMILY: 宋体">后面是分号</span><b><font face="Arial Black">;</font></b><span style="FONT-FAMILY: 宋体"> </span></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0"><b><font face="Arial">
+	cls'do xun huan</font></b></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0"><b><font face="Arial">
+	do</font></b></p>
+	<p align="left" style="line-height: 150%; margin: 0"><b>&nbsp;&nbsp; input &quot;chengji&quot;; 
+	chj</b></p>
+	<p align="left" style="line-height: 150%; margin: 0"><b>&nbsp;&nbsp; s= s+ 
+	chj</b></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0"><b>loop while chj&gt; 0</b></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0"><b>print &quot;zongfen=&quot;; s</b></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0"><b>end</b></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/1dm.gif" width="211" height="150"></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　2）input是输入一个<font color="#800000">成绩</font>，然后把成绩加起来，放到变量s当中</p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　在loop一行里头，<font color="#800000">检查</font>一下chj的大小，如果大于0，就继续<font color="#800000">循环</font>，等于0或小于0，就退出循环；</p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　以 
+	<font color="#800000">doxh</font> 为文件名，<font color="#800000">保存</font>一下文件，按F5运行一下程序，输入几个成绩，<font color="#800000">最后</font>输入一个0退出程序；</p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">　<img border="0" src="images/2jg.gif" width="652" height="331"></p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　<font color="#0000FF">本节</font>学习了Do循环的使用方法，如果你成功地理解并完成了练习，请继续学习下一课内容；                                      
+            
+                 
+</p>
+	<p align="left" style="line-height: 150%; margin: 0">　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+	<a href="images/6DOXH.EXE">范例：DOXH</a> （点运行、运行，按0、再按任意键退出）</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF" size="4">
+<span lang="zh-cn"><a href="../index.htm">返回</a></span></font>　                                    
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+本教程由86团学校TeliuTe制作|著作权所有 
+</font>       
+              
+               
+</p> 
+                
+                 
+ <p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+ <font color="#008000" size="1">基础教程网：</font><font color="#008000" size="1"><a href="http://teliute.org/">http://teliute.org/</a></font>        
+              
+               
+</p> 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+美丽的校园…… 
+</font>       
+              
+               
+</p> 
+              
+               
+	<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+              
+               
+                    
+                    
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                    

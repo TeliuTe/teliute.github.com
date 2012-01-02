@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html style="direction: ltr;" xmlns="http://www.w3.org/1999/xhtml" lang="zh">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=GB2312" />
+
+  <meta name="description" content="TeliuTe系列教程之Excel基础入门教程" />
+
+  <meta name="keywords" content="基础教程网,TeliuTe,excel,基础教程" />
+
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+
+
+
+  <title>Excel 基础|统计分数段</title>
+  <style type="text/css">
+<!--
+body {
+	background-color: #CCFFFF;
+}
+.STYLE1 {
+	font-family: "华文彩云", Arial;
+	color: #FF0000;
+	font-size: 28px;
+}
+
+.STYLE3 {
+    font-family: Arial}
+.STYLE4 {color: #800000}
+.STYLE2 {	font-size: 12px;
+	line-height: 10%;
+	color: #008000;
+}
+.STYLE5 {	color: #0000FF;
+}
+-->
+  </style>
+</head>
+
+<body style="direction: ltr;">
+
+<p class="STYLE1" style="margin: 0px; line-height: 150%;" align="center"><span class="STYLE3">Excel</span> 基础入门教程 </p>
+
+<p><span class="STYLE5">统计分数段　</span><a href="../index.html">返回</a></p>
+
+<p>　有时候需要按分数段统计人数，比如90分的人数，80分的人数等等，下面我们来看一个练习；</p>
+
+<p class="STYLE5">　1、启动Excel</p>
+
+<p>　1）<span style="margin: 0px; line-height: 150%;">点击&ldquo;<span class="STYLE4">开始</span>－所有程序－Microsoft－Microsoft Office Excel 2003&rdquo;</span>；</p>
+
+<p>　<img src="images/1qd.gif" height="76" width="526" /></p>
+
+<p>　2）出现一个满是<span class="STYLE4">格子</span>的空白窗口，这就是一张电子表格了，第一个格子看着边框要<span class="STYLE4">粗一些</span>，处于选中状态；</p>
+
+<p>　<img src="images/1gzq.gif" height="83" width="184" /></p>
+
+<p>　<span class="STYLE5">2、统计分数段</span></p>
+　1）输入一个8个成绩的成绩表，包含序号和成绩，并输入 90-100、80-89、70-79、60-69、0-50 几个分段；
+<p>　<img style="width: 324px; height: 210px;" alt="" src="images/b1bg.gif" />　</p>
+
+<p>　2）选中&ldquo;0-50&rdquo;<span class="STYLE4">右边的</span>单元格<span class="STYLE4"></span>，点编辑栏里的<span class="STYLE4">fx</span>，准备输入公式，</p>
+<p>　从低到高分段，<span class="STYLE4">先算</span>最低分的一段；</p>
+
+<p>　<img style="width: 226px; height: 177px;" alt="" src="images/b2gsh.gif" /></p>
+
+<p>　3）在出来的函数列表里，在中间选择&ldquo;<span class="STYLE4">全部</span>&rdquo;，然后在下面的列表里选择&nbsp;<span class="STYLE4">COUNTIF</span> 函数，点确定按钮；</p>
+
+<p>　<img style="width: 399px; height: 311px;" alt="" src="images/b3hsh.gif" /></p>
+
+<p>　4）接下来是 COUNTIF 函数面板，用鼠标<span class="STYLE4">拖动</span>选中所有成绩，这个是范围；</p>
+<p>　<img style="width: 237px; height: 194px;" alt="" src="images/b4fw.gif" /></p>
+<p>　5）然后在第二行，条件里点一下，切换到英文输入法，输入小于号和60，然后点&ldquo;确定&rdquo;： &lt;60</p>
+
+<p>　<img style="width: 474px; height: 247px;" alt="" src="images/b5tj.gif" /></p>
+<p>　这样就可以统计出60分以下的人数了；</p>
+
+<p>　6）再选中&ldquo;60-69&rdquo;段<span class="STYLE4">旁边的</span>单元格，点编辑栏里的<span class="STYLE4">fx</span>，准备输入公式；</p>
+<p>　<img style="width: 147px; height: 134px;" alt="" src="images/b6gsh.gif" /></p>
+<p>　7）在出来的函数面板里，<span class="STYLE4">还选择</span> COUNTIF 函数，然后点&ldquo;确定&rdquo;按钮，</p>
+<p>　拖动选中<span class="STYLE4">所有</span>成绩，在第二行条件输入小于70，然后点&ldquo;确定&rdquo;： <span class="STYLE4">&lt;70</span></p>
+<p>　<img style="width: 474px; height: 247px;" alt="" src="images/b7hsh.gif" /></p>
+<p>　8）回到表格窗口后，在编辑栏的公式<span class="STYLE4">后面</span>点一下，然后输入减号，点一下刚才统计出来的0-59分数段的人数，然后点右边的<span class="STYLE4">绿色勾</span>确定，</p>
+<p>　因为70分以下的除了60分段的，还包括50分以下的，<span class="STYLE4">减去</span>50分的剩下就是60分以上的；</p>
+
+
+<p>　<img style="width: 363px; height: 217px;" alt="" src="images/b8jq.gif" /></p>
+<p>　9）同样在选中70-79右边的单元格，选择 COUNTIF 函数，在条件里输入<span class="STYLE4">小于80</span></p>
+<p>　点&ldquo;确定&rdquo;以后，回来在<span class="STYLE4">编辑栏</span>里，再点一下鼠标，减去刚才算出的50分段和60分段的；</p>
+<p>　<img style="width: 261px; height: 164px;" alt="" src="images/b9b.gif" /></p>
+<p>　10）同样的方法，求出80分段的人数，用<span class="STYLE4">减去</span>两头剩下中间的方法，求出所需的分数段来；</p>
+<p>　<img style="width: 397px; height: 216px;" alt="" src="images/c1gsh.gif" /></p>
+<p>　对于 90-100 的分数段，可以在条件里输入 <span class="STYLE4">&gt;=90</span> （大于等于90） </p>
+<p>　以&ldquo;分数段&rdquo;为文件名，保存文件到自己的文件夹；</p>
+　<span class="STYLE5">本节</span>学习了Excel中统计分数段的方法，如果你成功地完成了练习，请继续学习下一课内容； 
+<p><a href="../index.html">返回</a></p>
+
+<p class="STYLE2">本教程由86团学校TeliuTe制作|著作权所有 </p>
+
+<p class="STYLE2">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+
+<p class="STYLE2">美丽的校园&hellip;&hellip; </p>
+
+<font style="font-size: 12px;" color="green">
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	
+<noscript><a
+href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript>
+</font><br />
+<br />
+
+<div>
+
+<table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+
+  <tbody>
+    <tr>
+
+    <td>
+	
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+	</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+	
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+	</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+	
+      <script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+      </script>
+      <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+	</td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+</div>
+
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+</body>
+</html>

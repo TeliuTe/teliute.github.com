@@ -1,0 +1,324 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,教程,基础,入门" />
+<title>Flash8脚本|重放代码</title>
+<style type="text/css">
+<!--
+.STYLE1 {color: #800000}
+-->
+</style>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+ <p align="center" style="line-height: 150%; margin-top: 0; margin-bottom: 0"><font color="#FF0000" size="6"><b>Flash 
+</b>8.0<font face="华文彩云">   脚本基础</font></font></p>                                   
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left"><font color="#0000FF" size="4">脚本基础&nbsp; 
+<a href="../index.htm">返回</a></font></p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+                
+                 
+ <p style="line-height: 150%; margin: 0" align="left">&nbsp; <font color="#0000FF">在动画</font>的结尾，往往有一个重来的“Replay”按钮，方便再次欣赏，这一节我们来学习，怎样添加这个脚本；                                               
+            
+                 
+</p>         
+                
+                 
+ <p style="line-height: 150%; margin: 0" align="left">　                                               
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">1、创建按钮</font>                                                
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　                                               
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 1）启动Flash，打开上一节的“<font color="#800000">停止脚本</font>”文档，点菜单“文件-另存为”，文件名改为“重放代码”；</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 选中时间轴上的最后一帧；</p>
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; <img src="images/a1xz.gif" width="142" height="61" /></p>
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+<p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 2）单击菜单“<font color="#800000">插入</font>－新建元件”，在弹出的对话框中，将名称改为“replay”，类型选择“按钮”，单击<span class="STYLE1">确定</span>；</p>
+<p align="left" style="line-height: 150%; margin: 0">
+　                                          
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　<img border="0" src="images/replay.gif" width="408" height="130">                                          
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                           
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 3）选择文本工具，把填充色选为<font color="#800000">绿色</font>，在工作区中点一下，输入“Replay”，</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp;<img src="images/a2r.gif" width="181" height="106" /></p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; 然后用箭头工具，把它拖到中央十字那儿，点击时间轴上面的“场景  
+   1”按钮<img border="0" src="images/chj1.gif" width="125" height="22">返回场景； </p>
+ <p align="left" style="line-height: 150%; margin: 0">　                                           
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; 4)在时间轴上选择最后一帧，打开“库”面板(Ctrl＋L)，找到里头的replay元件，把它拖到工作区中，调整好位置；</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; <img src="images/a3k.gif" width="208" height="181" />　<img src="images/a4r.gif" width="265" height="115" /></p>
+ <p align="left" style="line-height: 150%; margin: 0">　                                       
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">2</font><font color="#0000FF">、输入脚本代码</font>                                             
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp;  
+保证按钮是选中状态，打开“动作”面板，我们仍然使用普通模式，检查一下“脚本助手”<font color="#800000">没有</font>被按下，然后在下面的编辑窗口中输入重新播放的代码：                                        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; <font color="#0000FF">on</font>(<font color="#0000FF">release</font>)<br> 
+&nbsp; {<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">gotoAndPlay</font>(1);<br> 
+&nbsp; }                                         
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　                                        
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp;  
+ 注意输入的大小写，以及代码颜色的变化，保存一下文件，按 Ctrl＋回车键 测试影片；</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;</p>
+ <p align="left" style="line-height: 150%; margin: 0">&nbsp;&nbsp; <img src="images/a5dm.gif" width="152" height="85" /></p>
+ <p align="left" style="line-height: 150%; margin: 0">　                                        
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+&nbsp;&nbsp; gotoAndPlay是跳转并播放的意思，括号里是跳转到哪一帧，输入的时候会有一个自动提示，可以照着输入，也可以用方向键选择后按回车键确定；                                         
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                        
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　
+ <object classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" id="ShockwaveFlash2" width="192" height="192">
+  <param name="_cx" value="5080">
+  <param name="_cy" value="5080">
+  <param name="FlashVars" value>
+  <param name="Movie" value="images/tzh.swf">
+  <param name="Src" value="images/tzh.swf">
+  <param name="WMode" value="Window">
+  <param name="Play" value="0">
+  <param name="Loop" value="-1">
+  <param name="Quality" value="High">
+  <param name="SAlign" value>
+  <param name="Menu" value="-1">
+  <param name="Base" value="images/tzh.swf">
+  <param name="AllowScriptAccess" value>
+  <param name="Scale" value="ShowAll">
+  <param name="DeviceFont" value="0">
+  <param name="EmbedMovie" value="0">
+  <param name="BGColor" value>
+  <param name="SWRemote" value>
+  <param name="MovieData" value>
+  <param name="SeamlessTabbing" value="1">
+  <param name="Profile" value="0">
+  <param name="ProfileAddress" value>
+  <param name="ProfilePort" value="0">
+  <param name="AllowNetworking" value="all">
+ </object>
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　                                        
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">&nbsp; <font color="#0000FF">本节</font>学习了重新播放的脚本代码，以及制作按钮的一般方法，如果你成功地完成了练习，请继续学习下一课内容；                                     
+            
+                 
+</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0"><font color="#0000FF" size="4">
+<a href="../index.htm">返回</a></font>　                                     
+            
+                 
+</p>         
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+本教程由86团学校TeliuTe制作|著作权所有 
+</font>       
+              
+               
+</p> 
+                
+                 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+ <font color="#008000" size="1">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></font>        
+              
+               
+</p> 
+<p style="line-height: 150%; margin-top: 0; margin-bottom: 0">       
+              
+               
+<font SIZE="1" color="#008000"> 
+美丽的校园…… 
+</font>       
+              
+               
+</p> 
+              
+               
+	<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+              
+               
+                    
+                    
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p></body> </html>                    

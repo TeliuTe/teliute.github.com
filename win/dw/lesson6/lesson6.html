@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="description" content="TeliuTe系列教程之Dreamweaver基础入门教程" />
+<meta name="keywords" content="基础教程网,TeliuTe,Dreamweaver,基础教程" />
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+
+<title>Dreamweaver8入门|插入音乐</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #CCFFFF;
+}
+.STYLE1 {
+	font-family: "华文彩云", Arial;
+	color: #FF0000;
+	font-size: 28px;
+}
+
+.STYLE3 {
+    font-family: Arial}
+.STYLE4 {color: #800000}
+.STYLE2 {	font-size: 12px;
+	line-height: 10%;
+	color: #008000;
+}
+.STYLE5 {	color: #0000FF;
+}
+-->
+</style>
+</head>
+
+<body>
+<bgsound src="images/1001.mid" loop="-1"  />
+<p align="center" class="STYLE1" style="MARGIN: 0px; LINE-HEIGHT: 150%"><span class="STYLE3">Dreamweaver 8</span> 基础入门教程 </p>
+<p><span class="STYLE5">六、插入音乐　</span><a href="../index.html">返回</a></p>
+<p>　这一节我们来学习如何在页面插入音乐，通过播放器来播放和控制音乐，常见的音乐格式有mp3、wma、rm等等，音乐一般只有声音，没有图像，有图像的叫视频，下面我们来看一个练习；</p>
+<p class="STYLE5">　1、启动Dreamweaver</p>
+<p>　1）<span style="MARGIN: 0px; LINE-HEIGHT: 150%">点击“开始－所有程序－Macromedia－Macromedia Dreamweaver 8”，<img src="images/1cd.gif" width="189" height="18" /></span>；</p>
+<p>　2）在中间的“<span class="STYLE4">创建新项目</span>”中点第一个 HTML，打开一个空白文档，把标题改为“背景音乐”； </p>
+<p>　<img src="images/1xj.gif" width="138" height="80" /></p>
+<p>　3）点“文件－保存”命令，以  <span class="STYLE4">chryy</span> 为文件名保存文件，保存位置在建立的<span class="STYLE4">站点</span>中；</p>
+<p>　4）在右面<span class="STYLE4">侧边栏</span>的站点中，找到上次新建的文件夹 <span class="STYLE4">music</span> ，找到一首喜欢的歌曲，把它拖到这个文件夹里面；</p>
+<p>　<img src="images/1yy.gif" width="186" height="51" /></p>
+<p>　本课images文件夹中有一首 <span class="STYLE4">m1</span> 文件可以作为练习，它是wma格式的；</p>
+<p><span class="STYLE5">　2、插入音乐</span></p>
+<p>　1）在标签下面的“文档”工具栏中点一下“<span class="STYLE4">拆分</span>”标签，窗口分成两部分，上边是代码，下边是文档；</p>
+<p>　<img src="images/2bq.gif" width="179" height="50" /></p>
+<p>　2）在上面的代码窗口中，找到<span class="STYLE4">&lt;body&gt;</span>标签，在它后面点一下鼠标，然后按一下回车键插入一个空行，</p>
+<p>　<img src="images/2kh.gif" width="192" height="107" /></p>
+<p>　3）切换到<span class="STYLE4">英文</span>输入法状态，输入下列代码：</p>
+<p>&lt;embed src=&quot;music/m1.wma&quot; width=&quot;320&quot; height=&quot;40&quot;<br />
+  controls=&quot;ControlPanel&quot; loop=&quot;false&quot; autostart=&quot;false&quot; <br />
+type=&quot;audio/x-pn-realaudio-plugin&quot; initfn=&quot;load-types&quot;&gt;&lt;/embed&gt;</p>
+<p>　<img src="images/2dm.gif" width="450" height="78" /> </p>
+<p>　输入的时候会有提示，里面的<span class="STYLE4">单词</span>是代码标签，双引号里面是<span class="STYLE4">参数值</span>，loop是循环的意思，autostart是自动播放，这儿都是<span class="STYLE4">false</span>，也就是不用的意思；</p>
+<p>　<span class="STYLE4">保存</span>一下文件，点预览按钮，点左边的播放按钮，听一下悠扬的乐曲；</p>
+<p>　<embed src="images/m1.wma" width="320" height="40"
+controls="ControlPanel" loop="false" autostart="false" 
+type="audio/x-pn-realaudio-plugin" initfn="load-types"></embed></p>
+<p>　停止音乐可以点播放器上的停止按钮，要播放其他音乐，只要修改<span class="STYLE4">src</span>标签后面的音乐地址即可；</p>
+<p>　<span class="STYLE4">本节</span>学习了插入背景音乐的基本方法，学习了使用代码窗口的方法，如果你成功地理解并完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回</a></p>
+<p class="STYLE2">本教程由86团学校TeliuTe制作|著作权所有 </p>
+<p class="STYLE2">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="STYLE2">美丽的校园…… </p>
+<font color="green" style="font-size:12px"><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border:none" / width="20" height="20" /></a>
+			</noscript></font><br /><br />
+<div>
+
+<table width="800" border="0" cellspacing="0" cellpadding="0" id="gg">
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+  <tr>
+    <td>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	</td>
+  </tr>
+</table>
+</div>
+<p align="center">转载和引用本站内容，请保留版权信息和本站链接。</p>
+</body>
+</html>
