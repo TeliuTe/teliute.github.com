@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="TeliuTe系列教程之PW论坛安装教程" name="description" /> 
+<meta content="TeliuTe,基础教程网" name="Copyright" /> 
+<meta content="PW,phpwind,TeliuTe,安装,教程,入门" name="keywords" />
+
+<link rel="stylesheet" href="../css/css.css" type="text/css" /><title>Dz论坛|安装pw7.0</title>
+
+<link rel="Shortcut  Icon" href="../css/qcqy.ico" /></head><body style="direction: ltr;">
+
+<p class="title">PHPWind论坛安装教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<p><span class="tblue">十一、安装论坛</span>　<a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a></p>
+<p>　这一课我们来安装论坛程序，在服务器上安装网站，下面我们来看一个练习；</p>
+
+<p class="tblue">　1、安装论坛</p>
+<p>　1）解压下载的论坛安装包，把upload文件夹里的<span class="brown">全部</span>内容，都复制到之前设定的d:\www文件夹里；</p>
+<p>　<img src="images/a1fz.png" alt="a1fz.png" /></p>
+<p>　</p>
+<p>　2）到PhpStudy安装的文件夹里，找到php5文件夹，<span class="brown">打开</span>里面的php.ini，检查一下 short_open_tag = On </p>
+<p>　如果是Off则改成On保存退出，然后到桌面打开phpStudyAdmin，点托盘里的图标，重启Apache；</p>
+<p>　<img src="images/a2cq.gif" alt="a2cq.gif" /></p>
+<p>　</p>
+<p>　3）打开IE浏览器，在地址栏<span class="brown">输入</span> http://localhost/install.php 开始安装，如果本机已经<span class="brown">设定</span>了固定ip地址，那么就用ip地址，</p>
+<p>　<img src="images/a2dz.png" alt="a2dz.png" /></p>
+<p>　在出来的安装须知页面右边，点“开始安装”；</p>
+<p>　<img src="images/a3ksaz.jpg" alt="a3ksaz.jpg" /></p>
+<p>　</p>
+<p>　4）接下来的<span class="brown">许可协议</span><span class="brown" />中，点下面的“同意协议”继续；</p>
+<p>　<img src="images/a4ty.png" alt="a4ty.png" /></p>
+<p>　</p>
+<p>　5）接下来安装论坛数据库，数据库<span class="brown">用户名</span>是root，密码是root或者是自己修改的，给管理员账号也设定一个密码，数据库类型选“MySQL”点“下一步”继续；</p>
+<p>　<img src="images/a5sjk.png" alt="a5sjk.png" /></p>
+<p>　</p>
+<p>　6）接下来的论坛<span class="brown">版块</span>设计，可以先用默认的，点“下一步”继续；</p>
+<p>　<img src="images/a6bk.png" alt="a6bk.png" /></p>
+<p>　</p>
+<p>　7）接下来的插件选项，也可以用<span class="brown">默认</span>的，点“下一步”继续安装；</p>
+<p>　</p>
+<p>　8）稍等开始安装，<span class="brown">安装</span>结束后，出来一个“完成”按钮；</p>
+<p>　<img src="images/a8wc.png" alt="a8wc.png" /></p>
+<p>　</p>
+<p>　9）点“完成”按钮，出来<span class="brown">成功</span>页面，里面有三个网址，分别进入前台、后台和官网；</p>
+<p>　<img src="images/a9wz.png" alt="a9wz.png" /></p>
+<p>　</p>
+<p>　10）点第一个进入<span class="brown">论坛</span>页面，里面已经有一个默认的版区了；</p>
+<p>　<img src="images/a10lt.png" alt="a10lt.png" /></p>
+<p>　</p>
+<p>　<span class="tblue">2、Ubuntu 中安装<br />
+</span></p>
+<p>　1）用root用户打开文件管理器，<span class="brown">解压</span>upload 里的所有内容到 /opt/lampp/htdocs 原来的只留下xampp文件夹；</p>
+<p>　<img src="images/b1fz.png" alt="b1fz.png" /></p>
+<p>　</p>
+<p>　2）打开htdocs/文件夹，除了xampp/文件夹以外，<span class="brown">全选</span>里面所有内容，点右键选“属性”，设置“其它”权限为“访问文件和只读”，再点“对包含的文件应用权限”，这是设置全局属性；</p>
+<p>　<img src="images/b2qx.png" alt="b2qx.png" /></p>
+<p>　</p>
+<p>　3）分别将文件夹 attachments/、data/、htm_data/、template/的<span class="brown">属性</span>对话框，设置“其它”权限为“创建删除和读写”，并点击“对包含的文件应用权限”，把文件 install.php 的“其它”权限设为读写；</p>
+<p>　<img src="images/b3qx.png" alt="b3qx.png" /></p>
+<p>　</p>
+<p>　4）在浏览器地址栏<span class="brown">输入</span>http://localhost/install.php 或者本机的ip 地址，进入安装程序，步骤同上；</p>
+<p>　<img src="images/b4az.png" alt="b4az.png" /></p>
+<p>　安装完成后，如果不能进入论坛，就自己去<span class="brown">删除</span>install.php，然后就可以进入了；</p>
+<p>　5）如果安装过程中出错，根据<span class="brown">提示</span>检查文件权限，或者检查xampp的服务是否<span class="brown">启动</span>，如果mysql出错可能就要重装xampp，先停止服务，再重装，不行就得重启了再重装；</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了安装PW7.0的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
+</p><p><a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+</body></html>
