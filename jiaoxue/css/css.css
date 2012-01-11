@@ -1,0 +1,114 @@
+﻿/* by TeliuTe <http://www.laxjyj.com/teliute>
+*/
+
+body {
+	line-height: 2em;
+	background-color: #f0f7ff;
+}
+span {
+        color:red;
+}
+
+div {
+	margin-left:auto;margin-right:auto;
+	line-height:2em;
+	/*margin:0px 10px;*/
+	padding:0px;
+	width:1024px;
+}
+
+ul {
+	margin:0px;
+	padding:0px;
+	float:left;
+	display:inline;
+	width:1024px;
+}
+
+li {
+	float:left;
+	line-height:2em;
+	list-style:none;
+	width:340px;
+	padding:0px;
+}
+
+.title {
+  font-family: "文泉驿正黑","黑体",WenQuanYi,Arial,Helvetica,sans-serif;
+  font-weight: bold;
+  line-height: 2.5em;
+  letter-spacing:1em;
+  color: #ff0000;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+/*One World One Dream*/
+.one {
+  background-color: #fff8f0;
+  text-align: center;
+  color:green;
+  padding-top:3px;
+  padding-bottom:3px;
+}
+
+/*上面的导航栏*/
+.u1 {
+	margin:0px;
+	padding:0px;
+	float:left;
+	display:inline;
+	width:1024px;
+}
+.u1 li {
+	float:left;
+	line-height:1.5em;
+	list-style:none;
+	width:168px;
+	padding:0px;
+}
+/*共享园地里的左右单元格*/
+.w1 {
+	float:left;
+	line-height:2em;
+	width:650px;
+	padding:0px;
+}
+.w2 {
+	float:left;
+	line-height:2em;
+	width:340px;
+	padding:0px;
+}
+/*清除样式*/
+.clear{clear:both;}
+
+/*链接样式*/
+a:link {
+  color: #0033cc;
+  text-decoration: none;
+}
+a:visited {
+  color: #0033cc;
+  text-decoration: none;
+}
+a:active {
+  color: #ff0000;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff0000;
+  text-decoration: underline;
+}
+/*文字颜色*/
+.green {
+  color: #008000;
+}
+.pur {
+  color: #6600cc;
+}
+/*共享园地的背景*/
+.bg {
+  background-color: #fff8f0;
+}
+
