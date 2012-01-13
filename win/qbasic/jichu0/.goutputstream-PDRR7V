@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+
+<head>
+<meta http-equiv="Content-Language" content="en-us" />
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0" />
+<meta name="ProgId" content="FrontPage.Editor.Document" />
+<meta name="author" content="TeliuTe" />
+<meta name="Copyright" content="TeliuTe,86团学校,基础教程网" />
+<meta name="description" content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" />
+<meta name="keywords" content="Flash,Photoshop,3DS Max,VB,VC,Frongpage,XP,TeliuTe,86团学校,电脑,计算机,教程,基础,入门" />
+<title>Basic基础|启动和退出qbasic</title>
+</head>
+
+<body bgcolor="#CCFFFF" vlink="#0000FF">
+
+ <p align="center" style="line-height: 200%; margin-top: 0; margin-bottom: 0">
+	<font color="#FF0000"><b><font size="6">Basic</font></b><font color="#FF0000" size="6" face="华文彩云">  
+    基础入门教程</font></font></p>                                  
+                
+                 
+ <p style="line-height: 150%; margin: 0" align="left">
+	<font color="#0000FF" size="4">启动和进入&nbsp; <span lang="zh-cn"><a href="../index.htm">返回</a></span></font></p>  
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　</p>
+                
+                 
+<p style="line-height: 150%; margin: 0" align="left">　<font color="#0000FF">Qbasic</font>是一个Dos下的程序，也称作命令行方式，操作主要用键盘输入，因此需要
+适应用键盘来操作电脑，慢慢多熟悉；</p>
+	<p style="line-height: 150%; margin: 0" align="left">　</p>
+      
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">　<font color="#0000FF">1、
+启动程序</font>                                                   
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>
+ <p align="left" style="line-height: 150%; margin: 0">　1）下载Qbasic程序，可以在“常用教具”里下载：<a href="http://teliute.org/jiaoju/index.htm">http://teliute.org/jiaoju/index.htm</a></p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">
+	　2）解压到D:盘根目录中，进入Qbasic文件夹后，双击一个<font color="#800000">Qbasic</font>的文件，图标是一个窗口<img border="0" src="images/1tb.gif" width="95" height="48">；                                              
+            
+                 
+</p>         
+                
+                 
+ <p align="left" style="line-height: 150%; margin: 0">　</p>         
+                
+                 
+<p align="left" style="line-height: 150%; margin: 0">
+　3）双击这个图标即可启动程序，出来的界面是<font color="#800000">英文</font>的，程序设计里英文用的要比较多些；</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　另外一种进入方法，用命令行方式进入；</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　1）点“开始－所有程序－附件－命令提示符”
+<img border="0" src="images/2mltshf.gif" width="154" height="20">，进入Dos窗口，有个光标在一闪一闪；</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　<img border="0" src="images/3chk.gif" width="400" height="258"></p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　</p>
+	<p align="left" style="line-height: 150%; margin: 0">
+　2）输入 D:<span style="FONT-FAMILY: 宋体">
