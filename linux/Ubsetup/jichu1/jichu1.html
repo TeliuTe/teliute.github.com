@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+
+
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="author" content="TeliuTe" />
+  <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
+  <meta content="TeliuTe,86团学校,基础教程网" name="Copyright" />
+  <meta content="基础教程网,TeliuTe系列教程，一步一步教你学会使用电脑" name="description" />
+  <meta content="Ubuntu,Win7,硬盘安装,TeliuTe,安装,教程,基础,入门" name="keywords" />
+  <style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.green { 
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+  </style><title>Ubuntu安装|安装Ubuntu10.10</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">Win7 硬盘安装 Ubuntu</span>　<a href="../index.html">返回目录</a>　<a href="../lesson1/lesson1.html">下一课</a>
+<p>　Win7 硬盘安装 Ubuntu 与 XP 类似，操作中注意细心，下面来看一个练习；</p>
+<p>　<span class="tblue">1、检查 Win7 保留分区</span></p>
+<p>　1）进入 Win7 打开库文件夹，在左侧栏找到“计算机”，瞄准点右键选择“管理”菜单；</p>
+<p>　<img src="images/a1manage.png" alt="a1manage.png" /></p>
+<p>　</p>
+<p>　2）在出来的管理面板左边找到“磁盘管理”，点击它，在右边出来各个分区；</p>
+<p>　<img src="images/a2disk.png" alt="a2disk.png" /></p>
+<p>　<span class="tblue">注意</span>：如果里面有一个100M的系统保留分区，则进行下面(3－６)的操作，否则请跳至第2步复制启动文件；</p>
+<p>　</p>
+<p>　3）瞄准100M“系统保留”分区点右键，选择“更改驱动器号和路径”菜单；</p>
+<p>　<img src="images/a3num.png" alt="a3num.png" /></p>
+<p>　</p>
+<p>　4）在出来的面板中，点左下角的“添加”按钮；</p>
+<p>　<img src="images/a4add.png" alt="a4add.png" /></p>
+<p>　</p>
+<p>　5）然后在出来的面板右上角选择一个盘符，用后面一点的字母，然后点确定；</p>
+<p>　<img src="images/a5give.png" alt="a5give.png" /></p>
+<p>　</p>
+<p>　6）然后回到“计算机”文件夹，就会发现多了一个磁盘分区，打开里面是空的；</p>
+<p>　</p>
+<p>　<span class="tblue">2、复制启动文件</span></p>
+<p>　(<span class="brown">注意</span>：如果没有100M系统保留分区，那么就把这些文件复制到 C: 盘)</p>
+<p>　1）把下载的 Ubuntu 镜像文件复制到 C: 盘，用 7-zip 或 WinRAR 打开；</p>
+<p>　<img src="images/b1ex.png" alt="b1ex.png" /></p>
+<p>　</p>
+<p>　2）找到 casper 文件夹双击打开，里面有一个 i 开头和 v 开头的文件；</p>
+<p>　<img src="images/b2casper.png" alt="b2casper.png" /></p>
+<p>　</p>
+<p>　3）打开前面准备的系统保留分区，把 casper 里的 initrd.lz 文件拖到这个分区窗口里，</p>
+<p>　如果没有保留分区就拖到 C: 盘，出来提示点“继续”；</p>
+<p>　<img src="images/b3drag.png" alt="b3drag.png" /></p>
+<p>　</p>
+<p>　4）同样把 vmlinuz 拖到这个分区里，关闭7z压缩包窗口；</p>
+<p>　<img src="images/b4vm.png" alt="b4vm.png" /></p>
+<p>　</p>
+<p class="tblue">　3、制作menu.lst文件</p>
+<p>　1）打开记事本，输入下面的内容，也可以复制粘贴进去，把第三行中文件名改成对应的，本课文件夹中有这个<a href="./menu.lst">menu.lst</a> 文件(点右键，选“目标另存为”)；</p>
+<div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">title Install Ubuntu
+<br />
+<br />
+root (hd0,0)<br />
+<br />
+kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-<span style="color: rgb(255, 0, 0);">11.10</span>-desktop-i386.iso quiet splash ro locale=zh_CN.UTF-8 noprompt --
+<br />
+<br />
+initrd /initrd.lz
+</div>
+<p>　2）点菜单“文件－保存”，位置保存在系统保留磁盘，文件名输入 "menu.lst" ，注意有一对英文的双引号；</p>
+<p>　<img src="images/c1menu.png" alt="c1menu.png" /></p>
+<p>　</p>
+<p>　3）再下载一个 g2ldr 和 g2ldr.mbr 文件，也复制到系统保留磁盘，本课的文件夹里有这个<a href="g2ldr">g2ldr</a> 和 ，<a href="g2ldr.mbr">g2ldr.mbr</a> 文件；</p>
+<p>　</p>
+<p>　4）再在系统保留磁盘中创建一个 boot.ini 文件，里面输入下面的内容：（本课有这个<a href="./boot.ini">boot.ini</a> 文件，点右键，选“目标另存为”）</p>
+<div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">[boot loader]<br />
+timeout=0<br />
+default=C:\g2ldr.mbr<br />
+[operating systems]<br />
+C:\g2ldr.mbr="Ubuntu"</div>
+<p>　</p>
+<p>　这样在系统保留磁盘里面就有6个复制过来的文件，在 C: 盘里有一个 Ubuntu 镜像文件，仔细检查一下；</p>
+<p><img src="images/c2files.png" alt="c2files.png" />　<img src="images/c2iso.png" alt="c2iso.png" /></p>
+<p>　</p>
+<p>　<span class="tblue">4、关闭系统保留分区</span></p>
+<p>　1）检查完各个文件以后，关闭系统保留分区窗口，重新回到“计算机管理－磁盘管理－更改驱动器号和路径”；</p>
+<p>　<img src="images/a3num.png" alt="a3num.png" /></p>
+<p>　</p>
+<p>　2）在出来的面板中，点击右下角的“删除”按钮；</p>
+<p>　<img src="images/d2del.png" alt="d2del.png" /></p>
+<p>　</p>
+<p>　3）在出来的确认对话框中，点“是”；</p>
+<p>　<img src="images/d3yes.png" alt="d3yes.png" /></p>
+<p>　</p>
+<p>　4）在接下来的警告对话框中，点“是”；</p>
+<p>　<img src="images/d4warn.png" alt="d4warn.png" /></p>
+<p>　</p>
+<p>　5）这样就将分配的盘符去掉了，然后关闭这个管理窗口；</p>
+<p>　</p>
+<p>　<span class="tblue">5、重启计算机</span></p>
+<p>　1）重新启动计算机，在出现启动菜单时，按下方向键选择“Ubuntu”，按回车键进入；</p>
+<p>　<img src="images/e1wboot.png" alt="e1wboot.png" /></p>
+<p>　</p>
+<p>　2）在接下来的 Install Ubuntu 菜单中，直接按回车键进入；</p>
+<p>　<img src="images/e2g4d.png" alt="e2g4d.png" /></p>
+<p>　</p>
+<p>　3）耐心等待系统加载，直到出现桌面，点一下左上角的圆圈按钮，稍等在旁边出来的文本框中输入字母 ter 然后点击下边出来的终端图标；<br />
+</p>
+<p>　<img src="images/e3ter.png" alt="e3ter.png" /></p>
+<p>　</p>
+<p>　4）在出来的终端窗口中，输入 sudo umount -l /isodevice 然后按回车键；<br />
+</p>
+<p>　<img src="images/e4umt.png" alt="e4umt.png" /></p>
+<p>　</p>
+<p>　5）双击桌面上的“安装 Ubuntu”图标，稍等进入安装对话框；<br />
+</p>
+<p>　<img src="images/e5setup.jpg" alt="e5setup.jpg" /></p>
+<p>　</p>
+<p>　6）在“安装类型”这一步时，选择“其他选项”，然后点继续；</p>
+<p>　<img src="images/e6other.png" alt="e6other.png" /></p>
+<p>　</p>
+<p>　7）在分区这一步时，点击下边的引导器位置下拉列表，将引导器安装到 Ubuntu 所在的分区；</p>
+<p>　<img src="images/e7loader.png" alt="e7loader.png" /></p>
+<p>　</p>
+<p>　8）然后一步步安装完以后，重启计算机进入 Win7，把 C: 盘中的 Ubuntu 镜像文件删除，</p>
+<p>　重新进入系统保留分区，用记事本打开 menu.lst，将里面的内容换成下面的，然后再关闭系统保留分区：</p>
+<p>　本课文件夹中有这个<a href="images/menu.lst">menu.lst</a> 文件(点右键，选“目标另存为”)：</p>
+<div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">title Ubuntu/Linux
+<br />
+<br />
+find --set-root /boot/grub/core.img
+<br />
+<br />
+kernel /boot/grub/core.img
+<br />
+<br />
+boot
+</div>
+<p>　<span class="brown">切记</span>：一定要将分配给系统保留磁盘的盘符去掉；</p>
+<p>　重启动计算机，在启动菜单那儿依次选择“Ubuntu－Ubuntu/Linux”就可以进入到 Ubuntu 系统了；</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了Win7 硬盘安装 ubuntu 的基本方法，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson1/lesson1.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js">
+          	<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript>
+<div>
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br />
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+	<br />
+	<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</body></html>
