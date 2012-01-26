@@ -73,6 +73,9 @@
 <p>　<img src="images/b7mm.gif" alt="b7mm.gif" /></p>
 <p>　</p>
 <p>　7）关闭浏览器<span class="brown">重新</span>进入，就需要输入密码了，如果出错<span class="brown">刷新</span>一下，也可以检查phpMyAdmin的配置文件 /opt/lampp/phpmyadmin/config.inc.php</p>
+<p>　把里面的验证改成 http：</p>
+/* Authentication type and info */<br />
+$cfg['Servers'][$i]['auth_type'] = 'http';<br />
 <p>　<img src="images/b7dl.png" alt="b7dl.png" /></p>
 <p>　</p>
 <p>　更多相关信息，请参阅：http://www.phpmyadmin.net/localized_docs/zh_CN/Documentation.html#authentication_modes</p>
