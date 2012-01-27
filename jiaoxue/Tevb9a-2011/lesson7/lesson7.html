@@ -5,9 +5,6 @@
 
 
 
-
-
-
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="author" content="TeliuTe" />
 
@@ -16,57 +13,55 @@
   <meta name="keywords" content="VB,课程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|安装和保存</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|定时器（时钟）</title></head><body style="direction: ltr;">
 <p class="title">2011-2012 第一学期九年级 VB 教学课程设计</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">一、安装和保存</span>　<a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a>
-<p>　学习目标：学会下载和安装 VB6，学会保存 VB 文件；</p>
-<p>　注意事项：要保存两次，输相同的名称，多的删除</p>
-<p class="tblue">　1、下载和安装</p>
-<p>　1）打开我的文档，新建一个文件夹，名称为自己的班级或姓名；</p>
-<p>　<img src="images/a1xj.png" alt="a1xj.png" /></p>
+<span class="tblue">七、定时器（时钟）</span>　<a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a>
+<p>　学习目标：学会使用定时器控件；</p>
+<p>　注意事项：定时器的 interval 属性别忘了；</p>
+<p class="tblue">　1、绘制控件</p>
+<p>　1）打开一个标准EXE，绘制两个标签，一个文本框，一个定时器</p>
+<p>　Label1的Caption属性改为“时间：”，另一个标签改为“You and I must have”</p>　定时器的 interval 属性设为1000，它的单位是毫秒；
 <p>　</p>
-<p>　2）打开浏览器，进入校园网下载，也可以在华军下载：<a href="http://www.onlinedown.net/soft/19976.htm">http://www.onlinedown.net/soft/19976.htm</a>；</p>
+<p>　2）设置好控件的字体和颜色；</p>
+<p>　<img src="images/a1pr.png" alt="a1pr.png" /></p>
 <p>　</p>
-<p>　3）双击下载的文件，一路点“下一步”到完成；</p>
-<p>　<img src="images/a2anzh.gif" alt="a2anzh.gif" /></p>
+<p>　3）进入代码窗口，点击对象下拉列表，依次选择“通用、Text1、Timer1”，在出来的代码段中分别输入；</p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">'通用<br />
+ dim i, k as integer <br /><br />
+'文本框<br />
+ i = len(text1.text)<br /><br />
+'定时器<br />
+ k = k + 1<br />
+ label1.caption = str(k) + str(i)
+</div>
 <p>　</p>
-<p class="tblue">　2、保存文件</p>
-<p>　1）在出来的“标准EXE”对话框里，直接点“打开”；</p>
-<p>　<img src="images/b1open.png" alt="b1open.png" /></p>
-<p>　</p>
-<p>　2）点菜单“文件－保存工程”，在出来的保存对话框里，打开自己的文件夹，文件名改成“第一课”；</p>
-<p>　<img src="images/b2save.png" alt="b2save.png" /></p>
-<p>　</p>
-<p>　3）然后再出来一个保存对话框，也输入“第一课”，记住要保存两次；</p>
-<p>　<img src="images/b3vbp.png" alt="b3vbp.png" /></p>
+<p>　4）保存为“第七课”，点菜单“运行－启动”，在文本框中输入内容；</p>
+<p>　<img src="images/a2run.png" alt="a2run.png" /></p>
 <p>　</p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
-课堂笔记：第1课 程序设计基础<br />
-1.安装VB6精简版<br />
-2.认识窗口：工具箱，工作区和属性面板<br />
-3.默认自动新建空白，灰色窗口<br />
-4.工程项目：对象，(代码)事件<br />
-5.保存两次：窗体和工程<br />
+板书设计：第7课   定时器（时钟）<br />
+1.窗体、标签（2个）、文本框<br />
+2.选中画一个定时器，0 改成1000<br />
+3.进入代码窗口：通用，Text1，Timer1<br />
 <p>课后记：</p>
- 下载精简版的，挂到校园网里<br />
- 大概设计一下，学习安装和保存<br />
- 然后把笔记发到日志里去<br />
- 最后打一篇指法<br />
+ 带笔记本，把代码抄一下<br />
+ 把编辑器的字体调大一些<br />
  --<br />
- 思路是学东西吧，虽说中考不用信技<br />
- 想玩但是学东西更重要，这点学生应该懂<br />
- 内容有些多，学生进空间就想着做其他的<br />
- 经常提醒督促一下，开头培养习惯也麻烦<br />
+ 用Arial Black字体，l和I分不清<br />
+ 复制到记事本里改成小写的，vb里面自动变成大写<br />
  --<br />
- 这一届好在对学东西挺兴趣，不是特别想玩游戏<br />
- 对上网也没那么热心，不上也就不上了<br />
- 让同学之间相互多交流，在校园网里也可以吧<br />
- 带一下七年级的，写一些自己的学习生活<br />
- 记录九年级的历程
+ 代码容易输错，放错位置到别的对象里了<br />
+ 单词错的少了，抄一遍还是好些<br />
+ --<br />
+ 用屏幕广播来抄代码，用写字板来书写加颜色<br />
+ 分成三段，这样抄起来也好<br />
+ --
+ 后两个班分成两段，先做界面再做编程
+ 讲两回也就是，这样可以降低一些难度
 </div>
-<p>　<span class="tblue">本节</span>学习了安装和保存的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p>　<span class="tblue">本节</span>学习了定时器（时钟）的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson8/lesson8.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>

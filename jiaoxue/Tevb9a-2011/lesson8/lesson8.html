@@ -3,6 +3,7 @@
 
 
 
+
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="author" content="TeliuTe" />
 
@@ -11,38 +12,80 @@
   <meta name="keywords" content="VB,课程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|判断输入完成</title></head><body style="direction: ltr;">
 <p class="title">2011-2012 第一学期九年级 VB 教学课程设计</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">一、</span>　<a href="../index.html">返回目录</a>　<a href="../lesson/lesson.html">下一课</a>
-<p>　学习目标：；</p>
-<p>　注意事项：；</p>
+<span class="tblue">八、判断输入完成</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<p>　学习目标：学会让计时器停下来；</p>
+<p>　注意事项：代码越来越多，先抄一遍熟悉；</p>
 <p class="tblue">　1、绘制控件</p>
 <p>　1）打开一个标准EXE，绘制两个标签，一个文本框，</p>
-<p>　Label1的Caption属性改为“输入：”，另一个标签改为“You and I must have”</p>
+<p>　Label1的Caption属性改为“时间：”，另一个标签改为“You and I must have”</p>
 <p>　</p>
 <p>　2）设置好控件的字体和颜色；</p>
-<p>　</p>
+<p>　<img src="images/a1pr.png" alt="a1pr.png" /></p>
 <p>　</p>
 <p>　3）进入代码窗口，点击对象下拉列表，依次选择“通用、Text1、Timer1”，在出来的代码段中分别输入；</p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
-<br />
+'通用<br />
+dim i, j, k as integer<br /><br />
+'Text1<br />
+i = len(label2.caption)<br />
+j = len(text1.text)<br />
+if i = j then<br />
+   timer1.enabled = false<br />
+end if<br /><br />
+'Timer1<br />
+k = k + 1<br />
+label1.caption = str(i)+str(j)+str(k)
 </div>
 <p>　</p>
-<p>　4）保存为“第五课”，点菜单“运行－启动”，在文本框中输入内容；</p>
-<p>　</p>
+<p>　4）保存为“第八课”，点菜单“运行－启动”，在文本框中输入内容；</p>
+<p>　<img src="images/a2run.png" alt="a2run.png" /></p>
 <p>　</p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
-板书设计：第2课   <br />
-1.<br />
-2.<br />
-3.<br />
-4.<br />
-5.<br />
+板书设计：第8课   定时器（计时）<br />
+1.窗体、两个标签（A）、文本框 属性<br />
+2.画一个定时器，设为1000<br />
+3.进入代码窗口：通用，Text1，Timer1<br />
 <p>课后记：</p>
-
+ 感觉学生上课不是很积极，明显有些疲惫<br />
+ 还没发现旷课留班里写作业或者跑外面玩的<br />
+ --<br />
+ 讲解的时候回答提问不积极，只是坐着等着<br />
+ 讲的时候稳一些，别着急也别急躁仓促<br />
+ --<br />
+ 第一个班只演示了界面，结果输代码出现很多问题<br />
+ 代码输入仍然是难点，拼写错误居多<br />
+ --<br />
+ 用下拉列表进入代码段，只用默认的代码段<br />
+ 有的把三段写一起了，有的写到end sub外面了<br />
+ --<br />
+ 要求带本子记笔记，抄代码大约2分钟就够了<br />
+ 抄的时候讲不好，先讲完再抄可能要好些<br />
+ --<br />
+ 用写字板来演示代码，数字标成红色，字体用英文的 A.. Black<br />
+ 把讲解的顺序再理一理<br />
+ --<br />
+ 进去之前先说一下，出错多的就是输代码<br />
+ 要求细心，老师让抄代码就抄，别偷懒<br />
+ --<br />
+ 几个班还是有差异，这个班就比较顺<br />
+ 可能是开头的几节课就比较好，速度快细心出错少<br />
+ --<br />
+ 如果每次都很顺利，那么每次学都比较有自信也认真<br />
+ 开始的时候就把容易出错的地方找出来克服<br />
+ --<br />
+ 讲解的时候别急躁，自己提醒下，语气用一惯的平稳<br />
+ 学生输的时候就检查一下label这个单词是否有错<br />
+ --<br />
+ 4班学生上课还是问题，鱼龙混杂的毛病<br />
+ 光去讲纪律了，也是个问题，学习习惯不能放<br />
+ --<br />
+ 程序有个问题，不能数最后一个<br />
+ 跟上节连贯没改了，只要停下来就可以了<br />
 </div>
-<p>　<span class="tblue">本节</span>学习了的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p>　<span class="tblue">本节</span>学习了判断输入完成的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
 <p><a href="../index.html">返回目录</a>　<a href="../lesson/lesson.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
