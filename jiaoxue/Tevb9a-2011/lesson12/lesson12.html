@@ -4,7 +4,6 @@
 
 
 
-
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="author" content="TeliuTe" />
 
@@ -13,50 +12,61 @@
   <meta name="keywords" content="VB,课程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|判断输入是否正确</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|学会时钟程序</title></head><body style="direction: ltr;">
 <p class="title">2011-2012 第一学期九年级 VB 教学课程设计</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">六、判断输入是否正确</span>　<a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a>
-<p>　学习目标：学会取出字符，学会比较两个数据；</p>
-<p>　注意事项：代码在英文下输入，注意字母和数字l和1；</p>
+<span class="tblue">十二、时钟程序</span>　<a href="../index.html">返回目录</a>　<a href="../lesson13/lesson13.html">下一课</a>
+<p>　学习目标：学会获取当前系统时间；</p>
+<p>　注意事项：先把计算机的表调正确；</p>
 <p class="tblue">　1、绘制控件</p>
-<p>　1）打开一个标准EXE，绘制两个标签，一个文本框，</p>
-<p>　Label1的Caption属性改为“正误：”，另一个标签改为“You and I must have”</p>
+<p>　1）打开一个标准EXE，绘制两个标签，一个文本框，一个命令按钮；</p>
+<p>　Label1的Caption属性改为“当前时间：”</p>
 <p>　</p>
 <p>　2）设置好控件的字体和颜色；</p>
 <p>　<img src="images/a1pr.png" alt="a1pr.png" /></p>
 <p>　</p>
-<p>　3）进入代码窗口，点击对象下拉列表，选择 Text1，在出来的代码段中输入；</p>
-<div style="background-color: rgb(255, 255, 255); width: 500px; color: green;"> i = len(text1.text)<br />
- if i = 0 then i = 1<br />
- a$ = mid(text1.text, i, 1)<br />
- b$ = mid(label2.caption, i, 1)<br />
- if a$ = b$ Then<br />
-   label1.caption = "正确"<br />
- else<br />
-   label1.caption = "错误"<br />
- end if</div>
+<p>　3）进入代码窗口，点击对象下拉列表，依次选择“Timer1、Command1”，在出来的代码段中分别输入；</p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
+'Timer1（定时器）：<br />
+ label2.caption=time<br />
+<br />
+'Command1（按钮）：<br />
+ end<br />
+</div>
 <p>　</p>
-<p>　4）保存为“第六课”，点菜单“运行－启动”，在文本框中输入内容；</p>
+<p>　4）保存为“第五课”，点菜单“运行－启动”，在文本框中输入内容；</p>
 <p>　<img src="images/a2run.png" alt="a2run.png" /></p>
 <p>　</p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
-板书设计：第6课   判断输入是否正确<br />
-1.绘制两个标签(A)，一个文本框(ab)<br />
-2.设好 caption、Font、Forecolor 属性<br />
-3.双击文本框 text1，进入代码窗口<br />
-4.输入代码<br />
-<p>课后记 2011-9-30 18:14：</p>
- 拼写错误很多，text变成test <br />
- 复制以后忘记改成label2.caption<br />
- 逗点输成逗号<br />
- 忘记1<br />
- 黑板看不清，让抄笔记上先熟悉一下<br />
- 可惜坚持不下来，也应该提前想到就好了<br />
- 看到有较多的代码，应该让抄一下
+板书设计：第12课   学会时钟程序<br />
+1.调整好系统时间，右下角时间<br />
+2.窗体、2个标签，1个文本框、定时器(1000)、按钮<br />
+3.设置 caption 和 Font color 属性<br />
+4.进入 代码窗口<br />
+<p>课后记 2011-11-25 16:33：</p>
+ 上次监考做了一个电子表放着给学生看<br />
+ 这节就自己做一个，再写一句格言<br />
+ --<br />
+ 心情不好也没怎么训学生，直接让进去了<br />
+ 把注意力集中一下，示范一下该怎么做<br />
+ --<br />
+ 没什么难度，或者说前面的基础打好了<br />
+ 做起来就顺顺当当，学生也还听话<br />
+ --<br />
+ 先讲一下调表，这个操作挺简单的<br />
+ 02的机子，自动跳回到以前的时间<br />
+ --<br />
+ 还是2个标签、1个文本框、定时器、按钮<br />
+ 代码就两句，还写错了，心不在焉想别的事了<br />
+ --<br />
+ 上回定时器有个false有的同学就记着了<br />
+ 结果表不走，还把caption给写错了<br />
+ --<br />
+ 下午还有两节课，慢慢上就是了<br />
+ 其他的自然而然<br />
 </div>
-<p>　<span class="tblue">本节</span>学习了判断输入是否正确的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a></p>
+<p>　<span class="tblue">本节</span>学习了时钟程序的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson13/lesson13.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>

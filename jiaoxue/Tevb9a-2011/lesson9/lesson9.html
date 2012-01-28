@@ -4,7 +4,6 @@
 
 
 
-
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="author" content="TeliuTe" />
 
@@ -13,50 +12,65 @@
   <meta name="keywords" content="VB,课程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|判断输入是否正确</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>VB 教学|学会命令按钮</title></head><body style="direction: ltr;">
 <p class="title">2011-2012 第一学期九年级 VB 教学课程设计</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">六、判断输入是否正确</span>　<a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a>
-<p>　学习目标：学会取出字符，学会比较两个数据；</p>
-<p>　注意事项：代码在英文下输入，注意字母和数字l和1；</p>
+<span class="tblue">九、学会命令按钮</span>　<a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a>
+<p>　学习目标：学会使用命令按钮，退出代码；</p>
+<p>　注意事项：代码较多，一个一个完成；</p>
 <p class="tblue">　1、绘制控件</p>
 <p>　1）打开一个标准EXE，绘制两个标签，一个文本框，</p>
-<p>　Label1的Caption属性改为“正误：”，另一个标签改为“You and I must have”</p>
+<p>　Label1的Caption属性改为“计时：”，另一个标签改为“You and I must have”</p>
 <p>　</p>
 <p>　2）设置好控件的字体和颜色；</p>
 <p>　<img src="images/a1pr.png" alt="a1pr.png" /></p>
 <p>　</p>
-<p>　3）进入代码窗口，点击对象下拉列表，选择 Text1，在出来的代码段中输入；</p>
-<div style="background-color: rgb(255, 255, 255); width: 500px; color: green;"> i = len(text1.text)<br />
- if i = 0 then i = 1<br />
- a$ = mid(text1.text, i, 1)<br />
- b$ = mid(label2.caption, i, 1)<br />
- if a$ = b$ Then<br />
-   label1.caption = "正确"<br />
- else<br />
-   label1.caption = "错误"<br />
- end if</div>
+<p>　3）进入代码窗口，点击对象下拉列表，依次选择“通用、Command1、Command2、Timer1”，在出来的代码段中分别输入；</p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
+'通用<br />
+ dim k as integer<br /><br />
+'Command1<br />
+ Timer1.Enabled = True<br />
+ Text1.SetFocus<br /><br />
+'Command2<br />
+ End<br /><br />
+'timer1<br />
+ k=k+1<br />
+ label1.caption=str(k)<br /><br />
+'Command3-停止  (选做)<br />
+ timer1.enabled=false
+</div>
 <p>　</p>
-<p>　4）保存为“第六课”，点菜单“运行－启动”，在文本框中输入内容；</p>
+<p>　4）保存为“第九课”，点菜单“运行－启动”，在文本框中输入内容；</p>
 <p>　<img src="images/a2run.png" alt="a2run.png" /></p>
 <p>　</p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green;">
-板书设计：第6课   判断输入是否正确<br />
-1.绘制两个标签(A)，一个文本框(ab)<br />
-2.设好 caption、Font、Forecolor 属性<br />
-3.双击文本框 text1，进入代码窗口<br />
-4.输入代码<br />
-<p>课后记 2011-9-30 18:14：</p>
- 拼写错误很多，text变成test <br />
- 复制以后忘记改成label2.caption<br />
- 逗点输成逗号<br />
- 忘记1<br />
- 黑板看不清，让抄笔记上先熟悉一下<br />
- 可惜坚持不下来，也应该提前想到就好了<br />
- 看到有较多的代码，应该让抄一下
+板书设计：第9课   学会命令按钮<br />
+1.窗体，2个标签，1个文本框，1个定时器(flase，1000)<br />
+2.再画2个按钮，立体的小方块（灰色）<br />
+3.修改 caption，一个“开始”，另一个“退出”<br />
+4.进入代码窗口，输入代码<br />
+<p>课后记 2011-10-21 13:31：</p>
+ 按钮设计两个，代码不会很多<br />
+ 是继续上一节的还是重新做？重新做好了<br />
+ --<br />
+ 在原来基础上再画两个命令按钮，地方不够了<br />
+ 把窗体拉高一些，讲解的时候提一下<br />
+ --<br />
+ 两个按钮，把command单词读一下<br />
+ 原来的as 读错了，学生下面读正确的让我听了下<br />
+ --<br />
+ 还是要求带笔记本，把代码抄一下<br />
+ 另3个班到下午上了，不知开不开会<br />
+ --<br />
+ 出错误少些了，不会的也不怎么吵了，吵了就挨骂<br />
+ 感觉这个班有些浮躁，也不用太深入<br />
+ --<br />
+ 其他做的还不错，有些把停止的代码也做出来了<br />
+ 讲解的时候，一边讲一边提问，答不上来就自己讲出来<br />
 </div>
-<p>　<span class="tblue">本节</span>学习了判断输入是否正确的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a></p>
+<p>　<span class="tblue">本节</span>学习了命令按钮的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
