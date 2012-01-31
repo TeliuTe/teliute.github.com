@@ -92,7 +92,7 @@ default=C:\g2ldr.mbr<br />
 [operating systems]<br />
 C:\g2ldr.mbr="Ubuntu"</div>
 <p>　</p>
-<p>　这样在系统保留磁盘里面就有6个复制过来的文件，在 C: 盘里有一个 Ubuntu 镜像文件，仔细检查一下；</p>
+<p>　这样在系统保留磁盘里面就有6个复制过来的文件，在 C: 盘里有一个 Ubuntu 镜像文件，仔细检查一下数量和图标类型；</p>
 <p><img src="images/c2files.png" alt="c2files.png" />　<img src="images/c2iso.png" alt="c2iso.png" /></p>
 <p>　</p>
 <p>　<span class="tblue">4、关闭系统保留分区</span></p>
@@ -110,7 +110,7 @@ C:\g2ldr.mbr="Ubuntu"</div>
 <p>　</p>
 <p>　5）这样就将分配的盘符去掉了，然后关闭这个管理窗口；</p>
 <p>　</p>
-<p>　<span class="tblue">5、重启计算机</span></p>
+<p>　<span class="tblue">5、安装Ubuntu系统</span></p>
 <p>　1）重新启动计算机，在出现启动菜单时，按下方向键选择“Ubuntu”，按回车键进入；</p>
 <p>　<img src="images/e1wboot.png" alt="e1wboot.png" /></p>
 <p>　</p>
@@ -135,9 +135,12 @@ C:\g2ldr.mbr="Ubuntu"</div>
 <p>　7）在分区这一步时，点击下边的引导器位置下拉列表，将引导器安装到 Ubuntu 所在的分区；</p>
 <p>　<img src="images/e7loader.png" alt="e7loader.png" /></p>
 <p>　</p>
-<p>　8）然后一步步安装完以后，重启计算机进入 Win7，把 C: 盘中的 Ubuntu 镜像文件删除，</p>
-<p>　重新进入系统保留分区，用记事本打开 menu.lst，将里面的内容换成下面的，然后再关闭系统保留分区：</p>
-<p>　本课文件夹中有这个<a href="images/menu.lst">menu.lst</a> 文件(点右键，选“目标另存为”)：</p>
+<p>　<span class="tblue">　6、Win7引导双系统Ubuntu</span></p>
+<p>　1）然后一步步安装完以后，重启计算机进入 Win7，把 C: 盘中的 Ubuntu 镜像文件删除，</p>
+<p>　</p>
+<p>　2）重新进入系统保留分区(如果没有保留分区就打开C:盘，用记事本打开 menu.lst，将里面的内容换成下面的，然后再关闭系统保留分区：</p>
+<p>　</p>
+<p>　3）本课文件夹中有这个<a href="images/menu.lst">menu.lst</a> 文件(点右键，选“目标另存为”)：</p>
 <div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">title Ubuntu/Linux
 <br />
 <br />
