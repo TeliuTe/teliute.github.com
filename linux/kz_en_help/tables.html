@@ -1,0 +1,499 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New
+  Page</a>
+
+  <a href="formatting_webpages.html">Formatting Your Web Pages</a>
+
+  <a href="css.html">Using Style
+  Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to
+  Your Web Page</a>
+
+  <a href="images.html">Adding Pictures
+  (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates </a>
+
+  <a href="page_properties.html">Setting Page
+  Properties</a>
+
+  <a href="links.html">Creating Links in
+  KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="adding_tables_to_your_web_page">Adding Tables to Your Web
+Page</h2>
+
+<h3 id="inserting_a_table">Inserting a Table</h3>
+
+<p>Tables are useful for organizing text, pictures, and data into
+formatted rows and
+columns. To insert a table:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the table to
+  appear.</li>
+
+  <li>Click the Table button
+  <img src="images/table.png" alt="" /> on
+  the
+  Composition toolbar. The Insert Table dialog box appears.</li>
+
+  <li>Type the number of rows and columns you want.
+  <ul>
+    <li>(Optional) Enter a size for the table width, and select
+    either percentage of
+    the window or pixels.</li>
+  </ul>
+  </li>
+
+  <li>Enter a number for the border thickness (in pixels); enter zero
+  for no border.
+  <p><strong>Note</strong>: KompoZer uses a red dotted line
+  to indicate tables with a zero border;
+  the dotted line disappears when the page is viewed in a
+  browser.</p></li>
+
+  <li>To apply additional table attributes or JavaScript, click
+  Advanced Edit to display
+  the <a href="#using_the_advanced_property_editor">Advanced
+  Property Editor</a>.</li>
+
+  <li>Click OK to confirm your settings and view your new table.</li>
+</ol>
+
+<p>To change additional properties for your new table, see
+<a href="#changing_a_tables_properties">Changing a Table's
+Properties</a>.</p>
+
+<p><strong>Tip</strong>: To insert a table within a table, open the
+Insert menu and choose Table.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<h3 id="changing_a_tables_properties">Changing a Table's
+Properties</h3>
+
+<p>This section describes how to modify properties that apply to an
+entire table as well
+as the rows, columns, or individual cells within a table. If you are
+not currently
+viewing the Table Properties dialog box, follow these steps:</p>
+
+<ol>
+  <li>Select the table, or click anywhere inside it.</li>
+
+  <li>Click the Table button
+  <img src="images/table.png" alt="" /> on
+  the toolbar,
+  or open the Table menu and choose Table Properties. The Table
+  Properties dialog box
+  contains two tabs: Table and Cells.</li>
+
+  <li>Click the Table tab to edit these properties:
+  <ul>
+    <li><strong>Size</strong>: Use this to specify the number of
+    rows and columns. Enter the width
+    of the table and then choose "% of window" or "pixels." If
+    you specify width as a
+    percentage, the table's width changes whenever the
+    KompoZer window's or browser
+    window's width changes.</li>
+
+    <li><strong>Borders and Spacing</strong>: Use this to specify,
+    in pixels, the border line width,
+    the space between cells, and the cell padding (the space
+    between the contents of the
+    cell and its border).
+    <p><strong>Note</strong>: KompoZer uses a dotted
+    outline to display tables with a zero border;
+    the dotted line disappears when the page is viewed
+    in a browser.</p></li>
+
+    <li><strong>Table Alignment</strong>: Use this to align the
+    table within the page. Choose an
+    option from the drop-down list.</li>
+
+    <li><strong>Caption</strong>: Choose the caption placement from
+    the drop-down list.</li>
+
+    <li><strong>Background Color</strong>: Use this to choose a
+    color for the table background, or
+    leave it as transparent.</li>
+
+  </ul>
+  </li>
+
+  <li>To apply additional attributes or JavaScript events, click
+  Advanced Edit to display
+  the <a href="#using_the_advanced_property_editor">Advanced
+  Property Editor</a>.</li>
+
+  <li>Click Apply to preview your changes without closing the dialog
+  box, or click OK to
+  confirm them.</li>
+</ol>
+
+<p>To view, change, or add properties for one or more cells:</p>
+
+<ol>
+  <li>Select the row, column, or cell, then open the Table menu and
+  choose Table Properties.
+  The Table Properties dialog box appears.</li>
+
+  <li>Click the Cells tab to edit the following properties:
+  <ul>
+    <li><strong>Selection</strong>: Choose Cell, Row, or Column from
+    the drop-down list. Click
+    Previous or Next to move through rows, columns, or
+    cells.</li>
+
+    <li><strong>Size</strong>: Type a number for Height and Width,
+    and then choose "% of table"
+    or "pixels."</li>
+
+    <li><strong>Content Alignment</strong>: Select a vertical and
+    horizontal alignment type for
+    the text or data inside each cell.</li>
+
+    <li><strong>Cell Style</strong>: Select Header from the
+    drop-down list for column or row
+    headers (which centers and bolds the text in the cell);
+    otherwise choose Normal.</li>
+
+    <li><strong>Text Wrap</strong>: Select "Don't wrap" from the
+    drop-down list to keep text from
+    wrapping to the next line unless you insert a paragraph
+    break. Otherwise, choose
+    Wrap.</li>
+
+    <li><strong>Background Color</strong>: Select a color for the
+    cell background or leave it as
+    transparent.
+    <p><strong>Note</strong>: To apply additional attributes or
+    JavaScript events, click Advanced
+    Edit to display the
+    <a href="#using_the_advanced_property_editor">Advanced Property
+    Editor</a></p></li>
+  </ul>
+  </li>
+  <li>Click Apply to preview your changes without closing the dialog
+  box, or click OK to
+  confirm them.</li>
+</ol>
+
+<p><strong>Tip</strong>: To change the text color or background color
+of one or more selected cells or the entire table, select the cells or
+click anywhere in the table and then click the text color or
+background color icon in the Format toolbar.</p>
+
+<p><strong>Tip</strong>: To change the color of cells to the color
+last used, select the cell, then press Shift and click on the
+background color picker. This is useful when you want to use one color
+for individual cells.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<h3 id="adding_and_deleting_rows_columns_and_cells">Adding and
+Deleting Rows, Columns, and Cells</h3>
+
+<p>KompoZer allows you to quickly add or delete one or more
+cells, columns, or rows in a table. In addition, you can set options
+that allow you to maintain the original rectangular structure or
+layout of the table while you perform editing tasks.</p>
+
+<p>To add a cell, row, or column to your table:</p>
+
+<ol>
+  <li>Click inside the table where you want to add a cell (or
+  cells).</li>
+
+  <li>Open the Table menu and then choose Insert.</li>
+
+  <li>Choose one of the cell groupings. (You can also insert a new table
+  within a table cell.)</li>
+</ol>
+
+<p>To delete a cell, row, or column:</p>
+
+<ol>
+  <li>Click a row, column, or cell to place the insertion
+  point. Or, select neighboring cells to delete more than one row at a
+  time. To select neighboring cells, drag over the cells you want to
+  select.  To select individual cells in a table, hold down the Ctrl key
+  (Windows, Linux or Unix) or the Command key (Mac OS) and click on the
+  cells you want to select.</li>
+
+  <li>Open the Table menu and choose Delete.</li>
+
+  <li>Choose the item you want to delete.</li>
+</ol>
+
+<p>To join (or merge) a cell with the cell on its right:</p>
+
+<ul>
+  <li>Click inside the cell on the left, open the Table menu, and
+  choose Join with Cell to the Right.</li>
+</ul>
+
+<p>To join (or merge) adjacent cells:</p>
+
+<ul>
+  <li>Select adjacent cells by dragging over them.</li>
+
+  <li>Open the Table menu, and choose Join Selected Cells.</li> 
+</ul>
+
+<p>To split a joined cell back into two or more cells:</p>
+
+<ul>
+  <li>Click inside the joined cell, open the Table menu, and then
+  choose Split Cell. KompoZer puts the entire contents of the
+  joined cell into the first of the two cells.</li>
+</ul>
+
+<p>Refer to <a href="#selecting_table_elements">Selecting Table
+Elements</a> for information on how to select non-adjacent cells,
+rows, and columns.</p>
+
+<h3 id="changing_the_default_table_table_editing_behavior">Changing
+the Default Table Editing Behavior</h3>
+
+<p>By default, when you delete one or more cells, KompoZer
+preserves the table's structure by adding cells at the end of a row,
+wherever needed. This allows you to delete one or more cells but still
+maintain the table's original rectangular layout, or
+structure. Otherwise, deleting cells can result in a table with empty
+spaces, or whose outline appears irregular due to an uneven number of
+cells.</p>
+
+<p>To change the default table editing behavior, begin from the
+KompoZer window:</p>
+
+<ol>
+  <li>Open the Edit menu (Mozilla menu on Mac OS X), choose
+  Preferences, and then choose KompoZer.</li>
+
+  <li>Under Table Editing, set the following preference:
+
+  <ul>
+    <li>Make sure that "Maintain table layout when inserting or
+    deleting cells" is checked to ensure that you don't get an irregularly
+    shaped table.</li>
+  </ul>
+  </li>
+
+  <li>Click OK.</li> 
+</ol>
+
+<p>See also <a
+href="preferences.html#preferences_general_settings">Setting General
+KompoZer Preferences</a>.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<h3 id="selecting_table_elements">Selecting Table Elements</h3>
+
+<p>You can use one of two ways to quickly select a table, cell, or
+group of cells:</p>
+
+<ul>
+  <li>Click in the table, open the Table menu, choose Select, and
+  then choose an item from the submenu. For example, to select a table,
+  click anywhere inside the table, open the Table menu, choose Select,
+  and then choose Table.</li>
+
+  <li>Or, you can use the mouse as a selection tool:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li>To select a group of adjacent
+      cells: click in a cell, and then drag to select the cells you
+      want. Drag the mouse left or right to select a row; up or down to
+      select a column.</li>
+
+      <li>To select non-adjacent cells: press Ctrl (Windows, Linux or Unix)
+      or Command (Mac OS) and then click inside a cell. Keep pressing Ctrl
+      (Windows, Linux or Unix) or Command (Mac OS) as you click to select
+      additional cells.</li>
+
+      <li>To extend a selection to include adjacent cells: click inside a
+      cell and then drag over additional cells to extend the selection.</li>
+
+      <li>To select one or more adjacent columns or rows: drag up or down to
+      select the first column or row, and then drag left or right to select
+      additional adjacent columns or rows. Press Shift and drag to the right
+      to select an entire row. Press Shift and drag up or down to select an
+      entire column.</li>
+      </ul>
+  </li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<h3 id="moving_copying_and_deleting_tables">Moving, Copying, and
+Deleting Tables</h3>
+
+<p>To move a table:</p>
+
+<ol>
+  <li>Click inside the table.</li>
+
+  <li>Open the Table menu, choose Select, and then choose Table.</li>
+</ol>
+
+<ul> 
+  <li>To copy or move the table: Use the Edit menu's cut, copy, and
+  paste options.</li>
+
+  <li>To delete the table: Open the Table menu again, choose Delete, and
+  then choose Table.</li>
+</ul>
+
+<h3 id="converting_text_into_a_table">Converting Text into a
+Table</h3>
+
+<p>To convert text into a table:</p>
+
+<ol>
+  <li>Select the text that you want to convert into a table. Keep
+  in mind that KompoZer creates a new table row for each
+  paragraph in the selection.</li>
+
+  <li>Open the Table menu and choose Create Table from Selection. You
+  see the Convert to Table dialog box.</li>
+
+  <li>Choose the character KompoZer uses to separate the
+  selection into columns, or specify a different character to use. If
+  you choose Space as the separator for columns, choose whether or not
+  you want KompoZer to ignore multiple space and treat them as
+  one space.</li>
+
+  <li>Leave "Delete separator character" checked to have
+  KompoZer remove the separator character when it converts the
+  text into a table. If you don't want KompoZer to delete the
+  separator character, uncheck this option.</li>
+
+  <li>Click OK.</li>
+</ol>
+
+<p><strong>Note</strong>: Text formatting is removed when the selected
+text is converted to a table.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_tables_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="images.html">Next</a>] [<a href="css.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

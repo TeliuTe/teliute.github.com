@@ -1,0 +1,805 @@
+<!--
+Original Author:
+"KDS Sahambi" <ksahambi@yahoo.com>
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|KompoZer Menu Reference</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+  <div id="contentsBox">In this section:
+  <a href="#file">File</a>
+  <a href="#edit">Edit</a>
+  <a href="#view">View</a>
+  <a href="#insert">Insert</a>
+  <a href="#format">Format</a>
+  <a href="#table">Table</a>
+  <a href="#tools">Tools</a>
+  <a href="#help">Help</a>
+  </div>
+
+  <h1 id="menu_reference">KompoZer Menu Reference</h1>
+  <div>This menu reference describes each menu item in the main
+  KompoZer window.</div>
+
+  <h2 id="file">File</h2>
+
+  <h3 id="new_window">New</h3>
+  <p>Opens a new KompoZer window.</p>
+
+  <h3 id="open_file">Open File...</h3>
+  <p>Displays an Open File dialog where you can select a file from
+  your
+  local disks or network. With KompoZer you can view HTML,
+  HTML templates, and text file types.</p>
+
+  <h3 id="open_web_location">Open Web Location...</h3>
+  <p>Displays an Open Web Location dialog for writing the URL of the
+  document or choose a local file to open.</p>
+
+  <h3 id="recent_pages">Recent Pages</h3>
+  <p>Shows the list of recently edited files.</p>
+  
+  <h3 id="close">Close</h3>
+  <p>Closes the current window.</p>
+
+  <h3 id="close_all">Close All</h3>
+  <p>Closes all open tabs in current window.</p>
+  
+  <h3 id="save">Save</h3>
+  <p>Save the file opened in the current active tab.</p>
+  
+  <h3 id="save_as">Save As...</h3>
+  <p>Saves the page you are currently editing giving the option of
+  saving it with a different filename. </p>
+
+  <h3 id="save_character_encoding">Save And Change Character Encoding</h3>
+  <p>Gives an option of changing the "Charset" of the web page
+  before displaying the "Save As..." dialog.</p>
+
+  <h3 id="publish">Publish</h3>
+  <p>Opens a Publish dialog for publishing the current page being
+  edited</p>
+
+  <h3 id="publish_as">Publish As...</h3>
+  <p>Opens a Publish dialog for publishing the current page being
+  edited. Behaves the same as Publish\!!</p>
+
+  <h3 id="revert">Revert</h3>
+  <p>Undo all changes done to the current document after last
+  save. Reverts to last saved copy of current document.</p>
+
+  <h3 id="export_to_text">Export To Text...</h3>
+  <p>Export the contents of the current document to plain text.</p>
+
+  <h3 id="browse_page">Browse Page</h3>
+  <p>View the current page in your default web browser</p>
+
+  <h3 id="page_setup">Page Setup...</h3>
+  <p>Opens the Page Setup options
+  dialog for configuring printing options.</p>
+  
+  <h3 id="print_preview">Print Preview</h3>
+  <p>Opens a window showing how the document will look when printed on
+  paper.</p>
+
+  <h3 id="print">Print...</h3> 
+  <p>Displays the Print dialog, where you
+  can select the printer, specify the number of printed copies,
+  etc. Click <em>OK</em> to print the page.</p>
+
+  <h3 id="exit">Quit</h3>
+  <p>Closes all KompoZer windows including any with more than
+  one tab open, and exits KompoZer completely. If you happen
+  to select this option with unsaved documents, KompoZer will
+  ask you to confirm your choice to prevent accidental exits.</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">Return to beginning of
+  section</a> ]</p>
+
+  <h2 id="edit">Edit</h2>
+
+  <h3 id="undo">Undo</h3>
+  <p>Undoes the last editing action done in the current document. If
+  you later decide you didn't want to undo an action, use the Redo
+  command.</p>
+
+  <h3 id="redo">Redo</h3>
+  <p>Redoes the last Undo command.</p>
+
+  <h3 id="cut">Cut</h3>
+  <p>Cuts the selected text from the document and stores it in the
+  clipboard. Paste the text elsewhere by using the Paste command.</p>
+
+  <h3 id="copy">Copy</h3>
+  <p>Copies the selected text to the clipboard. Paste the text
+  elsewhere by using the Paste command.</p>
+  
+  <h3 id="paste">Paste</h3>
+  <p>Pastes the text from the clipboard copied using Cut or Copy
+  command to the current cursor location.</p>
+
+  <h3 id="paste_without_formatting">Paste Without Formatting</h3>
+  <p>Pastes the text from the clipboard copied using Cut or Copy
+  command to the current cursor position as simple text i.e. formatting
+  information of clipboard text is discarded.</p>
+  
+  <h3 id="delete">Delete</h3>
+  <p>Deletes the selected text from current document.</p>
+
+  <h3 id="select_all">Select All</h3>
+  <p>Selects all text in the current document.</p>
+
+  <h3 id="find_and_replace">Find and Replace...</h3>
+  <p> Displays a dialog where you can enter a text string to be
+  searched and replaced with another text string. Search is performed on
+  the current page.</p>
+
+  <h3 id="find_again">Find Again</h3>
+  <p>Performs the operation of finding the text string searched with
+  the <em>Find and Replace...</em> command for next occurence of the
+  text. Search is performed on the current page.</p>
+
+  <h3 id="find_previous">Find Previous</h3>
+  <p>Searches for the previous occurrence of the text specified when
+  using the <em>Find and Replace...</em> command.</p>
+
+  <h3 id="check_spelling">Check Spelling</h3>
+  <p>Opens the Spell Checker to start the spell check for the text on
+  the current page.</p>
+
+  <h3 id="detach_from_template">Detach From Template</h3>
+  <p>Detaches the current document being edited from the template to
+  be saved as an <em>html</em> page.</p>
+
+  <h3 id="publish_site_settings">Publish Site Settings</h3>
+  <p>Opens the Site Manager to configure or change settings for the
+  publishing site.</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">Return to beginning of
+  section</a> ]</p>
+
+  <h2 id="view">View</h2>
+
+  <h3 id="show_hide">Show/Hide</h3>
+
+  <h4 id="composition_toolbar">Composition Toolbar</h4>
+  <p>Toggles the visibility of the composition toolbar, which usually
+  contains standard composition buttons (Anchor, Link, Image, etc.).</p>
+
+  <h4 id="format_toolbar">Format Toolbar</h4>
+  <p>Toggles the visibility of the format toolbar, which contains
+  various formatting buttons.</p>
+
+  <h4 id="edit_mode_toolbar">Edit Mode Toolbar</h4>
+  <p>Toggles the visibility of edit mode toolbar. Edit Mode Toobar is
+  at the bottom of the KompoZer window just above the status
+  bar. You can change to different views like <em>HTML Tags view</em>,
+  <em>HTML Source view</em>, etc with it.</p>
+  <h4 id="status_bar">Status Bar</h4>
+  <p>Toggles the visibility of the Status Bar situated at the bottom
+  of the KompoZer window.</p>
+  <h4 id="rulers">Rulers</h4>
+  <p>Toggles the visibility of horizontal and vertical rulers.</p>
+
+  <h4 id="customize_toolbar">Customize Toolbar</h4>
+
+  <h5 id="main_toolbar">Main Toolbar</h5>
+  <p>Opens panel to customize Main Toolbar. You can drag and drop
+  buttons from the panel to the main toolbar to add new buttons or
+  vice-versa to remove buttons.</p>
+
+  <h5 id="format_toolbar">Format Toolbar</h5>
+  <p>Opens panel to customize Format Toolbar. You can drag and drop
+  buttons from the panel to the format toolbar to add new buttons or
+  vice-versa to remove buttons.</p>
+
+  <h4 id="site_manager">Site Manager</h4>
+  <p>Toggles the visibility of <em>Site Manager</em> in the
+  KompoZer window.</p>
+
+  <h3 id="normal_edit_mode">Normal Edit Mode</h3>
+  <p>Changes to the Normal Edit Mode viewing mode.</p>
+
+  <h3 id="html_tags">HTML Tags</h3>
+  <p>Changes to the HTML Tags viewing mode.</p>
+
+  <h3 id="html_source">HTML Source</h3>
+  <p>Changes to the HTML Source viewing mode.</p>
+
+  <h3 id="preview">Preview</h3>
+  <p>Changes to the Preview viewing mode.</p>
+
+  <h3 id="carriage_returns">Carriage Returns</h3>
+  <p>Toggles the visibility of carriage returns.</p>
+
+  <h3 id="block_outline">Block Outline</h3>
+  <p>Toggles the visibility of outline of block level elements on the
+  page.</p>
+
+  <h3 id="text_zoom">Text Zoom</h3>
+
+  <h4 id="text_zoom_smaller">Smaller</h4>
+  <p>Makes the text smaller on the web page. You can also do this with
+  the mouse (see Increase Text Size for instructions). To restore the
+  text size, press <kbd>Ctrl</kbd>+<kbd>0</kbd>.</p>
+
+  <h4 id="text_zoom_larger">Larger</h4>
+  <p>Displays the text one size larger on the web page. You can also
+  do this with the mouse by holding down the <kbd>Ctrl</kbd> key while
+  using the scroll wheel or by pressing <kbd>+</kbd> or <kbd>-</kbd> to
+  increase or decrease the text size.  To restore the text size to the
+  default, press <kbd>Ctrl</kbd>+<kbd>0</kbd>.</p>
+
+  <h3 id="character_encoding">Character Encoding</h3>
+  <p>Allows you to manually change the character encoding on a Web
+  page. KompoZer usually does this automatically.</p>
+
+  <h2 id="insert">Insert</h2>
+
+  <p>The Insert menu allows you to insert various HTML elements in the
+  current document being edited.</p>
+
+  <h3 id="insert_image">Image...</h3>
+  <p>Opens a dialog box to insert an image in the current
+  document.</p>
+
+  <h3 id="insert_table">Table...</h3>
+  <p>Opens a dialog box to insert a table in the current document.</p>
+
+  <h3 id="insert_form">Form...</h3>
+  <p></p>
+
+  <h3 id="insert_link">Link...</h3>
+  <p>Opens a dialog box to create a link. If clicked after selecting
+  text in current document, the selected text will be made the link. You
+  can also define Friendship(XFN) properties by clicking "More
+  Properties" in the dialog box.</p>
+
+  <h3 id="named_anchor">Named Anchor...</h3>
+  <p>Opens a dialog for typing-in the name to insert a Named Anchor at
+  the current position of the cursor.</p>
+
+  <h3 id="horizontal_line">Horizontal Line</h3>
+  <p>Inserts a horizontal line in the current document.</p>
+
+  <h3 id="html">HTML...</h3>
+  <p>Opens a dialog to insert HTML code manually. This can also be
+  used to insert comments, script code, etc.</p>
+
+  <h3 id="character_and_symbols">Characters and Symbols...</h3>
+  <p>Opens a dialog box to select special characters or symbols to
+  insert in the current document.</p>
+
+  <h3 id="table_of_contents">Table of Contents...</h3>
+  <p>Opens a window to insert a Table of Contents at the current
+  position of the cursor. The TOC can be selected to be formed of either
+  Heading Level-1 to Level-6, a &lt;div&gt; or a &lt;p&gt; tag.</p>
+
+  <h3 id="smart_widgets">Smart Widgets</h3>
+  <p>Inserts Smart Widgets in your document.</p>
+
+  <h4 id="made_with_nvu">Made With Nvu button</h4>
+  <p>Inserts a "Made with Nvu" button in the document.</p>
+
+  <h4 id="calendar">Calendar</h4>
+  <p>Inserts a calendar type object in the document.</p>
+
+  <h3 id="templates">Templates</h3>
+  <p>When working with Templates, you can use this menu item to insert
+  an editable area in your template.</p>
+
+  <h3 id="php_code">PHP Code</h3>
+  <p>Insert PHP code in your HTML document.</p>
+
+  <h3 id="comment">Comment</h3>
+  <p>Insert a comment in your HTML document.</p>
+
+  <h3 id="break_below_images">Break Below Image(s)</h3>
+  <p>Inserts a break below images to make the text written besides the
+  image to appear below it.</p>
+
+  <h2 id="format">Format</h2>
+
+  <p>This menu contains various options to format the document
+  text.</p>
+
+  <h3 id="font">Font</h3>
+
+  <p>You can choose the font face to apply to the selected text in the
+  current document. You can select the desired font face from the list
+  containing all the available fonts installed on your system.</p>
+
+  <h3 id="size">Size</h3>
+  <p>By selecting Smaller or Larger you can change the size of text
+  being viewed in Nvu.</p>
+  <p>Selecting x-small, small, medium, large, x-large, or xx-large
+  changes the font size of selected text in the current document.</p>
+
+  <h3 id="text_style">Text Style</h3>
+  <p>You can select the HTML Text Style which will be applied to the
+  selected text in the document.</p>
+
+  <h4 id="text_style_bold">Bold</h4>
+
+  <p>Makes the selected text to appear bold. E.g. <b>bold text</b></p>
+
+  <h4 id="text_style_italic">Italic</h4>
+
+  <p>Makes the selected text to appear italicized. E.g. <i>italic
+  text</i></p>
+
+  <h4 id="text_style_italic">Underline</h4>
+
+  <p>Underlines selected text. E.g. <u>underlined text</u></p>
+
+  <h4 id="text_style_strikethrough">Strikethrough</h4>
+
+  <p>Applies a strikethrough on selected text. E.g. <span
+  style="text-decoration: line-through;">struck-through text</span></p>
+
+  <h4 id="text_style_superscript">Superscript</h4>
+
+  <p>Makes the selected text to appear as
+  superscript. E.g.<sup>superscript</sup> text.</p>
+
+  <h4 id="text_style_subscript">Subscript</h4>
+
+  <p>Makes the selected text to appear as
+  subscript. E.g. <sub>subscript</sub> text.</p>
+
+  <h4 id="text_style_fixed_width">Fixed Width</h4>
+
+  <p>Makes the text appear as fixed width. E.g. <span
+  style="font-family: monospace;">fixed width text</span>.</p>
+
+  <h4 id="text_style_non_breaking">Non Breaking</h4>
+
+  <p>HTML breaks down multiple spaces to a single one. To mark
+  non-breaking space use this option after selecting the space in the
+  document. E.g. 3 nonbreaking spaces&nbsp;&nbsp;&nbsp;here.</p>
+
+  <h4 id="text_style_emphasis">Emphasis</h4>
+
+  <p>Makes the text appear emphasized. E.g. <em>emphasized
+  text</em></p>
+
+  <h4 id="text_style_stronger_emphasis">Stronger Emphasis</h4>
+
+  <p>Gives the selected text a stronger emphasis. E.g. <strong>strong
+  emphasized</strong> text.</p>
+
+  <h4 id="text_style_citation">Citation</h4>
+
+  <p>Defines the selected text as citation. E.g. <cite>Citation
+  text</cite></p>
+
+  <h4 id="text_style_abbreviation">Abbreviation</h4>
+
+  <p>Indicates the text is an abbreviated
+  form. E.g. <abbr>UN</abbr></p>
+
+  <h4 id="text_style_acronym">Acronym</h4>
+
+  <p>Defines the start of an acronym. E.g. <acronym>WWW</acronym></p>
+
+  <h4 id="text_style_code">Code</h4>
+
+  <p>Defines the selected text as computer code text. E.g. <code>code
+  text</code></p>
+
+  <h4 id="text_style_sample_output">Sample Output</h4>
+
+  <p>Defines the selected text as sample computer
+  code. E.g. <samp>sample code</samp></p>
+
+  <h4 id="text_style_variable">Variable</h4>
+
+  <p>Defines the selcted text as a
+  variable. E.g. <var>variable</var></p>
+
+  <h3 id="text_color">Text Color...</h3>
+
+  <p>Opens the color picker popup window to choose the color for
+  selected text.</p>
+
+  <h3 id="writing_direction">Writing Direction</h3>
+
+  <p>Gives the choice of writing the text as Left-to-Right or
+  Right-to-Left. The slected text should be block-level and not inline
+  text.</p>
+
+  <h3 id="discontinue_text_styles">Discontinuing Text Styles</h3>
+
+  <p>Discontinues the application of any text styles being used from
+  the current position of the cursor.</p>
+
+  <h3 id="discontinue_link">Discontinue Link</h3>
+
+  <p>Discontinues the text to be link text from current position of
+  cursor.</p>
+
+  <h3 id="remove_named_anchors">Remove Named Anchors</h3>
+
+  <p>Removes the selected named anchor.</p>
+
+  <h3 id="paragraph">Paragraph</h3>
+
+  <p>Gives the option to tag the selected text as Body Text,
+  Paragraph, Heading Level-1 to Level-6, Address, or preformatted
+  text.</p>
+
+  <h3 id="list">List</h3>
+
+  <p>Start a list with an option for various list types, namely,
+  Bulleted, Numbered, Term or Definition. Choosing List Properties opens
+  a dialog box to manually edit list properties.</p>
+
+  <h3 id="increase_indent">Increase Indent</h3>
+
+  <p>Increases the indent of the selected block of text.</p>
+
+  <h3 id="decrease_indent">Decrease Indent</h3>
+
+  <p>Decreases the indent of the selected block of text.</p>
+
+  <h3 id="align">Align</h3>
+
+  <p>Lets you select the alignment for the selected text. You can make
+  the text to be center aligned, left aligned, right aligned or simply
+  justified text.</p>
+
+  <h3 id="positioning_grid">Positioning Grid</h3>
+
+  <p>Opens a dialog box to set the resolution in pixels for moving a
+  layer.</p>
+
+  <h3 id="advanced_properties">Advanced Properties</h3>
+
+  <p>Opens the "Advanced Property Editor" where you can manually
+  edit/add HTML attributes, Inline Styles, or even Javascript
+  events.</p>
+
+  <h3 id="page_colors_and_background">Page Colors and
+  Background...</h3>
+
+  <p>Opens a window to select Page Colors and Background. Users can
+  select the color of Normal text, Link text, and Active and Visited
+  link text. You can also choose the background color for your web page
+  and optionally attach a background image to the page too.</p>
+
+  <h3 id="page_title_and_properties">Page Title and Properties...</h3>
+
+  <p>Opens up the "Page Properties" window where you can add the
+  Title, Author, and Description information for your web page. You can
+  also specify the language and writing direction you will be using in
+  the current web page document. To use this page as a template you can
+  check the "This page is a template" check box.</p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">Return to beginning of
+  section</a> ]</p>
+
+  <h2 id="table">Table</h2>
+
+  <p>This menu enables you to create/edit tables in an HTML
+  document.</p>
+
+  <h3 id="table_insert">Insert</h3>
+
+  <p>Opens a sub menu with choices for various table editing/creating options.</p>
+
+  <h4 id="insert_table">Table</h4>
+
+  <p>Opens a dialog box to choose various properties of table to be
+  inserted at the current location of the cursor. Users can choose the
+  size of table by clicking on the shown table grid or choose precise
+  table size. Other cell properties like cellspacing, cellpadding, etc
+  can also be set.</p>
+
+  <h4 id="insert_row_above">Row Above</h4>
+
+  <p>Inserts an empty row <em>above</em> the currently active table
+  row.</p>
+
+  <h4 id="insert_row_below">Row Below</h4>
+  
+  <p>Inserts an empty row <em>below</em> the currently active table
+  row.</p>
+
+  <h4 id="insert_column_before">Column Before</h4>
+
+  <p>Inserts an empty column <em>before</em> the currently active
+  table column.</p>
+
+  <h4 id="insert_column_after">Column After</h4>
+
+  <p>Inserts an empty column <em>after</em> the currently active table
+  column.</p>
+
+  <h4 id="insert_cell_before">Cell Before</h4>
+
+  <p>Inserts an empty cell <em>before</em> the currently active table
+  cell.</p>
+
+  <h4 id="insert_cell_after">Cell After</h4>
+
+  <p>Inserts an empty cell <em>after</em> the currently active table
+  cell.</p>
+
+  <h3 id="table_select">Select</h3>
+  
+  <p>Selects various components of the currently active table for
+  editing.</p>
+
+  <h4 id="select_table">Table</h4>
+
+  <p>Select the whole table.</p>
+
+  <h4 id="select_row">Row</h4>
+
+  <p>Select the currently active row.</p>
+
+  <h4 id="select_column">Column</h4>
+
+  <p>Select the currently active column.</p>
+
+  <h4 id="select_all_cells">All Cells</h4>
+
+  <p>Select all cells. This is different from selecting the whole
+  table, as changes will be applied individually to all cells rather
+  than the table.</p>
+
+  <h3 id="table_delete">Delete</h3>
+
+  <p>Opens submenu to delete various table components.</p>
+
+  <h4 id="delete_table">Table</h4>
+
+  <p>Delete currently active table. User with caution, all table data
+  will be lost.</p>
+
+  <h4 id="delete_rows">Row(s)</h4>
+
+  <p>Delete currently active row or selected rows of table.</p>
+
+  <h4 id="delete_columns">Column(s)</h4>
+
+  <p>Delete currently active column or selected columns of table.</p>
+
+  <h4 id="delete_cells">Cell(s)</h4>
+
+  <p>Delete currently active cell or selected cells of table.</p>
+
+  <h4 id="delete_cell_contents">Cell Contents</h4>
+
+  <p>Delete contents of active cell.</p>
+
+  <h3 id="join_with_cell_to_the_right">Join With Cell to the
+  Right</h3>
+
+  <p>Merge current table cell with the cell immediately to its
+  right.</p>
+
+  <h3 id="split_cell">Split Cell</h3>
+
+  <p>Split a cell which has a <tt>colspan</tt> value of more than
+  1.</p>
+
+  <h3 id="create_table_from_selection">Create Table from
+  Selection</h3>
+
+  <p>Creates a table from the selected text. A row is created for each
+  paragraph of selected text. Column separations can be chosen to be
+  either of comma (,), space ( ), or a user defined character.</p>
+
+  <h3 id="table_or_cell_background_color">Table or Cell Background
+  Color...</h3>
+
+  <p>Opens a dialog box to edit table or cell background color.</p>
+
+  <h3 id="table_properties">Table Properties...</h3>
+
+  <p>Opens the table and cell properties editing window. You can
+  change all table and cell properties using the simple GUI. </p>
+
+  <p class="returnToSection">[ <a
+  href="#menu_reference">Return to beginning of
+  section</a> ]</p>
+
+  <h2 id="tools">Tools</h2>
+
+  <h3 id="markup_cleaner">Markup Cleaner</h3>
+
+  <p>Opens the Markup Cleaner window. Markup cleaner tidies up the
+  html code by removing extra &lt;br&gt; tags, empty blocks, etc.</p>
+
+  <h3 id="validate_html">Validate HTML</h3>
+
+  <p>Opens a window to show current document's validation results as
+  given by <a href="http://validator.w3.org">W3C's HTML
+  validator</a>.</p>
+
+  <h3 id="css_editor">CSS Editor</h3>
+
+  <p>Opens CaScadeS the inbuilt CSS editor for editing CSS style
+  rules.</p>
+
+  <h3 id="extensions">Extensions</h3>
+
+  <p>Opens the Extension manager which can be used to install or
+  remove installed extensions. Extensions adds new features to
+  KompoZer.</p>
+
+  <h3 id="themes">Themes</h3>
+  
+  <p>Opens the Theme Manager which can be used to install or uninstall
+  themes for KompoZer.</p>
+
+  <h3 id="web_development">Web Development</h3>
+
+  <p>Opens various tools packaged with KompoZer for web
+  developers.</p>
+
+  <h4 id="javascript_console">Javascript Console</h4>
+
+  <p>Opens Javascript console window.</p>
+
+  <h4 id="java_console">Java Console</h4>
+
+  <p>Opens Java console window.</p>
+
+  <!-- h4 id="dom_inspector">DOM Inspector</h4>
+
+  <p>Opens the Document Object Model (DOM) Inspector.</p>
+
+  <h4 id="javascript_debugger">Javascript Debugger</h4>
+
+  <p>Opens the Javascript debugger Venkman for debugging javascript
+  code in the document.</p -->
+
+  <h3 id="preferences">Preferences</h3>
+  <p>Opens the <em>Preferences</em> window to change personal
+  preferences for KompoZer</p>
+
+  <h2 id="help">Help</h2>
+
+  <h3 id="help_contents">Help Contents</h3>
+
+  <p>Opens the Help Viewer window.</p>
+
+  <h3 id="nvu_website">KompoZer Website</h3>
+
+  <p>Opens KompoZer's website in your default browser.</p>
+
+  <h3 id="nvu_faq">FAQ</h3>
+
+  <p>Opens KompoZer's FAQ page in your default browser.</p>
+
+  <h3 id="bug_reports_and_suggestions">Bug Reports and
+  Suggestions</h3>
+
+  <p>Opens KompoZer's bug report and suggestions page in your
+  default browser.</p>
+
+  <h3 id="developers_community">Developer's Community</h3>
+
+  <p>Opens KompoZer's Developer's website in your default
+  browser.</p>
+
+  <h3 id="localizing_nvu">Localizing Nvu</h3>
+
+  <p>Opens the web page with instructions on how to start the Nvu
+  localization process.</p>
+
+  <h3 id="forums">Forums</h3>
+
+  <p>Opens KompoZer Forums website in your default browser.</p>
+
+  <h3 id="tip_of_day">Tip of the Day</h3>
+
+  <p>Displays a small window with the <em>Tip of the Day</em>.</p>
+
+  <h3 id="about_nvu">About KompoZer</h3>
+
+  <p>Displays a dialog box with information about KompoZer,
+  including the current version and a brief list of credits.</p>
+
+  <p class="returnToSection">[ <a href="#menu_reference">Return to
+  beginning of section</a> ]</p>
+
+  <p>[<a href="index.html">Home</a>] [<a href="glossary.html">Next</a>] [<a href="shortcuts.html">Previous</a>]</p>
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+
+</html>

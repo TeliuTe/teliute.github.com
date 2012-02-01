@@ -1,0 +1,308 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"> <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="#starting_a_new_page">Starting a New Page</a>
+
+  <a href="formatting_webpages.html">Formatting Your Web Pages</a>
+
+  <a href="css.html">Using Style Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to Your Web Page</a>
+
+  <a href="images.html">Adding Pictures (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates </a>
+
+  <a href="page_properties.html">Setting Page Properties</a>
+
+  <a href="links.html">Creating Links in KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h1 id="creating_web_pages_with_composer">Creating Web Pages
+with KompoZer</h1>
+
+<p>KompoZer lets you create your own web pages and publish them
+on the web. You don't have to know HTML to use KompoZer; it is
+as easy to use as a word processor.</p>
+
+<p>Toolbar buttons let you add lists, tables, images, links to other
+pages, colors, and font styles. You can see what your document will
+look like on the Web as you create it, and you can easily share your
+document with other users, no matter what type of browser or
+HTML-capable email program they use.</p>
+
+<h2 id="starting_a_new_page">Starting a New Page</h2>
+
+<h3 id="creating_a_new_page">Creating a New Page</h3>
+
+<p>KompoZer is an HTML (Hypertext Markup Language) editor that
+allows you to create and edit web pages. KompoZer is a
+<em>WYSIWYG</em> (What You See Is What You Get) editor, so you can
+display how your page will look to the reader as you're creating
+it. It is not necessary for you to know HTML, since most of the basic
+HTML functions are available as commands from the toolbars and
+menus.</p>
+
+<p>KompoZer also lets you edit the HTML source if you want. To
+view or edit the HTML source code, open the View menu, and choose HTML
+Source, or click the &lt;HTML&gt; Source tab in the Edit Mode toolbar
+at the bottom of the KompoZer window.</p>
+
+<p>To create a web page, use one of the methods described below.  Once
+you've started a page, you can add and edit text just as you would in
+a word processor.</p>
+
+<p><strong>To create a new page in KompoZer</strong>:</p>
+
+<ul>
+  <li>Click the New button in KompoZer's toolbar.</li>
+</ul>
+
+<p><strong>To start from an HTML file stored on your local
+drive</strong>:</p>
+
+<ol>
+  <li>Open the Window menu and choose KompoZer. You see the
+  KompoZer window.</li>
+
+  <li>Open the <span class="menuPath">File</span> menu and choose
+  <span class="menuPath">Open File</span>. You see the Open HTML File
+  dialog box.</li>
+
+  <li>On your local drive, locate the file that you want to edit.</li>
+
+  <li>Click <span class="menuPath">Open</span> to display the
+  specified file in a KompoZer window.</li>
+</ol>
+
+<p><strong>To edit a web page</strong>:</p>
+
+<ol>
+  <li>Open KompoZer</li>
+
+  <li>Click on <span class="menuPath">File</span> menu and choose
+  <span class="menuPath">Open Web Location</span>. You will see the
+  Open Web Location dialog box.</li>
+
+  <li>Type in the URL of the page to edit (for example,
+  <tt>http://www.mozilla.org</tt>) and click Create button. You will see
+  the page displayed in KompoZer.</li> 
+</ol>
+
+<p>KompoZer also gives you the option of creating a new
+document using the <acronym title="Extensible Hyper Text Markup
+Language">XHTML</acronym> format. To create an XHTML document, check
+the option "create an XHTML document" in the <em>Create New Document
+or Template</em> dialog box.</p>
+
+<p><strong>Tip</strong>: In the KompoZer window you can
+quickly open the most recent file you've been working on by opening
+the File menu, choosing Recent Pages, and then selecting the file you
+want from the list.</p>
+
+<p>[ <a href="#starting_a_new_page">Return to beginning of section</a>
+]</p>
+
+<h3 id="tabs_editing_multiple_documents">Tabs - Editing Multiple Documents</h3>
+
+<p>KompoZer allows you to edit multiple documents at the same
+time. Rather than to shift from one window to another for editing more
+than one document, KompoZer offers the feature of
+<strong>Tabs</strong>. More than one document can be opened at the
+same time with KompoZer in the same window but in different
+tabs.</p>
+
+<p>Tabs can be opened using either <kbd>Ctrl+T</kbd> or by choosing
+Create in: <em>New Tab</em> in the New file open dialog. Even with
+multiple tabs open, each is handled independently. Each document's
+state is indicated, i.e. if it is modified and needs saving by a
+red-floppy icon on the corresponding tab.</p>
+
+<p>[ <a href="#starting_a_new_page">Return to beginning of section</a>
+]</p>
+
+<h3 id="saving_and_browsing_your_new_page">Saving and Browsing Your
+New Page</h3>
+
+<p>You can save KompoZer documents in HTML or text-only
+format.  Saving a document in HTML format preserves the document's
+formatting, such as text styles (for example, bold or italic), tables,
+links, and images. Saving a document in text-only format removes all
+the HTML tags but preserves the document's text.</p>
+
+<p>To save a document as an HTML file:</p>
+
+<ul> 
+  <li>Open the File menu and choose Save or click the Save button
+  on the Composition toolbar.
+
+  <p>If you haven't already given your page a title, KompoZer
+  prompts you to do so. KompoZer displays the page title in the
+  browser window's title bar when you view the page in the browser. The
+  document's page title also appears in your list of bookmarks if you
+  bookmark the page.</p>
+
+  <p>KompoZer then prompts you to enter a filename and specify
+  the location where you want to save the file. Make sure you preserve
+  the .html extension in the filename. While saving or editing
+  documents employing XHTML, the file should have the extension as
+  <tt>.html</tt>. Files with an extension <tt>.html</tt> but having
+  an XHTML DOCTYPE are not considered as <tt>xhtml</tt> documents.</p>
+  </li>
+</ul>
+
+<p>To change the filename or location of an existing HTML file:</p>
+
+<ul>
+  <li>Choose <span class="menuPath">File > Save As</span> and select a different filename or
+  location.</li>
+</ul>
+
+<p>When you save a page in KompoZer, all parts of the page
+(the HTML, images and other files, such as sound files and style
+sheets), are saved locally on your hard drive. If you only want to
+save the HTML part of the page, you must change the KompoZer
+preference for saving pages. See <a
+href="preferences.html">KompoZer Preferences</a> for more
+information on changing KompoZer's setting for saving
+pages.</p>
+
+<p>If an image location is absolute (starts with "http://") and you
+are connected to the Internet, you will still see that image in the
+document in KompoZer and Navigator. However, if the image
+location is relative to the page location (starts with "file:///"),
+then you won't see the image in the local version of the document.</p>
+
+<p>To save a document as a text-only file:</p>
+
+<ol>
+  <li>Open the <span class="menuPath">File</span> menu and choose <span class="menuPath">Export to Text</span>.</li>
+
+  <li>Enter the filename and specify the location where you want to save
+  the file.</li>
+</ol>
+
+<p><strong>Note</strong>: Images do not appear in documents saved in
+the text-only format.</p>
+
+<p><strong>Tip</strong>: You can choose Revert from the File menu to
+retrieve the most recently saved copy of the document in which you're
+working. Keep in mind that your current changes will be lost.</p>
+
+<p>To view your page in a browser window in order to test your
+links:</p>
+
+<ul>
+  <li>Open the File menu and choose Browse Page (or click Browse in
+  the Composition toolbar). If you have not yet saved your document,
+  KompoZer prompts you to enter a page title, filename, and
+  location.  The KompoZer window remains open behind the new
+  Navigator window.</li>
+</ul>
+
+<p>[ <a href="#starting_a_new_page">Return to beginning of
+section</a> ]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="formatting_webpages.html">Next</a>] [<a href="composer_tutorial.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

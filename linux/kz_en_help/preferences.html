@@ -1,0 +1,537 @@
+<!--
+Contributor(s):
+"KDS Sahambi" <kds.sahambi AT gmail DOT com>
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|KompoZer Preferences</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+  <div id="contentsBox">
+
+    <a href="#preferences_general_settings">General Settings</a>
+
+    <a href="#preferences_fonts">Fonts</a>
+
+    <a href="#preferences_new_page_settings">New Page Settings</a>
+
+    <a href="#preferences_advanced_settings">Advanced Settings</a>
+
+  </div>
+
+  <h1 id="preferences">KompoZer Preferences</h1>
+
+  <p>KompoZer has several important settings in the
+  Preferences panel. Users can set the preferences depending on their
+  requirements and KompoZer will respect the setting everytime
+  the user starts and uses it.</p>
+
+  <p>This section describes the settings in the KompoZer
+  preferences panel. If you are not currently viewing the panel,
+  follow these steps:</p>
+
+  <ol>
+
+    <li>Click on <span class="menuPath">Tools > Preferences</span>
+    file menu (Mozilla menu on Mac OS X) items to open
+    Preferences(Options) panel.</li>
+
+    <li>Click the KompoZer category to view the corresponding
+    settings available for customization.</li>
+  </ol>
+
+  <p>For information on KompoZer's publishing settings, see <a
+  href="publishing_help.html#publishing_settings">Publishing
+  Settings</a> section.</p>
+
+  <h2 id="preferences_general_settings">General Settings</h2>
+
+  <p>General preferences allow you to specify settings for saving
+  files and for table editing. These settings apply to every document
+  you create.</p>
+
+  <p>If you are not already viewing the KompoZer general
+  preferences, follow these steps:</p>
+
+  <ol>
+    <li>Open the Edit menu (Mozilla menu on Mac OS X) and choose
+    Preferences.</li>
+
+    <li>Click the General category on the category sidebar.</li>
+  </ol>
+
+  <h3 id="preferences_general_settings_recent">Recent Pages Menu</h3>
+
+  <p><strong>Maximum number of pages listed:</strong> Specify the
+  maximum number of pages that are listed under Recent Pages in the
+  File menu.</p>
+
+  <h3 id="preferences_general_settings_saving_publishing">When Saving
+  or Publishing Pages</h3>
+
+  <ul>
+
+    <li><strong>Retain original source formatting</strong>: This
+    option preserves line breaks and the page's original formatting
+    for the HTML source code. Select this if you want to preserve
+    white space (extra lines, tabs, etc.) that makes the HTML source
+    code more readable. This preference does not affect how your pages
+    appear in a browser window.</li>
+
+    <li><strong>Reformat HTML source</strong>: This option reformats
+    the HTML source code to make it more readable, by inserting line
+    breaks and indentation. This preference does not affect how your
+    pages appear in a browser window.</li>
+
+    <li><strong>Save images and other associated files when saving
+    pages</strong>: If checked, all images, JavaScript (JS), Cascading
+    Style Sheet (CSS), and other associated files are saved in the
+    same location as the document when the document is saved for the
+    first time or when the document is saved to a new location. If
+    unchecked, only the HTML file is saved.</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p>For example, when editing a remote
+    page, this setting ensures that all related files associated with
+    the remote page will be saved locally when you save the page to
+    your hard disk.</p> </li>
+
+    <li><strong>Always show Publish dialog when publishing
+    pages</strong>: If checked, KompoZer always displays the
+    Publish Page dialog box when you click the Publish button or
+    choose Publish from the File menu.  If not checked,
+    KompoZer only displays the Publish Page dialog box if it
+    needs more information in order to publish the page.</li>
+
+  </ul>
+
+  [<a href="#preferences_general_settings">Return to beginning of
+  section</a>]
+
+  <h3 id="preferences_general_settings_table_editing">Table
+  Editing</h3>
+
+  <p><strong>Maintain table layout when inserting or deleting
+  cells</strong>: Select this if you want KompoZer to always
+  preserve the table's layout (that is, keep it in a rectangular
+  shape) by adding cells where needed. If you deselect this option,
+  when you delete one or more cells, KompoZer removes the cell
+  border as well, which can result in a table with empty spaces, or an
+  outline that appears irregular due to an uneven number of cells.</p>
+
+  [<a href="#preferences_general_settings">Return to beginning of
+  section</a>]
+
+  <h3
+  id="preferences_general_settings_cascading_style_sheets_editing">Cascading
+  Style Sheets(CSS) Editing</h3>
+
+  <p><strong>Use CSS styles instead of HTML elements and
+  attributes</strong>: Enables the use of Cascading Style Sheet (CSS)
+  formatting in your KompoZer documents. With this preference
+  enabled, KompoZer generates HTML 4.01 formatting with CSS
+  inline styles for elements.</p>
+
+  <p>If this preference is not enabled, KompoZer generates
+  HTML 4.01 formatting, but does not use CSS styles.</p>
+
+  <p>Compared to HTML, HTML with CSS formatting is more portable, more
+  maintainable, and more compatible when viewed with different
+  browsers. If you enable this preference and then edit a document
+  created without CSS, KompoZer replaces the edited elements
+  with CSS styles.</p>
+
+  <p>If you enable CSS styles, you can choose a text highlight color
+  for selected text using the text highlight color button on the
+  Format toolbar. You can also choose a color background for any
+  element on the page. (These features are not available if this
+  preference is not enabled.)</p>
+
+  [<a href="#preferences_general_settings">Return to beginning of
+  section</a>]
+
+  <h3 id="preferences_general_settings_site_manager">Site Manager</h3>
+
+  <p><strong>Always open a document in a new tab</strong>: Select this
+  if you want to open documents in new tabs when using the Site
+  Manager. If unchecked, double clicking on filenames in the Site
+  Manager will open the files in new windows.</p>
+
+  <p class="returnToSection">[ <a href="#preferences">Return to
+  beginning of section</a> ]</p>
+
+  <h2 id="preferences_fonts">Fonts</h2>
+
+  <!-- The documentation for the Fonts section has been blatantly
+       copied from Firefox Help and then an attempt was made to
+       conform it to Nvu realm. -->
+
+  <p>Fonts displayed in KompoZer are either the program
+  defaults or the user can define their own.</p>
+
+  <h3 id="preferences_fonts_fonts_for">Fonts for</h3>
+
+  <p>Font family can be defined in the <em>Fonts for:</em> section of
+  KompoZer Preferences. To change the default typeface:</p>
+
+  <ol>
+
+    <li>From the <em>Fonts for</em> drop-down list, choose a character
+    set. For instance, to set default fonts for the Western (Roman)
+    character set, choose <em>Western</em>.</li>
+
+    <li>Select whether proportional text should be serif (like "Times
+    New Roman") or sans-serif (like "Arial"). Then specify the font
+    size you want for proportional text.</li>
+
+    <li>Specify the font to use for Serif, Sans-serif, Cursive Fantasy
+    and Monospace font families. You can also change the size for
+    <tt>Monospace</tt> fonts.</li>
+
+  </ol>
+
+  <p>You can also choose the <em>Minimum font size</em> you want to
+  display. Setting a minimum font size can be helpful when editing
+  pages with very small fonts which would be hard to read if this
+  option is not set.</p>
+
+  <p>You can also specify the display resolution, which is normally 96
+  dpi. You can set it to one of the predefined options e.g. 72dpi, or
+  96dpi or you can either set it to <em>System Setting</em> or set it
+  manually using the <em>Other...</em> option.</p>
+
+  <p class="returnToSection">[ <a href="#preferences">Return to
+  beginning of section</a> ]</p>
+
+  <h2 id="preferences_new_page_settings">New Page Settings</h2>
+
+  <p>New page settings allow you to specify settings for colors and
+  background images that apply to every document you create.</p>
+
+  <p>If you are not already viewing the New Page Settings, follow
+  these steps:</p>
+
+  <ol> <li>Open the Tools menu (Mozilla menu on Mac OS X) and choose
+  Preferences.</li>
+
+  <li>Click on the New Page Settings icon on the category sidebar</li>
+  </ol>
+
+  <h3 id="preferences_new_page_settings_author">Author</h3>
+
+  <p>Enter your name. This will add your name to the HTML source code
+  for each new page you create. Your name will be added in the
+  &lt;head&gt; section of the web page and will not be visible on the
+  web page.</p>
+
+  [<a href="#preferences_new_page_settings">Return to the beginning of
+  section</a>]
+
+  <h3 id="preferences_new_page_settings_markup">Markup</h3>
+
+  <ul>
+
+    <li><strong>Language</strong>: Users can select which language to
+    use as default when creating new web documents. Choose from either
+    <acronym title="Hyper Text Document Language">HTML</acronym>4.0 or
+    <acronym title="Xtensible Hyper Text
+    Language">XHTML</acronym>1.0.</li>
+
+    <li><strong>DTD</strong>: Select the <acronym title="Document Type
+    Definition">DTD</acronym> to be used as default when creating new
+    web documents. Options of defining the document as
+    <em>Transitional</em> or <em>Strict</em> are available.</li>
+
+  </ul>
+
+  [<a href="#preferences_new_page_settings">Return to the beginning of
+  section</a>]
+
+  <h3
+  id="preferences_new_page_settings_default_page_appearance">Default
+  Page Appearance</h3>
+
+  <ul>
+
+    <li><strong>Reader's default colors</strong>: Select this if you
+    always want your pages to use the color settings from the viewer's
+    browser for text and link elements.</li>
+
+    <li><strong>Use custom colors</strong>: Select this if you always
+    want to specify the colors that are applied to text and link
+    elements. Then for each element, select a color by clicking the
+    color button next to each element which will open the color-picker
+    to select the color easily.</li>
+
+    <li><strong>Background image</strong>: Type the location and name
+    of an image file, or click Choose File to locate the image file on
+    your hard disk or network.
+
+    <p><strong>Note</strong>: Background images are tiled and override
+    background color.</p> </li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+	       list-style-image: none;">
+
+      <p>To change the author name for an individual page: Open the
+      Format menu and choose Page Title and Properties.</p>
+
+      <p>To change the page colors and background image for an
+      individual page: Open the Format menu and choose Page Colors and
+      Background.</p></li>
+
+  </ul>
+
+  [<a href="#preferences_new_page_settings">Return to the beginning of
+  section</a>]
+
+  <h3
+  id="preferences_new_page_settings_internationalization">Internationalization</h3>
+
+  <ul>
+
+    <li><strong>Language</strong>: Choose the language in which the
+    html documentsupposed to be written in.</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p>For example if the document is
+    written in Canadian French, selecting "French/Canada[fr-ca]" will
+    indicate the browser that the document is written in Canadian
+    French. And the html source will contain <tt>&lt;html
+    lang="fr-ca"&gt;</tt> as an indicator of document
+    language.</p></li>
+
+    <li><strong>Writing Direction</strong>: Choose the direction of
+    writing text depending on the language you are using in your
+    document. This solves the problems of users creating html pages in
+    languages with right-to-left direction, for example, Arabic, Urdu,
+    etc.</li>
+
+    <li style="list-style-type: none; list-style-position: outside;
+	       list-style-image: none;">
+
+      <p>To change the Language specification for an individual page:
+      Open the Format menu and choose Page Title and Properties, and
+      change language in the Internationalization section.</p>
+
+      <p>To change the Writing Direction of an individual page: Open the
+      Format menu and choose Page Title and Properties, and change
+    language in the Internationalization section.</p></li>
+
+    <li><strong>Character Set</strong>: Character sets determine how
+    the bytes that represent the text of your <acronym title="Hyper
+    Text Markup Language">HTML</acronym> document are translated to
+    readable characters. With this option you can choose the character
+    set you want to use for your web page. By default, the
+    <em>ISO-8859-1</em> character set is used, but you can use other
+    options like <em>UTF-8</em>, <em>ISO-8859-15</em>, etc or a user
+    defined character set.</li>
+
+  </ul>
+
+  <p class="returnToSection">[ <a href="#preferences_settings">Return
+  to beginning of section</a> ]</p>
+
+  <h2 id="preferences_advanced_settings">Advanced Settings</h2>
+
+  <h3
+      id="preferences_advanced_settings_connection">Connection</h3>
+
+  <p>This section describes how to use the Proxies preferences
+  panel. If you&apos;re not already viewing it, follow these
+  steps:</p>
+
+  <ol>
+    <li>Open the Edit menu (KompoZer menu on Mac OS X) and
+    choose Preferences.</li>
+
+    <li>Under the Advanced category, click Proxies. (If no
+    subcategories are visible, double-click Advanced to expand the
+    list.)</li>
+  </ol>
+
+  <p>The Proxies preferences panel allows you to set up
+  KompoZer to use a proxy:</p>
+
+  <p><strong>Before you start:</strong> Ask your network administrator
+  if you have a proxy configuration file or for the names and port
+  numbers of the proxy.</p>
+
+  <ul>
+
+    <li><strong>Direct connection to the Internet</strong>: Choose
+    this if you don&apos;t want to use a proxy.</li>
+
+    <li><strong>Manual proxy configuration</strong>: Choose this if
+    you don&apos;t have a proxy location (URL).
+    <ul>
+
+      <li><strong>HTTP Proxy</strong>, <strong>SSL Proxy</strong>,
+      <strong>FTP Proxy, Gopher Proxy</strong>: Type the name or
+      numeric IP address of the proxy server. Type the port in the
+      Ports field.</li>
+
+      <li><strong>SOCKS Host</strong>: Type the name or numeric IP
+      address of the proxy server. Type the port in the Ports field.
+      <ul>
+
+	<li><strong>SOCKS v4, SOCKS v5</strong>: When entering a SOCK
+	Host, select &quot;SOCKS v4&quot; or &quot;SOCKS v5,&quot;
+	depending on what version of SOCKS is used for the proxy.</li>
+      </ul>
+      </li>
+
+      <li><strong>No Proxy for</strong>: Type the domains and/or IP
+      address that you do not want to use a proxy for. Separate each
+      entry with a comma. (Example: .yourcompany.com,
+      .yourcompany.co.nz, 192.168.1.0/24)</li>
+    </ul>
+    </li>
+
+    <li><strong>Automatic proxy configuration URL</strong>: Choose
+    this if you have a proxy configuration file or URL, then type the
+    configuration URL.</li>
+
+  </ul>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">Return to beginning of
+  section</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_return_key_behaviour">Return
+  Key Behaviour</h3>
+
+  <p>The option "Return in a paragraph always creates new paragraph"
+  defines the behaviour of the return key. Choosing it creates a new
+  paragraph if you hit the "Return" key while typing in a
+  paragraph. Without this option &lt;br&gt; tags are added for
+  carriage returns.</p>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">Return to beginning of
+  section</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_spellcheck">Real-time
+  Spellcheck</h3>
+
+  <p>Checking the option "Underline misspelled words" will enable the
+  <strong>real-time</strong> spell checker built into KompoZer
+  to underline misspelled words, thus giving the user a visual clue to
+  recheck the spellings.</p>
+
+  <p class="returnToSection">[ <a
+  href="#preferences_advanced_settings">Return to beginning of
+  section</a> ]</p>
+
+  <h3 id="preferences_advanced_settings_special_characters">Special
+  Characters</h3>
+
+  <p>This options allow the user to choose which special characters
+  are coded as entities by KompoZer. Choose one of the
+  option:</p>
+
+  <ul><li>Only &amp; &lt; &gt; &apos; and non-breakable
+  whitespace</li>
+
+  <li>The above and Latin-1 letters</li>
+
+  <li>All characters having an entity equivalence in the HTML 4.0
+  specification</li>
+
+  <li>Use &amp;#..; notation for all non-ASCII characters</li>
+  </ul>
+
+  <p class="returnToSection">[ <a href="#preferences">Return to
+  beginning of section</a> ]</p>
+
+  <p>[<a href="index.html">Home</a>] [<a href="customize.html">Next</a>] [<a href="publishing_help.html">Previous</a>]</p>
+  
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

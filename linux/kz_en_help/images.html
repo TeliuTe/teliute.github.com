@@ -1,0 +1,329 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New
+  Page</a>
+
+  <a href="formatting_webpages.html">Formatting Your Web Pages</a>
+
+  <a href="css.html">Using Style Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to Your Web Page</a>
+
+  <a href="images.html">Adding Pictures (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates </a>
+
+  <a href="page_properties.html">Setting Page Properties</a>
+
+  <a href="links.html">Creating Links in KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="adding_pictures_to_your_web_page">Adding Pictures (Images) to
+Your Web Page</h2>
+
+<h3 id="inserting_an_image_into_your_page">Inserting an Image into
+Your Page</h3>
+
+<p>You can insert GIF, JPEG, BMP, and PNG (Portable Network Graphics)
+images into your web page. You can also use them to <a
+href="#using_images_as_links">create links</a>. When you insert an
+image, KompoZer saves a reference to the image in your
+page.</p>
+
+<p><strong>Note</strong>: If you plan to publish your pages to the
+web, it's best not to use BMP images in your pages.</p>
+
+<p><strong>Tip</strong>: It's best to first save or publish your page
+before you insert images into it. This allows KompoZer to
+automatically use relative references to images once you insert
+them.</p>
+
+<p>To insert an image:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the image
+  to appear.</li>
+
+  <li>Click the Image button <img src="images/image.png" alt="" /> on the toolbar, or open the Insert menu and
+  choose Image. You see the Image Properties dialog box.</li>
+
+  <li>Type the location and filename of the image file, or click Choose
+  File to search for an image file on your hard drive or network.</li>
+
+  <li>Type a simple description of your image as the alternate text that
+  will appear in text-only browsers (as well as other browsers)
+  when an image is loading or when image loading is disabled.
+
+  <p>Alternatively, you can choose not to include alternate text.</p>
+  </li>
+
+  <li>If needed, click other tabs so you can adjust the settings (for
+  example, alignment) in the <a href="#editing_image_properties">Image
+Properties</a> dialog box.</li> </ol>
+
+<p><strong>Tip</strong>: To quickly insert an image: Drag and drop it
+onto your page.</p>
+
+<p><strong>Tip</strong>: To insert a line break after all images in a
+paragraph, choose Break Below Images from the Insert menu.</p>
+
+<p class="returnToSection">[ <a
+href="#adding_pictures_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<h3 id="editing_image_properties">Editing Image Properties</h3>
+
+<p>Once you've inserted an image into your page, you can edit its
+properties and customize
+the layout in your page, such as the height, width, spacing, and
+text alignment. If you
+are not currently viewing the Image Properties dialog box, follow
+these steps:</p>
+
+<p>To edit the properties for a selected image:</p>
+
+<ol>
+
+  <li>Double-click the image, or select it and click the Image button
+  <img src="images/image.png" alt="" /> on
+  the toolbar
+  to display the Image Properties dialog box.</li>
+
+  <li>Click the Location tab to edit these properties:
+
+  <ul>
+    <li><strong>Image Location</strong>: Type the filename and
+    location of the image file. Click
+    Choose File to search for an image file on your hard drive
+    or network.</li>
+    
+    <li><strong>URL is relative to page location</strong>: If checked,
+    KompoZer converts the URL to
+    be relative to the page's location. This is especially
+    useful if you plan to publish
+    your pages on a web server so that others can view
+    them. Using relative URLs allows
+    you to keep all your linked files in the same place relative
+    to each other, regardless
+    of their location on your hard disk or a web server.
+    <p>Unchecking this box causes KompoZer to convert the
+    URL to a full (absolute) URL.
+    You typically use absolute URLs when linking to images on
+    other web servers
+    (not stored locally on your hard disk).</p>
+    <p>If you have never saved or published the page, you must first
+    save the page in
+    order to enable this checkbox. (This checkbox is not
+    available if you open the Image
+    Properties dialog box in a message compose
+    window.)</p></li>
+
+    <li><strong>Alternate Text</strong>: Enter text that will display
+    in place of the original image;
+    for example, a caption or a brief description of the
+    image. It's a good practice to
+    specify alternate text for readers who use text-only web
+    browsers or who have image
+    loading turned off.</li>
+    
+    <li><strong>Don't use alternate text</strong>: Choose this option
+    if the image does not
+    require alternate text or if you don't want to include
+    it.</li>
+    
+  </ul>
+  </li>
+  <li>Click the Dimensions tab to edit these properties:
+  <ul>
+    <li><strong>Actual Size</strong>: Select this option to undo any
+    changes you've made to the
+    dimensions and return the image to its original size.</li>
+    
+    <li><strong>Custom Size</strong>: Select this option and specify
+    the new height and width, in
+    pixels or as a percentage. This setting doesn't affect the
+    original image file,
+    just the image inserted in your page.</li>
+    
+    <li><strong>Constrain</strong>: If you change the image size,
+    it's a good idea to select this
+    in order to maintain the image's aspect ratio (so that it
+    doesn't appear distorted).
+    If you choose this option, then you only need to
+    change the height or width, but not
+    both.</li>
+    
+  </ul>
+  </li>
+  <li>Click the Appearance Tab to edit these properties:
+  <ul>
+    <li><strong>Spacing</strong>: Specify the amount of space
+    surrounding the image; between the
+    image and adjoining text. You can also put a solid black
+    border around the image
+    and specify its width in pixels. Specify zero for no
+    border.</li>
+
+    <li><strong>Align Text to Image</strong>: If you've placed your
+    image next to any text, select
+    an alignment icon to indicate how you want text positioned
+    relative to the image.</li>
+
+    <li><strong>Image Map</strong>: Click Remove to remove any image
+    map settings.</li>
+
+  </ul>
+  </li>
+  <li>Click the Link tab to edit these properties:
+  <ul>
+    <li><strong>Enter a web page location</strong>: If you want to
+    define a link for this image,
+    enter the URL of a remote or local page, or select a named
+    anchor or heading from
+    the drop-down list. Click Choose File to search for an
+    image file on your hard
+    drive or network.</li>
+    
+    <li><strong>URL is relative to page location</strong>: If
+    checked, KompoZer converts the URL to
+    be relative to the page's location. This is especially
+    useful if you plan to publish
+    your pages to a web server so that others can view
+    them. Using relative URLs allows
+    you to keep all your linked files in the same place
+    relative to each other,
+    regardless of their location on your hard disk or a
+    web server.
+    <p>Unchecking this box causes KompoZer to convert the
+    URL to a full (absolute) URL.
+    You typically use absolute URLs when linking to
+    images on other web servers (not
+    stored locally on your hard disk).</p>
+    <p>If you have unsaved changes, you must first save the page
+    in order to enable this
+    checkbox. (This checkbox is not available if you
+    open the Image Properties dialog
+    box in a message compose window.)</p></li>
+
+    <li><strong>Show border around linked image</strong>: If
+    checked, displays the link
+    highlight color around the image.</li>
+  </ul>
+  </li>
+  
+  <li>To apply additional attributes or JavaScript events, click
+  Advanced Edit to display
+  the <a href="#using_the_advanced_property_editor">Advanced
+  Property Editor</a>.</li>
+
+  <li>Click OK to confirm your changes.</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#adding_pictures_to_your_web_page">Return to beginning of
+section</a> ]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="toc.html">Next</a>] [<a href="tables.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

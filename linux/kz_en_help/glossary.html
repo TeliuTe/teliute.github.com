@@ -1,0 +1,394 @@
+<!-- Original text: Mozilla Help Viewer Documentation Project,
+     Nvu relevance changes: Nvu Help Viewer Documentation Project,
+Contributor(s):
+  KDS Sahambi <ksahambi@yahoo.com>
+  TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Glossary</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body> <!--id="noMarginBody"-->
+
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox"></div>
+
+<p>This glossary is provided for your information only; it is not
+meant to be relied upon as a complete or authoritative description of
+the terms defined below or of the privacy and/or security
+ramifications of the technologies described.</p>
+
+<hr/>
+
+<h1 id="glossary">Glossary</h1>
+
+<dl>
+
+<dt id="authentication">authentication</dt>
+<dd>The use of a password, certificate, personal identification number
+  (PIN), or other information to validate an identity over a computer
+  network.</dd>
+
+<dt id="cache">cache</dt>
+<dd>A collection of web page copies stored on your computer's hard disk or in
+  its random-access memory (RAM). KompoZer accumulates these copies as you
+  browse the Web. When you click a link or type a
+  <a href="#Uniform_Resource_Locator">URL</a> to fetch a particular web page for
+  which the cache already contains a copy, KompoZer compares the cached copy
+  to the original. If there have been no changes, KompoZer uses the cached
+  copy rather than refetching the original, saving processing and download time.</dd>
+
+<dt id="certificate">certificate</dt>
+<dd>The digital equivalent of an ID card. A certificate specifies the name of an
+  individual, company, or other entity and certifies that a public key, which
+  is included in the certificate, belongs to that entity. When you digitally
+  sign a message or other data, the digital signature for that message is
+  created with the aid of the private key that corresponds to the public key
+  in your certificate.</dd>
+
+<dt id="client">client</dt>
+<dd>Software (such as an Internet browser) that sends requests to and receives
+  information from a <a href="#server">server</a>, which is usually running
+  on a different computer. A computer on which client software runs is also
+  described as a client.</dd>
+
+<dt id="cryptography">cryptography</dt>
+<dd>The art and practice of scrambling (encrypting) and unscrambling (decrypting)
+  information. For example, cryptographic techniques are used to scramble and unscramble
+  information flowing between commercial web sites and KompoZer.</dd>
+
+<dt id="css">Cascading Style Sheets(CSS)</dt>
+<dd>CSS is a simple mechanism to add style e.g. fonts, colors,
+positioning, etc to web documents. CSS allows complete and total
+control over the style of a hypertext document.</dd>
+
+<dt id="decryption">decryption</dt>
+<dd>The process of unscrambling data that has been encrypted. See also
+  <a href="#encryption">encryption</a>.</dd>
+
+<dt id="digital_ID">digital ID</dt>
+<dd>See <a href="#certificate">certificate</a>.</dd>
+
+<dt id="encryption">encryption</dt>
+<dd>The process of scrambling information in a way that disguises its meaning.
+  For example, encrypted connections between computers make it very difficult
+  for third-parties to unscramble, or <em>decrypt,</em> information flowing
+  over the connection. Encrypted information can be decrypted only by someone
+  who possesses the appropriate key.</dd>
+
+<dt id="XML">Extensible Markup Language (XML)</dt>
+<dd>An open standard for describing data. Unlike HTML, XML allows the
+  developer of a web page to define special tags. For more information,
+  see the online W3C document <a href="http://www.w3.org/XML/">Extensible
+  Markup Language (XML)</a>.</dd>
+
+<dt id="file_transfer_protocol">File Transfer Protocol (FTP)</dt>
+<dd>A File Transfer Protocol(FTP) is a protocol standard for
+transfering computer files between different computers connected via a
+network. A remote computer, the FTP server, accepts connections from
+other computers called clients. Once the connection is established,
+clients can get files from the server or put files on the server
+depending upon the login account privileges.However, a security hole
+in FTP is that passwords are sent as clear text, unlike <a
+href="#secure_file_transfer_protocol">sFTP</a>. KompoZer Site
+Manager uses FTP for publishing web pages.</dd>
+
+<dt id="FIPS_PUBS_140-1">FIPS PUBS 140-1</dt>
+<dd>Federal Information Processing Standards Publications (FIPS PUBS) 140-1 is
+  a US government standard for implementations of cryptographic modules &mdash;
+  hardware or software that encrypts and decrypts data or performs other
+  cryptographic operations (such as creating or verifying digital signatures).
+  Many products sold to the US government must comply with one or more of the
+  FIPS standards.</dd>
+
+<dt id="helper_application">helper application</dt>
+<dd>Any application that is used to open or view a file downloaded by KompoZer.
+  A <a href="#plug-in">plug-in</a> is a special kind of helper application that
+  installs itself into the Plugins directory of the main KompoZer installation
+  directory and can typically be opened within KompoZer itself. Microsoft Word,
+  Adobe Photoshop, and other external applications are considered helper applications
+  but not plug-ins, because they don't install themselves into the browser directory
+  but can be opened from the download dialog box.</dd>
+
+<dt id="Hypertext_Markup_Language">Hypertext Markup Language (HTML)</dt>
+<dd>The document format used for web pages. The HTML standard defines tags, or
+  codes, used to define the text layout, fonts, style, images, and other
+  elements that make up a web page.</dd>
+
+<dt id="Internet">Internet</dt>
+<dd>A worldwide network of millions of computers that communicate with each
+  other using standard protocols such as
+  <a href="#Transmission_Control_Protocol_Internet_Protocol">TCP/IP</a>.
+  Originally developed for the US military in 1969, the Internet grew to include
+  educational and research institutions and, in the late 1990s, millions of
+  businesses, organizations, and individuals. Today the Internet is used for email,
+  browsing the <a href="#World_Wide_Web">World Wide Web</a>, instant messaging,
+  mailing lists and usegroups, and many other purposes.</dd>
+
+<dt id="Internet_protocol_address">Internet protocol address (IP address)</dt>
+<dd>The address of a computer on a
+  <a href="#Transmission_Control_Protocol_Internet_Protocol">TCP/IP</a> network.
+  Every computer on the Internet has an IP address. <a href="#client">Clients</a>
+  have either a permanent IP address or one that is dynamically assigned to them
+  each time they connect with the network.</dd>
+
+<dt id="Java">Java</dt>
+<dd>A programming language developed by Sun Microsystems. A single Java program
+  can run on many different kinds of computers, thus avoiding the need for
+  programmers to create a separate version of each program for each kind of
+  computer. After Java is installed, KompoZer can automatically download
+  and run Java programs (also called applets).</dd>
+
+<dt id="JavaScript">JavaScript</dt>
+<dd>A scripting language commonly used to construct web pages. Programmers use
+  JavaScript to make web pages more interactive; JavaScript is often used to
+  dynamically validate forms and select buttons. JavaScript can be used with
+  Java, but it is technically a separate language. Java is not required for
+  JavaScript to work correctly.</dd>
+
+<dt id="master_password">master password</dt>
+<dd>A password used to protect saved passwords and other private data.
+  KompoZer will prompt you for your master password when you wish to
+  access this data. If you have multiple security devices, each security device
+  will require a separate master password.</dd>
+
+<dt id="navigation_toolbar">Navigation Toolbar</dt>
+<dd>The toolbar near the top of the KompoZer window that includes
+  the <em>Back</em> and <em>Forward</em> buttons.</dd>
+
+<dt id="Password_Manager">Password Manager</dt>
+<dd>The part of KompoZer that can help you remember some or all of
+  your names and passwords by storing them on your computer's hard disk and
+  entering them for you automatically when you visit such sites.</dd>
+
+<dt id="PKCS_11">PKCS #11</dt>
+<dd>The public-key cryptography standard that governs security devices such
+  as smart cards.</dd>
+
+<dt id="plug-in">plug-in</dt>
+<dd>A type of <a href="#helper_application">helper application</a> that
+  adds new capabilities to KompoZer, such as the ability to play audio
+  or video clips. Unlike other kinds of helper applications, a plug-in
+  application installs itself into the Plugins directory within the main
+  KompoZer installation directory and typically can be opened within
+  KompoZer itself (internally). For example, an audio plug-in lets you
+  listen to audio files on a web page or in an e-mail message. Macromedia
+  Flash Player and Java are both examples of plug-in applications.</dd>
+
+<dt id="private_key">private key</dt>
+<dd>One of a pair of keys used in public-key cryptography. The private key is 
+kept secret and is used to decrypt data that has been encrypted with the 
+corresponding public key.</dd>
+
+<dt id="proxy">proxy</dt>
+<dd>An intermediary or &quot;go-between&quot; program that acts as both a
+  <a href="#server">server</a> and a <a href="#client">client</a> for
+  the purpose of making requests on behalf of other clients.</dd>
+
+<dt id="publish">Publishing</dt>
+<dd>The process of <em>uploading</em> web document(s) to a <a
+href="#web_server">web server</a> is called publishing. It is only
+after publishing your web documents to the <a href="#web_server">web
+server</a> others can view the documents using their <a
+href="#client">clients</a>. In KompoZer, the <a
+href="#site_manager">Site Manager</a> accomplishes the task of
+publishing.</dd>
+
+<dt id="search_engine">search engine</dt>
+<dd>A web-based program that allows users to search for and retrieve
+  specific information from the World Wide Web. The search engine may
+  search the full text of web documents or a list of keywords; it may
+  also use librarians who review web documents and index them manually
+  for retrieval. Typically, the user types a word or phrase into a
+  search box, and the search engine displays links to relevant web
+  pages.</dd>
+
+<dt id="secure_shell_file_transfer_protocol">Secure Shell File Transfer Protocol</dt>
+<dd>Secure Shell File Transfer Protocol(sFTP) is similar to <a
+href="#file_transfer_protocol">FTP</a> with the difference that the
+session is encrypted making it more secure.</dd>
+
+<dt id="secure_site">secure site</dt>
+<dd>A site that uses <a href="#encryption">encryption</a> in connections
+  with KompoZer to prevent other malicious Internet users from
+  viewing transmitted data.  When you visit secure sites, KompoZer
+  displays a lock icon in the <a href="#Status_Bar">Status Bar</a> and the
+  <a href="#location_bar">Location Bar</a>.  KompoZer also
+  displays the site's domain name in the Status Bar (to prevent malicious
+  sites from stealing your data) and turns the background of the Location
+  Bar to yellow.</dd>
+<dd>Some sites may consist of both secure and insecure data; the insecure data
+  usually is non-private, although it isn't guaranteed to be so.  For such
+  sites KompoZer will display a lock icon with a slash through it in
+  the Status Bar and Location Bar and will <em>not</em> display the site's
+  domain name in the Status Bar so that you know that the current web page
+  isn't completely secure.</dd>
+
+<dt id="SSL">Secure Sockets Layer (SSL)</dt>
+<dd>A protocol that allows mutual authentication between a
+  <a href="#client">client</a> and a <a href="#server">server</a>
+  for the purpose of establishing an authenticated and encrypted
+  connection. SSL runs above TCP/IP and below HTTP, LDAP, IMAP, NNTP,
+  and other high-level network protocols. The new Internet Engineering
+  Task Force (IETF) standard called Transport Layer Security (TLS) is
+  based on SSL. See also <a href="#authentication">authentication</a>,
+  <a href="#encryption">encryption</a>.</dd>
+
+<dt id="server">server</dt>
+<dd>Software (such as software that serves up web pages) that receives
+  requests from and sends information to a <a href="#client">client</a>,
+  which is usually running on a different computer. A computer on which
+  server software runs is also described as a server.</dd>
+
+<dt id="site_manager">Site Manager</dt>
+<dd>The part of KompoZer which manages the uploading and
+downloading of the web documents created with KompoZer. The
+Site Manager uses <a href="#file_transfer_protocol">FTP</a> to
+transfer the web documents to and from the <a href="#web_server">web
+server</a>.</dd>
+
+<dt id="Status_Bar">Status Bar</dt>
+<dd>The toolbar that appears at the bottom of any KompoZer window. It
+  shows the tags enclosing the current cursor position.</dd>
+
+<dt id="TLS">TLS</dt>
+<dd>See <a href="#Secure_Sockets_Layer">Secure Sockets Layer (SSL)</a>.</dd>
+
+<dt id="TCP_IP">Transmission Control Protocol/Internet Protocol (TCP/IP)</dt>
+<dd>A Unix protocol used to connect computers running a variety of operating systems.
+  TCP/IP is an essential Internet protocol and has become a global standard.</dd>
+
+<dt id="Uniform_Resource_Locator">Uniform Resource Locator (URL)</dt>
+<dd>The standardized address that tells KompoZer how to locate a file or
+  other resource on the Web (for example, <tt>http://www.mozilla.org</tt>).
+  Type URLs into KompoZer's Location Bar to access web pages. URLs
+  are also used in the links on web pages go to other web pages. Also known
+  as an Internet or Web address.</dd>
+
+<dt id="w3c">W3C</dt>
+<dd>World Wide Web Consortium(W3C) is a <em>consortium</em> that
+produces standards recommendations for the <a
+href="world_wide_web">World Wide Web</a>. According to
+<strong>W3C</strong>, "The World Wide Web Consortium (W3C) develops
+interoperable technologies (specifications, guidelines, software, and
+tools) to lead the Web to its full potential". These recommendations
+e.g. HTML 4.01, XHTML 1.1, CSS 2.1, etc. are often called <em>Web
+Standards</em>.</dd>
+
+<dt id="web_page">web page</dt>
+<dd>A single document on the World Wide Web that is specified by a unique
+  address or URL.  A web page may contain text, hyperlinks, and graphics.</dd>
+
+<dt id="web_server">Web Server</dt>
+<dd>Web Server is the machine running the web server software(e.g. <a
+href="http://httpd.apache.org">Apache</a>). It serves various kinds of
+web documents to a <a href="#client">client</a>. It is the web server
+software which is responsible to send us the reqired data so that we
+can see the requested <a href="#web_site">web site</a> in a web
+browser.</dd>
+
+<dt id="web_site">web site</dt>
+<dd>A group of related web pages linked by hyperlinks and managed by a single
+  company, organization, or individual. A web site may include text, graphics,
+  audio and video files, and links to other web sites.</dd>
+
+<dt id="world_wide_web">World Wide Web</dt>
+<dd>Also known as the Web. A portion of the Internet that is made up of web
+  pages stored by web <a href="#server">servers</a> and displayed by
+  <a href="#client">clients</a> called web browsers (such as
+  KompoZer).</dd>
+
+
+</dl>
+
+<p>
+[&nbsp;<a href="#glossary">Return to beginning of Glossary</a>&nbsp;]
+</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="menu_reference.html">Previous</a>]</p>
+
+<div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+<p>Copyright &copy; 2003-2009 Contributors to the Mozilla Help Viewer Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

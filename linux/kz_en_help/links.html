@@ -1,0 +1,366 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New Page</a>
+
+  <a href="formatting_webpages.html">Formatting Your Web
+  Pages</a>
+
+  <a href="css.html">Using Style Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to Your Web Page</a>
+
+  <a href="images.html">Adding Pictures (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates  </a>
+
+  <a href="page_properties.html">Setting Page Properties</a>
+
+  <a href="links.html">Creating Links in KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="creating_links_in_composer">Creating Links in
+KompoZer</h2>
+
+<h3 id="creating_links_within_the_same_page">Creating Links Within the
+Same Page</h3>
+
+<p>To create a link within the same page, for example a link that the
+reader can use to
+jump from one section to another, you must create an <em>anchor</em>
+(target location),
+and then create a link that points to the anchor. Anchors are also
+called
+<em>named anchors</em>.</p>
+
+<ol>
+  <li>Click to place the insertion point at the beginning of a line
+  where you want to create an anchor, or select some text.</li>
+  
+  <li>Click on anchor button <img src="images/anchor.png" alt="" /> or open the Insert menu and choose Named
+  Anchor. You see the Named Anchor Properties dialog box.</li>
+  
+  <li>Type a unique name for the anchor in the Anchor Name field (up
+  to 30 characters). If you include spaces, they will be converted to
+  underscores ( _ ). If you selected some text in step 1, this box
+  already contains a name.</li>
+  
+  <li>Click OK. An anchor icon appears in your document to mark the
+  anchor's location: <img src="images/anchor-in-doc.gif" alt="" /></li>
+</ol>
+
+<p>To create the link on which readers can click to jump to the
+anchor:</p>
+
+<ol>
+  <li>Select the text or image that you want to link to the
+  anchor.</li>
+
+  <li>Click the Link button or open the Insert menu and choose
+  Link. You see the Link Properties dialog box.
+  
+  <ul>
+    <li>If you're creating a link to an HTML file on your computer,
+    click Choose File
+    to locate it.</li>
+    
+    <li>If you're creating a link to a named anchor (target), select
+    it from the list of
+    the anchors currently available in the page.</li>
+    
+    <li>If you're creating a link to a level heading (for example,
+    Heading 1 - Heading 6),
+    select it from the list of headings currently available in
+    the page.</li>
+    
+  </ul>
+  </li>
+  
+  <li>Click OK.</li> 
+</ol>
+
+<p><strong>Note</strong>: To test the link you just created, open the
+File menu and choose Browse Page,
+then click the link.</p>
+
+<p><strong>Tip</strong>: If you did not first create named anchors,
+you can use the Link dialog box to
+create links to headings that already occur in the page.</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">Return to beginning of section</a>
+]</p>
+
+<h3 id="creating_links_to_other_pages">Creating Links to Other
+Pages</h3>
+
+<p>You can create links from your page to local pages on your own
+computer or on your workplace's network, or to remote pages on the
+Internet.</p>
+
+<p><strong>Tip</strong>: It's best to first save or publish your page
+before you create links to other pages. This allows KompoZer
+to automatically use relative references for links once you create
+them.</p>
+
+<p id="to_create_a_link_to_another_page">To create a link to another
+page:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want to create a
+  link, or select the text
+  or image that you want to link to the anchor.</li>
+  
+  <li>Click the Link button. You see the Link Properties dialog
+  box.</li>
+  
+  <li>Define your link:
+  
+  <ul>
+    <li><strong>Link text</strong>: If you've already selected an
+    image file or text before clicking
+    the Link button, the selected text or file will be entered
+    here. Otherwise, you must
+    enter the text that you want to use as the link.</li>
+
+    <li><strong>Link Location</strong>: Type the local path and
+    filename or remote URL of the page
+    you want to link to. If you're not sure of the path and
+    filename for a local file,
+    click Choose File to look for it on your hard disk or
+    network. For remote URLs, you
+    can copy the URL from the browser location
+    field. Alternatively, you can select a
+    named anchor or a heading in the current page that you
+    want to link to.</li>
+
+    <li><strong>URL is relative to page location</strong>: If
+    checked, KompoZer converts the URL to
+    be relative to the page's location. This is especially
+    useful if you plan to publish
+    your pages to a web server so that others can view
+    them. Using relative URLs allows
+    you to keep all your linked files in the same place
+    relative to each other,
+    regardless of their location on your hard disk or a
+    web server.
+    <p>Deselecting this option causes KompoZer to
+    convert the URL to a full (absolute)
+    URL. You typically use absolute URLs when linking to
+    pages on other web servers
+    (not stored locally on your hard disk).</p>
+    <p>If you have unsaved changes, you must first save the page
+    in order to enable this
+    checkbox.</p></li>
+    
+  </ul>
+  </li>
+  <li>To apply additional attributes or JavaScript events, click
+  Advanced Edit to display the
+  <a href="#using_the_advanced_property_editor">Advanced Property
+  Editor</a>.</li>
+  
+  <li>Click OK.</li>
+  
+  <li>To test the link you just created, click the Browse button and
+  then click the link to make sure it works as expected.</li>
+</ol>
+
+<p><strong>Tip</strong>: You can copy a link quickly by clicking and
+dragging the link from another window and then dropping it onto your
+page.  For example, you can click and drag a link from a web page,
+bookmark, or Mail window and drop it onto your page. You can also
+right-click (Control+click on Mac OS) a link on a web page and choose
+Copy Link Location from the menu. Then you can paste the link location
+into the Link Location field in the Link Properties dialog box.</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">Return to beginning of section</a>
+]</p>
+
+<h3 id="adding_xfn_information_within_your_links">Adding XFN
+Information Within Your Links</h3>
+
+<p>While creating links on your web page to other people's web pages,
+KompoZer provides the feature of including <a target="_blank"
+href="http://gmpg.org/xfn/">XFN</a> (XHTML Friends Network)
+information. The XFN is a simple way to represent human relationships
+using hyperlinks. To add XFN information:</p>
+
+<ol>
+  <li>Right click on the link in which you want to add the XFN information.</li>
+  <li>Select "Link Properties".</li>
+  <li>In the "Link Properties" dialog window, click on "More Properties".</li>
+  <li>Select the corresponding entries under "Friendship" section to
+  be added as XFN information.</li>
+  <li>Click on "OK".</li>
+  <li>Click on "Save" to save changes/addition in document.</li>
+</ol>
+
+<p><strong>Note:</strong> Some XFN properties are radio-button type
+i.e. pick at most one, others are check boxes i.e. pick as many.</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">Return to beginning of section</a>
+]</p>
+
+<h3 id="using_images_as_links">Using Images as Links</h3>
+
+<p>You can make images, such as JPEG, GIF, or PNG files, behave like
+links in your pages. When the reader clicks a linked image, the
+browser window displays the page that the image is linked to.</p>
+
+<ol>
+  <li>Select an image on your page.</li>
+
+  <li>Click the Link button <img src="images/link.png" alt="" /> on the toolbar, or open the Insert menu and
+  choose Link.</li>
+
+  <li>Use the Link Properties dialog box to link the image to a <a
+  href="#creating_links_within_the_same_page">named anchor or heading
+  within the page</a>, or to a <a
+  href="#creating_links_to_other_pages">separate local or remote
+  page</a>.</li>
+</ol>
+
+<p><strong>Tip</strong>: Drag and drop a linked image from the
+Navigator window into a KompoZer window to copy both the image
+and the link.</p>
+
+<p><strong>Note</strong>: To remove the blue border on images used as
+links, open the Link Properties dialog box, click the Link tab, and
+uncheck "Show border around linked image".</p>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">Return to beginning of section</a>
+]</p>
+
+<h3 id="removing_or_discontinuing_links">Removing or Discontinuing
+Links</h3>
+
+<p>To remove a link:</p>
+
+<ol>
+  <li>Select the linked text (normally blue and underlined) or
+  image.</li>
+
+  <li>Open the Format menu and choose Remove Links.</li>
+</ol>
+
+<p>To discontinue a link, so that text you type after the link is not
+included as part of the link:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the link to
+  end.</li>
+
+  <li>Open the Format menu and choose Discontinue Link.</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#creating_links_in_composer">Return to beginning of section</a>
+]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="customize.html">Next</a>] [<a href="page_properties.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

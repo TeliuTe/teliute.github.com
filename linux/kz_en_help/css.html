@@ -1,0 +1,250 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"> <head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New
+  Page</a>
+
+  <a href="formatting_webpages.html">Formatting
+  Your Web Pages</a>
+
+  <a href="css.html">Using Style Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to Your Web Page</a>
+
+  <a href="images.html">Adding Pictures (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates </a>
+
+  <a href="page_properties.html">Setting Page Properties</a>
+
+  <a href="links.html">Creating Links in KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="using_style_sheets_for_your_web_pages">Using Style Sheets for
+Your Web Pages</h2>
+
+<h3 id="using_cascade_style_sheets">Using Cascade Style Sheets</h3>
+
+<p>Cascade Style Sheets(CSS) can be used to style an HTML document in
+three ways:</p>
+<ol>
+  <li>Using inline styles.</li>
+
+  <li>Using internal style sheet.</li>
+
+  <li>Using external style sheets.</li>
+</ol>
+
+<p>KompoZer has an inbuilt style sheet editor called
+<strong>CaScadeS</strong>. CaScadeS can be used to produce either an
+internal style sheet or an external one. As opposed to inline styles,
+internal or external style sheets help to keep the content and style
+information separate.</p>
+
+<p>To style the html document you are editing, CaScadeS can be started
+by clicking on Tools and choosing CSS Editor. CaScadeS allows two
+modes of style sheet editing:</p>
+
+<ol>
+  <li><strong>Beginner Mode</strong>: This mode allows to create
+  rules associated to class selectors or type element selectors.</li>
+
+  <li><strong>Expert Mode</strong>: This mode allows to create rules
+  without any restriction.</li>
+</ol>
+
+<p>In case there is no style sheet, a new style sheet will be
+automatically created.</p>
+
+<p class="returnToSection">[ <a
+href="#using_style_sheets_for_your_web_pages">Return to beginning of
+section</a> ]</p>
+
+<h3 id="creating_style_sheets_with_nvu">Creating Style
+Sheets with KompoZer</h3>
+
+<p>Using CaScadeS, one can create either internal style sheets or
+external style sheets. To create an internal style sheet:</p>
+<ol>
+  <li>Click on the Style elt. button
+  <ul>
+    <li>(Optional) Fill in Media list and Title information for the
+    style sheet.</li>
+  </ul>
+  </li>
+
+  <li>Click on Create Stylesheet.</li>
+</ol>
+
+<p>To create an external stylesheet:</p>
+
+<ol>
+  <li>Click on the Link elt. button</li>
+
+  <li>Fill in the URL of the stylesheet in the right pane. A new file
+  will be created on the local filesystem, if it doesnot already exist.
+
+  <ul>
+    <li>(Optional) Fill in Media list and Title informationfor the style sheet.</li>
+  </ul>
+  </li>
+
+  <li>Check the "check to create alternate stylesheet" if this is an
+  alternate one.</li>
+</ol>
+
+<p><strong>Tip:</strong> Always save the html document before
+attaching local style sheet. Also, save document immediately before closing
+the CSS editor.</p>
+
+<p><strong>Tip:</strong> Use Refresh button in the left pane, if
+stylesheet is not immediately downloaded.</p>
+
+<p class="returnToSection">[ <a
+href="#using_style_sheets_for_your_web_pages">Return to beginning of
+section</a> ]</p>
+
+<h3 id="creating_rules_for_stylesheets">Creating Rules for
+Stylesheets</h3>
+
+<p>After creating one or more stylesheets for the html document, rules
+can be created for each stylesheet individually. To use a particular
+stylesheet for creating or modifying rules, highlight the stylesheet
+in the left pane by clicking with left mouse button. The right pane
+will show the detials of the stylesheet in the General Tab. To create
+new rules:</p>
+
+<ol>
+  <li>Click on the Rule button in the left pane.</li>
+
+  <li>Right pane shows options as to what kind of rule to
+  create. Choose one of:
+
+  <ul>
+    <li>named style (enter class name below)</li>
+
+    <li>style applied to all elements of type (enter type
+    below)</li>
+
+    <li>style applied to all elements matching the following
+    selector</li>
+
+  </ul>
+  </li>
+  <li>Fill in the name of the rule.</li>
+
+  <li>Click on Create Style Rule button.</li>
+</ol>
+
+<p>Rules can be defined using the styling tabs (Text, Background,
+Border, Box and Aural) in the right pane. To see all the definitions
+of a style rule, highlight the rule in the left pane and click on
+"General" tab in the right pane. The "General" tab shows all
+definitions currently applied to the rule.</p>
+
+<p class="returnToSection">[ <a
+href="#using_style_sheets_for_your_web_pages">Return to beginning of
+section</a> ]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="tables.html">Next</a>] [<a href="formatting_webpages.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

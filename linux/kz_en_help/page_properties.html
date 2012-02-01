@@ -1,0 +1,241 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New Page</a>
+
+  <a href="formatting_webpages.html">Formatting Your Web Pages</a>
+
+  <a href="css.html">Using Style
+  Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to
+  Your Web Page</a>
+
+  <a href="images.html">Adding Pictures
+  (Images) to Your Web Page</a>
+
+  <a
+  href="toc.html">Working with
+  Table of Contents on Your Web Page</a>
+
+  <a href="templates.html">Working With Templates
+  </a>
+
+  <a href="page_properties.html">Setting Page
+  Properties</a>
+
+  <a href="links.html">Creating Links in
+  KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="setting_page_properties">Setting Page Properties</h2>
+
+<h3 id="setting_page_properties_and_meta_tags">Setting Page Properties
+and Meta Tags</h3>
+
+<p>Use the Page Properties dialog box to enter properties such as the
+title, author, and description of the document you're currently
+working on. This information is useful if you plan to use the page on
+a web site, since search engines use this type of information to index
+your page. You can view this information from the browser window by
+opening the View menu and choosing Page Info.</p>
+
+<ol> 
+  <li>Open the Format menu and choose Page Title and
+  Properties.</li>
+
+  <li>Edit any of the following properties:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>Title</strong>: Type the
+      text you want to appear as the window title when someone views the
+      page through a browser. This is how most web search tools locate web
+      pages, so choose a title that conveys what your page is about.</li>
+
+      <li><strong>Author</strong>: Type the name of the person who created
+      the document. This information is helpful to readers who locate the
+      document by using a web search tool to search on name.
+
+      <blockquote> <p><strong>Tip</strong>: If you enter the Author
+      name in KompoZer's <a
+      href="preferences.html#preferences_new_page_settings">preferences</a>,
+      then you won't have to enter it each time you create a new
+      page.</p> </blockquote> </li>
+
+      <li><strong>Description</strong>: Enter a brief description of the
+      document's contents.</li>
+      </ul>
+  </li>
+</ol>
+
+<p class="returnToSection">[ <a href="#setting_page_properties">Return
+to beginning of section</a> ]</p>
+
+<h3 id="setting_page_colors_and_backgrounds">Setting Page Colors and
+Backgrounds</h3>
+
+<p>You can change the background color or specify a background image
+for the page you're currently working on. These choices affect the way
+text and links in your page appear to people viewing the page through
+a browser.</p>
+
+<p>To set the colors and background for the current page, begin from
+the KompoZer window:</p>
+
+<ol>
+  <li>Open the Format menu and choose Page Colors and
+  Background.</li>
+
+  <li>Edit any of the following properties:</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>Reader's default
+      colors</strong>: Select this if you want your page to use the color
+      settings from the viewer's browser for text and links.</li>
+
+      <li><strong>Use custom colors</strong>: Select this if you want to
+      specify the colors of text and links. For each element, select a color
+      from the drop-down list. Sample output for each type of link appears
+      in the pane on the right.</li>
+
+      <li><strong>Background image</strong>: Select this if you want the
+      background of your page to be an image. Type the name of the image
+      file or click Choose File to locate the image file on your hard drive
+      or network.
+
+      <p><strong>Note</strong>: Background images are tiled and override
+      background color selections.</p> </li>
+
+      <li><strong>URL is relative to page location</strong>: If checked,
+      KompoZer converts the URL to be relative to the page's
+      location. This is especially useful if you plan to publish your pages
+      on a web server so that others can view them.
+
+      <p>Using relative URLs allows you to keep all your linked files in the
+      same place relative to each other, regardless of their location on
+      your hard disk or a web server.</p>
+
+      <p>Deselecting this option causes KompoZer to convert the URL
+      to a full (absolute) URL. You typically use absolute URLs when linking
+      to images on other web servers (not stored locally on your hard
+      disk).</p>
+
+      <p>If you have unsaved changes, you must first save the page in order
+      to enable this checkbox.</p>
+      </li>
+      </ul>
+  </li>
+</ol>
+
+<p><strong>Note</strong>: To apply additional attributes or JavaScript
+events, click Advanced Edit to display the <a
+href="#using_the_advanced_property_editor">Advanced Property
+Editor</a>.</p>
+
+<p>You can also set the <a
+href="preferences.html#preferences_new_page_settings">default page background
+and colors</a> for every new page you create in KompoZer.</p>
+
+<p class="returnToSection">[ <a href="#setting_page_properties">Return
+to beginning of section</a> ]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="links.html">Next</a>] [<a href="templates.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

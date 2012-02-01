@@ -1,0 +1,1014 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="author" content="TeliuTe" /> 
+<meta content="Kompozer Documents" name="description" /> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright" /> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords" />
+<title>KompoZer|Creating Web Pages with KompoZer</title>
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css"/>
+<link rel="Shortcut  Icon" href="skin/qcqy.ico" />
+</head>
+
+<body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table width="100%" id="navTable">
+<tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top:10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="center"/></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</table>
+
+<div id="contentsBox">In this section:
+ <a href="#publishing_a_document">Publishing a Document</a>
+ <a href="#publishing_settings">Publishing Settings</a>
+ <a href="#solving_common_publishing_problems">Solving Common Publishing Problems</a>
+</div>
+
+<h1 id="publishing_web_pages_with_nvu">Publishing Web Pages with KompoZer</h1>
+
+<p>If your pages exist only on your local hard disk, you can privately
+view your HTML pages. KompoZer lets you publish
+your pages to a remote computer called a web server.</p>
+
+<p>When you publish your pages to a web server, KompoZer
+copies (uploads) your pages to a computer that lets others browse your
+pages. Most ISPs provide space on their web servers for web page
+publishing. To find a web server where you can publish your pages, ask
+your ISP, help desk, or system administrator.</p>
+
+<h2 id="publishing_a_document">Publishing a Document</h2>
+
+<p>To publish a document:</p>
+
+<ol>
+  <li>Open the HTML document that you want to publish, or create a new
+  KompoZer document.</li>
+
+  <li>When you're ready to publish the document remotely, click the
+  Publish button <img src="images/publish.png" alt="" />. 
+
+  <p>If you have published this document before, KompoZer
+  remembers the document's publishing settings and starts publishing the
+  document. While publishing is in progress, KompoZer displays a
+  publishing status dialog box.</p>
+
+  <ul>
+    <li>If you have never published this document before,
+    KompoZer displays the Settings tab
+    in the Publish Page dialog box so you can enter
+    information about the document's remote
+    publishing location. See <a
+    href="#publish_page_settings">Publish Page - Settings</a> for more
+    information. When you're done entering information, click
+    Publish.</li>
+
+    <li>If you have never saved the document, KompoZer
+    displays the Publish tab in the Publish
+    Page dialog box, so you can enter the document's
+    filename. See
+    <a href="#publish_page_publish">Publish Page - Publish</a>
+    for more information.
+    After entering the filename, click Publish.</li>
+  </ul>
+  </li>
+  
+  <li>To browse your published page, click the Browse button. Test the
+  page's links and make
+  sure there are no missing images.</li>
+
+  <li>Continue editing the page as necessary. When you're ready to
+  update the remote page
+  with your changes, click the Publish button.</li>
+</ol>
+
+<p>When you publish a document for the first time, KompoZer
+changes the document's <tt>file:///</tt> URL to an <tt>http://</tt>
+URL to indicate that you are now editing the published document. If
+you want to save the document locally (on your computer's hard disk),
+click the Save button. You'll be prompted to choose a filename and
+location on your hard disk for the document.</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="avoiding_broken_links_or_images">Tips for Avoiding Broken
+Links or Missing Images</h3>
+
+<ul>
+  <li>Make sure your KompoZer filenames end with the .html
+  or .htm file extension. Make sure your image filenames end with the
+  .JPG, .GIF, or .PNG file extension. Don't use spaces or other special
+  symbols in your filenames. Keep your filenames short and only use
+  lowercase or uppercase letters and numbers.</li>
+
+  <li>If your images appear as broken links when you browse a document
+  on the web server, you may have forgotten to include the images when
+  you published. Open the File menu, and choose Publish As to display
+  the Publish Page dialog box. In the Publish tab, make sure you check
+  "Include images and other files" and then click Publish.</li>
+</ul>
+
+<p>For more troubleshooting tips, see
+<a href="#solving_common_publishing_problems">Solving Common
+Publishing Problems</a>.</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="updating_a_published_document">Updating a Published
+Document</h3>
+
+<p>To update a published document:</p>
+
+<ol>
+  <li>In a KompoZer window, open the File menu, and choose
+  Recent Pages, then select the
+  document from the list. <p>Alternatively, browse to the location
+  of the document you
+  want to update by entering the document's HTTP address (the
+  document's web address)
+  in the Navigator browser's Location field.</p></li>
+  
+  <li>Open the File menu, and choose Edit Page.</li>
+
+  <li>Edit the document as necessary.</li>
+
+  <li>When you're ready to update the remote page with your changes,
+  click Publish in KompoZer's toolbar.</li>
+</ol>
+
+<p id="deleting_a_published_page_or_image"><strong>Tip</strong>: To
+delete a page or image you've published on a web server, you must use
+an FTP (File Transfer Protocol) program. You also must use an FTP
+program if you want to create subdirectories or to rename files on the
+web server. Ask your service provider if they recommend a particular
+FTP program. You can usually find information on FTP programs in the
+Help or Support sections of your service provider's web site. FTP
+programs are also available from shareware sites such as ZDNet
+Downloads.</p>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="changing_the_filename_or_publishing_location">Changing the
+Filename or Publishing Location</h3>
+
+<p>To change a document's filename or publishing location:</p>
+
+<ol>
+  <li>In a KompoZer window, open the File menu, and choose
+  Recent Pages, then select the
+  document from the list. <p>Alternatively, browse to the location
+  of the document you
+  want to update by entering the document's HTTP address (the
+  document's web address)
+  in the Navigator browser's Location field.</p></li>
+  
+  <li>Open the File menu, and choose Edit Page.</li>
+  
+  <li>Edit the document as necessary.</li>
+
+  <li>Open KompoZer's File menu and choose Publish
+  As. KompoZer displays the Publish tab
+  in the Publish Page dialog box.</li>
+
+  <li>Enter a different page title, if necessary.</li>
+
+  <li>Enter a different filename for the page, if necessary.</li>
+
+  <li>From the Site Name list, choose the publishing location you want
+  to use. To set up a new
+  publishing location, click New Site. See
+  <a href="#publish_page_settings">Publish Page - Settings</a>
+  for more information.</li>
+
+  <li>Click Publish to save the document to the new location.</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="creating_a_new_publishing_site">Creating a New Publishing
+Site</h3>
+
+<p>If you plan to publish documents to more than one remote location,
+you can set up KompoZer to save the publishing information for
+each remote site you use, so that you don't have to enter it each time
+you want to publish.</p>
+
+<p>To create a new publishing site, begin from a KompoZer
+window:</p>
+
+<ol>
+  <li>Open the Edit menu and choose Publishing Site Settings.
+  KompoZer displays the Publish Settings dialog box.</li>
+
+  <li>Click New Site.</li>
+
+  <li>For "Site Name," enter the nickname by which you want to refer to
+  this publishing site.
+
+  <p>For example, if you will use the new site to publish documents
+  related to the "Meteor" project, you might want to use the site name
+  "Meteor". Site names remind you about the types of documents you
+  publish at each site.</p> </li>
+
+  <li>For "Publishing address," enter the complete URL provided to you
+  by your ISP, system administrator, or web hosting service. This URL
+  must begin with either <tt>ftp://</tt> or <tt>http://</tt>.
+
+  <p>The publishing address specifies the location where documents are
+  published (uploaded) at this site. If you are not sure what to enter,
+  ask your ISP or system administrator.</p> </li>
+
+  <li>For "HTTP address of your home page," enter the complete URL that
+  you would enter in the Navigator browser to view pages at this
+  site. Do not include a filename or subdirectory as part of the URL.
+
+
+  <p>This URL must always begin with <tt>http://</tt>. In some cases,
+  this URL is the same as the publishing address. If you are not sure
+  what to enter, ask your ISP or system administrator, or else leave it
+  blank.</p> </li>
+
+  <li>For user name, enter the user name you use to log in to your ISP
+  or web hosting service.</li>
+
+  <li>For password, enter the password for your user name.</li>
+
+  <li>Select "Save Password" to save your password securely using
+  Password Manager so that you don't have to enter it each time you
+  publish pages at this site.</li>
+
+  <li>Click OK.</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="changing_the_default_publishing_site">Changing the Default
+Publishing Site</h3>
+
+<p>If you have set up more than one publishing site, but you typically
+use only one site for most of your publishing needs, you can designate
+the site you use most often as the default publishing
+site. KompoZer will use the default publishing site for all
+documents that you publish, unless you specifically choose an
+alternate site.</p>
+
+<p>Regardless of how many sites you've set up, you can always publish
+a document to a different site by choosing Publish As from
+KompoZer's File menu. See <a
+href="#changing_the_filename_or_publishing_location">Changing the
+Filename or Publishing Location</a> for more information.</p>
+
+<p>To choose the default publishing site, begin from a
+KompoZer window:</p>
+
+<ol>
+  <li>Open the Edit menu, and choose Publishing Site Settings.
+  KompoZer displays the Publish Settings dialog box.</li>
+
+  <li>Select a publishing site from the list.
+
+  <p>If you only have one publishing site set up, KompoZer uses
+  that one as the default site.</p> </li>
+
+  <li>Click Set as Default.</li>
+
+<li>Click OK to confirm your changes.</li> </ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h3 id="deleting_a_publishing_site">Deleting a Publishing Site</h3>
+
+<p>Deleting a publishing site removes the site's settings from
+KompoZer. If you later wish to publish to the site, you must
+re-enter the site's settings.</p>
+
+<p>To delete a publishing site's settings, begin from a
+KompoZer window:</p>
+
+<ol>
+  <li>Open the Edit menu, and choose Publishing Site
+  Settings. KompoZer displays the Publish
+  Settings dialog box.</li>
+  
+  <li>Select a publishing site from the list.</li>
+  
+  <li>Click Remove Site.
+  <p>KompoZer only removes the site's settings; the remote
+  site itself is not
+  affected.</p></li>
+
+  <li>Click OK to confirm your changes.</li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#publishing_a_document">Return to beginning of
+section</a> ]</p>
+
+<h2 id="publishing_settings">Publishing Settings</h2>
+
+<p>This section describes KompoZer's publishing settings. For
+information on KompoZer's general and new page settings, see
+<a href="composer_help.html#composer_preferences">KompoZer Preferences</a>.</p>
+
+<h3 id="publish_page_publish">Publish Page - Publish</h3>
+
+<p>The Publish Page - Publish tab lets you specify where you want to
+publish a document. These settings apply to the current document.</p>
+
+<p>If you are not already viewing the Publish Page - Publish tab,
+follow these steps:</p>
+
+<ol>
+  <li>Open the File menu and choose Publish As. The Publish Page
+  dialog box appears.</li>
+
+  <li>Click the Publish tab.</li>
+</ol>
+
+<ul> <li><strong>Site Name:</strong> Lists all the publishing sites
+you've created, so you can choose the site that you want to publish
+to. To create a new site, click New Site.</li>
+
+<li><strong>Page Title:</strong> Specifies the document's page title
+as it appears in the browser window's title bar when you view the page
+in the browser. The document's page title also appears in your list of
+bookmarks if you bookmark the page.</li>
+
+<li><strong>Filename:</strong> Specifies the document's filename. Make
+sure you include the .html or .htm extension in the filename.</li>
+
+<li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p><strong>Warning</strong>: If a file on
+    the remote site you're publishing to has the same filename as one
+    you're uploading, the newly uploaded file will replace the existing
+one. You will not be asked to confirm the action.</p> </li>
+
+<li><strong>Site subdirectory for this page:</strong> If you leave
+this blank, KompoZer publishes the page to the main (root)
+publishing directory at this site. If you want to publish the page to
+a remote subdirectory that resides underneath the main publishing
+directory at this site, enter the name of the subdirectory or choose
+it from the list. KompoZer keeps track of the locations you
+type here, so you can select from a list of remote locations you've
+previously used. Keep in mind that subdirectory names are
+case-sensitive.</li>
+
+<li style="list-style-type: none; list-style-position: outside;
+    list-style-image: none;"> <p><strong>Note:</strong> The site
+    subdirectory you choose must already exist at the remote server.</p>
+</li>
+
+<li><strong>Include images and other files</strong>: If checked,
+KompoZer publishes any images and other files referenced by
+this page. You can choose to publish these files to the same location
+as the page, or else you can choose to publish these files into a
+remote subdirectory that exists underneath the main publishing
+directory.</li>
+</ul>
+
+<p><strong>Tip</strong>: To create remote subdirectories or delete
+published pages or images, you must use an FTP (File Transfer
+Protocol) program. Ask your service provider if they recommend a
+particular FTP program. You can usually find information on FTP
+programs in the Help or Support sections of your service provider's
+web site. FTP programs are also available from shareware sites such as
+ZDNet Downloads.</p>
+
+<p class="publishing_settings">[ <a
+href="#">Return to beginning of
+section</a> ]</p>
+
+<h3 id="publish_page_settings">Publish Page - Settings</h3>
+
+<p>The Publish Page - Settings tab lets you specify your login
+information for the remote
+publishing site, as well as the publishing settings for the remote
+site. These settings
+apply to the current document and any other files you publish to
+this location.</p>
+
+<p>If you are not already viewing the Publish Page - Settings tab,
+follow these steps:</p>
+
+<ol>
+  <li>Open the File menu and choose Publish As. The Publish Page
+  dialog box appears.</li>
+
+  <li>Click the Settings tab.</li>
+</ol>
+
+<ul>
+  <li><strong>Site Name</strong>: Specifies the nickname you want to
+  use for this publishing site.
+  Enter a short name that will help you identify this publishing
+  site.</li>
+
+  <li id="host_name_for_publishingSDX"><strong>Publishing
+  address</strong>: Specifies the complete
+  URL provided to you by your ISP or system administrator. This URL
+  should begin with
+  either <tt>ftp://</tt> or <tt>http://</tt>. This name is often
+  referred to as the "host name" or the "host server name".</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;">
+    <p>The publishing address specifies the location where documents
+    are published (uploaded)
+    at this site. If you are not sure what to enter, ask your
+    ISP or system administrator.
+  </p></li>
+
+  <li><strong>HTTP address of your home page</strong>: Specifies the
+  complete address of your publishing
+  home directory. This is the web address of the home page at your
+  web site. Do not include
+  a filename or subdirectory as part of the URL.</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;">
+    <p>This URL must always begin with <tt>http://</tt>. In some
+    cases, this URL is the same
+    as the publishing address. If you are not sure what to
+    enter, ask your ISP or system
+  administrator, or else leave it blank.</p></li>
+
+  <li><strong>User name</strong>: Specifies the user name you use to
+  log into your ISP or network.</li>
+
+  <li><strong>Password</strong>: Specifies the password for your user
+  name.</li>
+
+  <li><strong>Save Password</strong>: Select this to encrypt and save
+  your password securely
+  using Password Manager so that you don't have to enter it each
+  time you publish pages at
+  this site.</li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#publishing_settings">Return to beginning of
+section</a> ]</p>
+
+<h3 id="publish_settings">Publish Settings</h3>
+
+<p>The Publish Settings dialog box lets you create, edit, and delete
+publishing site settings, and also lets you set the default publishing
+site.</p>
+
+<p>If you are not already viewing the Publish Settings dialog box,
+follow these steps:</p>
+
+<ol>
+  <li>Open the Edit menu and choose Publishing Site Settings.
+  KompoZer displays the Publish Settings dialog box.</li>
+</ol>
+
+<ul>
+  <li><strong>New Site</strong>: Lets you specify settings for a
+  new publishing site. KompoZer adds the name of the new
+  publishing site to the list of available publishing sites.</li>
+
+  <li><strong>Set as Default</strong>: Sets the selected publishing site
+  as the default publishing site. Typically, the default publishing site
+  is the remote location that you most often use for publishing
+  documents. All documents you create or edit will be published to the
+  default publishing site, unless you specifically choose an alternate
+  site in the Publish Page dialog box.</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>To publish a document to a different
+      remote location, open the File menu and choose Publish As to choose a
+      different publishing destination.</p>
+  </li>
+
+  <li><strong>Remove Site</strong>: Removes the selected site and its
+  settings from KompoZer.</li>
+
+  <li><strong>Site Name</strong>: Specifies the name by which you want
+  to refer to this publishing site.</li>
+
+  <li><strong>Publishing address</strong>: Specifies the complete URL
+  provided to you by your ISP or system administrator. This URL should
+  begin with either <tt>ftp://</tt> or <tt>http://</tt>.</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>The publishing address specifies the
+      location where documents are published (uploaded) at this site. If you
+      are not sure what to enter, ask your ISP or system administrator.</p>
+  </li>
+
+  <li><strong>HTTP address of your homepage</strong>: Specifies the HTTP
+  address of your publishing home directory. Do not include a filename
+  or subdirectory as part of the URL.</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <p>This URL must always begin with
+      <tt>http://</tt>. In some cases, this URL is the same as the
+      publishing address. If you are not sure what to enter, ask your ISP or
+  system administrator, or else leave it blank.</p> </li>
+
+  <li><strong>User name</strong>: Specifies the user name you use to log
+  in to your ISP or network.</li>
+
+  <li><strong>Password</strong>: Specifies the password for your user
+  name.</li>
+
+  <li><strong>Save Password</strong>: Select this to save your password
+  securely using Password Manager so you don't have to enter it each
+  time you publish pages at this site.</li>
+</ul>
+
+<p>[ <a href="#publishing_settings">Return to beginning of section</a> ]</p>
+
+
+<h2 id="solving_common_publishing_problems">Solving Common Publishing
+Problems</h2>
+
+<p>If any of your files fails to publish, the Publishing Status
+dialog box displays an error message that can help you determine what
+went wrong and how to fix it. Click the Troubleshooting button in the
+Publishing Status dialog box to get help on solving your publishing
+problem.</p>
+
+<p>If you are still unable to publish a file, save the file to your
+hard disk by opening KompoZer's File menu, and choosing
+Save. You can then open the file at a later time to try to publish
+it. To quickly locate the file later, open KompoZer's File
+menu, and choose Recent Pages.</p>
+
+<h3 id="verifying_your_publishing_settings">Verifying Your Publishing
+Settings</h3>
+
+<p>To verify your publishing settings:</p>
+
+<ol>
+  <li>Close the Publishing Status dialog box, if it is open.</li>
+
+  <li>Open the Edit menu and choose Publishing Site Settings.</li>
+
+  <li>In the Publish Settings dialog box, confirm that the site settings
+  are correct for the site you are trying to publish to. If you're not
+  sure, check with your ISP or web hosting service.</li>
+
+  <li style="list-style-type: none; list-style-position: outside;
+      list-style-image: none;"> <ul> <li><strong>Verify that you correctly
+      entered the publishing settings.</strong> You may have accidentally
+      mistyped one of the settings.</li>
+
+      <li><strong>Verify that you entered the correct publishing
+      address.</strong> Web hosting services or ISPs may refer to the
+      publishing address as the "server name", the "hostname", or the
+      "server/host". They often specify the publishing location as
+      <tt>ftp.myisp.com/username</tt>, where <tt>username</tt> is your user
+      name.
+
+      <p>For the publishing address to be correct, you must precede the
+      publishing location with either <tt>ftp://</tt> or
+      <tt>http://</tt>. For example, the correct publishing address for the
+      above-mentioned site would be
+      <tt>ftp://ftp.myisp.com/username</tt>.</p> </li>
+      </ul>
+  </li>
+</ol>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">Return to beginning of
+section</a> ]</p>
+
+<h3 id="checking_your_filenames">Checking Your Filenames</h3>
+
+<p>Examine the names of any files that failed to publish. Make sure
+that the filenames:</p>
+
+<ul>
+  <li>Use only numbers or lowercase or uppercase letters. While
+  it's acceptable to create filenames that use uppercase letters, you
+  can avoid potential errors in later locating the published file if you
+  only use lowercase letters in your filenames.
+
+  <p>When you publish files to a web server, filenames become
+  case-sensitive on the web server. It may be harder for you to remember
+  files names that use only uppercase letters or that use a mix of
+  uppercase and lowercase letters.</p>
+
+  <p>For example, when you try to locate a published file by typing the
+  filename's web address into Navigator's Location field, you must enter
+  the filename exactly as you created it, using the same combination of
+  uppercase and lowercase letters.</p> </li>
+
+  <li>Don't use punctuation characters or spaces. Underscores ( _ ) or
+  hyphens ( - ) are OK.</li>
+
+  <li>End with .html or .htm (for KompoZer filenames).</li>
+
+  <li>Use less than 32 characters.</li>
+</ul>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">Return to beginning of
+section</a> ]</p>
+
+<h3 id="fixing_publishing_errors">Fixing Publishing Errors</h3>
+
+<p>If one or more of your files fails to publish, look at the messages
+KompoZer displays in the Publishing Status area of the
+Publishing dialog box. You can use these error messages to help
+determine what went wrong and what to do to fix the problem.</p>
+
+<div class="errorMessage"> <p id="file_not_found"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt><var>Filename</var> not found</tt>
+  <p>or</p>
+<tt><var>X</var> of <var>Y</var> files failed to publish</tt> </div>
+
+<p><strong>Error Description:</strong> One or more image files or CSS
+files failed to
+publish because KompoZer could not find them. Some typical
+reasons might be:</p>
+
+<ul>
+  <li>The file location you typed is incorrect.</li>
+  
+  <li>The file's location on the web is not accessible.</li>
+
+  <li>The file's location was changed or the file was deleted or moved
+  to another
+  location.</li>
+</ul>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Look for broken images in the page you are trying to
+  publish. Broken images will
+  appear with this icon <img src="images/broken.gif" alt="" />
+  in the page. To correct the image's address, double-click the
+  broken image to
+  display the Image Properties dialog box so you can enter the
+  correct address.</li>
+
+  <li>Remove the broken image from the page by selecting it (click
+  once on the image),
+  and then pressing Backspace or Delete on your keyboard.</li>
+
+  <li>If the image is unavailable because the server where the image
+  resides is
+  inaccessible, try publishing the page at a later time.</li>
+
+  <li>If the missing file is a CSS file, you must first verify the
+  correct location of
+  the CSS file. To fix the file's address in KompoZer, click
+  the HTML Source tab and
+  edit the file's location in the HTML source code. You should
+  only edit the HTML source
+  if you are familiar with HTML tags.</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="subdir_not_found"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt>The subdirectory <var>directory name</var> doesn't exist on this
+  site or the filename
+  <var>filename</var> is already in use by another subdirectory</tt>
+  <p>or</p>
+  <tt>The filename <var>filename</var> is already in use by another
+subdirectory</tt> </div>
+
+<p><strong>Error Description:</strong> You specified the name of a
+remote subdirectory that
+does not exist at the publishing site. KompoZer can only
+publish to a remote subdirectory
+that already exists at the publishing location. Or, you specified a
+filename that is
+identical to the name of an existing subdirectory at the publishing
+site.</p>
+
+<p>For example, in the Publish Page dialog box, under the Publish
+tab:</p>
+
+<ul>
+  <li>for "Site subdirectory for this page", you may have typed the
+  name of a subdirectory
+  that does not exist at the publishing location.</li>
+
+  <li>you checked "Include images and other files," and then you typed
+  the name of a
+  subdirectory that does not exist at the publishing location.</li>
+
+  <li>one of the files you are attempting to publish has the same name
+  as a subdirectory at
+  the publishing site.</li>
+</ul>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Use a separate FTP program if you want to create, rename, or
+  delete subdirectories at
+  the publishing site. Ask your service provider if they recommend a
+  particular FTP
+  program. You can usually find information on FTP programs in
+  the Help or Support
+  sections of your service provider's web site. FTP programs are
+  also available from
+  shareware sites such as ZDNet Downloads.</li>
+
+  <li>Don't use subdirectory names that end with ".html" or
+  ".htm". Only your KompoZer
+  filenames should end with ".html" or ".htm".</li>
+
+  <li>Subdirectory names are case-sensitive, so be sure to enter a
+  subdirectory name exactly as it appears at the publishing location.</li>
+</ul>
+</div>
+
+<div class="errorMessage"> <p id="server_not_found"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt>The server is not available. Check your connection and try again
+later.</tt> </div>
+
+<p><strong>Error Description:</strong> This error can have many
+causes. For example:</p>
+
+<ul>
+  <li>Your publishing site settings may not be correct.</li>
+
+  <li>Your Internet connection may have been lost.</li>
+
+  <li>Your modem or other equipment that you use to connect to the
+  Internet might not be
+  functioning correctly.</li>
+
+  <li>The web server that you are trying to publish to might be
+  unavailable due to a
+  technical problem or to an unknown circumstance.</li>
+
+  <li>Your ISP or web hosting service may be experiencing technical
+  problems.</li>
+</ul>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Verify that your publishing settings are correct and that you
+  entered them correctly.
+  See <a href="#verifying_your_publishing_settings">Verifying Your
+  Publishing Settings</a>
+  for more information.</li>
+
+  <li>Make sure your Internet connection is working by attempting to
+  view a web page using
+  the Navigator browser. For example, confirm that you can
+  successfully view the page
+  <tt>http://www.mozilla.org</tt>.</li>
+
+  <li>If your Internet connection is not working, verify that all
+  hardware, telephone
+  connections, modems, and network connections are functioning
+  properly.</li>
+
+  <li>Use the Navigator browser to try to view a page at the web site
+  you are attempting
+  to publish to. If you can successfully view other web sites but
+  cannot view a page at
+  the publishing site, your ISP or web hosting service may be
+  experiencing technical
+  problems.</li>
+
+  <li>Try publishing again later. Your ISP, web hosting service, or the
+  web server may be
+  experiencing temporary technical difficulties.</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="no_permission"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt>You do not have permission to publish to this location.</tt>
+</div>
+
+<p><strong>Error Description:</strong> You are attempting to publish
+to a location that
+you are not authorized to use. You can only publish to sites where
+you have been granted
+access by your ISP or web hosting service.</p>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Verify that you entered the correct user name and password in
+  the Publishing Site
+  Settings dialog box, or in the Publish tab of the Publish dialog
+  box.</li>
+
+  <li>Contact your ISP to find out where you can publish your pages at
+  their site.</li>
+
+  <li>Find a web hosting service that you can use to publish your
+  pages. In the Navigator
+  browser, search for "web hosting".</li>
+
+  <li>Use KompoZer My Webpage
+  <a href="http://mywebpage.netscape.com/"
+  target="_blank"><tt>http://mywebpage.netscape.com/</tt></a>
+  to host your web pages, up to 20 megabytes for free.</li>
+</ul>
+</div>
+
+<div class="errorMessage"> <p id="offline_error"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt>You are currently offline. Click the icon near the lower-right
+  corner of any
+window to go online.</tt> </div>
+
+<p><strong>Error Description:</strong> You are attempting to publish,
+but your KompoZer
+Internet connection is currently in the "offline" state. Your
+Internet connection must
+be in the "online" state (connected to the Internet) in order to
+publish your pages.</p>
+
+<p>Verify that your Internet connection is currently offline by
+looking at the online/offline
+icon in the lower right corner of any KompoZer window. If
+you are currently offline, the
+icon appears as <img src="images/offline.gif"
+alt="" />.</p>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Click the online/offline icon to go online. In the online state,
+  the icon should look
+  like this: <img src="images/online.gif"
+  alt="" />.</li>
+
+  <li>Make sure your Internet connection is working by attempting to
+  view a web page using
+  the Navigator browser. For example, confirm that you can
+  successfully view the page
+  <tt>http://www.mozilla.org</tt>.</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="no_disk_space"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+  <tt>There is not enough disk space available to save the file
+<var>filename</var>.</tt> </div>
+
+<p><strong>Error Description:</strong> The remote web server's hard
+disk is full, or you
+may have exceeded the amount of disk space allocated to you by your
+ISP or web hosting
+service.</p>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Use a separate FTP program to delete unnecessary files at your
+  publishing site. Ask
+  your service provider if they recommend a particular FTP
+  program. You can usually find
+  information on FTP programs in the Help or Support sections of
+  your service provider's
+  web site. FTP programs are also available from shareware sites
+  such as ZDNet
+  Downloads.</li>
+
+  <li>Find out from your ISP or web hosting service about increasing
+  your disk space
+  allocation, or switch to a different service that can satisfy your
+  needs.</li>
+
+  <li>If the web server is located at your company or school, contact
+  the network
+  administrator to find out if you can publish to a different
+  location that has more disk
+  space, or if you can request that additional disk space be
+  allocated to your current
+  publishing location.</li>
+</ul> </div>
+
+<div class="errorMessage"> <p id="name_too_long"><strong>Error
+Message:</strong></p>
+
+<div class="errorBox">
+<tt>The filename or subdirectory name is too long.</tt> </div>
+
+<p><strong>Error Description:</strong> The number of characters in the
+filename or the
+subdirectory name is not supported by the web server computer that
+you are trying to
+publish to.</p>
+
+<p><strong>Possible Solutions:</strong></p>
+
+<ul>
+  <li>Limit the length of your filenames and subdirectory names to
+  less than 32 characters.
+  Some operating systems do not support names longer than 32
+  characters.</li>
+</ul> </div>
+
+<p class="returnToSection">[ <a
+href="#solving_common_publishing_problems">Return to beginning of
+section</a> ]</p>
+
+  <p>[<a href="index.html">Home</a>] [<a href="preferences.html">Next</a>] [<a href="links.html">Previous</a>]</p>
+  
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright &copy; 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body>
+</html>

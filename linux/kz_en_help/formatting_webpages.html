@@ -1,0 +1,831 @@
+<!--
+Contributor(s):
+TeliuTe <teliute@163.com>
+-->
+ 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="Kompozer Documents" name="description"> 
+<meta content="TeliuTe,Nvu,Kompozer" name="Copyright"> 
+<meta content="kompozer,TeliuTe,tutorial,guide" name="keywords"><title>KompoZer|Creating Web Pages with KompoZer</title>
+
+<link rel="stylesheet" type="text/css" href="skin/helpFileLayout.css">
+<link rel="Shortcut  Icon" href="skin/qcqy.ico"></head><body>
+<script type="text/javascript">
+var isDisplayed = true;
+
+function togglePanel() {
+  isDisplayed = !isDisplayed;
+  var displayValue = isDisplayed ? "display: block" : "display: none";
+  var bodyValue = isDisplayed ? "margin-left: 175px" : "margin-left:5px";
+
+  document.getElementById("contentsBox").setAttribute("style", displayValue);
+  document.getElementsByTagName("body").item(0).setAttribute("style", bodyValue);
+}
+</script>
+
+<table id="navTable" width="100%">
+<tbody><tr>
+<td valign="bottom" width="20"><small><a href="#" onclick="togglePanel();" style="margin-top: 10px;">Show/Hide</a></small></td>
+<td width="72"><img src="skin/icons/throbber.png" alt="KompoZer" align="middle" height="32" width="32"></td><td align="left"><span id="topText">Help Center</span></td>
+</tr>
+</tbody></table>
+
+<div id="contentsBox">In this section:
+  <a href="composer_help.html#starting_a_new_page">Starting a New
+  Page</a>
+
+  <a href="#">Formatting
+  Your Web Pages</a>
+
+  <a href="css.html">Using Style Sheets to Style Your Web Pages</a>
+
+  <a href="tables.html">Adding Tables to Your Web Page</a>
+
+  <a href="images.html">Adding Pictures (Images) to Your Web Page</a>
+
+  <a href="toc.html">Working with Table of Contents on Your Web
+  Page</a>
+
+  <a href="templates.html">Working With Templates </a>
+
+  <a href="page_properties.html">Setting Page Properties</a>
+
+  <a href="links.html">Creating Links in KompoZer</a>
+
+  <a href="customize.html">Customizing KompoZer</a>
+
+</div>
+
+<h2 id="formatting_your_web_pages">Formatting Your Web Pages</h2>
+
+<h3 id="formatting_paragraphs_heading_and_lists">Formatting
+Paragraphs, Headings, and Lists</h3>
+
+<p>To apply a format to a paragraph, begin from the KompoZer
+window:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the format
+  to begin, or select the text you want to format.</li>
+
+  <li>Choose a paragraph format using the drop-down list in the Format
+  toolbar:</li>
+
+  <li style="list-style-type: none; list-style-position: outside; list-style-image: none;"> <ul> <li><strong>Body Text</strong>: Applies
+      the application default font and style for regular text, without
+      affecting the spacing before or after the text.</li>
+
+      <li><strong>Paragraph</strong>: Inserts a paragraph tag (use this to
+      begin a new paragraph). The paragraph includes top and bottom
+      margins.</li>
+
+      <li><strong>Heading 1</strong> - <strong>Heading 6</strong>: Formats
+      the paragraph as a heading. Heading 1 is the highest-level heading,
+      while Heading 6 is the lowest-level heading.</li>
+
+      <li><strong>Address</strong>: Can be used for a web page "signature"
+      that indicates the author of the page and the person to contact for
+      more information, for example: <tt>user@example.com</tt>
+
+      <p>You might want to include the date and a copyright notice. This
+      format usually appears at the bottom of the web page under a
+      horizontal line. Navigator displays the address format in italics.</p>
+      </li>
+
+      <li><strong>Preformat</strong>: This is useful for elements such as
+      code examples, column data, and mail messages that you want displayed
+      in a fixed-width font. In normal text, most browsers remove extra
+      spaces, tabs, and paragraph returns. However, text that uses the
+      Preformatted style is displayed with the white space intact,
+      preserving the layout of the original text.</li>
+      </ul>
+  </li>
+</ol>
+
+<p>To format text as a heading:</p>
+
+<ol>
+  <li>Click to place the insertion point anywhere within the text
+  that you want to format.</li>
+
+  <li>Using the drop-down list in the Format toolbar, choose the level
+  of heading you want, from 1 (largest) to 6 (smallest). Choose "Heading
+  1" for your main heading, "Heading 2" for the next level, and so
+  forth.</li>
+</ol>
+
+<p>To apply a list item format:</p>
+
+<ol>
+  <li>Click to place the insertion point within the line of text
+  that you want to format.</li>
+
+  <li>Open the Format menu and choose List.</li>
+
+  <li>Choose the list style:</li>
+
+  <li style="list-style-type: none; list-style-position: outside; list-style-image: none;"> <ul> <li><strong>Bulleted</strong>: Each
+      item has a bullet (dot) next to it (as in this list).</li>
+
+      <li><strong>Numbered</strong>: Items are numbered.</li>
+
+      <li><strong>Term</strong> and <strong>Definition</strong>: These two
+      styles work together, creating a glossary-style appearance. Use the
+      Term tag for the word being defined, and the Definition tag for the
+      definition. The Term text appears flush left, and the Definition text
+      appears indented.</li>
+      </ul>
+  </li>
+</ol>
+
+<p><strong>Tip</strong>: You can quickly apply a list style to a block
+of text by selecting the text
+and clicking the Numbered List
+
+<img src="images/numbers.png" alt="">
+or Bulleted List
+<img src="images/bullets.png" alt="">
+buttons on the Format toolbar.</p>
+
+<p>To change the style of bullets or numbers:</p>
+
+<ol>
+  <li>Click to place the insertion point within the text of the
+  list item you want to change, or select one or more items in the list
+  if you want to apply a new style to the entire list.</li>
+
+  <li>Open the Format menu and choose List Properties.</li>
+
+  <li>Select a bullet or number style from the drop-down list. For
+  numbered lists, you can specify a starting number. For bulleted lists,
+  you can change the bullet style.</li>
+</ol>
+
+<p><strong>Tip</strong>: You can also double-click on a bullet or
+number in a list to display the List Properties dialog box.</p>
+
+<p>To align a paragraph or text in your page, for example, centering
+or aligning to the left or right:</p>
+
+<ol>
+  <li>Click to place the insertion point within the paragraph or
+  line of text you want to align.</li>
+
+  <li>Open the Format menu and choose Align; then choose an alignment
+  option.</li>
+</ol>
+
+<p><strong>Note</strong>: You can also use the Format toolbar to align
+text.</p>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="working_with_lists">Working with Lists</h3>
+
+<p>To end a list and continue typing body text:</p>
+
+<ul>
+  <li>Click to place the insertion point at the end of the last
+  list item and press Enter (Return on Mac OS) twice to end the
+  list.</li>
+</ul>
+
+<p>To change one or more list items to body text:</p>
+
+<ol>
+  <li>Click to place the insertion point within the list item, or
+  select the list items.</li>
+
+  <li>In a numbered list, click the numbered list button (or in a
+  bulleted list, click the bulleted list button) in the Format
+  toolbar.</li>
+</ol>
+
+<p>To position indented text below a list item:</p>
+
+<ol>
+  <li>Click to place the insertion point within the list item.</li>
+
+  <li>Press Shift-Enter to create the hanging indent.</li>
+
+  <li>Type the text you want to indent.</li>
+
+  <li>Press Shift-Enter to create another indented paragraph, or press
+  Return to create the next list item.</li>
+</ol>
+
+<p id="increase_or_decrease_the_indentation_of_list_items"><strong>Tip</strong>:
+You can increase or decrease the indentation of list items by clicking
+anywhere in a list item and then clicking the Indent or Outdent button
+on the Format toolbar. Alternatively, click anywhere in a list item
+and press Tab to indent one level.  Press Shift+Tab to outdent one
+level.</p>
+
+<p>To merge two adjacent lists:</p>
+
+<ol>
+  <li>Select the two lists that you want to merge. Be sure to
+  select all of the elements in both lists. Note that any text in
+  between the two lists will also become part of the merged list.</li>
+
+  <li>Click the bulleted or numbered list button in the Format toolbar
+  to merge the lists.</li>
+</ol>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="changing_text_color_style_and_font">Changing Text Color,
+Style, and Font</h3>
+
+<p>To change the style, color, or font of selected text:</p>
+
+<ol>
+  <li>Select the text you want to format.</li>
+
+  <li>Open the Format menu and choose one of the following:</li>
+
+  <li style="list-style-type: none; list-style-position: outside; list-style-image: none;">
+    <ul>
+      <li><strong>Font</strong>: Use this to
+      choose a font. If you prefer to use fonts specified by the reader's
+      browser, select Variable Width or Fixed Width.
+
+      <p><strong>Note</strong>: Not all fonts installed on your computer
+      appear.  Instead of specifying a font that may not be available to all
+      who view your web page, it's generally best to select one of the fonts
+      provided in the menu since these fonts work on every computer. For
+      example, the fonts Helvetica, Arial, Times, and Courier generally look
+      the same when viewed on different computers. If you select a different
+      font, it may not look the same when viewed using a different
+      computer.</p> </li>
+
+      <li><strong>Size</strong>: Use this to choose a <em>relative</em> font
+      size or select an option to increase or decrease text size (relative
+      to the surrounding text).</li>
+
+      <li><strong>Text Style</strong>: Use this to select a style, such as
+      italic, bold, or underline, or to apply a structured style, for
+      example, Code.</li>
+
+      <li><strong>Text Color</strong>: Use this to choose a color from
+      the color picker. If you are familiar with HTML hexadecimal
+      color codes, you can type a specific code or you can just type a
+      color name (for example, "blue"). You'll find a handy color code
+      converter <a href="http://builder.com.com/1200-31-5087779.html" target="_blank">here</a>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>To change the background color of the page:</p>
+
+<ol>
+  <li>Click anywhere in the page.</li>
+
+  <li>Click the background color block in the Format toolbar.</li>
+
+  <li>Choose a background color from the Block Background Color dialog
+  box.</li>
+
+  <li>Click OK.</li>
+</ol>
+
+<p><strong>Tip</strong>: To quickly change the color of text to the
+color last used, select the text, then press Shift and click on the
+text color block in the Format toolbar. This is useful when you want
+to use one color for separate lines of text.</p>
+
+<p>You can also use an image as a background. See <a href="#setting_page_colors_and_backgrounds">Setting Page Colors and
+Backgrounds</a>.</p>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="removing_or_discontinuing_text_styles">Removing or
+Discontinuing Text Styles</h3>
+
+<p>To remove all text styles (bold, italic, and so on) from selected
+text:</p>
+
+<ol>
+  <li>Select the text.</li>
+
+  <li>Open the Format menu and choose Remove All Text Styles.</li>
+
+  <li>Continue typing.</li>
+</ol>
+
+<p>To continue typing text with all text styles removed:</p>
+
+<ol>
+  <li>Place the insertion point where you want to discontinue the
+  text styles.</li>
+
+  <li>Open the Format menu and choose Discontinue Text Styles.</li>
+
+  <li>Continue typing.</li>
+</ol>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="finding_and_replacing_text">Finding and Replacing Text</h3>
+
+<p>To find text in the page you're currently working on:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want to begin your
+  search.</li>
+
+  <li>Open the Edit menu and choose Find and Replace. You see the Find
+  and Replace dialog
+  box.</li>
+
+  <li>Type the text you want to locate in the "Find what" field. To
+  narrow the search, check one or more of the following options:
+
+  <ul>
+    <li><strong>Match upper/lower case</strong>: Use this to specify
+    whether the search is for
+    case-sensitive text.</li>
+
+    <li><strong>Wrap around</strong>: Use this to search to the end
+    of the page and then start
+    again from the top or bottom, depending on whether you are
+    searching forward or
+    backwards.</li>
+
+    <li><strong>Search backwards</strong>: Use this to search back
+    from the insertion point to the beginning of the page.</li>
+
+  </ul>
+  </li>
+  <li>Click Find Next to begin searching. When KompoZer
+  locates the first occurrence of the
+  text, click Find Next to search for the next occurrence.</li>
+  <li>Click Close when you are done.</li>
+</ol>
+
+<p>To find and replace text in the page you're currently working
+on:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want to begin your
+  search.</li>
+
+  <li>Open the Edit menu and choose Find and Replace. You see the Find
+  and Replace dialog box.</li>
+
+  <li>Type the text you want to find and then type the replacement
+  text.</li>
+
+  <li>To narrow the search, check one or more of the following
+  options:
+
+  <ul>
+    <li><strong>Match upper/lower case</strong>: Use this to specify
+    whether the search is for case-sensitive text. If you don't select
+    this option, the search will find matching text in both upper and
+    lower case.</li>
+
+    <li><strong>Wrap around</strong>: Use this to search to the end of
+    the page and then start again from the top.</li>
+
+    <li><strong>Search backwards</strong>: Use this to search from the
+    end to the beginning of the page.</li>
+
+  </ul>
+  </li>
+
+  <li>Click Find Next to search for the next
+  occurrence. KompoZer selects the next occurrence of the
+  text.</li>
+
+  <li>Click Replace to replace the selected text with the replacement
+  text. Click Replace and Find to replace the selected text and find
+  the next occurrence. Click Replace All to replace every occurrence
+  in the document with the replacement text.</li>
+
+  <li>Click Close when you are done.</li>
+</ol>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="inserting_horizontal_lines">Inserting Horizontal Lines</h3>
+
+<p>Horizontal lines are typically used to separate different sections
+of a document visually. To insert a horizontal line (also called a
+<em>rule</em>) in your page, begin from the KompoZer
+window:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the line to
+  appear.</li>
+
+  <li>Open the Insert menu and choose Horizontal Line.</li>
+</ol>
+
+<h3 id="setting_horizontal_line_properties">Setting Horizontal Line
+Properties</h3>
+
+<p>You can customize a line's height, length, width, alignment, and
+shading.</p>
+
+<ol>
+  <li>Double-click the line to display the Horizontal Line Properties
+  dialog box.</li>
+
+  <li>Edit any of these properties:
+
+  <ul>
+    <li><strong>Width</strong>: Enter the width and then choose "%
+    of window" or "pixels." If you
+    specify width as a percentage, the line's width changes
+    whenever the KompoZer
+    window's or browser window's width changes.</li>
+
+    <li><strong>Height</strong>: Type a number for the line's height
+    (in pixels).</li>
+
+    <li><strong>3-D Shading</strong>: Select this to add depth to
+    the line by adding a bevel
+    shading.</li>
+
+    <li><strong>Alignment</strong>: Specify where you want to place
+    the line (left, center, or
+    right).</li>
+  </ul>
+  </li>
+
+  <li>Click Use as Default to use these settings as the default the
+  next time you insert a horizontal line.</li>
+
+  <li>To edit the properties of a horizontal line manually, click
+  Advanced Edit. See the section, <a href="#using_the_advanced_property_editor">Advanced Property
+  Editor</a>, for details.</li>
+</ol>
+
+<p><strong>Tip:</strong> You can select "Show All Tags" from the View
+menu to show all the HTML elements in yellow boxes. Click any yellow
+box to select everything within that HTML tag or element. Double-click
+any yellow box to display the <a href="#using_the_advanced_property_editor">Advanced Property
+Editor</a> dialog box for that HTML tag or element.</p>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="inserting_special_characters">Inserting Special
+Characters</h3>
+
+<p>To insert special characters such as accent marks, copyrights, or
+currency symbols:</p>
+
+<ol>
+  <li>Click to place the insertion point where you want the special
+  character to appear.</li>
+
+  <li>Open the Insert menu and choose Characters and Symbols. You see
+  the Insert Character dialog box.</li>
+
+  <li>Select a category of characters.
+
+  <ul> <li>If you choose Accent Uppercase or Accent Lowercase, then open
+  the Letter drop-down list and select the letter you wish to apply an
+  accent to. (Note: not all letters have accented forms.) Select Common
+  Symbols to insert special characters such as copyright symbols or
+  fractions.</li>
+  </ul>
+  </li>
+
+  <li>From the Character drop-down list, select the character you want
+  to insert.</li>
+
+  <li>Click Insert.
+
+  <p>You can continue typing in your document (or in a mail compose
+  window) while you keep this dialog box open, in case you want to use
+  it again.</p> </li>
+
+  <li>Click Close when you are done inserting special characters.</li>
+</ol>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="inserting_html_elements_and_attributes">Inserting HTML
+Elements and Attributes</h3>
+
+<p>If you understand how to work with HTML source code, you can insert
+additional tags, style attributes, and JavaScript into your page. If
+you are not sure how to work with HTML source code, it's best not to
+change it. To work with HTML code, use one of these methods:</p>
+
+<ul>
+  <li>Place the insertion point where you want to insert the HTML
+  code, or select the text you want to edit, and then open the Insert
+  menu and choose HTML. In the Insert HTML dialog box, enter HTML tags
+  and text, and then click Insert.</li>
+
+  <li>Select an element such as a table, named anchor, image, link, or
+  horizontal line. Double-click the element to open the associated
+  properties dialog box for that item. Click Advanced Edit to open the
+  Advanced Property Editor. You can use the Advanced Property Editor to
+  add HTML attributes, JavaScript, and CSS to objects.</li>
+
+  <li>Open the View menu, and choose HTML Source, or click the
+  &lt;HTML&gt; Source tab in the Edit Mode toolbar at the bottom of the
+  KompoZer window. (If you don't see the Edit Mode toolbar, open
+  the View menu and choose Show/Hide; then make sure the Edit Mode
+  Toolbar is checked.)</li>
+</ul>
+
+<h3 id="using_the_advanced_property_editor">Using the Advanced
+Property Editor</h3>
+
+<p>To add HTML attributes and JavaScript to objects such as tables,
+images, and horizontal lines, you can use the Advanced Property
+Editor.</p>
+
+<p><strong>Note</strong>: Unless you clearly understand how to add,
+delete, or modify HTML attributes and their associated values, it's
+best not to do so.</p>
+
+<p>If you are not currently viewing the Advanced Property Editor
+dialog box, follow these steps:</p>
+
+<ol>
+  <li>From the View menu (or the Edit Mode toolbar), choose Show All
+  Tags.</li>
+
+  <li>Double-click the object that you want to modify to open its
+  Properties dialog box.</li>
+
+  <li>Click Advanced Edit to open the object's Advanced Property
+  Editor. The Advanced Property Editor has three tabs, each of which
+  lists the current properties for the selected object:
+
+  <ul>
+    <li><strong>HTML Attributes</strong>: Click this tab to view or
+    enter additional HTML
+    attributes.</li>
+
+    <li><strong>Inline Style</strong>: Click this tab to view or enter
+    additional CSS (cascading style sheet) properties through the
+    &lt;style&gt; attribute.  For more information on using CSS styles
+    in KompoZer, see <a href="preferences.html">KompoZer
+    Preferences</a>.</li>
+
+    <li><strong>JavaScript Events</strong>: Click this tab to view
+    or enter JavaScript events.</li>
+
+  </ul>
+  </li>
+
+  <li>To edit a property or attribute in any of the three lists,
+  select the attribute you want to edit. You can then edit the
+  attribute's name or value using the editable Attribute and Value
+  fields at the bottom of the dialog box. To add a new attribute, type
+  it in the Attribute field at the bottom of the dialog box. The new
+  attribute is automatically added when you click in the Value
+  field. To remove an attribute, select it in the list, and click
+  Remove Attribute.  <p><strong>Note</strong>: Required attributes are
+  highlighted in the Attribute list.</p></li>
+
+  <li>Click OK to apply your changes to the Advanced Property Editor
+  dialog box.</li>
+
+  <li>Click OK again to exit the Properties dialog box.</li>
+</ol>
+
+<p>KompoZer automatically places quotation marks around any
+attribute text.</p>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="validating_the_html">Validating the HTML</h3>
+
+<p>Before you put your document on a web server(i.e. publish it), it
+is good practice to first check the document's HTML formatting so as
+to make sure that it conforms to web standards. Documents containing
+validated HTML are less likely to cause problems when viewed by
+different browsers. Just visually checking your web pages in your
+favourite web browser doesn't ensure that your document will appear
+correctly when viewed in other web browsers.</p>
+
+<p>KompoZer provides a convenient way for you to check that
+your document conforms to W3C (World Wide Web Consortium) HTML
+standards. KompoZer uses the W3C HTML Validation Service,
+which checks your document's HTML syntax for compliance with HTML 4.01
+standards.  This service also provides information on how to correct
+errors.</p>
+
+<p><strong>Note</strong>: You must be connected to the Internet to use
+this feature.</p>
+
+<p>To validate your document's HTML syntax:</p>
+
+<ol>
+  <li>Open the Tools menu, and choose Validate HTML. If you have
+  unsaved changes, KompoZer asks you to save them before
+  proceeding.</li>
+
+  <li>KompoZer will open another window with results for your
+  page displayed in it after the W3C Validation Service program parses
+  your html file.</li>
+
+</ol>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="choosing_the_right_editing_mode">Choosing the Right Editing
+Mode</h3>
+
+<p>Typically, you won't need to change the editing mode from the
+default (Normal). However, if you want to work with the document's
+HTML source code, you may want to change editing modes.</p>
+
+<p>KompoZer allows you to quickly switch between four editing
+modes or views. Each editing mode allows you to continue working on
+your document, but displays varying levels of HTML tags (and tag
+icons).</p>
+
+<p>Before you choose an editing mode:</p>
+
+<ul>
+  <li>Open the View menu, choose Show/Hide, and then make sure
+  there is a checkmark next to Edit Mode Toolbar.</li>
+</ul>
+
+<p>The Edit Mode toolbar has four tabs:</p>
+
+<ul>
+  <li><strong>Normal</strong>: Choose this editing mode to see how
+  the document will look online while you are creating it. Choose this
+  mode to show table borders and named anchor icons. All other HTML tag
+  icons are hidden.</li>
+
+  <li><strong>Show All Tags</strong>: Choose this mode to show all HTML
+  tag icons.</li>
+
+  <li><strong>&lt;HTML&gt; Source</strong>: Choose this mode to view and
+  edit the document as unformatted HTML source code. When you save the
+  document, the Normal mode reappears.</li>
+
+  <li><strong>Preview</strong>: Choose this mode to display and edit the
+  document exactly as it would appear in a browser window, except that
+  links and JavaScript functions will not be active.</li>
+</ul>
+
+<p><strong>Note</strong>: JavaScript functions, frames, links, Java,
+embedded objects and animated GIF files are not active in any of the
+editing modes. To display these items in their active state, click the
+Browse button on the Composition toolbar to load the page into a
+browser window.</p>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<h3 id="using_status_bar_for_formatting_your_web_page">Using Status
+Bar for Formatting Your Web Page</h3>
+
+<p>KompoZer has an innovative feature of editing/applying
+inline styles and applying class or id tags to selected text via its
+status bar. Styling using the status bar is possible in all modes
+except <strong>&lt;HTML&gt; Source</strong> viewing mode.</p>
+
+<ul>
+  <li><strong>Select</strong> Clicking on "Select" will select the
+entire text bounded by the style tag.</li>
+  <li><strong>Remove Tag</strong> Clicking on "Remove Tag" will remove
+the style tag, and in turn all the styles for that tag will be
+removed.</li>
+
+  <li><strong>Change Tag</strong> Using this option, the user can
+change the tag used for the text with the least effort. Clicking on
+"Change Tag" makes the text for the corresponding tag to be editable
+in the status bar. Type in the desired tag and press "Enter". The
+default properties of the tag will be applied to the text in the web
+page.</li>
+
+  <li><strong>Inline Styles</strong>While in any of the Normal, HTML
+  Tags, or Preview viewing modes the tags surrounding the current
+  position of the cursor are shown in the status bar of
+  KompoZer's window. Style properties of any of the tags can
+  be changed by choosing an option from the context menu. To change
+  inline style properties:
+
+  <ol>
+    <li>Right click on the tag you wish to edit.</li>
+    <li>Click on "Inline Styles" </li>
+    <li>Select the properties section you want to edit:
+    <ul>
+      <li>Text Properties</li>
+      <li>Border Properties</li>
+      <li>Background Properties</li>
+      <li>Box Properties</li>
+      <li>Aural Properties</li>
+      <li>Extract and create Generic Style</li>
+    </ul></li>
+  </ol>
+  <p>Secting any of the options except the last one will open the
+corresponding tab section from CaScadeS CSS editor (more about
+CaScadeS in <a href="#using_style_sheets_for_your_web_pages">Using
+Style Sheets</a> section). With the corresponding section open, the
+user can define his/her own styles which will be saved according to
+W3C CSS coding style.</p>
+
+  <p>The <strong>Extract and create Generic Style</strong> option
+allows the user to extract the style information into an style rule
+and save it in the external/internal style sheet.</p></li>
+
+  <li><strong>Templates</strong> offers you two options, "Make
+  Editable" and "Remove Editable Area", which can be used while
+  working with Templates. For more information on Templates, see
+  section <a href="#working_with_templates">Working With
+  Templates</a>.</li>
+
+  <li><strong>ID</strong> shows ID tags(if available) from the current
+  style sheet applied to the document. To apply a particular tag to
+  the selected text, just click on that ID tag.</li>
+
+  <li><strong>Class</strong> shows the class tags(if available) from
+  the current style sheet applied to the document. To apply a class to
+  the selected text just click on that Class tag. </li>
+
+  <li><strong>Advanced Properties</strong> allows you to use the
+  Advanced Property editor for adding HTML attributes and Javascript
+  to objects such as tables, images, links, etc. See the section, <a href="#using_the_advanced_property_editor">Advanced Property
+  Editor</a>, for details.</li>
+
+</ul>
+
+<p class="returnToSection">[ <a href="#formatting_your_web_pages">Return to beginning of section</a>
+]</p>
+
+<p>[<a href="index.html">Home</a>] [<a href="css.html">Next</a>] [<a href="composer_help.html">Previous</a>]</p>
+
+  <div class="copyrightBox"><em>TeliuTe, 07 July 2009</em></div>
+
+  <p>Copyright © 2004-2009 Contributors to the Nvu, KompoZer
+  Help Documentation Project.</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js"></script>
+<noscript><a href="http://www.51.la/?201022"
+target="_blank"><img alt="我要啦免费统计"
+src="http://img.users.51.la/201022.asp" style="border:none" /
+width="20" height="20" /></a> </noscript></p>
+
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></td></tr>
+</tbody></table>
+</div>
+
+</body></html>
