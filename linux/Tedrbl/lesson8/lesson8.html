@@ -14,13 +14,13 @@
   <meta name="keywords" content="DRBL,无盘,教程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>DRBL 基础|Clonezilla 备份系统</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>DRBL 基础|Clonezilla 还原系统</title></head><body style="direction: ltr;">
 <p class="title">DRBL 操作指南</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">六、Clonezilla 备份系统</span>　<a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a>
-<p>　利用再生龙 Clonezilla 和 Drbl 组合起来，可以进行批量安装操作系统；</p>
-<p class="tblue">　1、设置网络复制</p>
-<p>　1）打开终端，输入命令 sudo /opt/drbl/sbin/dcs 然后按回车键，接下来是用键盘操作；</p>
+<span class="tblue">八、还原系统</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<p>　在批量安装系统时，在服务器上设置好，然后开启所有客户机；</p>
+<p class="tblue">　1、批量安装</p>
+<p>　1）在服务器上打开终端，输入命令 sudo /opt/drbl/sbin/dcs 然后按回车键，接下来是用键盘操作；</p>
 <p>　<img src="images/a1cmd.png" alt="a1cmd.png" /></p>
 <p>　</p>
 <p>　2）直接按回车键，选择第一项 All 选择所有的客户端，出来模式选择面板；</p>
@@ -32,38 +32,38 @@
 <p>　4）接下来的再龙模式中，直接按回车键选择“Beginner 初学者模式：接受默认的选择”；</p>
 <p>　<img src="images/a4begin.png" alt="a4begin.png" /></p>
 <p>　</p>
-<p>　5）接下来的备份/还原模式中，按下方向键选择第二个“save-parts 储存客户端分区为镜像文件”，一般是备份第一个分区的操作系统系统；</p>
-<p>　<img src="images/a5sp.png" alt="a5sp.png" /></p>
+<p>　5）接下来的备份/还原模式中，按下方向键选择第四个“restore-parts 还原镜像文件为客户端分区”；</p>
+<p>　<img src="images/a5rp.png" alt="a5rp.png" /><img src="images/a5sp.png" alt="a5sp.png" /></p>
 <p>　</p>
-<p>　6）接下来询问何时输入文件名，直接按回车现在就输入文件名；</p>
-<p>　<img src="images/a6now.png" alt="a6now.png" /></p>
+<p>　6）接下来询问备份完后客户机是否重启，直接按回车键选重启；</p>
+<p>　<img src="images/a6reboot.png" alt="a6reboot.png" /></p>
 <p>　</p>
-<p>　7）在出来的文件名文本框里，直接按回车键，用默认的就可以了；</p>
-<p>　<img src="images/a7filenm.png" alt="a7filenm.png" /></p>
+<p>　7）接下来出来选择镜像文件对话框，选择上次备份的文件，按回车键继续；</p>
+<p>　<img src="images/a7choice.png" alt="a7choice.png" /></p>
 <p>　</p>
-<p>　8）接下来的输入分区号文本框里，留下sda1第一分区，其他的删去；</p>
-<p>　<img src="images/a8sda1.png" alt="a8sda1.png" /></p>
+<p>　8）接下来选择分区，一般是第一个 sda1 ，按回车键继续；</p>
+<p>　<img src="images/a8part.png" alt="a8part.png" /></p>
 <p>　</p>
-<p>　9）接下来询问是否检查备份文件，可以选不检查，按下方向键然后按回车键；</p>
-<p>　<img src="images/a9chk.png" alt="a9chk.png" /></p>
+<p>　9）接下来询问群播方式，按回车键选择第一个继续；</p>
+<p>　<img src="images/a9broadcast.png" alt="a9broadcast.png" /></p>
 <p>　</p>
-<p>　10）接下来询问备份完后客户机是否重启，直接按回车键选重启；</p>
-<p>　<img src="images/b1reboot.png" alt="b1reboot.png" /></p>
+<p>　10）接下来询问客户机数量，按回车键选第一个设定数量和最大等待时间；</p>
+<p>　<img src="images/b1wait.png" alt="b1wait.png" /><img src="images/b1reboot.png" alt="b1reboot.png" /></p>
 <p>　</p>
-<p>　11）接下来询问备份文件是否分卷，直接按回车键，大于1000000MB才分卷；</p>
-<p>　<img src="images/b2size.png" alt="b2size.png" /></p>
+<p>　11）接下来设定客户机数量，根据自己的机房数量设定，按回车键继续；</p>
+<p>　<img src="images/b2num.png" alt="b2num.png" /></p>
 <p>　</p>
-<p>　12）然后提示完成，这时开启客户机就会进入备份界面；</p>
-<p>　<img src="images/b3done.png" alt="b3done.png" /></p>
+<p>　12）接下来设定等待时间，默认是300秒，在超过这个时间后会自动开始复制，按回车键继续；</p>
+<p>　<img src="images/b3time.png" alt="b3time.png" /></p>
 <p>　</p>
-<p>　13）如果又不想备份了，可以输入 sudo /opt/drbl/sbin/dcs 命令，在进入第3）步时选择选“停止再生龙”；</p>
-<p>　<img src="images/b4stop.png" alt="b4stop.png" /></p>
+<p>　13）然后出来一个小结，按提示按回车键继续；</p>
+<p>　<img src="images/b4enter.png" alt="b4enter.png" /></p>
 <p>　</p>
-<p>　14）提示清除备份操作，恢复原来的DRBL启动；</p>
-<p>　<img src="images/b5clean.png" alt="b5clean.png" /></p>
+<p>　14）然后提示完成，这时候开启客户机就会自动进入还原，注意把本机房跟外网断开，以保证还原速度；</p>
+<p>　<img src="images/b5restore.png" alt="b5restore.png" /></p>
 <p>　</p>
-<p>　<span class="tblue">本节</span>学习了的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson7/lesson7.html">下一课</a></p>
+<p>　<span class="tblue">本节</span>学习了批量还原客户机的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
