@@ -1,5 +1,5 @@
 #!/bin/bash
 cd /home/teliute/mygit/
 git add .
-git commit -a -m "`date`+$1"
+git commit -a -m "`date` $1"
 git push teliute master
