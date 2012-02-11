@@ -6,6 +6,8 @@
 
 
 
+
+
   <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
   <meta name="author" content="TeliuTe" />
   <meta name="Copyright" content="TeliuTe,基础教程网" />
@@ -13,19 +15,48 @@
   <meta name="keywords" content="DRBL,无盘,教程,TeliuTe,教学,基础,入门" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>DRBL 基础|还原系统</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>DRBL 基础|Clonezilla备份本机系统</title></head><body style="direction: ltr;">
 <p class="title">DRBL 操作指南</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">九、还原系统</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<span class="tblue">九、Clonezilla备份本机系统</span>　<a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a>
 <p>　在批量安装系统时，在服务器上设置好，然后开启所有客户机；</p>
-<p class="tblue">　1、批量安装</p>
-<p>　1）在服务器上打开终端，输入 sudo /opt/drbl/sbin/dcs 在第三步时，选择；</p>
+<p class="tblue">　1、安装 drbl 和 clonezilla</p>
+<p>　1）添加 drbl 的源，输入命令 sudo gedit /etc/apt/sources.list 输入下面的两行然后保存退出，红色改成自己的Ubuntu版本；</p>
+<p>deb http://free.nchc.org.tw/ubuntu <span style="color: red;">maverick</span> main restricted universe multiverse<br />
+deb http://free.nchc.org.tw/drbl-core drbl stable</p>
+<p>　<img src="images/a1source.png" alt="a1source.png" /></p>
+<p>　2）然后执行命令 sudo apt-get update 刷新软件源，然后输入 sudo apt-get install drbl clonezilla 安装软件；</p>
+<p>　<img src="images/a2install.png" alt="a2install.png" /></p>
 <p>　</p>
+<p>　3）输入命令 sudo /opt/drbl/sbin/clonezilla 按回车键，进入再生龙界面；</p>
+<p>　<img src="images/a3cmd.png" alt="a3cmd.png" /></p>
 <p>　</p>
-<p>　2）；</p>
+<p>　4）在出来的模式选择面板中，选择第一个“device-image 备份/还原硬盘分区镜像”，按回车键继续；</p>
+<p>　<img src="images/a4bk.png" alt="a4bk.png" /></p>
 <p>　</p>
+<p>　5）接下来是设定镜像保存的分区，选择第一个“本机上的分区”，按回车键继续；</p>
+<p>　<img src="images/a5part.png" alt="a5part.png" /></p>
 <p>　</p>
-<p>　3）；</p>
+<p>　6）出来提示，可以插入一个 U 盘或可移动磁盘作为镜像存放的位置，直接按回车键继续；</p>
+<p>　<img src="images/a6u.png" alt="a6u.png" /></p>
+<p>　</p>
+<p>　7）在接下来的选择镜像文件存放的分区，选择一个剩余空间大的分区；</p>
+<p>　<img src="images/a7spart.png" alt="a7spart.png" /></p>
+<p>　</p>
+<p>　8）接下来询问保存在哪个文件夹里，直接按回车键保存到根目录里；</p>
+<p>　<img src="images/a8dir.png" alt="a8dir.png" /></p>
+<p>　</p>
+<p>　9）接下来显示当前系统分区的挂载情况，按回车键继续；</p>
+<p>　<img src="images/a9mount.png" alt="a9mount.png" /></p>
+<p>　</p>
+<p class="tblue">　2、备份系统</p>
+<p>　1）在接下来的向导模式中，选择第一项“初学者模式”，按回车键继续；</p>
+<p>　<img src="images/b1begin.png" alt="b1begin.png" /></p>
+<p>　</p>
+<p>　2）接下来的选择要备份的项目时，按下方向键选择第二项“备份分区”按回车键继续；</p>
+<p>　<img src="images/b2spart.png" alt="b2spart.png" /></p>
+<p>　</p>
+<p>　3）接下来是保存镜像的文件名，直接按回车键继续，用默认的文件名；</p>
 <p>　</p>
 <p>　</p>
 <p>　4）；</p>
@@ -46,8 +77,8 @@
 <p>　9）；</p>
 <p>　</p>
 <p>　</p>
-<p>　<span class="tblue">本节</span>学习了还原系统的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p>　<span class="tblue">本节</span>学习了Clonezilla备份本机系统的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson10/lesson10.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
