@@ -26,9 +26,13 @@
 <p>　<img src="images/a2jx1.png" alt="a2jx1.png" /></p>
 <p>　</p>
 <p>　3）下载好以后可以刻成光碟，然后用光盘安装，</p>
-<p>　也可以用硬盘安装，下载grub4dos、和两个硬盘启动文件：<a href="http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/hd-media/">http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/hd-media/</a></p>
+<p>　也可以用硬盘安装，下载grub4dos、和两个硬盘启动文件、menu.ls 都放在C:盘根目录：<a href="http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/hd-media/">http://ftp.nl.debian.org/debian/dists/squeeze/main/installer-i386/current/images/hd-media/</a></p>
 <p>　<img src="images/a3yp.png" alt="a3yp.png" /></p>
-<p>　</p>
+<p>menu.lst 样例：</p>
+title  New Install<br />
+root   (hd0,0)<br />
+kernel /vmlinuz<br />
+initrd /initrd.gz<br />
 <p class="tblue">　2、准备分区</p>
 <p>　1）如果是新硬盘，只装 Debian，只需规划好分哪几个区，每个区的大小，一般来说最少要5G，个人用推荐10G；</p>
 <p>　</p>
