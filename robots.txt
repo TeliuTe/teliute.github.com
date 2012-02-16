@@ -1,1 +1,1 @@
-http://teliute.org/sitemap.xml
+Sitemap: http://teliute.org/sitemap.xml
