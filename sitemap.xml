@@ -81,12 +81,6 @@
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>http://teliute.org/jiaoju/</loc>
-    <lastmod>2012-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
     <loc>http://teliute.org/linux/writer/index.html</loc>
     <lastmod>2012-02-16</lastmod>
     <changefreq>never</changefreq>
@@ -493,12 +487,6 @@
     <lastmod>2012-02-16</lastmod>
     <changefreq>never</changefreq>
     <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>http://teliute.org/jiaoju/</loc>
-    <lastmod>2012-02-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
   </url>
   <url>
     <loc>http://teliute.org/jiaoxue/Tevb9a-2011/index.html</loc>
@@ -7522,12 +7510,6 @@
   </url>
   <url>
     <loc>http://teliute.org/jiaoxue/Tevb9a-2011/lesson16/lesson16.html</loc>
-    <lastmod>2012-02-16</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0</priority>
-  </url>
-  <url>
-    <loc>http://teliute.org/linux/TeGnome/index.html</loc>
     <lastmod>2012-02-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0</priority>
