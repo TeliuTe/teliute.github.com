@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之 DRBL 操作教程" />
+  <meta name="keywords" content="DRBL,无盘,教程,TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>DRBL 基础|用 DRBL 光盘备份还原</title></head><body style="direction: ltr;">
+<p class="title">DRBL 操作指南</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十二、用 DRBL 光盘备份还原</span>　<a href="../index.html">返回目录</a>　<a href="../lesson13/lesson13.html">下一课</a>
+<p>　若是想批量还原或者远程备份，可以使用 DRBL 的光盘，启动后可以作服务器用；</p>
+<p class="tblue">　1、启动 DRBL 光盘</p>
+<p>　1）下载 DRBL 企鹅龙光盘：<a href="https://sourceforge.net/projects/drbl/files/drbl_live_stable/">https://sourceforge.net/projects/drbl/files/drbl_live_stable/</a>；</p>
+<p>　<img src="images/a1dw.png" alt="a1dw.png" /></p>
+<p>　</p>
+<p>　2）把下载下来的iso镜像刻录成光盘，然后设置为用光盘启动计算机；</p>
+<p>　<img src="images/a2start.png" alt="a2start.png" /></p>
+<p>　</p>
+<p>　3）稍等出来语言选择，按下方向键选择“简体中文”，再按回车键继续；</p>
+<p>　<img src="images/a3language.png" alt="a3language.png" /></p>
+<p>　</p>
+<p>　4）接下来的键盘选项界面，直接按回车键继续；</p>
+<p>　<img src="images/a4kb.png" alt="a4kb.png" /></p>
+<p>　</p>
+<p>　5）接下来是图形界面设置，直接按回车键使用默认选项；</p>
+<p>　<img src="images/a5mode.png" alt="a5mode.png" /></p>
+<p>　</p>
+<p>　6）稍等进入桌面，上面有多个应用程序图标，常用的有“启动 DRBL”和“再生龙服务器”，用于整个机房的备份和批量还原 ；</p>
+<p>　<img src="images/a6desktop.jpg" alt="a6desktop.jpg" /></p>
+<p>　</p>
+<p class="tblue">　2、使用DRBL无盘服务器</p>
+<p>　1）点击桌面上的“启动DRBL服务器”，会提示目前是光盘系统，不合适作服务器；</p>
+<p>　<img src="images/b1stdrbl.png" alt="b1stdrbl.png" /></p>
+<p>　</p>
+<p>　2）按回车键继续，接下来的设定服务器IP，按下方向键选“static”固定IP，按回车键继续；</p>
+<p>　<img src="images/b2ip.png" alt="b2ip.png" /></p>
+<p>　</p>
+<p>　3）输入常用的固定IP地址(如192.168.1.2)，按回车键继续；</p>
+<p>　<img src="images/b3ip.png" alt="b3ip.png" /></p>
+<p>　</p>
+<p>　4）其他的网络设定，直接按回车使用默认设定即可，然后启动各个套件，耐心等待即可；</p>
+<p>　<img src="images/b4setup.png" alt="b4setup.png" /></p>
+<p>　</p>
+<p>　5）安装完成后，就可以像普通的DRBL服务器一样使用了，各个drbl命令都可以使用，只是要注意关机后文件都会丢失；</p>
+<p>　<img src="images/b5use.png" alt="b5use.png" /></p>
+<p>　</p>
+<p class="tblue">　3、使用再生龙服务器</p>
+<p>　1）双击桌面上的“再生龙服务器”，先出来一个设置IP，按下方向键选择“static”固定，然后按回车键；</p>
+<p>　<img src="images/b2ip.png" alt="b2ip.png" /></p>
+<p>　</p>
+<p>　2）输入常用的固定IP地址(如192.168.1.2)，按回车键继续；</p>
+<p>　<img src="images/b3ip.png" alt="b3ip.png" /></p>
+<p>　</p>
+<p>　3）后面的设定按回车即可，然后进入再生龙的/home/partimag 设定；</p>
+<p>　<img src="images/c3partimg.png" alt="c3partimg.png" /></p>
+<p>　</p>
+<p>　4）按回车键选择本地磁盘，出来提示插入U盘，按回车键继续；</p>
+<p>　<img src="images/c4u.png" alt="c4u.png" /></p>
+<p>`　</p>
+<p>　5）接下来选择挂载 /home/partimg的分区，一般选择最后一个存放备份文件；</p>
+<p>　<img src="images/c5sdb.png" alt="c5sdb.png" /></p>
+<p>　</p>
+<p>　6）接下来选择文件夹，直接用根目录即可，按回车键继续，提示需要一定的时间启动 DRBL；</p>
+<p>　<img src="images/c6root.png" alt="c6root.png" /></p>
+<p>　</p>
+<p>　7）后面的操作可参考第6课：<a href="../lesson6/lesson6.html">http://teliute.org/linux/Tedrbl/lesson6/lesson6.html</a>；</p>
+<p>　</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了用 DRBL 光盘备份还原的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson13/lesson13.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/201022.js">
+<noscript><a href="http://www.51.la/?201022" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/201022.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript></p>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+</p></body></html>
