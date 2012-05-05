@@ -4,6 +4,9 @@
 
 
 
+
+
+
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta name="author" content="TeliuTe" />
   <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
@@ -36,11 +39,10 @@ color: #008000;
 <p>　<span class="tblue">1、进入 live cd 桌面 
 </span></p>
 <p>　1）设置好<span class="brown">启动</span>后，断开网络，然后重启动计算机，可以用硬盘启动，也可以刻成光盘启动，镜像的下载地址：</p>
-<p>　进入后找蓝色链接点击下载，如 ubuntu-12.04-desktop-i386.iso：<a href="http://mirrors.sohu.com/ubuntu-releases/12.04/">http://mirrors.sohu.com/ubuntu-releases/12.04/</a></p>
-<p>　WinXP硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu0/jichu0.html">http://teliute.org/linux/Ubsetup/jichu0/jichu0.html</a>
-</p><p>　</p>　Win7硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu1/jichu1.html">http://teliute.org/linux/Ubsetup/jichu1/jichu1.html</a>
-<p>　</p>　Ubuntu 硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu2/jichu2.html">http://teliute.org/linux/Ubsetup/jichu2/jichu2.html</a>
-<p>　</p>
+<p>　进入后找蓝色链接点击下载，如 ubuntu-12.04-desktop-i386.iso，64位CPU可以下载amd64的版本：<a href="http://mirrors.sohu.com/ubuntu-releases/12.04/">http://mirrors.sohu.com/ubuntu-releases/12.04/</a></p>
+<p>　WinXP硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu0/jichu0.html">http://teliute.org/linux/Ubsetup/jichu0/jichu0.html</a></p>
+<p>　Win7硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu1/jichu1.html">http://teliute.org/linux/Ubsetup/jichu1/jichu1.html</a></p>
+<p>　Ubuntu 硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu2/jichu2.html">http://teliute.org/linux/Ubsetup/jichu2/jichu2.html</a></p>
 <p>　2）启动后稍等，系统自动运行，在下边出来两个图标时<img src="images/a2tb.png" alt="a2tb.png" />，可以按一下 ESC键呼出菜单项；</p>
 <p>　<img src="images/a2menu.png" alt="a2menu.png" /></p>
 <p>　</p>
@@ -78,10 +80,12 @@ color: #008000;
 <p>　7）回到分区面板，检查一下<span class="brown">分区</span>编辑好了，点“现在安装”，如果还有 /home 分区，按原来的设，一般不打勾“<span class="brown">格式化</span>”，只需提前清理里面的配置文件；</p>
 <p>　<img src="images/b7part.png" alt="b7part.png" /></p>
 <p>　</p>
-<p>　8）在下边是安装grub引导器的选项，可以选择安装到/分区，然后用Windows来引导Ubuntu，如果提示没有交换空间，点“继续”，这个是用于休眠的，大小跟内存相同的分区，一般不用它；</p>
+<p>　8）在下边是安装grub引导器的选项，可以选择安装到/分区，然后用Windows来引导Ubuntu，</p>
+<p>　如果提示没有交换空间，点“继续”，这个是用于休眠的，大小跟内存相同的分区，一般不用它；</p>
 <p>　<img src="images/b8swap.png" alt="b8swap.png" /></p>
-<p>　</p>
-<p>　9）点“继续”后出来询问地区的，点“继续”即可，同时下边已经开始安装了；</p>
+<p>　提示即将删除和格式化时，确保重要数据已经备份，点“继续”；</p>
+<p>　<img src="images/b8cont.png" alt="b8cont.png" /></p>
+<p>　9）然后出来询问地区，点“继续”即可，或者在地图上找找自己所在的地区，这时下边已经开始安装了；</p>
 <p>　<img src="images/b9area.png" alt="b9area.png" /></p>
 <p>　</p>
 <p>　10）接下来是键盘布局，一般是“USA”，直接点“前进”继续；</p>
@@ -100,8 +104,8 @@ color: #008000;
 <p>　</p>
 <p>　</p>
 <p>　<span class="tblue">3、连网换源</span></p>
-<p>　１）重新启动后，停在一个<span class="brown">登录</span>界面，点击自己的用户名，输入密码后按回车，或点“登录”按钮，进入系统；</p>
-<p>　</p>
+<p>　１）重新启动后，停在一个<span class="brown">登录</span>界面，点击自己的用户名，输入密码后按回车，进入系统；</p>
+<p>　<img src="images/c1login.jpg" alt="c1login.jpg" /></p>
 <p>　</p>
 <p>　2）进入桌面后会出来一个“<span class="brown">不完整</span>语言支持”的提示对话框，先不关闭拖到一边后面要用；</p>
 <p>　<img src="images/c2nofull.png" alt="c2nofull.png" /></p>
@@ -110,14 +114,14 @@ color: #008000;
 <p>　<img src="images/c3network.jpg" alt="c3network.jpg" /></p>
 <p>　</p>
 <p>　4）对于ADSL拨号宽带连接上网，在出来的对话框右边，点&nbsp;<span class="brown">DSL</span> 标签，然后点添加；</p>
-<p>　</p>
+<p>　<img src="images/c4dsl.png" alt="c4dsl.png" /></p>
 <p>　</p>
 <p>　5）在出来的对话框里，先<span class="brown">打勾</span>上边的 “自动连接”，然后在用户名里输入ADSL宽带<span class="brown">用户名</span>，</p>
 <p>　下面的密码里，输入宽带<span class="brown">密码</span>，然后点右下角的“应用”按钮，在出来的密码框中输入密码；</p>
-<p>　</p>
+<p>　<img src="images/c5user.png" alt="c5user.png" /></p>
 <p>　</p>
 <p>　关闭对话框以后，稍等一下会提示连网成功，</p>
-<p>　</p>
+<p>　<img src="images/c6connect.jpg" alt="c6connect.jpg" /></p>
 <p>　</p>
 <p>　也可以<span class="brown">重新</span>启动计算机，命令行使用 sudo pppoeconf 命令也可以；</p>
 <p>　</p>
