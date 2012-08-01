@@ -50,9 +50,18 @@ color: #008000;
 <p>　5）回到主面板后，再点右边的“高级设置”按钮，进去在“用户权限”里找到“使用 VirtualBox 虚拟化解决方案”，打勾选中后点确定</p>
 <p>　<img src="images/aa4.png" alt="aa4.png"></p>
 <p>　</p>
-<p>　6）重新启动计算机，就可以使用 USB 设备了；</p>
+<p>　6）重新启动计算机，就可以使用 USB 设备了，如果还不行，则去下载相应版本的扩展包：<a href="http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html#extpack">http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html#extpack</a>；</p>
 <p>　</p>
-<p style="color:red";>　以下是以前的老方法，不适用新版 Ubuntu 仅供参考</p>
+<p>　7）下载完成后，在Vbox主面板点第一个菜单“管理－全局设定－扩展(Extensions)”，在最左侧点一个小三角按钮，打开刚才下载的扩展包；</p>
+<p>　<img src="images/b3ext.png" alt="b3ext.png"></p>
+<p>　</p>
+<p>　8）安装成功后，进到XP虚拟机的USB设置，打勾启用USB2.0，打勾里面的USB摄像头；</p>
+<p>　<img src="images/b2usb20.png" alt="b2usb20.png"></p>
+<p>　</p>
+<p>　9）启动XP后，点上边“设备－分配USB设备”菜单，打勾USB里的摄像头，USB鼠标如果出现问题，就不要打勾</p>
+<p>　<img src="images/b1shb.png" alt="b1shb.png"></p>
+<p>　</p>
+<p style="color:red";>　以下是以前的老方法，主要是命令行操作，不适用新版 Ubuntu 仅供参考：</p>
 <p class="tblue">　1、修改<span>mountdevsubfs.sh文件</span></p>
 
 <p>　1）在Ubuntu下点<span class="brown">菜</span>单“应用程序－附件－终端”，打开一个终端窗口；</p><p>　<img src="images/c0cd.gif" alt="c0cd.gif"></p>
