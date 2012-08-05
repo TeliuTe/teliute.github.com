@@ -167,6 +167,18 @@ kernel /boot/grub/core.img
 <br />
 boot
 </div>
+<p>　如果 /boot 是单独分区的，使用下面这样的：</p>
+<div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">title ubuntu/Linux (/boot on single partitionas)
+<br />
+<br />
+find --set-root /grub/core.img
+<br />
+<br />
+kernel /grub/core.img
+<br />
+<br />
+boot
+</div>
 <p>　<span class="brown">切记</span>：一定要将分配给系统保留磁盘的盘符去掉；</p>
 <p>　重启动计算机，在启动菜单那儿依次选择“Ubuntu－Ubuntu/Linux”就可以进入到 Ubuntu 系统了；</p>
 <p>　</p>

@@ -5,3 +5,11 @@ find --set-root /boot/grub/core.img
 kernel /boot/grub/core.img
 
 boot
+
+title Ubuntu/Linux (/boot on single partitionas)
+
+find --set-root /grub/core.img
+
+kernel /grub/core.img
+
+boot
