@@ -34,8 +34,8 @@ color: #008000;
 <p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
 <span class="tblue">八、使用USB设备</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
 <p>　USB设备包括摄像头、U盘等，如果你要在虚拟机中使用，还需要进行设置，下面我们来看一个练习；</p>
-<p class="tblue">　0、设置 USB 用户组权限</span></p>
-<p>　1）点菜单“系统－系统管理－用户和组”，对应终端命令： users-admiuser</p>
+<p class="tblue">　0、设置 USB 用户组权限(先安装 gnome-system-tools)</span></p>
+<p>　1）点菜单“系统－系统管理－用户和组”，对应终端命令： users-admin</p>
 <p>　<img src="images/aa.png" alt="aa.png"></p>
 <p>　</p>
 <p>　2）在出来的面板左下角找到“管理组”按钮，点击进入；</p>
@@ -60,6 +60,11 @@ color: #008000;
 <p>　</p>
 <p>　9）启动XP后，点上边“设备－分配USB设备”菜单，打勾USB里的摄像头，USB鼠标如果出现问题，就不要打勾</p>
 <p>　<img src="images/b1shb.png" alt="b1shb.png"></p>
+<p>　</p>
+<p>　10）如果还提示错误，让加入 vboxusers ，则在终端运行下面的命令，然后注销重新登入；</p>
+<p>sudo gpasswd -a 用户名 vboxusers</p>
+<p>　</p>
+<p>　11）或者安装“用户和组”工具： sudo apt-get install gnome-system-tools 也可以在所有程序的系统中找到；</p>
 <p>　</p>
 <p style="color:red";>　以下是以前的老方法，主要是命令行操作，不适用新版 Ubuntu 仅供参考：</p>
 <p class="tblue">　1、修改<span>mountdevsubfs.sh文件</span></p>
