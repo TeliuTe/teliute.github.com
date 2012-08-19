@@ -1,5 +1,3 @@
 #!/bin/bash
-find -name '*.html' -exec sed  -i 'N;N;s/201022.js">\n<noscript>/201022.js"><\/script>\n<noscript>/g' {} \;
-
-find -name 'index.html' -exec sed -i 's;201022.js" /> <noscript>;201022.js" /></script> <noscript>;' {} \;
+find -name '*.html' -exec sed  -i 'N;N;s/201022.js">\r<noscript>/201022.js"><\/script>\n<noscript>/g' {} \;
 
