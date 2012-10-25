@@ -1,15 +1,15 @@
-title Ubuntu/Linux
+title Ubuntu/Linux 12.10 
 
-find --set-root /boot/grub/core.img
+ find --set-root /boot/grub/i386-pc/core.img 
 
-kernel /boot/grub/core.img
+ kernel /boot/grub/i386-pc/core.img 
 
-boot
+ boot
 
-title Ubuntu/Linux (/boot on single partitionas)
+title Ubuntu/Linux 12.10 (/boot on single partitionas)
 
-find --set-root /grub/core.img
+find --set-root /grub/i386-pc/core.img
 
-kernel /grub/core.img
+kernel /grub/i386-pc/core.img
 
 boot
