@@ -45,11 +45,11 @@ li {
 
 /*One World One Dream*/
 .one {
-  background-color: #fff8f0;
+  background-color: #fffae8;/*fff8f0;*/
   text-align: center;
   color:green;
-  padding-top:3px;
-  padding-bottom:3px;
+  padding-top:1px;
+  padding-bottom:1px;
 }
 
 /*上面的导航栏*/
