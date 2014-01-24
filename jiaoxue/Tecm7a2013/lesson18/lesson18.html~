@@ -10,13 +10,13 @@
   <meta name="keywords" content="七年级,信息技术,Ubuntu,writer,教学设计,教案,课程,TeliuTe" />
 
   <link rel="stylesheet" href="../css/css.css" type="text/css" />
-  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>电脑操作基础|</title></head><body style="direction: ltr;">
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>电脑操作基础|学会文件编码</title></head><body style="direction: ltr;">
 <p class="title">2013-2014 第一学期七年级信息技术和网络基础</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">二十、</span>　<a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a>
+<span class="tblue">十八、学会文件编码</span>　<a href="../index.html">返回目录</a>　<a href="../lesson19/lesson19.html">下一课</a>
 <p class="tblue">　<span style="font-weight: bold;">（一）教学设计</span></p>
-<p>　<span style="font-weight: bold;">1、学习目标</span>：</p>
-<p>　<span style="font-weight: bold;">2、注意事项</span>：</p>
+<p>　<span style="font-weight: bold;">1、学习目标</span>：学会文件编码</p>
+<p>　<span style="font-weight: bold;">2、注意事项</span>：两次还没有，就站着做好了再坐下</p>
 <p>　<span style="font-weight: bold;">3、教学过程</span>：</p>
 <p>　1）教师准备学案和板书；</p>
 <p>　2）学生整队进入，开机抄黑板上笔记；</p>
@@ -28,18 +28,54 @@
 
 <p class="tblue">　<span style="font-weight: bold;">（二）板书设计(学生笔记)</span></p>
 <div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;"><br />
+第18课 学会文件编码
+1、文本文件用ASCII码来编码<br />
+2、文件的基本组成是0和1（二进制）<br />
+3、文字、数字、图像最终是0和1<br />
+4、不同文件开头标识不同<br />
+--<br />
 
+操作指南<br />
+1、点主按钮、输入gc、调出计算器<br />
+2、点最上边“模式-编程”<br />
+3、算出数字5和字母 a 的二进制<br />
+--<br />
+周末休息两天把指法练习的程序升级了一下，增加了错误指示和汉字输入<br />
+版本升级到0.9，检查下没问题就可以到1.0了，屏蔽了Ctrl键防止复制粘贴<br />
+--<br />
+这样汉字输入法就只能从鼠标点了，苹果系统上的复制粘贴不知按键是什么<br />
+班图下面可以修改快捷键，想来初中学生还没这么高的水平，用随机文章是比较科学的<br />
+--<br />
+dzx的网络功能如果能用好可以设计成网络版就好了，像金山打字通里的挺好的<br />
+界面有些小了，现在机子的屏幕分辨率都挺高，以后再看看怎么改个打的<br />
+--<br />
+学生抄笔记，一边就想想怎么讲这个文件编码的知识<br />
+课题的学会文件编码，用写书的例子，用汉语写还是英文写，这本书都是好书<br />
+--<br />
+然后讲到文本文件都是ASCII码的，美国人发明的专门用来些文本文件<br />
+其他文件，想图像我们玩的游戏程序文件，都是二进制的，只有0和1<br />
+--<br />
+怎样区别这些0和1的文件呢，引入第4条文件头，不同文件的文件头不同<br />
+举了一个书皮封面的例子，封皮是语文，那么里面大都是中文，封皮是英语，这本书是英文的<br />
+--<br />
+再看两个实际例子，数字5在电脑里是怎么样的，字母a又是什么<br />
+用计算器来演示一下转换为二进制以后的数字<br />
+--<br />
+两个计算器窗口，双击一下，单击显示一个，双击两个都显示了<br />
+变色卡第一次没检查的，第二次还没有，就站着等加好了再坐下<br />
+--<br />
+有个吃东西的让站着上完<br />
 </div>
 
 <p>　操作图示：</p>
 <p>　<img src="images/a1figure.png" alt="a1figure.png" /></p>
 <p>　</p>
 
-<p class="tblue">　<span style="font-weight: bold;">（三）课后记 </span></p>
+<p class="tblue">　<span style="font-weight: bold;">（三）课后记 2013年11月18日 星期一 22:11</span></p>
 <div style="background-color: rgb(255, 255, 255); width: 800px; color: green; margin-left: 20px;"><br />
 
 </div>
-<p><a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson1/lesson1.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
