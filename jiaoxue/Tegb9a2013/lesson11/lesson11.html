@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之九年级程序设计教学课程设计" />
+  <meta name="keywords" content="九年级,信息技术,Ubuntu,gambas,编程,教学设计,教案,课程,TeliuTe" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>Gambas 编程|学会使用按钮（ok）</title></head><body style="direction: ltr;">
+<p class="title">2013-2014 第一学期九年级程序设计教学设计</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十一、学会使用按钮（ok）</span>　<a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a>
+<p class="tblue">　<span style="font-weight: bold;">（一）教学设计</span></p>
+<p>　<span style="font-weight: bold;">1、学习目标</span>：学会使用按钮（ok）</p>
+<p>　<span style="font-weight: bold;">2、注意事项</span>：代码核心是前面学的if判断语句</p>
+<p>　<span style="font-weight: bold;">3、教学过程</span>：</p>
+<p>　1）教师准备学案和板书；</p>
+<p>　2）学生整队进入，开机抄黑板上笔记；</p>
+<p>　3）教师讲解板书演示操作；</p>
+<p>　4）学生打指法、日志、完成操作；</p>
+<p>　5）教师打勾记录学生指法成绩，检查日志和操作；</p>
+<p>　注：学生抄完笔记就开始打指法、日志，老师讲完后再继续完成；</p>
+
+
+<p class="tblue">　<span style="font-weight: bold;">（二）板书设计(学生笔记)</span></p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;"><br />
+第11课 学会使用按钮（ok）<br />
+1、新 建工程，画一个标签，两个文本框，一个按钮<br />
+public k as integer<br />
+2、设置文本框Text为1,双击按钮<br />
+k = textbox2.text / (textbox1.text * textbox1.text)<br />
+label1.text = "正常"<br />
+if (k < 18.5)  then  label1.text = "体重过低"<br />
+if (k > 23)  then  label1.text = "超重"<br />
+</div>
+
+<p>　操作图示和范例：<a href="images/lesson.gambas">程序文件</a></p>
+<p>　<img src="images/a1figure.png" alt="a1figure.png" /></p>
+<p>　</p>
+
+<p class="tblue">　<span style="font-weight: bold;">（三）课后记 2013年12月13日 星期五 16:41</span></p>
+<div style="background-color: rgb(255, 255, 255); width: 800px; color: green; margin-left: 20px;"><br />
+--<br />
+if 后面有个空格，中英文容易错，输成中文的双引号、括号<br />
+中文错误可以看到下面有一条线，颜色是灰绿色的，提示语法错误<br />
+--<br />
+unkonwn 错误一般是拼写错误，后面的单引号里给出了错误类型<br />
+这个应该早早讲一下就好了，学生也不太记结果老是卡在这里<br />
+--<br />
+不过现在问的少多了，估计有些自己也可以看出来<br />
+语法错误给的是汉语提示，一般就是中英文输错误<br />
+--<br />
+还有一个期望是浮点，获取的是整型，一般就是textbox1后面的.text 给漏掉了<br />
+一多半可以做出来，少部分做不出来也没多要求，这个主要是细心<br />
+--<br />
+操作步骤倒是没多卡的，直接就可以把界面做出来，就是代码错误太多<br />
+抄的结果后面要复制粘贴到代码编辑器里，自己写的知道哪儿错了，抄别人的做不出来<br />
+--<br />
+把空格强调了一下，不同类型之间要有一个空格，括号外面要一个，点不要空格<br />
+这个多写多看才行，学生自己归纳一下要<br />
+--<br />
+学生输入日志时，就把意思讲解了，控制了以后，先看界面，有些学生已经做界面了<br />
+把运行效果展示一下，然后把操作过程演示下，代码直接从日志里粘贴过来<br />
+--<br />
+这节课学按钮，代码核心是前面学的if判断语句，有三种情况，相等是正常，大于是超重，小于是过低<br />
+学生不太注意内容，只是想着做出来就可以了，至于为什么不管，只是按老师要求完成即可<br />
+
+</div>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+<noscript><a href="http://www.51.la/?1132862" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/1132862.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript></p>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</div></body></html>
