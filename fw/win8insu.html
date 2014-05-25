@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之" />
+  <meta name="keywords" content="TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" /><title>预装win8的华硕A450V UEFI安装ubuntu成功经验分享</title></head><body style="direction: ltr;">
+<p class="title">预装win8的华硕A450V UEFI安装ubuntu成功经验分享</p>
+<p class="green">作者：HerveyHuang　来源：http://blog.csdn.net/herveyhuang/article/details/18799749</p>
+<p>　第一、确认你的系统是UEFI安装的。磁盘管理可以看的</p>
+<p>　第二、下载一个合适你电脑的ubuntu。本人下载的是ubuntu-12.04.3-desktop-amd64.iso，desktop代表桌面版，server代表服务器版，amd64和i386代表64位和32位操作系统，mac当然代表用于苹果机的版本。</p>
+<p>　第三、下载一个用ultraISO将第一步下载的iso文件写入U盘，不小心我直接格式化了整个u盘，资料全没了</p>
+<p>　第四、压缩出一些空间出来安装ubuntu，选择计算机， 右键->管理-》磁盘管理->压缩卷-》选择压缩空间大小然后压缩，如果没有压缩空间了，尝试删除一些东西，然后压缩，压缩完后不要动它了，让它保持未分配状态。过程如下图示</p>
+<p>　第五、更改BIOS设置：1.开机的时候长按F2键进入BIOS界面，通过方向键进【Security】菜单，通过方向键选择【Secure Boot Control】选项，将其设定为 “Disabled”2.点击F10保存，通过方向键进入【Boot】菜单，通过方向键选择【Lunch CSM】选项，将其设定为“Enabled”（上一步没保存不能设置的），插入第二步制作的U盘，3.点击F10保存设置。设置U盘为第一个启动（选择前面带UEFI开头的u盘），下图Boot Option Priorties中会出现你的u盘，点击F10保存，重启电脑。就可以进入ubuntu的安装界面了。</p>
+<p>　第六、安装类型的选择，一定要选择其他选项，就算你的电脑这里显示了这台计算机安装了win8的操作系统，也不要选择第一项，冒失是在win8上安装ubuntu，下图显示了没有安装操作系统，估计是虚拟机上安装时的截图，我就是被误导了，</p>
+<p>　第七、挂载点的空间分配，选择你刚刚压缩出来的空间（第四步），点击新建分区，给你需要的挂载点分配空间，具体需要几个挂载点，分配多少空间，可以查看一下下面挂载点的说明。挂载点说明如下：http://bbs.kafan.cn/thread-1551594-1-2.html</p>
+<p>　 在Linux 系统里面，有一些已经定义好的挂载点，常见的“挂载点”有： </p>
+<p>　1. / </p>
+<p>　 就一个符号，是Linux系统特有的，是“根目录”的意思，唯一必须挂载的目录。根目录，顾名思义，是Linux系统里整个文件系统的根，所有的挂载点都是根下的一个目录或者子目录，boot、home、usr、tmp、dev等等都是根目录下面的目录。</p>
+<p>　2. /boot </p>
+<p>　 大家应该很常见这个英文，是引导的意思，它包含了操作系统的内核和在启动系统过程中所要用到的文件（grub配置文件和系统内核等）。建这个分区是有必要的，如果有了一个单独的/boot启动分区，即使主要的根分区出现了问题，计算机依然能够启动。</p>
+<p>　3. /home </p>
+<p>　 用户的home目录所在地，在Linux系统里面，它是用来存储用户的程序配置文件、文档、视频等等所有资源。</p>
+<p>　4. swap</p>
+<p>　 其实它不是一个“挂载点”（前面没加/哦），为了菜鸟们理解方便，我这里姑且把它当作一种挂载点。SWAP分区，是让“内存”临时存储文件以及系统休眠时内存转存到磁盘的专用空间。 这个swap分区的作用类似与windows系统盘根目录下面的pagefile.sys文件，只是windows用一个文件来实现，而Linux将它强化为一个单独的磁盘分区。（Linux也可以实现用一个文件来取代单独的swap分区）</p>
+<p>　5. /usr </p>
+<p>　 用来存放系统自带的，或者通过更新安装的软件的地方。大部分的软件都安装在这里。就像是Windows里面的Program Files。 </p>
+<p>　6. /tmp </p>
+<p>　 临时文件存储地方，大家可以理解为Windows下的：C:\Documents and Settings\Administrator\Local Settings\Temp 目录。这对于多用户系统或者网络服务器来说是有必要的。这样即使程序运行时生成大量的临时文件，或者用户对系统进行了错误的操作，文件系统的其它部分仍然是安全的。因为文件系统的这一部分仍然还承受着读写操作，所以它通常会比其它的部分更快地发生问题。</p>
+<p>　7./var</p>
+<p>　 日志文件，经常会变动，硬盘读写率高的文件放在此中</p>
+<p>　   /var/log</p>
+<p>　 系统日志记录分区。一般多用户系统或者网络服务器要建立这个分区，因为设立了这个分区，即使系统的日志文件出现了问题，他们也不会影响到操作系统的主分区</p>
+<p>　8./opt</p>
+<p>　 存放可选的安装文件，个人一般把自己下载的软件存在里面。google chrome、WPS for Linux等默认安装在这里。</p>
+<p>　9./srv</p>
+<p>　 一些服务启动之后，这些服务所需要取用的资料目录。在文件系统这一环节中，建议您选择： ReiserFS和Ext3</p>
+<p>　10./bin</p>
+<p>　 存放程序，里面的程序可以直接通过命令调用，而不需要进入程序所在的文件夹。</p>
+<p>　11./dev</p>
+<p>　 存放所有设备文件，如fd0为软盘设备，cdrom为光盘设备</p>
+<p>　第八、添加win8启动项：接着下一步按照提示安装即可，后面很简单，安装完ubuntu重启后按F2进入BIOS,将ubuntu设置为第一个启动项，保存重启就能进入ubuntu但是没有win8启动项，接下来就需要添加win8启动项了</p>
+<p>　点击“ctrl+alt+t”打开终端输入：</p>
+<p>　sudo gedit /etc/default/grub</p>
+<p>　把"GRUB_HIDDEN_TIMEOUT=0"这一行注释掉(这一行的最前面增加"# ")，变成这样：</p>
+<p>　# GRUB_HIDDEN_TIMEOUT=0</p>
+<p>　此外"GRUB_TIMEOUT=10"控制着grub菜单的读秒时间，这里是10秒，可以根据需要修改成其他值</p>
+<p>　确定我们ESP分区的UUID是什么，先输入下面命令。</p>
+<p>　sudo grub-probe --target=fs_uuid /boot/efi/EFI/Microsoft/Boot/bootmgfw.efi</p>
+<p>　返回结果：8AA5-3B52</p>
+<p>　当然这个"8AA5-3B52"是我的ESP分区的UUID，别的电脑就会变成其他值了。分区的UUID在你的PC中的是独一无二，也不会发生改变，因此经常用它来代表一个分区。</p>
+<p>　用下面命令打开"/etc/grub.d/40_custom"</p>
+<p>　sudo gedit /etc/grub.d/40_custom</p>
+<p>　然后在最后面增加：</p>
+<p>　#### #### #### #### #### #### #### ####</p>
+<p>　menuentry "Windows x86_64 UEFI-GPT" {</p>
+<p>　search --fs-uuid --no-floppy --set=root 8AA5-3B52</p>
+<p>　chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi</p>
+<p>　}</p>
+<p>　#### #### #### #### #### #### #### ####</p>
+<p>　需要注意，8AA5-3B52要修改成你刚才得到的UUID哦。</p>
+<p>　改完之后记得让修改生效</p>
+<p>　输入命令 sudo update-grub2</p>
+<p>　此时重启，看看是不是已经有grub启动菜单了，而且还可以选择进</p>
+<p><a href="../index.html">返回目录</a></p>
+<p class="green">本文来自网络，内容仅供参考，著作权归原作者所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</p></body></html>

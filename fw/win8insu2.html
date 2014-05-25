@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之" />
+  <meta name="keywords" content="TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" /><title>UEFI启动模式安装ubuntu指南</title></head><body style="direction: ltr;">
+<p class="title">UEFI启动模式安装ubuntu指南</p>
+<p class="green">作者：Octagram　来源：http://tieba.baidu.com/p/2564759843</p>
+<p>　UEFI启动模式和传统的Lagency启动模式完全不同，因此很有必要先了解一下UEFI BIOS和UEFI启动模式</p>
+<p>　1 必须搞清的几个UEFI问题</p>
+<p>　(1) UEFI启动模式 与 legacy启动模式</p>
+<p>　legacy启动模式: 就是这么多年来PC一直在使用的启动方式（从MBR中加载启动程序），UEFI BIOS作为一种新的BIOS自然也应该兼容这种老的启动方式；</p>
+<p>　UEFI启动模式: UEFI BIOS下新的启动技术。如果你的PC在UEFI启动模式下预装了Win8，你会发现有两个很小的隐藏分区。一个叫ESP(EFI系统分区)，另一个MSR(Microsoft保留分区，通常为128MB)。MSR是windows要求的。ESP对UEFI启动模式很重要，UEFI的引导程序是以后缀名为.efi的文件存放在ESP分区中的，ESP分区采用fat32文件系统。此外，可能还存在一个小分区叫WinRE Tools，这个是win8的恢复分区，体积也很小。所以千万不要手贱把这三个分区删了。但对我们有意义的是ESP分区，windows下想访问ESP分区需用分区工具给它分配盘符并取消隐藏；而ubuntu则直接将这个分区挂载到/boot/efi，直接用文件夹浏览器进去就可以看到各种.efi文件了。</p>
+<p>　因此第一个关键问题就是确定自己的启动模式，方法是进入BIOS，然后你会发现有一项叫"boot mode"，选中"UEFI boot"就是UEFI启动模式，选中"Legacy boot"就是Legacy启动模式。见过吭爹的UEFI BIOS：有着非常华丽的BIOS界面，还能使用鼠标，但却只支持Legacy boot。</p>
+<p>　(2) UEFI启动模式只支持64位的系统，所以预装的win8是64位的，ubuntu(kylin)也需要64位的。</p>
+<p>　(3) UEFI BIOS 和 Legacy BIOS</p>
+<p>　我们都知道可以在传统的bios中调整设备的启动优先级，UEFI BIOS在UEFI启动模式下不但可以调整设备的优先级，还可以调整设备中引导程序的优先级，安装完ubuntu之后，你再进BIOS就会发现多了一个可选择的启动项叫ubuntu。此外，UEFI BIOS也引入了一些新的技术，例如Fast boot和secure boot，当然后面一项完全是用来坑爹的。</p>
+<p>　(4) UEFI启动模式下如何从u盘或移动硬盘引导</p>
+<p>　只要u盘或移动硬盘上有一个fat32的分区，分区的根目录下有个文件夹叫EFI，UEFI就会自动去查找相应的启动文件(.efi)</p>
+<p>　如果你刚制作了ubuntu(kylin)-13.04-64位的启动u盘，可以打开它，你会发现分区的文件系统是fat32，确实有一个EFI文件夹，进去看看就是各种.efi引导文件（这里再次强调64位，32位下你是找不到这个文件夹的）。因此现在想制作可启动的u盘或移动硬盘就简单了，只需要复制粘贴就行了。</p>
+<p>　部分UEFI BIOS还支持从NTFS分区中查找启动文件。</p>
+<p>　2 安装常见问题</p>
+<p>　(1) PC买来时预装了Win8，可是怎么按快捷键也进不了BIOS</p>
+<p>　这个是Win8的启动技术造成的，解决方法有二：</p>
+<p>　<1> 将鼠标移动到屏幕右上角，在弹出的边框中选"设置" → "电源"，然后按住shift键选"重启"，等待一会，会弹出一个界面，选"疑难解答" → "高级选项" → "UEFI固件设置" → "重启"</p>
+<p>　等待片刻就来到BIOS。</p>
+<p>　<2> 彻底关闭Win8的快速启动，方法是按"win键"+x，选择带管理员权限的命令提示符，输入命令powercfg -h off。这样Win8的关机就不再是假关机了，重启就可以按快捷键进BIOS了。然后在BIOS中将fast boot设为disable。</p>
+<p>　我个人使用的是方法二，原因有二：一，如果开启了BIOS中的fast boot，启动时外接USB键盘不可用，因此也无法在grub启动菜单中选择进哪个系统，当然，笔记本内建的键盘是可用的，可是我经常懒得将笔记本打开，直接以平板模式放支架上工作，内置键盘是用不了的。二，Win8快速启动是建立在休眠功能上的，休眠功能会额外占用75%左右内存容量的空间，8G内存就是6G多了，对于我128G的SSD太多了点，更何况我装的还是双系统。</p>
+<p>　(2) 关闭secure boot</p>
+<p>　这个坑爹的技术曾引发全世界范围内对微软的吐槽，如果你的BIOS不能disable，那很多Linux发行版你都无法安装。据说ubuntu是买了微软的key的，但是我安装完ubuntukylin13.04-64位后同样被这一坑爹技术华丽丽地阻止启动。当然我的BIOS是可以关闭它的。</p>
+<p>　(3) 安装完成后如何启动ubuntu</p>
+<p>　安装过程和以前完全没有差异。但是安装完成后拔掉u盘重启，不出意外的话，会直接进win8。还记得1中提到的UEFI BIOS可以设置设备中系统的优先级吗？这里Win8是第一优先级，当然很自然地就进win8了，进BIOS你会发现启动项多了一个ubuntu，放在最前面就OK了。当然，还有一个办法，启动时按快捷键调出BIOS的启动菜单，选择ubuntu就可以进ubuntu系统了。</p>
+<p>　(4) 像以前一样从grub启动windows</p>
+<p>　切换系统时每次都要进BIOS或则调出BIOS启动菜单，非常不方便，有没有办法像以前一样可以从grub启动菜单中进win8呢？答案是肯定的，只是步骤稍微有点长：</p>
+<p>　<1> 先让grub启动菜单显示出来</p>
+<p>　不出意外的话，你启动ubuntu时是看不到grub启动菜单的。输入下面命令打开/etc/default/grub</p>
+<p>　sudo gedit /etc/default/grub</p>
+<p>　把"GRUB_HIDDEN_TIMEOUT=0"这一行注释掉(这一行的最前面增加"# ")，变成这样：</p>
+<p>　# GRUB_HIDDEN_TIMEOUT=0</p>
+<p>　此外"GRUB_TIMEOUT=10"控制着grub菜单的读秒时间，这里是10秒，可以根据需要修改成其他值。</p>
+<p>　<2> 增加win8的启动项</p>
+<p>　还记得刚才我们说的ESP分区吗，现在安装完了，也启动了，你可以去/boot/efi下看看这个分区里面都有什么。你会发现这样一个文件"/boot/efi/EFI/Microsoft/Boot/bootmgfw.efi"，它就是win8的引导文件，所以增加的启动项的方法就是去加载这个文件。</p>
+<p>　首先，确定我们ESP分区的UUID是什么，先输入下面命令。</p>
+<p>　sudo grub-probe --target=fs_uuid /boot/efi/EFI/Microsoft/Boot/bootmgfw.efi</p>
+<p>　返回结果：8AA5-3B52</p>
+<p>　当然这个"8AA5-3B52"是我的ESP分区的UUID，别的电脑就会变成其他值了。分区的UUID在你的PC中的是独一无二，也不会发生改变，因此经常用它来代表一个分区。</p>
+<p>　用下面命令打开"/etc/grub.d/40_custom"</p>
+<p>　sudo gedit /etc/grub.d/40_custom</p>
+<p>　然后在最后面增加：</p>
+<p>　#### #### #### #### #### #### #### ####</p>
+<p>　menuentry "Windows x86_64 UEFI-GPT" {</p>
+<p>　search --fs-uuid --no-floppy --set=root 8AA5-3B52</p>
+<p>　chainloader (${root})/EFI/Microsoft/Boot/bootmgfw.efi</p>
+<p>　}</p>
+<p>　#### #### #### #### #### #### #### ####</p>
+<p>　需要注意，8AA5-3B52要修改成你刚才得到的UUID哦。</p>
+<p>　<3>改完之后记得让修改生效</p>
+<p>　sudo update-grub2</p>
+<p>　此时重启，看看是不是已经有grub启动菜单了，而且还可以选择进入win8。</p>
+<p>　3 在移动硬盘或u盘中安装ubuntu</p>
+<p>　后来我又在移动硬盘中安装了ubuntu12.04 64位，这里遇到了一个问题：</p>
+<p>　SSD中的安装ubuntu(kylin)-13.04 64位在UEFI BIOS出现的启动项名称是"ubuntu"，对应的引导文件是"ESP分区/EFI/ubuntu/grubx64.efi"</p>
+<p>　而如果再安装一个ubuntu-12.04 64位，哪怕是安装到移动硬盘或u盘中，也会在你的主硬盘的ESP分区中建立引导文件，而且这个引导文件同样是"ESP分区/EFI/ubuntu/grubx64.efi"。这会把原先ubuntu(kylin)-13.04的引导文件给覆盖掉。注意，安装过程中选择从哪个设备建立引导是无效的，无论你选什么，引导文件都会被安装到主硬盘ESP分区中。因此安装之前需要做点工作。</p>
+<p>　(1) 修改SSD中ubuntu系统的引导文件路径</p>
+<p>　为了解决上述问题，可以尝试修改路径。</p>
+<p>　sudo gedit /etc/default/grub</p>
+<p>　找到这一行"GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`"</p>
+<p>　在最前面加# 注释掉，然后在它下面增加一句，修改后成这样：</p>
+<p>　# GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`</p>
+<p>　GRUB_DISTRIBUTOR=ubuntukylin</p>
+<p>　因为我装的是ubuntukylin，所以我改成了ubuntukylin，你可以按自己的喜好修改成其他名字。</p>
+<p>　修改完后</p>
+<p>　sudo update-grub2</p>
+<p>　sudo grub-install</p>
+<p>　完成后，可以去/boot/efi/EFI下看看是不是产生了一个ubuntukylin的文件夹，同时里面也有一个文件"ESP分区/EFI/ubuntukylin/grubx64.efi"，BIOS中也会出现一个启动项叫ubuntukylin，别忘了进去设成第一启动项。当然旧的ubuntu启动项还是在的，此时你从ubuntukylin或ubuntu启动的结果都是一样的。所以此时我们可以把ubuntu这一项废弃了。</p>
+<p>　(2) 安装</p>
+<p>　按照1的描述，安装前记得先给移动硬盘或U盘分区，其中一个分区是FAT32文件系统，然后安装ubuntu到u盘或移动硬盘，安装方法没什么独特，只是在选文件系统时挂载到u盘或移动硬盘的分区中就可以了。完成后，"/boot/efi/EFI/ubuntu/grubx64.efi"已经变成ubuntu12.04的引导文件了。此时我们只需要将这个文件搬到移动硬盘或u盘中的fat32分区中，方法如下：</p>
+<p>　先将你的ubuntu-12.04 64位的启动u盘(LiveUSB)打开，复制里面的EFI文件夹(或者到iso中去提取)到移动硬盘或u盘的FAT32分区中。再进到"/boot/efi/EFI/ubuntu/"中，用grubx64.efi覆盖"EFI/BOOT/"下的文件。完成，是的，仅需复制粘贴就可建立移动设备上的引导了。</p>
+<p>　(3) 删除BIOS中残留的启动项</p>
+<p>　步骤(2)完成后，移动硬盘或u盘就是可启动的了，但会在BIOS中残留启动项"ubuntu"。可以使用工具efibootmgr删除。</p>
+<p>　首先，将引导文件删除：</p>
+<p>　sudo rm -r /boot/efi/EFI/ubuntu</p>
+<p>　然后使用工具efibootmgr来查看我们需要删除哪一项</p>
+<p>　sudo efibootmgr</p>
+<p>　你会得到类似下面这样的信息</p>
+<p>　BootCurrent: 0002</p>
+<p>　Timeout: 0 seconds</p>
+<p>　BootOrder: 0002,0000,0001,0006,0005</p>
+<p>　Boot0000* Windows Boot Manager</p>
+<p>　Boot0001* ubuntu</p>
+<p>　Boot0002* ubuntukylin</p>
+<p>　Boot0005* UEFI: IP4 Realtek PCIe GBE Family Controller</p>
+<p>　Boot0006* UEFI: IP6 Realtek PCIe GBE Family Controller</p>
+<p>　从信息中我们知道windows是第0项，ubuntu是第1项，显然是将第1项删除</p>
+<p>　所以删除命令是</p>
+<p>　sudo efibootmgr -b 1 -B</p>
+<p>　windows下也有类似工具EasyUEFI。</p>
+<p>　其实，在UEFI启动模式下，grub-install命令就用"efibootmgr -c"来为BIOS建立一个新的启动项。新手建议别碰这个命令，有实力的玩家可以看看它的man手册。</p>
+<p>　UEFI很强大，可以在UEFI下开启一个像Linux一样的终端，然后运行命令：例如截屏工具等等。只需要你去下载一个UEFI shell的.efi文件，放入ESP分区中，用efibootmgr建立启动项就可以进入了。</p>
+<p><a href="../index.html">返回目录</a></p>
+<p class="green">本文来自网络，内容仅供参考，著作权归原作者所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</p></body></html>

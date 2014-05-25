@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之" />
+  <meta name="keywords" content="TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" /><title>UEFI+GPT分区 装win8 ubuntu双系统实战成功——实战机型索尼SVS15，适用所有UEFI启动的笔记本</title></head><body style="direction: ltr;">
+<p class="title">UEFI+GPT分区 装win8 ubuntu双系统实战成功——实战机型索尼SVS15，适用所有UEFI启动的笔记本</p>
+<p class="green">作者：遥之夜羽　来源：http://forum.ubuntu.org.cn/viewtopic.php?f=126&t=447786</p>
+<p>　1、如何判断你的硬盘是否是UEFI启动。</p>
+<p>　 直接把ubuntu的iso解压到U盘目录下，然后把U盘捅下去，开机按F11（其他机型自己研究下），如果能直接启动，那么说明是UEFI启动。</p>
+<p>　</p>
+<p>　2、安装前所做的准备：</p>
+<p>　 a.关闭security boot,在bios菜单下面改。</p>
+<p>　 b.调整bios的boot顺序，一定要把你的主硬盘放第一个，其他硬盘放第二个，额外设备（如U盘）放最后面</p>
+<p>　 c.进入windows系统，右键计算机点管理，管理磁盘，在主硬盘，就是你安装windows的那个盘，efi分区所在的那个盘压缩最后一个卷，压缩出你想要留给ubuntu的空间大小。 如果你电脑内存小于4G 你还要再压缩出一个大概5G的分区来作为交换分区。 这里要注意，新卷分区最好不要添加符盘，也不要格式化。</p>
+<p>　 d.下载一个DG（硬盘分区的软件），打开之后把EFI分区下的EFI文件夹备份一下以防万一。</p>
+<p>　</p>
+<p>　3、开始安装</p>
+<p>　 把U盘插进去按F11启动（不同品牌自己寻找快捷键）</p>
+<p>　 选第二个安装ubuntu</p>
+<p>　 到选安装方式的时候选最后一个自己设置分区安装。</p>
+<p>　 这里要注意，看清楚 sda是不是你安装windows的那个盘。如果不是，安装完之后你会无法引导windows，因为grub是检测不到第二个硬盘的，在笔记本上第二硬盘都是丢光驱位的，grub不会把它当硬盘看。</p>
+<p>　 这个时候要记下你的第几个。</p>
+<p>　 例如我前面有品牌分区，还原分区和efi分区</p>
+<p>　 我的efi分区的路径是 sda3 记住这个，以后游泳</p>
+<p>　 双击efi分区 设置为efi分区</p>
+<p>　 双击那个5G的分区 设置为交换分区（8～16G大内存可以无视）</p>
+<p>　 双击那个留给ubuntu的尚未格式化的分区，设置为EX4分区 挂载点选/</p>
+<p>　 然后点下一步</p>
+<p>　 这个时候慢等2分钟，如果没报错就继续安装，有时候不知道为什么会有些盘无法umount（不知道怎么翻译，就叫反挂载吧）</p>
+<p>　 如果报错，这个时候取消安装程序，进入try版ubuntu，按win键 搜索te ，点开终端（黑色电视机），然后输入 sudo umount /dev/ 后面接报错无法反挂载的那个盘，如果不行，关掉电脑，再插U盘，再重新进入安装程序 直到不提示报错为止，至于为什么会这样我也没明白。</p>
+<p>　</p>
+<p>　 安装完毕后看看windows被破坏没，一般都是正常进入windows而无法进入ubuntu，这个时候再捅U盘开机按F11</p>
+<p>　 进入try ubuntu</p>
+<p>　</p>
+<p>　 让我们用grub替换掉windows的efi</p>
+<p>　</p>
+<p>　 打开终端</p>
+<p>　 先新建一个文件夹来挂在EFI分区</p>
+<p>　 然后输入 ： sudo mkdir /media/fat32</p>
+<p>　 然后再输入：sudo mount /dev/sda3 /media/fat32</p>
+<p>　 这里要注意 /dev/sda3是看你刚才在安装程序里面看到的efi分区所在的硬盘分区顺序，记住那个，自己修改。 如果你的是sda2,那就/dev/sda2</p>
+<p>　 然后输入下面一大批代码</p>
+<p>　cd /media/fat32</p>
+<p>　sudo cp EFI/ubuntu/grubx64.efi EFI/Boot/</p>
+<p>　cd EFI/Boot</p>
+<p>　sudo mv bootx64.efi bootx64.efi.old</p>
+<p>　sudo mv grubx64.efi bootx64.efi</p>
+<p>　cd ..</p>
+<p>　sudo mv Microsoft/boot/bootmgfw.efi Microsoft/boot/bootmgfw.efi.old</p>
+<p>　sudo cp ubuntu/grubx64.efi Microsoft/boot/bootmgfw.efi</p>
+<p>　</p>
+<p>　 这个时候已经成功备份windows的uefi而且用grub覆盖掉了</p>
+<p>　 这个时候重启就会进入 ubuntu了，成功进入ubuntu的可以无视掉后面的自救部分，直接跳到给grub添加windows启动</p>
+<p>　</p>
+<p>　如果你还是无法进入ubuntu</p>
+<p>　请再次捅U盘</p>
+<p>　输入下列代码</p>
+<p>　sudo mkdir /media/fat32</p>
+<p>　sudo mount /dev/sda2 /media/fat32</p>
+<p>　cd /media/fat32</p>
+<p>　sudo cp EFI/ubuntu/grubx64.efi EFI/Boot/</p>
+<p>　cd EFI/Boot</p>
+<p>　sudo mv bootx64.efi.old bootx64.efi</p>
+<p>　cd ..</p>
+<p>　sudo mv Microsoft/boot/bootmgfw.efi.old Microsoft/boot/bootmgfw.efi</p>
+<p>　</p>
+<p>　这些是还原代码，同理还是要把里面的sda2改成你的efi分区所在。</p>
+<p>　</p>
+<p>　这个时候应该还原windows了。</p>
+<p>　</p>
+<p>　如果这个时候连windows都回不去（基本不可能）</p>
+<p>　1、捅windows 安装U盘，修复win 引导</p>
+<p>　2、还是捅U盘，用终端命令把一开始备份的efi文件夹覆盖到efi分区里，不懂命令行的还是乖乖下载windows安装U盘去修复</p>
+<p>　</p>
+<p>　</p>
+<p>　成功进入ubuntu之后</p>
+<p>　打开终端：</p>
+<p>　输入</p>
+<p>　sudo gedit /etc/grub.d/40_custom</p>
+<p>　在最后添加</p>
+<p>　menuentry "Windows 8"{</p>
+<p>　set root='(hd0,gpt2)'</p>
+<p>　chainloader /EFI/Microsoft/Boot/bootmgfw.efi.old</p>
+<p>　}</p>
+<p>　</p>
+<p>　这里的hd0,gpt2是对应 sda2的 如果你是sda3,那就写gpt3</p>
+<p>　点保存</p>
+<p>　注意不能空任何一行，也不能有任何多余的空格，不然都会无法启动</p>
+<p>　然后输入</p>
+<p>　sudo gedit /etc/default/grub</p>
+<p>　把里面的GRUB_TIMEOUT=0 改成GRUB_TIMEOUT=-1（grub搜索不到其他系统就会跳过菜单，让你无法返回windows，按shift也没有用，除非你这里是-1）</p>
+<p>　点保存。</p>
+<p>　然后终端： </p>
+<p>　sudo update-grub</p>
+<p>　重启，看看是否显示菜单。 如果不显示，进入ubuntu继续修改配置文件。</p>
+<p>　如果显示菜单，但是显示no such device 就是你hd0,gpt2那里路径错了。 如果是no assigment，那就是你留了多余的空格或者用的标点符号不标准。</p>
+<p>　在选择菜单对着windows选项按e可以编辑查看，慢慢改然后按F10，如果成功进入windows就再回去Ubuntu修改配置文件，记得最后update下
+<p><a href="../index.html">返回目录</a></p>
+<p class="green">本文来自网络，内容仅供参考，著作权归原作者所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</p></body></html>
