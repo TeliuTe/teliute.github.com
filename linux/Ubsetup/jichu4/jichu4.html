@@ -105,6 +105,7 @@ menuentry "Install Ubuntu" {<br />
 <br /><br />
 </div>
 <p>　4）保存退出，重新启动计算机，启动到 EFI Shell 命令行界面；</p>
+<p>　<img src="images/c1shell.png" alt="c1shell.png" /></p>
 <p>　</p>
 <p class="tblue">　4、硬盘启动</p>
 <p>　1）进到 EFI Shell 后，输入5G FAT32分区前面的fs号，这里是 FS1:（fs1冒号），输入下面的命令后按回车键</p>
@@ -156,7 +157,7 @@ bootx64.efi
 <p>　3）接下来<span class="brown">第3步</span>是询问安装到哪个分区，选择最下边的“其他选项”，点“<span class="brown">继续</span>”按钮；</p>
 <p>　<img src="images/b3type.png" alt="b3type.png" /></p>
 <p>　</p>
-<p>　4）接下来出来磁盘分区情况，如果要新建分区和转换分区可以参考前面的第7、13、15、16、19课，这儿是<span class="brown">安装</span>到之前14.04的Ext4分区上；</p>
+<p>　4）接下来出来磁盘分区情况，将要在sda1中存放efi引导文件，在sda4上安装系统，如果要新建分区和转换分区可以参考前面的第7、13、15、16、19课，这儿是<span class="brown">安装</span>到之前14.04的Ext4分区上；</p>
 <p>　<img src="images/b4part.png" alt="b4part.png" /></p>
 <p>　</p>
 <p>　5）点击选中第一个efi分区，从顶部的分区类型和大小已使用情况来判断，一般是第一个主分区，然后点下边的“<span class="brown">更改</span>”(Change..) 按钮；</p>
