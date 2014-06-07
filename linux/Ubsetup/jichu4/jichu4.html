@@ -79,7 +79,7 @@ color: #008000;
 <p>　<img src="images/c1shell.png" alt="c1shell.png" /></p>
 <p>　</p>
 <p>　2）输入exit退出或者按Ctrl+Alt+Del重启计算机，进入原来的系统或Live CD系统中，</p>
-<p>　打开5G的FAT32分区，依次打开boot、grub找到grub.cfg文件，用记事本或文本编辑器打开；</p>
+<p>　打开5G的FAT32分区，依次打开 boot、grub 文件夹找到grub.cfg文件，用记事本或文本编辑器打开；</p>
 <p>　<img src="images/c2grub.png" alt="c2grub.png" /></p>
 <p>　</p>
 <p>　3）前面的内容不要动，找到 menuentry 开头的四段，把它们都删除了，换成下面的内容，</p>
@@ -113,7 +113,7 @@ cd \efi\boot
 bootx64.efi
 </div>
 <p>　</p>
-<p>　4）这一步是切换到FAT32分区的 /EFI/BOOT 文件夹中，然后运行里面的 BOOTx64.EFI 文件，每个命令后面都要按一下回车键；</p>
+<p>　4）这三行命令是切换到FAT32分区的 /EFI/BOOT 文件夹中，然后运行里面的 BOOTx64.EFI 文件，每个命令后面都要按一下回车键，如下图所示；</p>
 <p>　<img src="images/d4command.png" alt="d4command.png" /></p>
 <p>　</p>
 <p>　5）按回车后进入Grub引导菜单，默认选中了第一项“Install Ubuntu”，按回车键继续；</p>
