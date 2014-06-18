@@ -1,60 +1,80 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
 
 
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
 <meta name="author" content="TeliuTe" /> 
 <meta content="TeliuTe系列教程之Dz论坛安装教程" name="description" /> 
 <meta content="TeliuTe,基础教程网" name="Copyright" /> 
-<meta content="Dz,Discuz!,TeliuTe,安装,教程,入门" name="keywords" />
+<meta content="dzx,Discuz!,TeliuTe,安装,教程,入门" name="keywords" />
 
-<link rel="stylesheet" href="../css/css.css" type="text/css" /><title>Dz论坛|安装门户</title>
-
-
-<link rel="Shortcut  Icon" href="../css/qcqy.ico" /></head><body style="direction: ltr;">
-
-<p class="title">Discuz!论坛安装教程</p>
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>Dzx论坛|设置门户管理</title></head><body style="direction: ltr;">
+<p class="title" />
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<p><span class="tblue">八、SupeSite站点</span>　<a href="../index.html">返回目录</a>　<a href="../lesson8a/lesson8a.html">下一课</a></p>
-<p>　discuzx门户设置请看<a href="../lesson8a/lesson8a.html">下一课</a>，门户是展示和发布的平台，是一个网站的综合页面，下面我们来看一个练习；</p>
-
-<p class="tblue">　1、安装门户</p>
-<p>　1）下载SupeSite安装包，用<span class="brown">管理员</span>身份打开，先看一下readme文件，</p>
-<p>　再把upload解压到网站根目录，把<span class="brown">文件夹</span>名称改为ss，设置属性里的其它权限为“访问和只读”，并应用到包含的文件；</p>
-<p>　<img src="images/a1ss.png" alt="a1ss.png" /></p>
+<span class="tblue">八、管理门户</span>　<a href="../index.html">返回目录</a>　<a href="../lesson8a/lesson8a.html">下一课</a>
+<p>　旧版本门户设置请看<a href="../lesson8a/lesson8a.html">下一课</a>，通过DIY可以设计各种各样的门户样式；</p>
+<p class="tblue">　1、设置dzx门户</p>
+<p>　1）以管理员登录，点“管理中心”进入后台，；</p>
+<p>　<img src="images/a1admin.png" alt="a1admin.png" /></p>
 <p>　</p>
-<p>　2）打开ss文件夹，将 config.new.php 文件<span class="brown">重命名</span>为config.php，</p>
-<p>　设置config.php的<span class="brown">属性</span>为“读写”，设置文件夹 attachment/、cache/、channel/、html/、log/、styles/、model/、data/、uc_client/data/ 文件夹为“创建删除和读写”，并应用到包含的文件；；</p>
-<p>　<img src="images/a2qx.png" alt="a2qx.png" /></p>
+<p>　2）依次点“全局、站点功能、开启门户”，在出来的对话框中，勾选“主导航”，点确定；</p>
+<p>　<img src="images/a2enable.png" alt="a2enable.png" /></p>
 <p>　</p>
-<p>　3）登录“论坛－管理中心－UCenter－应用管理－添加应用”，<span class="brown">输入</span>ss的地址，点安装；</p>
-<p>　<img src="images/a3az.png" alt="a3az.png" /></p>
+<p>　3）再点上边导航栏中的“界面”，可以更改门户的名称，改完记得点下边的“提交”；</p>
+<p>　<img src="images/a3portal.png" alt="a3portal.png" /></p>
 <p>　</p>
-<p>　4）按提示一步一步，在<span class="brown">数据库</span>信息那儿，用户名填写root密码为mysql的密码，默认为root或者为空；</p>
-<p>　数据库名填写supesite，这个是给门户用的数据库；</p>
-<p>　<img src="images/a4sjk.png" alt="a4sjk.png" /></p>
+<p>　4）返回站点首页，这时导航栏第一个出现“门户”链接，点击进去是空的，还没有设置内容模块；</p>
+<p>　<img src="images/a4portal.png" alt="a4portal.png" /></p>
 <p>　</p>
-<p>　5）点下一步继续自动安装，在<span class="brown">管理员</span>那儿，用原来的admin和密码，也可以新增一个；</p>
-<p>　<img src="images/a5gly.png" alt="a5gly.png" /></p>
+<p>　5）将鼠标移到右上角的“DIY”图标，选择“高级模式”；</p>
+<p>　<img src="images/a5more.png" alt="a5more.png" /></p>
 <p>　</p>
-<p>　6）然后完成安装，可以进入管理平台和空间主页，把这两个网址记一下；</p>
-<p>　<img src="images/a6wc.png" alt="a6wc.png" /></p>
+<p>　6）点左上边的“添加框架”，出来页面布局设计，根据自己的要求来设计，一般头部和底部是一个长条幅，内容是两列或三列；</p>
+<p>　<img src="images/a6struc.png" alt="a6struc.png" />　<img src="images/a6struc1.png" alt="a6struc1.png" /></p>
 <p>　</p>
-<p>　<span class="tblue">本节</span>学习了安装门户的基本方法，如果你成功地完成了练习，请继续学习下一课内容；
-</p><p><a href="../index.html">返回目录</a>　<a href="../lesson8a/lesson8a.html">下一课</a></p>
+<p>　7）将第一个“100%框架”拖到页面下边的空白处，再拖一个1:1放到它的下面；</p>
+<p>　<img src="images/a7drg.png" alt="a7drg.png" /></p>
+<p>　</p>
+<p>　8）将鼠标移到下边的框架中，右边会显示一个红色的“编辑”，点击可以修改和删除这个框架；</p>
+<p>　<img src="images/a8edit.png" alt="a8edit.png" /></p>
+<p>　</p>
+<p class="tblue">　2、添加模块</p>
+<p>　1）用框架将页面布置好以后，点击上面的“模块”标签，显示各个类别，每一类里面有不同的模块；</p>
+<p>　<img src="images/b1moudle.png" alt="b1moudle.png" /></p>
+<p>　</p>
+<p>　2）点击“展示类”，再选择它下面的“公告模块”，把它拖到第一个“1框架”中，出来一个设置对话框；</p>
+<p>　<img src="images/b2notice.png" alt="b2notice.png" /></p>
+<p>　</p>
+<p>　3）先设置模块标识，输入英文字母名称，点“确定”，后接着输入模块标题，这里可以输入汉字，输入“公告”点确定；</p>
+<p>　<img src="images/b3set.png" alt="b3set.png" />　<img src="images/b3set1.png" alt="b3set1.png" /></p>
+<p>　</p>
+<p>　4）再点模块类里的“空间类”，将日志模块拖到1-1框架的左边，设置好标识和名称，再将相册模块拖到1-1框架的右边；</p>
+<p>　<img src="images/b4home.png" alt="b4home.png" /></p>
+<p>　</p>
+<p>　5）需要其他模块，也可以继续添加框架和模块，最后点右上角的“保存”按钮；</p>
+<p>　<img src="images/b5save.png" alt="b5save.png" /></p>
+<p>　</p>
+<p>　6）这时候访问门户，就可以看到自动生成了，各个模块的内容；</p>
+<p>　<img src="images/b6portal.png" alt="b6portal.png" /></p>
+<p>　</p>
+<p>　7）在高级模式的编辑状态下，还可以编辑模块内容的数量，背景色等各项细节设置；</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了dzx设置门户管理的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson8a/lesson8a.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
+
 <p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
 
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
 
-<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js"></script>
-<noscript><a href="http://www.51.la/?1132862"
-target="_blank"><img alt="我要啦免费统计"
-src="http://img.users.51.la/1132862.asp" style="border:none" /
-width="20" height="20" /></a> </noscript></p>
+</p><div>
 
-<div>
 <script type="text/javascript"><!--
 google_ad_client = "pub-2989083345397211";
 google_ad_width = 728;
@@ -95,5 +115,6 @@ google_ui_features = "rc:6";
 </script>
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
-</div>
-</body></html>
+
+
+</div></body></html>
