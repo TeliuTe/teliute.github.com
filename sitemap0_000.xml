@@ -4,7 +4,7 @@
   <gen:info>
     <gen:name>Google Sitemap Generator</gen:name>
     <gen:version>1.0.0.0</gen:version>
-    <gen:date>2014-07-06T00:58:23Z</gen:date>
+    <gen:date>2014-07-06T05:58:23Z</gen:date>
   </gen:info>
 -->
 <url>
@@ -1437,9 +1437,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/lesson1/lesson1.html</loc>
-  <lastmod>2014-07-06T00:50:56Z</lastmod>
+  <lastmod>2014-07-06T00:59:04Z</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.3</priority>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson27/lesson27.html</loc>
@@ -2199,9 +2199,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
+  <lastmod>2014-05-02T16:18:09Z</lastmod>
   <changefreq>daily</changefreq>
-  <priority>0.3</priority>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson26/lesson26.html</loc>
