@@ -4,7 +4,7 @@
   <gen:info>
     <gen:name>Google Sitemap Generator</gen:name>
     <gen:version>1.0.0.0</gen:version>
-    <gen:date>2014-07-06T05:58:23Z</gen:date>
+    <gen:date>2014-07-07T00:48:23Z</gen:date>
   </gen:info>
 -->
 <url>
@@ -333,9 +333,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson23/lesson23.html</loc>
-  <lastmod>2014-05-02T16:02:09Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-07-07T00:07:40Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegb9a2013/lesson11/lesson11.html</loc>
@@ -2553,9 +2553,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson10/lesson10.html</loc>
-  <lastmod>2014-04-06T12:02:37Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-07-06T08:40:16Z</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson48/lesson48.html</loc>
@@ -2907,9 +2907,9 @@
 </url>
 <url>
   <loc>http://teliute.org/other/myurl.html</loc>
-  <lastmod>2014-07-06T00:36:26Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.2</priority>
+  <lastmod>2014-07-07T00:07:40Z</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson2-/lesson2.html</loc>

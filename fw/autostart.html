@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head><meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta content="Linux, CentOS, Ubuntu" name="description" />
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" /><title>Linux配置启动项，自启动服务</title></head><body style="direction: ltr;">
+</head>
+<body>
+  Linux配置启动项，自启动服务<br />
+出处：http://blog.csdn.net<br />
+Linux下有两种机制，一个是旧式的System V initialization，它来源于Unix并且至今仍被各种Linux distros所采用；另一种是近几年提出的Upstart机制。<br />
+<br />
+参考：http://www.cnblogs.com/cassvin/archive/2011/12/25/ubuntu_init_analysis.html<br />
+<br />
+这个也可以说是Linux的蛋疼的地方了，启动的方式也有两套，而且有的软件用的是System V
+initialization机制，有的用的是Upstart机制。不同发行版采用的机制也不同，连配置工具也不同。。如apache用的是前者，
+mysql, mongodb用的是后者。<br />
+System V initialization机制<br />
+<br />
+参考： http://zh.wikipedia.org/wiki/Init<br />
+<br />
+不同操作系统默认的运行模式<br />
+<br />
+操作系统 &nbsp;&nbsp;&nbsp; 默认的运行模式<br />
+AIX &nbsp;&nbsp;&nbsp; 2<br />
+Arch Linux &nbsp;&nbsp;&nbsp; 3<br />
+CentOS &nbsp;&nbsp;&nbsp; 3<br />
+Debian GNU/Linux &nbsp;&nbsp;&nbsp; 2&nbsp; [5]<br />
+Gentoo Linux &nbsp;&nbsp;&nbsp; 3<br />
+Mandriva Linux &nbsp;&nbsp;&nbsp; 5<br />
+Mac OS X &nbsp;&nbsp;&nbsp; 3<br />
+Red Hat Linux /&nbsp; Fedora Core &nbsp;&nbsp;&nbsp; 3 or 5<br />
+Slackware Linux &nbsp;&nbsp;&nbsp; 3<br />
+Solaris &nbsp;&nbsp;&nbsp; 3&nbsp; [6]<br />
+SUSE Linux &nbsp;&nbsp;&nbsp; 5&nbsp; [7]<br />
+Ubuntu (Server and Desktop) &nbsp;&nbsp;&nbsp; 2&nbsp; [8]<br />
+System V
+initialization机制蛋疼的是对于每一个运行模式，都有一个文件夹来存放启动时要用的脚本。在/etc目录下可以看到有rc0.d,
+rc1.d ... rc5.d,
+rcS.d等文件夹，而里面的内容，大部分是从/etc/init.d里软链接过去的。。所以，如果想要增加一个启动项，得先在/etc/init.d下
+增加自己的脚本，再在rc0.d等目录里创建软链接，非常的麻烦。<br />
+<br />
+所以Linux的发行版通常都 会有工具来自动生成这些软链接配置。<br />
+<br />
+System V
+initialization机制还有一个蛋疼的地方，它用序号的方式来表示启动，停止顺序。比如在/etc/rc0.d里可以看到都是以S或者K开头的
+脚本，S是start，K是kill的意思。S/K后面的数字表示顺序，启动时，从小到大，停止时，从大到小。比如：K09apache2，表示
+apache2这个服务会是在09这个顺序停止。<br />
+<br />
+<br />
+CentOS下配置启动项<br />
+<br />
+CentOS用的是System V initialization机制。<br />
+<br />
+CentOS下用的工具是chkconfig<br />
+<br />
+<br />
+Ubuntu兼容System V initialization和Upstart机制。<br />
+<br />
+Ubuntu下对于System V initialization机制，用的工具是update-rc.d，<br />
+<br />
+对于Upstart机制，要手动修改配置，不过有个initctl的工具可以用来启动/停止/查看相关的进程。<br />
+<br />
+<br />
+对于CentOS，配置一个启动服务还是比较简单的，比如配置zookeeper服务自动启动：<br />
+<br />
+在/etc/init.d下创建一个脚本：<br />
+<br />
+#/bin/sh&nbsp; <br />
+#chkconfig: 2345 20 80&nbsp;&nbsp;&nbsp; <br />
+# description:&nbsp; zookeeper1<br />
+case $1 in<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; start)&nbsp;
+/home/zookeeper/zookeeper345_1/bin/zkServer.sh start&nbsp;&nbsp; ;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; stop)&nbsp; /home/zookeeper/zookeeper345_1/bin/zkServer.sh stop;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; status)&nbsp; /home/zookeeper/zookeeper345_1/bin/zkServer.sh status;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; restart)&nbsp; /home/zookeeper/zookeeper345_1/bin/zkServer.sh restart;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+*)&nbsp; echo "require start|stop|status|restart"&nbsp; ;;<br />
+esac<br />
+<br />
+这个脚本很简单，就是判断第一个参数的内容，再执行对应的程序。<br />
+<br />
+要注意的是chkconfig的两行配置一定要有：<br />
+<br />
+#chkconfig: 2345 20 80&nbsp;&nbsp;&nbsp; <br />
+#description:&nbsp; zookeeper1<br />
+<br />
+#chkconfig后面的2345表示系统启动的模式（runlevel），20表示启动的顺序，80表示停止的顺序。<br />
+<br />
+再加上可执行权限：<br />
+<br />
+chmod +x /etc/init.d/zookeeper1<br />
+chkconfig --add zookeeper1<br />
+<br />
+取消启动项：<br />
+<br />
+chkconfig zookeeper off<br />
+<br />
+删除启动项：<br />
+<br />
+chkconfig --del zookeeper1<br />
+<br />
+Ubuntu下配置启动项<br />
+System V initialization机制<br />
+<br />
+对于Ubuntu，如果是使用System V initialization机制，则可以参照上面chkconfig的脚本，再用update-rc.d命令设置一下：<br />
+<br />
+update-rc.d zookeeper1 defaults<br />
+<br />
+取消启动项：<br />
+<br />
+update-rc.d zookeeper1 disable<br />
+<br />
+删除启动项：<br />
+<br />
+update-rc.d -f zookeeper1 remove<br />
+<br />
+Upstart机制<br />
+<br />
+Upstart机制相当的复杂，具体可以参考：http://upstart.ubuntu.com/cookbook，这里只列一些要点。<br />
+<br />
+如果使用的是Upstart机制，则可以直接在/etc/init目录下创建一个以".conf"结尾的脚本，如，zookeeper1.conf：<br />
+<br />
+#设置启动停止的runlevel<br />
+start on runlevel [2345]<br />
+stop on runlevel [!2345]<br />
+<br />
+#设置自动重启<br />
+respawn<br />
+respawn limit 2 5<br />
+<br />
+umask 007<br />
+<br />
+kill timeout 30<br />
+<br />
+#设置启动的用户<br />
+setuid zookeeper<br />
+setgid zookeeper<br />
+<br />
+#注意使用的是start-foreground参数，这样会zookeeper进程会在前台运行，这样upstart才可以控制这个进程<br />
+script<br />
+exec&nbsp; /home/hengyunabc/soft/zookeeper-3.4.5/bin/zkServer.sh start-foreground<br />
+end script<br />
+<br />
+注意，这样子启动的话，zookeeper的日志是写到了/var/log/upstart/zookeeper1.log里去了。<br />
+<br />
+如果想用zkServer.sh start参数来启动的话，则比较麻烦，因为upstart不能关联到java进程，只能关联到bash进程。尽管upstart有一些expect daemon，expect fork的参数，但是貌似都不合适。<br />
+<br />
+可以参考这个帖子：http://stackoverflow.com/questions/12200217/can-upstart-expect-respawn-be-used-on-processes-that-fork-more-than-twice<br />
+<br />
+里面提到了一种定时检测进程进程存活，如果不存活，则启动的办法。可以用这个办法来处理脚本调用的情况。<br />
+<br />
+或者，直接在upstart脚本里启动java进程，可以参考upstart文档，或者这里：<br />
+<br />
+http://zookeeper-user.578899.n2.nabble.com/Zookeeper-run-as-non-root-td7577797.html <br />
+总结<br />
+<br />
+和System V initialization机制对比，Upstart机制虽然功能强大，比如可以自定义各种事件的触发处理，但是遇到复杂情况也不容易配置好。<br />
+<br />
+Upstart的status只能判断进程是否存活（而且不一定准确），而System V initialization则可以灵活地调用自己的脚本来得到进程更详细的状态信息。<br />
+其它的一些东东：<br />
+<br />
+supervisor，python写的进程管理工具：http://supervisord.org/<br />
+参考<br />
+<br />
+http://www.debian.org/doc/manuals/debian-reference/ch03.en.html<br />
+<br />
+https://github.com/LucidWorks/solr-fabric/blob/master/templates/zookeeper-upstart.conf<br />
+<br />
+作者：hengyunabc 发表于2014-2-8 21:02:00 原文链接 <br />
+
+
+<p><a href="../index.html">返回目录</a></p>
+<p class="green">本文来自网络，内容仅供参考，著作权归原作者所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+</p>
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</div>
+
+
+</body>
+</html>
