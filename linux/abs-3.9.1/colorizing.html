@@ -1,0 +1,1033 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML
+><HEAD
+><TITLE
+>33.5. 将脚本"彩色化"</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
+REL="HOME"
+TITLE="高级Bash脚本编程指南"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="递归"
+HREF="recursionsct.html"><LINK
+REL="NEXT"
+TITLE="优化"
+HREF="optimizations.html"></HEAD
+><BODY
+CLASS="PREFACE"
+BGCOLOR="#CCFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
+></TR>
+<TR><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="recursionsct.html"
+ACCESSKEY="P"
+>前一页</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="optimizations.html"
+ACCESSKEY="N"
+>下一页</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="PREFACE"
+><H1
+><A
+NAME="PREFACE"
+></A
+>彩色脚本</H1
+><DIV
+CLASS="TOC"
+><DL><DT><B>目录</B
+></DT><DT>
+33.5. 彩色脚本<br />
+--------------<br />
+ANSI [1]&nbsp; 定义了屏幕属性的转义序列集合,例如粗体文本,背景和前景颜色. DOS批处理文<br />
+件(batch files) 一般使用ANSI的转义代码来控制色彩输出,Bash脚本也是这么做的.<br />
+Example 33-11 一个 "彩色的" 地址资料库<br />
+################################Start
+Script#######################################<br />
+&nbsp;1 #!/bin/bash<br />
+&nbsp;2 # ex30a.sh: ex30.sh的"彩色" 版本.<br />
+&nbsp;3
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+没有加工处理的地址资料库<br />
+&nbsp;4<br />
+&nbsp;5<br />
+&nbsp;6
+clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 清除屏幕.<br />
+&nbsp;7<br />
+&nbsp;8 echo -n "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"<br />
+&nbsp;9 echo -e '\E[37;44m'"\033[1mContact List\033[0m"<br />
+10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 白色为前景色,蓝色为背景色<br />
+11 echo; echo<br />
+12 echo -e "\033[1mChoose one of the following persons:\033[0m"<br />
+13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 粗体<br />
+14 tput sgr0<br />
+15 echo "(Enter only the first letter of name.)"<br />
+16 echo<br />
+17 echo -en '\E[47;34m'"\033[1mE\033[0m"&nbsp;&nbsp; # 蓝色<br />
+18 tput
+sgr0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 把色彩设置为"常规"<br />
+19 echo "vans,
+Roland"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# "[E]vans, Roland"<br />
+20 echo -en '\E[47;35m'"\033[1mJ\033[0m"&nbsp;&nbsp; # 红紫色<br />
+21 tput sgr0<br />
+22 echo "ones, Mildred"<br />
+23 echo -en '\E[47;32m'"\033[1mS\033[0m"&nbsp;&nbsp; # 绿色<br />
+24 tput sgr0<br />
+25 echo "mith, Julie"<br />
+26 echo -en '\E[47;31m'"\033[1mZ\033[0m"&nbsp;&nbsp; # 红色<br />
+27 tput sgr0<br />
+28 echo "ane, Morris"<br />
+29 echo<br />
+30<br />
+31 read person<br />
+32<br />
+33 case "$person" in<br />
+34 # 注意变量被引起来了.<br />
+35<br />
+36&nbsp;&nbsp; "E" | "e" )<br />
+37&nbsp;&nbsp; # 接受大小写的输入.<br />
+38&nbsp;&nbsp; echo<br />
+39&nbsp;&nbsp; echo "Roland Evans"<br />
+40&nbsp;&nbsp; echo "4321 Floppy Dr."<br />
+41&nbsp;&nbsp; echo "Hardscrabble, CO 80753"<br />
+42&nbsp;&nbsp; echo "(303) 734-9874"<br />
+43&nbsp;&nbsp; echo "(303) 734-9892 fax"<br />
+44&nbsp;&nbsp; echo "revans@zzy.net"<br />
+45&nbsp;&nbsp; echo "Business partner &amp; old friend"<br />
+46&nbsp;&nbsp; ;;<br />
+47<br />
+48&nbsp;&nbsp; "J" | "j" )<br />
+49&nbsp;&nbsp; echo<br />
+50&nbsp;&nbsp; echo "Mildred Jones"<br />
+51&nbsp;&nbsp; echo "249 E. 7th St., Apt. 19"<br />
+52&nbsp;&nbsp; echo "New York, NY 10009"<br />
+53&nbsp;&nbsp; echo "(212) 533-2814"<br />
+54&nbsp;&nbsp; echo "(212) 533-9972 fax"<br />
+55&nbsp;&nbsp; echo "milliej@loisaida.com"<br />
+56&nbsp;&nbsp; echo "Girlfriend"<br />
+57&nbsp;&nbsp; echo "Birthday: Feb. 11"<br />
+58&nbsp;&nbsp; ;;<br />
+59<br />
+60 # 稍后为 Smith 和 Zane 增加信息.<br />
+61<br />
+62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * )<br />
+63&nbsp;&nbsp;&nbsp; # 默认选项Default option.&nbsp; <br />
+64&nbsp;&nbsp;&nbsp; # 空的输入(直接按了回车) 也会匹配这儿.<br />
+65&nbsp;&nbsp;&nbsp; echo<br />
+66&nbsp;&nbsp;&nbsp; echo "Not yet in database."<br />
+67&nbsp;&nbsp; ;;<br />
+68<br />
+69 esac<br />
+70<br />
+71 tput
+sgr0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 把色彩重设为"常规".<br />
+72<br />
+73 echo<br />
+74<br />
+75 exit 0<br />
+################################End
+Script#########################################<br />
+Example 33-12 画盒子<br />
+################################Start
+Script#######################################<br />
+&nbsp; 1 #!/bin/bash<br />
+&nbsp; 2 # Draw-box.sh: 用ASCII字符画一个盒子.<br />
+&nbsp; 3<br />
+&nbsp; 4 # Stefano Palmeri编写,文档作者作了少量编辑.<br />
+&nbsp; 5 # 征得作者同意在本书使用.<br />
+&nbsp; 6<br />
+&nbsp; 7<br />
+&nbsp; 8
+######################################################################<br />
+&nbsp; 9 ###&nbsp; draw_box 函数的注释&nbsp; ###<br />
+&nbsp;10<br />
+&nbsp;11 #&nbsp; "draw_box" 函数使用户可以在终端上画一个盒子.<br />
+&nbsp;12 #<br />
+&nbsp;13 #<br />
+&nbsp;14 #&nbsp; 用法: draw_box ROW COLUMN HEIGHT WIDTH [COLOR]<br />
+&nbsp;15 #&nbsp; ROW 和 COLUMN
+定位要画的盒子的左上角.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;16 #<br />
+&nbsp;17 #&nbsp; ROW 和 COLUMN 必须要大于0且小于目前终端的尺寸.<br />
+&nbsp;18 #<br />
+&nbsp;19 #&nbsp; HEIGHT 是盒子的行数,必须 &gt; 0.<br />
+&nbsp;20 #&nbsp; HEIGHT + ROW 必须 &lt;= 终端的高度.<br />
+&nbsp;21 #&nbsp; WIDTH 是盒子的列数,必须 &gt; 0.<br />
+&nbsp;22 #&nbsp; WIDTH + COLUMN 必须 &lt;= 终端的宽度.<br />
+&nbsp;23 #<br />
+&nbsp;24 #&nbsp; 例如: 如果你当前终端的尺寸是 20x80,<br />
+&nbsp;25 #&nbsp; draw_box 2 3 10 45 是合法的<br />
+&nbsp;26 #&nbsp; draw_box 2 3 19 45 的 HEIGHT 值是错的 (19+2 &gt; 20)<br />
+&nbsp;27 #&nbsp; draw_box 2 3 18 78 的 WIDTH 值是错的 (78+3 &gt; 80)<br />
+&nbsp;28 #<br />
+&nbsp;29 #&nbsp; COLOR 是盒子边框的颜色.<br />
+&nbsp;30 #&nbsp; 它是第5个参数,并且它是可选的.<br />
+&nbsp;31 #&nbsp; 0=黑色 1=红色 2=绿色 3=棕褐色 4=蓝色 5=紫色 6=青色 7=白色.<br />
+&nbsp;32 #&nbsp; 如果你传给这个函数错的参数,<br />
+&nbsp;33 #+ 它就会以代码65退出,<br />
+&nbsp;34 #+ 没有其他的信息打印到标准出错上.<br />
+&nbsp;35 #<br />
+&nbsp;36 #&nbsp; 在画盒子之前要清屏.<br />
+&nbsp;37 #&nbsp; 函数内不包含有清屏命令.<br />
+&nbsp;38 #&nbsp; 这使用户可以画多个盒子,甚至叠接多个盒子.<br />
+&nbsp;39<br />
+&nbsp;40 ###&nbsp; draw_box 函数注释结束&nbsp; ###<br />
+&nbsp;41
+######################################################################<br />
+&nbsp;42<br />
+&nbsp;43 draw_box(){<br />
+&nbsp;44<br />
+&nbsp;45 #=============#<br />
+&nbsp;46 HORZ="-"<br />
+&nbsp;47 VERT="|"<br />
+&nbsp;48 CORNER_CHAR="+"<br />
+&nbsp;49<br />
+&nbsp;50 MINARGS=4<br />
+&nbsp;51 E_BADARGS=65<br />
+&nbsp;52 #=============#<br />
+&nbsp;53<br />
+&nbsp;54<br />
+&nbsp;55 if [ $# -lt "$MINARGS" ];
+then&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 如果参数小于4,退出.<br />
+&nbsp;56&nbsp;&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;57 fi<br />
+&nbsp;58<br />
+&nbsp;59 # 搜寻参数中的非数字的字符.<br />
+&nbsp;60 # 能用其他更好的办法吗 (留给读者的练习?).<br />
+&nbsp;61 if echo $@ | tr -d [:blank:] | tr -d [:digit:] | grep .
+&amp;&gt; /dev/null; then<br />
+&nbsp;62&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;63 fi<br />
+&nbsp;64<br />
+&nbsp;65 BOX_HEIGHT=`expr $3 - 1`&nbsp;&nbsp; #&nbsp; -1
+是需要的,因为因为边角的"+"是高和宽共有的部分.<br />
+&nbsp;66 BOX_WIDTH=`expr $4 - 1`&nbsp;&nbsp;&nbsp; #<br />
+&nbsp;67 T_ROWS=`tput lines`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#&nbsp; 定义当前终端长和宽的尺寸,<br />
+&nbsp;68 T_COLS=`tput
+cols`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
+&nbsp;69&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;70 if [ $1 -lt 1 ] || [ $1 -gt $T_ROWS ]; then&nbsp;&nbsp;&nbsp;
+#&nbsp; 如果参数是数字就开始检查有效性.<br />
+&nbsp;71&nbsp;&nbsp;&nbsp; exit
+$E_BADARGS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#<br />
+&nbsp;72 fi<br />
+&nbsp;73 if [ $2 -lt 1 ] || [ $2 -gt $T_COLS ]; then<br />
+&nbsp;74&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;75 fi<br />
+&nbsp;76 if [ `expr $1 + $BOX_HEIGHT + 1` -gt $T_ROWS ]; then<br />
+&nbsp;77&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;78 fi<br />
+&nbsp;79 if [ `expr $2 + $BOX_WIDTH + 1` -gt $T_COLS ]; then<br />
+&nbsp;80&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;81 fi<br />
+&nbsp;82 if [ $3 -lt 1 ] || [ $4 -lt 1 ]; then<br />
+&nbsp;83&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
+&nbsp;84
+fi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 参数检查完毕.<br />
+&nbsp;85<br />
+&nbsp;86
+plot_char(){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 函数内的函数.<br />
+&nbsp;87&nbsp;&nbsp;&nbsp; echo -e "\E[${1};${2}H"$3<br />
+&nbsp;88 }<br />
+&nbsp;89<br />
+&nbsp;90 echo -ne
+"\E[3${5}m"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 如果传递了盒子边框颜色参数,则设置它.<br />
+&nbsp;91<br />
+&nbsp;92 # start drawing the box<br />
+&nbsp;93<br />
+&nbsp;94
+count=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#&nbsp; 用plot_char函数画垂直线<br />
+&nbsp;95 for (( r=$1; count&lt;=$BOX_HEIGHT; r++));
+do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
+&nbsp;96&nbsp;&nbsp; plot_char $r $2 $VERT<br />
+&nbsp;97&nbsp;&nbsp; let count=count+1<br />
+&nbsp;98 done<br />
+&nbsp;99<br />
+100 count=1<br />
+101 c=`expr $2 + $BOX_WIDTH`<br />
+102 for (( r=$1; count&lt;=$BOX_HEIGHT; r++)); do<br />
+103&nbsp;&nbsp; plot_char $r $c $VERT<br />
+104&nbsp;&nbsp; let count=count+1<br />
+105 done<br />
+106<br />
+107
+count=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#&nbsp; 用plot_char函数画水平线<br />
+108 for (( c=$2; count&lt;=$BOX_WIDTH; c++));
+do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
+109&nbsp;&nbsp; plot_char $1 $c $HORZ<br />
+110&nbsp;&nbsp; let count=count+1<br />
+111 done<br />
+112<br />
+113 count=1<br />
+114 r=`expr $1 + $BOX_HEIGHT`<br />
+115 for (( c=$2; count&lt;=$BOX_WIDTH; c++)); do<br />
+116&nbsp;&nbsp; plot_char $r $c $HORZ<br />
+117&nbsp;&nbsp; let count=count+1<br />
+118 done<br />
+119<br />
+120 plot_char $1 $2
+$CORNER_CHAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 画盒子的角.<br />
+121 plot_char $1 `expr $2 + $BOX_WIDTH` +<br />
+122 plot_char `expr $1 + $BOX_HEIGHT` $2 +<br />
+123 plot_char `expr $1 + $BOX_HEIGHT` `expr $2 + $BOX_WIDTH` +<br />
+124<br />
+125 echo -ne
+"\E[0m"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#&nbsp; 恢复最初的颜色.<br />
+126<br />
+127 P_ROWS=`expr $T_ROWS - 1`&nbsp;&nbsp;&nbsp; #&nbsp; 在终端的底部打印提示符.<br />
+128<br />
+129 echo -e "\E[${P_ROWS};1H"<br />
+130 }&nbsp;&nbsp;&nbsp;&nbsp; <br />
+131<br />
+132<br />
+133 # 现在, 让我们来画一个盒子.<br />
+134
+clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 清屏.<br />
+135 R=2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 行<br />
+136 C=3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 列<br />
+137 H=10&nbsp;&nbsp;&nbsp;&nbsp; # 高<br />
+138 W=45&nbsp;&nbsp;&nbsp;&nbsp; # 宽<br />
+139 col=1&nbsp;&nbsp;&nbsp; # 颜色(红)<br />
+140 draw_box $R $C $H $W $col&nbsp;&nbsp; # 画盒子.<br />
+141<br />
+142 exit 0<br />
+143<br />
+144 # 练习:<br />
+145 # --------<br />
+146 # 增加可以在盒子里打印文本的选项<br />
+################################End
+Script#########################################<br />
+最简单也可能是最有用的ANSI转义序列是加粗文本, \033[1m ... \033[0m. \033 触发转义序<br />
+列, 而 "[1" 启用加粗属性, 而"[0" 表示切换回禁用加粗状态. "m"则表示终止一个转义序列.<br />
+&nbsp;bash$ echo -e "\033[1mThis is bold text.\033[0m"<br />
+一种相似的转义序列可切换下划线效果 (在 rxvt 和 aterm 上).<br />
+&nbsp;bash$ echo -e "\033[4mThis is underlined text.\033[0m"<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+注意: echo使用-e选项可以启用转义序列.<br />
+其他的转义序列可用于更改文本或/和背景色彩.<br />
+&nbsp;bash$ echo -e '\E[34;47mThis prints in blue.'; tput sgr0<br />
+&nbsp;<br />
+&nbsp;bash$ echo -e '\E[33;44m'"yellow text on blue background"; tput
+sgr0<br />
+&nbsp;<br />
+&nbsp;bash$ echo -e '\E[1;33;44m'"BOLD yellow text on blue background";
+tput sgr0<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+注意: 通常为淡色的前景色文本设置粗体效果是较好的.<br />
+tput sgr0 把终端设置恢复为原样. 如果省略这一句会使后续在该终端的输出仍为蓝色.<br />
+注意: 因为tput sgr0 在某些环境下不能恢复终端设置, echo -ne \E[0m 会是更好的选择.<br />
+可以在有色的背景上用下面的模板写有色彩的文本.<br />
+echo -e '\E[COLOR1;COLOR2mSome text goes here.'<br />
+"\E[" 开始转义序列. 分号分隔的数值"COLOR1" 和 "COLOR2" 指定前景色和背景色, 数值和<br />
+色彩的对应参见下面的表格. (数值的顺序不是有关系的,因为前景色和背景色数值都落在不<br />
+重叠的范围里.) "m"终止该转义序列, 然后文本以结束的转义指定的属性显示.<br />
+也要注意到用单引号引用了echo -e后面的余下命令序列.<br />
+下表的数值是在 rxvt 终端运行的结果. 具体效果可能在其他的各种终端上不一样.<br />
+table 33-1. 转义序列中数值和彩色的对应<br />
+==========================<br />
+| 色彩&nbsp; | 前景色 | 背景色|<br />
+|&nbsp; 黑&nbsp; |&nbsp; 30&nbsp; |&nbsp; 40&nbsp;&nbsp; |<br />
+|&nbsp; 红&nbsp; |&nbsp; 31&nbsp; |&nbsp; 41&nbsp;&nbsp; |<br />
+|&nbsp; 绿&nbsp; |&nbsp; 32&nbsp; |&nbsp; 42&nbsp;&nbsp; |<br />
+|&nbsp; 黄&nbsp; |&nbsp; 33&nbsp; |&nbsp; 43&nbsp;&nbsp; |<br />
+|&nbsp; 蓝&nbsp; |&nbsp; 34&nbsp; |&nbsp; 44&nbsp;&nbsp; |<br />
+|&nbsp; 洋红 |&nbsp; 35&nbsp; |&nbsp; 45&nbsp;&nbsp; |<br />
+|&nbsp; 青&nbsp; |&nbsp; 36&nbsp; |&nbsp; 46&nbsp;&nbsp; |<br />
+|&nbsp; 白&nbsp; |&nbsp; 37&nbsp; |&nbsp; 47&nbsp;&nbsp; |<br />
+==========================<br />
+Example 33-13 显示彩色文本<br />
+################################Start
+Script#######################################<br />
+&nbsp;1 #!/bin/bash<br />
+&nbsp;2 # color-echo.sh: 用彩色来显示文本.<br />
+&nbsp;3<br />
+&nbsp;4 # 依照需要修改这个脚本.<br />
+&nbsp;5 # 这比手写彩色的代码更容易一些.<br />
+&nbsp;6<br />
+&nbsp;7 black='\E[30;47m'<br />
+&nbsp;8 red='\E[31;47m'<br />
+&nbsp;9 green='\E[32;47m'<br />
+10 yellow='\E[33;47m'<br />
+11 blue='\E[34;47m'<br />
+12 magenta='\E[35;47m'<br />
+13 cyan='\E[36;47m'<br />
+14 white='\E[37;47m'<br />
+15<br />
+16<br />
+17 alias Reset="tput sgr0"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;
+把文本属性重设回原来没有清屏前的<br />
+18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+#<br />
+19<br />
+20<br />
+21 cecho
+()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# Color-echo.<br />
+22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 参数 $1 = 要显示的信息<br />
+23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 参数 $2 = 颜色<br />
+24 {<br />
+25 local default_msg="No message passed."<br />
+26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 不是非要一个本地变量.<br />
+27<br />
+28 message=${1:-$default_msg}&nbsp;&nbsp; # 默认的信息.<br />
+29
+color=${2:-$black}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 如果没有指定,默认使用黑色.<br />
+30<br />
+31&nbsp;&nbsp; echo -e "$color"<br />
+32&nbsp;&nbsp; echo "$message"<br />
+33&nbsp;&nbsp;
+Reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+# 重设文本属性.<br />
+34<br />
+35&nbsp;&nbsp; return<br />
+36 } <br />
+37<br />
+38<br />
+39 # 现在,让我们试试.<br />
+40 # ----------------------------------------------------<br />
+41 cecho "Feeling blue..." $blue<br />
+42 cecho "Magenta looks more like purple." $magenta<br />
+43 cecho "Green with envy." $green<br />
+44 cecho "Seeing red?" $red<br />
+45 cecho "Cyan, more familiarly known as aqua." $cyan<br />
+46 cecho "No color passed (defaults to black)."<br />
+47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 缺失 $color (色彩)参数.<br />
+48 cecho "\"Empty\" color passed (defaults to black)." ""<br />
+49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 空的 $color (色彩)参数.<br />
+50 cecho<br />
+51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $message(信息) 和 $color
+(色彩)参数都缺失.<br />
+52 cecho "" ""<br />
+53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 空的 $message (信息)和 $color
+(色彩)参数.<br />
+54 # ----------------------------------------------------<br />
+55<br />
+56 echo<br />
+57<br />
+58 exit 0<br />
+59<br />
+60 # 练习:<br />
+61 # ---------<br />
+62 # 1) 为'cecho ()'函数增加粗体的效果.<br />
+63 # 2) 增加可选的彩色背景.<br />
+################################End
+Script#########################################<br />
+Example 33-14 "赛马" 游戏<br />
+################################Start
+Script#######################################<br />
+&nbsp; 1 #!/bin/bash<br />
+&nbsp; 2 # horserace.sh: 非常简单的赛马模拟.<br />
+&nbsp; 3 # 作者: Stefano Palmeri<br />
+&nbsp; 4 # 已取得使用许可.<br />
+&nbsp; 5<br />
+&nbsp; 6
+################################################################<br />
+&nbsp; 7 #&nbsp; 脚本目的:<br />
+&nbsp; 8 #&nbsp; 使用转义字符和终端颜色.<br />
+&nbsp; 9 #<br />
+&nbsp;10 #&nbsp; 练习:<br />
+&nbsp;11 #&nbsp; 编辑脚本使其更具有随机性,<br />
+&nbsp;12 #+ 设置一个假的赌场 . . .&nbsp;&nbsp;&nbsp; <br />
+&nbsp;13 #&nbsp; 嗯 . . . 嗯 . . . 这个开始使我想起了一部电影 . . .<br />
+&nbsp;14 #<br />
+&nbsp;15 #&nbsp; 脚本给每匹马一个随机的障碍.<br />
+&nbsp;16 #&nbsp; 不均等会以障碍来计算<br />
+&nbsp;17 #+ 并且用一种欧洲风格表达出来.<br />
+&nbsp;18 #&nbsp; 例如: 机率(odds)=3.75 意味着如果你押1美元赢,<br />
+&nbsp;19 #+ 你可以赢得3.75美元.<br />
+&nbsp;20 #<br />
+&nbsp;21 #&nbsp; 脚本已经在GNU/Linux操作系统上测试过 OS,<br />
+&nbsp;22 #+ 测试终端有xterm 和 rxvt, 及 konsole.<br />
+&nbsp;23 #&nbsp; 测试机器有AMD 900 MHz 的处理器,<br />
+&nbsp;24 #+ 平均比赛时间是75秒.&nbsp;&nbsp; <br />
+&nbsp;25 #&nbsp; 在更快的计算机上比赛时间应该会更低.<br />
+&nbsp;26 #&nbsp; 所以, 如果你想有更多的悬念,重设USLEEP_ARG 变量的值.<br />
+&nbsp;27 #<br />
+&nbsp;28 #&nbsp; 由Stefano Palmeri编写.<br />
+&nbsp;29
+################################################################<br />
+&nbsp;30<br />
+&nbsp;31 E_RUNERR=65<br />
+&nbsp;32<br />
+&nbsp;33 # 检查 md5sum 和 bc 是不是安装了.<br />
+&nbsp;34 if ! which bc &amp;&gt; /dev/null; then<br />
+&nbsp;35&nbsp;&nbsp;&nbsp; echo bc is not installed. <br />
+&nbsp;36&nbsp;&nbsp;&nbsp; echo "Can\'t run . . . "<br />
+&nbsp;37&nbsp;&nbsp;&nbsp; exit $E_RUNERR<br />
+&nbsp;38 fi<br />
+&nbsp;39 if ! which md5sum &amp;&gt; /dev/null; then<br />
+&nbsp;40&nbsp;&nbsp;&nbsp; echo md5sum is not installed. <br />
+&nbsp;41&nbsp;&nbsp;&nbsp; echo "Can\'t run . . . "<br />
+&nbsp;42&nbsp;&nbsp;&nbsp; exit $E_RUNERR<br />
+&nbsp;43 fi<br />
+&nbsp;44<br />
+&nbsp;45 #&nbsp; 更改下面的变量值可以使脚本执行的更慢.<br />
+&nbsp;46 #&nbsp; 它会作为usleep的参数 (man usleep) <br />
+&nbsp;47 #+ 并且它的单位是微秒 (500000微秒 = 半秒).<br />
+&nbsp;48 USLEEP_ARG=0 <br />
+&nbsp;49<br />
+&nbsp;50 #&nbsp; 如果脚本接收到ctrl-c中断,清除临时目录, 恢复终端光标和颜色<br />
+&nbsp;51 #<br />
+&nbsp;52 trap 'echo -en "\E[?25h"; echo -en "\E[0m"; stty echo;\<br />
+&nbsp;53 tput cup 20 0; rm -fr&nbsp; $HORSE_RACE_TMP_DIR'&nbsp; TERM
+EXIT<br />
+&nbsp;54 #&nbsp; 参考调试的章节了解'trap'的更多解释<br />
+&nbsp;55<br />
+&nbsp;56 # 给脚本设置一个唯一(实际不是绝对唯一的)的临时目录名.<br />
+&nbsp;57 HORSE_RACE_TMP_DIR=$HOME/.horserace-`date +%s`-`head -c10
+/dev/urandom | md5sum | head -c30`<br />
+&nbsp;58<br />
+&nbsp;59 # 创建临时目录,并切换到该目录下.<br />
+&nbsp;60 mkdir $HORSE_RACE_TMP_DIR<br />
+&nbsp;61 cd $HORSE_RACE_TMP_DIR<br />
+&nbsp;62<br />
+&nbsp;63<br />
+&nbsp;64 #&nbsp; 这个函数把光标移动到行为 $1 列为 $2 然后打印 $3.<br />
+&nbsp;65 #&nbsp; 例如: "move_and_echo 5 10 linux" 等同于<br />
+&nbsp;66 #+ "tput cup 4 9; echo linux", 但是用一个命令代替了两个.<br />
+&nbsp;67 #&nbsp; 注: "tput cup" 表示在终端左上角的 0 0 位置,<br />
+&nbsp;68 #+ echo 是在终端的左上角的 1 1 位置.<br />
+&nbsp;69 move_and_echo() {<br />
+&nbsp;70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo -ne "\E[${1};${2}H""$3"<br />
+&nbsp;71 }<br />
+&nbsp;72<br />
+&nbsp;73 # 产生1-9之间伪随机数的函数.<br />
+&nbsp;74 random_1_9 () {<br />
+&nbsp;75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+head -c10 /dev/urandom | md5sum | tr -d [a-z] | tr -d 0 | cut -c1<br />
+&nbsp;76 }<br />
+&nbsp;77<br />
+&nbsp;78 #&nbsp; 画马时模拟运动的两个函数.<br />
+&nbsp;79 draw_horse_one() {<br />
+&nbsp;80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo -n " "//$MOVE_HORSE//<br />
+&nbsp;81 }<br />
+&nbsp;82 draw_horse_two(){<br />
+&nbsp;83&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo -n " "\\\\$MOVE_HORSE\\\\<br />
+&nbsp;84 }&nbsp; <br />
+&nbsp;85<br />
+&nbsp;86<br />
+&nbsp;87 # 取得当前的终端尺寸.<br />
+&nbsp;88 N_COLS=`tput cols`<br />
+&nbsp;89 N_LINES=`tput lines`<br />
+&nbsp;90<br />
+&nbsp;91 # 至少需要 20-行 X 80-列 的终端尺寸. 检查一下.<br />
+&nbsp;92 if [ $N_COLS -lt 80 ] || [ $N_LINES -lt 20 ]; then<br />
+&nbsp;93&nbsp;&nbsp;&nbsp; echo "`basename $0` needs a 80-cols X
+20-lines terminal."<br />
+&nbsp;94&nbsp;&nbsp;&nbsp; echo "Your terminal is ${N_COLS}-cols X
+${N_LINES}-lines."<br />
+&nbsp;95&nbsp;&nbsp;&nbsp; exit $E_RUNERR<br />
+&nbsp;96 fi<br />
+&nbsp;97<br />
+&nbsp;98<br />
+&nbsp;99 # 开始画赛场.<br />
+100<br />
+101 # 需要一个80个字符的字符串,看下面的.<br />
+102 BLANK80=`seq -s "" 100 | head -c80`<br />
+103<br />
+104 clear<br />
+105<br />
+106 # 把前景和背景颜色设置成白色的.<br />
+107 echo -ne '\E[37;47m'<br />
+108<br />
+109 # 把光标移到终端的左上角.<br />
+110 tput cup 0 0<br />
+111<br />
+112 # 画六条白线.<br />
+113 for n in `seq 5`; do<br />
+114&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+$BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 线是用80个字符组成的字符串. <br />
+115 done<br />
+116<br />
+117 # 把前景色设置成黑色.<br />
+118 echo -ne '\E[30m'<br />
+119<br />
+120 move_and_echo 3 1 "START&nbsp;
+1"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+121 move_and_echo 3 75 FINISH<br />
+122 move_and_echo 1 5 "|"<br />
+123 move_and_echo 1 80 "|"<br />
+124 move_and_echo 2 5 "|"<br />
+125 move_and_echo 2 80 "|"<br />
+126 move_and_echo 4 5 "|&nbsp; 2"<br />
+127 move_and_echo 4 80 "|"<br />
+128 move_and_echo 5 5 "V&nbsp; 3"<br />
+129 move_and_echo 5 80 "V"<br />
+130<br />
+131 # 把前景色设置成红色.<br />
+132 echo -ne '\E[31m'<br />
+133<br />
+134 # 一些ASCII艺术.<br />
+135 move_and_echo 1 8 "..@@@..@@@@@...@@@@@.@...@..@@@@..."<br />
+136 move_and_echo 2 8 ".@...@...@.......@...@...@.@......."<br />
+137 move_and_echo 3 8 ".@@@@@...@.......@...@@@@@.@@@@...."<br />
+138 move_and_echo 4 8 ".@...@...@.......@...@...@.@......."<br />
+139 move_and_echo 5 8 ".@...@...@.......@...@...@..@@@@..."<br />
+140 move_and_echo 1 43 "@@@@...@@@...@@@@..@@@@..@@@@."<br />
+141 move_and_echo 2 43 "@...@.@...@.@.....@.....@....."<br />
+142 move_and_echo 3 43 "@@@@..@@@@@.@.....@@@@...@@@.."<br />
+143 move_and_echo 4 43 "@..@..@...@.@.....@.........@."<br />
+144 move_and_echo 5 43 "@...@.@...@..@@@@..@@@@.@@@@.."<br />
+145<br />
+146<br />
+147 # 把前景和背景颜色设为绿色.<br />
+148 echo -ne '\E[32;42m'<br />
+149<br />
+150 # 画11行绿线.<br />
+151 tput cup 5 0<br />
+152 for n in `seq 11`; do<br />
+153&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $BLANK80<br />
+154 done<br />
+155<br />
+156 # 把前景色设为黑色.<br />
+157 echo -ne '\E[30m'<br />
+158 tput cup 5 0<br />
+159<br />
+160 # 画栅栏.<br />
+161 echo "++++++++++++++++++++++++++++++++++++++\<br />
+162 ++++++++++++++++++++++++++++++++++++++++++"<br />
+163<br />
+164 tput cup 15 0<br />
+165 echo "++++++++++++++++++++++++++++++++++++++\<br />
+166 ++++++++++++++++++++++++++++++++++++++++++"<br />
+167<br />
+168 # 把前景和背景色设回白色.<br />
+169 echo -ne '\E[37;47m'<br />
+170<br />
+171 # 画3条白线.<br />
+172 for n in `seq 3`; do<br />
+173&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $BLANK80<br />
+174 done<br />
+175<br />
+176 # 把前景色设为黑色.<br />
+177 echo -ne '\E[30m'<br />
+178<br />
+179 # 创建9个文件来保存障碍物.<br />
+180 for n in `seq 10 7 68`; do<br />
+181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch $n<br />
+182 done <br />
+183<br />
+184 # 设置脚本要画的马的类型为第一种类型.<br />
+185 HORSE_TYPE=2<br />
+186<br />
+187 #&nbsp; 为每匹马创建位置文件和机率文件.<br />
+188 #+ 在这些文件里保存了该匹马当前的位置,<br />
+189 #+ 类型和机率.<br />
+190 for HN in `seq 9`; do<br />
+191&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch horse_${HN}_position<br />
+192&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch odds_${HN}<br />
+193&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo \-1 &gt;
+horse_${HN}_position<br />
+194&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $HORSE_TYPE &gt;&gt;&nbsp;
+horse_${HN}_position<br />
+195&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 给马定义随机的障碍物.<br />
+196&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HANDICAP=`random_1_9`<br />
+197&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 检查random_1_9函数是否返回了有效值.<br />
+198&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while ! echo $HANDICAP | grep
+[1-9] &amp;&gt; /dev/null; do<br />
+199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HANDICAP=`random_1_9`<br />
+200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done<br />
+201&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 给马定义最后的障碍的位置.<br />
+202&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LHP=`expr $HANDICAP \* 7 + 3`<br />
+203&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for FILE in `seq 10 7 $LHP`; do<br />
+204&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $HN &gt;&gt; $FILE<br />
+205&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done&nbsp; <br />
+206&nbsp;&nbsp;&nbsp;&nbsp; <br />
+207&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 计算机率.<br />
+208&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case $HANDICAP in<br />
+209&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1) ODDS=`echo $HANDICAP \* 0.25 + 1.25 | bc`<br />
+210&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $ODDS &gt; odds_${HN}<br />
+211&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;;<br />
+212&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 | 3) ODDS=`echo $HANDICAP \* 0.40 + 1.25 | bc`<br />
+213&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $ODDS &gt; odds_${HN}<br />
+214&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;;<br />
+215&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4 | 5 | 6) ODDS=`echo $HANDICAP \* 0.55 + 1.25 | bc`<br />
+216&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $ODDS &gt; odds_${HN}<br />
+217&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;;<br />
+218&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+7 | 8) ODDS=`echo $HANDICAP \* 0.75 + 1.25 | bc`<br />
+219&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $ODDS &gt; odds_${HN}<br />
+220&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;;<br />
+221&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9) ODDS=`echo $HANDICAP \* 0.90 + 1.25 | bc`<br />
+222&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $ODDS &gt; odds_${HN}<br />
+223&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; esac<br />
+224<br />
+225<br />
+226 done<br />
+227<br />
+228<br />
+229 # 打印机率.<br />
+230 print_odds() {<br />
+231 tput cup 6 0<br />
+232 echo -ne '\E[30;42m'<br />
+233 for HN in `seq 9`; do<br />
+234&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo "#$HN odds-&gt;" `cat
+odds_${HN}`<br />
+235 done<br />
+236 }<br />
+237<br />
+238 # 在起跑线上画马.<br />
+239 draw_horses() {<br />
+240 tput cup 6 0<br />
+241 echo -ne '\E[30;42m'<br />
+242 for HN in `seq 9`; do<br />
+243&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+/\\$HN/\\"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"<br />
+244 done<br />
+245 }<br />
+246<br />
+247 print_odds<br />
+248<br />
+249 echo -ne '\E[47m'<br />
+250 # 等待回车按键开始赛马.<br />
+251 # 转义序列'\E[?25l'禁显了光标.<br />
+252 tput cup 17 0<br />
+253 echo -e '\E[?25l'Press [enter] key to start the race...<br />
+254 read -s<br />
+255<br />
+256 #&nbsp; 禁用了终端的常规显示功能.<br />
+257 #&nbsp; 这避免了赛跑时不小心按了按键键入显示字符而弄乱了屏幕.<br />
+258 # <br />
+259 stty -echo<br />
+260<br />
+261 # --------------------------------------------------------<br />
+262 # 开始赛跑.<br />
+263<br />
+264 draw_horses<br />
+265 echo -ne '\E[37;47m'<br />
+266 move_and_echo 18 1 $BLANK80<br />
+267 echo -ne '\E[30m'<br />
+268 move_and_echo 18 1 Starting...<br />
+269 sleep 1<br />
+270<br />
+271 # 设置终点线的列数.<br />
+272 WINNING_POS=74<br />
+273<br />
+274 # 记录赛跑开始的时间.<br />
+275 START_TIME=`date +%s`<br />
+276<br />
+277 # COL 是由下面的"while"结构使用的.<br />
+278 COL=0&nbsp;&nbsp; <br />
+279<br />
+280 while [ $COL -lt $WINNING_POS ]; do<br />
+281&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />
+282&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MOVE_HORSE=0&nbsp;&nbsp;&nbsp; <br />
+283&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+284&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+检查random_1_9函数是否返回了有效值.<br />
+285&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while !
+echo $MOVE_HORSE | grep [1-9] &amp;&gt; /dev/null; do<br />
+286&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+MOVE_HORSE=`random_1_9`<br />
+287&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done<br />
+288&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+289&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+取得随机取得的马的类型和当前位置.<br />
+290&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HORSE_TYPE=`cat&nbsp; horse_${MOVE_HORSE}_position | tail -1`<br />
+291&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+COL=$(expr `cat&nbsp; horse_${MOVE_HORSE}_position | head -1`)<br />
+292&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+293&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ADD_POS=1<br />
+294&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+检查当前的位置是否是障碍物的位置.<br />
+295&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if seq
+10 7 68 | grep -w $COL &amp;&gt; /dev/null; then<br />
+296&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if grep -w $MOVE_HORSE $COL &amp;&gt; /dev/null; then<br />
+297&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ADD_POS=0<br />
+298&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+grep -v -w&nbsp; $MOVE_HORSE $COL &gt; ${COL}_new<br />
+299&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+rm -f $COL<br />
+300&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+mv -f ${COL}_new $COL<br />
+301&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+else ADD_POS=1<br />
+302&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fi<br />
+303&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else
+ADD_POS=1<br />
+304&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fi<br />
+305&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+COL=`expr $COL + $ADD_POS`<br />
+306&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+$COL &gt;&nbsp; horse_${MOVE_HORSE}_position&nbsp; # 保存新位置.<br />
+307&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<br />
+308&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+选择要画的马的类型.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+309&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case
+$HORSE_TYPE in<br />
+310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1) HORSE_TYPE=2; DRAW_HORSE=draw_horse_two<br />
+311&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+;;<br />
+312&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2) HORSE_TYPE=1; DRAW_HORSE=draw_horse_one<br />
+313&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+esac&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+314&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+$HORSE_TYPE &gt;&gt;&nbsp; horse_${MOVE_HORSE}_position # 保存当前类型.<br />
+315&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+316&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+把前景色设为黑,背景色设为绿.<br />
+317&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+-ne '\E[30;42m'<br />
+318&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+319&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+把光标位置移到新的马的位置.<br />
+320&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tput
+cup `expr $MOVE_HORSE + 5`&nbsp; `cat&nbsp;
+horse_${MOVE_HORSE}_position | head -1`<br />
+321&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+322&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 画马.<br />
+323&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+$DRAW_HORSE<br />
+324&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+usleep $USLEEP_ARG<br />
+325&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+326&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+当所有的马都越过15行的之后,再次打印机率.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+327&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+touch fieldline15<br />
+328&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if [ $COL = 15 ]; then<br />
+329&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+echo $MOVE_HORSE &gt;&gt; fieldline15 <br />
+330&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fi<br />
+331&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+if [ `wc -l fieldline15 | cut -f1 -d " "` = 9 ]; then<br />
+332&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+print_odds<br />
+333&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+: &gt; fieldline15<br />
+334&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+fi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+335&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+336&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+取得领头的马.<br />
+337&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+HIGHEST_POS=`cat *position | sort -n | tail
+-1`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+338&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+339&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
+把背景色重设为白色.<br />
+340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
+-ne '\E[47m'<br />
+341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tput
+cup 17 0<br />
+342&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo -n
+Current leader: `grep -w $HIGHEST_POS *position | cut
+-c7`"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+343<br />
+344 done <br />
+345<br />
+346 # 取得赛马结束的时间.<br />
+347 FINISH_TIME=`date +%s`<br />
+348<br />
+349 # 背景色设为绿色并且启用闪动的功能.<br />
+350 echo -ne '\E[30;42m'<br />
+351 echo -en '\E[5m'<br />
+352<br />
+353 # 使获胜的马闪动.<br />
+354 tput cup `expr $MOVE_HORSE + 5` `cat&nbsp;
+horse_${MOVE_HORSE}_position | head -1`<br />
+355 $DRAW_HORSE<br />
+356<br />
+357 # 禁用闪动文本.<br />
+358 echo -en '\E[25m'<br />
+359<br />
+360 # 把前景和背景色设为白色.<br />
+361 echo -ne '\E[37;47m'<br />
+362 move_and_echo 18 1 $BLANK80<br />
+363<br />
+364 # 前景色设为黑色.<br />
+365 echo -ne '\E[30m'<br />
+366<br />
+367 # 闪动获胜的马.<br />
+368 tput cup 17 0<br />
+369 echo -e "\E[5mWINNER: $MOVE_HORSE\E[25m""&nbsp; Odds: `cat
+odds_${MOVE_HORSE}`"\<br />
+370 "&nbsp; Race time: `expr $FINISH_TIME - $START_TIME` secs"<br />
+371<br />
+372 # 恢复光标和最初的颜色.<br />
+373 echo -en "\E[?25h"<br />
+374 echo -en "\E[0m"<br />
+375<br />
+376 # 恢复回显功能.<br />
+377 stty echo<br />
+378<br />
+379 # 删除赛跑的临时文件.<br />
+380 rm -rf $HORSE_RACE_TMP_DIR<br />
+381<br />
+382 tput cup 19 0<br />
+383<br />
+384 exit 0<br />
+################################End
+Script#########################################<br />
+参考 例子 A-22.<br />
+注意: 然而,有一个主要的问题,那就是ANSI 转义序列是不可移植的. 在一些终端运行的<br />
+&nbsp; 很好的代码可能在另外一些终端上可能运行地很糟糕. 在彩色脚本作者终端上运行的<br />
+&nbsp; 很好的脚本可能在另外一些终端上就产生不可阅读的输出了. 这给彩色脚本的用处大<br />
+&nbsp; 大打了个折扣,而很可能使这些技术变成一个暗机关或只是一个玩具而已.<br />
+Moshe Jacobson的颜色工具(http://runslinux.net/projects.html#color)能相当容易地使用<br />
+ANSI转义序列. 它用清晰和较有逻辑的语法来代替刚才讨论的难用的结构.<br />
+Henry/teikedvl 也同样开发了一个软件包来简化彩色脚本的一些操作<br />
+(http://scriptechocolor.sourceforge.net/).<br />
+注意事项:<br />
+[1]&nbsp; 当然,ANSI是American National Standards Institute(美国国家标准组织)的缩<br />
+&nbsp; 写. 这个令人敬畏的组织建立和维护着许多技术和工业的标准.<br />
+
+
+
+
+
+</DT></DL
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="recursionsct.html"
+ACCESSKEY="P"
+>前一页</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>首页</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="optimizations.html"
+ACCESSKEY="N"
+>下一页</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>递归</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>优化</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
