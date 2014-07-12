@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之Shell 脚本基础入门教程" />
+  <meta name="keywords" content="Shell,脚本,命令,TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>Shell 脚本基础|文件格式</title></head><body style="direction: ltr;">
+<p class="title">Bash Shell 脚本编程基础</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">一、脚本文件</span>　<a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a>
+<p>　Shell 脚本文件是文本格式，类似于批处理文件，将一组命令集中起来，完成特定的功能；</p>
+<p class="tblue">　1、文件格式</p>
+<p>　1）启动文本编辑器gedit，输入第一行 #!/bin/bash 按一下回车键换到第二行，这是头标识表示是脚本程序；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green; margin-left: 20px;">
+ #!/bin/bash
+</div>
+<p>　</p>
+<p>　2）继续在第二行输入命令 date 然后按回车到下一行，这是显示当前日期时间的命令；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green; margin-left: 20px;">
+ #!/bin/bash<br />
+date
+</div>
+<p>　</p>
+<p>　3）在第三行输入命令 cal ，这是显示日历的命令；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green; margin-left: 20px;">
+ #!/bin/bash<br />
+date<br />
+cal
+</div>
+<p>　</p>
+<p>　4）点菜单“文件－保存”命令保存文件，文件名为 1d.sh 后面的扩展名表示是脚本文件；</p>
+<p>　</p>
+<p>　</p>
+<p>　5）在文件管理器中，设置文件属性里权限，打勾可执行，或者在终端命令行执行 chmod +x d.sh；</p>
+<p>　<img src="images/a5exe.png" alt="a5exe.png" />　<img src="images/a5cli.png" alt="a5cli.png" /></p>
+<p>　</p>
+<p>　6）按组合键Ctrl+Alt+T打开终端，运行命令 ./d.sh 前面的点表示当前目录，需要进入到d.sh所在的目录下；</p>
+<p>　<img src="images/a6run.png" alt="a6run.png" /></p>
+<p>　</p>
+<p>　7）输入命令按回车键后，显示出当前时间和本月的日历，<a href="./1d.sh">下载本课范例</a>；</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了脚本文件格式的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson2/lesson2.html">下一课</a></p>
+<p class="green">本教程由TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+
+</p><div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</div></body></html>
