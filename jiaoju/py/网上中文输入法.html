@@ -1,0 +1,66 @@
+<HTML><HEAD><TITLE>网上中文输入法</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=gb2312">
+<body background=bg.gif>
+<SCRIPT language=javascript src="pyjt3.js"></SCRIPT>
+<SCRIPT language=javascript src="ime.js"></SCRIPT>
+</HEAD>
+
+<BODY OnLoad="BodyOnLoad();">
+<center>
+<table border="0" width="760" bgcolor="#96c7fc" cellspacing="0" cellpadding="1">
+<tr><td>
+<table BORDER="0" cellpadding="0" cellspacing="3" WIDTH="100%" bgcolor="#dbedfe">
+ <tr>
+  <TD align="center"><font face="simhei,黑体,simsun,宋体,mingliu,arial" size="6" color="blue">
+  简体拼音输入法</font> （支持七千个简体汉字） <BR> 
+  </TD>
+ </tr>
+</table>
+<TABLE OnFocus="IME.InputArea.focus()" bgcolor="#dbedfe" WIDTH="100%">
+  <FORM>
+    <TBODY>
+      <TR>
+        <TH ROWSPAN="2" valign="top">
+          <!-- 这个是输出文字的文字框 -->
+          <TEXTAREA OnKeyDown="return ImeKeyDown(event)" OnKeyPress="return ImeKeyPress(event)" OnKeyUp="return ImeKeyUp(event)" Rows="14" Cols="60" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial" ID="InputArea"></TEXTAREA>
+        </TH>
+        <TH>
+          <!-- 这个是输入英文编码 -->
+          <INPUT OnFocus="IME.InputArea.focus();" Name="Comp" ID="Comp" Size="21" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial">
+        </TH>
+      </TR>
+      <TR>
+        <TH valign="top">
+          <!-- 这个是显示中文字串的文字框 -->
+          <TEXTAREA OnFocus="IME.InputArea.focus();" Name="Cand" ID="Cand" Rows="11" Cols="20" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial"></TEXTAREA>
+        </TH>
+      </TR></FORM>
+  <tr>
+    <td>
+      <INPUT name="EnglishMode" ID="EnglishMode" type="checkbox" OnFocus="IME.InputArea.focus()">英文(Ctrl)
+      <INPUT name="FullShape" ID="FullShape" type="checkbox" OnFocus="IME.InputArea.focus()">全形字符(F12)
+      <INPUT name="AutoUp" ID="AutoUp" type="checkbox" OnFocus="IME.InputArea.focus()">自动上字
+      　翻页 PageUp/PageDown      
+    </td>
+        <td align=center>
+
+   </td>
+  </tr>
+</TABLE>
+</td></tr></TBODY></table>
+</TD></TR></TABLE>
+<br>
+
+<p>
+<a href=about.html>关于网上输入法的版权及改良过程</a>。
+<p>
+此改良版由 <a href=http://chinese.cari.com.my>马来西亚佳礼中文网</a> 及 <a href=http://www.chinesecj.com>马来西亚 。仓颉之友</a> 联合制作。
+
+<p>
+<a href=index.html>主页</a>
+<p><font size=2 face=simsun,arial>
+<a href="">按此免费下载“网上输入法”</a>(945KB)，下载后您可安装在您的电脑，也可把它烧录至光盘使用。<br>若安装在<font color=red>C:</font>硬碟，请点按或在浏览器输入<font color=red>c:\webime\index.html</font>运行本程式。
+<p>
+</center>
+</BODY>
+</HTML>
