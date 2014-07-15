@@ -1,67 +1,66 @@
-<HTML><HEAD>
-<meta content="text/html; charset=GBK" http-equiv="content-type" />
-<TITLE>网页中文输入法</TITLE>
-<body background=bg.gif>
-<SCRIPT language=javascript src="pyjt3.js"></SCRIPT>
-<SCRIPT language=javascript src="ime.js"></SCRIPT>
-  <meta name="description" content="网页在线简体中文输入法" />
-  <meta name="Copyright" content="TeliuTe <基础教程网>, 2011" />
-  <meta name="keywords" content="中文,输入法,在线,简体,汉字,TeliuTe" />
-  <link rel="Shortcut  Icon" href="qcqy.ico" />
-</HEAD>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh-cn"><head>
+<meta content="text/html; charset=x-gbk" http-equiv="content-type"><title>网页中文输入法</title>
 
-<BODY OnLoad="BodyOnLoad();">
+<meta name="description" content="网页在线简体中文输入法"><meta name="Copyright" content="TeliuTe &lt;基础教程网&gt;, 2011"><meta name="keywords" content="中文,输入法,在线,简体,汉字,TeliuTe"><link rel="Shortcut  Icon" href="qcqy.ico"></head><body onload="BodyOnLoad();" background="bg.gif">
+<script language="javascript" src="pyjt3.js"></script>
+<script language="javascript" src="ime.js"></script>
+  
+  
+  
+  
+
 <center>
-<table border="0" width="760" bgcolor="#96c7fc" cellspacing="0" cellpadding="1">
-<tr><td>
-<table BORDER="0" cellpadding="0" cellspacing="3" WIDTH="100%" bgcolor="#dbedfe">
- <tr>
-  <TD align="center"><font face="simhei,文泉驿正黑,WenQuanYi micro hei,黑体,simsun,宋体,mingliu,arial" size="6" color="blue">
-  简体拼音输入法</font> （支持七千个简体汉字） <br /> 
-  </TD>
+<table bgcolor="#96c7fc" border="0" cellpadding="1" cellspacing="0" width="760">
+<tbody><tr><td>
+<table bgcolor="#dbedfe" border="0" cellpadding="0" cellspacing="3" width="100%">
+ <tbody><tr>
+  <td align="center"><font color="blue" face="simhei,文泉驿正黑,WenQuanYi micro hei,黑体,simsun,宋体,mingliu,arial" size="6">
+  简体拼音输入法</font> （支持七千个简体汉字） <br> 
+  </td>
  </tr>
-</table>
-<TABLE OnFocus="IME.InputArea.focus()" bgcolor="#dbedfe" WIDTH="100%">
-  <FORM>
-    <TBODY>
-      <TR>
-        <TH ROWSPAN="2" valign="top">
+</tbody></table>
+<table onfocus="IME.InputArea.focus()" bgcolor="#dbedfe" width="100%">
+  <form></form>
+    <tbody>
+      <tr>
+        <th rowspan="2" valign="top">
           <!-- 这个是输出文字的文字框 -->
-          <TEXTAREA OnKeyDown="return ImeKeyDown(event)" OnKeyPress="return ImeKeyPress(event)" OnKeyUp="return ImeKeyUp(event)" Rows="14" Cols="60" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial" ID="InputArea"></TEXTAREA>
-        </TH>
-        <TH>
+          <textarea onkeydown="return ImeKeyDown(event)" onkeypress="return ImeKeyPress(event)" onkeyup="return ImeKeyUp(event)" rows="14" cols="60" style="font-size: 12pt; font-family: simsun,宋体,mssong,mingliu,arial;" id="InputArea"></textarea>
+        </th>
+        <th>
           <!-- 这个是输入英文编码 -->
-          <INPUT OnFocus="IME.InputArea.focus();" Name="Comp" ID="Comp" Size="21" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial">
-        </TH>
-      </TR>
-      <TR>
-        <TH valign="top">
+          <input onfocus="IME.InputArea.focus();" name="Comp" id="Comp" size="21" style="font-size: 12pt; font-family: simsun,宋体,mssong,mingliu,arial;">
+        </th>
+      </tr>
+      <tr>
+        <th valign="top">
           <!-- 这个是显示中文字串的文字框 -->
-          <TEXTAREA OnFocus="IME.InputArea.focus();" Name="Cand" ID="Cand" Rows="11" Cols="20" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial"></TEXTAREA>
-        </TH>
-      </TR></FORM>
+          <textarea onfocus="IME.InputArea.focus();" name="Cand" id="Cand" rows="11" cols="20" style="font-size: 12pt; font-family: simsun,宋体,mssong,mingliu,arial;"></textarea>
+        </th>
+      </tr>
   <tr>
     <td>
-      <INPUT name="EnglishMode" ID="EnglishMode" type="checkbox" OnFocus="IME.InputArea.focus()">英文(Ctrl)
-      <INPUT name="FullShape" ID="FullShape" type="checkbox" OnFocus="IME.InputArea.focus()">全角字符(F12)
-      <INPUT name="AutoUp" ID="AutoUp" type="checkbox" OnFocus="IME.InputArea.focus()">自动上屏
+      <input name="EnglishMode" id="EnglishMode" onfocus="IME.InputArea.focus()" type="checkbox">英文(Ctrl)
+      <input name="FullShape" id="FullShape" onfocus="IME.InputArea.focus()" type="checkbox">全角字符(F12)
+      <input name="AutoUp" id="AutoUp" onfocus="IME.InputArea.focus()" type="checkbox">自动上屏
       　翻页键 PageUp/PageDown      
     </td>
-        <td align=center>
+        <td align="center">
 
-   </td>
+   <br>
+</td>
   </tr>
-</TABLE>
-</td></tr></TBODY></table>
-</TD></TR></TABLE>
-<br />
+</tbody></table>
+</td></tr></tbody></table>
 
-<p><a href=about.html>关于网上输入法的版权及改良过程</a>　<a href="http://teliute.org">基础教程网</a>　<a href="http://teliute.org/jiaoju/dl/py.zip">下载</a></p>
-<p>此改良版由 <a href=http://chinese.cari.com.my>马来西亚佳礼中文网</a> 及 <a href=http://www.chinesecj.com>马来西亚 。仓颉之友</a> 联合制作。</p>
+<br>
+
+<p><a href="about.html">关于网上输入法的版权及改良过程</a>　<a href="http://teliute.org">基础教程网</a>　<a href="http://teliute.org/jiaoju/dl/py.zip">下载</a></p>
+<p>此改良版由 <a href="http://chinese.cari.com.my">马来西亚佳礼中文网</a> 及 <a href="http://www.chinesecj.com">马来西亚 。仓颉之友</a> 联合制作。</p>
 
 <p style="text-align: center;">转载和引用本站内容，请保留版权信息和本站链接。</p>
 
 </center>
 
-</BODY>
-</HTML>
+</body></html>
