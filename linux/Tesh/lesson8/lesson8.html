@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之Shell 脚本基础入门教程" />
+  <meta name="keywords" content="Shell,脚本,命令,TeliuTe,教学,基础,入门" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>Shell 脚本基础|case 多分支语句</title></head><body style="direction: ltr;">
+<p class="title">Bash Shell 脚本编程基础</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">八、case 多分支语句</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<p>　case 语句用来在多个入口中，选择其中之一；</p>
+<p class="tblue">　1、case 多分支语句</p>
+<p>　1）启动文本编辑器gedit，输入第一行 #!/bin/bash ，保存文件为 8c.sh，并设置可执行权限；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green; margin-left: 20px;">
+#!/bin/bash<br />
+</div>
+<p>　</p>
+<p>　2）语句格式为case $变量 in;  值 ) 命令组;; esac ，输入下面的语句；</p>
+<div style="background-color: rgb(255, 255, 255); width: 400px; color: green; margin-left: 20px;">
+#!/bin/bash<br />
+read a<br />
+a=${a:0:1} #取第一个字符<br />
+case "$a" in<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"0" ) echo "〇";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"1" ) echo "一";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"2" ) echo "二";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"3" ) echo "三";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"4" ) echo "四";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"5" ) echo "五";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"6" ) echo "六";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"7" ) echo "七";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"8" ) echo "八";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;"9" ) echo "九";;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;* ) echo "输入的不是数字";;<br />
+esac
+</div>
+<p>　保存运行，输入一个数，按回车后得到对应的汉字；</p>
+<p>　<img src="images/a2case.png" alt="a2case.png" /></p>
+<p>　</p>
+<p>　3）最后的* ) 表示不满足上面的条件，就进入这一行命令操作，结束的 esac 别忘了；</p>
+<p>　</p>
+<p>　4）需要注意，每一个选择项都以双分号结尾，测试条件和命令之间有一个右圆括号；</p>
+<p>　</p>
+<p>　5）read 是从输入设备读取内容，按回车键结束；</p>
+<p>　</p>
+<p>　6）<a href="8c.sh">下载本课范例</a>；</p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了case 语句的基础知识，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p class="green">本教程由TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</p></body></html>
