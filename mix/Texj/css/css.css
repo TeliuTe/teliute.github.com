@@ -3,14 +3,16 @@ body {
   background-color: #ccffff;
   direction: ltr;
 }
+
+td {
+	line-height: 45px;
+}
+
 .title {
   font-family: "wenquanyi zenhei","黑体",Arial,Helvetica,sans-serif;
   color: #ff0000;
   font-size: 24px;
   text-align: center;
-}
-.hg {
-	line-height: 45px;
 }
 
 .brown {
@@ -19,6 +21,4 @@ body {
 .green {
   color: #008000;
 }
-.tblue {
-  color: #0000ff;
-}
+
