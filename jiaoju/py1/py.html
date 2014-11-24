@@ -1,0 +1,63 @@
+<HTML><HEAD><TITLE>网页中文输入法</TITLE>
+<META http-equiv="Content-Type" content="text/html; charset=utf8">
+<body background=bg.gif>
+<SCRIPT language=javascript src="pyjt3.js"></SCRIPT>
+<SCRIPT language=javascript src="ime.js"></SCRIPT>
+  <meta name="description" content="网页在线简体中文输入法" />
+  <meta name="Copyright" content="TeliuTe <基础教程网>, 2011" />
+  <meta name="keywords" content="中文,输入法,在线,简体,汉字,TeliuTe" />
+  <link rel="Shortcut  Icon" href="qcqy.ico" />
+</HEAD>
+
+<BODY OnLoad="BodyOnLoad();">
+<center>
+<table border="0" width="760" bgcolor="#96c7fc" cellspacing="0" cellpadding="1">
+<tr><td>
+<table BORDER="0" cellpadding="0" cellspacing="3" WIDTH="100%" bgcolor="#dbedfe">
+ <tr>
+  <TD align="center"><font face="simhei,文泉驿正黑,WenQuanYi micro hei,黑体,simsun,宋体,mingliu,arial" size="6" color="blue">
+  简体拼音输入法</font> （支持七千个简体汉字） <br /> 
+  </TD>
+ </tr>
+</table>
+<TABLE OnFocus="IME.InputArea.focus()" bgcolor="#dbedfe" WIDTH="100%">
+  <FORM>
+    <TBODY>
+      <TR>
+        <TH ROWSPAN="2" valign="top">
+          <!-- 这个是输出文字的文字框 -->
+          <TEXTAREA OnKeyDown="return ImeKeyDown(event)" OnKeyPress="return ImeKeyPress(event)" OnKeyUp="return ImeKeyUp(event)" Rows="14" Cols="60" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial" ID="InputArea"></TEXTAREA>
+        </TH>
+        <TH>
+          <!-- 这个是输入英文编码 -->
+          <INPUT OnFocus="IME.InputArea.focus();" Name="Comp" ID="Comp" Size="21" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial">
+        </TH>
+      </TR>
+      <TR>
+        <TH valign="top">
+          <!-- 这个是显示中文字串的文字框 -->
+          <TEXTAREA OnFocus="IME.InputArea.focus();" Name="Cand" ID="Cand" Rows="11" Cols="20" style="FONT-SIZE: 12pt; FONT-FAMILY: simsun,宋体,mssong,mingliu,arial"></TEXTAREA>
+        </TH>
+      </TR></FORM>
+  <tr>
+    <td>
+      <INPUT name="EnglishMode" ID="EnglishMode" type="checkbox" OnFocus="IME.InputArea.focus()">中英文(Ctrl)
+      <INPUT name="FullShape" ID="FullShape" type="checkbox" OnFocus="IME.InputArea.focus()">全角字符(F12)
+      <INPUT name="AutoUp" ID="AutoUp" type="checkbox" OnFocus="IME.InputArea.focus()">自动上屏
+      　翻页键 PageUp/PageDown      
+    </td>
+        <td align=center>
+
+   </td>
+  </tr>
+</TABLE>
+</td></tr></TBODY></table>
+</TD></TR></TABLE>
+<br />
+
+<p><a href=about.html>关于网上输入法的版权及改良过程</a>。</p>
+<p>此改良版由 <a href=http://chinese.cari.com.my>马来西亚佳礼中文网</a> 及 <a href=http://www.chinesecj.com>马来西亚 。仓颉之友</a> 联合制作。</p>
+
+</center>
+</BODY>
+</HTML>
