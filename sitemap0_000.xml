@@ -4,7 +4,7 @@
   <gen:info>
     <gen:name>Google Sitemap Generator</gen:name>
     <gen:version>1.0.0.0</gen:version>
-    <gen:date>2014-07-07T00:48:23Z</gen:date>
+    <gen:date>2014-12-07T06:18:22Z</gen:date>
   </gen:info>
 -->
 <url>
@@ -33,9 +33,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson72/lesson72.html</loc>
-  <lastmod>2014-06-22T04:24:36Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-09-15T02:44:14Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/Ubsetup/lesson16/lesson16.html</loc>
@@ -105,9 +105,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/gimp/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.2</priority>
+  <lastmod>2014-07-10T03:15:15Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>http://teliute.org/mix/TeOgame/index.html</loc>
@@ -116,8 +116,20 @@
   <priority>0.2</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/Tesh/lesson3/lesson3.html</loc>
+  <lastmod>2014-07-13T04:09:29Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tecm7a2013/lesson19/lesson19.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson7/lesson7.html</loc>
+  <lastmod>2014-11-09T02:04:27Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -170,6 +182,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/fw/autostart.html</loc>
+  <lastmod>2014-07-07T01:16:05Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeDebian/lesson1/lesson1.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -196,6 +214,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson8/lesson8.html</loc>
   <lastmod>2014-07-04T08:41:52Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson3/lesson3.html</loc>
+  <lastmod>2014-12-03T06:46:42Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -248,6 +272,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/win/excel/lesson23/lesson23.html</loc>
+  <lastmod>2014-07-10T01:39:10Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tegb9a2013/lesson/lesson.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -268,6 +298,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson4/lesson4.html</loc>
   <lastmod>2014-07-04T08:33:19Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/Tesh/lesson/lesson.html</loc>
+  <lastmod>2014-07-14T01:47:43Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -309,9 +345,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson7/lesson7.html</loc>
-  <lastmod>2014-06-22T04:23:58Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-12-03T06:51:55Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/Ubsetup/lesson10/lesson10.html</loc>
@@ -404,6 +440,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson28/lesson28.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/Ubsetup/index.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
@@ -434,6 +476,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson17/lesson17.html</loc>
+  <lastmod>2014-11-17T13:15:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/other/index.htm</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
@@ -459,9 +507,9 @@
 </url>
 <url>
   <loc>http://teliute.org/fw/lesson.html</loc>
-  <lastmod>2014-05-25T11:38:52Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-07-07T01:16:14Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegb9a2013/lesson3/lesson3.html</loc>
@@ -572,6 +620,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson25/lesson25.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson14/lesson14.html</loc>
   <lastmod>2014-06-22T04:17:37Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -579,13 +633,19 @@
 </url>
 <url>
   <loc>http://teliute.org/fw/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.3</priority>
+  <lastmod>2014-07-07T01:12:14Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7a2013/lesson10/lesson10.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson14/lesson14.html</loc>
+  <lastmod>2014-11-16T08:30:04Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -628,6 +688,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson30/lesson30.html</loc>
   <lastmod>2014-07-03T13:21:17Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/Tesh/lesson8/lesson8.html</loc>
+  <lastmod>2014-07-17T02:51:11Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -728,6 +794,18 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson22/lesson22.html</loc>
+  <lastmod>2014-11-20T13:47:37Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/Tesh/lesson4/lesson4.html</loc>
+  <lastmod>2014-07-15T05:53:43Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson11/lesson11.html</loc>
   <lastmod>2014-06-22T04:17:37Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -746,14 +824,32 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson11/lesson11.html</loc>
+  <lastmod>2014-11-15T00:55:58Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/Tekz/index.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
+  <loc>http://teliute.org/jiaoju/index.html</loc>
+  <lastmod>2014-11-24T02:03:05Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/lesson/index.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson8/lesson8.html</loc>
+  <lastmod>2014-11-09T05:15:27Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -772,6 +868,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/lesson5/lesson5.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/404.html</loc>
+  <lastmod>2014-10-20T10:13:57Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -914,6 +1016,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/Tesh/index.html</loc>
+  <lastmod>2014-07-17T03:04:22Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/mycat/htm/care_c_017.htm</loc>
   <lastmod>2014-06-28T16:03:48Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -932,8 +1040,20 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson4/lesson4.html</loc>
+  <lastmod>2014-11-29T14:15:48Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson30/lesson30.html</loc>
   <lastmod>2014-06-22T04:19:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson30/lesson30.html</loc>
+  <lastmod>2014-11-29T14:15:48Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -954,6 +1074,12 @@
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.2</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/gimp/lesson28/lesson28.html</loc>
+  <lastmod>2014-07-10T03:16:51Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/Ubsetup/lesson9/lesson9.html</loc>
@@ -978,6 +1104,12 @@
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.2</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/abs-3.9.1/colorizing.html</loc>
+  <lastmod>2014-07-11T05:05:45Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson5/lesson5.html</loc>
@@ -1011,9 +1143,9 @@
 </url>
 <url>
   <loc>http://teliute.org/Temp/index.html</loc>
-  <lastmod>2014-03-23T10:22:07Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-11-20T13:46:04Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson9/lesson9.html</loc>
@@ -1046,10 +1178,16 @@
   <priority>0.1</priority>
 </url>
 <url>
-  <loc>http://teliute.org/linux/TeUbt/lesson8/lesson8.html</loc>
-  <lastmod>2014-06-22T04:25:26Z</lastmod>
+  <loc>http://teliute.org/linux/Tesh/help.html</loc>
+  <lastmod>2014-11-16T03:24:27Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/TeUbt/lesson8/lesson8.html</loc>
+  <lastmod>2014-12-03T06:54:52Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson10/lesson10.html</loc>
@@ -1150,6 +1288,12 @@
 <url>
   <loc>http://teliute.org/mix/mycat/htm/care_a_009.htm</loc>
   <lastmod>2014-06-28T16:00:14Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/win/excel/lesson14/lesson14.html</loc>
+  <lastmod>2014-12-04T15:36:14Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -1268,6 +1412,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/TeAndro/lesson25/lesson25.html</loc>
+  <lastmod>2014-09-21T07:26:32Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/TeAndro/lesson6/lesson6.html</loc>
   <lastmod>2014-04-05T04:52:58Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1322,6 +1472,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson19/lesson19.html</loc>
+  <lastmod>2014-11-18T12:36:41Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/Ubsetup/jichu4/jichu4.html</loc>
   <lastmod>2014-06-21T08:26:55Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1329,9 +1485,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/lesson5/lesson5.html</loc>
-  <lastmod>2013-09-22T15:44:19Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-09-15T02:37:41Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson2/lesson2.html</loc>
@@ -1348,6 +1504,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson13/lesson13.html</loc>
   <lastmod>2014-07-03T08:04:01Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/help.html</loc>
+  <lastmod>2014-11-16T03:22:48Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -1437,9 +1599,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/lesson1/lesson1.html</loc>
-  <lastmod>2014-07-06T00:59:04Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.4</priority>
+  <lastmod>2014-07-09T00:45:07Z</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.5</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson27/lesson27.html</loc>
@@ -1460,6 +1622,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson27/lesson27.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson16/lesson16.html</loc>
   <lastmod>2014-06-22T04:17:37Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1472,10 +1640,28 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson16/lesson16.html</loc>
+  <lastmod>2014-11-17T08:42:09Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/Tesh/lesson5/lesson5.html</loc>
+  <lastmod>2014-07-15T08:45:30Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tesc6a2009/index.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.2</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson9/lesson9.html</loc>
+  <lastmod>2014-11-29T14:15:48Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson32/lesson32.html</loc>
@@ -1574,6 +1760,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/Tesh/lesson1/lesson1.html</loc>
+  <lastmod>2014-07-14T04:05:53Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/lesson/help.html</loc>
   <lastmod>2014-01-14T07:38:44Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1582,6 +1774,12 @@
 <url>
   <loc>http://teliute.org/win/3dsmax/lesson8/lesson8.htm</loc>
   <lastmod>2013-09-20T06:40:23Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/jiaoju/py/about.html</loc>
+  <lastmod>2014-11-24T02:51:57Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -1604,6 +1802,12 @@
   <priority>0.2</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson5/lesson5.html</loc>
+  <lastmod>2014-11-07T14:55:59Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson24/lesson24.html</loc>
   <lastmod>2014-06-22T04:18:41Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1616,6 +1820,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson24/lesson24.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson13/lesson13.html</loc>
   <lastmod>2014-06-22T04:17:37Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1624,6 +1834,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/lesson2/lesson2.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson13/lesson13.html</loc>
+  <lastmod>2014-11-16T02:53:32Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -1682,6 +1898,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson1/lesson1.html</loc>
+  <lastmod>2014-10-27T15:42:24Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/lesson20/lesson20.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1719,9 +1941,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson9/lesson9.html</loc>
-  <lastmod>2014-06-22T04:25:50Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-12-03T06:55:29Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson/lesson.html</loc>
@@ -1778,6 +2000,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson21/lesson21.html</loc>
+  <lastmod>2014-11-20T13:46:04Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/TeDefen/index.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
@@ -1786,6 +2014,12 @@
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson10/lesson10.html</loc>
   <lastmod>2014-06-22T04:15:29Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson10/lesson10.html</loc>
+  <lastmod>2014-11-18T12:40:05Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -1958,6 +2192,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/gimp/lesson27/lesson27.html</loc>
+  <lastmod>2014-07-10T02:41:01Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/win/3dsmax/lesson2/lesson2.htm</loc>
   <lastmod>2013-09-20T06:42:14Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -1994,8 +2234,20 @@
   <priority>0.2</priority>
 </url>
 <url>
+  <loc>http://teliute.org/Temp/help.html</loc>
+  <lastmod>2014-11-16T03:23:16Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson29/lesson29.html</loc>
   <lastmod>2014-07-03T12:51:52Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/TeTrain/lesson6/lesson6.html</loc>
+  <lastmod>2014-09-15T02:37:41Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -2144,6 +2396,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/Tesh/lesson6/lesson6.html</loc>
+  <lastmod>2014-07-16T12:49:59Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/mycat/htm/care_d_001.htm</loc>
   <lastmod>2014-06-28T16:03:48Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -2199,8 +2457,8 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/index.html</loc>
-  <lastmod>2014-05-02T16:18:09Z</lastmod>
-  <changefreq>daily</changefreq>
+  <lastmod>2014-09-15T02:37:41Z</lastmod>
+  <changefreq>yearly</changefreq>
   <priority>0.4</priority>
 </url>
 <url>
@@ -2289,9 +2547,9 @@
 </url>
 <url>
   <loc>http://teliute.org/win/excel/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.2</priority>
+  <lastmod>2014-12-04T15:36:14Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/lesson7/lesson7.html</loc>
@@ -2301,9 +2559,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/Ubsetup/jichu5/jichu5.html</loc>
-  <lastmod>2014-06-13T15:16:18Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-11-20T15:38:12Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/linux/Ubsetup/lesson22/lesson22.html</loc>
@@ -2379,9 +2637,9 @@
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson24/lesson24.html</loc>
-  <lastmod>2014-06-09T16:22:33Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-09-21T07:28:06Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegb9a2013/lesson12/lesson12.html</loc>
@@ -2408,6 +2666,18 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/linux/Tesh/lesson2/lesson2.html</loc>
+  <lastmod>2014-07-12T13:24:32Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/jiaoju/py/py.html</loc>
+  <lastmod>2014-11-24T03:03:01Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson29/lesson29.html</loc>
   <lastmod>2014-06-22T04:19:25Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -2416,6 +2686,18 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7a2013/lesson25/lesson25.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson29/lesson29.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson6/lesson6.html</loc>
+  <lastmod>2014-11-07T15:29:32Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -2434,6 +2716,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Tecm7a2013/lesson14/lesson14.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson18/lesson18.html</loc>
+  <lastmod>2014-11-18T12:37:19Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -2493,9 +2781,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/calc/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.2</priority>
+  <lastmod>2014-07-10T01:43:02Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>http://teliute.org/access_error.html</loc>
@@ -2524,6 +2812,12 @@
 <url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/lesson14/lesson14.html</loc>
   <lastmod>2014-03-01T15:16:25Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson2/lesson2.html</loc>
+  <lastmod>2014-11-04T14:56:09Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -2654,6 +2948,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson26/lesson26.html</loc>
+  <lastmod>2014-11-24T15:10:26Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/win/3dsmax/lesson9/lesson9.htm</loc>
   <lastmod>2013-09-20T06:39:43Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -2676,6 +2976,12 @@
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>daily</changefreq>
   <priority>0.2</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson15/lesson15.html</loc>
+  <lastmod>2014-11-16T13:26:44Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/index.html</loc>
@@ -2756,6 +3062,12 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson/lesson.html</loc>
+  <lastmod>2014-10-27T15:04:55Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tesc5b2009/lesson4-4/lesson4-4.html</loc>
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -2804,6 +3116,12 @@
   <priority>0.2</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/index.html</loc>
+  <lastmod>2014-12-03T06:46:42Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/TeTrain/jichu2/jichu2.html</loc>
   <lastmod>2014-04-21T06:34:58Z</lastmod>
   <changefreq>hourly</changefreq>
@@ -2829,9 +3147,9 @@
 </url>
 <url>
   <loc>http://teliute.org/linux/TeUbt/lesson56/lesson56.html</loc>
-  <lastmod>2014-06-22T04:23:13Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-11-04T00:51:05Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.2</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Teit9b2014/lesson4/lesson4.html</loc>
@@ -2864,14 +3182,32 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson23/lesson23.html</loc>
+  <lastmod>2014-11-29T14:15:48Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/jiaoxue/Tecm7b2014/lesson3/lesson3.html</loc>
   <lastmod>2014-07-03T06:07:00Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/Temp/lesson/lesson.html</loc>
+  <lastmod>2014-07-12T03:12:03Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson12/lesson12.html</loc>
   <lastmod>2014-06-22T04:17:37Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
+  <loc>http://teliute.org/mix/Texj/lesson12/lesson12.html</loc>
+  <lastmod>2014-11-15T06:55:59Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
@@ -2907,9 +3243,9 @@
 </url>
 <url>
   <loc>http://teliute.org/other/myurl.html</loc>
-  <lastmod>2014-07-07T00:07:40Z</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>0.3</priority>
+  <lastmod>2014-07-13T05:08:07Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/mix/TeAndro/lesson2-/lesson2.html</loc>
@@ -2967,9 +3303,9 @@
 </url>
 <url>
   <loc>http://teliute.org/index.html</loc>
-  <lastmod>2014-06-26T14:39:27Z</lastmod>
-  <changefreq>hourly</changefreq>
-  <priority>0.1</priority>
+  <lastmod>2014-11-24T02:08:45Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Tegp8b2014/lesson14/lesson14.html</loc>
@@ -3002,16 +3338,28 @@
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson31/lesson31.html</loc>
+  <lastmod>2014-11-29T14:15:48Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/linux/TeUbt/lesson20/lesson20.html</loc>
   <lastmod>2014-06-22T04:18:41Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.1</priority>
 </url>
 <url>
+  <loc>http://teliute.org/mix/Texj/lesson20/lesson20.html</loc>
+  <lastmod>2014-11-19T15:35:14Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
+</url>
+<url>
   <loc>http://teliute.org/mix/TeAndro/index.html</loc>
-  <lastmod>2014-07-05T08:43:08Z</lastmod>
-  <changefreq>daily</changefreq>
-  <priority>0.3</priority>
+  <lastmod>2014-09-21T07:28:49Z</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
 </url>
 <url>
   <loc>http://teliute.org/mix/TeTrain/lesson3/lesson3.html</loc>
@@ -3024,6 +3372,12 @@
   <lastmod>2014-07-05T08:43:08Z</lastmod>
   <changefreq>hourly</changefreq>
   <priority>0.2</priority>
+</url>
+<url>
+  <loc>http://teliute.org/linux/Tesh/lesson7/lesson7.html</loc>
+  <lastmod>2014-07-17T02:49:01Z</lastmod>
+  <changefreq>hourly</changefreq>
+  <priority>0.1</priority>
 </url>
 <url>
   <loc>http://teliute.org/jiaoxue/Teod8a2013/index.html</loc>
