@@ -4,6 +4,17 @@
 2012年 10月 27日 星期六 23:20:56 CST
 把teliute.org的网站统计id从201022换到1132862，初始化了这个id
 
+2014年 11月 16日 星期日 11:18:24 CST
+修改css里面将表格行高直接设到td里，颜色取消
+修改index.html链接无下划线，指向时才有，去掉里面的td class="hg"，节省点空间
+
+2015年 01月 03日 星期六 11:16:37 CST
+1、制作sitemap，cd进入mygit文件夹，用find ./ -name "*.html" -mtime -176 >test.txt 命令找出176天内修改的文件，
+2、根据上次sitemap.xml的修改时间（例如2014-7-11），在calc/excel中用公式 =DATEDIF("2014-7-11",TODAY(),"d") 计算天数
+3、打开test.txt，删除前面已经加过，后面修改的链接，如./index.html，查找替换加入网站域名，复制所有链接
+4、访问网站http://free-sitemap-generator.whyandhow.org/ ，在下边粘贴，将修改频率设为从不never
+5、生成sitemap.xml后，火狐会自动打开，点文件，另存为，保存下来，打开复制粘贴到原来的sitemap.xml，上传
+
 文件夹说明
 /
 -----css  样式表文件和网站ico图标和logo
@@ -50,9 +61,6 @@
 
 -----webscan_360_cn.html 与360检测有关的验证页面
 
-2014年 11月 16日 星期日 11:18:24 CST
-修改css里面将表格行高直接设到td里，颜色取消
-修改index.html链接无下划线，指向时才有，去掉里面的td class="hg"，节省点空间
 
 
 
