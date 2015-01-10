@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之九年级程序设计教学课程设计" />
+  <meta name="keywords" content="九年级,信息技术,Ubuntu,gambas,教学设计,教案,课程,TeliuTe" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>程序设计|学会比大小</title></head><body style="direction: ltr;">
+<p class="title">2014-2015 第一学期九年级程序设计教学设计</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">八、学会比大小</span>　<a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a>
+<p class="tblue">　<span style="font-weight: bold;">（一）教学设计</span></p>
+<p>　<span style="font-weight: bold;">1、学习目标</span>：</p>
+<p>　<span style="font-weight: bold;">2、注意事项</span>：绕过弯来，既不要跳也不要落，一楼过了二楼</p>
+<p>　<span style="font-weight: bold;">3、教学过程</span>：</p>
+<p>　1）教师准备学案和板书；</p>
+<p>　2）学生整队进入，开机抄黑板上笔记；</p>
+<p>　3）教师讲解板书演示操作；</p>
+<p>　4）学生打指法、日志、完成操作；</p>
+<p>　5）教师打勾记录学生指法成绩，检查日志和操作；</p>
+<p>　注：学生抄完笔记就开始打指法、日志，老师讲完后再继续完成；</p>
+
+
+<p class="tblue">　<span style="font-weight: bold;">（二）板书设计(学生笔记)</span></p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;"><br />
+08学会三个数比大小<br />
+1.dim 定义四个变量存放数字<br />
+2.先比较a和b，大的数存到m里<br />
+3.再和c比，大的话就替换m中的数<br />
+if a>b then m=a else m=b
+</div>
+
+<p>　操作图示：</p>
+<p>　<img src="images/a1figure.png" alt="a1figure.png" /></p>
+<p>　</p>
+
+<p class="tblue">　<span style="font-weight: bold;">（三）课后记 </span></p>
+<div style="background-color: rgb(255, 255, 255); width: 800px; color: green; margin-left: 20px;"><br />
+2014年11月11日 星期二 13:42<br />
+第8课 学会比大小<br />
+         (A)   (ok)   (abc)<br />
+1、画一个标签，一个按钮，三个文本框<br />
+2、设置字体，颜色，Text，按钮事件mouseDown<br />
+3、输入：<br />
+dim a,b,c,m as integer<br />
+<br />
+a=Textbox1.text<br />
+b=Textbox2.text<br />
+c=Textbox3.text<br />
+<br />
+if a>b then m=a else m=b<br />
+if c>m then m=c<br />
+<br />
+label1.text=m<br />
+<br />
+--<br />
+代码输到end外面去了，地方不够打个回车<br />
+else的单词错了，label1.text的.漏了<br />
+--<br />
+学生没太多热情，只是想着完成任务<br />
+大些学生对这些没太多新奇的，做出来就好<br />
+--<br />
+第一组有4个没完成，第二组有2个，第四组有1个没完成<br />
+得解释一下代码框架的意思，写到end里面去<br />
+--<br />
+4班英语老师留堂，学生稀稀拉拉的来了<br />
+还有几个就没来，下节课又不知道该怎么上<br />
+--<br />
+1班好几个把界面画错了，textbox画成label了<br />
+还有2个把end给删除了，<br />
+还有界面是label2，代码是label1的，还有把事件加到label上的<br />
+--<br />
+1班学生进来学习了，接着上节课2班windows里玩游戏的也少，对学习任务还是蛮期待的<br />
+现在可以写到7行代码了，大括号是分类，属于同一类<br />
+--<br />
+空格是两个相互独立的，比如数字和符号是两个种类<br />
+逗号是并列，比如我的，你的，他的，点号表示亲缘关系，谁家的谁，我们班的×××<br />
+--<br />
+程序先做准备，四个变量三个存数字，一个存最高分<br />
+下面三行是存数字，然后开始处理，最后把结果显示到label<br />
+--<br />
+三个数比两次，我们俩先比一下，然后再跟第三个人比<br />
+用成绩举例，刚考完期中考试，得分试过一次后，再换个数字放在那里，老师来了点一下
+</div>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson9/lesson9.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+<noscript><a href="http://www.51.la/?1132862" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/1132862.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript></p>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</div></body></html>

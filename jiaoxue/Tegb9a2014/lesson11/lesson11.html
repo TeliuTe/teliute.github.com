@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+
+
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <meta name="author" content="TeliuTe" />
+
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+  <meta name="description" content="TeliuTe系列教程之九年级程序设计教学课程设计" />
+  <meta name="keywords" content="九年级,信息技术,Ubuntu,gambas,教学设计,教案,课程,TeliuTe" />
+
+  <link rel="stylesheet" href="../css/css.css" type="text/css" />
+  <link rel="Shortcut  Icon" href="../css/qcqy.ico" /><title>程序设计|学会双重循环</title></head><body style="direction: ltr;">
+<p class="title">2014-2015 第一学期九年级程序设计教学设计</p>
+<p class="green">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">十一、学会双重循环</span>　<a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a>
+<p class="tblue">　<span style="font-weight: bold;">（一）教学设计</span></p>
+<p>　<span style="font-weight: bold;">1、学习目标</span>：</p>
+<p>　<span style="font-weight: bold;">2、注意事项</span>：绕过弯来，既不要跳也不要落，一楼过了二楼</p>
+<p>　<span style="font-weight: bold;">3、教学过程</span>：</p>
+<p>　1）教师准备学案和板书；</p>
+<p>　2）学生整队进入，开机抄黑板上笔记；</p>
+<p>　3）教师讲解板书演示操作；</p>
+<p>　4）学生打指法、日志、完成操作；</p>
+<p>　5）教师打勾记录学生指法成绩，检查日志和操作；</p>
+<p>　注：学生抄完笔记就开始打指法、日志，老师讲完后再继续完成；</p>
+
+
+<p class="tblue">　<span style="font-weight: bold;">（二）板书设计(学生笔记)</span></p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;"><br />
+11学会双重循环<br />
+1.在一个for循环里有另一个循环<br />
+2.两个循环是相乘关系9×9<br />
+3.外层先循环，内层后循环<br />
+4.缩进格式锯齿形
+</div>
+
+<p>　操作图示：</p>
+<p>　<img src="images/a1figure.png" alt="a1figure.png" /></p>
+<p>　</p>
+
+<p class="tblue">　<span style="font-weight: bold;">（三）课后记 </span></p>
+<div style="background-color: rgb(255, 255, 255); width: 800px; color: green; margin-left: 20px;"><br />
+<br />
+第11课 学会双重循环<br />
+1、设置窗体背景，事件MsD，输入<br />
+Dim i, j As Integer<br />
+Dim btn As Button<br />
+<br />
+For i = 1 To 9<br />
+  For j = 1 To 9<br />
+    btn = New Button(Me)<br />
+    <br />
+    btn.x = i * 40<br />
+    btn.y = j * 40<br />
+    btn.Width = 30<br />
+    btn.Height = 20<br />
+    btn.Text = i * j<br />
+    btn.Background = &ffff00&<br />
+    btn.Foreground = &ff0000&<br />
+    <br />
+    <br />
+  Next<br />
+Next<br />
+--<br />
+2014年12月02日 星期二 13:37<br />
+--<br />
+界面很简单，代码多，分成一块一块的，拿彩色粉笔括一下<br />
+一对一对的两行代码，坐标、大小、颜色<br />
+--<br />
+输的时候，注意end别丢了，next<br />
+还是单词错的多，定义的btn as button 里面的btn错了<br />
+--<br />
+再有foreground也会漏字母<br />
+输完for 以后会自动补上next，然后打上许多回车<br />
+--<br />
+最后删除的时候，先选中然后再按删除键，要么就用剪切<br />
+代码越来越多，看了一下，学生掌握的还可以，出错都是小问题<br />
+--<br />
+4班中文输入法有好多打不出来的，要么卡住了要么不会按<br />
+保元和陈涛两个一项也没做出来，乱跑挨一顿骂<br />
+--<br />
+需要多找一下相对复杂的例子，代码多但是不乱的例子<br />
+以前的数据结构找出来看看，排序的也有些算法
+</div>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson12/lesson12.html">下一课</a></p>
+<p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p><script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script>
+<noscript><a href="http://www.51.la/?1132862" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/1132862.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript></p>
+
+<div>
+
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+</div></body></html>
