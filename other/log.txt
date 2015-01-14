@@ -10,7 +10,7 @@
 
 2015年 01月 03日 星期六 11:16:37 CST
 1、制作sitemap，cd进入mygit文件夹，用find ./ -name "*.html" -mtime -176 >test.txt 命令找出176天内修改的文件，
-2、根据上次sitemap.xml的修改时间（例如2014-7-11），在calc/excel中用公式 =DATEDIF("2014-7-11",TODAY(),"d") 计算天数
+2、根据上次sitemap.xml的修改时间（例如2014-7-11），在calc/excel中用公式 =DATEDIF("2014-7-11",TODAY(),"d") 计算上一步里的天数
 3、打开test.txt，删除前面已经加过，后面修改的链接，如./index.html，查找替换加入网站域名，复制所有链接
 4、访问网站http://free-sitemap-generator.whyandhow.org/ ，在下边粘贴，将修改频率设为从不never
 5、生成sitemap.xml后，火狐会自动打开，点文件，另存为，保存下来，打开复制粘贴到原来的sitemap.xml，上传
