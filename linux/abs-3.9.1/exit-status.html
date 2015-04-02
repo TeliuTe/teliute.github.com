@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�˳����˳�״̬��</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>退出和退出状态码</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="基本"
 HREF="part2.html"><LINK
 REL="PREVIOUS"
-TITLE="ת��"
+TITLE="转义"
 HREF="escapingsection.html"><LINK
 REL="NEXT"
-TITLE="�����ж�"
+TITLE="条件判断"
 HREF="tests.html"></HEAD
 ><BODY
 CLASS="CHAPTER"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,7 +47,7 @@ VALIGN="bottom"
 ><A
 HREF="escapingsection.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="tests.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,7 +74,7 @@ CLASS="CHAPTER"
 ><A
 NAME="EXIT-STATUS"
 ></A
->6. �˳����˳�״̬��</H1
+>6. 退出和退出状态码</H1
 ><TABLE
 BORDER="0"
 WIDTH="100%"
@@ -92,7 +92,7 @@ VALIGN="TOP"
 ><I
 ><P
 ><I
->...��Bourne shell��������ڰ��Ľ���, ��������Ҳ����������.</I
+>...在Bourne shell中有许多黑暗的角落, 但是人们也会利用它们.</I
 ></P
 ></I
 ></TD
@@ -125,45 +125,45 @@ CLASS="COMMAND"
 	  exit
 	</B
 > 
-	����������һ���ű�, 
-	������<EM
+	被用来结束一个脚本, 
+	就像在<EM
 >C</EM
->������һ��. ��Ҳ����һ��ֵ, 
-	�������ֵ�ᴫ�ݸ��ű��ĸ�����, �����̻�ʹ�����ֵ����һ���Ĵ���. </P
+>语言中一样. 它也返回一个值, 
+	并且这个值会传递给脚本的父进程, 父进程会使用这个值做下一步的处理. </P
 ><P
 ><A
 NAME="EXITSTATUSREF"
 ></A
->ÿ������᷵��һ��
+>每个命令都会返回一个
 	<I
 CLASS="FIRSTTERM"
 >	  
-	  �˳�״̬��
+	  退出状态码
 	</I
 > 
-	(��ʱ��Ҳ����Ϊ
+	(有时候也被称为
 	<I
 CLASS="FIRSTTERM"
 >	  
-	  ����״̬
+	  返回状态
   </I
->). �ɹ��������<SPAN
+>). 成功的命令返回<SPAN
 CLASS="RETURNVALUE"
 >0</SPAN
 >, 
-  �����ɹ��������<SPAN
+  而不成功的命令返回<SPAN
 CLASS="RETURNVALUE"
->����</SPAN
->ֵ, ����ֵͨ���������ͳ�һ��������. 
-  ��Ϊ���õ�UNIX����, ����, �͹��߶��᷵��<SPAN
+>非零</SPAN
+>值, 非零值通常都被解释成一个错误码. 
+  行为良好的UNIX命令, 程序, 和工具都会返回<SPAN
 CLASS="RETURNVALUE"
 >0</SPAN
->��Ϊ�˳�������ʾ�ɹ�, 
-  ��Ȼż��Ҳ��������. </P
+>作为退出码来表示成功, 
+  虽然偶尔也会有例外. </P
 ><P
->ͬ����, �ű��еĺ����ͽű�����Ҳ�᷵���˳�״̬��. 
-		  �ڽű������ǽű�������ִ�е��������������˳�״̬��.
-		  �ڽű���, <KBD
+>同样的, 脚本中的函数和脚本本身也会返回退出状态码. 
+		  在脚本或者是脚本函数中执行的最后的命令会决定退出状态码.
+		  在脚本中, <KBD
 CLASS="USERINPUT"
 >exit <TT
 CLASS="REPLACEABLE"
@@ -171,7 +171,7 @@ CLASS="REPLACEABLE"
 >nnn</I
 ></TT
 ></KBD
->������<SPAN
+>命令将会把<SPAN
 CLASS="RETURNVALUE"
 >			  <TT
 CLASS="REPLACEABLE"
@@ -179,7 +179,7 @@ CLASS="REPLACEABLE"
 >nnn</I
 ></TT
 ></SPAN
->�˳��봫�ݸ�shell(<SPAN
+>退出码传递给shell(<SPAN
 CLASS="RETURNVALUE"
 >			  <TT
 CLASS="REPLACEABLE"
@@ -187,8 +187,8 @@ CLASS="REPLACEABLE"
 >nnn</I
 ></TT
 ></SPAN
->������ʮ������, 
-		 ��Χ������<SPAN
+>必须是十进制数, 
+		 范围必须是<SPAN
 CLASS="RETURNVALUE"
 >0</SPAN
 > -
@@ -217,14 +217,14 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->���ű��Բ���������<B
+>当脚本以不带参数的<B
 CLASS="COMMAND"
 >exit</B
->����������ʱ, 
-			  �ű����˳�״̬����ɽű������ִ�е�����������(����<B
+>命令来结束时, 
+			  脚本的退出状态码就由脚本中最后执行的命令来决定(就是<B
 CLASS="COMMAND"
 >exit</B
->֮ǰ������).</P
+>之前的命令).</P
 ><P
 ><TABLE
 BORDER="0"
@@ -242,7 +242,7 @@ CLASS="PROGRAMLISTING"
   4&nbsp;
   5&nbsp;. . .
   6&nbsp;
-  7&nbsp;# �������������������˳�״̬��.
+  7&nbsp;# 将以最后的命令来决定退出状态码.
   8&nbsp;COMMAND_LAST
   9&nbsp;
  10&nbsp;exit</PRE
@@ -252,18 +252,18 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ></P
 ><P
->����������<B
+>不带参数的<B
 CLASS="COMMAND"
 >exit</B
->������
+>命令与
 		  <B
 CLASS="COMMAND"
 >exit $?</B
->��Ч����һ����, 
-		  �����ű��Ľ�β��д<B
+>的效果是一样的, 
+		  甚至脚本的结尾不写<B
 CLASS="COMMAND"
 >exit</B
->, Ҳ��ǰ���ߵ�Ч����ͬ. </P
+>, 也与前两者的效果相同. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -281,7 +281,7 @@ CLASS="PROGRAMLISTING"
   4&nbsp;
   5&nbsp;. . .
   6&nbsp;
-  7&nbsp;# �������������������˳�״̬��.
+  7&nbsp;# 将以最后的命令来决定退出状态码.
   8&nbsp;COMMAND_LAST
   9&nbsp;
  10&nbsp;exit $?</PRE
@@ -307,7 +307,7 @@ CLASS="PROGRAMLISTING"
   4&nbsp;
   5&nbsp;. . . 
   6&nbsp;
-  7&nbsp;# �������������������˳�״̬��.
+  7&nbsp;# 将以最后的命令来决定退出状态码.
   8&nbsp;COMMAND_LAST</PRE
 ></FONT
 ></TD
@@ -327,29 +327,29 @@ NAME="EXSREF"
 >	<CODE
 CLASS="VARNAME"
 >	    $?</CODE
->�����������ִ�е�������˳�״̬��. 
-	    ����������֮��, 
+>保存了最后所执行的命令的退出状态码. 
+	    当函数返回之后, 
 	    <CODE
 CLASS="VARNAME"
 >$?</CODE
->���溯���������ִ�е�������˳�״̬��. 
-		�����bash�Ժ���<SPAN
+>保存函数中最后所执行的命令的退出状态码. 
+		这就是bash对函数<SPAN
 CLASS="QUOTE"
->"����ֵ"</SPAN
->�Ĵ�������. 
-		��һ���ű��˳�, <CODE
+>"返回值"</SPAN
+>的处理方法. 
+		当一个脚本退出, <CODE
 CLASS="VARNAME"
 >$?</CODE
->�����˽ű����˳�״̬��, 
-	    ����˳�״̬��Ҳ���ǽű������һ��ִ��������˳�״̬��. 
-	    һ�������, <KBD
+>保存了脚本的退出状态码, 
+	    这个退出状态码也就是脚本中最后一个执行命令的退出状态码. 
+	    一般情况下, <KBD
 CLASS="USERINPUT"
 >0</KBD
->��ʾ�ɹ�, 
-	    �ڷ�Χ<SPAN
+>表示成功, 
+	    在范围<SPAN
 CLASS="RETURNVALUE"
 >1 - 255</SPAN
->��������ʾ����. </P
+>的整数表示错误. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -357,7 +357,7 @@ NAME="EX5"
 ></A
 ><P
 ><B
->���� 6-1. �˳�/�˳�״̬��</B
+>例子 6-1. 退出/退出状态码</B
 ></P
 ><TABLE
 BORDER="0"
@@ -372,18 +372,18 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
   3&nbsp;echo hello
-  4&nbsp;echo $?    # �˳�״̬Ϊ0, ��Ϊ����ִ�гɹ�.
+  4&nbsp;echo $?    # 退出状态为0, 因为命令执行成功.
   5&nbsp;
-  6&nbsp;lskdf      # ��Ч����.
-  7&nbsp;echo $?    # ������˳�״̬, ��Ϊ����ִ��ʧ��.
+  6&nbsp;lskdf      # 无效命令.
+  7&nbsp;echo $?    # 非零的退出状态, 因为命令执行失败.
   8&nbsp;
   9&nbsp;echo
  10&nbsp;
- 11&nbsp;exit 113   # ����113�˳�״̬��shell.
- 12&nbsp;           # Ϊ����֤������, �����ڽű������ĵط�ʹ��"echo $?". 
+ 11&nbsp;exit 113   # 返回113退出状态给shell.
+ 12&nbsp;           # 为了验证这个结果, 可以在脚本结束的地方使用"echo $?". 
  13&nbsp;
- 14&nbsp;#  һ���, 'exit 0' ��ʾ�ɹ�,
- 15&nbsp;#+ ��һ��������˳����ʾһ������, �����Ƿ���������.</PRE
+ 14&nbsp;#  一般的, 'exit 0' 表示成功,
+ 15&nbsp;#+ 而一个非零的退出码表示一个错误, 或者是反常的条件.</PRE
 ></FONT
 ></TD
 ></TR
@@ -393,12 +393,12 @@ CLASS="PROGRAMLISTING"
 ><A
 HREF="internalvariables.html#XSTATVARREF"
 >$?</A
->���ڲ��Խű��е���������ʱ��, �����Ե��ر�����(��<A
+>用于测试脚本中的命令结果的时候, 往往显得特别有用(见<A
 HREF="filearchiv.html#FILECOMP"
->���� 12-32</A
->��<A
+>例子 12-32</A
+>和<A
 HREF="textproc.html#LOOKUP"
->���� 12-17</A
+>例子 12-17</A
 >).</P
 ><DIV
 CLASS="NOTE"
@@ -424,14 +424,14 @@ VALIGN="TOP"
 ><A
 HREF="special-chars.html#NOTREF"
 >!</A
->, �߼�
+>, 逻辑
 		  <SPAN
 CLASS="QUOTE"
->"��"</SPAN
->������, ���ᷴת������������ԵĽ��, 
-		  �������Ӱ��<A
+>"非"</SPAN
+>操作符, 将会反转命令或条件测试的结果, 
+		  并且这会影响<A
 HREF="exit-status.html#EXITSTATUSREF"
->�˳�״̬��</A
+>退出状态码</A
 >.
 
 	<DIV
@@ -441,7 +441,7 @@ NAME="NEGCOND"
 ></A
 ><P
 ><B
->���� 6-2. ��תһ���������÷�<SPAN
+>例子 6-2. 反转一个条件的用法<SPAN
 CLASS="TOKEN"
 >!</SPAN
 ></B
@@ -456,22 +456,22 @@ WIDTH="100%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;true  # "true" ���ڽ�����.
+>  1&nbsp;true  # "true" 是内建命令.
   2&nbsp;echo "exit status of \"true\" = $?"     # 0
   3&nbsp;
   4&nbsp;! true
   5&nbsp;echo "exit status of \"! true\" = $?"   # 1
-  6&nbsp;# ע��: "!" ��Ҫһ���ո�.
-  7&nbsp;#    !true   ������"command not found"����
+  6&nbsp;# 注意: "!" 需要一个空格.
+  7&nbsp;#    !true   将导致"command not found"错误
   8&nbsp;#
-  9&nbsp;# ���һ��������'!'��ͷ, ��ô������Bash����ʷ����. 
+  9&nbsp;# 如果一个命令以'!'开头, 那么会启用Bash的历史机制. 
  10&nbsp;
  11&nbsp;true
  12&nbsp;!true
- 13&nbsp;# ��ξ�û�д�����, Ҳû�з�ת���.
- 14&nbsp;# ��ֻ���ظ���֮ǰ������(true).
+ 13&nbsp;# 这次就没有错误了, 也没有反转结果.
+ 14&nbsp;# 它只是重复了之前的命令(true).
  15&nbsp;
- 16&nbsp;# ��л, Stephane Chazelas��Kristopher Newsome.</PRE
+ 16&nbsp;# 感谢, Stephane Chazelas和Kristopher Newsome.</PRE
 ></FONT
 ></TD
 ></TR
@@ -505,11 +505,11 @@ ALT="Caution"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->�ض����˳�״̬�����<A
+>特定的退出状态码具有<A
 HREF="exitcodes.html#EXITCODESREF"
->��������</A
+>保留含义</A
 >, 
-			 �����û���Ӧ���ڽű���ָ����. </P
+			 所以用户不应该在脚本中指定它. </P
 ></TD
 ></TR
 ></TABLE
@@ -533,7 +533,7 @@ VALIGN="top"
 ><A
 HREF="escapingsection.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -542,7 +542,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -551,7 +551,7 @@ VALIGN="top"
 ><A
 HREF="tests.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -559,7 +559,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->ת��</TD
+>转义</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -567,13 +567,13 @@ VALIGN="top"
 ><A
 HREF="part2.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->�����ж�</TD
+>条件判断</TD
 ></TR
 ></TABLE
 ></DIV

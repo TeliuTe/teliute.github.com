@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->��׼������ѡ��</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>标准命令行选项</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="������ѡ��"
+TITLE="命令行选项"
 HREF="command-line-options.html"><LINK
 REL="PREVIOUS"
-TITLE="������ѡ��"
+TITLE="命令行选项"
 HREF="command-line-options.html"><LINK
 REL="NEXT"
-TITLE="Bash������ѡ��"
+TITLE="Bash命令行选项"
 HREF="bash-options.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="command-line-options.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->Appendix F. ������ѡ��</TD
+>Appendix F. 命令行选项</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="bash-options.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,21 +74,21 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="STANDARD-OPTIONS"
->F.1. ��׼������ѡ��</A
+>F.1. 标准命令行选项</A
 ></H1
 ><P
->����ʱ�������, ����������ѡ���־�ĺ�����˵, �Ѿ���������һ�ױȽϿ��ɵı�׼. 
-        GNU���߱���ʽ��UNIX���߸��ӷ�������<SPAN
+>随着时间的流逝, 对于命令行选项标志的含义来说, 已经建立起了一套比较宽松的标准. 
+        GNU工具比老式的UNIX工具更加符合这套<SPAN
 CLASS="QUOTE"
->"��׼"</SPAN
+>"标准"</SPAN
 >. 
         </P
 ><P
->������, UNIX������ѡ��ͨ��������һ�����ۺ�, ��߸�һ������Сд��ĸ. 
-        GNU����������һ��˫���ۺ�, ��߸�һ�������ĵ��ʻ򸴺ϵ���. 
+>按惯例, UNIX命令行选项通常都包含一个破折号, 后边跟一个或多个小写字母. 
+        GNU工具增加了一个双破折号, 后边跟一个完整的单词或复合单词. 
         </P
 ><P
->��������ͨ�õ�ѡ����: </P
+>这两个最通用的选项是: </P
 ><P
 ></P
 ><UL
@@ -105,8 +105,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->����</EM
->: ����ʹ����Ϣ, Ȼ���˳�. </P
+>帮助</EM
+>: 给出使用信息, 然后退出. </P
 ></LI
 ><LI
 ><P
@@ -121,12 +121,12 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->�汾</EM
->: ��ʵ����汾��, Ȼ���˳�. </P
+>版本</EM
+>: 现实程序版本号, 然后退出. </P
 ></LI
 ></UL
 ><P
->��������ѡ��: </P
+>其他公用选项: </P
 ><P
 ></P
 ><UL
@@ -143,12 +143,12 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->ȫ��</EM
->: ��ʾ<EM
->����</EM
->������<EM
->ȫ��</EM
->��Ϣ�����. 
+>全部</EM
+>: 显示<EM
+>所有</EM
+>参数的<EM
+>全部</EM
+>信息或操作. 
         </P
 ></LI
 ><LI
@@ -164,8 +164,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->�б�</EM
->: �г��ļ������, ����ȡ��������. </P
+>列表</EM
+>: 列出文件或参数, 不采取其他动作. </P
 ></LI
 ><LI
 ><P
@@ -175,8 +175,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->���</EM
->�ļ�</P
+>输出</EM
+>文件</P
 ></LI
 ><LI
 ><P
@@ -191,8 +191,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->����</EM
->: ����<TT
+>安静</EM
+>: 抑制<TT
 CLASS="FILENAME"
 >stdout</TT
 >. </P
@@ -215,8 +215,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->�ݹ�</EM
->: �ݹ����(������Ŀ¼��). </P
+>递归</EM
+>: 递归操作(包含子目录树). </P
 ></LI
 ><LI
 ><P
@@ -231,11 +231,11 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->����</EM
->: ���������Ϣ�����<TT
+>冗余</EM
+>: 将额外的信息输出到<TT
 CLASS="FILENAME"
 >stdout</TT
->��<TT
+>或<TT
 CLASS="FILENAME"
 >stderr</TT
 >. </P
@@ -253,27 +253,27 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->ѹ��</EM
->: ����ѹ��(ͨ��Ϊ<A
+>压缩</EM
+>: 进行压缩(通常为<A
 HREF="filearchiv.html#GZIPREF"
 >gzip</A
 >). </P
 ></LI
 ></UL
 ><P
->Ȼ��: </P
+>然而: </P
 ><P
 ></P
 ><UL
 ><LI
 ><P
->��<B
+>在<B
 CLASS="COMMAND"
 >tar</B
->��<B
+>和<B
 CLASS="COMMAND"
 >gawk</B
->��: </P
+>中: </P
 ><P
 ><CODE
 CLASS="OPTION"
@@ -286,12 +286,12 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->�ļ�</EM
->: ���ļ�������. </P
+>文件</EM
+>: 跟文件名参数. </P
 ></LI
 ><LI
 ><P
->��<B
+>在<B
 CLASS="COMMAND"
 >cp</B
 >, <B
@@ -301,7 +301,7 @@ CLASS="COMMAND"
         <B
 CLASS="COMMAND"
 >rm</B
->��:</P
+>中:</P
 ><P
 ><CODE
 CLASS="OPTION"
@@ -314,8 +314,8 @@ CLASS="OPTION"
 ></P
 ><P
 ><EM
->ǿ��</EM
->: Ŀ���ļ���ǿ�Ƹ���. </P
+>强制</EM
+>: 目标文件的强制覆盖. </P
 ></LI
 ></UL
 ><DIV
@@ -339,21 +339,21 @@ ALT="Caution"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����UNIX��Linux���߶����ص�ƫ�������<SPAN
+>许多UNIX和Linux工具都严重的偏离了这个<SPAN
 CLASS="QUOTE"
->"��׼"</SPAN
+>"标准"</SPAN
 >, 
-		����, ���ձ�׼��<EM
->�ٶ�</EM
->һ������ѡ�����Ϊ�Ƿǳ�Σ�յ�. 
-      �������ò�׼������ʱ, һ��Ҫ�����쿴�����manҳ. 
+		所以, 按照标准来<EM
+>假定</EM
+>一个给定选项的行为是非常危险的. 
+      当遇到拿不准的问题时, 一定要经常察看命令的man页. 
       </P
 ></TD
 ></TR
 ></TABLE
 ></DIV
 ><P
->GNU������һ���������Ƽ�ѡ���, ��<A
+>GNU工具有一张完整的推荐选项表, 在<A
 HREF="http://www.gnu.org/prep/standards_19.html"
 TARGET="_top"
 >http://www.gnu.org/prep/standards_19.html</A
@@ -377,7 +377,7 @@ VALIGN="top"
 ><A
 HREF="command-line-options.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -386,7 +386,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -395,7 +395,7 @@ VALIGN="top"
 ><A
 HREF="bash-options.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -403,7 +403,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->������ѡ��</TD
+>命令行选项</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -411,13 +411,13 @@ VALIGN="top"
 ><A
 HREF="command-line-options.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->Bash������ѡ��</TD
+>Bash命令行选项</TD
 ></TR
 ></TABLE
 ></DIV

@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->I/OºÍI/OÖØ¶¨ÏòµÄÏêÏ¸½éÉÜ</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>I/Oå’ŒI/Oé‡å®šå‘çš„è¯¦ç»†ä»‹ç»</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="´øÓÐÌØÊâº¬ÒåµÄÍË³öÂë"
+TITLE="å¸¦æœ‰ç‰¹æ®Šå«ä¹‰çš„é€€å‡ºç "
 HREF="exitcodes.html"><LINK
 REL="NEXT"
-TITLE="ÃüÁîÐÐÑ¡Ïî"
+TITLE="å‘½ä»¤è¡Œé€‰é¡¹"
 HREF="command-line-options.html"></HEAD
 ><BODY
 CLASS="APPENDIX"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="exitcodes.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="command-line-options.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -71,74 +71,74 @@ CLASS="APPENDIX"
 ><A
 NAME="IOREDIRINTRO"
 ></A
->Appendix E. I/OºÍI/OÖØ¶¨ÏòµÄÏêÏ¸½éÉÜ</H1
+>Appendix E. I/Oå’ŒI/Oé‡å®šå‘çš„è¯¦ç»†ä»‹ç»</H1
 ><P
 ><EM
->ÓÉStephane Chazelas±àÐ´, ±¾Êé×÷ÕßÐÞ¶©</EM
+>ç”±Stephane Chazelasç¼–å†™, æœ¬ä¹¦ä½œè€…ä¿®è®¢</EM
 ></P
 ><P
->Ò»¸öÃüÁîÆÚÍûÇ°3¸ö<A
+>ä¸€ä¸ªå‘½ä»¤æœŸæœ›å‰3ä¸ª<A
 HREF="io-redirection.html#FDREF"
->ÎÄ¼þÃèÊö·û</A
->ÊÇ¿ÉÓÃµÄ. 
-		 µÚÒ»¸ö, <EM
+>æ–‡ä»¶æè¿°ç¬¦</A
+>æ˜¯å¯ç”¨çš„. 
+		 ç¬¬ä¸€ä¸ª, <EM
 >fd 0</EM
->(±ê×¼ÊäÈë, <TT
+>(æ ‡å‡†è¾“å…¥, <TT
 CLASS="FILENAME"
 >stdin</TT
 >), 
-        ÓÃ×÷¶ÁÈ¡. ÁíÍâÁ½¸ö, (<EM
+        ç”¨ä½œè¯»å–. å¦å¤–ä¸¤ä¸ª, (<EM
 >fd 1</EM
 >, 
         <TT
 CLASS="FILENAME"
 >stdout</TT
->ºÍ<EM
+>å’Œ<EM
 >fd 2</EM
 >, 
         <TT
 CLASS="FILENAME"
 >stderr</TT
->), ÓÃÀ´Ð´Èë. </P
+>), ç”¨æ¥å†™å…¥. </P
 ><P
->Ã¿¸öÃüÁî¶¼»á¹ØÁªµ½<TT
+>æ¯ä¸ªå‘½ä»¤éƒ½ä¼šå…³è”åˆ°<TT
 CLASS="FILENAME"
 >stdin</TT
 >, 
 		<TT
 CLASS="FILENAME"
 >stdout</TT
->, ºÍ<TT
+>, å’Œ<TT
 CLASS="FILENAME"
 >stderr</TT
 >. 
         <KBD
 CLASS="USERINPUT"
 >ls 2&#62;&#38;1</KBD
->ÒâÎ¶×ÅÁÙÊ±µÄ½«<B
+>æ„å‘³ç€ä¸´æ—¶çš„å°†<B
 CLASS="COMMAND"
 >ls</B
->ÃüÁîµÄ<TT
+>å‘½ä»¤çš„<TT
 CLASS="FILENAME"
 >stderr</TT
->Á¬½Óµ½shellµÄ<TT
+>è¿žæŽ¥åˆ°shellçš„<TT
 CLASS="FILENAME"
 >stdout</TT
 >. </P
 ><P
->°´¹ßÀý, ÃüÁîÒ»°ã¶¼ÊÇ´Ófd 0(<TT
+>æŒ‰æƒ¯ä¾‹, å‘½ä»¤ä¸€èˆ¬éƒ½æ˜¯ä»Žfd 0(<TT
 CLASS="FILENAME"
 >stdin</TT
->)ÉÏ¶ÁÈ¡ÊäÈë, 
-		´òÓ¡Êä³öµ½fd 1(<TT
+>)ä¸Šè¯»å–è¾“å…¥, 
+		æ‰“å°è¾“å‡ºåˆ°fd 1(<TT
 CLASS="FILENAME"
 >stdout</TT
->)ÉÏ, 
-		´íÎóÊä³öÒ»°ã¶¼Êä³öµ½fd 2(<TT
+>)ä¸Š, 
+		é”™è¯¯è¾“å‡ºä¸€èˆ¬éƒ½è¾“å‡ºåˆ°fd 2(<TT
 CLASS="FILENAME"
 >stderr</TT
->)ÉÏ. 
-		Èç¹ûÕâ3¸öÎÄ¼þÃèÊöÖÐµÄÄ³Ò»¸öÃ»´ò¿ª, Äã¿ÉÄÜ¾Í»áÓöµ½Âé·³ÁË: 
+>)ä¸Š. 
+		å¦‚æžœè¿™3ä¸ªæ–‡ä»¶æè¿°ä¸­çš„æŸä¸€ä¸ªæ²¡æ‰“å¼€, ä½ å¯èƒ½å°±ä¼šé‡åˆ°éº»çƒ¦äº†: 
         </P
 ><TABLE
 BORDER="1"
@@ -167,30 +167,30 @@ CLASS="COMPUTEROUTPUT"
 ></TR
 ></TABLE
 ><P
->±ÈÈçËµ, µ±<B
+>æ¯”å¦‚è¯´, å½“<B
 CLASS="COMMAND"
 >xterm</B
->ÔËÐÐµÄÊ±ºò, 
-		  ËüÊ×ÏÈ»á³õÊ¼»¯×ÔÉí. 
-		  ÔÚÔËÐÐÓÃ»§shellÖ®Ç°, 
+>è¿è¡Œçš„æ—¶å€™, 
+		  å®ƒé¦–å…ˆä¼šåˆå§‹åŒ–è‡ªèº«. 
+		  åœ¨è¿è¡Œç”¨æˆ·shellä¹‹å‰, 
         <B
 CLASS="COMMAND"
 >xterm</B
->»á´ò¿ªÖÕ¶ËÉè±¸(/dev/pts/&#60;n&#62; »òÕßÀàËÆµÄ¶«Î÷)Èý´Î. </P
+>ä¼šæ‰“å¼€ç»ˆç«¯è®¾å¤‡(/dev/pts/&#60;n&#62; æˆ–è€…ç±»ä¼¼çš„ä¸œè¥¿)ä¸‰æ¬¡. </P
 ><P
->ÕâÀï, Bash¼Ì³ÐÁËÕâÈý¸öÎÄ¼þÃèÊö·û, 
-        ¶øÇÒÃ¿¸öÔËÐÐÔÚBashÉÏµÄÃüÁî(×Ó½ø³Ì)Ò²¶¼ÒÀ´Î¼Ì³ÐÁËËüÃÇ, 
-        ³ý·ÇÄãÖØ¶¨ÏòÁËÕâÐ©ÃüÁî. <A
+>è¿™é‡Œ, Bashç»§æ‰¿äº†è¿™ä¸‰ä¸ªæ–‡ä»¶æè¿°ç¬¦, 
+        è€Œä¸”æ¯ä¸ªè¿è¡Œåœ¨Bashä¸Šçš„å‘½ä»¤(å­è¿›ç¨‹)ä¹Ÿéƒ½ä¾æ¬¡ç»§æ‰¿äº†å®ƒä»¬, 
+        é™¤éžä½ é‡å®šå‘äº†è¿™äº›å‘½ä»¤. <A
 HREF="io-redirection.html#IOREDIRREF"
->ÖØ¶¨Ïò</A
->ÒâÎ¶×Å½«ÕâÐ©ÎÄ¼þÃèÊö·ûÖÐµÄÄ³Ò»¸ö, 
-		ÖØÐÂ·ÖÅäµ½ÆäËûÎÄ¼þÖÐ(»òÕß·ÖÅäµ½Ò»¸ö¹ÜµÀÖÐ, »òÕßÊÇÆäËûÈÎºÎ¿ÉÄÜµÄ¶«Î÷). 
-		ÎÄ¼þÃèÊö·û¼È¿ÉÒÔ±»¾Ö²¿ÖØ·ÖÅä(¶ÔÓÚÒ»¸öÃüÁî, ÃüÁî×é, 
-		Ò»¸ö×Óshell, Ò»¸ö<A
+>é‡å®šå‘</A
+>æ„å‘³ç€å°†è¿™äº›æ–‡ä»¶æè¿°ç¬¦ä¸­çš„æŸä¸€ä¸ª, 
+		é‡æ–°åˆ†é…åˆ°å…¶ä»–æ–‡ä»¶ä¸­(æˆ–è€…åˆ†é…åˆ°ä¸€ä¸ªç®¡é“ä¸­, æˆ–è€…æ˜¯å…¶ä»–ä»»ä½•å¯èƒ½çš„ä¸œè¥¿). 
+		æ–‡ä»¶æè¿°ç¬¦æ—¢å¯ä»¥è¢«å±€éƒ¨é‡åˆ†é…(å¯¹äºŽä¸€ä¸ªå‘½ä»¤, å‘½ä»¤ç»„, 
+		ä¸€ä¸ªå­shell, ä¸€ä¸ª<A
 HREF="redircb.html#REDIRREF"
->whileÑ­»·, if»òcase½á¹¹</A
+>whileå¾ªçŽ¯, ifæˆ–caseç»“æž„</A
 >...), 
-        Ò²¿ÉÒÔÈ«¾ÖÖØ·ÖÅä, ¶ÔÓÚÓàÏÂµÄshell(Ê¹ÓÃ<A
+        ä¹Ÿå¯ä»¥å…¨å±€é‡åˆ†é…, å¯¹äºŽä½™ä¸‹çš„shell(ä½¿ç”¨<A
 HREF="internal.html#EXECREF"
 >exec</A
 >). </P
@@ -198,13 +198,13 @@ HREF="internal.html#EXECREF"
 ><KBD
 CLASS="USERINPUT"
 >ls &#62; /dev/null</KBD
-> ±íÊ¾½«ÔËÐÐµÄ<B
+> è¡¨ç¤ºå°†è¿è¡Œçš„<B
 CLASS="COMMAND"
 >ls</B
->ÃüÁîµÄfd 1Á¬½Óµ½<TT
+>å‘½ä»¤çš„fd 1è¿žæŽ¥åˆ°<TT
 CLASS="FILENAME"
 >/dev/null</TT
->ÉÏ. </P
+>ä¸Š. </P
 ><P
 >      <TABLE
 BORDER="1"
@@ -291,12 +291,12 @@ CLASS="COMPUTEROUTPUT"
 ></TABLE
 ></P
 ><P
->ÕâÊÇÓÃÀ´Õ¹Ê¾²»Í¬ÀàÐÍµÄÖØ¶¨Ïò. </P
+>è¿™æ˜¯ç”¨æ¥å±•ç¤ºä¸åŒç±»åž‹çš„é‡å®šå‘. </P
 ><P
 ><KBD
 CLASS="USERINPUT"
->Á·Ï°:</KBD
-> ·ÖÎöÏÂÃæµÄ½Å±¾. 
+>ç»ƒä¹ :</KBD
+> åˆ†æžä¸‹é¢çš„è„šæœ¬. 
 
 <TABLE
 BORDER="0"
@@ -347,7 +347,7 @@ CLASS="PROGRAMLISTING"
  37&nbsp;rm -f /tmp/fifo1 /tmp/fifo2
  38&nbsp;
  39&nbsp;
- 40&nbsp;# ¶ÔÓÚÃ¿¸öÃüÁîºÍ×Óshell, ·Ö±ðÖ¸³öÃ¿¸öfdµÄÖ¸Ïò. 
+ 40&nbsp;# å¯¹äºŽæ¯ä¸ªå‘½ä»¤å’Œå­shell, åˆ†åˆ«æŒ‡å‡ºæ¯ä¸ªfdçš„æŒ‡å‘. 
  41&nbsp;
  42&nbsp;exit 0</PRE
 ></FONT
@@ -375,7 +375,7 @@ VALIGN="top"
 ><A
 HREF="exitcodes.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -384,7 +384,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -393,7 +393,7 @@ VALIGN="top"
 ><A
 HREF="command-line-options.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -401,7 +401,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->´øÓÐÌØÊâº¬ÒåµÄÍË³öÂë</TD
+>å¸¦æœ‰ç‰¹æ®Šå«ä¹‰çš„é€€å‡ºç </TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -411,7 +411,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->ÃüÁîÐÐÑ¡Ïî</TD
+>å‘½ä»¤è¡Œé€‰é¡¹</TD
 ></TR
 ></TABLE
 ></DIV

@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�����ű�</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>分析脚本</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="��ϰ"
+TITLE="练习"
 HREF="exercises.html"><LINK
 REL="PREVIOUS"
-TITLE="��ϰ"
+TITLE="练习"
 HREF="exercises.html"><LINK
 REL="NEXT"
-TITLE="��д�ű�"
+TITLE="编写脚本"
 HREF="writingscripts.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="exercises.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->Appendix M. ��ϰ</TD
+>Appendix M. 练习</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="writingscripts.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,11 +74,11 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="SCRIPTANALYSIS"
->M.1. �����ű�</A
+>M.1. 分析脚本</A
 ></H1
 ><P
->�������Ľű�. ������, Ȼ�����һ������ű�����ʲô�õ�. 
-        ע������ű�, ���Ը����պ͸����ŵ���ʽ��д��. 
+>检查下面的脚本. 运行它, 然后解释一下这个脚本是做什么用的. 
+        注释这个脚本, 并以更紧凑和更优雅的形式重写它. 
         </P
 ><P
 >       <TABLE
@@ -117,7 +117,7 @@ CLASS="PROGRAMLISTING"
  24&nbsp;      continue
  25&nbsp;    fi
  26&nbsp;
- 27&nbsp;  break   # ����ע�͵�����, �ᷢ��ʲô? Ϊʲô? 
+ 27&nbsp;  break   # 当你注释掉这行, 会发生什么? 为什么? 
  28&nbsp;
  29&nbsp;  done
  30&nbsp;
@@ -134,7 +134,7 @@ CLASS="PROGRAMLISTING"
 ><P
 >---</P
 ><P
->����һ������ű�������. ��ʵ����ֻ��һ���������������йܵ�. </P
+>解释一下下面脚本的作用. 事实上它只是一个参数化的命令行管道. </P
 ><P
 >        <TABLE
 BORDER="0"
@@ -164,7 +164,7 @@ CLASS="PROGRAMLISTING"
 ><P
 >---</P
 ><P
->һ�����߷��������µĴ���Ƭ��. 
+>一个读者发来了如下的代码片断. 
 
          <TABLE
 BORDER="0"
@@ -186,44 +186,44 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 >
 
-		��ϣ����дһ���ű�, 
-		��������ϵͳ��־�ļ�(<TT
+		他希望编写一个脚本, 
+		用来跟踪系统日志文件(<TT
 CLASS="FILENAME"
 >/var/log/messages</TT
->)�ĸ������.
-	    ���ҵ���, �������δ���ᱻ����, ���Ҳ������κ������������. Ϊʲô? 
-	    �޸���, ������ű��������������. (С��ʾ: 
-		��Ҫ<A
+>)的更新情况.
+	    不幸的是, 上面的这段代码会被挂起, 并且不会做任何有意义的事情. 为什么? 
+	    修复它, 让这个脚本如期望般的运行. (小提示: 
+		不要<A
 HREF="redircb.html#REDIRREF"
->�ض���ѭ����<TT
+>重定向循环的<TT
 CLASS="FILENAME"
 >stdin</TT
 ></A
 >, 
-		����<A
+		试试<A
 HREF="special-chars.html#PIPEREF"
->�ܵ�</A
+>管道</A
 >. )</P
 ><P
 >---</P
 ><P
->����<A
+>分析<A
 HREF="contributed-scripts.html#LIFESLOW"
->���� A-10</A
->, Ȼ�����, ʹ���߼��Ը���. 
-	��������ʡ�����ٸ�����, �����Ż�����ű�, ���������ű��������ٶ�. 
+>例子 A-10</A
+>, 然后简化它, 使其逻辑性更好. 
+	看看可以省掉多少个变量, 尝试优化这个脚本, 并提高这个脚本的运行速度. 
 	</P
 ><P
->�޸�����ű�, �������Խ��������ASCII�ı��ļ���Ϊ����, ��������ʼ��"����". 
-	����ű�����ȡ�����<CODE
+>修改这个脚本, 让它可以接受任意的ASCII文本文件作为输入, 用于它初始的"产生". 
+	这个脚本将读取最初的<CODE
 CLASS="VARNAME"
 >$ROW*$COL</CODE
->�ַ�, 
-	��������Ԫ���ĳ��ִ�����Ϊ<SPAN
+>字符, 
+	并且设置元音的出现次数作为<SPAN
 CLASS="QUOTE"
->"���"</SPAN
->ϸ��.  
-	��ʾ: ���뱣֤�������ļ��еĿո�ת��Ϊ�»���. 
+>"活的"</SPAN
+>细胞.  
+	提示: 必须保证将输入文件中的空格转换为下划线. 
 	</P
 ></DIV
 ><DIV
@@ -244,7 +244,7 @@ VALIGN="top"
 ><A
 HREF="exercises.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -253,7 +253,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -262,7 +262,7 @@ VALIGN="top"
 ><A
 HREF="writingscripts.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -270,7 +270,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->��ϰ</TD
+>练习</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -278,13 +278,13 @@ VALIGN="top"
 ><A
 HREF="exercises.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->��д�ű�</TD
+>编写脚本</TD
 ></TR
 ></TABLE
 ></DIV

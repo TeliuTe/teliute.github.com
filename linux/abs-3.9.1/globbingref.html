@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->Í¨Åä(globbing)</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>é€šé…(globbing)</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="ÕýÔò±í´ïÊ½"
+TITLE="æ­£åˆ™è¡¨è¾¾å¼"
 HREF="regexp.html"><LINK
 REL="PREVIOUS"
-TITLE="Ò»·Ý¼òÒªµÄÕýÔò±í´ïÊ½½éÉÜ"
+TITLE="ä¸€ä»½ç®€è¦çš„æ­£åˆ™è¡¨è¾¾å¼ä»‹ç»"
 HREF="x13673.html"><LINK
 REL="NEXT"
-TITLE="×Óshell"
+TITLE="å­shell"
 HREF="subshells.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="x13673.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->19. ÕýÔò±í´ïÊ½</TD
+>19. æ­£åˆ™è¡¨è¾¾å¼</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="subshells.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -74,27 +74,27 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="GLOBBINGREF"
->19.2. Í¨Åä(globbing)</A
+>19.2. é€šé…(globbing)</A
 ></H1
 ><P
->Bash±¾Éí²¢²»»áÊ¶±ðÕýÔò±í´ïÊ½. 
-		ÔÚ½Å±¾ÖÐ, Ê¹ÓÃREµÄÊÇÃüÁîºÍ¹¤¾ß -- 
-		±ÈÈç<A
+>Bashæœ¬èº«å¹¶ä¸ä¼šè¯†åˆ«æ­£åˆ™è¡¨è¾¾å¼. 
+		åœ¨è„šæœ¬ä¸­, ä½¿ç”¨REçš„æ˜¯å‘½ä»¤å’Œå·¥å…· -- 
+		æ¯”å¦‚<A
 HREF="sedawk.html#SEDREF"
 >sed</A
->ºÍ<A
+>å’Œ<A
 HREF="awk.html#AWKREF"
 >awk</A
-> -- ÕâÐ©¹¤¾ßÄÜ¹»½âÊÍRE. </P
+> -- è¿™äº›å·¥å…·èƒ½å¤Ÿè§£é‡ŠRE. </P
 ><P
 >Bash<EM
->½ö½ö</EM
->×öµÄÒ»¼þÊÂÊÇ<I
+>ä»…ä»…</EM
+>åšçš„ä¸€ä»¶äº‹æ˜¯<I
 CLASS="FIRSTTERM"
->ÎÄ¼þÃûÀ©Õ¹</I
->(ÒëÕß×¢: 
-		×÷ÕßÔÚÇ°ÃæÊ¹ÓÃµÄÃû´ÊÊÇfilename globbing, ÕâÀïÓÖÊ¹ÓÃfilename expansion, 
-		Ôì³ÉÊõÓï²»Í³Ò», Ï£Íû¶ÁÕß²»Òª²úÉúÎó½â.)
+>æ–‡ä»¶åæ‰©å±•</I
+>(è¯‘è€…æ³¨: 
+		ä½œè€…åœ¨å‰é¢ä½¿ç”¨çš„åè¯æ˜¯filename globbing, è¿™é‡Œåˆä½¿ç”¨filename expansion, 
+		é€ æˆæœ¯è¯­ä¸ç»Ÿä¸€, å¸Œæœ›è¯»è€…ä¸è¦äº§ç”Ÿè¯¯è§£.)
 
 	    <A
 NAME="AEN14088"
@@ -105,36 +105,36 @@ CLASS="footnote"
 ></A
 >
 	  
-		-- Õâ¾ÍÊÇËùÎ½µÄ<I
+		-- è¿™å°±æ˜¯æ‰€è°“çš„<I
 CLASS="FIRSTTERM"
->Í¨Åä(globbing)</I
+>é€šé…(globbing)</I
 > -- 
-		µ«ÊÇÕâÀïËùÊ¹ÓÃµÄ²¢<EM
->²»ÊÇ</EM
->±ê×¼µÄRE, ¶øÊÇÊ¹ÓÃÍ¨Åä·û. 
-		Í¨Åä(globbing)½âÊÍ±ê×¼Í¨Åä·û, 
+		ä½†æ˜¯è¿™é‡Œæ‰€ä½¿ç”¨çš„å¹¶<EM
+>ä¸æ˜¯</EM
+>æ ‡å‡†çš„RE, è€Œæ˜¯ä½¿ç”¨é€šé…ç¬¦. 
+		é€šé…(globbing)è§£é‡Šæ ‡å‡†é€šé…ç¬¦, 
 		<SPAN
 CLASS="TOKEN"
 >*</SPAN
 >, <SPAN
 CLASS="TOKEN"
 >?</SPAN
->, ÖÐÀ¨ºÅÀ©ÆðÀ´µÄ×Ö·û, 
-		»¹ÓÐÆäËûÒ»Ð©ÌØÊâ×Ö·û(±ÈÈç<SPAN
+>, ä¸­æ‹¬å·æ‰©èµ·æ¥çš„å­—ç¬¦, 
+		è¿˜æœ‰å…¶ä»–ä¸€äº›ç‰¹æ®Šå­—ç¬¦(æ¯”å¦‚<SPAN
 CLASS="TOKEN"
 >^</SPAN
->ÓÃÀ´±íÊ¾È¡·´Æ¥Åä). 
-		È»¶øÍ¨Åä(globbing)ËùÊ¹ÓÃµÄÍ¨Åä·ûÓÐºÜ´óµÄ¾ÖÏÞÐÔ. 
-		°üº¬<TT
+>ç”¨æ¥è¡¨ç¤ºå–ååŒ¹é…). 
+		ç„¶è€Œé€šé…(globbing)æ‰€ä½¿ç”¨çš„é€šé…ç¬¦æœ‰å¾ˆå¤§çš„å±€é™æ€§. 
+		åŒ…å«<TT
 CLASS="REPLACEABLE"
 ><I
 >*</I
 ></TT
->µÄ×Ö·û´®²»ÄÜÆ¥ÅäÒÔ<SPAN
+>çš„å­—ç¬¦ä¸²ä¸èƒ½åŒ¹é…ä»¥<SPAN
 CLASS="QUOTE"
->"µã"</SPAN
->¿ªÍ·µÄÎÄ¼þ, 
-	  ±ÈÈç, <TT
+>"ç‚¹"</SPAN
+>å¼€å¤´çš„æ–‡ä»¶, 
+	  æ¯”å¦‚, <TT
 CLASS="FILENAME"
 >.bashrc</TT
 >. 
@@ -148,18 +148,18 @@ CLASS="footnote"
 ></A
 >
 	  
-		ÁíÍâ, REÖÐËùÊ¹ÓÃµÄ<TT
+		å¦å¤–, REä¸­æ‰€ä½¿ç”¨çš„<TT
 CLASS="REPLACEABLE"
 ><I
 >?</I
 ></TT
 >, 
-		ÓëÍ¨Åä(globbing)ÖÐËùÊ¹ÓÃµÄ<TT
+		ä¸Žé€šé…(globbing)ä¸­æ‰€ä½¿ç”¨çš„<TT
 CLASS="REPLACEABLE"
 ><I
 >?</I
 ></TT
->, º¬Òå²¢²»ÏàÍ¬. </P
+>, å«ä¹‰å¹¶ä¸ç›¸åŒ. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -262,11 +262,11 @@ CLASS="COMPUTEROUTPUT"
 >
 	      </P
 ><P
->BashÖ»ÄÜ¶ÔÎ´ÓÃÒýºÅÒýÓÃÆðÀ´µÄÃüÁîÐÐ²ÎÊý½øÐÐÎÄ¼þÃûÀ©Õ¹. 
+>Bashåªèƒ½å¯¹æœªç”¨å¼•å·å¼•ç”¨èµ·æ¥çš„å‘½ä»¤è¡Œå‚æ•°è¿›è¡Œæ–‡ä»¶åæ‰©å±•. 
 	    <A
 HREF="internal.html#ECHOREF"
 >echo</A
->ÃüÁî¿ÉÒÔÓ¡Ö¤ÕâÒ»µã. </P
+>å‘½ä»¤å¯ä»¥å°è¯è¿™ä¸€ç‚¹. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -329,35 +329,35 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->BashÔÚÍ¨Åä(globbing)ÖÐ½âÊÍÌØÊâ×Ö·ûµÄÐÐÎªÊÇ¿ÉÒÔÐÞ¸ÄµÄ. 
+>Bashåœ¨é€šé…(globbing)ä¸­è§£é‡Šç‰¹æ®Šå­—ç¬¦çš„è¡Œä¸ºæ˜¯å¯ä»¥ä¿®æ”¹çš„. 
 	    <B
 CLASS="COMMAND"
 >set -f</B
->ÃüÁî¿ÉÒÔ½ûÓÃÍ¨Åä(globbing), 
-	    ¶øÇÒ<A
+>å‘½ä»¤å¯ä»¥ç¦ç”¨é€šé…(globbing), 
+	    è€Œä¸”<A
 HREF="internal.html#SHOPTREF"
 >shopt</A
->ÃüÁîµÄÑ¡Ïî<CODE
+>å‘½ä»¤çš„é€‰é¡¹<CODE
 CLASS="OPTION"
 >nocaseglob</CODE
->ºÍ<CODE
+>å’Œ<CODE
 CLASS="OPTION"
 >nullglob</CODE
->¿ÉÒÔÐÞ¸ÄÍ¨Åä(globbing)µÄÐÐÎª. 
+>å¯ä»¥ä¿®æ”¹é€šé…(globbing)çš„è¡Œä¸º. 
 	    </P
 ></TD
 ></TR
 ></TABLE
 ></DIV
 ><P
->Çë²Î¿¼<A
+>è¯·å‚è€ƒ<A
 HREF="loops1.html#LISTGLOB"
->Àý×Ó 10-4</A
+>ä¾‹å­ 10-4</A
 >. </P
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->×¢ÒâÊÂÏî</H3
+>æ³¨æ„äº‹é¡¹</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -382,15 +382,15 @@ WIDTH="95%"
 ><P
 ><I
 CLASS="FIRSTTERM"
->ÎÄ¼þÃûÀ©Õ¹</I
->ÒâÎ¶×ÅÀ©Õ¹°üº¬ÓÐÌØÊâ×Ö·ûµÄÎÄ¼þÃûÄ£Ê½»òÄ£°æ. 
-	    ±ÈÈç, <TT
+>æ–‡ä»¶åæ‰©å±•</I
+>æ„å‘³ç€æ‰©å±•åŒ…å«æœ‰ç‰¹æ®Šå­—ç¬¦çš„æ–‡ä»¶åæ¨¡å¼æˆ–æ¨¡ç‰ˆ. 
+	    æ¯”å¦‚, <TT
 CLASS="FILENAME"
 >example.???</TT
->¿ÉÄÜ»á±»À©Õ¹³É<TT
+>å¯èƒ½ä¼šè¢«æ‰©å±•æˆ<TT
 CLASS="FILENAME"
 >example.001</TT
->»ò(ºÍ)<TT
+>æˆ–(å’Œ)<TT
 CLASS="FILENAME"
 >example.txt</TT
 >. </P
@@ -414,16 +414,16 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->			ÎÄ¼þÃûÀ©Õ¹<EM
->ÄÜ¹»</EM
->Æ¥ÅäÒÔ<SPAN
+>			æ–‡ä»¶åæ‰©å±•<EM
+>èƒ½å¤Ÿ</EM
+>åŒ¹é…ä»¥<SPAN
 CLASS="QUOTE"
->"µã"</SPAN
->¿ªÍ·µÄÎÄ¼þ, 
-			µ«ÊÇ, Äã±ØÐëÔÚÄ£Ê½×Ö·û´®ÖÐÃ÷È·µÄÐ´ÉÏ<SPAN
+>"ç‚¹"</SPAN
+>å¼€å¤´çš„æ–‡ä»¶, 
+			ä½†æ˜¯, ä½ å¿…é¡»åœ¨æ¨¡å¼å­—ç¬¦ä¸²ä¸­æ˜Žç¡®çš„å†™ä¸Š<SPAN
 CLASS="QUOTE"
->"µã"</SPAN
->(.), ²ÅÄÜ¹»À©Õ¹. 
+>"ç‚¹"</SPAN
+>(.), æ‰èƒ½å¤Ÿæ‰©å±•. 
 	        <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -434,18 +434,18 @@ WIDTH="100%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;~/[.]bashrc    #  ²»ÄÜÀ©Õ¹³É~/.bashrc
-  2&nbsp;~/?bashrc      #  Ò²²»ÄÜÀ©Õ¹. 
-  3&nbsp;               #  Í¨Åä(globbing)ÖÐËùÊ¹ÓÃµÄÍ¨Åä·û
-  4&nbsp;               #+ ºÍÆ¥Åä×Ö·û´®"²»ÄÜ"À©Õ¹"µã". 
+>  1&nbsp;~/[.]bashrc    #  ä¸èƒ½æ‰©å±•æˆ~/.bashrc
+  2&nbsp;~/?bashrc      #  ä¹Ÿä¸èƒ½æ‰©å±•. 
+  3&nbsp;               #  é€šé…(globbing)ä¸­æ‰€ä½¿ç”¨çš„é€šé…ç¬¦
+  4&nbsp;               #+ å’ŒåŒ¹é…å­—ç¬¦ä¸²"ä¸èƒ½"æ‰©å±•"ç‚¹". 
   5&nbsp;
-  6&nbsp;~/.[b]ashrc    #  ¿ÉÒÔÀ©Õ¹³É~/.bashrc
-  7&nbsp;~/.ba?hrc      #  Ò²¿ÉÒÔÀ©Õ¹.
-  8&nbsp;~/.bashr*      #  Ò²¿ÉÒÔÀ©Õ¹.
+  6&nbsp;~/.[b]ashrc    #  å¯ä»¥æ‰©å±•æˆ~/.bashrc
+  7&nbsp;~/.ba?hrc      #  ä¹Ÿå¯ä»¥æ‰©å±•.
+  8&nbsp;~/.bashr*      #  ä¹Ÿå¯ä»¥æ‰©å±•.
   9&nbsp;
- 10&nbsp;# ¿ÉÒÔÉèÖÃ"dotglob"Ñ¡Ïî, °ÑÕâ¸öÌØÐÔ¹Ø±Õ. 
+ 10&nbsp;# å¯ä»¥è®¾ç½®"dotglob"é€‰é¡¹, æŠŠè¿™ä¸ªç‰¹æ€§å…³é—­. 
  11&nbsp;
- 12&nbsp;# ¸ÐÐ», S.C.</PRE
+ 12&nbsp;# æ„Ÿè°¢, S.C.</PRE
 ></FONT
 ></TD
 ></TR
@@ -473,7 +473,7 @@ VALIGN="top"
 ><A
 HREF="x13673.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -482,7 +482,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -491,7 +491,7 @@ VALIGN="top"
 ><A
 HREF="subshells.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -499,7 +499,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Ò»·Ý¼òÒªµÄÕýÔò±í´ïÊ½½éÉÜ</TD
+>ä¸€ä»½ç®€è¦çš„æ­£åˆ™è¡¨è¾¾å¼ä»‹ç»</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -507,13 +507,13 @@ VALIGN="top"
 ><A
 HREF="regexp.html"
 ACCESSKEY="U"
->ÉÏÒ»¼¶</A
+>ä¸Šä¸€çº§</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->×Óshell</TD
+>å­shell</TD
 ></TR
 ></TABLE
 ></DIV

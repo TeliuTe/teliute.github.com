@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�Ż�</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>优化</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="杂项"
 HREF="miscellany.html"><LINK
 REL="PREVIOUS"
-TITLE="���ű���ɫ��"
+TITLE="将脚本彩色化"
 HREF="colorizing.html"><LINK
 REL="NEXT"
-TITLE="����С����"
+TITLE="各种小技巧"
 HREF="assortedtips.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="colorizing.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->33. ����</TD
+>33. 杂项</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="assortedtips.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,34 +74,34 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="OPTIMIZATIONS"
->33.6. �Ż�</A
+>33.6. 优化</A
 ></H1
 ><P
->�󲿷�shell�ű��ڴ�����̫���ӵ������ʱ��, ʹ�õĶ���С�Ե�(���ٵ��ǲ�������)�ķ�ʽ. 
-	  ����Ϊ����, �����Ż��ű����ٶȲ�����һ��������. 
-	  ����һ���������, ���ű����ڴ���һ����Ҫ�����ʱ��, 
-	  ��Ȼ����ű��ܹ������ĺܺ�, ���������е��ٶ�ʵ��̫��. 
-	  �����������, ʹ�ñ���������д����ʵҲ����һ�ֺܺ��ʵİ취. 
-	  ��򵥵İ취��ʵ������д����ű�ִ��Ч�ʵ��µĲ���. 
-	  ��ô, �Ƿ����ְ취���Գ�Ϊ����Ч�ʵ��µ�shell�ű���һ��ԭ��? 
+>大部分shell脚本在处理不太复杂的问题的时候, 使用的都是小吃店(快速但是并不优雅)的方式. 
+	  正因为这样, 所以优化脚本的速度并不是一个大问题. 
+	  考虑一下这种情况, 当脚本正在处理一个重要任务的时候, 
+	  虽然这个脚本能够处理的很好, 但是它运行的速度实在太慢. 
+	  在这种情况下, 使用编译语言重写它其实也不是一种很合适的办法. 
+	  最简单的办法其实就是重写这个脚本执行效率低下的部分. 
+	  那么, 是否这种办法可以成为处理效率低下的shell脚本的一种原则? 
 	  </P
 ><P
->��ϸ���ű���ѭ���Ĳ���. ��Ϊ�ظ��Ĳ����ǳ���ʱ. 
-	  ����п��ܵĻ�, ����ɾ����ѭ���бȽϺ�ʱ�Ĳ���. 
+>仔细检查脚本中循环的部分. 因为重复的操作非常耗时. 
+	  如果有可能的话, 尽量删除掉循环中比较耗时的操作. 
 	  </P
 ><P
->����ʹ��<A
+>优先使用<A
 HREF="internal.html#BUILTINREF"
->�ڽ�����</A
+>内建命令</A
 >, 
-		  ������ϵͳ����. ������Ϊ�ڽ�����ִ�еø���, 
-		  �����ڵ���ʱ, һ�㶼��������ӽ���. 
+		  而不是系统命令. 这是因为内建命令执行得更快, 
+		  并且在调用时, 一般都不会产生子进程. 
 	  </P
 ><P
->����ʹ�ò���Ҫ������, ������<A
+>避免使用不必要的命令, 尤其是<A
 HREF="special-chars.html#PIPEREF"
->�ܵ�</A
->�е�����. 
+>管道</A
+>中的命令. 
 	    <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -116,8 +116,8 @@ CLASS="PROGRAMLISTING"
   2&nbsp;
   3&nbsp;grep "$word" "$file"
   4&nbsp;
-  5&nbsp;#  ��������о�����ͬ��Ч��, 
-  6&nbsp;#+ ���ǵڶ������еĸ���, ��Ϊ���������ӽ���. </PRE
+  5&nbsp;#  上面的两行具有相同的效果, 
+  6&nbsp;#+ 但是第二行运行的更快, 因为它不产生子进程. </PRE
 ></FONT
 ></TD
 ></TR
@@ -126,38 +126,38 @@ CLASS="PROGRAMLISTING"
 	  <A
 HREF="basic.html#CATREF"
 >cat</A
->������������ڽű��б�����. 
+>命令看起来经常在脚本中被滥用. 
 	  </P
 ><P
->ʹ��<A
+>使用<A
 HREF="timedate.html#TIMREF"
 >time</A
->��<A
+>和<A
 HREF="x6756.html#TIMESREF"
 >times</A
->�������˽���������ĵ�ʱ��. 
-	  ���Կ���ʹ��C����, �����ǻ����������дʱ�����ıȽϴ�Ĵ��벿��. 
+>工具来了解计算所消耗的时间. 
+	  可以考虑使用C语言, 甚至是汇编语言来重写时间消耗比较大的代码部分. 
 	  </P
 ><P
->���Ծ��������ļ�I/O�Ĳ���. ��ΪBash�ڴ����ļ�����, 
-		  �Եò����Ǻ���Ч��, ���Կ����ڽű��п���ʹ�ø����ʵĹ���, 
-	   ����<A
+>尝试尽量减少文件I/O的操作. 因为Bash在处理文件方面, 
+		  显得并不是很有效率, 所以可以在脚本中考虑使用更合适的工具, 
+	   比如<A
 HREF="awk.html#AWKREF"
 >awk</A
->��<A
+>或<A
 HREF="wrapper.html#PERLREF"
 >Perl</A
 >. </P
 ><P
->ʹ�ýṹ����˼������д�ű�, ���Ұ������󽫸���ģ����֯�����ܽ������. 
-	   һЩ�����ڸ߼����Ե��Ż�����Ҳ�������ڽű���, 
-	   ������Щ����, ����, ѭ��չ���Ż�(loop unrolling), 
-	   �͸����ò���. �������������, ���Ը��ݾ�����ȡ��. </P
+>使用结构化的思想来编写脚本, 并且按照需求将各个模块组织并紧密结合起来. 
+	   一些适用于高级语言的优化技术也可以用在脚本上, 
+	   但是有些技术, 比如, 循环展开优化(loop unrolling), 
+	   就根本用不上. 关于上面的讨论, 可以根据经验来取舍. </P
 ><P
->��ô���ܺܺõļ��ٽű���ִ��ʱ��, �����ǿ�һ�����������, 
+>怎么才能很好的减少脚本的执行时间, 让我们看一个优秀的例子, 
 	   <A
 HREF="mathc.html#MONTHLYPMT"
->���� 12-42</A
+>例子 12-42</A
 >. </P
 ></DIV
 ><DIV
@@ -178,7 +178,7 @@ VALIGN="top"
 ><A
 HREF="colorizing.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -187,7 +187,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -196,7 +196,7 @@ VALIGN="top"
 ><A
 HREF="assortedtips.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -204,9 +204,9 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->���ű�<SPAN
+>将脚本<SPAN
 CLASS="QUOTE"
->"��ɫ��"</SPAN
+>"彩色化"</SPAN
 ></TD
 ><TD
 WIDTH="34%"
@@ -215,13 +215,13 @@ VALIGN="top"
 ><A
 HREF="miscellany.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->����С����</TD
+>各种小技巧</TD
 ></TR
 ></TABLE
 ></DIV

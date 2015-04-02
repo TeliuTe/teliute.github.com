@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
 >Sed</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="һ��ѧϰSed��Awk��С�ֲ�"
+TITLE="一个学习Sed和Awk的小手册"
 HREF="sedawk.html"><LINK
 REL="PREVIOUS"
-TITLE="һ��ѧϰSed��Awk��С�ֲ�"
+TITLE="一个学习Sed和Awk的小手册"
 HREF="sedawk.html"><LINK
 REL="NEXT"
 TITLE="Awk"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="sedawk.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->Appendix C. һ��ѧϰSed��Awk��С�ֲ�</TD
+>Appendix C. 一个学习Sed和Awk的小手册</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="awk.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -77,21 +77,21 @@ NAME="AEN17814"
 >C.1. Sed</A
 ></H1
 ><P
->Sed�Ƿǽ���ʽ���б༭��. 
-		  �������Դ�<TT
+>Sed是非交互式的行编辑器. 
+		  它即可以从<TT
 CLASS="FILENAME"
 >stdin</TT
->�н����ı�����, 
-		  Ҳ���Դ��ļ��н����ı�����, ���������е�ָ���н����ض��Ĳ���, 
-		  һ�в���һ��, Ȼ�󽫽�������<TT
+>中接收文本输入, 
+		  也可以从文件中接收文本输入, 它对输入中的指定行进行特定的操作, 
+		  一行操作一次, 然后将结果输出到<TT
 CLASS="FILENAME"
 >stdout</TT
->, ��������ļ���. 
-		  ��shell�ű���ʹ�õĻ�, 
-	sedͨ��������Ϊ�ܵ��������е�һ������������ʹ��. </P
+>, 或输出到文件中. 
+		  在shell脚本中使用的话, 
+	sed通常都是作为管道工具链中的一个处理部分来使用. </P
 ><P
->Sed���������Ҫ������Щ��, ��Ϊsed�Ĳ����Ͱ�����<EM
->��ַ��Χ</EM
+>Sed会决定它需要处理那些行, 因为sed的参数就包含有<EM
+>地址范围</EM
 >. 
 	  <A
 NAME="AEN17821"
@@ -101,39 +101,39 @@ CLASS="footnote"
 >[1]</SPAN
 ></A
 >
-	�ȿ���ͨ���к���ָ����ַ��Χ, Ҳ����ͨ��ģʽƥ����������ַ��Χ. 
-	����, <TT
+	既可以通过行号来指定地址范围, 也可以通过模式匹配来决定地址范围. 
+	比如, <TT
 CLASS="REPLACEABLE"
 ><I
 >3d</I
 ></TT
->��ʾsed��ɾ������ĵ�3��, 
+>表示sed会删除输入的第3行, 
 	<TT
 CLASS="REPLACEABLE"
 ><I
 >/windows/d</I
 ></TT
->��ʾsed��ɾ��������ƥ��<SPAN
+>表示sed会删除掉所有匹配<SPAN
 CLASS="QUOTE"
 >"windows"</SPAN
->��������. </P
+>的输入行. </P
 ><P
->����sed���߰������в�����˵, ��������ĵ���ʵ����3������Ҫ�Ĳ���. 
-		  �ֱ���<B
+>对于sed工具包的所有操作来说, 我们最关心的其实就是3个最主要的操作. 
+		  分别是<B
 CLASS="COMMAND"
 >p</B
->rinting(��ӡ��<TT
+>rinting(打印到<TT
 CLASS="FILENAME"
 >stdout</TT
 >), 
 		 <B
 CLASS="COMMAND"
 >d</B
->eletion(ɾ��), 
-	��<B
+>eletion(删除), 
+	和<B
 CLASS="COMMAND"
 >s</B
->ubstitution(�滻). </P
+>ubstitution(替换). </P
 ><DIV
 CLASS="TABLE"
 ><HR><A
@@ -141,7 +141,7 @@ NAME="AEN17832"
 ></A
 ><P
 ><B
->���� C-1. ����sed����</B
+>表格 C-1. 基本sed操作</B
 ></P
 ><TABLE
 BORDER="1"
@@ -149,11 +149,11 @@ CLASS="CALSTABLE"
 ><COL><COL><COL><THEAD
 ><TR
 ><TH
->������</TH
+>操作符</TH
 ><TH
->����</TH
+>名字</TH
 ><TH
->Ч��</TH
+>效果</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -161,23 +161,23 @@ CLASS="CALSTABLE"
 ><TD
 ><CODE
 CLASS="OPTION"
->[��ַ��Χ]/p</CODE
+>[地址范围]/p</CODE
 ></TD
 ><TD
->��ӡ</TD
+>打印</TD
 ><TD
->��ӡ[ָ���ĵ�ַ��Χ]</TD
+>打印[指定的地址范围]</TD
 ></TR
 ><TR
 ><TD
 ><CODE
 CLASS="OPTION"
->[��ַ��Χ]/d</CODE
+>[地址范围]/d</CODE
 ></TD
 ><TD
->ɾ��</TD
+>删除</TD
 ><TD
->ɾ��[ָ���ĵ�ַ��Χ]</TD
+>删除[指定的地址范围]</TD
 ></TR
 ><TR
 ><TD
@@ -186,47 +186,47 @@ CLASS="OPTION"
 >s/pattern1/pattern2/</CODE
 ></TD
 ><TD
->�滻</TD
+>替换</TD
 ><TD
->��ָ������, ����һ��ƥ�䵽��pattern1, �滻Ϊpattern2. </TD
+>将指定行中, 将第一个匹配到的pattern1, 替换为pattern2. </TD
 ></TR
 ><TR
 ><TD
 ><CODE
 CLASS="OPTION"
->[��ַ��Χ]/s/pattern1/pattern2/</CODE
+>[地址范围]/s/pattern1/pattern2/</CODE
 ></TD
 ><TD
->�滻</TD
+>替换</TD
 ><TD
->��<TT
+>在<TT
 CLASS="REPLACEABLE"
 ><I
->��ַ��Χ</I
+>地址范围</I
 ></TT
->ָ����ÿһ����, ����һ��ƥ�䵽��pattern1, �滻Ϊpattern2.
+>指定的每一行中, 将第一个匹配到的pattern1, 替换为pattern2.
 	      </TD
 ></TR
 ><TR
 ><TD
 ><CODE
 CLASS="OPTION"
->[��ַ��Χ]/y/pattern1/pattern2/</CODE
+>[地址范围]/y/pattern1/pattern2/</CODE
 ></TD
 ><TD
 >transform</TD
 ><TD
->��<TT
+>在<TT
 CLASS="REPLACEABLE"
 ><I
->��ַ��Χ</I
+>地址范围</I
 ></TT
->ָ����ÿһ����, 
-			  ��pattern1�е�ÿ��ƥ�䵽pattern2���ַ���ʹ��pattern2����Ӧ�ַ����滻. 
-			  (�ȼ���<B
+>指定的每一行中, 
+			  将pattern1中的每个匹配到pattern2的字符都使用pattern2的相应字符作替换. 
+			  (等价于<B
 CLASS="COMMAND"
 >tr</B
->����)</TD
+>命令)</TD
 ></TR
 ><TR
 ><TD
@@ -235,11 +235,11 @@ CLASS="OPTION"
 >g</CODE
 ></TD
 ><TD
->ȫ��</TD
+>全局</TD
 ><TD
->��ÿ��ƥ�����������, ��<EM
->ÿ��</EM
->ģʽƥ�䶼����Ӧ�Ĳ���. (����ע: ��ֻ�����ڵ�һ��ƥ��) 
+>在每个匹配的输入行中, 将<EM
+>每个</EM
+>模式匹配都作相应的操作. (译者注: 不只局限于第一个匹配) 
 	        </TD
 ></TR
 ></TBODY
@@ -266,22 +266,22 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->������<EM
->�滻</EM
->����ĺ����ȷָ��ѡ��<CODE
+>除非在<EM
+>替换</EM
+>命令的后边明确指定选项<CODE
 CLASS="OPTION"
 >g</CODE
 >(<EM
->ȫ��</EM
+>全局</EM
 >), 
-	����Ļ�, �滻����ֻ���滻��ÿ���ϵĵ�һ��ģʽƥ��ʵ��. 
+	否则的话, 替换操作只会替换掉每行上的第一个模式匹配实例. 
 	</P
 ></TD
 ></TR
 ></TABLE
 ></DIV
 ><P
->����������л�ű���ʹ���������, sed�������ܻ���ҪĳЩѡ�������. </P
+>如果在命令行或脚本中使用这个命令, sed操作可能还需要某些选项和引用. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -294,24 +294,24 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;sed -e '/^$/d' $filename
-  2&nbsp;# -eѡ��, ����ʹ�ú�ߵ��ַ�������Ϊ�༭ָ��. 
-  3&nbsp;#  (���ֻ��"sed"�����˵���ָ��, ��ô"-e"�ǿ�ѡ��.)
-  4&nbsp;#  "ǿ"����('')���ᱣ��ָ���е�RE(�������ʽ)�ַ���, 
-  5&nbsp;#+ Ҳ���Ƿ�ֹ�ű���RE���½���Ϊ�����ַ�. 
-  6&nbsp;# (���Ϊsed����, ����ָ���RE����ʽ.)
+  2&nbsp;# -e选项, 将会使得后边的字符被看作为编辑指令. 
+  3&nbsp;#  (如果只给"sed"传递了单个指令, 那么"-e"是可选的.)
+  4&nbsp;#  "强"引用('')将会保护指令中的RE(正则表达式)字符串, 
+  5&nbsp;#+ 也就是防止脚本将RE重新解释为特殊字符. 
+  6&nbsp;# (这会为sed命令, 保存指令的RE表达式.)
   7&nbsp;#
-  8&nbsp;# ������ļ�$filename�е��ı����в���. </PRE
+  8&nbsp;# 将会对文件$filename中的文本进行操作. </PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ></P
 ><P
->��ĳЩ�ض��������, 
+>在某些特定的情况下, 
 	<B
 CLASS="COMMAND"
 >sed</B
->�༭�������͵����ŵ�ǿ����һ����. 
+>编辑命令将不会和单引号的强引用一起工作. 
     </P
 ><P
 ><TABLE
@@ -327,10 +327,10 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;filename=file1.txt
   2&nbsp;pattern=BEGIN
   3&nbsp;
-  4&nbsp;  sed "/^$pattern/d" "$filename"  # ��������. 
-  5&nbsp;# sed '/^$pattern/d' "$filename"    �ͻ�����쳣�Ľ��. 
-  6&nbsp;#        �����ʵ����, ��ǿ����(' ... ')�����
-  7&nbsp;#+      "$pattern"�Ͳ�����չΪ"BEGIN". </PRE
+  4&nbsp;  sed "/^$pattern/d" "$filename"  # 工作正常. 
+  5&nbsp;# sed '/^$pattern/d' "$filename"    就会出现异常的结果. 
+  6&nbsp;#        在这个实例中, 被强引用(' ... ')引起的
+  7&nbsp;#+      "$pattern"就不会扩展为"BEGIN". </PRE
 ></FONT
 ></TD
 ></TR
@@ -357,15 +357,15 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->Sed�����<CODE
+>Sed命令的<CODE
 CLASS="OPTION"
 >-e</CODE
->ѡ���ʾ�������ַ�����һ��ָ��, ��ָ�. 
-		����������ַ�����ֻ��һ��ָ��, 
-		��ô<CODE
+>选项表示后续的字符串是一个指令, 或指令集. 
+		如果后续的字符串中只有一个指令, 
+		那么<CODE
 CLASS="OPTION"
 >-e</CODE
->ѡ����Ա�ʡ��. 
+>选项可以被省略. 
 	 </P
 ></TD
 ></TR
@@ -383,9 +383,9 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;sed -n '/xzy/p' $filename
-  2&nbsp;# -nѡ�����sedֻ��ӡ��Щƥ��ģʽ����. 
-  3&nbsp;# �������е������ж��ᱻ��ӡ. 
-  4&nbsp;# �������ʡ��-eѡ��, ��Ϊ����ֻ��һ���༭ָ��. </PRE
+  2&nbsp;# -n选项会让sed只打印那些匹配模式的行. 
+  3&nbsp;# 否则所有的输入行都会被打印. 
+  4&nbsp;# 这里可以省略-e选项, 因为这里只有一个编辑指令. </PRE
 ></FONT
 ></TD
 ></TR
@@ -398,7 +398,7 @@ NAME="AEN17893"
 ></A
 ><P
 ><B
->���� C-2. sed����������</B
+>表格 C-2. sed操作符举例</B
 ></P
 ><TABLE
 BORDER="1"
@@ -406,9 +406,9 @@ CLASS="CALSTABLE"
 ><COL><COL><THEAD
 ><TR
 ><TH
->��ʾ��</TH
+>表示法</TH
 ><TH
->Ч��</TH
+>效果</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -419,7 +419,7 @@ CLASS="OPTION"
 >8d</CODE
 ></TD
 ><TD
->ɾ������ĵ�8��. </TD
+>删除输入的第8行. </TD
 ></TR
 ><TR
 ><TD
@@ -428,7 +428,7 @@ CLASS="OPTION"
 >/^$/d</CODE
 ></TD
 ><TD
->ɾ�����п���. </TD
+>删除所有空行. </TD
 ></TR
 ><TR
 ><TD
@@ -437,7 +437,7 @@ CLASS="OPTION"
 >1,/^$/d</CODE
 ></TD
 ><TD
->������Ŀ�ͷһֱɾ������1������(��һ������Ҳɾ����). </TD
+>从输入的开头一直删除到第1个空行(第一个空行也删除掉). </TD
 ></TR
 ><TR
 ><TD
@@ -446,13 +446,13 @@ CLASS="OPTION"
 >/Jones/p</CODE
 ></TD
 ><TD
->ֻ��ӡ��Щ����<SPAN
+>只打印那些包含<SPAN
 CLASS="QUOTE"
 >"Jones"</SPAN
->����(ʹ��<SPAN
+>的行(使用<SPAN
 CLASS="TOKEN"
 >-n</SPAN
->ѡ��). </TD
+>选项). </TD
 ></TR
 ><TR
 ><TD
@@ -461,11 +461,11 @@ CLASS="OPTION"
 >s/Windows/Linux/</CODE
 ></TD
 ><TD
->��ÿ����������, 
-			 ����һ�����ֵ�<SPAN
+>在每个输入行中, 
+			 将第一个出现的<SPAN
 CLASS="QUOTE"
 >"Windows"</SPAN
->ʵ���滻Ϊ<SPAN
+>实例替换为<SPAN
 CLASS="QUOTE"
 >"Linux"</SPAN
 >. 
@@ -478,10 +478,10 @@ CLASS="OPTION"
 >s/BSOD/stability/g</CODE
 ></TD
 ><TD
->��ÿ����������, ������<SPAN
+>在每个输入行中, 将所有<SPAN
 CLASS="QUOTE"
 >"BSOD"</SPAN
->���滻Ϊ<SPAN
+>都替换为<SPAN
 CLASS="QUOTE"
 >"stability"</SPAN
 >. </TD
@@ -493,7 +493,7 @@ CLASS="OPTION"
 >s/ *$//</CODE
 ></TD
 ><TD
->ɾ����ÿ�н�β�����пո�. </TD
+>删除掉每行结尾的所有空格. </TD
 ></TR
 ><TR
 ><TD
@@ -502,7 +502,7 @@ CLASS="OPTION"
 >s/00*/0/g</CODE
 ></TD
 ><TD
->�������������ֵ�0��ѹ���ɵ�����0. </TD
+>将所有连续出现的0都压缩成单个的0. </TD
 ></TR
 ><TR
 ><TD
@@ -511,10 +511,10 @@ CLASS="OPTION"
 >/GUI/d</CODE
 ></TD
 ><TD
->ɾ�������а���<SPAN
+>删除掉所有包含<SPAN
 CLASS="QUOTE"
 >"GUI"</SPAN
->����. </TD
+>的行. </TD
 ></TR
 ><TR
 ><TD
@@ -523,21 +523,21 @@ CLASS="OPTION"
 >s/GUI//g</CODE
 ></TD
 ><TD
->������<SPAN
+>将所有<SPAN
 CLASS="QUOTE"
 >"GUI"</SPAN
->��ɾ����, ������ʣ�ಿ�ֵ�������. 
+>都删除掉, 并保持剩余部分的完整性. 
 	        </TD
 ></TR
 ></TBODY
 ></TABLE
 ><HR></DIV
 ><P
->����������, ��һ���ַ����滻Ϊ���ַ�, �ȼ���ɾ������ַ���. 
-       ʣ�ಿ�ֻᱣ������. ����<KBD
+>在输入行中, 将一个字符串替换为空字符, 等价于删除这个字符串. 
+       剩余部分会保持完整. 比如<KBD
 CLASS="USERINPUT"
 >s/GUI//</KBD
->, ���±����Ϊ��: 
+>, 拿下边这句为例: 
        <TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -557,7 +557,7 @@ CLASS="USERINPUT"
 ></TR
 ></TABLE
 >
-       ���Ϊ: 
+       结果为: 
        <TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -578,14 +578,14 @@ CLASS="COMPUTEROUTPUT"
 ></TABLE
 ></P
 ><P
->��б�߽���ǿ��<B
+>反斜线将会强制<B
 CLASS="COMMAND"
 >sed</B
->�滻������������һ��. 
-       ������, �ڵ�һ�еĽ�βʹ��<EM
->����</EM
->��Ϊ<EM
->�滻�ַ���</EM
+>替换命令延续到下一行. 
+       类似于, 在第一行的结尾使用<EM
+>换行</EM
+>作为<EM
+>替换字符串</EM
 >. 
 
        <TABLE
@@ -606,12 +606,12 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 >
 
-	   �⽫ÿ�п�ͷ�Ŀո��û������滻. 
-	   ���Ľ�����ǽ�ÿ�ε������滻Ϊһ������. 
+	   这将每行开头的空格用换行来替换. 
+	   最后的结果就是将每段的缩进替换为一个空行. 
        </P
 ><P
->��ַ��Χ��߿��Լ���һϵ�в���, 
-		   ��Щ����������Ҫ�ŵ������Ŷ���, ������Ҫ����һ��. 
+>地址范围后边可以加上一系列操作, 
+		   这些操作可能需要放到大括号对中, 并且需要重起一行. 
        <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -630,8 +630,8 @@ CLASS="PROGRAMLISTING"
 ></TR
 ></TABLE
 >
-	   ��ֻ��ɾ�����������еĵ�һ��. 
-	   ���ڵ��м����ı��ļ���˵, �������, ���ǻᱣ�������Ŀ���. 
+	   这只会删除连续空行中的第一行. 
+	   对于单行间距的文本文件来说, 这很有用, 但是会保留段落间的空行. 
        </P
 ><DIV
 CLASS="TIP"
@@ -654,7 +654,7 @@ ALT="Tip"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->���ı��ļ�˫���о�Ŀ��ٷ�����<KBD
+>将文本文件双倍行距的快速方法是<KBD
 CLASS="USERINPUT"
 >sed G filename</KBD
 >. </P
@@ -663,7 +663,7 @@ CLASS="USERINPUT"
 ></TABLE
 ></DIV
 ><P
->������һЩ�ڽű���ʹ��sed���������: 
+>下面是一些在脚本中使用sed命令的例子: 
        <P
 ></P
 ><OL
@@ -672,142 +672,142 @@ TYPE="1"
 ><P
 ><A
 HREF="wrapper.html#EX3"
->���� 33-1</A
+>例子 33-1</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="wrapper.html#EX4"
->���� 33-2</A
+>例子 33-2</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="moreadv.html#EX57"
->���� 12-3</A
+>例子 12-3</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#RN"
->���� A-2</A
+>例子 A-2</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="textproc.html#GRP"
->���� 12-15</A
+>例子 12-15</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="textproc.html#COL"
->���� 12-24</A
+>例子 12-24</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#BEHEAD"
->���� A-12</A
+>例子 A-12</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#TREE"
->���� A-17</A
+>例子 A-17</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="filearchiv.html#STRIPC"
->���� 12-29</A
+>例子 12-29</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="loops1.html#FINDSTRING"
->���� 10-9</A
+>例子 10-9</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="mathc.html#BASE"
->���� 12-43</A
+>例子 12-43</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#MAILFORMAT"
->���� A-1</A
+>例子 A-1</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="textproc.html#RND"
->���� 12-13</A
+>例子 12-13</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="textproc.html#WF"
->���� 12-11</A
+>例子 12-11</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#LIFESLOW"
->���� A-10</A
+>例子 A-10</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="here-docs.html#SELFDOCUMENT"
->���� 17-12</A
+>例子 17-12</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="textproc.html#DICTLOOKUP"
->���� 12-16</A
+>例子 12-16</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#WHX"
->���� A-29</A
+>例子 A-29</A
 ></P
 ></LI
 ></OL
 >
      </P
 ><P
->������˽�sed����ĸ���ϸ��, ��쿴<A
+>如果想了解sed命令的更多细节, 请察看<A
 HREF="biblio.html"
 ><I
->�ο�����</I
+>参考文献</I
 ></A
->�е��ⷽ��Ĳο�����. </P
+>中的这方面的参考资料. </P
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -830,9 +830,9 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->���ûָ����ַ��Χ, ��ôĬ�Ͼ���<EM
->����</EM
->��. </P
+>如果没指定地址范围, 那么默认就是<EM
+>所有</EM
+>行. </P
 ></TD
 ></TR
 ></TABLE
@@ -854,7 +854,7 @@ VALIGN="top"
 ><A
 HREF="sedawk.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -863,7 +863,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -872,7 +872,7 @@ VALIGN="top"
 ><A
 HREF="awk.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -880,7 +880,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->һ��ѧϰSed��Awk��С�ֲ�</TD
+>一个学习Sed和Awk的小手册</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -888,7 +888,7 @@ VALIGN="top"
 ><A
 HREF="sedawk.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"

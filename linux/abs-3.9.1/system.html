@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->ϵͳ���������</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>系统与管理命令</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="进阶"
 HREF="part3.html"><LINK
 REL="PREVIOUS"
-TITLE="��������"
+TITLE="混杂命令"
 HREF="extmisc.html"><LINK
 REL="NEXT"
-TITLE="����һ��ϵͳ�ű�"
+TITLE="分析一个系统脚本"
 HREF="sysscripts.html"></HEAD
 ><BODY
 CLASS="CHAPTER"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,7 +47,7 @@ VALIGN="bottom"
 ><A
 HREF="extmisc.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="sysscripts.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,14 +74,14 @@ CLASS="CHAPTER"
 ><A
 NAME="SYSTEM"
 ></A
->13. ϵͳ���������</H1
+>13. 系统与管理命令</H1
 ><P
->��<TT
+>在<TT
 CLASS="FILENAME"
 >/etc/rc.d</TT
->Ŀ¼�е������͹ػ��ű��а����˺ö����õ�(��û�õ�)ϵͳ��������. 
-		  ��Щ����ͨ�����Ǳ�root�û�ʹ��, ����ϵͳά�������ǽ���ϵͳ�ļ��޸�. 
-		  һ��ҪС��ʹ����Щ����, ��Ϊ������õĻ�, ���ǻ������ϵͳ. </P
+>目录中的启动和关机脚本中包含了好多有用的(和没用的)系统管理命令. 
+		  这些命令通常总是被root用户使用, 用于系统维护或者是紧急系统文件修复. 
+		  一定要小心使用这些工具, 因为如果滥用的话, 它们会损坏你的系统. </P
 ><P
 ></P
 ><DIV
@@ -91,7 +91,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="USERSGROUPS1"
 ></A
->User��Group��</B
+>User和Group类</B
 ></P
 ><DL
 ><DT
@@ -101,10 +101,10 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ���еĵ�¼�û�. ���������<B
+>显示所有的登录用户. 这个命令与<B
 CLASS="COMMAND"
 >who -q</B
->����һ��. </P
+>基本一致. </P
 ></DD
 ><DT
 ><B
@@ -113,11 +113,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�г���ǰ�û�������������. ���൱��<A
+>列出当前用户和他所属的组. 这相当于<A
 HREF="internalvariables.html#GROUPSREF"
 >$GROUPS</A
->�ڲ�����, 
-			���������������������, ����������. </P
+>内部变量, 
+			但是这个命令将会给出组名字, 而不是数字. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -169,16 +169,16 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >chown</B
->������޸�һ�������ļ�������Ȩ. 
-			����<TT
+>命令将会修改一个或多个文件的所有权. 
+			对于<TT
 CLASS="REPLACEABLE"
 ><I
 >root</I
 ></TT
->�û���˵, 
-		   ������뽫�ļ�������Ȩ��һ���û�������һ���û��Ļ�, 
-	      ��ôʹ����������Ƿǳ��õ�ѡ��. 
-	      һ����ͨ�û������޸��ļ�������Ȩ, ��ʹ�����ļ�������Ҳ����. 
+>用户来说, 
+		   如果他想将文件的所有权从一个用户换到另一个用户的话, 
+	      那么使用这个命令是非常好的选择. 
+	      一个普通用户不能修改文件的所有权, 即使他是文件的宿主也不行. 
 	         <A
 NAME="AEN10989"
 HREF="#FTN.AEN10989"
@@ -221,19 +221,19 @@ CLASS="COMPUTEROUTPUT"
 ><B
 CLASS="COMMAND"
 >chgrp</B
->�����޸�һ�������ļ���<TT
+>将会修改一个或多个文件的<TT
 CLASS="REPLACEABLE"
 ><I
 >group</I
 ></TT
->����Ȩ. 
-			��ǰ�������������Щ�ļ�������, ���ұ�����Ŀ����ĳ�Ա(������<TT
+>所有权. 
+			但前提是你必须是这些文件的宿主, 并且必须是目的组的成员(或者是<TT
 CLASS="REPLACEABLE"
 ><I
 >root</I
 ></TT
 >), 
-			��������ܹ�ʹ���������. 
+			这样你才能够使用这个命令. 
 	      <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -245,8 +245,8 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;chgrp --recursive dunderheads *.data
-  2&nbsp;#  "dunderheads"(����: ��,����...) ������ӵ�������е�"*.data"�ļ�. 
-  3&nbsp;#+ ��������$PWDĿ¼�µ���Ŀ¼�е��ļ�(--recursive�����þ��ǰ�����Ŀ¼). </PRE
+  2&nbsp;#  "dunderheads"(译者: 晕,蠢才...) 组现在拥有了所有的"*.data"文件. 
+  3&nbsp;#+ 包括所有$PWD目录下的子目录中的文件(--recursive的作用就是包含子目录). </PRE
 ></FONT
 ></TD
 ></TR
@@ -266,12 +266,12 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >useradd</B
->�����������ϵͳ������һ���û��ʺ�, 
-			  �������ָ���Ļ�, ����Ϊ�ض����û�����homeĿ¼. 
-	      ��Ӧ��, <B
+>管理命令将会在系统上添加一个用户帐号, 
+			  并且如果指定的话, 还会为特定的用户创建home目录. 
+	      相应的, <B
 CLASS="COMMAND"
 >userdel</B
->������ϵͳ��ɾ��һ���û��ʺ�, 
+>命令将会从系统上删除一个用户帐号, 
 		 <A
 NAME="AEN11020"
 HREF="#FTN.AEN11020"
@@ -280,7 +280,7 @@ CLASS="footnote"
 >[2]</SPAN
 ></A
 >
-	      ���һ�ɾ����Ӧ���ļ�. </P
+	      并且会删除相应的文件. </P
 ><DIV
 CLASS="NOTE"
 ><P
@@ -305,14 +305,14 @@ VALIGN="TOP"
 ><B
 CLASS="COMMAND"
 >adduser</B
->��<B
+>与<B
 CLASS="COMMAND"
 >useradd</B
->����ȫ��ͬ��, 
+>是完全相同的, 
 			<B
 CLASS="COMMAND"
 >adduser</B
->ͨ�������Ǹ���������. 
+>通常仅仅是个符号链接. 
 	      </P
 ></TD
 ></TR
@@ -326,9 +326,9 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�޸��û��ʺ�. �����޸ĸ����û��ʺŵ�����, 
-			  ������, ��ֹ����, ��������һЩ����. 
-			  ʹ���������, �û���������ܻᱻ����, ��Ϊ�����Ӱ�쵽�ʺŵ���Ч��. 
+>修改用户帐号. 可以修改给定用户帐号的密码, 
+			  组身份, 截止日期, 或者其他一些属性. 
+			  使用这个命令, 用户的密码可能会被锁定, 因为密码会影响到帐号的有效性. 
 	      </P
 ></DD
 ><DT
@@ -338,7 +338,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�޸�ָ����. �����ֻ���ID�Ŷ�����������������޸�. 
+>修改指定组. 组名字或者ID号都可以用这个命令来修改. 
 	      </P
 ></DD
 ><DT
@@ -354,18 +354,18 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >id</B
->������г���ǰ������ʵ��Ч���û�ID, �����û�����ID. 
-			  ����Bash�ڲ�����<A
+>命令将会列出当前进程真实有效的用户ID, 还有用户的组ID. 
+			  这与Bash内部变量<A
 HREF="internalvariables.html#UIDREF"
 >$UID</A
 >,
 	      <A
 HREF="internalvariables.html#EUIDREF"
 >$EUID</A
->, ��<A
+>, 和<A
 HREF="internalvariables.html#GROUPSREF"
 >$GROUPS</A
->������. 
+>很相像. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -428,22 +428,22 @@ VALIGN="TOP"
 ><B
 CLASS="COMMAND"
 >id</B
->����ֻ����<EM
->��Ч</EM
->ID��<EM
->ʵ��</EM
->ID����ʱ, 
-				�Ż���ʾ<EM
->��Ч</EM
+>命令只有在<EM
+>有效</EM
+>ID与<EM
+>实际</EM
+>ID不符时, 
+				才会显示<EM
+>有效</EM
 >ID. </P
 ></TD
 ></TR
 ></TABLE
 ></DIV
 ><P
->��ο�<A
+>请参考<A
 HREF="internalvariables.html#AMIROOT"
->���� 9-5</A
+>例子 9-5</A
 >. </P
 ></DD
 ><DT
@@ -456,7 +456,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾϵͳ�������Ѿ���¼���û�. </P
+>显示系统上所有已经登录的用户. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -493,19 +493,19 @@ CLASS="COMPUTEROUTPUT"
 ><CODE
 CLASS="OPTION"
 >-m</CODE
->ѡ��������ǰ�û�����ϸ��Ϣ. 
-			�����������������ݵ�<B
+>选项将会给出当前用户的详细信息. 
+			将任意两个参数传递到<B
 CLASS="COMMAND"
 >who</B
->��, 
-			���ȼ���<B
+>中, 
+			都等价于<B
 CLASS="COMMAND"
 >who -m</B
 >, 
-			����<B
+			就像<B
 CLASS="COMMAND"
 >who am i</B
->��<B
+>或<B
 CLASS="COMMAND"
 >who The Man</B
 >. 
@@ -546,11 +546,11 @@ NAME="WHOAMIREF"
 ><B
 CLASS="COMMAND"
 >whoami</B
->��<B
+>与<B
 CLASS="COMMAND"
 >who
 	      -m</B
->������, ����ֻ�г��û���. </P
+>很相似, 但是只列出用户名. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -588,19 +588,19 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ���еĵ�¼�û����������ǵĽ���. 
-			  ����һ��<B
+>显示所有的登录用户和属于它们的进程. 
+			  这是一个<B
 CLASS="COMMAND"
 >who</B
->�������չ�汾. 
+>命令的扩展版本. 
 			  <B
 CLASS="COMMAND"
 >w</B
->���������ͨ���ܵ����ݵ�<B
+>的输出可以通过管道传递到<B
 CLASS="COMMAND"
 >grep</B
->������, 
-			  �����Ϳ��Բ���ָ�����û������. </P
+>命令中, 
+			  这样就可以查找指定的用户或进程. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -634,14 +634,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ��ǰ�û��ĵ�¼��(������<TT
+>显示当前用户的登录名(可以在<TT
 CLASS="FILENAME"
 >/var/run/utmp</TT
->���ҵ�). 
-			  �����ϱߵ�<A
+>中找到). 
+			  这与上边的<A
 HREF="system.html#WHOAMIREF"
 >whoami</A
->�����. 
+>很相近. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -681,7 +681,7 @@ CLASS="COMPUTEROUTPUT"
 ></TR
 ></TABLE
 ><P
->Ȼ��...</P
+>然而...</P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -754,12 +754,12 @@ VALIGN="TOP"
 ><B
 CLASS="COMMAND"
 >logname</B
->ֻ���ӡ����¼���û���, 
-				��<B
+>只会打印出登录的用户名, 
+				而<B
 CLASS="COMMAND"
 >whoami</B
->����������ŵ���ǰ���̵��û���. 
-				���������ϱ߿���������, ������������ʱ�᲻ͬ. </P
+>将会给出附着到当前进程的用户名. 
+				就像我们上边看到的那样, 这两个名字有时会不同. </P
 ></TD
 ></TR
 ></TABLE
@@ -775,26 +775,26 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ���滻���û�(<EM
+>使用替换的用户(<EM
 >s</EM
 >ubstitute <EM
 >u</EM
->ser)����������һ�������ű�. 
+>ser)身份来运行一个程序或脚本. 
 			<B
 CLASS="COMMAND"
 >su rjones</B
->�������û�<EM
+>将会以用户<EM
 >rjones</EM
->������������shell. 
-			ʹ��<B
+>的身份来启动shell. 
+			使用<B
 CLASS="COMMAND"
 >su</B
->����ʱ, �����ʹ���κβ����Ļ�, 
-			��Ĭ�Ͼ���<EM
+>命令时, 如果不使用任何参数的话, 
+			那默认就是<EM
 >root</EM
->�û�. ��ο�<A
+>用户. 请参考<A
 HREF="contributed-scripts.html#FIFO"
->���� A-15</A
+>例子 A-15</A
 >. 
 			</P
 ></DD
@@ -805,8 +805,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��root(�������û�)������������һ������. 
-			  �������������ڽű���, ������������������û����������нű�. 
+>以root(或其他用户)的身份来运行一个命令. 
+			  这个命令可以用在脚本中, 这样就允许以正规的用户身份来运行脚本. 
 	      </P
 ><P
 ><TABLE
@@ -821,22 +821,22 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
-  3&nbsp;# ĳЩ����. 
+  3&nbsp;# 某些命令. 
   4&nbsp;sudo cp /root/secretfile /home/bozo/secret
-  5&nbsp;# ���������. </PRE
+  5&nbsp;# 其余的命令. </PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ></P
 ><P
->�ļ�<TT
+>文件<TT
 CLASS="FILENAME"
 >/etc/sudoers</TT
->�б�������������<B
+>中保存有允许调用<B
 CLASS="COMMAND"
 >sudo</B
->������û���. </P
+>命令的用户名. </P
 ></DD
 ><DT
 ><B
@@ -845,15 +845,15 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����, �޸�, ���߹����û�������. </P
+>设置, 修改, 或者管理用户的密码. </P
 ><P
 ><B
 CLASS="COMMAND"
 >passwd</B
->����������ڽű���, 
-	      ����<EM
->�����㲻����ô��</EM
->, �Ǻ�. </P
+>命令可以用在脚本中, 
+	      但是<EM
+>估计你不想这么用</EM
+>, 呵呵. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -861,7 +861,7 @@ NAME="SETNEWPW"
 ></A
 ><P
 ><B
->���� 13-1. ����һ��������</B
+>例子 13-1. 设置一个新密码</B
 ></P
 ><TABLE
 BORDER="0"
@@ -874,12 +874,12 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;#  setnew-password.sh: ����ű���������˵��passwd����. 
-  3&nbsp;#                      �����������������ű�, ���ź�, ��ɲ��Ǹ�������. 
-  4&nbsp;#  ����ű�������root����������. 
+  2&nbsp;#  setnew-password.sh: 这个脚本仅仅用于说明passwd命令. 
+  3&nbsp;#                      如果你真想运行这个脚本, 很遗憾, 这可不是个好主意. 
+  4&nbsp;#  这个脚本必须以root身份来运行. 
   5&nbsp;
-  6&nbsp;ROOT_UID=0         # Root��$UIDΪ0.
-  7&nbsp;E_WRONG_USER=65    # ����root�û�?
+  6&nbsp;ROOT_UID=0         # Root的$UID为0.
+  7&nbsp;E_WRONG_USER=65    # 不是root用户?
   8&nbsp;
   9&nbsp;E_NOSUCHUSER=70
  10&nbsp;SUCCESS=0
@@ -900,7 +900,7 @@ CLASS="PROGRAMLISTING"
  25&nbsp;username=bozo
  26&nbsp;NEWPASSWORD=security_violation
  27&nbsp;
- 28&nbsp;# ���bozo�Ƿ�������. 
+ 28&nbsp;# 检查bozo是否在这里. 
  29&nbsp;grep -q "$username" /etc/passwd
  30&nbsp;if [ $? -ne $SUCCESS ]
  31&nbsp;then
@@ -910,12 +910,12 @@ CLASS="PROGRAMLISTING"
  35&nbsp;fi  
  36&nbsp;
  37&nbsp;echo "$NEWPASSWORD" | passwd --stdin "$username"
- 38&nbsp;#  'passwd'�����'--stdin'ѡ������
- 39&nbsp;#+ ��stdin(���߹ܵ�)�л��һ���µ�����. 
+ 38&nbsp;#  'passwd'命令的'--stdin'选项允许
+ 39&nbsp;#+ 从stdin(或者管道)中获得一个新的密码. 
  40&nbsp;
  41&nbsp;echo; echo "User $username's password changed!"
  42&nbsp;
- 43&nbsp;# �ڽű���ʹ��'passwd'�����Ƿǳ�Σ�յ�. 
+ 43&nbsp;# 在脚本中使用'passwd'命令是非常危险的. 
  44&nbsp;
  45&nbsp;exit 0</PRE
 ></FONT
@@ -927,18 +927,18 @@ CLASS="PROGRAMLISTING"
 ><B
 CLASS="COMMAND"
 >passwd</B
->�����<CODE
+>命令的<CODE
 CLASS="OPTION"
 >-l</CODE
 >,
 				<CODE
 CLASS="OPTION"
 >-u</CODE
->, ��<CODE
+>, 和<CODE
 CLASS="OPTION"
 >-d</CODE
->ѡ����������, 
-				����, ��ɾ��һ���û�������. ֻ��root�û�����ʹ����Щѡ��. 
+>选项允许锁定, 
+				解锁, 和删除一个用户的密码. 只有root用户可以使用这些选项. 
 			</P
 ></DD
 ><DT
@@ -948,12 +948,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ�û���¼������ʱ��, 
-			  �����<TT
+>显示用户登录的连接时间, 
+			  就像从<TT
 CLASS="FILENAME"
 >/var/log/wtmp</TT
->�ж�ȡһ��. 
-			  ����һ��GNUͳ�ƹ���. 
+>中读取一样. 
+			  这是一个GNU统计工具. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -988,17 +988,17 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�û�<EM
->���</EM
->��¼����Ϣ, 
-			  �����<TT
+>用户<EM
+>最后</EM
+>登录的信息, 
+			  就像从<TT
 CLASS="FILENAME"
 >/var/log/wtmp</TT
->�ж�����һ��. 
-			  �������Ҳ����������ʾԶ�˵�¼. 
+>中读出来一样. 
+			  这个命令也可以用来显示远端登录. 
 	      </P
 ><P
->����, ��ʾ��󼸴�ϵͳ��������Ϣ: </P
+>比如, 显示最后几次系统的重启信息: </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -1038,8 +1038,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���õǳ��Ϳ����޸��û�����ID. ������������������ļ�. 
-			  ��Ϊ�û�����ͬʱ���ڶ����, ���������ٱ�ʹ��. 
+>不用登出就可以修改用户的组ID. 并且允许访问新组的文件. 
+			  因为用户可能同时属于多个组, 这个命令很少被使用. 
 	      </P
 ></DD
 ></DL
@@ -1053,7 +1053,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="TERMINALSSYS1"
 ></A
->�ն�������</B
+>终端类命令</B
 ></P
 ><DL
 ><DT
@@ -1063,11 +1063,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ��ǰ�û��ն˵�����. 
-			  ע��ÿһ��������<I
+>显示当前用户终端的名字. 
+			  注意每一个单独的<I
 CLASS="FIRSTTERM"
 >xterm</I
->���ڶ�������һ����ͬ���ն�.
+>窗口都被算作一个不同的终端.
 	      </P
 ><TABLE
 BORDER="1"
@@ -1105,8 +1105,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ��(��)�޸��ն�����. �����������������ڽű���, 
-			  ���������������ն˵���Ϊ������ʾ����ķ���. �μ���������infoҳ, ����ϸѧϰ��.
+>显示并(或)修改终端设置. 这个复杂命令可以用在脚本中, 
+			  并可以用来控制终端的行为和其显示输出的方法. 参见这个命令的info页, 并仔细学习它.
 	      </P
 ><DIV
 CLASS="EXAMPLE"
@@ -1115,7 +1115,7 @@ NAME="ERASE"
 ></A
 ><P
 ><B
->���� 13-2. ����һ�������ַ�</B
+>例子 13-2. 设置一个擦除字符</B
 ></P
 ><TABLE
 BORDER="0"
@@ -1128,20 +1128,20 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# erase.sh: �ڶ�ȡ����ʱʹ��"stty"������һ�������ַ�. 
+  2&nbsp;# erase.sh: 在读取输入时使用"stty"来设置一个擦除字符. 
   3&nbsp;
   4&nbsp;echo -n "What is your name? "
-  5&nbsp;read name                      #  �������˸��
-  6&nbsp;                               #+ ��ɾ��������ַ�. 
-  7&nbsp;                               #  ��ʲô����? 
+  5&nbsp;read name                      #  试试用退格键
+  6&nbsp;                               #+ 来删除输入的字符. 
+  7&nbsp;                               #  有什么问题? 
   8&nbsp;echo "Your name is $name."
   9&nbsp;
- 10&nbsp;stty erase '#'                 #  ��"hashmark"(#)����Ϊ�˸��ַ�. 
+ 10&nbsp;stty erase '#'                 #  将"hashmark"(#)设置为退格字符. 
  11&nbsp;echo -n "What is your name? "
- 12&nbsp;read name                      #  ʹ��#��ɾ����������ַ�. 
+ 12&nbsp;read name                      #  使用#来删除最后键入的字符. 
  13&nbsp;echo "Your name is $name."
  14&nbsp;
- 15&nbsp;# ����: ��ʹ�ڽű��˳���, �µļ�ֵ���Ǳ������������. (����: ����ʹ��stty erase '^?'���лָ�)
+ 15&nbsp;# 警告: 即使在脚本退出后, 新的键值还是保持着这个设置. (译者: 可以使用stty erase '^?'进行恢复)
  16&nbsp;
  17&nbsp;exit 0</PRE
 ></FONT
@@ -1156,10 +1156,10 @@ NAME="SECRETPW"
 ></A
 ><P
 ><B
->���� 13-3. <B
+>例子 13-3. <B
 CLASS="COMMAND"
->��������</B
->: �ر��ն˶��������echo</B
+>保密密码</B
+>: 关闭终端对于密码的echo</B
 ></P
 ><TABLE
 BORDER="0"
@@ -1172,7 +1172,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# secret-pw.sh: �������벻����ʾ
+  2&nbsp;# secret-pw.sh: 保护密码不被显示
   3&nbsp;
   4&nbsp;echo
   5&nbsp;echo -n "Enter password "
@@ -1181,10 +1181,10 @@ CLASS="PROGRAMLISTING"
   8&nbsp;echo -n "If someone had been looking over your shoulder, "
   9&nbsp;echo "your password would have been compromised."
  10&nbsp;
- 11&nbsp;echo &#38;&#38; echo  # ��һ��"���б�"�в�����������. 
+ 11&nbsp;echo &#38;&#38; echo  # 在一个"与列表"中产生两个换行. 
  12&nbsp;
  13&nbsp;
- 14&nbsp;stty -echo    # �ر���Ļ��echo. 
+ 14&nbsp;stty -echo    # 关闭屏幕的echo. 
  15&nbsp;
  16&nbsp;echo -n "Enter password again "
  17&nbsp;read passwd
@@ -1192,24 +1192,24 @@ CLASS="PROGRAMLISTING"
  19&nbsp;echo "password is $passwd"
  20&nbsp;echo
  21&nbsp;
- 22&nbsp;stty echo     # �ָ���Ļ��echo. 
+ 22&nbsp;stty echo     # 恢复屏幕的echo. 
  23&nbsp;
  24&nbsp;exit 0
  25&nbsp;
- 26&nbsp;# ��ϸ���Ķ�stty�����infoҳ, �Ա��ڸ��õ�����������ò��ҽƻ��Ĺ���. </PRE
+ 26&nbsp;# 详细的阅读stty命令的info页, 以便于更好的掌握这个有用并且狡猾的工具. </PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ><HR></DIV
 ><P
->һ�������Ե�<B
+>一个创造性的<B
 CLASS="COMMAND"
 >stty</B
->������÷�, 
-			����û������ļ�(������<B
+>命令的用法, 
+			检测用户所按的键(不用敲<B
 CLASS="KEYCAP"
->�س�</B
+>回车</B
 >). 
 		</P
 ><DIV
@@ -1219,7 +1219,7 @@ NAME="KEYPRESS"
 ></A
 ><P
 ><B
->���� 13-4. �������</B
+>例子 13-4. 按键检测</B
 ></P
 ><TABLE
 BORDER="0"
@@ -1232,22 +1232,22 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# keypress.sh: ����û�����("hot keys").
+  2&nbsp;# keypress.sh: 检测用户按键("hot keys").
   3&nbsp;
   4&nbsp;echo
   5&nbsp;
-  6&nbsp;old_tty_settings=$(stty -g)   # �����ϵ�����(Ϊʲô?). 
+  6&nbsp;old_tty_settings=$(stty -g)   # 保存老的设置(为什么?). 
   7&nbsp;stty -icanon
-  8&nbsp;Keypress=$(head -c1)          # ����ʹ��$(dd bs=1 count=1 2&#62; /dev/null)
-  9&nbsp;                              # �ڷ�GNUϵͳ��
+  8&nbsp;Keypress=$(head -c1)          # 或者使用$(dd bs=1 count=1 2&#62; /dev/null)
+  9&nbsp;                              # 在非GNU系统上
  10&nbsp;
  11&nbsp;echo
  12&nbsp;echo "Key pressed was \""$Keypress"\"."
  13&nbsp;echo
  14&nbsp;
- 15&nbsp;stty "$old_tty_settings"      # �ָ��ϵ�����. 
+ 15&nbsp;stty "$old_tty_settings"      # 恢复老的设置. 
  16&nbsp;
- 17&nbsp;# ��л, Stephane Chazelas.
+ 17&nbsp;# 感谢, Stephane Chazelas.
  18&nbsp;
  19&nbsp;exit 0</PRE
 ></FONT
@@ -1256,9 +1256,9 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ><HR></DIV
 ><P
->��ο�<A
+>请参考<A
 HREF="internalvariables.html#TIMEOUT"
->���� 9-3</A
+>例子 9-3</A
 >. </P
 ><TABLE
 CLASS="SIDEBAR"
@@ -1273,19 +1273,19 @@ NAME="AEN11305"
 ></A
 ><P
 ><B
->�ն���ģʽterminals and modes</B
+>终端与模式terminals and modes</B
 ></P
 ><P
->һ�������, һ���ն˶��ǹ�����<EM
+>一般情况下, 一个终端都是工作在<EM
 >canonical</EM
->(��׼)ģʽ��. 
-				���û�������, ��ʵ�����������ַ���û�����ϴ��ݵ������ڵ�ǰ�ն��ϵĳ���. 
-				�ն��ϵ�һ�����ػ��汣������Щ����. ���ð���<B
+>(标准)模式下. 
+				当用户按键后, 事实上所产生的字符并没有马上传递到运行在当前终端上的程序. 
+				终端上的一个本地缓存保存了这些按键. 当用按下<B
 CLASS="KEYCAP"
->�س�</B
->����ʱ��, 
-				�ŻὫ���б���İ�����Ϣ���ݵ����еĳ�����. 
-				�����ζ�����ն��ڲ�����һ���������б༭��. 
+>回车</B
+>键的时候, 
+				才会将所有保存的按键信息传递到运行的程序中. 
+				这就意味着在终端内部存在一个基本的行编辑器. 
 			</P
 ><P
 >	        <TABLE
@@ -1321,7 +1321,7 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->��ʹ��canonicalģʽ��ʱ��, ���ԶԱ����ն��б༭������������ⰴ���������¶���. 
+>在使用canonical模式的时候, 可以对本地终端行编辑器所定义的特殊按键进行重新定义. 
 
 	        <TABLE
 BORDER="1"
@@ -1377,42 +1377,42 @@ CLASS="COMPUTEROUTPUT"
 ></TABLE
 >
 
-				�����ն˵Ľ���ֻ������12���ַ�(11����ĸ����һ������), 
-				��Ȼ�û�����26������. 
+				控制终端的进程只保存了12个字符(11个字母加上一个换行), 
+				虽然用户敲了26个按键. 
             </P
 ><P
->��non-canonical((<SPAN
+>在non-canonical((<SPAN
 CLASS="QUOTE"
 >"raw"</SPAN
->)ģʽ��, 
-				ÿ�ΰ���(�������ⶨ��İ���, 
-				����<B
+>)模式下, 
+				每次按键(包括特殊定义的按键, 
+				比如<B
 CLASS="KEYCAP"
 >ctl-H</B
->)��������������һ���ַ������ƽ�����. 
+>)都将会立即发送一个字符到控制进程中. 
               </P
 ><P
->Bash��ʾ��������<CODE
+>Bash提示符禁用了<CODE
 CLASS="OPTION"
 >icanon</CODE
->��<CODE
+>和<CODE
 CLASS="OPTION"
 >echo</CODE
 >, 
-				  ��Ϊ�����Լ����б༭���������ն˵Ļ����б༭��, ��ΪBash���б༭������. 
-				  ����, ������Bash��ʾ������<B
+				  因为它用自己的行编辑器代替了终端的基本行编辑器, 因为Bash的行编辑器更好. 
+				  比如, 当你在Bash提示符下敲<B
 CLASS="KEYCAP"
 >ctl-A</B
->��ʱ��, 
-				  �ն˽�������ʾ<B
+>的时候, 
+				  终端将不会显示<B
 CLASS="KEYCAP"
 >^A</B
 >, 
-				  ����Bash������<B
+				  但是Bash将会获得<B
 CLASS="KEYCAP"
 >\1</B
->�ַ�, 
-				  Ȼ���������ַ�, ���������ƶ���������.
+>字符, 
+				  然后解释这个字符, 这样光标就移动到行首了.
               </P
 ><P
 ><EM
@@ -1430,12 +1430,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����ض����ն�����. 
-			���������������ն˵�<TT
+>设置特定的终端属性. 
+			这个命令将向它所在终端的<TT
 CLASS="FILENAME"
 >stdout</TT
->����һ���ַ���, 
-			����ַ������޸��ն˵���Ϊ.
+>发送一个字符串, 
+			这个字符串将修改终端的行为.
 	      </P
 ><P
 >	      <TABLE
@@ -1470,15 +1470,15 @@ CLASS="COMPUTEROUTPUT"
 ><B
 CLASS="COMMAND"
 >setterm</B
->������Է��ڽű��������޸�д�뵽<TT
+>命令可以放在脚本中用来修改写入到<TT
 CLASS="FILENAME"
 >stdout</TT
->�ϵ��ı������. 
-			��Ȼ, �����ֻ��������Ŀ�ĵĻ�, 
-			����<A
+>上的文本的外观. 
+			当然, 如果你只想完成这个目的的话, 
+			还有<A
 HREF="colorizing.html#COLORIZINGREF"
->�����ʵĹ���</A
->������. </P
+>更合适的工具</A
+>可以用. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -1508,11 +1508,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ���ʼ���ն�����. 
-	      ���԰�������һ�����ܱȽ�����<B
+>显示或初始化终端设置. 
+	      可以把它看成一个功能比较弱的<B
 CLASS="COMMAND"
 >stty</B
->����. </P
+>命令. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -1552,9 +1552,9 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���û�����ʾ���ڲ���. 
-			  ����ű�ֻ�ܱ�root�û�������, 
-			  ����ͨ������ϵͳ��װ�ű���ʹ��.
+>设置或者显示串口参数. 
+			  这个脚本只能被root用户来运行, 
+			  并且通常都在系统安装脚本中使用.
 	      </P
 ><P
 ><TABLE
@@ -1567,7 +1567,7 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;# ������/etc/pcmcia/serial�ű�: 
+>  1&nbsp;# 来自于/etc/pcmcia/serial脚本: 
   2&nbsp;
   3&nbsp;IRQ=`setserial /dev/$DEVICE | sed -e 's/.*IRQ: //'`
   4&nbsp;setserial /dev/$DEVICE irq 0 ; setserial /dev/$DEVICE irq $IRQ</PRE
@@ -1587,18 +1587,18 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->һ���ն˵ĳ�ʼ������ͨ������ʹ��<B
+>一个终端的初始化过程通常都是使用<B
 CLASS="COMMAND"
 >getty</B
->��<B
+>或<B
 CLASS="COMMAND"
 >agetty</B
->������, 
-			  �����������û���¼. ��Щ����������û���shell�ű���. 
-			  ���ǵ���Ϊ��<B
+>来建立, 
+			  这样才能让用户登录. 这些命令并不用在用户的shell脚本中. 
+			  它们的行为与<B
 CLASS="COMMAND"
 >stty</B
->������. 
+>很相似. 
 		  </P
 ></DD
 ><DT
@@ -1611,11 +1611,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���û���õ�ǰ�û��ն˵ķ���Ȩ��. 
-			  ���÷���Ȩ�޽�����ֹ�����ϵ���һ�û�������ն�<A
+>启用或禁用当前用户终端的访问权限. 
+			  禁用访问权限将会阻止网络上的另一用户向这个终端<A
 HREF="communications.html#WRITEREF"
->д</A
->��Ϣ. 
+>写</A
+>消息. 
 	      </P
 ><DIV
 CLASS="TIP"
@@ -1638,9 +1638,9 @@ ALT="Tip"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->�������ڱ�д�ı��ļ���ʱ��, ���ı��м�ͻȻ����һ��Ī���������Ϣ, 
-				  �����÷ǳ�����. �ڶ��û������绷����, ����㲻�뱻���, 
-				��ô�����ر������û������ն˵�дȨ��. 
+>当你正在编写文本文件的时候, 在文本中间突然来了一个莫名其妙的消息, 
+				  你会觉得非常烦人. 在多用户的网络环境下, 如果你不想被打断, 
+				那么你必须关闭其他用户对你终端的写权限. 
 	      </P
 ></TD
 ></TR
@@ -1657,19 +1657,19 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����һ����д����<SPAN
+>这是一个缩写单词<SPAN
 CLASS="QUOTE"
 >"<A
 HREF="communications.html#WRITEREF"
 >write</A
 > all"</SPAN
 >, 
-			 Ҳ����, ���¼�������ϵ������ն˵������û�������һ����Ϣ. 
-			 ��������һ������Ա�Ĺ���, ������, ����, 
-			 ��ϵͳ�������ʱ��, 
-			 �������Ծ���ϵͳ�ϵ���������ʱ�뿪(��ο�<A
+			 也就是, 向登录到网络上的所有终端的所有用户都发送一个消息. 
+			 最早这是一个管理员的工具, 很有用, 比如, 
+			 当系统有问题的时候, 
+			 管理可以警告系统上的所有人暂时离开(请参考<A
 HREF="here-docs.html#EX70"
->���� 17-1</A
+>例子 17-1</A
 >). 
 			 </P
 ><P
@@ -1724,14 +1724,14 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->���ĳ���ض��ն�ʹ��<B
+>如果某个特定终端使用<B
 CLASS="COMMAND"
 >mesg</B
->����ֹ��дȨ��, 
-				��ô<B
+>来禁止了写权限, 
+				那么<B
 CLASS="COMMAND"
 >wall</B
->�������������Ϣ. 
+>将不会给它发消息. 
 	      </P
 ></TD
 ></TR
@@ -1749,7 +1749,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="STATISTICSSYS1"
 ></A
->��Ϣ��ͳ����</B
+>信息与统计类</B
 ></P
 ><DL
 ><DT
@@ -1759,21 +1759,21 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾϵͳ��Ϣ(OS, �ں˰汾, �ȵ�.) ,�����<TT
+>显示系统信息(OS, 内核版本, 等等.) ,输出到<TT
 CLASS="FILENAME"
 >stdout</TT
->��. 
-			  ʹ��<CODE
+>上. 
+			  使用<CODE
 CLASS="OPTION"
 >-a</CODE
->ѡ��, ���������ϸ��ϵͳ��Ϣ(��ο�<A
+>选项, 将会给出详细的系统信息(请参考<A
 HREF="moreadv.html#EX41"
->���� 12-5</A
+>例子 12-5</A
 >). 
-				  ʹ��<CODE
+				  使用<CODE
 CLASS="OPTION"
 >-s</CODE
->ѡ��ֻ�����OS����. </P
+>选项只会输出OS类型. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -1819,14 +1819,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾϵͳ��Ӳ����ϵ�ṹ. 
-			  �ȼ���<B
+>显示系统的硬件体系结构. 
+			  等价于<B
 CLASS="COMMAND"
 >uname -m</B
 >. 
-			  ��ο�<A
+			  请参考<A
 HREF="testbranch.html#CASECMD"
->���� 10-26</A
+>例子 10-26</A
 >. </P
 ><TABLE
 BORDER="1"
@@ -1873,11 +1873,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ǰһ���������Ϣ, �洢��<TT
+>给出前一个命令的信息, 存储在<TT
 CLASS="FILENAME"
 >/var/account/pacct</TT
->�ļ���. 
-			  �������ֺ��û����ֶ�����ͨ��ѡ����ָ��. ����GNU��һ��ͳ�ƹ���. 
+>文件中. 
+			  命令名字和用户名字都可以通过选项来指定. 这是GNU的一个统计工具. 
 	      </P
 ></DD
 ><DT
@@ -1890,11 +1890,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�г�ϵͳ�������û�����¼��ʱ��. 
-			  Ȼ�󱣴浽<TT
+>列出系统上所有用户最后登录的时间. 
+			  然后保存到<TT
 CLASS="FILENAME"
 >/var/log/lastlog</TT
->�ļ���. </P
+>文件中. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -1963,11 +1963,11 @@ ALT="Caution"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����û������ļ�<TT
+>如果用户对于文件<TT
 CLASS="FILENAME"
 >/var/log/lastlog</TT
->û�ж�Ȩ�޵Ļ�, 
-				  ��ô�����������ͻ�ʧ��. </P
+>没有读权限的话, 
+				  那么调用这个命令就会失败. </P
 ></TD
 ></TR
 ></TABLE
@@ -1980,19 +1980,19 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�г��򿪵��ļ�. ������������е�ǰ�򿪵��ļ����г���һ����ϸ�ı�����, 
-			  �����ļ���������Ϣ, �ߴ�, ������������ص���Ϣ�ȵ�. 
-			  ��Ȼ, <B
+>列出打开的文件. 这个命令将会把所有当前打开的文件都列出到一份详细的表格中, 
+			  包括文件的宿主信息, 尺寸, 还有与它们相关的信息等等. 
+			  当然, <B
 CLASS="COMMAND"
 >lsof</B
->Ҳ����ͨ���ܵ������<A
+>也可以通过管道输出到<A
 HREF="textproc.html#GREPREF"
 >grep</A
->��(��)<A
+>和(或)<A
 HREF="awk.html#AWKREF"
 >awk</A
->��, 
-			  ��������������. </P
+>中, 
+			  来分析它的内容. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -2035,23 +2035,23 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ϵͳ����(<B
+>系统跟踪(<B
 CLASS="COMMAND"
 >S</B
 >ystem <B
 CLASS="COMMAND"
 >trace</B
 >): 
-			�Ǹ���<I
+			是跟踪<I
 CLASS="FIRSTTERM"
->ϵͳ����</I
->���źŵ���Ϻ͵��Թ���. 
-			��������˽��ض��ĳ�����߹��߰�Ϊʲô����ʧ�ܵĻ�, 
-			��ô���������±ߵ�<B
+>系统调用</I
+>和信号的诊断和调试工具. 
+			如果你想了解特定的程序或者工具包为什么运行失败的话, 
+			那么这个命令和下边的<B
 CLASS="COMMAND"
 >ltrace</B
->������Ե÷ǳ�������, 
-	       . . . ��Ȼ, ����ʧ�������������ȱ����صĿ�, ������������������. 
+>命令就显得非常有用了, 
+	       . . . 当然, 这种失败现象可能是由缺少相关的库, 或者其他问题所引起. 
 	      </P
 ><P
 >	    <TABLE
@@ -2087,10 +2087,10 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->����Solaris <B
+>这是Solaris <B
 CLASS="COMMAND"
 >truss</B
->�����Linux�ĵȼ۹���. </P
+>命令的Linux的等价工具. </P
 ></DD
 ><DT
 ><B
@@ -2099,17 +2099,17 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ٹ���(<B
+>库跟踪工具(<B
 CLASS="COMMAND"
 >L</B
 >ibrary <B
 CLASS="COMMAND"
 >trace</B
 >): 
-	      ���ٸ��������<I
+	      跟踪给定命令的<I
 CLASS="FIRSTTERM"
->���ÿ�</I
->�������Ϣ. 
+>调用库</I
+>的相关信息. 
 	      </P
 ><P
 >	    <TABLE
@@ -2158,17 +2158,17 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ӳ��(<B
+>网络映射(<B
 CLASS="COMMAND"
 >N</B
 >etwork <B
 CLASS="COMMAND"
 >map</B
->per)��˿�ɨ�����. 
-			��������ɨ��һ������������λ�򿪵Ķ˿�, 
-			���Ҷ�λ����Щ�˿���صķ���. 
-	      �������Ҳ�ܹ��ϱ�һЩ�����������ǽ����Ϣ. 
-	     ����һ����ֹ���类�ڿ����ֵķǳ���Ҫ�İ�ȫ����. 
+>per)与端口扫描程序. 
+			这个命令将会扫描一个服务器来定位打开的端口, 
+			并且定位与这些端口相关的服务. 
+	      这个命令也能够上报一些包过滤与防火墙的信息. 
+	     这是一个防止网络被黑客入侵的非常重要的安全工具. 
 	      </P
 ><P
 ><TABLE
@@ -2184,11 +2184,11 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
   3&nbsp;SERVER=$HOST                           # localhost.localdomain (127.0.0.1).
-  4&nbsp;PORT_NUMBER=25                         # SMTP�˿�.
+  4&nbsp;PORT_NUMBER=25                         # SMTP端口.
   5&nbsp;
-  6&nbsp;nmap $SERVER | grep -w "$PORT_NUMBER"  # �쿴ָ���˿��Ƿ��?
-  7&nbsp;#              grep -w ƥ����������. 
-  8&nbsp;#+             �����Ͳ���ƥ��������1025���ֺ���25�Ķ˿���. 
+  6&nbsp;nmap $SERVER | grep -w "$PORT_NUMBER"  # 察看指定端口是否打开?
+  7&nbsp;#              grep -w 匹配整个单词. 
+  8&nbsp;#+             这样就不会匹配类似于1025这种含有25的端口了. 
   9&nbsp;
  10&nbsp;exit 0
  11&nbsp;
@@ -2211,10 +2211,10 @@ CLASS="COMMAND"
 >nc</B
 >(<EM
 >netcat</EM
->)������һ�������Ĺ��߰�, 
-			  �����������Ӻͼ���TCP��UDP�˿�. 
-			  ������Ϊ��ϺͲ��Թ���, 
-			  Ҳ����Ϊ���ڽű���HTTP�ͻ��˺ͷ��������. 
+>)工具是一个完整的工具包, 
+			  可以用它连接和监听TCP和UDP端口. 
+			  它能作为诊断和测试工具, 
+			  也能作为基于脚本的HTTP客户端和服务器组件. 
 	      </P
 ><P
 >	    <TABLE
@@ -2251,9 +2251,9 @@ NAME="ISCAN"
 ></A
 ><P
 ><B
->���� 13-5. ɨ��Զ�̻����ϵ�<EM
+>例子 13-5. 扫描远程机器上的<EM
 >identd</EM
->�������</B
+>服务进程</B
 ></P
 ><TABLE
 BORDER="0"
@@ -2266,22 +2266,22 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#! /bin/sh
-  2&nbsp;## ʹ��netcat����д�ĺ�DaveGд��ident-scanɨ������ͬ�ȹ��ܵĶ���. ��, ���ᱻ������. 
-  3&nbsp;## ����: target port [port port port ...]
-  4&nbsp;## ��׼����ͱ�׼���뱻�쵽һ��.
+  2&nbsp;## 使用netcat工具写的和DaveG写的ident-scan扫描器有同等功能的东西. 噢, 他会被气死的. 
+  3&nbsp;## 参数: target port [port port port ...]
+  4&nbsp;## 标准输出和标准输入被混到一块.
   5&nbsp;##
-  6&nbsp;##  �ŵ�: ����������ident-scan��, ����ʹԶ�̻���inetd���̸�����ע��������������, 
-  7&nbsp;##+ ����ֻ�к��ٵ�֪���˿ڻᱻָ��. 
-  8&nbsp;##  ȱ��: Ҫ�����ֶ˿ڲ���, ������޷����ֱ�׼����ͱ�׼����, 
-  9&nbsp;##+ ���ҵ�Զ�̷�������ںܸߵĶ˿�ʱ�޷�����. 
- 10&nbsp;# �ű�����: Hobbit &#60;hobbit@avian.org&#62;
- 11&nbsp;# ����������ͬ����ABSָ����ʹ��. 
+  6&nbsp;##  优点: 运行起来比ident-scan慢, 这样使远程机器inetd进程更不易注意而不会产生警告, 
+  7&nbsp;##+ 并且只有很少的知名端口会被指定. 
+  8&nbsp;##  缺点: 要求数字端口参数, 输出中无法区分标准输出和标准错误, 
+  9&nbsp;##+ 并且当远程服务监听在很高的端口时无法工作. 
+ 10&nbsp;# 脚本作者: Hobbit &#60;hobbit@avian.org&#62;
+ 11&nbsp;# 已征得作者同意在ABS指南中使用. 
  12&nbsp;
  13&nbsp;# ---------------------------------------------------
- 14&nbsp;E_BADARGS=65       # ������Ҫ��������. 
- 15&nbsp;TWO_WINKS=2        # ˯�߶೤ʱ��. 
+ 14&nbsp;E_BADARGS=65       # 至少需要两个参数. 
+ 15&nbsp;TWO_WINKS=2        # 睡眠多长时间. 
  16&nbsp;THREE_WINKS=3
- 17&nbsp;IDPORT=113         # indentЭ�����֤�˿�. 
+ 17&nbsp;IDPORT=113         # indent协议的认证端口. 
  18&nbsp;RAND1=999
  19&nbsp;RAND2=31337
  20&nbsp;TIMEOUT0=9
@@ -2293,12 +2293,12 @@ CLASS="PROGRAMLISTING"
  26&nbsp;  "" ) echo "Need HOST and at least one PORT." ; exit $E_BADARGS ;;
  27&nbsp;esac
  28&nbsp;
- 29&nbsp;# ����Ŀ���������Ƿ�������identd�ػ�����.
+ 29&nbsp;# 测试目标主机看是否运行了identd守护进程.
  30&nbsp;nc -z -w $TIMEOUT0 "$1" $IDPORT || { echo "Oops, $1 isn't running identd." ; exit 0 ; }
- 31&nbsp;#  -z ѡ��ɨ���������.
- 32&nbsp;#     -w $TIMEOUT = �������Ӷ೤ʱ��.
+ 31&nbsp;#  -z 选项扫描监听进程.
+ 32&nbsp;#     -w $TIMEOUT = 尝试连接多长时间.
  33&nbsp;
- 34&nbsp;# ����һ������ı������Դ�˿�.
+ 34&nbsp;# 产生一个随机的本地起点源端口.
  35&nbsp;RP=`expr $$ % $RAND1 + $RAND2`
  36&nbsp;
  37&nbsp;TRG="$1"
@@ -2311,9 +2311,9 @@ CLASS="PROGRAMLISTING"
  44&nbsp;  echo "${1},${RP}" | nc -w $TIMEOUT2 -r "$TRG" $IDPORT 2&#62;&#38;1
  45&nbsp;  sleep $TWO_WINKS
  46&nbsp;
- 47&nbsp;# �⿴��ȥ�ǲ�������м��Ľű������������ƵĶ���... ?
- 48&nbsp;# ABS������ע : "�ⲻ�������ô���,
- 49&nbsp;#+               ��ʵ��, ���÷ǳ�����."
+ 47&nbsp;# 这看上去是不是像个残疾的脚本或是其他类似的东西... ?
+ 48&nbsp;# ABS作者评注 : "这不是真的那么糟糕,
+ 49&nbsp;#+               事实上, 做得非常聪明."
  50&nbsp;
  51&nbsp;  kill -HUP $PROC
  52&nbsp;  RP=`expr ${RP} + 1`
@@ -2322,23 +2322,23 @@ CLASS="PROGRAMLISTING"
  55&nbsp;
  56&nbsp;exit $?
  57&nbsp;
- 58&nbsp;#  ע������:
+ 58&nbsp;#  注意事项:
  59&nbsp;#  ---------
  60&nbsp;
- 61&nbsp;#  ���Űѵ�30��ȥ��, 
- 62&nbsp;#+ Ȼ����"localhost.localdomain 25"Ϊ���������нű�.
+ 61&nbsp;#  试着把第30行去掉, 
+ 62&nbsp;#+ 然后以"localhost.localdomain 25"为参数来运行脚本.
  63&nbsp;
- 64&nbsp;#  ����Hobbitд�ĸ���'nc'���ӽű�,
- 65&nbsp;#+ �����������ĵ����ҵ�:
- 66&nbsp;#+ /usr/share/doc/nc-X.XX/scripts Ŀ¼.</PRE
+ 64&nbsp;#  关于Hobbit写的更多'nc'例子脚本,
+ 65&nbsp;#+ 可以在以下文档中找到:
+ 66&nbsp;#+ /usr/share/doc/nc-X.XX/scripts 目录.</PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ><HR></DIV
 ><P
->			����, ��Ȼ, 
-			���ﻹ��Dr. Andrew Tridgell��BistKeeper�¼��г���׿����һ�нű�: 
+>			并且, 当然, 
+			这里还有Dr. Andrew Tridgell在BistKeeper事件中臭名卓著的一行脚本: 
 	        <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -2367,25 +2367,25 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ�ñ�����ʽ����ʾ�ڴ�ͻ����ʹ�����. 
-			  ������������ǳ��ʺ���ʹ��<A
+>使用表格形式来显示内存和缓存的使用情况. 
+			  这个命令的输出非常适合于使用<A
 HREF="textproc.html#GREPREF"
 >grep</A
 >, 
 			  <A
 HREF="awk.html#AWKREF"
 >awk</A
->����<B
+>或者<B
 CLASS="COMMAND"
 >Perl</B
->������. 
+>来分析. 
 			  <B
 CLASS="COMMAND"
 >procinfo</B
->������ʾ<B
+>将会显示<B
 CLASS="COMMAND"
 >free</B
->����������ʾ��������Ϣ, ���Ҹ�����ϸ. 
+>命令所能显示的所有信息, 而且更加详细. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -2416,7 +2416,7 @@ CLASS="COMPUTEROUTPUT"
 ></TR
 ></TABLE
 ><P
->��ӡ��δʹ�õ�RAM�ڴ�: </P
+>打印出未使用的RAM内存: </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -2453,15 +2453,15 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��<A
+>从<A
 HREF="devproc.html#DEVPROCREF"
 ><TT
 CLASS="FILENAME"
 >/proc</TT
 >
 	  pseudo-filesystem</A
->����ȡ����ʾ������Ϣ��ͳ������. 
-	  ��������������ϸ����Ϣ. 
+>中提取并显示所有信息和统计资料. 
+	  这个命令将给出更详细的信息. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -2499,7 +2499,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�г�ϵͳ�豸, Ҳ������ʾ���а�װ��Ӳ��. </P
+>列出系统设备, 也就是显示所有安装的硬件. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -2548,7 +2548,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�ݹ����ʾ(����)�ļ���ʹ��״��. ��������ָ��, ����Ĭ���ǵ�ǰ����Ŀ¼. 
+>递归的显示(磁盘)文件的使用状况. 除非特殊指定, 否则默认是当前工作目录. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -2590,7 +2590,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ���б�����ʽ��ʾ�ļ�ϵͳ��ʹ��״��. </P
+>使用列表的形式显示文件系统的使用状况. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -2627,25 +2627,25 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����е�ϵͳ������Ϣ�����<TT
+>将所有的系统启动消息输出到<TT
 CLASS="FILENAME"
 >stdout</TT
->��. 
-			  �������, ���ҿ��Բ����װ����Щ�豸�����Ͳ쿴ʹ������Щϵͳ�ж�. 
+>上. 
+			  方便除错, 并且可以查出安装了哪些设备驱动和察看使用了哪些系统中断. 
 	      <B
 CLASS="COMMAND"
 >dmesg</B
->����������ȻҲ���ڽű���, ��ʹ��<A
+>命令的输出当然也放在脚本中, 并使用<A
 HREF="textproc.html#GREPREF"
 >grep</A
 >, 
 	      <A
 HREF="sedawk.html#SEDREF"
 >sed</A
->, ��<A
+>, 或<A
 HREF="awk.html#AWKREF"
 >awk</A
->�����з���. </P
+>来进行分析. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -2686,7 +2686,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾһ�����������ļ�(Ҳ������Ŀ¼�ļ����豸�ļ�)����ϸͳ����Ϣ(<EM
+>显示一个或多个给定文件(也可以是目录文件或设备文件)的详细统计信息(<EM
 >stat</EM
 >istic).  
 	      </P
@@ -2726,11 +2726,11 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->���Ŀ���ļ�������, 
+>如果目标文件不存在, 
 			<B
 CLASS="COMMAND"
 >stat</B
->���᷵��һ��������Ϣ. </P
+>将会返回一个错误消息. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -2771,7 +2771,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ�����ڴ��ͳ����Ϣ. </P
+>显示虚拟内存的统计信息. </P
 ><P
 >	    <TABLE
 BORDER="1"
@@ -2811,27 +2811,27 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ��ǰ�����ͳ��״������Ϣ, 
-			  ����·�ɱ��ͼ��������, 
-			  ������߽�����<TT
+>显示当前网络的统计状况和信息, 
+			  比如路由表和激活的连接, 
+			  这个工具将访问<TT
 CLASS="FILENAME"
 >/proc/net</TT
 >(<A
 HREF="devproc.html"
 > 27</A
->)�е���Ϣ. 
-				  ��ο�<A
+>)中的信息. 
+				  请参考<A
 HREF="procref1.html#CONSTAT"
->���� 27-3</A
+>例子 27-3</A
 >. </P
 ><P
 ><B
 CLASS="COMMAND"
 >netstat -r</B
->�ȼ���<A
+>等价于<A
 HREF="system.html#ROUTEREF"
 >route</A
->����. </P
+>命令. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -2875,8 +2875,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾϵͳ���е�ʱ��, 
-			  ����������һЩͳ����Ϣ. 
+>显示系统运行的时间, 
+			  还有其他的一些统计信息. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -2927,10 +2927,10 @@ VALIGN="TOP"
 ><I
 CLASS="FIRSTTERM"
 >load average</I
->���С�ڻ����1, 
-					��ô����ζ��ϵͳ�����ϴ���. 
-					�������1, ��ô����ζ�Ž�����Ҫ�Ŷ�. 
-					�������3, ��ô����ζ��, ϵͳ�����Ѿ������½���.
+>如果小于或等于1, 
+					那么就意味着系统会马上处理. 
+					如果大于1, 那么就意味着进程需要排队. 
+					如果大于3, 那么就意味着, 系统性能已经显著下降了.
 	      </P
 ></TD
 ></TR
@@ -2947,22 +2947,22 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾϵͳ����������. 
-			  ���������<TT
+>显示系统的主机名字. 
+			  这个命令在<TT
 CLASS="FILENAME"
 >/etc/rc.d</TT
->��װ�ű�(�����Ƶ�<TT
+>安装脚本(或类似的<TT
 CLASS="FILENAME"
 >/etc/rc.d/rc.sysinit</TT
->)������������. 
-			  �ȼ���<B
+>)中设置主机名. 
+			  等价于<B
 CLASS="COMMAND"
 >uname -n</B
 >, 
-			  ������<A
+			  并且与<A
 HREF="internalvariables.html#HOSTNAMEREF"
 >$HOSTNAME</A
->�ڲ�����������. </P
+>内部变量很相像. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -3001,10 +3001,10 @@ CLASS="COMPUTEROUTPUT"
 ></TR
 ></TABLE
 ><P
->��<B
+>与<B
 CLASS="COMMAND"
 >hostname</B
->���������������<B
+>命令很相像的命令还有<B
 CLASS="COMMAND"
 >domainname</B
 >, 
@@ -3016,16 +3016,16 @@ CLASS="COMMAND"
 CLASS="COMMAND"
 >nisdomainname</B
 >, 
-		  ��<B
+		  和<B
 CLASS="COMMAND"
 >ypdomainname</B
->����. 
-		  ʹ����Щ��������ʾ(������)ϵͳDNS��NIS/YP����. 
-		  ����<B
+>命令. 
+		  使用这些命令来显示(或设置)系统DNS或NIS/YP域名. 
+		  对于<B
 CLASS="COMMAND"
 >hostname</B
->������˵, 
-		  ʹ�ò�ͬ��ѡ��Ϳ��Էֱ�ﵽ�ϱ���Щ�����Ŀ��. </P
+>命令来说, 
+		  使用不同的选项就可以分别达到上边这些命令的目的. </P
 ></DD
 ><DT
 ><A
@@ -3037,7 +3037,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��16���Ʊ�ʾ������ʾ������32λID. </P
+>用16进制表示法来显示主机的32位ID. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -3087,22 +3087,22 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->��������˵�����ض�ϵͳ���Ի��һ��<SPAN
+>这个命令据说对于特定系统可以获得一个<SPAN
 CLASS="QUOTE"
->"Ψһ"</SPAN
->�����. 
-	      ĳЩ��Ʒ��ע����̿��ܻ���Ҫ����������Ϊ�û�������֤. 
-	      ���ҵ���, <B
+>"唯一"</SPAN
+>的序号. 
+	      某些产品的注册过程可能会需要这个序号来作为用户的许可证. 
+	      不幸的是, <B
 CLASS="COMMAND"
 >hostid</B
->ֻ��ʹ���ֽڶ�ת���ķ��������ػ����������ַ, �����ַ��16���Ʊ�ʾ. 
+>只会使用字节对转换的方法来返回机器的网络地址, 网络地址用16进制表示. 
 	      </P
 ><P
->����һ�����͵�û�������Linux������˵, 
-			  ���������ַ������<TT
+>对于一个典型的没有网络的Linux机器来说, 
+			  它的网络地址保存在<TT
 CLASS="FILENAME"
 >/etc/hosts</TT
->��. </P
+>中. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -3132,23 +3132,23 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->����, ͨ����<KBD
+>碰巧, 通过对<KBD
 CLASS="USERINPUT"
 >127.0.0.1</KBD
->�����ֽ�ת��, 
-			���ǻ����<KBD
+>进行字节转换, 
+			我们获得了<KBD
 CLASS="USERINPUT"
 >0.127.1.0</KBD
 >, 
-			��16���Ʊ�ʾ����<KBD
+			用16进制表示就是<KBD
 CLASS="USERINPUT"
 >007f0100</KBD
 >, 
-			������ϱ�<B
+			这就是上边<B
 CLASS="COMMAND"
 >hostid</B
->����صĽ��. 
-			�����������е��������Linux��������õ����<EM
+>命令返回的结果. 
+			这样几乎所有的无网络的Linux机器都会得到这个<EM
 >hostid</EM
 >. </P
 ></TD
@@ -3166,27 +3166,27 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >sar</B
->(System Activity Reporterϵͳ�����)��������ϵͳͳ�Ƶ�һ���ǳ���ϸ�ĸ�Ҫ. 
+>(System Activity Reporter系统活动报告)命令将会给出系统统计的一个非常详细的概要. 
 	      Santa Cruz Operation(<SPAN
 CLASS="QUOTE"
->"��ǰ��"</SPAN
->SCO)��˾��1999��4�·��Կ�Դ��������ʽ������<B
+>"以前的"</SPAN
+>SCO)公司在1999年4月份以开源软件的形式发布了<B
 CLASS="COMMAND"
 >sar</B
 >. </P
 ><P
->���������ǻ���Linux���а��һ����, 
-		  ��������Դ�<A
+>这个命令并不是基本Linux发行版的一部分, 
+		  但是你可以从<A
 HREF="http://perso.wanadoo.fr/sebastien.godard/"
 TARGET="_top"
 >sysstat 
 			  utilities</A
->����д��<A
+>所编写的<A
 HREF="mailto:sebastien.godard@wanadoo.fr"
 TARGET="_top"
 >Sebastien
 	      Godard</A
->���л���������. </P
+>包中获得这个工具. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -3235,11 +3235,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����������ʾ<EM
+>这个命令会显示<EM
 >elf</EM
->��ʽ�Ķ������ļ���ͳ����Ϣ. ���������<EM
+>格式的二进制文件的统计信息. 这个工具是<EM
 >binutils</EM
->���߰���һ����. </P
+>工具包的一部分. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -3284,8 +3284,8 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >size [/path/to/binary]</B
->���������ʾ2���ƿ�ִ���ļ���鵵�ļ�ÿ���ֵĳߴ�. 
-			  ���������Ҫ�ṩ������Աʹ��. 
+>命令可以显示2进制可执行文件或归档文件每部分的尺寸. 
+			  这个工具主要提供给程序员使用. 
 	      </P
 ><P
 >	      <TABLE
@@ -3329,7 +3329,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="SYSLOG1"
 ></A
->ϵͳ��־��</B
+>系统日志类</B
 ></P
 ><DL
 ><DT
@@ -3339,11 +3339,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����һ���û���������Ϣ��ϵͳ��־��(<TT
+>附加一个用户产生的消息到系统日志中(<TT
 CLASS="FILENAME"
 >/var/log/messages</TT
 >). 
-			  ��ʹ����root�û�, Ҳ���Ե���<B
+			  即使不是root用户, 也可以调用<B
 CLASS="COMMAND"
 >logger</B
 >. 
@@ -3358,21 +3358,21 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;logger Experiencing instability in network connection at 23:10, 05/21.
-  2&nbsp;# ����, ����'tail /var/log/messages'.</PRE
+  2&nbsp;# 现在, 运行'tail /var/log/messages'.</PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ></P
 ><P
->ͨ���ڽű��е���<B
+>通过在脚本中调用<B
 CLASS="COMMAND"
 >logger</B
->����, 
-				�Ϳ��Խ�������Ϣд��<TT
+>命令, 
+				就可以将调试信息写到<TT
 CLASS="FILENAME"
 >/var/log/messages</TT
->��. 
+>中. 
                  <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -3384,8 +3384,8 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;logger -t $0 -i Logging at line "$LINENO".
-  2&nbsp;# "-t"ѡ�����Ϊ��־���ָ����ǩ. 
-  3&nbsp;# "-i"ѡ���¼����ID.
+  2&nbsp;# "-t"选项可以为日志入口指定标签. 
+  3&nbsp;# "-i"选项记录进程ID.
   4&nbsp;
   5&nbsp;# tail /var/log/message
   6&nbsp;# ...
@@ -3404,26 +3404,26 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���������������ϵͳ��log�ļ�, 
-			  �����ں��ʵ�ʱ���ֻ�, ѹ��, ɾ��, ��(��)e-mail����. 
-			  ������߽��Ӿɵ�log�ļ���ȡ��һЩ���ҵļ�¼, 
-			  �����浽<TT
+>这个工具用来管理系统的log文件, 
+			  可以在合适的时候轮换, 压缩, 删除, 或(和)e-mail它们. 
+			  这个工具将从旧的log文件中取得一些杂乱的记录, 
+			  并保存到<TT
 CLASS="FILENAME"
 >/var/log</TT
->��. 
-	      һ���, ÿ�춼��ͨ��<A
+>中. 
+	      一般的, 每天都是通过<A
 HREF="system.html#CRONREF"
 >cron</A
->������<B
+>来运行<B
 CLASS="COMMAND"
 >logrotate</B
 >. </P
 ><P
->��<TT
+>在<TT
 CLASS="FILENAME"
 >/etc/logrotate.conf</TT
->�����Ӻ��ʵ���ھͿ��Թ����Լ���log�ļ���, 
-		  �������ϵͳlog�ļ�һ��. 
+>中添加合适的入口就可以管理自己的log文件了, 
+		  就像管理系统log文件一样. 
 	       </P
 ><DIV
 CLASS="NOTE"
@@ -3446,15 +3446,15 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->Stefano Falsetto������<A
+>Stefano Falsetto创造了<A
 HREF="http://www.gnu.org/software/rottlog/"
 TARGET="_top"
 >rottlog</A
 >,
-	     ����Ϊ����<B
+	     他认为这是<B
 CLASS="COMMAND"
 >logrotate</B
->�ĸĽ��汾. </P
+>的改进版本. </P
 ></TD
 ></TR
 ></TABLE
@@ -3471,7 +3471,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="JOBCONTROLSYS1"
 ></A
->��ҵ������</B
+>作业控制类</B
 ></P
 ><DL
 ><DT
@@ -3484,7 +3484,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ͳ��(<TT
+>进程统计(<TT
 CLASS="REPLACEABLE"
 ><I
 >P</I
@@ -3496,26 +3496,26 @@ CLASS="REPLACEABLE"
 >S</I
 ></TT
 >tatistics): 
-			ͨ������������PID(����ID)���г���ǰ����ִ�еĽ���. 
-			ͨ������ʹ��<CODE
+			通过进程宿主或PID(进程ID)来列出当前正在执行的进程. 
+			通常都是使用<CODE
 CLASS="OPTION"
 >ax</CODE
->��<CODE
+>或<CODE
 CLASS="OPTION"
 >aux</CODE
->ѡ���������������, 
-			���ҽ������ͨ���ܵ����ݵ�<A
+>选项来调用这个命令, 
+			并且结果可以通过管道传递到<A
 HREF="textproc.html#GREPREF"
 >grep</A
->��<A
+>或<A
 HREF="sedawk.html#SEDREF"
 >sed</A
->���������ض��Ľ���(��ο�<A
+>中来搜索特定的进程(请参考<A
 HREF="internal.html#EX44"
->���� 11-12</A
->��<A
+>例子 11-12</A
+>和<A
 HREF="procref1.html#PIDID"
->���� 27-2</A
+>例子 27-2</A
 >). </P
 ><TABLE
 BORDER="1"
@@ -3543,14 +3543,14 @@ CLASS="COMPUTEROUTPUT"
 ></TR
 ></TABLE
 ><P
->�����ʹ��<SPAN
+>如果想使用<SPAN
 CLASS="QUOTE"
->"��"</SPAN
->����ʽ����ʾϵͳ����: 
-	      ��ô��ʹ��<B
+>"树"</SPAN
+>的形式来显示系统进程: 
+	      那么就使用<B
 CLASS="COMMAND"
 >ps afjx</B
->��<B
+>或<B
 CLASS="COMMAND"
 >ps ax --forest</B
 >. </P
@@ -3568,13 +3568,13 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >ps</B
->���������<A
+>命令可以与<A
 HREF="textproc.html#GREPREF"
 >grep</A
->��<A
+>或<A
 HREF="x6756.html#KILLREF"
 >kill</A
->���ʹ��. </P
+>结合使用. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -3634,14 +3634,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ��<SPAN
+>使用<SPAN
 CLASS="QUOTE"
->"��"</SPAN
->��ʽ�г���ǰִ�еĽ���. 
+>"树"</SPAN
+>形式列出当前执行的进程. 
 			  <CODE
 CLASS="OPTION"
 >-p</CODE
->ѡ����ʾPID, Ҳ���ǽ�������. 
+>选项显示PID, 也就是进程名字. 
 		  </P
 ></DD
 ><DT
@@ -3651,12 +3651,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�������ϵ���ʾcpuռ������ߵĽ���. 
+>连续不断的显示cpu占有率最高的进程. 
 			  <CODE
 CLASS="OPTION"
 >-b</CODE
->ѡ������ı���ʽ����ʾ, 
-			  �Ա��ڿ����ڽű��н��з��������. 
+>选项将会以文本方式来显示, 
+			  以便于可以在脚本中进行分析或访问. 
 		  </P
 ><P
 >	      <TABLE
@@ -3705,12 +3705,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ�þ����޸ĵ����ȼ�������һ����̨��ҵ. 
-			  ���ȼ���19(���)��-20(���)
-			  ֻ��<EM
+>使用经过修改的优先级来运行一个后台作业. 
+			  优先级从19(最低)到-20(最高)
+			  只有<EM
 >root</EM
->�û��������ø���(��ԱȽϸߵ�)���ȼ�. 
-			  ��ص������<B
+>用户可以设置负的(相对比较高的)优先级. 
+			  相关的命令还有<B
 CLASS="COMMAND"
 >renice</B
 >, 
@@ -3718,7 +3718,7 @@ CLASS="COMMAND"
 CLASS="COMMAND"
 >snice</B
 >, 
-	      ��<B
+	      和<B
 CLASS="COMMAND"
 >skill</B
 >. </P
@@ -3730,20 +3730,20 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����һ��������̴�������״̬, ��ʹ�����������������û��ǳ�ϵͳ. 
-		  ���������̽���������ǰ̨, ��������ǰ�����<SPAN
+>保持一个命令进程处于运行状态, 即使这个命令进程所属的用户登出系统. 
+		  这个命令进程将会运行在前台, 除非在它前面加上<SPAN
 CLASS="TOKEN"
 >&#38;</SPAN
 >. 
-		  ������ڽű���ʹ��<B
+		  如果你在脚本中使用<B
 CLASS="COMMAND"
 >nohup</B
->����, 
-		  ��ô�����ͬʱʹ��<A
+>命令, 
+		  那么你最好同时使用<A
 HREF="x6756.html#WAITREF"
 >wait</A
->����, 
-		  �����Ϳ��Ա�������¶����̻�ʬ����. </P
+>命令, 
+		  这样就可以避免产生孤儿进程或僵尸进程. </P
 ></DD
 ><DT
 ><A
@@ -3755,28 +3755,28 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ȡһ������������ҵ��<EM
->����ID(PID)</EM
+>获取一个正在运行作业的<EM
+>进程ID(PID)</EM
 >. 
-			  ��ΪһЩ��ҵ��������, ����<A
+			  因为一些作业控制命令, 比如<A
 HREF="x6756.html#KILLREF"
 >kill</A
->��<B
+>和<B
 CLASS="COMMAND"
 >renice</B
->ֻ��ʹ�ý��̵�<EM
+>只能使用进程的<EM
 >PID</EM
->(��������������)��Ϊ����, 
-	    �����е�ʱ������ȡ��<EM
+>(而不是它的名字)作为参数, 
+	    所以有的时候必须得取得<EM
 >PID</EM
 >. 
 	    <B
 CLASS="COMMAND"
 >pidof</B
->������<A
+>命令与<A
 HREF="internalvariables.html#PPIDREF"
 >$PPID</A
->�ڲ������ǳ�����. </P
+>内部变量非常相似. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -3813,10 +3813,10 @@ NAME="KILLPROCESS"
 ></A
 ><P
 ><B
->���� 13-6. ʹ��<B
+>例子 13-6. 使用<B
 CLASS="COMMAND"
 >pidof</B
->�����ækillһ������</B
+>命令帮忙kill一个进程</B
 ></P
 ><TABLE
 BORDER="0"
@@ -3833,34 +3833,34 @@ CLASS="PROGRAMLISTING"
   3&nbsp;
   4&nbsp;NOPROCESS=2
   5&nbsp;
-  6&nbsp;process=xxxyyyzzz  # ʹ�ò����ڵĽ���. 
-  7&nbsp;# ֻ������Ϊ����ʾ...
-  8&nbsp;# ... ������������ű���ɱ���κ������Ľ���. 
+  6&nbsp;process=xxxyyyzzz  # 使用不存在的进程. 
+  7&nbsp;# 只不过是为了演示...
+  8&nbsp;# ... 并不想在这个脚本中杀掉任何真正的进程. 
   9&nbsp;#
- 10&nbsp;# �ٸ�����, �������ʹ������ű�������Internet, 
+ 10&nbsp;# 举个例子, 如果你想使用这个脚本来断线Internet, 
  11&nbsp;#     process=pppd
  12&nbsp;
- 13&nbsp;t=`pidof $process`       # ȡ��$process��pid(����id). 
- 14&nbsp;# 'kill'ֻ��ʹ��pid(�����ó�����)��Ϊ����. 
+ 13&nbsp;t=`pidof $process`       # 取得$process的pid(进程id). 
+ 14&nbsp;# 'kill'只能使用pid(不能用程序名)作为参数. 
  15&nbsp;
- 16&nbsp;if [ -z "$t" ]           # ���û�������, 'pidof' ���ؿ�. 
+ 16&nbsp;if [ -z "$t" ]           # 如果没这个进程, 'pidof' 返回空. 
  17&nbsp;then
  18&nbsp;  echo "Process $process was not running."
  19&nbsp;  echo "Nothing killed."
  20&nbsp;  exit $NOPROCESS
  21&nbsp;fi  
  22&nbsp;
- 23&nbsp;kill $t                  # ����ĳЩ��̵Ľ��̿�����Ҫʹ��'kill -9'. 
+ 23&nbsp;kill $t                  # 对于某些顽固的进程可能需要使用'kill -9'. 
  24&nbsp;
- 25&nbsp;# ������Ҫ��һ�����, ���������Ƿ�����������kill. 
- 26&nbsp;# ������һ�� " t=`pidof $process` " ���� ...
+ 25&nbsp;# 这里需要做一个检查, 看看进程是否允许自身被kill. 
+ 26&nbsp;# 或许另一个 " t=`pidof $process` " 或许 ...
  27&nbsp;
  28&nbsp;
- 29&nbsp;# �����ű�������ʹ���±�������滻: 
+ 29&nbsp;# 整个脚本都可以使用下边这句来替换: 
  30&nbsp;#        kill $(pidof -x process_name)
- 31&nbsp;# ����
+ 31&nbsp;# 或者
  32&nbsp;#        killall process_name
- 33&nbsp;# �������û�н���������. 
+ 33&nbsp;# 但是这就没有教育意义了. 
  34&nbsp;
  35&nbsp;exit 0</PRE
 ></FONT
@@ -3876,14 +3876,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ȡһ�����ڷ���ĳ����ĳЩ�ļ�(��Ŀ¼)�Ľ���ID. 
-			ʹ��<CODE
+>或取一个正在访问某个或某些文件(或目录)的进程ID. 
+			使用<CODE
 CLASS="OPTION"
 >-k</CODE
->ѡ���kill��Щ����. 
-			����ϵͳ��ȫ��˵, 
-	      �������ڽű�������ֹδ����Ȩ���û�����ϵͳ�����ʱ��, 
-	      ���������Ե÷ǳ�������. </P
+>选项将会kill这些进程. 
+			对于系统安全来说, 
+	      尤其是在脚本中想阻止未被授权的用户访问系统服务的时候, 
+	      这个命令就显得非常有用了. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -3928,24 +3928,24 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->�ڽ������������ɾ�������ý��(����CD ROM����USB�����豸)��ʱ��, <B
+>在进行正常插入或删除保存的媒体(比如CD ROM或者USB闪存设备)的时候, <B
 CLASS="COMMAND"
 >fuser</B
->����ǳ�������. 
-			   ĳЩ�����, Ҳ���ǵ���<A
+>命令非常的有用. 
+			   某些情况下, 也就是当你<A
 HREF="system.html#UMOUNTREF"
 >umount</A
->һ���豸ʧ�ܵ�ʱ��, 
-			   �����<SPAN
+>一个设备失败的时候, 
+			   会出现<SPAN
 CLASS="ERRORNAME"
->�豸æ</SPAN
->������Ϣ. 
-		����ζ��ĳЩ�û���������ڷ�������豸.	
-		����ʹ��<B
+>设备忙</SPAN
+>错误消息. 
+		这意味着某些用户或进程正在访问这个设备.	
+		可以使用<B
 CLASS="COMMAND"
 >fuser -um /dev/device_name</B
->�������������, 
-		������Ϳ���kill������صĽ���. 
+>来解决这种问题, 
+		这样你就可以kill所有相关的进程. 
 	     </P
 ><P
 >	      <TABLE
@@ -4009,16 +4009,16 @@ CLASS="USERINPUT"
 ><B
 CLASS="COMMAND"
 >fuser</B
->�����<CODE
+>命令的<CODE
 CLASS="OPTION"
 >-n</CODE
->ѡ����Ի�����ڷ���ĳһ<EM
->�˿�</EM
->�Ľ���. 
-	      ����<A
+>选项可以获得正在访问某一<EM
+>端口</EM
+>的进程. 
+	      当和<A
 HREF="system.html#NMAPREF"
 >nmap</A
->������ʹ�õ�ʱ����������. </P
+>命令结合使用的时候尤其有用. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -4086,30 +4086,30 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�������������, ����ִ��һЩ�ճ�����, 
-			  ���������ɾ��ϵͳlog�ļ�, ���߸���<SPAN
+>管理程序调度器, 用来执行一些日常任务, 
+			  比如清除和删除系统log文件, 或者更新<SPAN
 CLASS="DATABASE"
 >slocate</SPAN
->���ݿ�. 
-			  ����<A
+>数据库. 
+			  这是<A
 HREF="timedate.html#ATREF"
 >at</A
->����ĳ����û��汾(��Ȼÿ���û����������Լ���<TT
+>命令的超级用户版本(虽然每个用户都可以有自己的<TT
 CLASS="FILENAME"
 >crontab</TT
->�ļ�, 
-			  ��������ļ�����ʹ��<B
+>文件, 
+			  并且这个文件可以使用<B
 CLASS="COMMAND"
 >crontab</B
->�������޸�). 
-	      ����<A
+>命令来修改). 
+	      它以<A
 HREF="communications.html#DAEMONREF"
->�������</A
->������������, 
-		  ���Ҵ�<TT
+>幽灵进程</A
+>的身份来运行, 
+		  并且从<TT
 CLASS="FILENAME"
 >/etc/crontab</TT
->�л��ִ�еĵ������. 
+>中获得执行的调度入口. 
 			</P
 ><DIV
 CLASS="NOTE"
@@ -4132,11 +4132,11 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->һ��Linux����ϵͳ��ʹ��<B
+>一般Linux风格的系统都使用<B
 CLASS="COMMAND"
 >crond</B
 >, 
-					�õ���Matthew Dillon�汾��<B
+					用的是Matthew Dillon版本的<B
 CLASS="COMMAND"
 >cron</B
 >. </P
@@ -4156,7 +4156,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="RUNCONTROLSYS1"
 ></A
->��������̿�����</B
+>启动与进程控制类</B
 ></P
 ><DL
 ><DT
@@ -4174,19 +4174,19 @@ NAME="INITTABREF"
 ><B
 CLASS="COMMAND"
 >init</B
->���������н��̵�<A
+>命令是所有进程的<A
 HREF="internal.html#FORKREF"
->������</A
+>父进程</A
 >. 
-			��ϵͳ���������һ������, 
+			在系统启动的最后一步调用, 
 			<B
 CLASS="COMMAND"
 >init</B
->��������<TT
+>将会依据<TT
 CLASS="FILENAME"
 >/etc/inittab</TT
->������ϵͳ�����м���. 
-			ֻ��ʹ��root�������������ı��� - <B
+>来决定系统的运行级别. 
+			只能使用root身份来运行它的别名 - <B
 CLASS="COMMAND"
 >telinit</B
 >. 
@@ -4202,12 +4202,12 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >init</B
->����ķ�������, 
-			  ����һ���޸�ϵͳ���м�����ֶ�, 
-	      ͨ����ϵͳά����ʱ��, �����ڽ������ļ�ϵͳ�޸���ʱ�������. 
-		  ֻ��ʹ��root���ݵ���. 
-		  ������������Ƿǳ�Σ�յ� -
-	      ����ʹ��֮ǰȷ�����Ѿ��ܺõ��˽���! </P
+>命令的符号链接, 
+			  这是一种修改系统运行级别的手段, 
+	      通常在系统维护的时候, 或者在紧急的文件系统修复的时候才能用. 
+		  只能使用root身份调用. 
+		  调用这个命令是非常危险的 -
+	      在你使用之前确定你已经很好地了解它! </P
 ></DD
 ><DT
 ><B
@@ -4216,18 +4216,18 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ��ǰ�ĺ��������м���, Ҳ����, 
-			  �ж�ϵͳ�Ǵ�����ֹ״̬(runlevelΪ<TT
+>显示当前的和最后的运行级别, 也就是, 
+			  判断系统是处于终止状态(runlevel为<TT
 CLASS="LITERAL"
 >0</TT
 >), 
-			  ���û�ģʽ(<TT
+			  单用户模式(<TT
 CLASS="LITERAL"
 >1</TT
->), ���û�ģʽ(<TT
+>), 多用户模式(<TT
 CLASS="LITERAL"
 >2</TT
->��<TT
+>或<TT
 CLASS="LITERAL"
 >3</TT
 >), 
@@ -4235,14 +4235,14 @@ CLASS="LITERAL"
 CLASS="LITERAL"
 >5</TT
 >), 
-		  ��������������״̬(<TT
+		  还是正处于重起状态(<TT
 CLASS="LITERAL"
 >6</TT
 >). 
-		  �����������<TT
+		  这个命令将会访问<TT
 CLASS="FILENAME"
 >/var/run/utmp</TT
->�ļ�. </P
+>文件. </P
 ></DD
 ><DT
 ><B
@@ -4257,7 +4257,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ϵͳ�ػ�������, ͨ���ȵ�Դ�ػ������ȼ���. </P
+>设置系统关机的命令, 通常比电源关机的优先级高. </P
 ></DD
 ><DT
 ><B
@@ -4266,18 +4266,18 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->������ֹͣһ��ϵͳ<I
+>开启或停止一个系统<I
 CLASS="FIRSTTERM"
->����</I
+>服务</I
 >. 
-	    ��<TT
+	    在<TT
 CLASS="FILENAME"
 >/etc/init.d</TT
 >
-	    ��<TT
+	    和<TT
 CLASS="FILENAME"
 >/etc/rc.d</TT
->�е������ű�ʹ�������������������. 
+>中的启动脚本使用这个命令来启动服务. 
 	  </P
 ><P
 >	      <TABLE
@@ -4322,7 +4322,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="NETWORKSYS1"
 ></A
->������</B
+>网络类</B
 ></P
 ><DL
 ><DT
@@ -4332,9 +4332,9 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����<EM
->�ӿ�����</EM
->�͵��Թ���. </P
+>网络的<EM
+>接口配置</EM
+>和调试工具. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -4370,8 +4370,8 @@ CLASS="COMPUTEROUTPUT"
 ><B
 CLASS="COMMAND"
 >ifconfig</B
->�������������������������ʱ�����ýӿ�, 
-	   ������������ʱ��ر�����. 
+>命令绝大多数情况都是在启动的时候设置接口, 
+	   或者在重启的时候关闭它们. 
 	      </P
 ><P
 ><TABLE
@@ -4384,11 +4384,11 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;# ������/etc/rc.d/init.d/network�еĴ���Ƭ��
+>  1&nbsp;# 来自于/etc/rc.d/init.d/network中的代码片断
   2&nbsp;
   3&nbsp;# ...
   4&nbsp;
-  5&nbsp;# ��������Ƿ�����. 
+  5&nbsp;# 检查网络是否启动. 
   6&nbsp;[ ${NETWORKING} = "no" ] &#38;&#38; exit 0
   7&nbsp;
   8&nbsp;[ -x /sbin/ifconfig ] || exit 0
@@ -4399,27 +4399,27 @@ CLASS="PROGRAMLISTING"
  13&nbsp;  if ifconfig $i 2&#62;/dev/null | grep -q "UP" &#62;/dev/null 2&#62;&#38;1 ; then
  14&nbsp;    action "Shutting down interface $i: " ./ifdown $i boot
  15&nbsp;  fi
- 16&nbsp;# grep�����GNUָ��ѡ��"-q"����˼��"����", Ҳ����, ���������. 
- 17&nbsp;# ����, ����ض���/dev/null�Ĳ������е������.
+ 16&nbsp;# grep命令的GNU指定选项"-q"的意思是"安静", 也就是, 不产生输出. 
+ 17&nbsp;# 这样, 后边重定向到/dev/null的操作就有点多余了.
  18&nbsp;       
  19&nbsp;# ...
  20&nbsp;
  21&nbsp;echo "Currently active devices:"
  22&nbsp;echo `/sbin/ifconfig | grep ^[a-z] | awk '{print $1}'`
- 23&nbsp;#                            ^^^^^  Ӧ�ñ������Է�ֹͨ��(globbing). 
- 24&nbsp;#  �±����Ҳ�ܹ���. 
+ 23&nbsp;#                            ^^^^^  应该被引用以防止通配(globbing). 
+ 24&nbsp;#  下边这段也能工作. 
  25&nbsp;#    echo $(/sbin/ifconfig | awk '/^[a-z]/ { print $1 })'
  26&nbsp;#    echo $(/sbin/ifconfig | sed -e 's/ .*//')
- 27&nbsp;#  ��л, S.C., ���˶����ע��. </PRE
+ 27&nbsp;#  感谢, S.C., 做了额外的注释. </PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ></P
 ><P
->��ο�<A
+>请参考<A
 HREF="debugging.html#ONLINE"
->���� 29-6</A
+>例子 29-6</A
 >. </P
 ></DD
 ><DT
@@ -4429,11 +4429,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����Ϊ��������������������. 
-			  ����˵���ϱߵ�<B
+>这是为了配置无线网络的命令集合. 
+			  可以说是上边的<B
 CLASS="COMMAND"
 >ifconfig</B
->�����߰汾. 
+>的无线版本. 
 	      </P
 ></DD
 ><DT
@@ -4446,7 +4446,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ�ں�·�ɱ���Ϣ, ���߲鿴�ں�·�ɱ����޸����. </P
+>显示内核路由表信息, 或者查看内核路由表的修改情况. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -4487,19 +4487,19 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����������. 
-			  ����������ʾ�͹������������������������������
-	      (��Щ�����Ǵ�<TT
+>检查网络配置. 
+			  这个命令负责显示和管理在启动过程中所开启的网络服务
+	      (这些服务都是从<TT
 CLASS="FILENAME"
 >/etc/rc?.d</TT
->Ŀ¼�п�����). 
+>目录中开启的). 
 	      </P
 ><P
->�ʼ�Ǵ�IRIX��Red Hat Linux��һ���ӿ�, 
+>最开始是从IRIX到Red Hat Linux的一个接口, 
 	      <B
 CLASS="COMMAND"
 >chkconfig</B
->��ĳЩLinux���а��в����Ǻ��İ�װ��һ����. </P
+>在某些Linux发行版中并不是核心安装的一部分. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -4539,19 +4539,19 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�������<SPAN
+>网络包的<SPAN
 CLASS="QUOTE"
->"��̽��"</SPAN
+>"嗅探器"</SPAN
 >. 
-			  ����һ�����������͵��������ϴ�������Ĺ���, 
-			  ����ʹ�õ��ֶ��ǰ�����ƥ��ָ������İ�ͷ����ʾ����. 
+			  这是一个用来分析和调试网络上传输情况的工具, 
+			  它所使用的手段是把所有匹配指定规则的包头都显示出来. 
 	      </P
 ><P
->��ʾ����<EM
+>显示主机<EM
 >bozoville</EM
->������<EM
+>和主机<EM
 >caduceus</EM
->֮�����д����ip��. 
+>之间所有传输的ip包. 
 	      <TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -4577,14 +4577,14 @@ CLASS="USERINPUT"
 >
 	      </P
 ><P
->��Ȼ, <B
+>当然, <B
 CLASS="COMMAND"
 >tcpdump</B
->������ǿ��Խ��з�����, 
-	        ����������֮ǰ���۵�<A
+>的输出是可以进行分析的, 
+	        可以用我们之前讨论的<A
 HREF="textproc.html#TPCOMMANDLISTING1"
->�ı���������</A
->���������. </P
+>文本处理工具</A
+>来分析结果. </P
 ></DD
 ></DL
 ></DIV
@@ -4597,7 +4597,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="FILESYSTEMSYS1"
 ></A
->�ļ�ϵͳ��</B
+>文件系统类</B
 ></P
 ><DL
 ><DT
@@ -4610,18 +4610,18 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����һ���ļ�ϵͳ, ͨ����������װ�ⲿ�豸, �������̻�CDROM. 
-			�ļ�<TT
+>加载一个文件系统, 通常都用来安装外部设备, 比如软盘或CDROM. 
+			文件<TT
 CLASS="FILENAME"
 >/etc/fstab</TT
->�����ṩһ��������б�, 
-			����б��г������п��õ��ļ�ϵͳ, �������豸, 
-			���⻹����ĳЩѡ��, �����Ƿ�����Զ������ֶ���mount. 
-			�ļ�<TT
+>将会提供一个方便的列表, 
+			这个列表列出了所有可用的文件系统, 分区和设备, 
+			另外还包括某些选项, 比如是否可以自动或者手动的mount. 
+			文件<TT
 CLASS="FILENAME"
 >/etc/mtab</TT
->��ʾ�˵�ǰ�Ѿ�mount���ļ�ϵͳ�ͷ���(���������, 
-			����<TT
+>显示了当前已经mount的文件系统和分区(包括虚拟的, 
+			比如<TT
 CLASS="FILENAME"
 >/proc</TT
 >). </P
@@ -4629,26 +4629,26 @@ CLASS="FILENAME"
 ><B
 CLASS="COMMAND"
 >mount -a</B
->����mount���г�����<TT
+>将会mount所有出现在<TT
 CLASS="FILENAME"
 >/etc/fstab</TT
->�е��ļ�ϵͳ�ͷ���, 
-	      ������Щ�����<CODE
+>中的文件系统和分区, 
+	      除了那些标记有<CODE
 CLASS="OPTION"
 >noauto</CODE
->(���Զ�)ѡ���. 
-		  ������ʱ��, 
-		  ��<TT
+>(非自动)选项的. 
+		  启动的时候, 
+		  在<TT
 CLASS="FILENAME"
 >/etc/rc.d</TT
->�е�һ�������ű�(<TT
+>中的一个启动脚本(<TT
 CLASS="FILENAME"
 >rc.sysinit</TT
->����һЩ���ƵĽű�)�������<B
+>或者一些相似的脚本)将会调用<B
 CLASS="COMMAND"
 >mount -a</B
 >, 
-	      Ŀ����mount���п��õ��ļ�ϵͳ�ͷ���. </P
+	      目的是mount所有可用的文件系统和分区. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -4661,9 +4661,9 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;mount -t iso9660 /dev/cdrom /mnt/cdrom
-  2&nbsp;# ����CDROM
+  2&nbsp;# 加载CDROM
   3&nbsp;mount /mnt/cdrom
-  4&nbsp;# ���/mnt/cdrom������/etc/fstab�еĻ�, ��ô��ô���þ���һ�ּ��ķ���. </PRE
+  4&nbsp;# 如果/mnt/cdrom包含在/etc/fstab中的话, 那么这么调用就是一种简便的方法. </PRE
 ></FONT
 ></TD
 ></TR
@@ -4671,17 +4671,17 @@ CLASS="PROGRAMLISTING"
 >
      </P
 ><P
->����๦�ܵ������������Խ�һ����ͨ�ļ�mount�����豸��, 
-       ����һ��, �Ϳ������������ļ�ϵͳһ������������ļ�. 
-	   �Ƚ�����ļ���һ��<A
+>这个多功能的命令甚至可以将一个普通文件mount到块设备中, 
+       这样一来, 就可以象做操作文件系统一样来操作这个文件. 
+	   先将这个文件与一个<A
 HREF="devref1.html#LOOPBACKREF"
 >loopback
        device</A
->�豸�����, Ȼ��<B
+>设备相关联, 然后<B
 CLASS="COMMAND"
 >Mount</B
->���ܴﵽ���Ŀ����. 
-       ����Ӧ��һ�㶼������mount����һ��ISO9660����, ���������������ᱻ��¼��CDR��. 
+>就能达到这个目的了. 
+       这种应用一般都是用来mount或检查一个ISO9660镜像, 经过检查后这个镜像会被烧录到CDR上. 
        
 	  <A
 NAME="AEN12376"
@@ -4700,7 +4700,7 @@ NAME="ISOMOUNTREF"
 ></A
 ><P
 ><B
->���� 13-7. ���һ��CD����</B
+>例子 13-7. 检查一个CD镜像</B
 ></P
 ><TABLE
 BORDER="0"
@@ -4712,15 +4712,15 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;# ��root����...
+>  1&nbsp;# 以root身份...
   2&nbsp;
-  3&nbsp;mkdir /mnt/cdtest  # ׼��һ��mount���, �����û׼���Ļ�. 
+  3&nbsp;mkdir /mnt/cdtest  # 准备一个mount入口, 如果你没准备的话. 
   4&nbsp;
-  5&nbsp;mount -r -t iso9660 -o loop cd-image.iso /mnt/cdtest   # mount�������.
+  5&nbsp;mount -r -t iso9660 -o loop cd-image.iso /mnt/cdtest   # mount这个镜像.
   6&nbsp;#                  "-o loop" option equivalent to "losetup /dev/loop0"
-  7&nbsp;cd /mnt/cdtest     # ���ڼ���������. 
-  8&nbsp;ls -alR            # �г�Ŀ¼���е��ļ�. 
-  9&nbsp;                   # �������. </PRE
+  7&nbsp;cd /mnt/cdtest     # 现在检查这个镜像. 
+  8&nbsp;ls -alR            # 列出目录树中的文件. 
+  9&nbsp;                   # 诸如此类. </PRE
 ></FONT
 ></TD
 ></TR
@@ -4737,12 +4737,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ж��һ����ǰ�Ѿ�mount���ļ�ϵͳ. 
-			  ��ɾ���Ѿ�mount�ϵ����̻�CDROM֮ǰ, ����豸���뱻<B
+>卸除一个当前已经mount的文件系统. 
+			  在删除已经mount上的软盘或CDROM之前, 这个设备必须被<B
 CLASS="COMMAND"
 >umount</B
 >, 
-			  �����ļ�ϵͳ���ᱻ��. 
+			  否则文件系统将会被损坏. 
 	      <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -4754,7 +4754,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;umount /mnt/cdrom
-  2&nbsp;# ��������԰��µ�����(ָ����cdrom�������������ϵĵ�������), ����ȫ�ĵ�������. </PRE
+  2&nbsp;# 现在你可以按下弹出键(指的是cdrom或软盘驱动器上的弹出按键), 并安全的弹出光盘. </PRE
 ></FONT
 ></TD
 ></TR
@@ -4784,12 +4784,12 @@ VALIGN="TOP"
 ><B
 CLASS="COMMAND"
 >automount</B
->����, 
-				  �����������߽������ʵ��İ�װ, 
-				  ��ô����Ҫ���ʻ��˳�����(������)��ʱ��, 
-				  ���ܹ��Զ���mount��unmount������. 
-				  ��������ڴ�������������ıʼǱ�������ʹ�õĻ�, 
-				  ���ܻ���������. 
+>工具, 
+				  如果对这个工具进行了适当的安装, 
+				  那么当需要访问或退出磁盘(或软盘)的时候, 
+				  就能够自动的mount和unmount它们了. 
+				  但是如果在带有软躯或光驱的笔记本电脑上使用的话, 
+				  可能会引起问题. 
 		</P
 ></TD
 ></TR
@@ -4803,26 +4803,26 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->������Ҫ����Ӳ��buffer�е�����ʱ, ����������ǿ�ƽ���buffer�ϵ���������д�뵽Ӳ����(ͬ������buffer��������). 
-	      ��ĳЩ�����, 
-		  һ��<B
+>当你需要更新硬盘buffer中的数据时, 这个命令可以强制将你buffer上的数据立即写入到硬盘上(同步带有buffer的驱动器). 
+	      在某些情况下, 
+		  一个<B
 CLASS="COMMAND"
 >sync</B
->������ܻ������ոո��µ�����, ����˵ͻȻ�ϵ�, 
-		 �������������Ը�ϵͳ����Ա����ͨ�û�һЩ����. 
-	      ��ǰ, ϵͳ����ǰ��ʹ��<KBD
+>命令可能会挽救你刚刚更新的数据, 比如说突然断电, 
+		 所以这个命令可以给系统管理员和普通用户一些保障. 
+	      以前, 系统重启前都使用<KBD
 CLASS="USERINPUT"
 >sync;
 		  sync</KBD
-> (����, Ϊ�˱�֤���Կɿ�), 
-		  ����һ�ֽ���С�ĵĿɿ�����. 
+> (两次, 为了保证绝对可靠), 
+		  这是一种谨慎小心的可靠方法. 
 	      </P
 ><P
->ĳЩʱ��, ����˵�����밲ȫɾ���ļ���ʱ��(��ο�<A
+>某些时候, 比如说当你想安全删除文件的时候(请参考<A
 HREF="extmisc.html#BLOTOUT"
->���� 12-55</A
->), ���ߵ����̵ƿ�ʼ��˸��ʱ��, 
-				�������Ҫǿ�ƶ�buffer��������ˢ��. 
+>例子 12-55</A
+>), 或者当磁盘灯开始闪烁的时候, 
+				你可能需要强制对buffer进行立即刷新. 
 	      </P
 ></DD
 ><DT
@@ -4835,9 +4835,9 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����������<A
+>建立和配置<A
 HREF="devref1.html#LOOPBACKREF"
->loopback�豸</A
+>loopback设备</A
 >. </P
 ><DIV
 CLASS="EXAMPLE"
@@ -4846,7 +4846,7 @@ NAME="CREATEFS"
 ></A
 ><P
 ><B
->���� 13-8. ��һ���ļ��д����ļ�ϵͳ</B
+>例子 13-8. 在一个文件中创建文件系统</B
 ></P
 ><TABLE
 BORDER="0"
@@ -4860,12 +4860,12 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;SIZE=1000000  # 1 meg
   2&nbsp;
-  3&nbsp;head -c $SIZE &#60; /dev/zero &#62; file  # ����ָ���ߴ���ļ�. 
-  4&nbsp;losetup /dev/loop0 file           # ��Ϊloopback�豸������. 
-  5&nbsp;mke2fs /dev/loop0                 # �����ļ�ϵͳ. 
+  3&nbsp;head -c $SIZE &#60; /dev/zero &#62; file  # 建立指定尺寸的文件. 
+  4&nbsp;losetup /dev/loop0 file           # 作为loopback设备来创建. 
+  5&nbsp;mke2fs /dev/loop0                 # 创建文件系统. 
   6&nbsp;mount -o loop /dev/loop0 /mnt     # mount.
   7&nbsp;
-  8&nbsp;# ��л, S.C.</PRE
+  8&nbsp;# 感谢, S.C.</PRE
 ></FONT
 ></TD
 ></TR
@@ -4879,11 +4879,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����һ�������������ļ�. 
-			  ������������������ʹ��<B
+>创建一个交换分区或文件. 
+			  交换区域随后必须马上使用<B
 CLASS="COMMAND"
 >swapon</B
->������. 
+>来启用. 
 	      </P
 ></DD
 ><DT
@@ -4896,8 +4896,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����/���ý����������ļ�. 
-			  ����������ͨ���������͹ػ���ʱ�����Ч. 
+>启用/禁用交换分区或文件. 
+			  这两个命令通常在启动和关机的时候才有效. 
 	      </P
 ></DD
 ><DT
@@ -4910,7 +4910,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����Linux ext2�ļ�ϵͳ. ������������root���ݵ���. 
+>创建Linux ext2文件系统. 这个命令必须以root身份调用. 
 	      </P
 ><DIV
 CLASS="EXAMPLE"
@@ -4919,7 +4919,7 @@ NAME="ADDDRV"
 ></A
 ><P
 ><B
->���� 13-9. ����һ���µ�Ӳ��������</B
+>例子 13-9. 添加一个新的硬盘驱动器</B
 ></P
 ><TABLE
 BORDER="0"
@@ -4933,13 +4933,13 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
-  3&nbsp;# ��ϵͳ�����ӵڶ���Ӳ��������. 
-  4&nbsp;# ��������. ����Ӳ���Ѿ���װ��. 
-  5&nbsp;# �����ڱ������ߵ�һƪ����. 
-  6&nbsp;# ��"Linux Gazette"������#38��, http://www.linuxgazette.com. 
+  3&nbsp;# 在系统上添加第二块硬盘驱动器. 
+  4&nbsp;# 软件配置. 假设硬件已经安装了. 
+  5&nbsp;# 来自于本书作者的一篇文章. 
+  6&nbsp;# 在"Linux Gazette"的问题#38上, http://www.linuxgazette.com. 
   7&nbsp;
-  8&nbsp;ROOT_UID=0     # ����ű�������root��������. 
-  9&nbsp;E_NOTROOT=67   # ��root�û���������������. 
+  8&nbsp;ROOT_UID=0     # 这个脚本必须以root身份运行. 
+  9&nbsp;E_NOTROOT=67   # 非root用户将会产生这个错误. 
  10&nbsp;
  11&nbsp;if [ "$UID" -ne "$ROOT_UID" ]
  12&nbsp;then
@@ -4947,28 +4947,28 @@ CLASS="PROGRAMLISTING"
  14&nbsp;  exit $E_NOTROOT
  15&nbsp;fi  
  16&nbsp;
- 17&nbsp;# Ҫ�ǳ�����С�ĵ�ʹ��! 
- 18&nbsp;# ���ĳ������, ���ܻ᳹�״ݻ��㵱ǰ���ļ�ϵͳ. 
+ 17&nbsp;# 要非常谨慎小心的使用! 
+ 18&nbsp;# 如果某步错了, 可能会彻底摧毁你当前的文件系统. 
  19&nbsp;
  20&nbsp;
- 21&nbsp;NEWDISK=/dev/hdb         # ����/dev/hdb�հ�. ���һ��!
- 22&nbsp;MOUNTPOINT=/mnt/newdisk  #����ѡ��������mount���. 
+ 21&nbsp;NEWDISK=/dev/hdb         # 假设/dev/hdb空白. 检查一下!
+ 22&nbsp;MOUNTPOINT=/mnt/newdisk  #或者选择其他的mount入口. 
  23&nbsp;
  24&nbsp;
  25&nbsp;fdisk $NEWDISK
- 26&nbsp;mke2fs -cv $NEWDISK1   # ��黵��, ������ϸ���. 
- 27&nbsp;#  ע��:    /dev/hdb1, *����* /dev/hdb!
+ 26&nbsp;mke2fs -cv $NEWDISK1   # 检查坏块, 并且详细输出. 
+ 27&nbsp;#  注意:    /dev/hdb1, *不是* /dev/hdb!
  28&nbsp;mkdir $MOUNTPOINT
- 29&nbsp;chmod 777 $MOUNTPOINT  # �������û�������ȫ��Ȩ��. 
+ 29&nbsp;chmod 777 $MOUNTPOINT  # 让所有用户都具有全部权限. 
  30&nbsp;
  31&nbsp;
- 32&nbsp;# ����, ����һ��...
+ 32&nbsp;# 现在, 测试一下...
  33&nbsp;# mount -t ext2 /dev/hdb1 /mnt/newdisk
- 34&nbsp;# ���Դ���һ��Ŀ¼. 
- 35&nbsp;# �������������, umount��, Ȼ�����. 
+ 34&nbsp;# 尝试创建一个目录. 
+ 35&nbsp;# 如果运行起来了, umount它, 然后继续. 
  36&nbsp;
- 37&nbsp;# ���һ��:
- 38&nbsp;# ���±��������ӵ�/etc/fstab.
+ 37&nbsp;# 最后一步:
+ 38&nbsp;# 将下边这行添加到/etc/fstab.
  39&nbsp;# /dev/hdb1  /mnt/newdisk  ext2  defaults  1 1
  40&nbsp;
  41&nbsp;exit 0</PRE
@@ -4978,12 +4978,12 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ><HR></DIV
 ><P
->��ο�<A
+>请参考<A
 HREF="system.html#CREATEFS"
->���� 13-8</A
->��<A
+>例子 13-8</A
+>和<A
 HREF="zeros.html#RAMDISK"
->���� 28-3</A
+>例子 28-3</A
 >.</P
 ></DD
 ><DT
@@ -4993,8 +4993,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ext2�ļ�ϵͳ. ���������޸��ļ�ϵͳ����, 
-			  ����mount���������. ������root���ݵ���. 
+>调整ext2文件系统. 可以用来修改文件系统参数, 
+			  比如mount的最大数量. 必须以root身份调用. 
 	      </P
 ><DIV
 CLASS="WARNING"
@@ -5017,7 +5017,7 @@ ALT="Warning"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����һ���ǳ�Σ�յ�����. һ���ô�, ����Ҫ�Լ�����, ��Ϊ�����ܻ��ƻ�����ļ�ϵͳ. </P
+>这是一个非常危险的命令. 一旦用错, 你需要自己负责, 因为它可能会破坏你的文件系统. </P
 ></TD
 ></TR
 ></TABLE
@@ -5030,11 +5030,11 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ӡ(�����<TT
+>打印(输出到<TT
 CLASS="FILENAME"
 >stdout</TT
->)�ǳ���ϸ���ļ�ϵͳ��Ϣ. 
-			  ������root���ݵ���. 
+>)非常详细的文件系统信息. 
+			  必须以root身份调用. 
 	      </P
 ><TABLE
 BORDER="1"
@@ -5071,8 +5071,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ���޸�Ӳ�̲���. ������������root���ݵ���, 
-			  ������õĻ�����Σ��.
+>显示或修改硬盘参数. 这个命令必须以root身份调用, 
+			  如果滥用的话会有危险.
 	      </P
 ></DD
 ><DT
@@ -5085,7 +5085,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�ڴ洢�豸��(ͨ������Ӳ��)�������޸�һ��������. ������root����ʹ��. 
+>在存储设备上(通常都是硬盘)创建和修改一个分区表. 必须以root身份使用. 
 	      </P
 ><DIV
 CLASS="WARNING"
@@ -5108,7 +5108,7 @@ ALT="Warning"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����ʹ���������. �������, ���ƻ����ִ���ļ�ϵͳ. 
+>谨慎使用这个命令. 如果出错, 会破坏你现存的文件系统. 
 	      </P
 ></TD
 ></TR
@@ -5131,27 +5131,27 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�ļ�ϵͳ�ļ��, �޸�, �ͳ��������. </P
+>文件系统的检查, 修复, 和除错命令集合. </P
 ><P
 ><B
 CLASS="COMMAND"
 >fsck</B
 >: 
-			���UNIX�ļ�ϵͳ��ǰ�˹���(Ҳ���Ե��������Ĺ���). 
-			�ļ�ϵͳ������һ�㶼��Ĭ�ϵ�ext2. 
+			检查UNIX文件系统的前端工具(也可以调用其它的工具). 
+			文件系统的类型一般都是默认的ext2. 
 	      </P
 ><P
 ><B
 CLASS="COMMAND"
 >e2fsck</B
->: ext2�ļ�ϵͳ�����. </P
+>: ext2文件系统检查器. </P
 ><P
 ><B
 CLASS="COMMAND"
 >debugfs</B
->: ext2�ļ�ϵͳ������. 
-			������ܶ� - ����Σ�յĹ���, ��Ҫ�ô�֮һ����(����)�ָ�ɾ�����ļ�. 
-			ֻ�и߼��û�������! 
+>: ext2文件系统除错器. 
+			这个功能多 - 并且危险的工具, 主要用处之一就是(尝试)恢复删除的文件. 
+			只有高级用户才能用! 
 	      </P
 ><DIV
 CLASS="CAUTION"
@@ -5174,8 +5174,8 @@ ALT="Caution"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->�ϱߵ��⼸�����������root���ݵ���, 
-				  ��Щ�����Σ��, ������õĻ����ƻ��ļ�ϵͳ. 
+>上边的这几个命令都必须以root身份调用, 
+				  这些命令都很危险, 如果滥用的话会破坏文件系统. 
 	      </P
 ></TD
 ></TR
@@ -5189,8 +5189,8 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���洢�豸�Ļ���(������). 
-			  ��������ڸ�ʽ���°�װ��Ӳ��ʱ��, �����ڲ���"����ý��"�����Ե�ʱ��ᱻ�õ�. 
+>检查存储设备的坏块(物理损坏). 
+			  这个命令在格式化新安装的硬盘时候, 或者在测试"备份媒体"完整性的时候会被用到. 
 	        <A
 NAME="AEN12567"
 HREF="#FTN.AEN12567"
@@ -5199,17 +5199,17 @@ CLASS="footnote"
 >[4]</SPAN
 ></A
 >
-	      �ٸ�����, <B
+	      举个例子, <B
 CLASS="COMMAND"
 >badblocks /dev/fd0</B
->������������. </P
+>用来测试软盘. </P
 ><P
->���<B
+>如果<B
 CLASS="COMMAND"
 >badblocks</B
->ʹ�ò����Ļ�, ���ܻ�����Ƚ����Ľ��(������������), ������ֻ��ģʽ�¾Ͳ��ᷢ���������. 
-	      ���root�û�Ҫ����ĳ���豸(����ͨ�����), 
-	      ��ôroot�û�����ʹ���������. 
+>使用不慎的话, 可能会引起比较糟糕的结果(覆盖所有数据), 但是在只读模式下就不会发生这种情况. 
+	      如果root用户要测试某个设备(这是通常情况), 
+	      那么root用户必须使用这个命令. 
 	      </P
 ></DD
 ><DT
@@ -5225,14 +5225,14 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >lsusb</B
->�������ʾ����USB(Universal 
-			  Serial Busͨ�ô�������)���ߺ�ʹ��USB���豸. 
+>命令会显示所有USB(Universal 
+			  Serial Bus通用串行总线)总线和使用USB的设备. 
 	      </P
 ><P
 ><B
 CLASS="COMMAND"
 >usbmodules</B
->������������USB�豸������ģ�����Ϣ. 
+>命令会输出连接USB设备的驱动模块的信息. 
 	      </P
 ><P
 >	      <TABLE
@@ -5283,10 +5283,10 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ<I
+>显示<I
 CLASS="FIRSTTERM"
 >pci</I
->���߼����豸. </P
+>总线及其设备. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -5331,16 +5331,16 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->������������, �����̿��Ի���ϵͳ, 
-			  ���統MBR(master boot record��������¼)������ʱ��. 
+>创建启动软盘, 启动盘可以唤醒系统, 
+			  比如当MBR(master boot record主启动记录)坏掉的时候. 
 			  <B
 CLASS="COMMAND"
 >mkbootdisk</B
->������ʵ��һ��Bash�ű�, 
-			  ��Erik Troan����д, ����<TT
+>命令其实是一个Bash脚本, 
+			  由Erik Troan所编写, 放在<TT
 CLASS="FILENAME"
 >/sbin</TT
->Ŀ¼��. </P
+>目录中. </P
 ></DD
 ><DT
 ><B
@@ -5349,91 +5349,91 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�޸�ROOTĿ¼. һ�������Ǵ�<A
+>修改ROOT目录. 一般的命令都是从<A
 HREF="internalvariables.html#PATHREF"
 >$PATH</A
->�л�õ�, 
-			  ��Ե�, Ĭ�ϸ�Ŀ¼�� /.
-	      ��������Ѹ�Ŀ¼�޸�Ϊ��һ��Ŀ¼(����Ҳ���ѹ���Ŀ¼�޸ĵ���). 
-		  ���������ڰ�ȫĿ�ķǳ�����, 
-		  �ٸ�����, ĳЩ�����, ϵͳ����Աϣ������һЩ�ض����û�, 
-		  ������Щ<A
+>中获得的, 
+			  相对的, 默认根目录是 /.
+	      这个命令将会把根目录修改为另一个目录(并且也将把工作目录修改到那). 
+		  这个命令对于安全目的非常有用, 
+		  举个例子, 某些情况下, 系统管理员希望限制一些特定的用户, 
+		  比如那些<A
 HREF="communications.html#TELNETREF"
 >telnet</A
->�������û�, 
-		  �������޶����ļ�ϵͳ��һ����ȫ�ĵط�(��ʱ��, 
-		  �ⱻ��Ϊ��һ��guest�û�������<SPAN
+>上来的用户, 
+		  将他们限定到文件系统上一个安全的地方(有时候, 
+		  这被称为将一个guest用户限制在<SPAN
 CLASS="QUOTE"
->"chroot����"</SPAN
->��). 
-		  ע��, ��ʹ��<B
+>"chroot监牢"</SPAN
+>中). 
+		  注意, 在使用<B
 CLASS="COMMAND"
 >chroot</B
->�����, 
-		  ϵͳ�Ķ����ƿ�ִ���ļ���Ŀ¼�Ͳ��ٿ�����. 
+>命令后, 
+		  系统的二进制可执行文件的目录就不再可用了. 
 	      </P
 ><P
 ><KBD
 CLASS="USERINPUT"
 >chroot /opt</KBD
->����ʹ��ԭ����<TT
+>将会使得原来的<TT
 CLASS="FILENAME"
 >/usr/bin</TT
->��Ϊ<TT
+>变为<TT
 CLASS="FILENAME"
 >/opt/usr/bin</TT
 >. 
-		ͬ��, <KBD
+		同样, <KBD
 CLASS="USERINPUT"
 >chroot /aaa/bbb /bin/ls</KBD
->����ʹ��<B
+>将会使得<B
 CLASS="COMMAND"
 >ls</B
->������<TT
+>命令以<TT
 CLASS="FILENAME"
 >/aaa/bbb</TT
->��Ϊ��Ŀ¼, 
-		������֮ǰ��<TT
+>作为根目录, 
+		而不是之前的<TT
 CLASS="FILENAME"
 >/</TT
 >. 
-		���ʹ��<B
+		如果使用<B
 CLASS="COMMAND"
 >alias XX 'chroot /aaa/bbb ls'</B
 >, 
-		�������ŵ��û���<TT
+		并把这句放到用户的<TT
 CLASS="FILENAME"
 >~/.bashrc</TT
->�ļ��еĻ�, 
-		����������Ч��������������<SPAN
+>文件中的话, 
+		这样可以有效地限制运行命令<SPAN
 CLASS="QUOTE"
 >"XX"</SPAN
->ʱ, 
-		����<SPAN
+>时, 
+		命令<SPAN
 CLASS="QUOTE"
 >"XX"</SPAN
->����ʹ���ļ�ϵͳ�ķ�Χ. </P
+>可以使用文件系统的范围. </P
 ><P
->���������ָ̻���ʱ��(<B
+>当从启动盘恢复的时候(<B
 CLASS="COMMAND"
 >chroot</B
->��<TT
+>到<TT
 CLASS="FILENAME"
 >/dev/fd0</TT
 >), 
-		���ߵ�ϵͳ������״̬�ָ���������Ϊ<B
+		或者当系统从死机状态恢复过来并作为<B
 CLASS="COMMAND"
 >lilo</B
->ѡ���ʱ��, 
+>选项的时候, 
 		<B
 CLASS="COMMAND"
 >chroot</B
->����Ƿǳ������. 
-		������Ӧ�û������Ӳ�ͬ���ļ�ϵͳ���а�װ(һ��<A
+>命令都是非常方便的. 
+		其它的应用还包括从不同的文件系统进行安装(一个<A
 HREF="filearchiv.html#RPMREF"
 >rpm</A
->ѡ��)���ߴ�CDROM������һ��ֻ���ļ�ϵͳ. 
-		ֻ����root���ݵ���, С��ʹ��. 
+>选项)或者从CDROM上运行一个只读文件系统. 
+		只能以root身份调用, 小心使用. 
 	      </P
 ><DIV
 CLASS="CAUTION"
@@ -5456,13 +5456,13 @@ ALT="Caution"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����������<CODE
+>由于正常的<CODE
 CLASS="VARNAME"
 >$PATH</CODE
->���ٱ�����, 
-				  ���Կ�����Ҫ��һЩ�ض���ϵͳ�ļ�������<EM
+>不再被关联, 
+				  所以可能需要将一些特定的系统文件拷贝到<EM
 >chroot</EM
->֮���Ŀ¼��, 
+>之后的目录中, 
 	      </P
 ></TD
 ></TR
@@ -5476,26 +5476,26 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���������<B
+>这个工具是<B
 CLASS="COMMAND"
 >procmail</B
->����һ����(<A
+>包的一部分(<A
 HREF="http://www.procmail.org"
 TARGET="_top"
 >www.procmail.org</A
 >). 
-			  �����Դ���һ��<EM
->�����ļ�</EM
+			  它可以创建一个<EM
+>锁定文件</EM
 >, 
 			  <EM
->�����ļ�</EM
->��һ���������Ʒ����ļ�, �豸����Դ�ı���ļ�. 
-			  �����ļ�����һ�����һ����ʹ��, ����ض����ļ�, �豸, 
-			  ����Դ���ڱ�һ���ض��Ľ�����ʹ��(<SPAN
+>锁定文件</EM
+>是一种用来控制访问文件, 设备或资源的标记文件. 
+			  锁定文件就像一个标记一样被使用, 如果特定的文件, 设备, 
+			  或资源正在被一个特定的进程所使用(<SPAN
 CLASS="QUOTE"
 >"busy"</SPAN
 >), 
-			  ��ô��������������˵, ��ֻ�ܽ������޷���(���߲��ܷ���). 
+			  那么对于其它进程来说, 就只能进行受限访问(或者不能访问). 
 	      </P
 ><P
 ><TABLE
@@ -5509,32 +5509,32 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;lockfile /home/bozo/lockfiles/$0.lock
-  2&nbsp;# ����һ���Խű�����Ϊǰ׺��д���������ļ�. </PRE
+  2&nbsp;# 创建一个以脚本名字为前缀的写保护锁定文件. </PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 ></P
 ><P
->�����ļ�����һЩ�ض��ĳ���, 
-			����˵����ϵͳ��mailĿ¼�Է�ֹ����û�ͬʱ�޸�, 
-			������ʾһ��modem�˿����ڱ�����, 
-			������ʾ<SPAN
+>锁定文件用在一些特定的场合, 
+			比如说保护系统的mail目录以防止多个用户同时修改, 
+			或者提示一个modem端口正在被访问, 
+			或者显示<SPAN
 CLASS="APPLICATION"
 >Netscape</SPAN
->��һ��ʵ������ʹ�����Ļ���. 
-			�ű�������һЩ��鹤��, 
-			����˵һ���ض��Ľ��̿��Դ���һ�������ļ�, 
-			��ôֻҪ�������ض��Ľ����Ƿ�������, 
-			�Ϳ����жϳ������ļ��Ƿ������. 
-			ע������ű����Դ���һ���Ѿ����ڵ������ļ��Ļ�, 
-			��ô�ű��ܿ��ܱ�����. 
+>的一个实例正在使用它的缓存. 
+			脚本可以做一些检查工作, 
+			比如说一个特定的进程可以创建一个锁定文件, 
+			那么只要检查这个特定的进程是否在运行, 
+			就可以判断出锁定文件是否存在了. 
+			注意如果脚本尝试创建一个已经存在的锁定文件的话, 
+			那么脚本很可能被挂起. 
 	      </P
 ><P
->һ�������, Ӧ�ö��������ļ��Ĵ����ͼ�鶼����<TT
+>一般情况下, 应用对于锁定文件的创建和检查都放在<TT
 CLASS="FILENAME"
 >/var/lock</TT
->Ŀ¼��. 
+>目录中. 
 			  <A
 NAME="AEN12688"
 HREF="#FTN.AEN12688"
@@ -5543,7 +5543,7 @@ CLASS="footnote"
 >[5]</SPAN
 ></A
 >
-	      �ű�����ʹ������ķ�������������ļ��Ƿ����.
+	      脚本可以使用下面的方法来检测锁定文件是否存在.
 	        <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -5555,7 +5555,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;appname=xyzip
-  2&nbsp;# Ӧ��"xyzip"���������ļ�"/var/lock/xyzip.lock". 
+  2&nbsp;# 应用"xyzip"创建锁定文件"/var/lock/xyzip.lock". 
   3&nbsp;
   4&nbsp;if [ -e "/var/lock/$appname.lock" ]
   5&nbsp;then
@@ -5576,30 +5576,30 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >flock</B
->�����<B
+>命令不像<B
 CLASS="COMMAND"
 >lockfile</B
->��ô����. 
-			����һ���ļ�������һ��<SPAN
+>那么有用. 
+			它在一个文件上设置一个<SPAN
 CLASS="QUOTE"
->"��ѯ��"</SPAN
->����, 
-			(����ע: <SPAN
+>"咨询性"</SPAN
+>的锁, 
+			(译者注: <SPAN
 CLASS="QUOTE"
->"��ѯ��"</SPAN
->������ʱҲ��Ϊ<SPAN
+>"咨询性"</SPAN
+>的锁有时也称为<SPAN
 CLASS="QUOTE"
->"������"</SPAN
->����, 
-			������ֻ��Эͬ����������, ����һ������<SPAN
+>"建议性"</SPAN
+>的锁, 
+			这种锁只对协同进程起作用, 还有一种锁叫<SPAN
 CLASS="QUOTE"
->"ǿ����"</SPAN
->��, 
-			�����������Ķ����д�����������ں������, 
-			�����ϸ����ο�flock(1), flock(2), 
-			/usr/src/linux/Documentation/locks.txt��mandatory.txt), 
-			Ȼ�������������ڼ����ִ��һ������. 
-	      �������Ա�������������ǰ������Ľ�����ͼ������ļ���������. </P
+>"强制性"</SPAN
+>锁, 
+			这种锁加锁的对象读写操作都会由内核做检查, 
+			更多的细节请参考flock(1), flock(2), 
+			/usr/src/linux/Documentation/locks.txt和mandatory.txt), 
+			然后在锁持续的期间可以执行一个命令. 
+	      这样可以避免这个命令完成前有另外的进程试图在这个文件上设置锁. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -5612,8 +5612,8 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;flock $0 cat $0 &#62; lockfile__$0
-  2&nbsp;#  �������б�ʾ�ű��������г��������ݵ���׼����Ĺ�����, 
-  3&nbsp;#+ ����һ������ס�ű��ļ�����. </PRE
+  2&nbsp;#  上面这行表示脚本正处于列出自身内容到标准输出的过程中, 
+  3&nbsp;#+ 设置一把锁锁住脚本文件自身. </PRE
 ></FONT
 ></TD
 ></TR
@@ -5640,16 +5640,16 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->��<B
+>与<B
 CLASS="COMMAND"
 >lockfile</B
->��ͬ, 
+>不同, 
 	      <B
 CLASS="COMMAND"
 >flock</B
 ><EM
->����</EM
->�Զ�����һ�������ļ�. </P
+>不会</EM
+>自动创建一个锁定文件. </P
 ></TD
 ></TR
 ></TABLE
@@ -5662,15 +5662,15 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����������ַ��豸�ļ�(����ϵͳ�ϰ�װ��Ӳ��ʱ, ������ô��). 
+>创建块或者字符设备文件(当在系统上安装新硬盘时, 必须这么做). 
 	      <B
 CLASS="COMMAND"
 >MAKEDEV</B
->������ʵ�Ͼ���<B
+>工具事实上具有<B
 CLASS="COMMAND"
 >mknod</B
->��ȫ������, 
-	      ���Ҹ�����ʹ��. </P
+>的全部功能, 
+	      而且更容易使用. </P
 ></DD
 ><DT
 ><B
@@ -5679,12 +5679,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����豸�ļ��Ĺ���. 
-			  ������<TT
+>创建设备文件的工具. 
+			  必须在<TT
 CLASS="FILENAME"
 >/dev</TT
->Ŀ¼��, 
-	      ������root����ʹ��. 
+>目录下, 
+	      并且以root身份使用. 
 
 	    <TABLE
 BORDER="1"
@@ -5709,10 +5709,10 @@ CLASS="COMMAND"
 ></TABLE
 >
 
-	      ����<B
+	      这是<B
 CLASS="COMMAND"
 >mknod</B
->�ĸ߼��汾. </P
+>的高级版本. </P
 ></DD
 ><DT
 ><B
@@ -5721,12 +5721,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�Զ�ɾ����ָ��ʱ����δ�����ʹ����ļ�. 
-			  ͨ�����Ǳ�<A
+>自动删除在指定时间内未被访问过的文件. 
+			  通常都是被<A
 HREF="system.html#CRONREF"
 >cron</A
->����, 
-			  ����ɾ���ɵ�log�ļ�. </P
+>调用, 
+			  用来删掉旧的log文件. </P
 ></DD
 ></DL
 ></DIV
@@ -5739,7 +5739,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="PERIPHSYS1"
 ></A
->������</B
+>备份类</B
 ></P
 ><DL
 ><DT
@@ -5755,8 +5755,8 @@ CLASS="COMMAND"
 ><B
 CLASS="COMMAND"
 >dump</B
->������һ�����ɵ��ļ�ϵͳ���ݹ���, 
-			  ͨ�������ڱȽϴ�İ�װ�汾��������. 
+>命令是一个精巧的文件系统备份工具, 
+			  通常都用在比较大的安装版本和网络上. 
 			  <A
 NAME="AEN12775"
 HREF="#FTN.AEN12775"
@@ -5765,16 +5765,16 @@ CLASS="footnote"
 >[6]</SPAN
 ></A
 >
-		����ȡԭʼ�Ĵ��̷��������Զ�������ʽ��д�����ļ�. 
-		��Ҫ���ݵ��ļ����Ա��浽���ָ����Ĵ洢�豸��, �������̺ʹŴ�. 
+		它读取原始的磁盘分区并且以二进制形式来写备份文件. 
+		需要备份的文件可以保存到各种各样的存储设备上, 包括磁盘和磁带. 
 	      <B
 CLASS="COMMAND"
 >restore</B
->���������ָ�
+>命令用来恢复
 	      <B
 CLASS="COMMAND"
 >dump</B
->�������ı���. </P
+>所产生的备份. </P
 ></DD
 ><DT
 ><B
@@ -5783,7 +5783,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�����̽��еͼ���ʽ��. </P
+>对软盘进行低级格式化. </P
 ></DD
 ></DL
 ></DIV
@@ -5796,7 +5796,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="SYSRESOURCES1"
 ></A
->ϵͳ��Դ��</B
+>系统资源类</B
 ></P
 ><DL
 ><DT
@@ -5806,44 +5806,44 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ϵͳ��Դ��ʹ��<EM
->����</EM
+>设置系统资源的使用<EM
+>上限</EM
 >. 
-			ͨ������¶���ʹ��<CODE
+			通常情况下都是使用<CODE
 CLASS="OPTION"
 >-f</CODE
->ѡ��������, 
+>选项来调用, 
 			<CODE
 CLASS="OPTION"
 >-f</CODE
->���������ļ��ߴ������(<B
+>用来设置文件尺寸的限制(<B
 CLASS="COMMAND"
 >ulimit 
 				-f 1000</B
->���ǽ��ļ���С����Ϊ1M). 
+>就是将文件大小限制为1M). 
 			<CODE
 CLASS="OPTION"
 >-c</CODE
->(����ע: ����Ӧ�������߱���, 
-			����д����<CODE
+>(译者注: 这里应该是作者笔误, 
+			作者写的是<CODE
 CLASS="OPTION"
 >-t</CODE
->)ѡ��������coredump�ߴ�(<B
+>)选项来限制coredump尺寸(<B
 CLASS="COMMAND"
 >ulimit
 			 -c 0</B
->���ǲ�Ҫcoredump). 
-		 һ�������, 
+>就是不要coredump). 
+		 一般情况下, 
 		 <B
 CLASS="COMMAND"
 >ulimit</B
->��ֵӦ��������<TT
+>的值应该设置在<TT
 CLASS="FILENAME"
 >/etc/profile</TT
->��(��)<TT
+>和(或)<TT
 CLASS="FILENAME"
 >~/.bash_profile</TT
->��(��ο�<A
+>中(请参考<A
 HREF="files.html"
 >Appendix G</A
 >). </P
@@ -5868,12 +5868,12 @@ ALT="Important"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->������ʹ��<B
+>合理的使用<B
 CLASS="COMMAND"
 >ulimit</B
->������Ա���ϵͳ���ܿ��µ�<EM
->forkը��</EM
->���Ⱥ�. </P
+>命令可以保护系统免受可怕的<EM
+>fork炸弹</EM
+>的迫害. </P
 ><P
 >	    <TABLE
 BORDER="0"
@@ -5886,20 +5886,20 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# ����ű�ֻ��Ϊ��չʾ��. 
-  3&nbsp;# ��Ҫ�Լ�Ϊ��������ű��ĺ������ -- ��*��*�������ϵͳ. 
+  2&nbsp;# 这个脚本只是为了展示用. 
+  3&nbsp;# 你要自己为运行这个脚本的后果负责 -- 它*将*凝固你的系统. 
   4&nbsp;
-  5&nbsp;while true  #  ��ѭ��. 
+  5&nbsp;while true  #  死循环. 
   6&nbsp;do
-  7&nbsp;  $0 &#38;      #  ����ű��������� . . .
-  8&nbsp;            #+ fork���޴� . . .
-  9&nbsp;            #+ ֱ��ϵͳ��ȫ����, ��Ϊ���е���Դ���ľ���. 
- 10&nbsp;done        #  ������������Ƶ�<SPAN
+  7&nbsp;  $0 &#38;      #  这个脚本调用自身 . . .
+  8&nbsp;            #+ fork无限次 . . .
+  9&nbsp;            #+ 直到系统完全不动, 因为所有的资源都耗尽了. 
+ 10&nbsp;done        #  这就像令人郁闷的<SPAN
 CLASS="QUOTE"
->"ħ��ʦ���ϱ����ɡ"</SPAN
->�ĳ���. 
+>"魔术师不断变出雨伞"</SPAN
+>的场景. 
  11&nbsp;
- 12&nbsp;exit 0      #  ���ﲻ���������˳�, ��Ϊ����ű�������ֹ. </PRE
+ 12&nbsp;exit 0      #  这里不会真正的退出, 因为这个脚本不会终止. </PRE
 ></FONT
 ></TD
 ></TR
@@ -5907,17 +5907,17 @@ CLASS="QUOTE"
 >
 	    </P
 ><P
->������ű�����Ԥ�����õ�����ʱ, 
-			��<TT
+>当这个脚本超过预先设置的限制时, 
+			在<TT
 CLASS="FILENAME"
 >/etc/profile</TT
->�е�<B
+>中的<B
 CLASS="COMMAND"
 >ulimit -Hu 
 			XX</B
 >(<EM
 >XX</EM
->������Ҫ���Ƶ��û�����)������ֹ����ű�������. 
+>就是需要限制的用户进程)可以终止这个脚本的运行. 
 	    </P
 ></TD
 ></TR
@@ -5934,7 +5934,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ�û�����Ĵ������. </P
+>显示用户或组的磁盘配额. </P
 ></DD
 ><DT
 ><A
@@ -5946,7 +5946,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���������������û�����Ĵ������. </P
+>从命令行中设置用户或组的磁盘配额. </P
 ></DD
 ><DT
 ><A
@@ -5958,27 +5958,27 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�趨�û������ļ�ʱȱʡ��Ȩ��<I
+>设定用户创建文件时缺省的权限<I
 CLASS="FIRSTTERM"
 >mask</I
->(����). 
-	      Ҳ�������������ض��û���Ĭ���ļ�����. 
-		  �����û��������ļ����Զ�����<B
+>(掩码). 
+	      也可以用来限制特定用户的默认文件属性. 
+		  所有用户创建的文件属性都是由<B
 CLASS="COMMAND"
 >umask</B
->��ָ����. 
-		  ���ݸ�umask�����ֵ(8����)�������ļ���<I
+>所指定的. 
+		  传递给umask命令的值(8进制)定义了文件的<I
 CLASS="FIRSTTERM"
->����</I
->Ȩ��. 
-	      ����, <B
+>屏蔽</I
+>权限. 
+	      比如, <B
 CLASS="COMMAND"
 >umask
 			  022</B
->����ʹ�����ļ���Ȩ�����Ϊ755(777��022����<SPAN
+>将会使得新文件的权限最多为755(777与022进行<SPAN
 CLASS="QUOTE"
->"���"</SPAN
->����). 
+>"与非"</SPAN
+>操作). 
 
 		  <A
 NAME="AEN12863"
@@ -5989,20 +5989,20 @@ CLASS="footnote"
 ></A
 >
 
-	     ��Ȼ, �û�������ʹ��<A
+	     当然, 用户随后可以使用<A
 HREF="basic.html#CHMODREF"
 >chmod</A
->���޸�ָ���ļ�������. 
-	     �û�һ�㶼������<B
+>来修改指定文件的属性. 
+	     用户一般都将设置<B
 CLASS="COMMAND"
 >umask</B
->ֵ�õط�����<TT
+>值得地方放在<TT
 CLASS="FILENAME"
 >/etc/profile</TT
->��(��)<TT
+>或(和)<TT
 CLASS="FILENAME"
 >~/.bash_profile</TT
->��(��ο�<A
+>中(请参考<A
 HREF="files.html"
 >Appendix G</A
 >). </P
@@ -6013,10 +6013,10 @@ NAME="ROT13A"
 ></A
 ><P
 ><B
->���� 13-10. ��<B
+>例子 13-10. 用<B
 CLASS="COMMAND"
 >umask</B
->������ļ���������</B
+>将输出文件隐藏起来</B
 ></P
 ><TABLE
 BORDER="0"
@@ -6029,22 +6029,22 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# rot13a.sh: ��"rot13.sh"�ű���ͬ, ���ǻὫ���д��"��ȫ"�ļ���. 
+  2&nbsp;# rot13a.sh: 与"rot13.sh"脚本相同, 但是会将输出写到"安全"文件中. 
   3&nbsp;
-  4&nbsp;# �÷�: ./rot13a.sh filename
-  5&nbsp;# ��     ./rot13a.sh &#60;filename
-  6&nbsp;# ��     ./rot13a.shͬʱ�ṩ��������(stdin)
+  4&nbsp;# 用法: ./rot13a.sh filename
+  5&nbsp;# 或     ./rot13a.sh &#60;filename
+  6&nbsp;# 或     ./rot13a.sh同时提供键盘输入(stdin)
   7&nbsp;
-  8&nbsp;umask 177               #  �ļ���������. 
-  9&nbsp;                        #  ������ű����������ļ�
- 10&nbsp;                        #+ ������600Ȩ��. 
+  8&nbsp;umask 177               #  文件创建掩码. 
+  9&nbsp;                        #  被这个脚本所创建的文件
+ 10&nbsp;                        #+ 将具有600权限. 
  11&nbsp;
- 12&nbsp;OUTFILE=decrypted.txt   #  ���������"decrypted.txt"��
- 13&nbsp;                        #+ ����ļ�ֻ�ܹ���
- 14&nbsp;                        #  ����ű��ĵ�����(����root)����д. 
+ 12&nbsp;OUTFILE=decrypted.txt   #  结果保存在"decrypted.txt"中
+ 13&nbsp;                        #+ 这个文件只能够被
+ 14&nbsp;                        #  这个脚本的调用者(或者root)所读写. 
  15&nbsp;
  16&nbsp;cat "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M' &#62; $OUTFILE 
- 17&nbsp;#    ^^ ��stdin ���ļ�������.         ^^^^^^^^^^ ����ض����ļ���. 
+ 17&nbsp;#    ^^ 从stdin 或文件中输入.         ^^^^^^^^^^ 输出重定向到文件中. 
  18&nbsp;
  19&nbsp;exit 0</PRE
 ></FONT
@@ -6060,16 +6060,16 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ȡ��root device, swap space, ��video mode�������Ϣ, ���߶����ǽ����޸�. 
-			  һ�������, <B
+>取得root device, swap space, 或video mode的相关信息, 或者对它们进行修改. 
+			  一般情况下, <B
 CLASS="COMMAND"
 >rdev</B
->�Ĺ��ܶ��Ǳ�<B
+>的功能都是被<B
 CLASS="COMMAND"
 >lilo</B
->��ʹ��, 
-			  �����ڽ���һ��ram disk��ʱ��, �������Ҳ������. 
-			  С��ʹ��, ����һ��Σ�յ�����. 
+>所使用, 
+			  但是在建立一个ram disk的时候, 这个命令也很有用. 
+			  小心使用, 这是一个危险的命令. 
 	     </P
 ></DD
 ></DL
@@ -6083,7 +6083,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="MODULESSYS1"
 ></A
->ģ����</B
+>模块类</B
 ></P
 ><DL
 ><DT
@@ -6093,7 +6093,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾ���а�װ���ں�ģ��. </P
+>显示所有安装的内核模块. </P
 ><P
 >	      <TABLE
 BORDER="1"
@@ -6155,10 +6155,10 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->ʹ��<B
+>使用<B
 CLASS="COMMAND"
 >cat /proc/modules</B
->���Եõ�ͬ���Ľ��. </P
+>可以得到同样的结果. </P
 ></TD
 ></TR
 ></TABLE
@@ -6171,12 +6171,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ǿ�ư�װһ���ں�ģ��(������ܵĻ�, 
-			  ʹ��<B
+>强制安装一个内核模块(如果可能的话, 
+			  使用<B
 CLASS="COMMAND"
 >modprobe</B
->������). 
-			  ������root���ݵ���. </P
+>来代替). 
+			  必须以root身份调用. </P
 ></DD
 ><DT
 ><B
@@ -6185,7 +6185,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ǿ��ж��һ���ں�ģ��. ������root���ݵ���. </P
+>强制卸载一个内核模块. 必须以root身份调用. </P
 ></DD
 ><DT
 ><B
@@ -6194,7 +6194,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ģ��װ����, һ������¶����������ű����Զ�����. ������root����������. </P
+>模块装载器, 一般情况下都是在启动脚本中自动调用. 必须以root身份来运行. </P
 ></DD
 ><DT
 ><B
@@ -6203,7 +6203,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->����ģ�������ļ�, һ�㶼���������ű��е���. </P
+>创建模块依赖文件, 一般都是在启动脚本中调用. </P
 ></DD
 ><DT
 ><B
@@ -6212,7 +6212,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->���һ����װ��ģ�����Ϣ. </P
+>输出一个可装载模块的信息. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -6254,7 +6254,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="MISCSYS1"
 ></A
->������</B
+>杂项类</B
 ></P
 ><DL
 ><DT
@@ -6264,15 +6264,15 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->ʹ�����ù��Ļ��޸Ĺ�(�������޸�����ϵͳ����)��<A
+>使用设置过的或修改过(并不是修改整个系统环境)的<A
 HREF="othertypesv.html#ENVREF"
->��������</A
->������һ�������ű�. 
-	      ʹ��<CODE
+>环境变量</A
+>来运行一个程序或脚本. 
+	      使用<CODE
 CLASS="OPTION"
 >[varname=xxx]</CODE
->��ʽ�����ڽű����޸Ļ�������. 
-	     ���û��ָ������, ��ô����������ʾ�������õĻ�������. 
+>形式可以在脚本中修改环境变量. 
+	     如果没有指定参数, 那么这个命令将会显示所有设置的环境变量. 
 	      </P
 ><DIV
 CLASS="NOTE"
@@ -6295,8 +6295,8 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->��Bash������Bourne shell����������, 
-				  �ǿ�����ͬһ�����������ö��������. 
+>在Bash或其它Bourne shell的衍生物中, 
+				  是可以在同一命令行上设置多个变量的. 
 	      <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -6308,7 +6308,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;var1=value1 var2=value2 commandXXX
-  2&nbsp;# $var1��$var2ֻ������'commandXXX'�Ļ�����. </PRE
+  2&nbsp;# $var1和$var2只设置在'commandXXX'的环境中. </PRE
 ></FONT
 ></TD
 ></TR
@@ -6340,11 +6340,11 @@ ALT="Tip"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->����֪��shell�������·����ʱ��, 
-					�ű��ĵ�һ��(#!<SPAN
+>当不知道shell或解释器路径的时候, 
+					脚本的第一行(#!<SPAN
 CLASS="QUOTE"
 >"sha-bang"</SPAN
->��)����ʹ��<B
+>行)可以使用<B
 CLASS="COMMAND"
 >env</B
 >. 
@@ -6363,9 +6363,9 @@ CLASS="PROGRAMLISTING"
   3&nbsp;print "This Perl script will run,\n";
   4&nbsp;print "even when I don't know where to find Perl.\n";
   5&nbsp;
-  6&nbsp;# �ڲ�֪��perl����·����ʱ��, 
-  7&nbsp;# ��ôд�����ڿ�ƽ̨��ֲ. 
-  8&nbsp;# ��л, S.C.</PRE
+  6&nbsp;# 在不知道perl程序路径的时候, 
+  7&nbsp;# 这么写有利于跨平台移植. 
+  8&nbsp;# 感谢, S.C.</PRE
 ></FONT
 ></TD
 ></TR
@@ -6384,7 +6384,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ʾһ����ִ���ļ���������Ҫ������֮��������ϵ. </P
+>显示一个可执行文件和它所需要共享库之间依赖关系. </P
 ><TABLE
 BORDER="1"
 BGCOLOR="#E0E0E0"
@@ -6422,12 +6422,12 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->��ָ����ʱ�������ظ�����һ������. </P
+>以指定的时间间隔来重复运行一个命令. </P
 ><P
->Ĭ�ϵ�ʱ������2��, ���ǿ���ʹ��<CODE
+>默认的时间间隔是2秒, 但是可以使用<CODE
 CLASS="OPTION"
 >-n</CODE
->ѡ������޸�. </P
+>选项进行修改. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -6440,7 +6440,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;watch -n 5 tail /var/log/messages
-  2&nbsp;# ÿ��5������ʾϵͳlog�ļ�(/var/log/messages)�Ľ�β. </PRE
+  2&nbsp;# 每隔5秒钟显示系统log文件(/var/log/messages)的结尾. </PRE
 ></FONT
 ></TD
 ></TR
@@ -6454,14 +6454,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�ӿ�ִ���ļ���ȥ�����Է��ŵ�����. ���������Լ�С��ִ���ļ��ĳߴ�, ���ǾͲ��ܵ�����. 
+>从可执行文件中去掉调试符号的引用. 这样做可以减小可执行文件的尺寸, 但是就不能调试了. 
 		  </P
 ><P
->�������һ�㶼����<A
+>这个命令一般都用在<A
 HREF="filearchiv.html#MAKEFILEREF"
 >Makefile</A
->��, 
-	      ���Ǻ�������shell�ű���. </P
+>中, 
+	      但是很少用在shell脚本中. </P
 ></DD
 ><DT
 ><B
@@ -6470,7 +6470,7 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->�г�δstrip����, ���������, 2�����ļ���ȫ������. </P
+>列出未strip过的, 经过编译的, 2进制文件的全部符号. </P
 ></DD
 ><DT
 ><B
@@ -6479,14 +6479,14 @@ CLASS="COMMAND"
 ></DT
 ><DD
 ><P
->Զ�̷ֲ��ͻ���: ��Զ�˷�������ͬ��, ��¡, ���߱���һ���ļ�ϵͳ. </P
+>远程分布客户端: 在远端服务器上同步, 克隆, 或者备份一个文件系统. </P
 ></DD
 ></DL
 ></DIV
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -6509,7 +6509,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->������Linux�����ϻ����ڴ��д�������UNIXϵͳ�ϵ���ʵ���. </P
+>这是在Linux机器上或者在带有磁盘配额的UNIX系统上的真实情况. </P
 ></TD
 ></TR
 ><TR
@@ -6530,10 +6530,10 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->������ڱ�ɾ�����ض��û��Ѿ���¼������, ��ô<B
+>如果正在被删除的特定用户已经登录了主机, 那么<B
 CLASS="COMMAND"
 >userdel</B
->�����ʧ��. </P
+>命令将会失败. </P
 ></TD
 ></TR
 ><TR
@@ -6554,13 +6554,13 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->������¼CDR�ĸ���ϸ��, ���Բο�Alex
-	    Withers������, <A
+>关于烧录CDR的更多细节, 可以参考Alex
+	    Withers的文章, <A
 HREF="http://www2.linuxjournal.com/lj-issues/issue66/3335.html"
 TARGET="_top"
->����
+>创建
 	    CD</A
->, ��ƪ������1999��10����<A
+>, 这篇文章是1999年10月在<A
 HREF="http://www.linuxjournal.com"
 TARGET="_top"
 ><I
@@ -6568,7 +6568,7 @@ CLASS="CITETITLE"
 >Linux
 	     Journal</I
 ></A
->�Ϸ�����. </P
+>上发表的. </P
 ></TD
 ></TR
 ><TR
@@ -6592,10 +6592,10 @@ WIDTH="95%"
 ><A
 HREF="system.html#MKE2FSREF"
 >mke2fs</A
->��<CODE
+>的<CODE
 CLASS="OPTION"
 >-c</CODE
->ѡ��Ҳ����д��̻�����. 
+>选项也会进行磁盘坏块检查. 
 		</P
 ></TD
 ></TR
@@ -6617,14 +6617,14 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->��Ϊֻ��<I
+>因为只有<I
 CLASS="FIRSTTERM"
 >root</I
->�û��ž��ж�<TT
+>用户才具有对<TT
 CLASS="FILENAME"
 >/var/lock</TT
->Ŀ¼��дȨ��, 
-				һ����û��ű���������������һ�������ļ�. 
+>目录的写权限, 
+				一般的用户脚本不能在那里设置一个锁定文件. 
 		 </P
 ></TD
 ></TR
@@ -6646,8 +6646,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->���û�Linuxϵͳ�Ĳ�����������ʹ�ü򵥵ı��ݹ���, 
-				����<B
+>单用户Linux系统的操作更倾向于使用简单的备份工具, 
+				比如<B
 CLASS="COMMAND"
 >tar</B
 >. </P
@@ -6675,10 +6675,10 @@ WIDTH="95%"
 CLASS="QUOTE"
 >"<I
 CLASS="FIRSTTERM"
->���</I
+>与非</I
 >"</SPAN
->��һ���߼�����. 
-		  ��ʵ��, ���ֲ��������������. </P
+>是一种逻辑操作. 
+		  事实上, 这种操作与减法很相像. </P
 ></TD
 ></TR
 ></TABLE
@@ -6700,7 +6700,7 @@ VALIGN="top"
 ><A
 HREF="extmisc.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -6709,7 +6709,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -6718,7 +6718,7 @@ VALIGN="top"
 ><A
 HREF="sysscripts.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -6726,7 +6726,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->��������</TD
+>混杂命令</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -6734,13 +6734,13 @@ VALIGN="top"
 ><A
 HREF="part3.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->����һ��ϵͳ�ű�</TD
+>分析一个系统脚本</TD
 ></TR
 ></TABLE
 ></DIV

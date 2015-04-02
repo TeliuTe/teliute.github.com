@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->������չ</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>算术扩展</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="进阶"
 HREF="part3.html"><LINK
 REL="PREVIOUS"
-TITLE="�����滻"
+TITLE="命令替换"
 HREF="commandsub.html"><LINK
 REL="NEXT"
-TITLE="I/O�ض���"
+TITLE="I/O重定向"
 HREF="io-redirection.html"></HEAD
 ><BODY
 CLASS="CHAPTER"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,7 +47,7 @@ VALIGN="bottom"
 ><A
 HREF="commandsub.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="io-redirection.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,14 +74,14 @@ CLASS="CHAPTER"
 ><A
 NAME="ARITHEXP"
 ></A
->15. ������չ</H1
+>15. 算术扩展</H1
 ><P
 ><A
 NAME="ARITHEXPREF"
 ></A
->������չ�ṩ��һ��ǿ������, 
-			  �����ڽű���ִ��(����)�㷨����. 
-			  ����ʹ��<A
+>算术扩展提供了一种强力工具, 
+			  可以在脚本中执行(整型)算法操作. 
+			  可以使用<A
 HREF="commandsub.html#BACKQUOTESREF"
 >backticks</A
 >, 
@@ -89,10 +89,10 @@ HREF="commandsub.html#BACKQUOTESREF"
 HREF="dblparens.html"
 >double parentheses</A
 >, 
-			  ��<A
+			  或<A
 HREF="internal.html#LETREF"
 >let</A
->�����ַ���ת��Ϊ���ֱ���ʽ. </P
+>来将字符串转换为数字表达式. </P
 ><P
 ></P
 ><DIV
@@ -102,14 +102,14 @@ CLASS="VARIABLELIST"
 ><A
 NAME="ARITHEXPVAR1"
 ></A
->һЩ�仯</B
+>一些变化</B
 ></P
 ><DL
 ><DT
->ʹ�ú������õ�������չ(ͨ�����Ǻ�<A
+>使用后置引用的算术扩展(通常都是和<A
 HREF="moreadv.html#EXPRREF"
 >expr</A
->һ��ʹ��)</DT
+>一起使用)</DT
 ><DD
 ><P
 ><TABLE
@@ -122,7 +122,7 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;z=`expr $z + 3`          # 'expr'�����ִ�������չ. </PRE
+>  1&nbsp;z=`expr $z + 3`          # 'expr'命令将会执行这个扩展. </PRE
 ></FONT
 ></TD
 ></TR
@@ -130,24 +130,24 @@ CLASS="PROGRAMLISTING"
 ></P
 ></DD
 ><DT
->ʹ��˫������ʽ��������չ, Ҳ����ʹ��<B
+>使用双括号形式的算术扩展, 也可以使用<B
 CLASS="COMMAND"
 >let</B
->����</DT
+>命令</DT
 ><DD
 ><P
->����������ʽ��������չ�Ѿ���˫������ʽ������� -- 
+>后置引用形式的算术扩展已经被双括号形式所替代了 -- 
 		   <KBD
 CLASS="USERINPUT"
 >((...))</KBD
->��<KBD
+>和<KBD
 CLASS="USERINPUT"
 >$((...))</KBD
 > 
-		  -- ��ȻҲ����ʹ�÷ǳ������<B
+		  -- 当然也可以使用非常方便的<B
 CLASS="COMMAND"
 >let</B
->�ṹ. </P
+>结构. </P
 ><P
 >	      <TABLE
 BORDER="0"
@@ -160,30 +160,30 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;z=$(($z+3))
-  2&nbsp;z=$((z+3))                                  #  Ҳ��ȷ. 
-  3&nbsp;                                            #  ʹ��˫���ŵ���ʽ, 
-  4&nbsp;                                            #+ ����������
-  5&nbsp;                                            #+ �ǿ�ѡ��. 
+  2&nbsp;z=$((z+3))                                  #  也正确. 
+  3&nbsp;                                            #  使用双括号的形式, 
+  4&nbsp;                                            #+ 参数解引用
+  5&nbsp;                                            #+ 是可选的. 
   6&nbsp;
-  7&nbsp;# $((EXPRESSION))����������ʽ.              #  ��Ҫ�������滻
-  8&nbsp;                                            #+ �����. 
+  7&nbsp;# $((EXPRESSION))是算数表达式.              #  不要与命令替换
+  8&nbsp;                                            #+ 相混淆. 
   9&nbsp;
  10&nbsp;
  11&nbsp;
- 12&nbsp;# ʹ��˫���ŵ���ʽҲ���Բ��ø�������ֵ. 
+ 12&nbsp;# 使用双括号的形式也可以不用给变量赋值. 
  13&nbsp;
  14&nbsp;  n=0
  15&nbsp;  echo "n = $n"                             # n = 0
  16&nbsp;
- 17&nbsp;  (( n += 1 ))                              # ����. 
+ 17&nbsp;  (( n += 1 ))                              # 递增. 
  18&nbsp;# (( $n += 1 )) is incorrect!
  19&nbsp;  echo "n = $n"                             # n = 1
  20&nbsp;
  21&nbsp;
  22&nbsp;let z=z+3
- 23&nbsp;let "z += 3"  #  ʹ�����õ���ʽ, �����ڱ�����ֵ��ʱ����ڿո�. 
- 24&nbsp;              #  'let'������ʵ��ִ�еõ���������ֵ, 
- 25&nbsp;              #+ ������������չ. </PRE
+ 23&nbsp;let "z += 3"  #  使用引用的形式, 允许在变量赋值的时候存在空格. 
+ 24&nbsp;              #  'let'命令事实上执行得的是算术赋值, 
+ 25&nbsp;              #+ 而不是算术扩展. </PRE
 ></FONT
 ></TD
 ></TR
@@ -191,7 +191,7 @@ CLASS="PROGRAMLISTING"
 >
 	    </P
 ><P
->�±���һЩ�ڽű���ʹ��������չ������: 
+>下边是一些在脚本中使用算术扩展的例子: 
        <P
 ></P
 ><OL
@@ -200,35 +200,35 @@ TYPE="1"
 ><P
 ><A
 HREF="moreadv.html#EX45"
->���� 12-9</A
+>例子 12-9</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="loops1.html#EX25"
->���� 10-14</A
+>例子 10-14</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="arrays.html#EX66"
->���� 26-1</A
+>例子 26-1</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="arrays.html#BUBBLE"
->���� 26-11</A
+>例子 26-11</A
 ></P
 ></LI
 ><LI
 ><P
 ><A
 HREF="contributed-scripts.html#TREE"
->���� A-17</A
+>例子 A-17</A
 ></P
 ></LI
 ></OL
@@ -256,7 +256,7 @@ VALIGN="top"
 ><A
 HREF="commandsub.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -265,7 +265,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -274,7 +274,7 @@ VALIGN="top"
 ><A
 HREF="io-redirection.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -282,7 +282,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->�����滻</TD
+>命令替换</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -290,13 +290,13 @@ VALIGN="top"
 ><A
 HREF="part3.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->I/O�ض���</TD
+>I/O重定向</TD
 ></TR
 ></TABLE
 ></DIV

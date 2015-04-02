@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->To Do�б�</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>To Do列表</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="����վ��"
+TITLE="镜像站点"
 HREF="mirrorsites.html"><LINK
 REL="NEXT"
-TITLE="��Ȩ"
+TITLE="版权"
 HREF="copyright.html"></HEAD
 ><BODY
 CLASS="APPENDIX"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="mirrorsites.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="copyright.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -71,24 +71,24 @@ CLASS="APPENDIX"
 ><A
 NAME="TODOLIST"
 ></A
->Appendix Q. To Do�б�</H1
+>Appendix Q. To Do列表</H1
 ><P
 ></P
 ><UL
 ><LI
 ><P
->ȫ�����Bash�뾭���Bourne shell֮��ļ�����. 
+>全面调查Bash与经典的Bourne shell之间的兼容性. 
 		  </P
 ></LI
 ><LI
 ><P
->ͬ��, ����Ҫ�������Korn shell (ksh).</P
+>同上, 但需要调查的是Korn shell (ksh).</P
 ></LI
 ><LI
 ><P
->һ��ʹ��Bash������CGI��̵ĳ�������. </P
+>一个使用Bash来进行CGI编程的初级读本. </P
 ><P
->������һ���򵥵�CGI�ű�, ����Դ����￪ʼ. </P
+>下面是一个简单的CGI脚本, 你可以从这里开始. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -96,7 +96,7 @@ NAME="TESTCGI"
 ></A
 ><P
 ><B
->���� Q-1. ��ӡ����������</B
+>例子 Q-1. 打印服务器环境</B
 ></P
 ><TABLE
 BORDER="0"
@@ -109,20 +109,20 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# ������Ҫ�޸����վ��λ��. 
-  3&nbsp;# (��ISP�ķ�������, Bash���ܲ��ڱ�׼λ��/bin.)
-  4&nbsp;# �������ܳ��ֵĵط�: /usr/bin��/usr/local/bin
-  5&nbsp;# �������Բ����κ�·����Ϣ������ʹ��#!. 
+  2&nbsp;# 可能需要修改你的站点位置. 
+  3&nbsp;# (在ISP的服务器上, Bash可能不在标准位置/bin.)
+  4&nbsp;# 其他可能出现的地方: /usr/bin或/usr/local/bin
+  5&nbsp;# 甚至可以不带任何路径信息来尝试使用#!. 
   6&nbsp;
   7&nbsp;# test-cgi.sh
-  8&nbsp;# ��Michael Zick��д
-  9&nbsp;# ������Ȩ�ڴ�ʹ��
+  8&nbsp;# 由Michael Zick编写
+  9&nbsp;# 经过授权在此使用
  10&nbsp;
  11&nbsp;
- 12&nbsp;# �����ļ���ƥ��. 
+ 12&nbsp;# 禁用文件名匹配. 
  13&nbsp;set -f
  14&nbsp;
- 15&nbsp;# ͷ��Ϣ������������Ҫ�Ķ���. 
+ 15&nbsp;# 头信息将会给浏览器需要的东西. 
  16&nbsp;echo Content-type: text/plain
  17&nbsp;echo
  18&nbsp;
@@ -145,7 +145,7 @@ CLASS="PROGRAMLISTING"
  35&nbsp;echo argc is $#. argv is "$*".
  36&nbsp;echo
  37&nbsp;
- 38&nbsp;# CGI/1.0��Ҫ�Ļ�������. 
+ 38&nbsp;# CGI/1.0需要的环境变量. 
  39&nbsp;
  40&nbsp;echo SERVER_SOFTWARE = $SERVER_SOFTWARE
  41&nbsp;echo SERVER_NAME = $SERVER_NAME
@@ -167,7 +167,7 @@ CLASS="PROGRAMLISTING"
  57&nbsp;
  58&nbsp;exit 0
  59&nbsp;
- 60&nbsp;# Here document���Ը�����Ҫ��ʹ��˵��. 
+ 60&nbsp;# Here document可以给出简要的使用说明. 
  61&nbsp;:&#60;&#60;-'_test_CGI_'
  62&nbsp;
  63&nbsp;1) Drop this in your http://domain.name/cgi-bin directory.
@@ -182,7 +182,7 @@ CLASS="PROGRAMLISTING"
 ></LI
 ></UL
 ><P
->��־Ը��ô? </P
+>有志愿者么? </P
 ></DIV
 ><DIV
 CLASS="NAVFOOTER"
@@ -202,7 +202,7 @@ VALIGN="top"
 ><A
 HREF="mirrorsites.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -211,7 +211,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -220,7 +220,7 @@ VALIGN="top"
 ><A
 HREF="copyright.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -228,7 +228,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->����վ��</TD
+>镜像站点</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -238,7 +238,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->��Ȩ</TD
+>版权</TD
 ></TR
 ></TABLE
 ></DIV

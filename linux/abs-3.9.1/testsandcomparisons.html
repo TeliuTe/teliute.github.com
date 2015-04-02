@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->²âÊÔºÍ±È½Ï: Ò»ÖÖ¿ÉÑ¡µÄ·½·¨</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>æµ‹è¯•å’Œæ¯”è¾ƒ: ä¸€ç§å¯é€‰çš„æ–¹æ³•</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="ÔÓÏî"
+TITLE="æ‚é¡¹"
 HREF="miscellany.html"><LINK
 REL="PREVIOUS"
-TITLE="Shell°ü×°"
+TITLE="ShellåŒ…è£…"
 HREF="wrapper.html"><LINK
 REL="NEXT"
-TITLE="µİ¹é"
+TITLE="é€’å½’"
 HREF="recursionsct.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="wrapper.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->33. ÔÓÏî</TD
+>33. æ‚é¡¹</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="recursionsct.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -74,21 +74,21 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="TESTSANDCOMPARISONS"
->33.3. ²âÊÔºÍ±È½Ï: Ò»ÖÖ¿ÉÑ¡µÄ·½·¨</A
+>33.3. æµ‹è¯•å’Œæ¯”è¾ƒ: ä¸€ç§å¯é€‰çš„æ–¹æ³•</A
 ></H1
 ><P
->¶ÔÓÚ²âÊÔÀ´Ëµ, <A
+>å¯¹äºæµ‹è¯•æ¥è¯´, <A
 HREF="testconstructs.html#DBLBRACKETS"
 >[[    ]]</A
->½á¹¹¿ÉÄÜ±È<KBD
+>ç»“æ„å¯èƒ½æ¯”<KBD
 CLASS="USERINPUT"
 >[
 	  ]</KBD
->½á¹¹¸üºÏÊÊ. 
-	  Í¬ÑùµØ, ÔÚËãÊõ±È½ÏÖĞ, Ê¹ÓÃ<A
+>ç»“æ„æ›´åˆé€‚. 
+	  åŒæ ·åœ°, åœ¨ç®—æœ¯æ¯”è¾ƒä¸­, ä½¿ç”¨<A
 HREF="dblparens.html"
 >((    ))</A
->½á¹¹¿ÉÄÜ»á¸üÓĞÓÃ. 
+>ç»“æ„å¯èƒ½ä¼šæ›´æœ‰ç”¨. 
 
 	  <TABLE
 BORDER="0"
@@ -102,21 +102,21 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;a=8
   2&nbsp;
-  3&nbsp;# ÏÂÃæËùÓĞµÄ±È½Ï¶¼ÊÇµÈ¼ÛµÄ. 
-  4&nbsp;test "$a" -lt 16 &#38;&#38; echo "yes, $a &#60; 16"         # "ÓëÁĞ±í"
+  3&nbsp;# ä¸‹é¢æ‰€æœ‰çš„æ¯”è¾ƒéƒ½æ˜¯ç­‰ä»·çš„. 
+  4&nbsp;test "$a" -lt 16 &#38;&#38; echo "yes, $a &#60; 16"         # "ä¸åˆ—è¡¨"
   5&nbsp;/bin/test "$a" -lt 16 &#38;&#38; echo "yes, $a &#60; 16" 
   6&nbsp;[ "$a" -lt 16 ] &#38;&#38; echo "yes, $a &#60; 16" 
-  7&nbsp;[[ $a -lt 16 ]] &#38;&#38; echo "yes, $a &#60; 16"          # ÔÚ[[ ]]ºÍ(( ))½á¹¹ÖĞ, 
-  8&nbsp;(( a &#60; 16 )) &#38;&#38; echo "yes, $a &#60; 16"             # ²»ÓÃ½«±äÁ¿ÒıÓÃÆğÀ´. 
+  7&nbsp;[[ $a -lt 16 ]] &#38;&#38; echo "yes, $a &#60; 16"          # åœ¨[[ ]]å’Œ(( ))ç»“æ„ä¸­, 
+  8&nbsp;(( a &#60; 16 )) &#38;&#38; echo "yes, $a &#60; 16"             # ä¸ç”¨å°†å˜é‡å¼•ç”¨èµ·æ¥. 
   9&nbsp;
  10&nbsp;city="New York"
- 11&nbsp;# Í¬ÑùµØ, ÏÂÃæËùÓĞµÄ±È½Ï¶¼ÊÇµÈ¼ÛµÄ. 
- 12&nbsp;test "$city" \&#60; Paris &#38;&#38; echo "Yes, Paris is greater than $city"  # °´ÕÕASCIIË³Ğò±È½Ï. 
+ 11&nbsp;# åŒæ ·åœ°, ä¸‹é¢æ‰€æœ‰çš„æ¯”è¾ƒéƒ½æ˜¯ç­‰ä»·çš„. 
+ 12&nbsp;test "$city" \&#60; Paris &#38;&#38; echo "Yes, Paris is greater than $city"  # æŒ‰ç…§ASCIIé¡ºåºæ¯”è¾ƒ. 
  13&nbsp;/bin/test "$city" \&#60; Paris &#38;&#38; echo "Yes, Paris is greater than $city" 
  14&nbsp;[ "$city" \&#60; Paris ] &#38;&#38; echo "Yes, Paris is greater than $city" 
- 15&nbsp;[[ $city &#60; Paris ]] &#38;&#38; echo "Yes, Paris is greater than $city"    # ²»ĞèÒªÒıÓÃ$city. 
+ 15&nbsp;[[ $city &#60; Paris ]] &#38;&#38; echo "Yes, Paris is greater than $city"    # ä¸éœ€è¦å¼•ç”¨$city. 
  16&nbsp;
- 17&nbsp;# ¸ĞĞ», S.C. </PRE
+ 17&nbsp;# æ„Ÿè°¢, S.C. </PRE
 ></FONT
 ></TD
 ></TR
@@ -141,7 +141,7 @@ VALIGN="top"
 ><A
 HREF="wrapper.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -150,7 +150,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -159,7 +159,7 @@ VALIGN="top"
 ><A
 HREF="recursionsct.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -167,7 +167,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Shell°ü×°</TD
+>ShellåŒ…è£…</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -175,13 +175,13 @@ VALIGN="top"
 ><A
 HREF="miscellany.html"
 ACCESSKEY="U"
->ÉÏÒ»¼¶</A
+>ä¸Šä¸€çº§</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->µİ¹é</TD
+>é€’å½’</TD
 ></TR
 ></TABLE
 ></DIV

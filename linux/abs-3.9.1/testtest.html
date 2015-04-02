@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�����Բ���֪ʶ���������</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>检测你对测试知识的掌握情况</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="�����ж�"
+TITLE="条件判断"
 HREF="tests.html"><LINK
 REL="PREVIOUS"
-TITLE="Ƕ�׵�if/then��������"
+TITLE="嵌套的if/then条件测试"
 HREF="nestedifthen.html"><LINK
 REL="NEXT"
-TITLE="���������������"
+TITLE="操作符与相关主题"
 HREF="operations.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="nestedifthen.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->7. �����ж�</TD
+>7. 条件判断</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="operations.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,17 +74,17 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="TESTTEST"
->7.5. �����Բ���֪ʶ���������</A
+>7.5. 检测你对测试知识的掌握情况</A
 ></H1
 ><P
->ϵͳ��Χ��<TT
+>系统范围的<TT
 CLASS="FILENAME"
 >xinitrc</TT
->�ļ�������������X server. 
-			����ļ��������൱���<EM
+>文件可以用来启动X server. 
+			这个文件包含了相当多的<EM
 >if/then</EM
->��������, 
-			����������ļ��Ĳ��ֽ�ѡ. </P
+>条件测试, 
+			下面是这个文件的部分节选. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -101,8 +101,8 @@ CLASS="PROGRAMLISTING"
   3&nbsp;elif [ -f /etc/X11/xinit/Xclients ]; then
   4&nbsp;  exec /etc/X11/xinit/Xclients
   5&nbsp;else
-  6&nbsp;     # ʧ�ܺ�İ�ȫ����. ��Ȼ������Զ�������ߵ�����.
-  7&nbsp;     # (������Xclients��Ҳ�ṩ����ͬ�Ļ���) ��֤�����ᱻ�ƻ�.
+  6&nbsp;     # 失败后的安全设置. 虽然我们永远都不会走到这来.
+  7&nbsp;     # (我们在Xclients中也提供了相同的机制) 保证它不会被破坏.
   8&nbsp;     xclock -geometry 100x100-5+5 &#38;
   9&nbsp;     xterm -geometry 80x50-50+150 &#38;
  10&nbsp;     if [ -f /usr/bin/netscape -a -f /usr/share/doc/HTML/index.html ]; then
@@ -115,27 +115,27 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ></P
 ><P
->�����ϱ߽�ѡ��<SPAN
+>解释上边节选中<SPAN
 CLASS="QUOTE"
->"��������"</SPAN
->�ṹ�е�����, 
-       Ȼ���������ļ�, <TT
+>"条件测试"</SPAN
+>结构中的内容, 
+       然后检查整个文件, <TT
 CLASS="FILENAME"
 >/etc/X11/xinit/xinitrc</TT
 >,
-	   ���ҷ������е�<EM
+	   并且分析其中的<EM
 >if/then</EM
->���Խṹ. 
-	   �������Ҫ����һ�º�߽����֪ʶ, ����˵<A
+>测试结构. 
+	   你可能需要查阅一下后边讲解的知识, 比如说<A
 HREF="textproc.html#GREPREF"
 >grep</A
 >, <A
 HREF="sedawk.html#SEDREF"
 >sed</A
 >,
-       ��<A
+       和<A
 HREF="regexp.html#REGEXREF"
->�������ʽ</A
+>正则表达式</A
 >.</P
 ></DIV
 ><DIV
@@ -156,7 +156,7 @@ VALIGN="top"
 ><A
 HREF="nestedifthen.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -165,7 +165,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -174,7 +174,7 @@ VALIGN="top"
 ><A
 HREF="operations.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -182,7 +182,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Ƕ�׵�if/then��������</TD
+>嵌套的if/then条件测试</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -190,13 +190,13 @@ VALIGN="top"
 ><A
 HREF="tests.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->���������������</TD
+>操作符与相关主题</TD
 ></TR
 ></TABLE
 ></DIV

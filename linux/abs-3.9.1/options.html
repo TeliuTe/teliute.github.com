@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->ѡ��</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>选项</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="�߼�����"
+TITLE="高级主题"
 HREF="part4.html"><LINK
 REL="PREVIOUS"
-TITLE="����"
+TITLE="调试"
 HREF="debugging.html"><LINK
 REL="NEXT"
-TITLE="����"
+TITLE="陷阱"
 HREF="gotchas.html"></HEAD
 ><BODY
 CLASS="CHAPTER"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,7 +47,7 @@ VALIGN="bottom"
 ><A
 HREF="debugging.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="gotchas.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,29 +74,29 @@ CLASS="CHAPTER"
 ><A
 NAME="OPTIONS"
 ></A
->30. ѡ��</H1
+>30. 选项</H1
 ><P
 ><A
 NAME="OPTIONSREF"
 ></A
 ></P
 ><P
->ѡ����������shell�ͽű�����Ϊ. </P
+>选项用来更改shell和脚本的行为. </P
 ><P
 ><A
 HREF="internal.html#SETREF"
 >set</A
->���������򿪽ű��е�ѡ��. 
-	������ڽű����κ�������ѡ����Ч�ĵط�����<B
+>命令用来打开脚本中的选项. 
+	你可以在脚本中任何你想让选项生效的地方插入<B
 CLASS="COMMAND"
 >set
 	-o option-name</B
->, ����ʹ�ø��򵥵���ʽ, <B
+>, 或者使用更简单的形式, <B
 CLASS="COMMAND"
 >set
 	-option-abbrev</B
 >. 
-	��������ʽ�ǵȼ۵�. </P
+	这两种形式是等价的. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -111,7 +111,7 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;      #!/bin/bash
   2&nbsp;
   3&nbsp;      set -o verbose
-  4&nbsp;      # ��ӡ������ִ��ǰ������. 
+  4&nbsp;      # 打印出所有执行前的命令. 
   5&nbsp;      </PRE
 ></FONT
 ></TD
@@ -132,7 +132,7 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;      #!/bin/bash
   2&nbsp;
   3&nbsp;      set -v
-  4&nbsp;      # ���ϱߵ����Ӿ�����ͬ��Ч��. 
+  4&nbsp;      # 与上边的例子具有相同的效果. 
   5&nbsp;      </PRE
 ></FONT
 ></TD
@@ -160,13 +160,13 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->��������ڽű���<EM
->����</EM
->ĳ��ѡ��, 
-	����ʹ��<B
+>如果你想在脚本中<EM
+>禁用</EM
+>某个选项, 
+	可以使用<B
 CLASS="COMMAND"
 >set +o option-name</B
->��<B
+>或<B
 CLASS="COMMAND"
 >set
 	+option-abbrev</B
@@ -189,25 +189,25 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;      #!/bin/bash
   2&nbsp;
   3&nbsp;      set -o verbose
-  4&nbsp;      # �����������. 
+  4&nbsp;      # 激活命令回显. 
   5&nbsp;      command
   6&nbsp;      ...
   7&nbsp;      command
   8&nbsp;
   9&nbsp;      set +o verbose
- 10&nbsp;      # �����������. 
+ 10&nbsp;      # 禁用命令回显. 
  11&nbsp;      command
- 12&nbsp;      # û�����������. 
+ 12&nbsp;      # 没有命令回显了. 
  13&nbsp;
  14&nbsp;
  15&nbsp;      set -v
- 16&nbsp;      # �����������. 
+ 16&nbsp;      # 激活命令回显. 
  17&nbsp;      command
  18&nbsp;      ...
  19&nbsp;      command
  20&nbsp;
  21&nbsp;      set +v
- 22&nbsp;      # �����������. 
+ 22&nbsp;      # 禁用命令回显. 
  23&nbsp;      command
  24&nbsp;
  25&nbsp;      exit 0
@@ -218,14 +218,14 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ></P
 ><P
->������һ�ֿ����ڽű�������ѡ��ķ���, 
-	�Ǿ����ڽű�ͷ��, 
+>还有另一种可以在脚本中启用选项的方法, 
+	那就是在脚本头部, 
 	<TT
 CLASS="REPLACEABLE"
 ><I
 >#!</I
 ></TT
->�ĺ��ֱ��ָ��ѡ��. </P
+>的后边直接指定选项. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -239,7 +239,7 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;      #!/bin/bash -x
   2&nbsp;      #
-  3&nbsp;      # �±��ǽű�����Ҫ����. 
+  3&nbsp;      # 下边是脚本的主要内容. 
   4&nbsp;      </PRE
 ></FONT
 ></TD
@@ -252,18 +252,18 @@ NAME="INVOCATIONOPTIONSREF"
 ></A
 ></P
 ><P
->Ҳ���Դ��������д򿪽ű���ѡ��. 
-	ĳЩ������<B
+>也可以从命令行中打开脚本的选项. 
+	某些不能与<B
 CLASS="COMMAND"
 >set</B
->����һ���õ�ѡ��Ϳ���ʹ�����ַ�������. 
+>命令一起用的选项就可以使用这种方法来打开. 
 	<TT
 CLASS="REPLACEABLE"
 ><I
 >-i</I
 ></TT
->��������֮һ, 
-	���ѡ������ǿ�ƽű��Խ����ķ�ʽ����. 
+>就是其中之一, 
+	这个选项用来强制脚本以交互的方式运行. 
 	</P
 ><P
 ><KBD
@@ -276,15 +276,15 @@ CLASS="USERINPUT"
 >bash -o verbose script-name</KBD
 ></P
 ><P
->�±��г���һЩ���õ�ѡ��. 
-	���Ƕ�����ʹ����д����ʽ��ָ��(��ͷ��һ�����ۺ�), 
-	Ҳ����ʹ������������ָ��(��ͷ����<EM
->˫</EM
->���ۺ�, 
-	����ʹ��<CODE
+>下表列出了一些有用的选项. 
+	它们都可以使用缩写的形式来指定(开头加一个破折号), 
+	也可以使用完整名字来指定(开头加上<EM
+>双</EM
+>破折号, 
+	或者使用<CODE
 CLASS="OPTION"
 >-o</CODE
->ѡ����ָ��). </P
+>选项来指定). </P
 ><DIV
 CLASS="TABLE"
 ><HR><A
@@ -292,7 +292,7 @@ NAME="AEN15239"
 ></A
 ><P
 ><B
->���� 30-1. Bashѡ��</B
+>表格 30-1. Bash选项</B
 ></P
 ><TABLE
 BORDER="1"
@@ -300,11 +300,11 @@ CLASS="CALSTABLE"
 ><COL><COL><COL><THEAD
 ><TR
 ><TH
->��д</TH
+>缩写</TH
 ><TH
->����</TH
+>名称</TH
 ><TH
->����</TH
+>作用</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -320,10 +320,10 @@ CLASS="OPTION"
 ><TD
 >noclobber</TD
 ><TD
->��ֹ�ض���ʱ�����ļ�(���ܻᱻ<SPAN
+>防止重定向时覆盖文件(可能会被<SPAN
 CLASS="TOKEN"
 >&#62;|</SPAN
->����)</TD
+>覆盖)</TD
 ></TR
 ><TR
 ><TD
@@ -334,11 +334,11 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->�г���˫��������������, ��<SPAN
+>列出用双引号引用起来的, 以<SPAN
 CLASS="TOKEN"
 >$</SPAN
->Ϊǰ׺���ַ���, 
-	      ���ǲ�ִ�нű��е�����</TD
+>为前缀的字符串, 
+	      但是不执行脚本中的命令</TD
 ></TR
 ><TR
 ><TD
@@ -349,7 +349,7 @@ CLASS="OPTION"
 ><TD
 >allexport</TD
 ><TD
->export(����)���ж�����ı���</TD
+>export(导出)所有定义过的变量</TD
 ></TR
 ><TR
 ><TD
@@ -360,7 +360,7 @@ CLASS="OPTION"
 ><TD
 >notify</TD
 ><TD
->����̨���е���ҵ��ֹʱ, ����֪ͨ(�ű��в�������)</TD
+>当后台运行的作业终止时, 给出通知(脚本中并不常见)</TD
 ></TR
 ><TR
 ><TD
@@ -371,10 +371,10 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->��<B
+>从<B
 CLASS="COMMAND"
 >...</B
->�ж�ȡ����</TD
+>中读取命令</TD
 ></TR
 ><TR
 ><TD
@@ -385,12 +385,12 @@ CLASS="OPTION"
 ><TD
 >errexit</TD
 ><TD
->���ű�������һ������ʱ, ���˳��ű�, 
-			  ����˵������, ��һ������ط���ֵʱ, 
-			  ���˳��ű�(����<A
+>当脚本发生第一个错误时, 就退出脚本, 
+			  换种说法就是, 当一个命令返回非零值时, 
+			  就退出脚本(除了<A
 HREF="loops1.html#UNTILLOOPREF"
 >until</A
->��<A
+>或<A
 HREF="loops1.html#WHILELOOPREF"
 >while loops</A
 >, <A
@@ -410,7 +410,7 @@ CLASS="OPTION"
 ><TD
 >noglob</TD
 ><TD
->�����ļ�����չ(���ǽ���globbing)</TD
+>禁用文件名扩展(就是禁用globbing)</TD
 ></TR
 ><TR
 ><TD
@@ -421,9 +421,9 @@ CLASS="OPTION"
 ><TD
 >interactive</TD
 ><TD
->�ýű���<EM
->����</EM
->ģʽ����</TD
+>让脚本以<EM
+>交互</EM
+>模式运行</TD
 ></TR
 ><TR
 ><TD
@@ -434,7 +434,7 @@ CLASS="OPTION"
 ><TD
 >noexec</TD
 ><TD
->�ӽű��ж�ȡ����, ���ǲ�ִ������(���﷨���)</TD
+>从脚本中读取命令, 但是不执行它们(做语法检查)</TD
 ></TR
 ><TR
 ><TD
@@ -445,9 +445,9 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->����<EM
+>调用<EM
 >Option-Name</EM
->ѡ��</TD
+>选项</TD
 ></TR
 ><TR
 ><TD
@@ -458,11 +458,11 @@ CLASS="OPTION"
 ><TD
 >POSIX</TD
 ><TD
->�޸�Bash�򱻵��ýű�����Ϊ, 
-			  ʹ�����<A
+>修改Bash或被调用脚本的行为, 
+			  使其符合<A
 HREF="sha-bang.html#POSIX2REF"
 >POSIX</A
->��׼. 
+>标准. 
 		</TD
 ></TR
 ><TR
@@ -474,10 +474,10 @@ CLASS="OPTION"
 ><TD
 >privileged</TD
 ><TD
->��<SPAN
+>以<SPAN
 CLASS="QUOTE"
 >"suid"</SPAN
->���������нű�(С��!)</TD
+>身份来运行脚本(小心!)</TD
 ></TR
 ><TR
 ><TD
@@ -488,9 +488,9 @@ CLASS="OPTION"
 ><TD
 >restricted</TD
 ><TD
->��<EM
->����</EM
->ģʽ�����нű�(�ο�<A
+>以<EM
+>受限</EM
+>模式来运行脚本(参考<A
 HREF="restricted-sh.html"
 > 21</A
 >). </TD
@@ -504,10 +504,10 @@ CLASS="OPTION"
 ><TD
 >stdin</TD
 ><TD
->��<TT
+>从<TT
 CLASS="FILENAME"
 >stdin</TT
->�ж�ȡ����</TD
+>中读取命令</TD
 ></TR
 ><TR
 ><TD
@@ -518,7 +518,7 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->ִ�����һ������֮��, ���˳�</TD
+>执行完第一个命令之后, 就退出</TD
 ></TR
 ><TR
 ><TD
@@ -529,8 +529,8 @@ CLASS="OPTION"
 ><TD
 >nounset</TD
 ><TD
->�������ʹ����δ����ı���, �ͻ����һ��������Ϣ, 
-		Ȼ��ǿ���˳�</TD
+>如果尝试使用了未定义的变量, 就会输出一个错误消息, 
+		然后强制退出</TD
 ></TR
 ><TR
 ><TD
@@ -541,10 +541,10 @@ CLASS="OPTION"
 ><TD
 >verbose</TD
 ><TD
->��ִ��ÿ������֮ǰ, ��ÿ�������ӡ��<TT
+>在执行每个命令之前, 把每个命令打印到<TT
 CLASS="FILENAME"
 >stdout</TT
->��</TD
+>上</TD
 ></TR
 ><TR
 ><TD
@@ -555,10 +555,10 @@ CLASS="OPTION"
 ><TD
 >xtrace</TD
 ><TD
->��<CODE
+>与<CODE
 CLASS="OPTION"
 >-v</CODE
->ѡ������, ���ǻ��ӡ��������</TD
+>选项类似, 但是会打印完整命令</TD
 ></TR
 ><TR
 ><TD
@@ -569,9 +569,9 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->ѡ�������־. ����Ĳ���Ϊ<A
+>选项结束标志. 后面的参数为<A
 HREF="internalvariables.html#POSPARAMREF"
->λ�ò���</A
+>位置参数</A
 >. </TD
 ></TR
 ><TR
@@ -583,12 +583,12 @@ CLASS="OPTION"
 ><TD
 >(none)</TD
 ><TD
->unset(�ͷ�)λ�ò���. 
-		���ָ���˲����б�(<CODE
+>unset(释放)位置参数. 
+		如果指定了参数列表(<CODE
 CLASS="VARNAME"
 >-- arg1 arg2</CODE
 >), 
-		��ôλ�ò��������������õ������б���. </TD
+		那么位置参数将会依次设置到参数列表中. </TD
 ></TR
 ></TBODY
 ></TABLE
@@ -612,7 +612,7 @@ VALIGN="top"
 ><A
 HREF="debugging.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -621,7 +621,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -630,7 +630,7 @@ VALIGN="top"
 ><A
 HREF="gotchas.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -638,7 +638,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->����</TD
+>调试</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -646,13 +646,13 @@ VALIGN="top"
 ><A
 HREF="part4.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->����</TD
+>陷阱</TD
 ></TR
 ></TABLE
 ></DIV

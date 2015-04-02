@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->×Óshell</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>å­shell</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="¸ß¼¶Ö÷Ìâ"
+TITLE="é«˜çº§ä¸»é¢˜"
 HREF="part4.html"><LINK
 REL="PREVIOUS"
-TITLE="Í¨Åä(globbing)"
+TITLE="é€šé…(globbing)"
 HREF="globbingref.html"><LINK
 REL="NEXT"
-TITLE="ÊÜÏÞshell"
+TITLE="å—é™shell"
 HREF="restricted-sh.html"></HEAD
 ><BODY
 CLASS="CHAPTER"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR
 ><TR
 ><TD
@@ -47,7 +47,7 @@ VALIGN="bottom"
 ><A
 HREF="globbingref.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="restricted-sh.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -74,33 +74,33 @@ CLASS="CHAPTER"
 ><A
 NAME="SUBSHELLS"
 ></A
->20. ×Óshell</H1
+>20. å­shell</H1
 ><P
 ><A
 NAME="SUBSHELLSREF"
 ></A
 ></P
 ><P
->ÔËÐÐÒ»¸öshell½Å±¾µÄÊ±ºò, »áÆô¶¯ÃüÁî½âÊÍÆ÷µÄÁíÒ»¸öÊµÀý. 
-        ¾ÍºÃÏñÄãµÄÃüÁîÊÇÔÚÃüÁîÐÐÌáÊ¾ÏÂ±»½âÊÍµÄÒ»Ñù, 
-        ÀàËÆÓÚÅú´¦ÀíÎÄ¼þÖÐµÄÒ»ÏµÁÐÃüÁî. 
-        Ã¿¸öshell½Å±¾¶¼ÓÐÐ§µØÔËÐÐÔÚ<A
+>è¿è¡Œä¸€ä¸ªshellè„šæœ¬çš„æ—¶å€™, ä¼šå¯åŠ¨å‘½ä»¤è§£é‡Šå™¨çš„å¦ä¸€ä¸ªå®žä¾‹. 
+        å°±å¥½åƒä½ çš„å‘½ä»¤æ˜¯åœ¨å‘½ä»¤è¡Œæç¤ºä¸‹è¢«è§£é‡Šçš„ä¸€æ ·, 
+        ç±»ä¼¼äºŽæ‰¹å¤„ç†æ–‡ä»¶ä¸­çš„ä¸€ç³»åˆ—å‘½ä»¤. 
+        æ¯ä¸ªshellè„šæœ¬éƒ½æœ‰æ•ˆåœ°è¿è¡Œåœ¨<A
 HREF="internal.html#FORKREF"
->¸¸</A
->shellµÄÒ»¸ö×Ó½ø³ÌÖÐ. 
-        Õâ¸ö<A
+>çˆ¶</A
+>shellçš„ä¸€ä¸ªå­è¿›ç¨‹ä¸­. 
+        è¿™ä¸ª<A
 HREF="internal.html#FORKREF"
->¸¸</A
->shellÖ¸µÄÊÇÔÚÒ»¸ö¿ØÖÆÖÕ¶Ë»òÔÚÒ»¸ö<I
+>çˆ¶</A
+>shellæŒ‡çš„æ˜¯åœ¨ä¸€ä¸ªæŽ§åˆ¶ç»ˆç«¯æˆ–åœ¨ä¸€ä¸ª<I
 CLASS="FIRSTTERM"
 >xterm</I
->´°¿ÚÖÐ¸ø³öÃüÁîÌáÊ¾·ûµÄÄÇ¸ö½ø³Ì. </P
+>çª—å£ä¸­ç»™å‡ºå‘½ä»¤æç¤ºç¬¦çš„é‚£ä¸ªè¿›ç¨‹. </P
 ><P
->shell½Å±¾Ò²ÄÜÆô¶¯Ëü×ÔÒÑµÄ×Ó½ø³Ì. 
-        ÕâÐ©<EM
->×Óshell</EM
->ÄÜ¹»Ê¹½Å±¾²¢ÐÐµÄ, 
-        ÓÐÐ§µÄ, Í¬Ê±ÔËÐÐ¶à¸ö×ÓÈÎÎñ. 
+>shellè„šæœ¬ä¹Ÿèƒ½å¯åŠ¨å®ƒè‡ªå·²çš„å­è¿›ç¨‹. 
+        è¿™äº›<EM
+>å­shell</EM
+>èƒ½å¤Ÿä½¿è„šæœ¬å¹¶è¡Œçš„, 
+        æœ‰æ•ˆçš„, åŒæ—¶è¿è¡Œå¤šä¸ªå­ä»»åŠ¡. 
         </P
 ><TABLE
 CLASS="SIDEBAR"
@@ -116,18 +116,18 @@ CLASS="SIDEBAR"
 NAME="AEN14158"
 ></A
 ><P
->Ò»°ãÀ´Ëµ, ½Å±¾ÖÐµÄ<A
+>ä¸€èˆ¬æ¥è¯´, è„šæœ¬ä¸­çš„<A
 HREF="external.html#EXTERNALREF"
->Íâ²¿ÃüÁî</A
->ÄÜ¹»<A
+>å¤–éƒ¨å‘½ä»¤</A
+>èƒ½å¤Ÿ<A
 HREF="internal.html#FORKREF"
->Éú³É(fork)</A
->Ò»¸ö×Ó½ø³Ì, 
-			  È»¶øBashµÄ<A
+>ç”Ÿæˆ(fork)</A
+>ä¸€ä¸ªå­è¿›ç¨‹, 
+			  ç„¶è€ŒBashçš„<A
 HREF="internal.html#BUILTINREF"
->ÄÚ½¨ÃüÁî</A
->È´²»»áÕâÃ´×ö. 
-			  Ò²ÕýÊÇÓÉÓÚÕâ¸öÔ­Òò, ÄÚ½¨ÃüÁî±ÈµÈ¼ÛµÄÍâ²¿ÃüÁîÒªÖ´ÐÐµÄ¿ì. 
+>å†…å»ºå‘½ä»¤</A
+>å´ä¸ä¼šè¿™ä¹ˆåš. 
+			  ä¹Ÿæ­£æ˜¯ç”±äºŽè¿™ä¸ªåŽŸå› , å†…å»ºå‘½ä»¤æ¯”ç­‰ä»·çš„å¤–éƒ¨å‘½ä»¤è¦æ‰§è¡Œçš„å¿«. 
 		</P
 ><P
 ></P
@@ -144,7 +144,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="SUBSHELLPARENS1"
 ></A
->Ô²À¨ºÅÖÐµÄÃüÁîÁÐ±í</B
+>åœ†æ‹¬å·ä¸­çš„å‘½ä»¤åˆ—è¡¨</B
 ></P
 ><DL
 ><DT
@@ -154,9 +154,9 @@ NAME="SUBSHELLPARENS1"
 ><TT
 CLASS="REPLACEABLE"
 ><I
->Ô²À¨ºÅ</I
+>åœ†æ‹¬å·</I
 ></TT
->ÖÐÃüÁîÁÐ±íµÄÃüÁî½«»áÔËÐÐÔÚÒ»¸ö×ÓshellÖÐ. </P
+>ä¸­å‘½ä»¤åˆ—è¡¨çš„å‘½ä»¤å°†ä¼šè¿è¡Œåœ¨ä¸€ä¸ªå­shellä¸­. </P
 ></DD
 ></DL
 ></DIV
@@ -184,18 +184,18 @@ VALIGN="TOP"
 ><A
 NAME="PARVIS"
 ></A
->×ÓshellÖÐµÄ±äÁ¿¶ÔÓÚ×ÓshellÖ®ÍâµÄ´úÂë¿éÀ´Ëµ, 
-				  ÊÇ<EM
->²»</EM
->¿É¼ûµÄ. 
-          µ±È», <A
+>å­shellä¸­çš„å˜é‡å¯¹äºŽå­shellä¹‹å¤–çš„ä»£ç å—æ¥è¯´, 
+				  æ˜¯<EM
+>ä¸</EM
+>å¯è§çš„. 
+          å½“ç„¶, <A
 HREF="internal.html#FORKREF"
->¸¸½ø³Ì</A
->Ò²²»ÄÜ·ÃÎÊÕâÐ©±äÁ¿, 
-          ¸¸½ø³ÌÖ¸µÄÊÇ²úÉúÕâ¸ö×ÓshellµÄshell. 
-          ÊÂÊµÉÏ, ÕâÐ©±äÁ¿¶¼ÊÇ<A
+>çˆ¶è¿›ç¨‹</A
+>ä¹Ÿä¸èƒ½è®¿é—®è¿™äº›å˜é‡, 
+          çˆ¶è¿›ç¨‹æŒ‡çš„æ˜¯äº§ç”Ÿè¿™ä¸ªå­shellçš„shell. 
+          äº‹å®žä¸Š, è¿™äº›å˜é‡éƒ½æ˜¯<A
 HREF="localvar.html#LOCALREF"
->¾Ö²¿±äÁ¿</A
+>å±€éƒ¨å˜é‡</A
 >. </P
 ></TD
 ></TR
@@ -208,7 +208,7 @@ NAME="SUBSHELL"
 ></A
 ><P
 ><B
->Àý×Ó 20-1. ×ÓshellÖÐµÄ±äÁ¿×÷ÓÃÓò</B
+>ä¾‹å­ 20-1. å­shellä¸­çš„å˜é‡ä½œç”¨åŸŸ</B
 ></P
 ><TABLE
 BORDER="0"
@@ -226,7 +226,7 @@ CLASS="PROGRAMLISTING"
   4&nbsp;echo
   5&nbsp;
   6&nbsp;echo "Subshell level OUTSIDE subshell = $BASH_SUBSHELL"
-  7&nbsp;# Bash, °æ±¾3, Ìí¼ÓÁËÕâ¸öÐÂµÄ           $BASH_SUBSHELL ±äÁ¿. 
+  7&nbsp;# Bash, ç‰ˆæœ¬3, æ·»åŠ äº†è¿™ä¸ªæ–°çš„           $BASH_SUBSHELL å˜é‡. 
   8&nbsp;echo
   9&nbsp;
  10&nbsp;outer_variable=Outer
@@ -251,9 +251,9 @@ CLASS="PROGRAMLISTING"
  29&nbsp;fi
  30&nbsp;
  31&nbsp;echo "From main body of shell, \"inner_variable\" = $inner_variable"
- 32&nbsp;#  $inner_variable½«±»×÷ÎªÎ´³õÊ¼»¯µÄ±äÁ¿, ±»ÏÔÊ¾³öÀ´, 
- 33&nbsp;#+ ÕâÊÇÒòÎª±äÁ¿ÊÇÔÚ×ÓshellÀï¶¨ÒåµÄ"¾Ö²¿±äÁ¿". 
- 34&nbsp;#  »¹ÓÐ²¹¾ÈµÄ°ì·¨Ã´? 
+ 32&nbsp;#  $inner_variableå°†è¢«ä½œä¸ºæœªåˆå§‹åŒ–çš„å˜é‡, è¢«æ˜¾ç¤ºå‡ºæ¥, 
+ 33&nbsp;#+ è¿™æ˜¯å› ä¸ºå˜é‡æ˜¯åœ¨å­shellé‡Œå®šä¹‰çš„"å±€éƒ¨å˜é‡". 
+ 34&nbsp;#  è¿˜æœ‰è¡¥æ•‘çš„åŠžæ³•ä¹ˆ? 
  35&nbsp;
  36&nbsp;echo
  37&nbsp;
@@ -264,14 +264,14 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ><HR></DIV
 ><P
->Çë²Î¿¼<A
+>è¯·å‚è€ƒ<A
 HREF="gotchas.html#SUBPIT"
->Àý×Ó 31-2</A
+>ä¾‹å­ 31-2</A
 >. </P
 ><P
 >+</P
 ><P
->×ÓshellÖÐµÄÄ¿Â¼¸ü¸Ä²»»áÓ°Ïìµ½¸¸shell. </P
+>å­shellä¸­çš„ç›®å½•æ›´æ”¹ä¸ä¼šå½±å“åˆ°çˆ¶shell. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -279,7 +279,7 @@ NAME="ALLPROFS"
 ></A
 ><P
 ><B
->Àý×Ó 20-2. ÁÐ³öÓÃ»§µÄÅäÖÃÎÄ¼þ</B
+>ä¾‹å­ 20-2. åˆ—å‡ºç”¨æˆ·çš„é…ç½®æ–‡ä»¶</B
 ></P
 ><TABLE
 BORDER="0"
@@ -292,22 +292,22 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# allprofs.sh: ´òÓ¡ËùÓÐÓÃ»§µÄÅäÖÃÎÄ¼þ
+  2&nbsp;# allprofs.sh: æ‰“å°æ‰€æœ‰ç”¨æˆ·çš„é…ç½®æ–‡ä»¶
   3&nbsp;
-  4&nbsp;# ÓÉHeiner Steven±àÐ´, ²¢ÓÉ±¾Êé×÷Õß½øÐÐÁËÐÞ¸Ä. 
+  4&nbsp;# ç”±Heiner Stevenç¼–å†™, å¹¶ç”±æœ¬ä¹¦ä½œè€…è¿›è¡Œäº†ä¿®æ”¹. 
   5&nbsp;
-  6&nbsp;FILE=.bashrc  #  ÔÚÔ­Ê¼½Å±¾ÖÐ, File containing user profile,
-  7&nbsp;              #+ °üº¬ÓÃ»§profileµÄÊÇÎÄ¼þ".profile". 
+  6&nbsp;FILE=.bashrc  #  åœ¨åŽŸå§‹è„šæœ¬ä¸­, File containing user profile,
+  7&nbsp;              #+ åŒ…å«ç”¨æˆ·profileçš„æ˜¯æ–‡ä»¶".profile". 
   8&nbsp;
   9&nbsp;for home in `awk -F: '{print $6}' /etc/passwd`
  10&nbsp;do
- 11&nbsp;  [ -d "$home" ] || continue    # Èç¹ûÃ»ÓÐhomeÄ¿Â¼, Ìø³ö±¾´ÎÑ­»·. 
- 12&nbsp;  [ -r "$home" ] || continue    # Èç¹ûhomeÄ¿Â¼Ã»ÓÐ¶ÁÈ¨ÏÞ, Ìø³ö±¾´ÎÑ­»·. 
+ 11&nbsp;  [ -d "$home" ] || continue    # å¦‚æžœæ²¡æœ‰homeç›®å½•, è·³å‡ºæœ¬æ¬¡å¾ªçŽ¯. 
+ 12&nbsp;  [ -r "$home" ] || continue    # å¦‚æžœhomeç›®å½•æ²¡æœ‰è¯»æƒé™, è·³å‡ºæœ¬æ¬¡å¾ªçŽ¯. 
  13&nbsp;  (cd $home; [ -e $FILE ] &#38;&#38; less $FILE)
  14&nbsp;done
  15&nbsp;
- 16&nbsp;#  µ±½Å±¾½áÊøÊ±£¬²»±ØÊ¹ÓÃ'cd'ÃüÁî·µ»ØÔ­À´µÄÄ¿Â¼. 
- 17&nbsp;#+ ÒòÎª'cd $home'ÊÇÔÚ×ÓshellÖÐ·¢ÉúµÄ, ²»Ó°Ïì¸¸shell. 
+ 16&nbsp;#  å½“è„šæœ¬ç»“æŸæ—¶ï¼Œä¸å¿…ä½¿ç”¨'cd'å‘½ä»¤è¿”å›žåŽŸæ¥çš„ç›®å½•. 
+ 17&nbsp;#+ å› ä¸º'cd $home'æ˜¯åœ¨å­shellä¸­å‘ç”Ÿçš„, ä¸å½±å“çˆ¶shell. 
  18&nbsp;
  19&nbsp;exit 0</PRE
 ></FONT
@@ -316,9 +316,9 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ><HR></DIV
 ><P
->×Óshell¿ÉÓÃÓÚÎªÒ»×éÃüÁîÉèÖÃÒ»¸ö<SPAN
+>å­shellå¯ç”¨äºŽä¸ºä¸€ç»„å‘½ä»¤è®¾ç½®ä¸€ä¸ª<SPAN
 CLASS="QUOTE"
->"¶ÀÁ¢µÄÁÙÊ±»·¾³"</SPAN
+>"ç‹¬ç«‹çš„ä¸´æ—¶çŽ¯å¢ƒ"</SPAN
 >. 
 	      <TABLE
 BORDER="0"
@@ -341,9 +341,9 @@ CLASS="PROGRAMLISTING"
   9&nbsp;  shift 5
  10&nbsp;  COMMAND4
  11&nbsp;  COMMAND5
- 12&nbsp;  exit 3 # Ö»ÊÇ´Ó×ÓshellÍË³ö. 
+ 12&nbsp;  exit 3 # åªæ˜¯ä»Žå­shellé€€å‡º. 
  13&nbsp;)
- 14&nbsp;# ¸¸shell²»ÊÜÈÎºÎÓ°Ïì, ²¢ÇÒ¸¸shellµÄ»·¾³Ò²Ã»ÓÐ±»¸ü¸Ä. 
+ 14&nbsp;# çˆ¶shellä¸å—ä»»ä½•å½±å“, å¹¶ä¸”çˆ¶shellçš„çŽ¯å¢ƒä¹Ÿæ²¡æœ‰è¢«æ›´æ”¹. 
  15&nbsp;COMMAND6
  16&nbsp;COMMAND7</PRE
 ></FONT
@@ -352,7 +352,7 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 >
 
-            ×ÓshellµÄÁíÒ»¸öÓ¦ÓÃ, ÊÇ¿ÉÒÔÓÃÀ´¼ì²âÒ»¸ö±äÁ¿ÊÇ·ñ±»¶¨Òå. 
+            å­shellçš„å¦ä¸€ä¸ªåº”ç”¨, æ˜¯å¯ä»¥ç”¨æ¥æ£€æµ‹ä¸€ä¸ªå˜é‡æ˜¯å¦è¢«å®šä¹‰. 
               <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -366,21 +366,21 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;if (set -u; : $variable) 2&#62; /dev/null
   2&nbsp;then
   3&nbsp;  echo "Variable is set."
-  4&nbsp;fi     #  ±äÁ¿ÒÑ¾­ÔÚµ±Ç°½Å±¾ÖÐ±»ÉèÖÃ, 
-  5&nbsp;       #+ »òÕßÊÇÒ»¸öBashµÄÄÚ½¨±äÁ¿, 
-  6&nbsp;       #+ »òÕßÊÇÔÚµ±Ç°»·¾³ÏÂµÄÒ»¸ö¿É¼û±äÁ¿(Ö¸ÒÑ¾­±»exportµÄ»·¾³±äÁ¿). 
+  4&nbsp;fi     #  å˜é‡å·²ç»åœ¨å½“å‰è„šæœ¬ä¸­è¢«è®¾ç½®, 
+  5&nbsp;       #+ æˆ–è€…æ˜¯ä¸€ä¸ªBashçš„å†…å»ºå˜é‡, 
+  6&nbsp;       #+ æˆ–è€…æ˜¯åœ¨å½“å‰çŽ¯å¢ƒä¸‹çš„ä¸€ä¸ªå¯è§å˜é‡(æŒ‡å·²ç»è¢«exportçš„çŽ¯å¢ƒå˜é‡). 
   7&nbsp;
-  8&nbsp;# Ò²¿ÉÒÔÐ´³É            [[ ${variable-x} != x || ${variable-y} != y ]]
-  9&nbsp;# »ò                    [[ ${variable-x} != x$variable ]]
- 10&nbsp;# »ò                    [[ ${variable+x} = x ]]
- 11&nbsp;# »ò                    [[ ${variable-x} != x ]]</PRE
+  8&nbsp;# ä¹Ÿå¯ä»¥å†™æˆ            [[ ${variable-x} != x || ${variable-y} != y ]]
+  9&nbsp;# æˆ–                    [[ ${variable-x} != x$variable ]]
+ 10&nbsp;# æˆ–                    [[ ${variable+x} = x ]]
+ 11&nbsp;# æˆ–                    [[ ${variable-x} != x ]]</PRE
 ></FONT
 ></TD
 ></TR
 ></TABLE
 >
 
-            ×Óshell»¹¿ÉÒÔÓÃÀ´¼ì²âÒ»¸ö¼ÓËøµÄÎÄ¼þ: 
+            å­shellè¿˜å¯ä»¥ç”¨æ¥æ£€æµ‹ä¸€ä¸ªåŠ é”çš„æ–‡ä»¶: 
 	      <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -393,14 +393,14 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;if (set -C; : &#62; lock_file) 2&#62; /dev/null
   2&nbsp;then
-  3&nbsp;  :   # lock_file²»´æÔÚ, »¹Ã»ÓÐÓÃ»§ÔËÐÐÕâ¸ö½Å±¾
+  3&nbsp;  :   # lock_fileä¸å­˜åœ¨, è¿˜æ²¡æœ‰ç”¨æˆ·è¿è¡Œè¿™ä¸ªè„šæœ¬
   4&nbsp;else
   5&nbsp;  echo "Another user is already running that script."
   6&nbsp;exit 65
   7&nbsp;fi
   8&nbsp;
-  9&nbsp;#  Õâ¶Î³ÌÐòÓÉStephane ChazelasËù±àÐ´,
- 10&nbsp;#+ Paulo Marcel Coelho Aragao×öÁËÒ»Ð©ÐÞ¸Ä. </PRE
+  9&nbsp;#  è¿™æ®µç¨‹åºç”±Stephane Chazelasæ‰€ç¼–å†™,
+ 10&nbsp;#+ Paulo Marcel Coelho Aragaoåšäº†ä¸€äº›ä¿®æ”¹. </PRE
 ></FONT
 ></TD
 ></TR
@@ -408,8 +408,8 @@ CLASS="PROGRAMLISTING"
 >
       </P
 ><P
->½ø³ÌÔÚ²»Í¬µÄ×ÓshellÖÐ¿ÉÒÔ²¢ÐÐµØÖ´ÐÐ. 
-        ÕâÑù¾Í¿ÉÒÔ°ÑÒ»¸ö¸´ÔÓµÄÈÎÎñ·Ö³É¼¸¸öÐ¡µÄ×ÓÎÊÌâÀ´Í¬Ê±´¦Àí. 
+>è¿›ç¨‹åœ¨ä¸åŒçš„å­shellä¸­å¯ä»¥å¹¶è¡Œåœ°æ‰§è¡Œ. 
+        è¿™æ ·å°±å¯ä»¥æŠŠä¸€ä¸ªå¤æ‚çš„ä»»åŠ¡åˆ†æˆå‡ ä¸ªå°çš„å­é—®é¢˜æ¥åŒæ—¶å¤„ç†. 
         </P
 ><DIV
 CLASS="EXAMPLE"
@@ -418,7 +418,7 @@ NAME="PARALLEL-PROCESSES"
 ></A
 ><P
 ><B
->Àý×Ó 20-3. ÔÚ×ÓshellÖÐ½øÐÐ²¢ÐÐ´¦Àí</B
+>ä¾‹å­ 20-3. åœ¨å­shellä¸­è¿›è¡Œå¹¶è¡Œå¤„ç†</B
 ></P
 ><TABLE
 BORDER="0"
@@ -432,14 +432,14 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;	(cat list1 list2 list3 | sort | uniq &#62; list123) &#38;
   2&nbsp;	(cat list4 list5 list6 | sort | uniq &#62; list456) &#38;
-  3&nbsp;	# ÁÐ±íµÄºÏ²¢ÓëÅÅÐòÍ¬Ê±½øÐÐ. 
-  4&nbsp;	# ·Åµ½ºóÌ¨ÔËÐÐ¿ÉÒÔÈ·±£ÄÜ¹»²¢ÐÐÖ´ÐÐ. 
+  3&nbsp;	# åˆ—è¡¨çš„åˆå¹¶ä¸ŽæŽ’åºåŒæ—¶è¿›è¡Œ. 
+  4&nbsp;	# æ”¾åˆ°åŽå°è¿è¡Œå¯ä»¥ç¡®ä¿èƒ½å¤Ÿå¹¶è¡Œæ‰§è¡Œ. 
   5&nbsp;	#
-  6&nbsp;	# µÈÐ§ÓÚ
+  6&nbsp;	# ç­‰æ•ˆäºŽ
   7&nbsp;	#   cat list1 list2 list3 | sort | uniq &#62; list123 &#38;
   8&nbsp;	#   cat list4 list5 list6 | sort | uniq &#62; list456 &#38;
   9&nbsp;	
- 10&nbsp;	wait   # ²»ÔÙÖ´ÐÐÏÂÃæµÄÃüÁî, Ö±µ½×ÓshellÖ´ÐÐÍê±Ï. 
+ 10&nbsp;	wait   # ä¸å†æ‰§è¡Œä¸‹é¢çš„å‘½ä»¤, ç›´åˆ°å­shellæ‰§è¡Œå®Œæ¯•. 
  11&nbsp;	
  12&nbsp;	diff list123 list456</PRE
 ></FONT
@@ -448,11 +448,11 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ><HR></DIV
 ><P
->Ê¹ÓÃ<SPAN
+>ä½¿ç”¨<SPAN
 CLASS="QUOTE"
 >"|"</SPAN
->¹ÜµÀ²Ù×÷·û, ½«I/OÁ÷ÖØ¶¨Ïòµ½Ò»¸ö×ÓshellÖÐ, 
-	  ±ÈÈç<KBD
+>ç®¡é“æ“ä½œç¬¦, å°†I/Oæµé‡å®šå‘åˆ°ä¸€ä¸ªå­shellä¸­, 
+	  æ¯”å¦‚<KBD
 CLASS="USERINPUT"
 >ls -al | (command)</KBD
 >. </P
@@ -477,14 +477,14 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->ÔÚ<TT
+>åœ¨<TT
 CLASS="REPLACEABLE"
 ><I
->´óÀ¨ºÅ</I
+>å¤§æ‹¬å·</I
 ></TT
->ÖÐµÄÃüÁî<EM
->²»»á</EM
->Æô¶¯×Óshell. </P
+>ä¸­çš„å‘½ä»¤<EM
+>ä¸ä¼š</EM
+>å¯åŠ¨å­shell. </P
 ><P
 >{ command1; command2; command3; . . . commandN; }</P
 ></TD
@@ -510,7 +510,7 @@ VALIGN="top"
 ><A
 HREF="globbingref.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -519,7 +519,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -528,7 +528,7 @@ VALIGN="top"
 ><A
 HREF="restricted-sh.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -536,7 +536,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Í¨Åä(globbing)</TD
+>é€šé…(globbing)</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -544,13 +544,13 @@ VALIGN="top"
 ><A
 HREF="part4.html"
 ACCESSKEY="U"
->ÉÏÒ»¼¶</A
+>ä¸Šä¸€çº§</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->ÊÜÏÞshell</TD
+>å—é™shell</TD
 ></TR
 ></TABLE
 ></DIV

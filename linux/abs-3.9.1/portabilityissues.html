@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->����ֲ������</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>可移植性问题</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="杂项"
 HREF="miscellany.html"><LINK
 REL="PREVIOUS"
-TITLE="��ȫ����"
+TITLE="安全问题"
 HREF="securityissues.html"><LINK
 REL="NEXT"
-TITLE="Windows�µ�shell�ű�"
+TITLE="Windows下的shell脚本"
 HREF="winscript.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="securityissues.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->33. ����</TD
+>33. 杂项</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="winscript.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,29 +74,29 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="PORTABILITYISSUES"
->33.9. ����ֲ������</A
+>33.9. 可移植性问题</A
 ></H1
 ><P
->�Ȿ����Ҫ��������, ��GNU/Linuxϵͳ��, ��δ����ض���Bash�Ľű�. 
-	  ����ʹ��<B
+>这本书主要描述的是, 在GNU/Linux系统上, 如何处理特定于Bash的脚本. 
+	  但是使用<B
 CLASS="COMMAND"
 >sh</B
->��<B
+>和<B
 CLASS="COMMAND"
 >ksh</B
->���û���Ȼ��������ҵ��ܶ��м�ֵ�Ķ���. .</P
+>的用户仍然会从这里找到很多有价值的东西. .</P
 ><P
->����, ���಻ͬ��shell�ű�������ʵ����ѭPOSIX 1003.2��׼. 
-		���ʹ��<CODE
+>碰巧, 许多不同的shell脚本语言其实都遵循POSIX 1003.2标准. 
+		如果使用<CODE
 CLASS="OPTION"
 >--posix</CODE
->ѡ��������Bash, 
-	   �����ڽű�ͷ����<B
+>选项来调用Bash, 
+	   或者在脚本头插入<B
 CLASS="COMMAND"
 >set -o posix</B
 >, 
-	  ��ô����ʹBash�������׼�ǳ��ӽ��ر���һ��. 
-	  ��һ�ְ취�����ڽű�ͷʹ��
+	  那么将会使Bash与这个标准非常接近地保持一致. 
+	  另一种办法就是在脚本头使用
 	    <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -113,7 +113,7 @@ CLASS="PROGRAMLISTING"
 ></TR
 ></TABLE
 >
-	  ������
+	  而不是
 	    <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -130,99 +130,99 @@ CLASS="PROGRAMLISTING"
 ></TR
 ></TABLE
 >
-	  ע����Linux����ĳЩ�ض���UNIX��, <TT
+	  注意在Linux或者某些特定的UNIX上, <TT
 CLASS="FILENAME"
 >/bin/sh</TT
->��ʵֻ��һ��ָ��<TT
+>其实只是一个指向<TT
 CLASS="FILENAME"
 >/bin/bash</TT
->��<A
+>的<A
 HREF="basic.html#LINKREF"
->����</A
+>链接</A
 >, 
-	  ����ʹ�����ַ������ýű��Ļ�, �������Bash����չ����. 
+	  并且使用这种方法调用脚本的话, 将会禁用Bash的扩展功能. 
 	  </P
 ><P
->�������Bash�ű�������������<B
+>大多数的Bash脚本都好像运行在<B
 CLASS="COMMAND"
 >ksh</B
->��һ��, 
-		  ��������, ������ΪChet Rameyһֱ�����ڽ�<B
+>上一样, 
+		  反过来看, 这是因为Chet Ramey一直致力于将<B
 CLASS="COMMAND"
 >ksh</B
->��������ֲ��Bash�����°汾��. 
+>的特性移植到Bash的最新版本上. 
 	  </P
 ><P
->������ҵUNIX������˵, ����ڽű��а�����ʹ��GNU���Եı�׼����, 
-		 ��ô��Щ�ű����ܲ�����������. 
-	  �������������, �������õ��˼���ĸĹ�, 
-	  ������Ϊ��ʹ��<SPAN
+>对于商业UNIX机器来说, 如果在脚本中包含了使用GNU特性的标准命令, 
+		 那么这些脚本可能不会正常运行. 
+	  但是在最近几年, 这个问题得到了极大的改观, 
+	  这是因为即使在<SPAN
 CLASS="QUOTE"
->"���ͷ"</SPAN
->UNIX��, 
-	  GNU���߰�Ҳ�ǳ��õ��滻����ͬ���˽�й���. 
-	  ����ԭʼ��UNIX��˵, 
+>"大块头"</SPAN
+>UNIX上, 
+	  GNU工具包也非常好的替换掉了同类的私有工具. 
+	  对于原始的UNIX来说, 
 	  <A
 HREF="http://linux.oreillynet.com/pub/a/linux/2002/02/28/caldera.html"
 TARGET="_top"
->Դ����Ļ�ɽ�緢</A
->�Ӿ�����������. 
+>源代码的火山喷发</A
+>加剧了这种趋势. 
 	  </P
 ><P
->Bash���е�ĳЩ�����Ǵ�ͳ��Bourne shell��ȱ����. 
-	  ����������е�һ����: 
+>Bash具有的某些特性是传统的Bourne shell所缺乏的. 
+	  下面就是其中的一部分: 
 
 	<P
 ></P
 ><UL
 ><LI
 ><P
->ĳЩ��չ��<A
+>某些扩展的<A
 HREF="options.html#INVOCATIONOPTIONSREF"
->����ѡ��</A
+>调用选项</A
 ></P
 ></LI
 ><LI
 ><P
->ʹ��<B
+>使用<B
 CLASS="COMMAND"
 >$(    )</B
->��ʽ��<A
+>形式的<A
 HREF="commandsub.html#COMMANDSUBREF"
->�����滻</A
+>命令替换</A
 ></P
 ></LI
 ><LI
 ><P
->ĳЩ<A
+>某些<A
 HREF="string-manipulation.html#STRINGMANIP"
->�ַ�������</A
->������</P
+>字符串处理</A
+>操作符</P
 ></LI
 ><LI
 ><P
 ><A
 HREF="process-sub.html#PROCESSSUBREF"
->�����滻</A
+>进程替换</A
 ></P
 ></LI
 ><LI
 ><P
->Bash���е�<A
+>Bash特有的<A
 HREF="internal.html#BUILTINREF"
->�ڽ�����</A
+>内建命令</A
 ></P
 ></LI
 ></UL
 >
 	</P
 ><P
->��ο�<A
+>请参考<A
 HREF="ftp://ftp.cwru.edu/pub/bash/FAQ"
 TARGET="_top"
 >Bash
 	   F.A.Q.</A
->, �㽫�����������б�. </P
+>, 你将会获得完整的列表. </P
 ></DIV
 ><DIV
 CLASS="NAVFOOTER"
@@ -242,7 +242,7 @@ VALIGN="top"
 ><A
 HREF="securityissues.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -251,7 +251,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -260,7 +260,7 @@ VALIGN="top"
 ><A
 HREF="winscript.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -268,7 +268,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->��ȫ����</TD
+>安全问题</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -276,13 +276,13 @@ VALIGN="top"
 ><A
 HREF="miscellany.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->Windows�µ�shell�ű�</TD
+>Windows下的shell脚本</TD
 ></TR
 ></TABLE
 ></DIV

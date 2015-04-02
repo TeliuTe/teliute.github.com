@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->��ʷ����</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>历史命令</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="���ػ�"
+TITLE="本地化"
 HREF="localization.html"><LINK
 REL="NEXT"
-TITLE="һ���򵥵�.bashrc�ļ�"
+TITLE="一个简单的.bashrc文件"
 HREF="sample-bashrc.html"></HEAD
 ><BODY
 CLASS="APPENDIX"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="localization.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="sample-bashrc.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -71,14 +71,14 @@ CLASS="APPENDIX"
 ><A
 NAME="HISTCOMMANDS"
 ></A
->Appendix J. ��ʷ����</H1
+>Appendix J. 历史命令</H1
 ><P
->Bash shell�ṩ�����й������ڱ༭�Ͳ����û���<EM
->������ʷ</EM
+>Bash shell提供命令行工具用于编辑和操作用户的<EM
+>命令历史</EM
 >. 
-		  ����ʵ��Ҫ����Ϊ�˷���, ��ʡ�û����ظ�����. </P
+		  这其实主要就是为了方便, 节省用户的重复按键. </P
 ><P
->Bash��ʷ����: 
+>Bash历史命令: 
        <P
 ></P
 ><OL
@@ -133,7 +133,7 @@ CLASS="COMPUTEROUTPUT"
 >
 	    </P
 ><P
->��Bash��ʷ������ص��ڲ�����: 
+>与Bash历史命令相关的内部变量: 
        <P
 ></P
 ><OL
@@ -164,7 +164,7 @@ TYPE="1"
 ></LI
 ><LI
 ><P
->$HISTTIMEFORMAT (Bash 3.0������汾)</P
+>$HISTTIMEFORMAT (Bash 3.0或后续版本)</P
 ></LI
 ><LI
 ><P
@@ -202,7 +202,7 @@ TYPE="1"
 >
      </P
 ><P
->���ҵ���, Bash��ʷ�����ڽű���û��. 
+>不幸的是, Bash历史工具在脚本中没用. 
         <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -215,12 +215,12 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;# history.sh
-  3&nbsp;# �����ڽű���ʹ��'history'����. 
+  3&nbsp;# 尝试在脚本中使用'history'命令. 
   4&nbsp;
   5&nbsp;history
   6&nbsp;
-  7&nbsp;# �ű�û�������. 
-  8&nbsp;# ��ʷ����ܹ����ڽű���. </PRE
+  7&nbsp;# 脚本没产生输出. 
+  8&nbsp;# 历史命令不能工作在脚本中. </PRE
 ></FONT
 ></TD
 ></TR
@@ -257,12 +257,12 @@ CLASS="COMPUTEROUTPUT"
 >
 	  </P
 ><P
->վ��<A
+>站点<A
 HREF="http://www.deadman.org/bash.html"
 TARGET="_top"
 >Advancing in the
        Bash Shell</A
->������һ�ݹ��������Bash��ʹ����ʷ�������ϸ����. 
+>给出了一份关于如何在Bash中使用历史命令的详细介绍. 
        </P
 ></DIV
 ><DIV
@@ -283,7 +283,7 @@ VALIGN="top"
 ><A
 HREF="localization.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -292,7 +292,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -301,7 +301,7 @@ VALIGN="top"
 ><A
 HREF="sample-bashrc.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -309,7 +309,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->���ػ�</TD
+>本地化</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -319,10 +319,10 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->һ���򵥵�<TT
+>一个简单的<TT
 CLASS="FILENAME"
 >.bashrc</TT
->�ļ�</TD
+>文件</TD
 ></TR
 ></TABLE
 ></DIV

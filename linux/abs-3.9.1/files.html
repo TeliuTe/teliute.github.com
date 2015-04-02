@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->��Ҫ���ļ�</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>重要的文件</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="Bash������ѡ��"
+TITLE="Bash命令行选项"
 HREF="bash-options.html"><LINK
 REL="NEXT"
-TITLE="��Ҫ��ϵͳĿ¼"
+TITLE="重要的系统目录"
 HREF="systemdirs.html"></HEAD
 ><BODY
 CLASS="APPENDIX"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="bash-options.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="systemdirs.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -71,7 +71,7 @@ CLASS="APPENDIX"
 ><A
 NAME="FILES"
 ></A
->Appendix G. ��Ҫ���ļ�</H1
+>Appendix G. 重要的文件</H1
 ><P
 ></P
 ><DIV
@@ -81,19 +81,19 @@ CLASS="VARIABLELIST"
 ><A
 NAME="FILESREF1"
 ></A
->�����ļ�</B
+>启动文件</B
 ></P
 ><DL
 ><DT
 ></DT
 ><DD
 ><P
->��Щ�ļ�����������<A
+>这些文件包含别名和<A
 HREF="othertypesv.html#ENVREF"
->��������</A
+>环境变量</A
 >, 
-		  ������Щ�����ͻ���������ʹ��Bash������Ϊһ���û�shell������, 
-		  ��ϵͳ��ʼ��֮��, ��Щ�����ͱ���Ҳ�ɱ������ĵ�Bash�ű�����. 
+		  正是这些别名和环境变量才使得Bash可以作为一个用户shell来运行, 
+		  当系统初始化之后, 这些别名和变量也可被其他的的Bash脚本调用. 
 	    </P
 ></DD
 ><DT
@@ -103,8 +103,8 @@ CLASS="FILENAME"
 ></DT
 ><DD
 ><P
->ϵͳ��Χ��Ĭ��ֵ, �󲿷��������û���(���е�Bourne���͵�shell, 
-			����������Bash
+>系统范围的默认值, 大部分用来设置环境(所有的Bourne类型的shell, 
+			而不仅仅是Bash
 	     <A
 NAME="AEN18436"
 HREF="#FTN.AEN18436"
@@ -121,9 +121,9 @@ CLASS="FILENAME"
 ></DT
 ><DD
 ><P
->�ض���Bash��, ϵͳ��Χ������<A
+>特定于Bash的, 系统范围函数与<A
 HREF="aliases.html#ALIASREF"
->����</A
+>别名</A
 ></P
 ></DD
 ><DT
@@ -136,8 +136,8 @@ CLASS="VARNAME"
 ></DT
 ><DD
 ><P
->�û������, ����Ĭ������, 
-			��ÿ���û���homeĿ¼�¶����ҵ�(���ظ���������<TT
+>用户定义的, 环境默认设置, 
+			在每个用户的home目录下都可找到(本地副本保存在<TT
 CLASS="FILENAME"
 >/etc/profile</TT
 >)</P
@@ -152,20 +152,20 @@ CLASS="VARNAME"
 ></DT
 ><DD
 ><P
->�û������Bash��ʼ���ļ�, 
-			������ÿ���û���homeĿ¼���ҵ�(���ظ���������<TT
+>用户定义的Bash初始化文件, 
+			可以在每个用户的home目录下找到(本地副本保存在<TT
 CLASS="FILENAME"
 >/etc/bashrc</TT
 >). 
-		ֻ�н���ʽ��shell���û��ű��Ż��ȡ����ļ�. 
-		��ο�<A
+		只有交互式的shell和用户脚本才会读取这个文件. 
+		请参考<A
 HREF="sample-bashrc.html"
 >Appendix K</A
 >, 
-		����һ��<TT
+		这是一个<TT
 CLASS="FILENAME"
 >.bashrc</TT
->�ļ�������. </P
+>文件的例子. </P
 ></DD
 ></DL
 ></DIV
@@ -178,7 +178,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="LOGOUTFILEREF1"
 ></A
->�ǳ��ļ�</B
+>登出文件</B
 ></P
 ><DL
 ><DT
@@ -191,9 +191,9 @@ CLASS="VARNAME"
 ></DT
 ><DD
 ><P
->�û������ָ���ļ�, 
-			��ÿ���û���homeĿ¼���ҵ�. 
-			�ڵǳ�(Bash)shell��ʱ��, ����ļ��е�����ͻ�õ�ִ��. 
+>用户定义的指令文件, 
+			在每个用户的home目录下找到. 
+			在登出(Bash)shell的时候, 这个文件中的命令就会得到执行. 
 	    </P
 ></DD
 ></DL
@@ -201,7 +201,7 @@ CLASS="VARNAME"
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -224,7 +224,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->����Ӧ����<B
+>不能应用于<B
 CLASS="COMMAND"
 >csh</B
 >,
@@ -232,10 +232,10 @@ CLASS="COMMAND"
 CLASS="COMMAND"
 >tcsh</B
 >, 
-		����Щ�뾭��Bourne shell�޹ص�shell(Ҳ����˵��Щ����������<B
+		或那些与经典Bourne shell无关的shell(也就是说那些不是派生自<B
 CLASS="COMMAND"
 >sh</B
->��shell). 
+>的shell). 
 	       </P
 ></TD
 ></TR
@@ -258,7 +258,7 @@ VALIGN="top"
 ><A
 HREF="bash-options.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -267,7 +267,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -276,7 +276,7 @@ VALIGN="top"
 ><A
 HREF="systemdirs.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -284,7 +284,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Bash������ѡ��</TD
+>Bash命令行选项</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -294,7 +294,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->��Ҫ��ϵͳĿ¼</TD
+>重要的系统目录</TD
 ></TR
 ></TABLE
 ></DIV

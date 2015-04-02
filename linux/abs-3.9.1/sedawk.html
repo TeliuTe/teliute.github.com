@@ -1,16 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->һ��ѧϰSed��Awk��С�ֲ�</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>一个学习Sed和Awk的小手册</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="�ο���Ƭ"
+TITLE="参考卡片"
 HREF="refcards.html"><LINK
 REL="NEXT"
 TITLE="Sed"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="refcards.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="x17814.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -71,13 +71,13 @@ CLASS="APPENDIX"
 ><A
 NAME="SEDAWK"
 ></A
->Appendix C. һ��ѧϰSed��Awk��С�ֲ�</H1
+>Appendix C. 一个学习Sed和Awk的小手册</H1
 ><DIV
 CLASS="TOC"
 ><DL
 ><DT
 ><B
->Ŀ¼</B
+>目录</B
 ></DT
 ><DT
 >C.1. <A
@@ -97,43 +97,43 @@ NAME="SEDREF"
 ></A
 ></P
 ><P
->����һ�ݹ���<B
+>这是一份关于<B
 CLASS="COMMAND"
 >sed</B
->��<B
+>和<B
 CLASS="COMMAND"
 >awk</B
->�ı��������ߵĸ�Ҫ����. 
-		  ����������ֻ����һЩ��������, 
-		  ������Щ���������Ѿ��㹻�������˽������shell�ű���ʹ�ü򵥵�sed��awk�ṹ. 
+>文本处理工具的概要介绍. 
+		  我们在这里只讨论一些基本命令, 
+		  但是这些基本命令已经足够让我们了解如何在shell脚本中使用简单的sed和awk结构. 
 	</P
 ><P
 ><B
 CLASS="COMMAND"
 >sed</B
->: һ���ǽ������ı��ļ��༭��</P
+>: 一个非交互的文本文件编辑器</P
 ><P
 ><B
 CLASS="COMMAND"
 >awk</B
->: һ���������ģʽ��������, ʹ������C���﷨</P
+>: 一个面向域的模式处理语言, 使用类似C的语法</P
 ><P
->�������������������ߵĲ�����֮ǰ, ������˵һ�����ǵĹ���, 
-		   ���������߶�ʹ�����Ƶĵ����﷨, ��ʹ��<A
+>在我们讨论这两个工具的差异性之前, 我们先说一下它们的共性, 
+		   这两个工具都使用类似的调用语法, 都使用<A
 HREF="regexp.html#REGEXREF"
->�������ʽ</A
+>正则表达式</A
 >, 
-		   Ĭ������¶���<TT
+		   默认情况下都从<TT
 CLASS="FILENAME"
 >stdin</TT
->�ж�ȡ����, 
-		   ���Ҷ������<TT
+>中读取输入, 
+		   并且都输出到<TT
 CLASS="FILENAME"
 >stdout</TT
 >. 
-		   ���Ƕ�����Ϊ���õ�UNIX����, ���������ܹ��ܺõ���һ����. 
-		   ����һ�����������ͨ���ܵ����ݸ���һ��, �������������������, 
-		   ��ʹ��shell�ű��ܹ��߱�һЩPerl������. 
+		   它们都是行为良好的UNIX工具, 并且它们能够很好的在一起工作. 
+		   其中一个的输出可以通过管道传递给另一个, 正是由于它们组合能力, 
+		   才使得shell脚本能够具备一些Perl的特性. 
 	 </P
 ><DIV
 CLASS="NOTE"
@@ -156,14 +156,14 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->ע��һ������������֮���һ���ǳ���Ҫ������, 
-			 shell�ű����Ժ����׵ĸ�sed���ݲ���, 
-			 ���Ǵ��ݲ�����awk�ͱȽϸ���(��ο�<A
+>注意一下这两个工具之间的一个非常重要的区别, 
+			 shell脚本可以很容易的给sed传递参数, 
+			 但是传递参数给awk就比较复杂(请参考<A
 HREF="wrapper.html#COLTOTALER"
->���� 33-5</A
->��<A
+>例子 33-5</A
+>和<A
 HREF="ivr.html#COLTOTALER2"
->���� 9-24</A
+>例子 9-24</A
 >). 
 	 </P
 ></TD
@@ -189,7 +189,7 @@ VALIGN="top"
 ><A
 HREF="refcards.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -198,7 +198,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -207,7 +207,7 @@ VALIGN="top"
 ><A
 HREF="x17814.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -215,7 +215,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->�ο���Ƭ</TD
+>参考卡片</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"

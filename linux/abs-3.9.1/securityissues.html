@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->��ȫ����</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>安全问题</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="����"
+TITLE="杂项"
 HREF="miscellany.html"><LINK
 REL="PREVIOUS"
-TITLE="����С����"
+TITLE="各种小技巧"
 HREF="assortedtips.html"><LINK
 REL="NEXT"
-TITLE="����ֲ������"
+TITLE="可移植性问题"
 HREF="portabilityissues.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="assortedtips.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->33. ����</TD
+>33. 杂项</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="portabilityissues.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,7 +74,7 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="SECURITYISSUES"
->33.8. ��ȫ����</A
+>33.8. 安全问题</A
 ></H1
 ><DIV
 CLASS="SECT2"
@@ -82,33 +82,33 @@ CLASS="SECT2"
 CLASS="SECT2"
 ><A
 NAME="INFECTEDSCRIPTS"
->33.8.1. ����Ⱦ�Ľű�</A
+>33.8.1. 被感染的脚本</A
 ></H2
 ><P
->������Խű���ȫ����һ����̵Ľ��ܷǳ�����. 
-	  shell�ű����ܻ����<EM
->���</EM
+>在这里对脚本安全进行一个简短的介绍非常合适. 
+	  shell脚本可能会包含<EM
+>蠕虫</EM
 >,
 	  <EM
->������ľ��</EM
->, �������ܻ���<EM
->����</EM
+>特洛伊木马</EM
+>, 甚至可能会中<EM
+>病毒</EM
 >.
-	  ������Щԭ��, ��Զ��Ҫ��root���������нű�(���߽��Լ���̫����Ľű����뵽<TT
+	  由于这些原因, 永远不要用root身份来运行脚本(或者将自己不太清楚的脚本插入到<TT
 CLASS="FILENAME"
 >/etc/rc.d</TT
->�����ϵͳ�����ű���),
-	  ������ȷ������ֵ��������Դ����, �������Ѿ�С�ĵķ���������ű�, 
-	  ��ȷ�����������ʲôΣ��. 
+>里面的系统启动脚本中),
+	  除非你确定这是值得信赖的源代码, 或者你已经小心的分析了这个脚本, 
+	  并确定它不会产生什么危害. 
 	  </P
 ><P
->Bellʵ�����Լ������ط��Ĳ����о���Ա, ����M.
-	  Douglas McIlroy, Tom Duff, ��Fred Cohen�Ѿ��о�����shell�ű�������ʵ��. 
-	  ������Ϊ��ʹ�ǳ�ѧ��Ҳ���Ժ����׵ı�д�ű�����, 
-	  ����<SPAN
+>Bell实验室以及其他地方的病毒研究人员, 包括M.
+	  Douglas McIlroy, Tom Duff, 和Fred Cohen已经研究过了shell脚本病毒的实现. 
+	  他们认为即使是初学者也可以很容易的编写脚本病毒, 
+	  比如<SPAN
 CLASS="QUOTE"
->"�ű�С��(script kiddie)"</SPAN
->, ��д��һ��. 
+>"脚本小子(script kiddie)"</SPAN
+>, 就写了一个. 
 	    <A
 NAME="AEN16084"
 HREF="#FTN.AEN16084"
@@ -119,8 +119,8 @@ CLASS="footnote"
 >
 	  </P
 ><P
->��Ҳ��ѧϰ�ű���̵���һ��ԭ��. 
-		  �ܹ��ܺõ��˽�ű�, �Ϳ����õ�ϵͳ���ܺ��͵Ĺ������ƻ�. 
+>这也是学习脚本编程的另一个原因. 
+		  能够很好地了解脚本, 就可以让的系统免受骇客的攻击和破坏. 
 	  </P
 ></DIV
 ><DIV
@@ -129,33 +129,33 @@ CLASS="SECT2"
 CLASS="SECT2"
 ><A
 NAME="HIDINGSOURCE"
->33.8.2. ����Shell�ű�Դ����</A
+>33.8.2. 隐藏Shell脚本源代码</A
 ></H2
 ><P
->���ڰ�ȫĿ��, �ýű����ɶ�, Ҳ���б�Ҫ��. 
-	  ������������Խ��ű�ת��Ϊ��Ӧ�Ķ����ƿ�ִ���ļ��ͺ���. 
-	  Francisco Rosales��<A
+>出于安全目的, 让脚本不可读, 也是有必要的. 
+	  如果有软件可以将脚本转化为相应的二进制可执行文件就好了. 
+	  Francisco Rosales的<A
 HREF="http://www.datsi.fi.upm.es/~frosal/sources/"
 TARGET="_top"
 >shc -
 	  generic shell script compiler</A
->���Գ�ɫ������������. </P
+>可以出色的完成这个任务. </P
 ><P
->���ҵ���, ����<A
+>不幸的是, 根据<A
 HREF="http://www.linuxjournal.com/article/8256"
 TARGET="_top"
->������2005��10�µ�<EM
+>发表在2005年10月的<EM
 >Linux Journal</EM
->�ϵ�һƪ����</A
+>上的一篇文章</A
 >, 
-	 �������ļ�, ������ĳЩ�����, ���Ա��ָ���ԭʼ�Ľű�����. 
-	 ���ǲ�����ô˵, ������Щ�������ߵĺ�����˵, ����Ȼ��һ�ֱ�֤�ű���ȫ����Ч�취. 
+	 二进制文件, 至少在某些情况下, 可以被恢复成原始的脚本代码. 
+	 但是不管怎么说, 对于那些技术不高的骇客来说, 这仍然是一种保证脚本安全的有效办法. 
 	 </P
 ></DIV
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -178,17 +178,17 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->��ο�Marius van Oers������, <A
+>请参考Marius van Oers的文章, <A
 HREF="http://www.virusbtn.com/magazine/archives/200204/malshell.xml"
 TARGET="_top"
 >Unix
 	      Shell Scripting Malware</A
->, ��������<A
+>, 还有列在<A
 HREF="biblio.html#BIBLIOREF"
->�ο���Ŀ</A
->�е�<EM
+>参考书目</A
+>中的<EM
 >Denning</EM
->����Ŀ. </P
+>的书目. </P
 ></TD
 ></TR
 ></TABLE
@@ -210,7 +210,7 @@ VALIGN="top"
 ><A
 HREF="assortedtips.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -219,7 +219,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -228,7 +228,7 @@ VALIGN="top"
 ><A
 HREF="portabilityissues.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -236,7 +236,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->����С����</TD
+>各种小技巧</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -244,13 +244,13 @@ VALIGN="top"
 ><A
 HREF="miscellany.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->����ֲ������</TD
+>可移植性问题</TD
 ></TR
 ></TABLE
 ></DIV

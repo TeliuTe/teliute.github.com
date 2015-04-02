@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->33.5. ½«½Å±¾"²ÊÉ«»¯"</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>33.5. å°†è„šæœ¬"å½©è‰²åŒ–"</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="µİ¹é"
+TITLE="é€’å½’"
 HREF="recursionsct.html"><LINK
 REL="NEXT"
-TITLE="ÓÅ»¯"
+TITLE="ä¼˜åŒ–"
 HREF="optimizations.html"></HEAD
 ><BODY
 CLASS="PREFACE"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR>
 <TR><TD
 WIDTH="10%"
@@ -43,7 +43,7 @@ VALIGN="bottom"
 ><A
 HREF="recursionsct.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -57,7 +57,7 @@ VALIGN="bottom"
 ><A
 HREF="optimizations.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -70,55 +70,55 @@ CLASS="PREFACE"
 ><A
 NAME="PREFACE"
 ></A
->²ÊÉ«½Å±¾</H1
+>å½©è‰²è„šæœ¬</H1
 ><DIV
 CLASS="TOC"
-><DL><DT><B>Ä¿Â¼</B
+><DL><DT><B>ç›®å½•</B
 ></DT><DT>
-33.5. ²ÊÉ«½Å±¾<br />
+33.5. å½©è‰²è„šæœ¬<br />
 --------------<br />
-ANSI [1]&nbsp; ¶¨ÒåÁËÆÁÄ»ÊôĞÔµÄ×ªÒåĞòÁĞ¼¯ºÏ,ÀıÈç´ÖÌåÎÄ±¾,±³¾°ºÍÇ°¾°ÑÕÉ«. DOSÅú´¦ÀíÎÄ<br />
-¼ş(batch files) Ò»°ãÊ¹ÓÃANSIµÄ×ªÒå´úÂëÀ´¿ØÖÆÉ«²ÊÊä³ö,Bash½Å±¾Ò²ÊÇÕâÃ´×öµÄ.<br />
-Example 33-11 Ò»¸ö "²ÊÉ«µÄ" µØÖ·×ÊÁÏ¿â<br />
+ANSI [1]&nbsp; å®šä¹‰äº†å±å¹•å±æ€§çš„è½¬ä¹‰åºåˆ—é›†åˆ,ä¾‹å¦‚ç²—ä½“æ–‡æœ¬,èƒŒæ™¯å’Œå‰æ™¯é¢œè‰². DOSæ‰¹å¤„ç†æ–‡<br />
+ä»¶(batch files) ä¸€èˆ¬ä½¿ç”¨ANSIçš„è½¬ä¹‰ä»£ç æ¥æ§åˆ¶è‰²å½©è¾“å‡º,Bashè„šæœ¬ä¹Ÿæ˜¯è¿™ä¹ˆåšçš„.<br />
+Example 33-11 ä¸€ä¸ª "å½©è‰²çš„" åœ°å€èµ„æ–™åº“<br />
 ################################Start
 Script#######################################<br />
 &nbsp;1 #!/bin/bash<br />
-&nbsp;2 # ex30a.sh: ex30.shµÄ"²ÊÉ«" °æ±¾.<br />
+&nbsp;2 # ex30a.sh: ex30.shçš„"å½©è‰²" ç‰ˆæœ¬.<br />
 &nbsp;3
 #&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-Ã»ÓĞ¼Ó¹¤´¦ÀíµÄµØÖ·×ÊÁÏ¿â<br />
+æ²¡æœ‰åŠ å·¥å¤„ç†çš„åœ°å€èµ„æ–™åº“<br />
 &nbsp;4<br />
 &nbsp;5<br />
 &nbsp;6
 clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# Çå³ıÆÁÄ».<br />
+# æ¸…é™¤å±å¹•.<br />
 &nbsp;7<br />
 &nbsp;8 echo -n "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 "<br />
 &nbsp;9 echo -e '\E[37;44m'"\033[1mContact List\033[0m"<br />
 10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# °×É«ÎªÇ°¾°É«,À¶É«Îª±³¾°É«<br />
+# ç™½è‰²ä¸ºå‰æ™¯è‰²,è“è‰²ä¸ºèƒŒæ™¯è‰²<br />
 11 echo; echo<br />
 12 echo -e "\033[1mChoose one of the following persons:\033[0m"<br />
 13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ´ÖÌå<br />
+# ç²—ä½“<br />
 14 tput sgr0<br />
 15 echo "(Enter only the first letter of name.)"<br />
 16 echo<br />
-17 echo -en '\E[47;34m'"\033[1mE\033[0m"&nbsp;&nbsp; # À¶É«<br />
+17 echo -en '\E[47;34m'"\033[1mE\033[0m"&nbsp;&nbsp; # è“è‰²<br />
 18 tput
 sgr0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# °ÑÉ«²ÊÉèÖÃÎª"³£¹æ"<br />
+# æŠŠè‰²å½©è®¾ç½®ä¸º"å¸¸è§„"<br />
 19 echo "vans,
 Roland"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 # "[E]vans, Roland"<br />
-20 echo -en '\E[47;35m'"\033[1mJ\033[0m"&nbsp;&nbsp; # ºì×ÏÉ«<br />
+20 echo -en '\E[47;35m'"\033[1mJ\033[0m"&nbsp;&nbsp; # çº¢ç´«è‰²<br />
 21 tput sgr0<br />
 22 echo "ones, Mildred"<br />
-23 echo -en '\E[47;32m'"\033[1mS\033[0m"&nbsp;&nbsp; # ÂÌÉ«<br />
+23 echo -en '\E[47;32m'"\033[1mS\033[0m"&nbsp;&nbsp; # ç»¿è‰²<br />
 24 tput sgr0<br />
 25 echo "mith, Julie"<br />
-26 echo -en '\E[47;31m'"\033[1mZ\033[0m"&nbsp;&nbsp; # ºìÉ«<br />
+26 echo -en '\E[47;31m'"\033[1mZ\033[0m"&nbsp;&nbsp; # çº¢è‰²<br />
 27 tput sgr0<br />
 28 echo "ane, Morris"<br />
 29 echo<br />
@@ -126,10 +126,10 @@ Roland"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 31 read person<br />
 32<br />
 33 case "$person" in<br />
-34 # ×¢Òâ±äÁ¿±»ÒıÆğÀ´ÁË.<br />
+34 # æ³¨æ„å˜é‡è¢«å¼•èµ·æ¥äº†.<br />
 35<br />
 36&nbsp;&nbsp; "E" | "e" )<br />
-37&nbsp;&nbsp; # ½ÓÊÜ´óĞ¡Ğ´µÄÊäÈë.<br />
+37&nbsp;&nbsp; # æ¥å—å¤§å°å†™çš„è¾“å…¥.<br />
 38&nbsp;&nbsp; echo<br />
 39&nbsp;&nbsp; echo "Roland Evans"<br />
 40&nbsp;&nbsp; echo "4321 Floppy Dr."<br />
@@ -152,11 +152,11 @@ Roland"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 57&nbsp;&nbsp; echo "Birthday: Feb. 11"<br />
 58&nbsp;&nbsp; ;;<br />
 59<br />
-60 # ÉÔºóÎª Smith ºÍ Zane Ôö¼ÓĞÅÏ¢.<br />
+60 # ç¨åä¸º Smith å’Œ Zane å¢åŠ ä¿¡æ¯.<br />
 61<br />
 62&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; * )<br />
-63&nbsp;&nbsp;&nbsp; # Ä¬ÈÏÑ¡ÏîDefault option.&nbsp; <br />
-64&nbsp;&nbsp;&nbsp; # ¿ÕµÄÊäÈë(Ö±½Ó°´ÁË»Ø³µ) Ò²»áÆ¥ÅäÕâ¶ù.<br />
+63&nbsp;&nbsp;&nbsp; # é»˜è®¤é€‰é¡¹Default option.&nbsp; <br />
+64&nbsp;&nbsp;&nbsp; # ç©ºçš„è¾“å…¥(ç›´æ¥æŒ‰äº†å›è½¦) ä¹Ÿä¼šåŒ¹é…è¿™å„¿.<br />
 65&nbsp;&nbsp;&nbsp; echo<br />
 66&nbsp;&nbsp;&nbsp; echo "Not yet in database."<br />
 67&nbsp;&nbsp; ;;<br />
@@ -165,58 +165,58 @@ Roland"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&
 70<br />
 71 tput
 sgr0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# °ÑÉ«²ÊÖØÉèÎª"³£¹æ".<br />
+# æŠŠè‰²å½©é‡è®¾ä¸º"å¸¸è§„".<br />
 72<br />
 73 echo<br />
 74<br />
 75 exit 0<br />
 ################################End
 Script#########################################<br />
-Example 33-12 »­ºĞ×Ó<br />
+Example 33-12 ç”»ç›’å­<br />
 ################################Start
 Script#######################################<br />
 &nbsp; 1 #!/bin/bash<br />
-&nbsp; 2 # Draw-box.sh: ÓÃASCII×Ö·û»­Ò»¸öºĞ×Ó.<br />
+&nbsp; 2 # Draw-box.sh: ç”¨ASCIIå­—ç¬¦ç”»ä¸€ä¸ªç›’å­.<br />
 &nbsp; 3<br />
-&nbsp; 4 # Stefano Palmeri±àĞ´,ÎÄµµ×÷Õß×÷ÁËÉÙÁ¿±à¼­.<br />
-&nbsp; 5 # Õ÷µÃ×÷ÕßÍ¬ÒâÔÚ±¾ÊéÊ¹ÓÃ.<br />
+&nbsp; 4 # Stefano Palmeriç¼–å†™,æ–‡æ¡£ä½œè€…ä½œäº†å°‘é‡ç¼–è¾‘.<br />
+&nbsp; 5 # å¾å¾—ä½œè€…åŒæ„åœ¨æœ¬ä¹¦ä½¿ç”¨.<br />
 &nbsp; 6<br />
 &nbsp; 7<br />
 &nbsp; 8
 ######################################################################<br />
-&nbsp; 9 ###&nbsp; draw_box º¯ÊıµÄ×¢ÊÍ&nbsp; ###<br />
+&nbsp; 9 ###&nbsp; draw_box å‡½æ•°çš„æ³¨é‡Š&nbsp; ###<br />
 &nbsp;10<br />
-&nbsp;11 #&nbsp; "draw_box" º¯ÊıÊ¹ÓÃ»§¿ÉÒÔÔÚÖÕ¶ËÉÏ»­Ò»¸öºĞ×Ó.<br />
+&nbsp;11 #&nbsp; "draw_box" å‡½æ•°ä½¿ç”¨æˆ·å¯ä»¥åœ¨ç»ˆç«¯ä¸Šç”»ä¸€ä¸ªç›’å­.<br />
 &nbsp;12 #<br />
 &nbsp;13 #<br />
-&nbsp;14 #&nbsp; ÓÃ·¨: draw_box ROW COLUMN HEIGHT WIDTH [COLOR]<br />
-&nbsp;15 #&nbsp; ROW ºÍ COLUMN
-¶¨Î»Òª»­µÄºĞ×ÓµÄ×óÉÏ½Ç.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+&nbsp;14 #&nbsp; ç”¨æ³•: draw_box ROW COLUMN HEIGHT WIDTH [COLOR]<br />
+&nbsp;15 #&nbsp; ROW å’Œ COLUMN
+å®šä½è¦ç”»çš„ç›’å­çš„å·¦ä¸Šè§’.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 &nbsp;16 #<br />
-&nbsp;17 #&nbsp; ROW ºÍ COLUMN ±ØĞëÒª´óÓÚ0ÇÒĞ¡ÓÚÄ¿Ç°ÖÕ¶ËµÄ³ß´ç.<br />
+&nbsp;17 #&nbsp; ROW å’Œ COLUMN å¿…é¡»è¦å¤§äº0ä¸”å°äºç›®å‰ç»ˆç«¯çš„å°ºå¯¸.<br />
 &nbsp;18 #<br />
-&nbsp;19 #&nbsp; HEIGHT ÊÇºĞ×ÓµÄĞĞÊı,±ØĞë &gt; 0.<br />
-&nbsp;20 #&nbsp; HEIGHT + ROW ±ØĞë &lt;= ÖÕ¶ËµÄ¸ß¶È.<br />
-&nbsp;21 #&nbsp; WIDTH ÊÇºĞ×ÓµÄÁĞÊı,±ØĞë &gt; 0.<br />
-&nbsp;22 #&nbsp; WIDTH + COLUMN ±ØĞë &lt;= ÖÕ¶ËµÄ¿í¶È.<br />
+&nbsp;19 #&nbsp; HEIGHT æ˜¯ç›’å­çš„è¡Œæ•°,å¿…é¡» &gt; 0.<br />
+&nbsp;20 #&nbsp; HEIGHT + ROW å¿…é¡» &lt;= ç»ˆç«¯çš„é«˜åº¦.<br />
+&nbsp;21 #&nbsp; WIDTH æ˜¯ç›’å­çš„åˆ—æ•°,å¿…é¡» &gt; 0.<br />
+&nbsp;22 #&nbsp; WIDTH + COLUMN å¿…é¡» &lt;= ç»ˆç«¯çš„å®½åº¦.<br />
 &nbsp;23 #<br />
-&nbsp;24 #&nbsp; ÀıÈç: Èç¹ûÄãµ±Ç°ÖÕ¶ËµÄ³ß´çÊÇ 20x80,<br />
-&nbsp;25 #&nbsp; draw_box 2 3 10 45 ÊÇºÏ·¨µÄ<br />
-&nbsp;26 #&nbsp; draw_box 2 3 19 45 µÄ HEIGHT ÖµÊÇ´íµÄ (19+2 &gt; 20)<br />
-&nbsp;27 #&nbsp; draw_box 2 3 18 78 µÄ WIDTH ÖµÊÇ´íµÄ (78+3 &gt; 80)<br />
+&nbsp;24 #&nbsp; ä¾‹å¦‚: å¦‚æœä½ å½“å‰ç»ˆç«¯çš„å°ºå¯¸æ˜¯ 20x80,<br />
+&nbsp;25 #&nbsp; draw_box 2 3 10 45 æ˜¯åˆæ³•çš„<br />
+&nbsp;26 #&nbsp; draw_box 2 3 19 45 çš„ HEIGHT å€¼æ˜¯é”™çš„ (19+2 &gt; 20)<br />
+&nbsp;27 #&nbsp; draw_box 2 3 18 78 çš„ WIDTH å€¼æ˜¯é”™çš„ (78+3 &gt; 80)<br />
 &nbsp;28 #<br />
-&nbsp;29 #&nbsp; COLOR ÊÇºĞ×Ó±ß¿òµÄÑÕÉ«.<br />
-&nbsp;30 #&nbsp; ËüÊÇµÚ5¸ö²ÎÊı,²¢ÇÒËüÊÇ¿ÉÑ¡µÄ.<br />
-&nbsp;31 #&nbsp; 0=ºÚÉ« 1=ºìÉ« 2=ÂÌÉ« 3=×ØºÖÉ« 4=À¶É« 5=×ÏÉ« 6=ÇàÉ« 7=°×É«.<br />
-&nbsp;32 #&nbsp; Èç¹ûÄã´«¸øÕâ¸öº¯Êı´íµÄ²ÎÊı,<br />
-&nbsp;33 #+ Ëü¾Í»áÒÔ´úÂë65ÍË³ö,<br />
-&nbsp;34 #+ Ã»ÓĞÆäËûµÄĞÅÏ¢´òÓ¡µ½±ê×¼³ö´íÉÏ.<br />
+&nbsp;29 #&nbsp; COLOR æ˜¯ç›’å­è¾¹æ¡†çš„é¢œè‰².<br />
+&nbsp;30 #&nbsp; å®ƒæ˜¯ç¬¬5ä¸ªå‚æ•°,å¹¶ä¸”å®ƒæ˜¯å¯é€‰çš„.<br />
+&nbsp;31 #&nbsp; 0=é»‘è‰² 1=çº¢è‰² 2=ç»¿è‰² 3=æ£•è¤è‰² 4=è“è‰² 5=ç´«è‰² 6=é’è‰² 7=ç™½è‰².<br />
+&nbsp;32 #&nbsp; å¦‚æœä½ ä¼ ç»™è¿™ä¸ªå‡½æ•°é”™çš„å‚æ•°,<br />
+&nbsp;33 #+ å®ƒå°±ä¼šä»¥ä»£ç 65é€€å‡º,<br />
+&nbsp;34 #+ æ²¡æœ‰å…¶ä»–çš„ä¿¡æ¯æ‰“å°åˆ°æ ‡å‡†å‡ºé”™ä¸Š.<br />
 &nbsp;35 #<br />
-&nbsp;36 #&nbsp; ÔÚ»­ºĞ×ÓÖ®Ç°ÒªÇåÆÁ.<br />
-&nbsp;37 #&nbsp; º¯ÊıÄÚ²»°üº¬ÓĞÇåÆÁÃüÁî.<br />
-&nbsp;38 #&nbsp; ÕâÊ¹ÓÃ»§¿ÉÒÔ»­¶à¸öºĞ×Ó,ÉõÖÁµş½Ó¶à¸öºĞ×Ó.<br />
+&nbsp;36 #&nbsp; åœ¨ç”»ç›’å­ä¹‹å‰è¦æ¸…å±.<br />
+&nbsp;37 #&nbsp; å‡½æ•°å†…ä¸åŒ…å«æœ‰æ¸…å±å‘½ä»¤.<br />
+&nbsp;38 #&nbsp; è¿™ä½¿ç”¨æˆ·å¯ä»¥ç”»å¤šä¸ªç›’å­,ç”šè‡³å æ¥å¤šä¸ªç›’å­.<br />
 &nbsp;39<br />
-&nbsp;40 ###&nbsp; draw_box º¯Êı×¢ÊÍ½áÊø&nbsp; ###<br />
+&nbsp;40 ###&nbsp; draw_box å‡½æ•°æ³¨é‡Šç»“æŸ&nbsp; ###<br />
 &nbsp;41
 ######################################################################<br />
 &nbsp;42<br />
@@ -234,27 +234,27 @@ Script#######################################<br />
 &nbsp;54<br />
 &nbsp;55 if [ $# -lt "$MINARGS" ];
 then&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# Èç¹û²ÎÊıĞ¡ÓÚ4,ÍË³ö.<br />
+# å¦‚æœå‚æ•°å°äº4,é€€å‡º.<br />
 &nbsp;56&nbsp;&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
 &nbsp;57 fi<br />
 &nbsp;58<br />
-&nbsp;59 # ËÑÑ°²ÎÊıÖĞµÄ·ÇÊı×ÖµÄ×Ö·û.<br />
-&nbsp;60 # ÄÜÓÃÆäËû¸üºÃµÄ°ì·¨Âğ (Áô¸ø¶ÁÕßµÄÁ·Ï°?).<br />
+&nbsp;59 # æœå¯»å‚æ•°ä¸­çš„éæ•°å­—çš„å­—ç¬¦.<br />
+&nbsp;60 # èƒ½ç”¨å…¶ä»–æ›´å¥½çš„åŠæ³•å— (ç•™ç»™è¯»è€…çš„ç»ƒä¹ ?).<br />
 &nbsp;61 if echo $@ | tr -d [:blank:] | tr -d [:digit:] | grep .
 &amp;&gt; /dev/null; then<br />
 &nbsp;62&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
 &nbsp;63 fi<br />
 &nbsp;64<br />
 &nbsp;65 BOX_HEIGHT=`expr $3 - 1`&nbsp;&nbsp; #&nbsp; -1
-ÊÇĞèÒªµÄ,ÒòÎªÒòÎª±ß½ÇµÄ"+"ÊÇ¸ßºÍ¿í¹²ÓĞµÄ²¿·Ö.<br />
+æ˜¯éœ€è¦çš„,å› ä¸ºå› ä¸ºè¾¹è§’çš„"+"æ˜¯é«˜å’Œå®½å…±æœ‰çš„éƒ¨åˆ†.<br />
 &nbsp;66 BOX_WIDTH=`expr $4 - 1`&nbsp;&nbsp;&nbsp; #<br />
 &nbsp;67 T_ROWS=`tput lines`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-#&nbsp; ¶¨Òåµ±Ç°ÖÕ¶Ë³¤ºÍ¿íµÄ³ß´ç,<br />
+#&nbsp; å®šä¹‰å½“å‰ç»ˆç«¯é•¿å’Œå®½çš„å°ºå¯¸,<br />
 &nbsp;68 T_COLS=`tput
 cols`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
 &nbsp;69&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 &nbsp;70 if [ $1 -lt 1 ] || [ $1 -gt $T_ROWS ]; then&nbsp;&nbsp;&nbsp;
-#&nbsp; Èç¹û²ÎÊıÊÇÊı×Ö¾Í¿ªÊ¼¼ì²éÓĞĞ§ĞÔ.<br />
+#&nbsp; å¦‚æœå‚æ•°æ˜¯æ•°å­—å°±å¼€å§‹æ£€æŸ¥æœ‰æ•ˆæ€§.<br />
 &nbsp;71&nbsp;&nbsp;&nbsp; exit
 $E_BADARGS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 #<br />
@@ -272,23 +272,23 @@ $E_BADARGS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbs
 &nbsp;83&nbsp;&nbsp;&nbsp; exit $E_BADARGS<br />
 &nbsp;84
 fi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ²ÎÊı¼ì²éÍê±Ï.<br />
+# å‚æ•°æ£€æŸ¥å®Œæ¯•.<br />
 &nbsp;85<br />
 &nbsp;86
 plot_char(){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# º¯ÊıÄÚµÄº¯Êı.<br />
+# å‡½æ•°å†…çš„å‡½æ•°.<br />
 &nbsp;87&nbsp;&nbsp;&nbsp; echo -e "\E[${1};${2}H"$3<br />
 &nbsp;88 }<br />
 &nbsp;89<br />
 &nbsp;90 echo -ne
 "\E[3${5}m"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# Èç¹û´«µİÁËºĞ×Ó±ß¿òÑÕÉ«²ÎÊı,ÔòÉèÖÃËü.<br />
+# å¦‚æœä¼ é€’äº†ç›’å­è¾¹æ¡†é¢œè‰²å‚æ•°,åˆ™è®¾ç½®å®ƒ.<br />
 &nbsp;91<br />
 &nbsp;92 # start drawing the box<br />
 &nbsp;93<br />
 &nbsp;94
 count=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-#&nbsp; ÓÃplot_charº¯Êı»­´¹Ö±Ïß<br />
+#&nbsp; ç”¨plot_charå‡½æ•°ç”»å‚ç›´çº¿<br />
 &nbsp;95 for (( r=$1; count&lt;=$BOX_HEIGHT; r++));
 do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
 &nbsp;96&nbsp;&nbsp; plot_char $r $2 $VERT<br />
@@ -304,7 +304,7 @@ do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
 106<br />
 107
 count=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-#&nbsp; ÓÃplot_charº¯Êı»­Ë®Æ½Ïß<br />
+#&nbsp; ç”¨plot_charå‡½æ•°ç”»æ°´å¹³çº¿<br />
 108 for (( c=$2; count&lt;=$BOX_WIDTH; c++));
 do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
 109&nbsp;&nbsp; plot_char $1 $c $HORZ<br />
@@ -320,47 +320,47 @@ do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #<br />
 119<br />
 120 plot_char $1 $2
 $CORNER_CHAR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# »­ºĞ×ÓµÄ½Ç.<br />
+# ç”»ç›’å­çš„è§’.<br />
 121 plot_char $1 `expr $2 + $BOX_WIDTH` +<br />
 122 plot_char `expr $1 + $BOX_HEIGHT` $2 +<br />
 123 plot_char `expr $1 + $BOX_HEIGHT` `expr $2 + $BOX_WIDTH` +<br />
 124<br />
 125 echo -ne
 "\E[0m"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-#&nbsp; »Ö¸´×î³õµÄÑÕÉ«.<br />
+#&nbsp; æ¢å¤æœ€åˆçš„é¢œè‰².<br />
 126<br />
-127 P_ROWS=`expr $T_ROWS - 1`&nbsp;&nbsp;&nbsp; #&nbsp; ÔÚÖÕ¶ËµÄµ×²¿´òÓ¡ÌáÊ¾·û.<br />
+127 P_ROWS=`expr $T_ROWS - 1`&nbsp;&nbsp;&nbsp; #&nbsp; åœ¨ç»ˆç«¯çš„åº•éƒ¨æ‰“å°æç¤ºç¬¦.<br />
 128<br />
 129 echo -e "\E[${P_ROWS};1H"<br />
 130 }&nbsp;&nbsp;&nbsp;&nbsp; <br />
 131<br />
 132<br />
-133 # ÏÖÔÚ, ÈÃÎÒÃÇÀ´»­Ò»¸öºĞ×Ó.<br />
+133 # ç°åœ¨, è®©æˆ‘ä»¬æ¥ç”»ä¸€ä¸ªç›’å­.<br />
 134
 clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ÇåÆÁ.<br />
-135 R=2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ĞĞ<br />
-136 C=3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÁĞ<br />
-137 H=10&nbsp;&nbsp;&nbsp;&nbsp; # ¸ß<br />
-138 W=45&nbsp;&nbsp;&nbsp;&nbsp; # ¿í<br />
-139 col=1&nbsp;&nbsp;&nbsp; # ÑÕÉ«(ºì)<br />
-140 draw_box $R $C $H $W $col&nbsp;&nbsp; # »­ºĞ×Ó.<br />
+# æ¸…å±.<br />
+135 R=2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # è¡Œ<br />
+136 C=3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # åˆ—<br />
+137 H=10&nbsp;&nbsp;&nbsp;&nbsp; # é«˜<br />
+138 W=45&nbsp;&nbsp;&nbsp;&nbsp; # å®½<br />
+139 col=1&nbsp;&nbsp;&nbsp; # é¢œè‰²(çº¢)<br />
+140 draw_box $R $C $H $W $col&nbsp;&nbsp; # ç”»ç›’å­.<br />
 141<br />
 142 exit 0<br />
 143<br />
-144 # Á·Ï°:<br />
+144 # ç»ƒä¹ :<br />
 145 # --------<br />
-146 # Ôö¼Ó¿ÉÒÔÔÚºĞ×ÓÀï´òÓ¡ÎÄ±¾µÄÑ¡Ïî<br />
+146 # å¢åŠ å¯ä»¥åœ¨ç›’å­é‡Œæ‰“å°æ–‡æœ¬çš„é€‰é¡¹<br />
 ################################End
 Script#########################################<br />
-×î¼òµ¥Ò²¿ÉÄÜÊÇ×îÓĞÓÃµÄANSI×ªÒåĞòÁĞÊÇ¼Ó´ÖÎÄ±¾, \033[1m ... \033[0m. \033 ´¥·¢×ªÒåĞò<br />
-ÁĞ, ¶ø "[1" ÆôÓÃ¼Ó´ÖÊôĞÔ, ¶ø"[0" ±íÊ¾ÇĞ»»»Ø½ûÓÃ¼Ó´Ö×´Ì¬. "m"Ôò±íÊ¾ÖÕÖ¹Ò»¸ö×ªÒåĞòÁĞ.<br />
+æœ€ç®€å•ä¹Ÿå¯èƒ½æ˜¯æœ€æœ‰ç”¨çš„ANSIè½¬ä¹‰åºåˆ—æ˜¯åŠ ç²—æ–‡æœ¬, \033[1m ... \033[0m. \033 è§¦å‘è½¬ä¹‰åº<br />
+åˆ—, è€Œ "[1" å¯ç”¨åŠ ç²—å±æ€§, è€Œ"[0" è¡¨ç¤ºåˆ‡æ¢å›ç¦ç”¨åŠ ç²—çŠ¶æ€. "m"åˆ™è¡¨ç¤ºç»ˆæ­¢ä¸€ä¸ªè½¬ä¹‰åºåˆ—.<br />
 &nbsp;bash$ echo -e "\033[1mThis is bold text.\033[0m"<br />
-Ò»ÖÖÏàËÆµÄ×ªÒåĞòÁĞ¿ÉÇĞ»»ÏÂ»®ÏßĞ§¹û (ÔÚ rxvt ºÍ aterm ÉÏ).<br />
+ä¸€ç§ç›¸ä¼¼çš„è½¬ä¹‰åºåˆ—å¯åˆ‡æ¢ä¸‹åˆ’çº¿æ•ˆæœ (åœ¨ rxvt å’Œ aterm ä¸Š).<br />
 &nbsp;bash$ echo -e "\033[4mThis is underlined text.\033[0m"<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
-×¢Òâ: echoÊ¹ÓÃ-eÑ¡Ïî¿ÉÒÔÆôÓÃ×ªÒåĞòÁĞ.<br />
-ÆäËûµÄ×ªÒåĞòÁĞ¿ÉÓÃÓÚ¸ü¸ÄÎÄ±¾»ò/ºÍ±³¾°É«²Ê.<br />
+æ³¨æ„: echoä½¿ç”¨-eé€‰é¡¹å¯ä»¥å¯ç”¨è½¬ä¹‰åºåˆ—.<br />
+å…¶ä»–çš„è½¬ä¹‰åºåˆ—å¯ç”¨äºæ›´æ”¹æ–‡æœ¬æˆ–/å’ŒèƒŒæ™¯è‰²å½©.<br />
 &nbsp;bash$ echo -e '\E[34;47mThis prints in blue.'; tput sgr0<br />
 &nbsp;<br />
 &nbsp;bash$ echo -e '\E[33;44m'"yellow text on blue background"; tput
@@ -369,36 +369,36 @@ sgr0<br />
 &nbsp;bash$ echo -e '\E[1;33;44m'"BOLD yellow text on blue background";
 tput sgr0<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
-×¢Òâ: Í¨³£Îªµ­É«µÄÇ°¾°É«ÎÄ±¾ÉèÖÃ´ÖÌåĞ§¹ûÊÇ½ÏºÃµÄ.<br />
-tput sgr0 °ÑÖÕ¶ËÉèÖÃ»Ö¸´ÎªÔ­Ñù. Èç¹ûÊ¡ÂÔÕâÒ»¾ä»áÊ¹ºóĞøÔÚ¸ÃÖÕ¶ËµÄÊä³öÈÔÎªÀ¶É«.<br />
-×¢Òâ: ÒòÎªtput sgr0 ÔÚÄ³Ğ©»·¾³ÏÂ²»ÄÜ»Ö¸´ÖÕ¶ËÉèÖÃ, echo -ne \E[0m »áÊÇ¸üºÃµÄÑ¡Ôñ.<br />
-¿ÉÒÔÔÚÓĞÉ«µÄ±³¾°ÉÏÓÃÏÂÃæµÄÄ£°åĞ´ÓĞÉ«²ÊµÄÎÄ±¾.<br />
+æ³¨æ„: é€šå¸¸ä¸ºæ·¡è‰²çš„å‰æ™¯è‰²æ–‡æœ¬è®¾ç½®ç²—ä½“æ•ˆæœæ˜¯è¾ƒå¥½çš„.<br />
+tput sgr0 æŠŠç»ˆç«¯è®¾ç½®æ¢å¤ä¸ºåŸæ ·. å¦‚æœçœç•¥è¿™ä¸€å¥ä¼šä½¿åç»­åœ¨è¯¥ç»ˆç«¯çš„è¾“å‡ºä»ä¸ºè“è‰².<br />
+æ³¨æ„: å› ä¸ºtput sgr0 åœ¨æŸäº›ç¯å¢ƒä¸‹ä¸èƒ½æ¢å¤ç»ˆç«¯è®¾ç½®, echo -ne \E[0m ä¼šæ˜¯æ›´å¥½çš„é€‰æ‹©.<br />
+å¯ä»¥åœ¨æœ‰è‰²çš„èƒŒæ™¯ä¸Šç”¨ä¸‹é¢çš„æ¨¡æ¿å†™æœ‰è‰²å½©çš„æ–‡æœ¬.<br />
 echo -e '\E[COLOR1;COLOR2mSome text goes here.'<br />
-"\E[" ¿ªÊ¼×ªÒåĞòÁĞ. ·ÖºÅ·Ö¸ôµÄÊıÖµ"COLOR1" ºÍ "COLOR2" Ö¸¶¨Ç°¾°É«ºÍ±³¾°É«, ÊıÖµºÍ<br />
-É«²ÊµÄ¶ÔÓ¦²Î¼ûÏÂÃæµÄ±í¸ñ. (ÊıÖµµÄË³Ğò²»ÊÇÓĞ¹ØÏµµÄ,ÒòÎªÇ°¾°É«ºÍ±³¾°É«ÊıÖµ¶¼ÂäÔÚ²»<br />
-ÖØµşµÄ·¶Î§Àï.) "m"ÖÕÖ¹¸Ã×ªÒåĞòÁĞ, È»ºóÎÄ±¾ÒÔ½áÊøµÄ×ªÒåÖ¸¶¨µÄÊôĞÔÏÔÊ¾.<br />
-Ò²Òª×¢Òâµ½ÓÃµ¥ÒıºÅÒıÓÃÁËecho -eºóÃæµÄÓàÏÂÃüÁîĞòÁĞ.<br />
-ÏÂ±íµÄÊıÖµÊÇÔÚ rxvt ÖÕ¶ËÔËĞĞµÄ½á¹û. ¾ßÌåĞ§¹û¿ÉÄÜÔÚÆäËûµÄ¸÷ÖÖÖÕ¶ËÉÏ²»Ò»Ñù.<br />
-table 33-1. ×ªÒåĞòÁĞÖĞÊıÖµºÍ²ÊÉ«µÄ¶ÔÓ¦<br />
+"\E[" å¼€å§‹è½¬ä¹‰åºåˆ—. åˆ†å·åˆ†éš”çš„æ•°å€¼"COLOR1" å’Œ "COLOR2" æŒ‡å®šå‰æ™¯è‰²å’ŒèƒŒæ™¯è‰², æ•°å€¼å’Œ<br />
+è‰²å½©çš„å¯¹åº”å‚è§ä¸‹é¢çš„è¡¨æ ¼. (æ•°å€¼çš„é¡ºåºä¸æ˜¯æœ‰å…³ç³»çš„,å› ä¸ºå‰æ™¯è‰²å’ŒèƒŒæ™¯è‰²æ•°å€¼éƒ½è½åœ¨ä¸<br />
+é‡å çš„èŒƒå›´é‡Œ.) "m"ç»ˆæ­¢è¯¥è½¬ä¹‰åºåˆ—, ç„¶åæ–‡æœ¬ä»¥ç»“æŸçš„è½¬ä¹‰æŒ‡å®šçš„å±æ€§æ˜¾ç¤º.<br />
+ä¹Ÿè¦æ³¨æ„åˆ°ç”¨å•å¼•å·å¼•ç”¨äº†echo -eåé¢çš„ä½™ä¸‹å‘½ä»¤åºåˆ—.<br />
+ä¸‹è¡¨çš„æ•°å€¼æ˜¯åœ¨ rxvt ç»ˆç«¯è¿è¡Œçš„ç»“æœ. å…·ä½“æ•ˆæœå¯èƒ½åœ¨å…¶ä»–çš„å„ç§ç»ˆç«¯ä¸Šä¸ä¸€æ ·.<br />
+table 33-1. è½¬ä¹‰åºåˆ—ä¸­æ•°å€¼å’Œå½©è‰²çš„å¯¹åº”<br />
 ==========================<br />
-| É«²Ê&nbsp; | Ç°¾°É« | ±³¾°É«|<br />
-|&nbsp; ºÚ&nbsp; |&nbsp; 30&nbsp; |&nbsp; 40&nbsp;&nbsp; |<br />
-|&nbsp; ºì&nbsp; |&nbsp; 31&nbsp; |&nbsp; 41&nbsp;&nbsp; |<br />
-|&nbsp; ÂÌ&nbsp; |&nbsp; 32&nbsp; |&nbsp; 42&nbsp;&nbsp; |<br />
-|&nbsp; »Æ&nbsp; |&nbsp; 33&nbsp; |&nbsp; 43&nbsp;&nbsp; |<br />
-|&nbsp; À¶&nbsp; |&nbsp; 34&nbsp; |&nbsp; 44&nbsp;&nbsp; |<br />
-|&nbsp; Ñóºì |&nbsp; 35&nbsp; |&nbsp; 45&nbsp;&nbsp; |<br />
-|&nbsp; Çà&nbsp; |&nbsp; 36&nbsp; |&nbsp; 46&nbsp;&nbsp; |<br />
-|&nbsp; °×&nbsp; |&nbsp; 37&nbsp; |&nbsp; 47&nbsp;&nbsp; |<br />
+| è‰²å½©&nbsp; | å‰æ™¯è‰² | èƒŒæ™¯è‰²|<br />
+|&nbsp; é»‘&nbsp; |&nbsp; 30&nbsp; |&nbsp; 40&nbsp;&nbsp; |<br />
+|&nbsp; çº¢&nbsp; |&nbsp; 31&nbsp; |&nbsp; 41&nbsp;&nbsp; |<br />
+|&nbsp; ç»¿&nbsp; |&nbsp; 32&nbsp; |&nbsp; 42&nbsp;&nbsp; |<br />
+|&nbsp; é»„&nbsp; |&nbsp; 33&nbsp; |&nbsp; 43&nbsp;&nbsp; |<br />
+|&nbsp; è“&nbsp; |&nbsp; 34&nbsp; |&nbsp; 44&nbsp;&nbsp; |<br />
+|&nbsp; æ´‹çº¢ |&nbsp; 35&nbsp; |&nbsp; 45&nbsp;&nbsp; |<br />
+|&nbsp; é’&nbsp; |&nbsp; 36&nbsp; |&nbsp; 46&nbsp;&nbsp; |<br />
+|&nbsp; ç™½&nbsp; |&nbsp; 37&nbsp; |&nbsp; 47&nbsp;&nbsp; |<br />
 ==========================<br />
-Example 33-13 ÏÔÊ¾²ÊÉ«ÎÄ±¾<br />
+Example 33-13 æ˜¾ç¤ºå½©è‰²æ–‡æœ¬<br />
 ################################Start
 Script#######################################<br />
 &nbsp;1 #!/bin/bash<br />
-&nbsp;2 # color-echo.sh: ÓÃ²ÊÉ«À´ÏÔÊ¾ÎÄ±¾.<br />
+&nbsp;2 # color-echo.sh: ç”¨å½©è‰²æ¥æ˜¾ç¤ºæ–‡æœ¬.<br />
 &nbsp;3<br />
-&nbsp;4 # ÒÀÕÕĞèÒªĞŞ¸ÄÕâ¸ö½Å±¾.<br />
-&nbsp;5 # Õâ±ÈÊÖĞ´²ÊÉ«µÄ´úÂë¸üÈİÒ×Ò»Ğ©.<br />
+&nbsp;4 # ä¾ç…§éœ€è¦ä¿®æ”¹è¿™ä¸ªè„šæœ¬.<br />
+&nbsp;5 # è¿™æ¯”æ‰‹å†™å½©è‰²çš„ä»£ç æ›´å®¹æ˜“ä¸€äº›.<br />
 &nbsp;6<br />
 &nbsp;7 black='\E[30;47m'<br />
 &nbsp;8 red='\E[31;47m'<br />
@@ -411,7 +411,7 @@ Script#######################################<br />
 15<br />
 16<br />
 17 alias Reset="tput sgr0"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #&nbsp;
-°ÑÎÄ±¾ÊôĞÔÖØÉè»ØÔ­À´Ã»ÓĞÇåÆÁÇ°µÄ<br />
+æŠŠæ–‡æœ¬å±æ€§é‡è®¾å›åŸæ¥æ²¡æœ‰æ¸…å±å‰çš„<br />
 18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 #<br />
 19<br />
@@ -420,30 +420,30 @@ Script#######################################<br />
 ()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 # Color-echo.<br />
 22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ²ÎÊı $1 = ÒªÏÔÊ¾µÄĞÅÏ¢<br />
+# å‚æ•° $1 = è¦æ˜¾ç¤ºçš„ä¿¡æ¯<br />
 23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ²ÎÊı $2 = ÑÕÉ«<br />
+# å‚æ•° $2 = é¢œè‰²<br />
 24 {<br />
 25 local default_msg="No message passed."<br />
 26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ²»ÊÇ·ÇÒªÒ»¸ö±¾µØ±äÁ¿.<br />
+# ä¸æ˜¯éè¦ä¸€ä¸ªæœ¬åœ°å˜é‡.<br />
 27<br />
-28 message=${1:-$default_msg}&nbsp;&nbsp; # Ä¬ÈÏµÄĞÅÏ¢.<br />
+28 message=${1:-$default_msg}&nbsp;&nbsp; # é»˜è®¤çš„ä¿¡æ¯.<br />
 29
 color=${2:-$black}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# Èç¹ûÃ»ÓĞÖ¸¶¨,Ä¬ÈÏÊ¹ÓÃºÚÉ«.<br />
+# å¦‚æœæ²¡æœ‰æŒ‡å®š,é»˜è®¤ä½¿ç”¨é»‘è‰².<br />
 30<br />
 31&nbsp;&nbsp; echo -e "$color"<br />
 32&nbsp;&nbsp; echo "$message"<br />
 33&nbsp;&nbsp;
 Reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-# ÖØÉèÎÄ±¾ÊôĞÔ.<br />
+# é‡è®¾æ–‡æœ¬å±æ€§.<br />
 34<br />
 35&nbsp;&nbsp; return<br />
 36 } <br />
 37<br />
 38<br />
-39 # ÏÖÔÚ,ÈÃÎÒÃÇÊÔÊÔ.<br />
+39 # ç°åœ¨,è®©æˆ‘ä»¬è¯•è¯•.<br />
 40 # ----------------------------------------------------<br />
 41 cecho "Feeling blue..." $blue<br />
 42 cecho "Magenta looks more like purple." $magenta<br />
@@ -451,65 +451,65 @@ Reset&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nb
 44 cecho "Seeing red?" $red<br />
 45 cecho "Cyan, more familiarly known as aqua." $cyan<br />
 46 cecho "No color passed (defaults to black)."<br />
-47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # È±Ê§ $color (É«²Ê)²ÎÊı.<br />
+47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç¼ºå¤± $color (è‰²å½©)å‚æ•°.<br />
 48 cecho "\"Empty\" color passed (defaults to black)." ""<br />
-49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¿ÕµÄ $color (É«²Ê)²ÎÊı.<br />
+49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç©ºçš„ $color (è‰²å½©)å‚æ•°.<br />
 50 cecho<br />
-51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $message(ĞÅÏ¢) ºÍ $color
-(É«²Ê)²ÎÊı¶¼È±Ê§.<br />
+51&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # $message(ä¿¡æ¯) å’Œ $color
+(è‰²å½©)å‚æ•°éƒ½ç¼ºå¤±.<br />
 52 cecho "" ""<br />
-53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¿ÕµÄ $message (ĞÅÏ¢)ºÍ $color
-(É«²Ê)²ÎÊı.<br />
+53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç©ºçš„ $message (ä¿¡æ¯)å’Œ $color
+(è‰²å½©)å‚æ•°.<br />
 54 # ----------------------------------------------------<br />
 55<br />
 56 echo<br />
 57<br />
 58 exit 0<br />
 59<br />
-60 # Á·Ï°:<br />
+60 # ç»ƒä¹ :<br />
 61 # ---------<br />
-62 # 1) Îª'cecho ()'º¯ÊıÔö¼Ó´ÖÌåµÄĞ§¹û.<br />
-63 # 2) Ôö¼Ó¿ÉÑ¡µÄ²ÊÉ«±³¾°.<br />
+62 # 1) ä¸º'cecho ()'å‡½æ•°å¢åŠ ç²—ä½“çš„æ•ˆæœ.<br />
+63 # 2) å¢åŠ å¯é€‰çš„å½©è‰²èƒŒæ™¯.<br />
 ################################End
 Script#########################################<br />
-Example 33-14 "ÈüÂí" ÓÎÏ·<br />
+Example 33-14 "èµ›é©¬" æ¸¸æˆ<br />
 ################################Start
 Script#######################################<br />
 &nbsp; 1 #!/bin/bash<br />
-&nbsp; 2 # horserace.sh: ·Ç³£¼òµ¥µÄÈüÂíÄ£Äâ.<br />
-&nbsp; 3 # ×÷Õß: Stefano Palmeri<br />
-&nbsp; 4 # ÒÑÈ¡µÃÊ¹ÓÃĞí¿É.<br />
+&nbsp; 2 # horserace.sh: éå¸¸ç®€å•çš„èµ›é©¬æ¨¡æ‹Ÿ.<br />
+&nbsp; 3 # ä½œè€…: Stefano Palmeri<br />
+&nbsp; 4 # å·²å–å¾—ä½¿ç”¨è®¸å¯.<br />
 &nbsp; 5<br />
 &nbsp; 6
 ################################################################<br />
-&nbsp; 7 #&nbsp; ½Å±¾Ä¿µÄ:<br />
-&nbsp; 8 #&nbsp; Ê¹ÓÃ×ªÒå×Ö·ûºÍÖÕ¶ËÑÕÉ«.<br />
+&nbsp; 7 #&nbsp; è„šæœ¬ç›®çš„:<br />
+&nbsp; 8 #&nbsp; ä½¿ç”¨è½¬ä¹‰å­—ç¬¦å’Œç»ˆç«¯é¢œè‰².<br />
 &nbsp; 9 #<br />
-&nbsp;10 #&nbsp; Á·Ï°:<br />
-&nbsp;11 #&nbsp; ±à¼­½Å±¾Ê¹Æä¸ü¾ßÓĞËæ»úĞÔ,<br />
-&nbsp;12 #+ ÉèÖÃÒ»¸ö¼ÙµÄ¶Ä³¡ . . .&nbsp;&nbsp;&nbsp; <br />
-&nbsp;13 #&nbsp; àÅ . . . àÅ . . . Õâ¸ö¿ªÊ¼Ê¹ÎÒÏëÆğÁËÒ»²¿µçÓ° . . .<br />
+&nbsp;10 #&nbsp; ç»ƒä¹ :<br />
+&nbsp;11 #&nbsp; ç¼–è¾‘è„šæœ¬ä½¿å…¶æ›´å…·æœ‰éšæœºæ€§,<br />
+&nbsp;12 #+ è®¾ç½®ä¸€ä¸ªå‡çš„èµŒåœº . . .&nbsp;&nbsp;&nbsp; <br />
+&nbsp;13 #&nbsp; å—¯ . . . å—¯ . . . è¿™ä¸ªå¼€å§‹ä½¿æˆ‘æƒ³èµ·äº†ä¸€éƒ¨ç”µå½± . . .<br />
 &nbsp;14 #<br />
-&nbsp;15 #&nbsp; ½Å±¾¸øÃ¿Æ¥ÂíÒ»¸öËæ»úµÄÕÏ°­.<br />
-&nbsp;16 #&nbsp; ²»¾ùµÈ»áÒÔÕÏ°­À´¼ÆËã<br />
-&nbsp;17 #+ ²¢ÇÒÓÃÒ»ÖÖÅ·ÖŞ·ç¸ñ±í´ï³öÀ´.<br />
-&nbsp;18 #&nbsp; ÀıÈç: »úÂÊ(odds)=3.75 ÒâÎ¶×ÅÈç¹ûÄãÑº1ÃÀÔªÓ®,<br />
-&nbsp;19 #+ Äã¿ÉÒÔÓ®µÃ3.75ÃÀÔª.<br />
+&nbsp;15 #&nbsp; è„šæœ¬ç»™æ¯åŒ¹é©¬ä¸€ä¸ªéšæœºçš„éšœç¢.<br />
+&nbsp;16 #&nbsp; ä¸å‡ç­‰ä¼šä»¥éšœç¢æ¥è®¡ç®—<br />
+&nbsp;17 #+ å¹¶ä¸”ç”¨ä¸€ç§æ¬§æ´²é£æ ¼è¡¨è¾¾å‡ºæ¥.<br />
+&nbsp;18 #&nbsp; ä¾‹å¦‚: æœºç‡(odds)=3.75 æ„å‘³ç€å¦‚æœä½ æŠ¼1ç¾å…ƒèµ¢,<br />
+&nbsp;19 #+ ä½ å¯ä»¥èµ¢å¾—3.75ç¾å…ƒ.<br />
 &nbsp;20 #<br />
-&nbsp;21 #&nbsp; ½Å±¾ÒÑ¾­ÔÚGNU/Linux²Ù×÷ÏµÍ³ÉÏ²âÊÔ¹ı OS,<br />
-&nbsp;22 #+ ²âÊÔÖÕ¶ËÓĞxterm ºÍ rxvt, ¼° konsole.<br />
-&nbsp;23 #&nbsp; ²âÊÔ»úÆ÷ÓĞAMD 900 MHz µÄ´¦ÀíÆ÷,<br />
-&nbsp;24 #+ Æ½¾ù±ÈÈüÊ±¼äÊÇ75Ãë.&nbsp;&nbsp; <br />
-&nbsp;25 #&nbsp; ÔÚ¸ü¿ìµÄ¼ÆËã»úÉÏ±ÈÈüÊ±¼äÓ¦¸Ã»á¸üµÍ.<br />
-&nbsp;26 #&nbsp; ËùÒÔ, Èç¹ûÄãÏëÓĞ¸ü¶àµÄĞüÄî,ÖØÉèUSLEEP_ARG ±äÁ¿µÄÖµ.<br />
+&nbsp;21 #&nbsp; è„šæœ¬å·²ç»åœ¨GNU/Linuxæ“ä½œç³»ç»Ÿä¸Šæµ‹è¯•è¿‡ OS,<br />
+&nbsp;22 #+ æµ‹è¯•ç»ˆç«¯æœ‰xterm å’Œ rxvt, åŠ konsole.<br />
+&nbsp;23 #&nbsp; æµ‹è¯•æœºå™¨æœ‰AMD 900 MHz çš„å¤„ç†å™¨,<br />
+&nbsp;24 #+ å¹³å‡æ¯”èµ›æ—¶é—´æ˜¯75ç§’.&nbsp;&nbsp; <br />
+&nbsp;25 #&nbsp; åœ¨æ›´å¿«çš„è®¡ç®—æœºä¸Šæ¯”èµ›æ—¶é—´åº”è¯¥ä¼šæ›´ä½.<br />
+&nbsp;26 #&nbsp; æ‰€ä»¥, å¦‚æœä½ æƒ³æœ‰æ›´å¤šçš„æ‚¬å¿µ,é‡è®¾USLEEP_ARG å˜é‡çš„å€¼.<br />
 &nbsp;27 #<br />
-&nbsp;28 #&nbsp; ÓÉStefano Palmeri±àĞ´.<br />
+&nbsp;28 #&nbsp; ç”±Stefano Palmeriç¼–å†™.<br />
 &nbsp;29
 ################################################################<br />
 &nbsp;30<br />
 &nbsp;31 E_RUNERR=65<br />
 &nbsp;32<br />
-&nbsp;33 # ¼ì²é md5sum ºÍ bc ÊÇ²»ÊÇ°²×°ÁË.<br />
+&nbsp;33 # æ£€æŸ¥ md5sum å’Œ bc æ˜¯ä¸æ˜¯å®‰è£…äº†.<br />
 &nbsp;34 if ! which bc &amp;&gt; /dev/null; then<br />
 &nbsp;35&nbsp;&nbsp;&nbsp; echo bc is not installed. <br />
 &nbsp;36&nbsp;&nbsp;&nbsp; echo "Can\'t run . . . "<br />
@@ -521,44 +521,44 @@ Script#######################################<br />
 &nbsp;42&nbsp;&nbsp;&nbsp; exit $E_RUNERR<br />
 &nbsp;43 fi<br />
 &nbsp;44<br />
-&nbsp;45 #&nbsp; ¸ü¸ÄÏÂÃæµÄ±äÁ¿Öµ¿ÉÒÔÊ¹½Å±¾Ö´ĞĞµÄ¸üÂı.<br />
-&nbsp;46 #&nbsp; Ëü»á×÷ÎªusleepµÄ²ÎÊı (man usleep) <br />
-&nbsp;47 #+ ²¢ÇÒËüµÄµ¥Î»ÊÇÎ¢Ãë (500000Î¢Ãë = °ëÃë).<br />
+&nbsp;45 #&nbsp; æ›´æ”¹ä¸‹é¢çš„å˜é‡å€¼å¯ä»¥ä½¿è„šæœ¬æ‰§è¡Œçš„æ›´æ…¢.<br />
+&nbsp;46 #&nbsp; å®ƒä¼šä½œä¸ºusleepçš„å‚æ•° (man usleep) <br />
+&nbsp;47 #+ å¹¶ä¸”å®ƒçš„å•ä½æ˜¯å¾®ç§’ (500000å¾®ç§’ = åŠç§’).<br />
 &nbsp;48 USLEEP_ARG=0 <br />
 &nbsp;49<br />
-&nbsp;50 #&nbsp; Èç¹û½Å±¾½ÓÊÕµ½ctrl-cÖĞ¶Ï,Çå³ıÁÙÊ±Ä¿Â¼, »Ö¸´ÖÕ¶Ë¹â±êºÍÑÕÉ«<br />
+&nbsp;50 #&nbsp; å¦‚æœè„šæœ¬æ¥æ”¶åˆ°ctrl-cä¸­æ–­,æ¸…é™¤ä¸´æ—¶ç›®å½•, æ¢å¤ç»ˆç«¯å…‰æ ‡å’Œé¢œè‰²<br />
 &nbsp;51 #<br />
 &nbsp;52 trap 'echo -en "\E[?25h"; echo -en "\E[0m"; stty echo;\<br />
 &nbsp;53 tput cup 20 0; rm -fr&nbsp; $HORSE_RACE_TMP_DIR'&nbsp; TERM
 EXIT<br />
-&nbsp;54 #&nbsp; ²Î¿¼µ÷ÊÔµÄÕÂ½ÚÁË½â'trap'µÄ¸ü¶à½âÊÍ<br />
+&nbsp;54 #&nbsp; å‚è€ƒè°ƒè¯•çš„ç« èŠ‚äº†è§£'trap'çš„æ›´å¤šè§£é‡Š<br />
 &nbsp;55<br />
-&nbsp;56 # ¸ø½Å±¾ÉèÖÃÒ»¸öÎ¨Ò»(Êµ¼Ê²»ÊÇ¾ø¶ÔÎ¨Ò»µÄ)µÄÁÙÊ±Ä¿Â¼Ãû.<br />
+&nbsp;56 # ç»™è„šæœ¬è®¾ç½®ä¸€ä¸ªå”¯ä¸€(å®é™…ä¸æ˜¯ç»å¯¹å”¯ä¸€çš„)çš„ä¸´æ—¶ç›®å½•å.<br />
 &nbsp;57 HORSE_RACE_TMP_DIR=$HOME/.horserace-`date +%s`-`head -c10
 /dev/urandom | md5sum | head -c30`<br />
 &nbsp;58<br />
-&nbsp;59 # ´´½¨ÁÙÊ±Ä¿Â¼,²¢ÇĞ»»µ½¸ÃÄ¿Â¼ÏÂ.<br />
+&nbsp;59 # åˆ›å»ºä¸´æ—¶ç›®å½•,å¹¶åˆ‡æ¢åˆ°è¯¥ç›®å½•ä¸‹.<br />
 &nbsp;60 mkdir $HORSE_RACE_TMP_DIR<br />
 &nbsp;61 cd $HORSE_RACE_TMP_DIR<br />
 &nbsp;62<br />
 &nbsp;63<br />
-&nbsp;64 #&nbsp; Õâ¸öº¯Êı°Ñ¹â±êÒÆ¶¯µ½ĞĞÎª $1 ÁĞÎª $2 È»ºó´òÓ¡ $3.<br />
-&nbsp;65 #&nbsp; ÀıÈç: "move_and_echo 5 10 linux" µÈÍ¬ÓÚ<br />
-&nbsp;66 #+ "tput cup 4 9; echo linux", µ«ÊÇÓÃÒ»¸öÃüÁî´úÌæÁËÁ½¸ö.<br />
-&nbsp;67 #&nbsp; ×¢: "tput cup" ±íÊ¾ÔÚÖÕ¶Ë×óÉÏ½ÇµÄ 0 0 Î»ÖÃ,<br />
-&nbsp;68 #+ echo ÊÇÔÚÖÕ¶ËµÄ×óÉÏ½ÇµÄ 1 1 Î»ÖÃ.<br />
+&nbsp;64 #&nbsp; è¿™ä¸ªå‡½æ•°æŠŠå…‰æ ‡ç§»åŠ¨åˆ°è¡Œä¸º $1 åˆ—ä¸º $2 ç„¶åæ‰“å° $3.<br />
+&nbsp;65 #&nbsp; ä¾‹å¦‚: "move_and_echo 5 10 linux" ç­‰åŒäº<br />
+&nbsp;66 #+ "tput cup 4 9; echo linux", ä½†æ˜¯ç”¨ä¸€ä¸ªå‘½ä»¤ä»£æ›¿äº†ä¸¤ä¸ª.<br />
+&nbsp;67 #&nbsp; æ³¨: "tput cup" è¡¨ç¤ºåœ¨ç»ˆç«¯å·¦ä¸Šè§’çš„ 0 0 ä½ç½®,<br />
+&nbsp;68 #+ echo æ˜¯åœ¨ç»ˆç«¯çš„å·¦ä¸Šè§’çš„ 1 1 ä½ç½®.<br />
 &nbsp;69 move_and_echo() {<br />
 &nbsp;70&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 echo -ne "\E[${1};${2}H""$3"<br />
 &nbsp;71 }<br />
 &nbsp;72<br />
-&nbsp;73 # ²úÉú1-9Ö®¼äÎ±Ëæ»úÊıµÄº¯Êı.<br />
+&nbsp;73 # äº§ç”Ÿ1-9ä¹‹é—´ä¼ªéšæœºæ•°çš„å‡½æ•°.<br />
 &nbsp;74 random_1_9 () {<br />
 &nbsp;75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 head -c10 /dev/urandom | md5sum | tr -d [a-z] | tr -d 0 | cut -c1<br />
 &nbsp;76 }<br />
 &nbsp;77<br />
-&nbsp;78 #&nbsp; »­ÂíÊ±Ä£ÄâÔË¶¯µÄÁ½¸öº¯Êı.<br />
+&nbsp;78 #&nbsp; ç”»é©¬æ—¶æ¨¡æ‹Ÿè¿åŠ¨çš„ä¸¤ä¸ªå‡½æ•°.<br />
 &nbsp;79 draw_horse_one() {<br />
 &nbsp;80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 echo -n " "//$MOVE_HORSE//<br />
@@ -569,11 +569,11 @@ echo -n " "\\\\$MOVE_HORSE\\\\<br />
 &nbsp;84 }&nbsp; <br />
 &nbsp;85<br />
 &nbsp;86<br />
-&nbsp;87 # È¡µÃµ±Ç°µÄÖÕ¶Ë³ß´ç.<br />
+&nbsp;87 # å–å¾—å½“å‰çš„ç»ˆç«¯å°ºå¯¸.<br />
 &nbsp;88 N_COLS=`tput cols`<br />
 &nbsp;89 N_LINES=`tput lines`<br />
 &nbsp;90<br />
-&nbsp;91 # ÖÁÉÙĞèÒª 20-ĞĞ X 80-ÁĞ µÄÖÕ¶Ë³ß´ç. ¼ì²éÒ»ÏÂ.<br />
+&nbsp;91 # è‡³å°‘éœ€è¦ 20-è¡Œ X 80-åˆ— çš„ç»ˆç«¯å°ºå¯¸. æ£€æŸ¥ä¸€ä¸‹.<br />
 &nbsp;92 if [ $N_COLS -lt 80 ] || [ $N_LINES -lt 20 ]; then<br />
 &nbsp;93&nbsp;&nbsp;&nbsp; echo "`basename $0` needs a 80-cols X
 20-lines terminal."<br />
@@ -583,26 +583,26 @@ ${N_LINES}-lines."<br />
 &nbsp;96 fi<br />
 &nbsp;97<br />
 &nbsp;98<br />
-&nbsp;99 # ¿ªÊ¼»­Èü³¡.<br />
+&nbsp;99 # å¼€å§‹ç”»èµ›åœº.<br />
 100<br />
-101 # ĞèÒªÒ»¸ö80¸ö×Ö·ûµÄ×Ö·û´®,¿´ÏÂÃæµÄ.<br />
+101 # éœ€è¦ä¸€ä¸ª80ä¸ªå­—ç¬¦çš„å­—ç¬¦ä¸²,çœ‹ä¸‹é¢çš„.<br />
 102 BLANK80=`seq -s "" 100 | head -c80`<br />
 103<br />
 104 clear<br />
 105<br />
-106 # °ÑÇ°¾°ºÍ±³¾°ÑÕÉ«ÉèÖÃ³É°×É«µÄ.<br />
+106 # æŠŠå‰æ™¯å’ŒèƒŒæ™¯é¢œè‰²è®¾ç½®æˆç™½è‰²çš„.<br />
 107 echo -ne '\E[37;47m'<br />
 108<br />
-109 # °Ñ¹â±êÒÆµ½ÖÕ¶ËµÄ×óÉÏ½Ç.<br />
+109 # æŠŠå…‰æ ‡ç§»åˆ°ç»ˆç«¯çš„å·¦ä¸Šè§’.<br />
 110 tput cup 0 0<br />
 111<br />
-112 # »­ÁùÌõ°×Ïß.<br />
+112 # ç”»å…­æ¡ç™½çº¿.<br />
 113 for n in `seq 5`; do<br />
 114&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
-$BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÏßÊÇÓÃ80¸ö×Ö·û×é³ÉµÄ×Ö·û´®. <br />
+$BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # çº¿æ˜¯ç”¨80ä¸ªå­—ç¬¦ç»„æˆçš„å­—ç¬¦ä¸². <br />
 115 done<br />
 116<br />
-117 # °ÑÇ°¾°É«ÉèÖÃ³ÉºÚÉ«.<br />
+117 # æŠŠå‰æ™¯è‰²è®¾ç½®æˆé»‘è‰².<br />
 118 echo -ne '\E[30m'<br />
 119<br />
 120 move_and_echo 3 1 "START&nbsp;
@@ -617,10 +617,10 @@ $BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÏßÊÇÓÃ80¸ö×Ö·û×é³ÉµÄ×Ö·û´®.
 128 move_and_echo 5 5 "V&nbsp; 3"<br />
 129 move_and_echo 5 80 "V"<br />
 130<br />
-131 # °ÑÇ°¾°É«ÉèÖÃ³ÉºìÉ«.<br />
+131 # æŠŠå‰æ™¯è‰²è®¾ç½®æˆçº¢è‰².<br />
 132 echo -ne '\E[31m'<br />
 133<br />
-134 # Ò»Ğ©ASCIIÒÕÊõ.<br />
+134 # ä¸€äº›ASCIIè‰ºæœ¯.<br />
 135 move_and_echo 1 8 "..@@@..@@@@@...@@@@@.@...@..@@@@..."<br />
 136 move_and_echo 2 8 ".@...@...@.......@...@...@.@......."<br />
 137 move_and_echo 3 8 ".@@@@@...@.......@...@@@@@.@@@@...."<br />
@@ -633,20 +633,20 @@ $BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÏßÊÇÓÃ80¸ö×Ö·û×é³ÉµÄ×Ö·û´®.
 144 move_and_echo 5 43 "@...@.@...@..@@@@..@@@@.@@@@.."<br />
 145<br />
 146<br />
-147 # °ÑÇ°¾°ºÍ±³¾°ÑÕÉ«ÉèÎªÂÌÉ«.<br />
+147 # æŠŠå‰æ™¯å’ŒèƒŒæ™¯é¢œè‰²è®¾ä¸ºç»¿è‰².<br />
 148 echo -ne '\E[32;42m'<br />
 149<br />
-150 # »­11ĞĞÂÌÏß.<br />
+150 # ç”»11è¡Œç»¿çº¿.<br />
 151 tput cup 5 0<br />
 152 for n in `seq 11`; do<br />
 153&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $BLANK80<br />
 154 done<br />
 155<br />
-156 # °ÑÇ°¾°É«ÉèÎªºÚÉ«.<br />
+156 # æŠŠå‰æ™¯è‰²è®¾ä¸ºé»‘è‰².<br />
 157 echo -ne '\E[30m'<br />
 158 tput cup 5 0<br />
 159<br />
-160 # »­Õ¤À¸.<br />
+160 # ç”»æ …æ .<br />
 161 echo "++++++++++++++++++++++++++++++++++++++\<br />
 162 ++++++++++++++++++++++++++++++++++++++++++"<br />
 163<br />
@@ -654,28 +654,28 @@ $BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÏßÊÇÓÃ80¸ö×Ö·û×é³ÉµÄ×Ö·û´®.
 165 echo "++++++++++++++++++++++++++++++++++++++\<br />
 166 ++++++++++++++++++++++++++++++++++++++++++"<br />
 167<br />
-168 # °ÑÇ°¾°ºÍ±³¾°É«Éè»Ø°×É«.<br />
+168 # æŠŠå‰æ™¯å’ŒèƒŒæ™¯è‰²è®¾å›ç™½è‰².<br />
 169 echo -ne '\E[37;47m'<br />
 170<br />
-171 # »­3Ìõ°×Ïß.<br />
+171 # ç”»3æ¡ç™½çº¿.<br />
 172 for n in `seq 3`; do<br />
 173&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $BLANK80<br />
 174 done<br />
 175<br />
-176 # °ÑÇ°¾°É«ÉèÎªºÚÉ«.<br />
+176 # æŠŠå‰æ™¯è‰²è®¾ä¸ºé»‘è‰².<br />
 177 echo -ne '\E[30m'<br />
 178<br />
-179 # ´´½¨9¸öÎÄ¼şÀ´±£´æÕÏ°­Îï.<br />
+179 # åˆ›å»º9ä¸ªæ–‡ä»¶æ¥ä¿å­˜éšœç¢ç‰©.<br />
 180 for n in `seq 10 7 68`; do<br />
 181&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch $n<br />
 182 done <br />
 183<br />
-184 # ÉèÖÃ½Å±¾Òª»­µÄÂíµÄÀàĞÍÎªµÚÒ»ÖÖÀàĞÍ.<br />
+184 # è®¾ç½®è„šæœ¬è¦ç”»çš„é©¬çš„ç±»å‹ä¸ºç¬¬ä¸€ç§ç±»å‹.<br />
 185 HORSE_TYPE=2<br />
 186<br />
-187 #&nbsp; ÎªÃ¿Æ¥Âí´´½¨Î»ÖÃÎÄ¼şºÍ»úÂÊÎÄ¼ş.<br />
-188 #+ ÔÚÕâĞ©ÎÄ¼şÀï±£´æÁË¸ÃÆ¥Âíµ±Ç°µÄÎ»ÖÃ,<br />
-189 #+ ÀàĞÍºÍ»úÂÊ.<br />
+187 #&nbsp; ä¸ºæ¯åŒ¹é©¬åˆ›å»ºä½ç½®æ–‡ä»¶å’Œæœºç‡æ–‡ä»¶.<br />
+188 #+ åœ¨è¿™äº›æ–‡ä»¶é‡Œä¿å­˜äº†è¯¥åŒ¹é©¬å½“å‰çš„ä½ç½®,<br />
+189 #+ ç±»å‹å’Œæœºç‡.<br />
 190 for HN in `seq 9`; do<br />
 191&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch horse_${HN}_position<br />
 192&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; touch odds_${HN}<br />
@@ -683,22 +683,22 @@ $BLANK80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ÏßÊÇÓÃ80¸ö×Ö·û×é³ÉµÄ×Ö·û´®.
 horse_${HN}_position<br />
 194&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo $HORSE_TYPE &gt;&gt;&nbsp;
 horse_${HN}_position<br />
-195&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¸øÂí¶¨ÒåËæ»úµÄÕÏ°­Îï.<br />
+195&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç»™é©¬å®šä¹‰éšæœºçš„éšœç¢ç‰©.<br />
 196&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; HANDICAP=`random_1_9`<br />
-197&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¼ì²érandom_1_9º¯ÊıÊÇ·ñ·µ»ØÁËÓĞĞ§Öµ.<br />
+197&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # æ£€æŸ¥random_1_9å‡½æ•°æ˜¯å¦è¿”å›äº†æœ‰æ•ˆå€¼.<br />
 198&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while ! echo $HANDICAP | grep
 [1-9] &amp;&gt; /dev/null; do<br />
 199&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 HANDICAP=`random_1_9`<br />
 200&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done<br />
-201&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¸øÂí¶¨Òå×îºóµÄÕÏ°­µÄÎ»ÖÃ.<br />
+201&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç»™é©¬å®šä¹‰æœ€åçš„éšœç¢çš„ä½ç½®.<br />
 202&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LHP=`expr $HANDICAP \* 7 + 3`<br />
 203&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for FILE in `seq 10 7 $LHP`; do<br />
 204&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 echo $HN &gt;&gt; $FILE<br />
 205&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done&nbsp; <br />
 206&nbsp;&nbsp;&nbsp;&nbsp; <br />
-207&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ¼ÆËã»úÂÊ.<br />
+207&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # è®¡ç®—æœºç‡.<br />
 208&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case $HANDICAP in<br />
 209&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 1) ODDS=`echo $HANDICAP \* 0.25 + 1.25 | bc`<br />
@@ -734,7 +734,7 @@ echo $ODDS &gt; odds_${HN}<br />
 226 done<br />
 227<br />
 228<br />
-229 # ´òÓ¡»úÂÊ.<br />
+229 # æ‰“å°æœºç‡.<br />
 230 print_odds() {<br />
 231 tput cup 6 0<br />
 232 echo -ne '\E[30;42m'<br />
@@ -744,7 +744,7 @@ odds_${HN}`<br />
 235 done<br />
 236 }<br />
 237<br />
-238 # ÔÚÆğÅÜÏßÉÏ»­Âí.<br />
+238 # åœ¨èµ·è·‘çº¿ä¸Šç”»é©¬.<br />
 239 draw_horses() {<br />
 240 tput cup 6 0<br />
 241 echo -ne '\E[30;42m'<br />
@@ -758,19 +758,19 @@ odds_${HN}`<br />
 247 print_odds<br />
 248<br />
 249 echo -ne '\E[47m'<br />
-250 # µÈ´ı»Ø³µ°´¼ü¿ªÊ¼ÈüÂí.<br />
-251 # ×ªÒåĞòÁĞ'\E[?25l'½ûÏÔÁË¹â±ê.<br />
+250 # ç­‰å¾…å›è½¦æŒ‰é”®å¼€å§‹èµ›é©¬.<br />
+251 # è½¬ä¹‰åºåˆ—'\E[?25l'ç¦æ˜¾äº†å…‰æ ‡.<br />
 252 tput cup 17 0<br />
 253 echo -e '\E[?25l'Press [enter] key to start the race...<br />
 254 read -s<br />
 255<br />
-256 #&nbsp; ½ûÓÃÁËÖÕ¶ËµÄ³£¹æÏÔÊ¾¹¦ÄÜ.<br />
-257 #&nbsp; Õâ±ÜÃâÁËÈüÅÜÊ±²»Ğ¡ĞÄ°´ÁË°´¼ü¼üÈëÏÔÊ¾×Ö·û¶øÅªÂÒÁËÆÁÄ».<br />
+256 #&nbsp; ç¦ç”¨äº†ç»ˆç«¯çš„å¸¸è§„æ˜¾ç¤ºåŠŸèƒ½.<br />
+257 #&nbsp; è¿™é¿å…äº†èµ›è·‘æ—¶ä¸å°å¿ƒæŒ‰äº†æŒ‰é”®é”®å…¥æ˜¾ç¤ºå­—ç¬¦è€Œå¼„ä¹±äº†å±å¹•.<br />
 258 # <br />
 259 stty -echo<br />
 260<br />
 261 # --------------------------------------------------------<br />
-262 # ¿ªÊ¼ÈüÅÜ.<br />
+262 # å¼€å§‹èµ›è·‘.<br />
 263<br />
 264 draw_horses<br />
 265 echo -ne '\E[37;47m'<br />
@@ -779,13 +779,13 @@ odds_${HN}`<br />
 268 move_and_echo 18 1 Starting...<br />
 269 sleep 1<br />
 270<br />
-271 # ÉèÖÃÖÕµãÏßµÄÁĞÊı.<br />
+271 # è®¾ç½®ç»ˆç‚¹çº¿çš„åˆ—æ•°.<br />
 272 WINNING_POS=74<br />
 273<br />
-274 # ¼ÇÂ¼ÈüÅÜ¿ªÊ¼µÄÊ±¼ä.<br />
+274 # è®°å½•èµ›è·‘å¼€å§‹çš„æ—¶é—´.<br />
 275 START_TIME=`date +%s`<br />
 276<br />
-277 # COL ÊÇÓÉÏÂÃæµÄ"while"½á¹¹Ê¹ÓÃµÄ.<br />
+277 # COL æ˜¯ç”±ä¸‹é¢çš„"while"ç»“æ„ä½¿ç”¨çš„.<br />
 278 COL=0&nbsp;&nbsp; <br />
 279<br />
 280 while [ $COL -lt $WINNING_POS ]; do<br />
@@ -795,7 +795,7 @@ odds_${HN}`<br />
 MOVE_HORSE=0&nbsp;&nbsp;&nbsp; <br />
 283&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 284&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-¼ì²érandom_1_9º¯ÊıÊÇ·ñ·µ»ØÁËÓĞĞ§Öµ.<br />
+æ£€æŸ¥random_1_9å‡½æ•°æ˜¯å¦è¿”å›äº†æœ‰æ•ˆå€¼.<br />
 285&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while !
 echo $MOVE_HORSE | grep [1-9] &amp;&gt; /dev/null; do<br />
 286&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -803,7 +803,7 @@ MOVE_HORSE=`random_1_9`<br />
 287&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; done<br />
 288&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 289&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-È¡µÃËæ»úÈ¡µÃµÄÂíµÄÀàĞÍºÍµ±Ç°Î»ÖÃ.<br />
+å–å¾—éšæœºå–å¾—çš„é©¬çš„ç±»å‹å’Œå½“å‰ä½ç½®.<br />
 290&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 HORSE_TYPE=`cat&nbsp; horse_${MOVE_HORSE}_position | tail -1`<br />
 291&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -812,7 +812,7 @@ COL=$(expr `cat&nbsp; horse_${MOVE_HORSE}_position | head -1`)<br />
 293&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ADD_POS=1<br />
 294&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-¼ì²éµ±Ç°µÄÎ»ÖÃÊÇ·ñÊÇÕÏ°­ÎïµÄÎ»ÖÃ.<br />
+æ£€æŸ¥å½“å‰çš„ä½ç½®æ˜¯å¦æ˜¯éšœç¢ç‰©çš„ä½ç½®.<br />
 295&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if seq
 10 7 68 | grep -w $COL &amp;&gt; /dev/null; then<br />
 296&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -835,11 +835,11 @@ ADD_POS=1<br />
 305&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 COL=`expr $COL + $ADD_POS`<br />
 306&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
-$COL &gt;&nbsp; horse_${MOVE_HORSE}_position&nbsp; # ±£´æĞÂÎ»ÖÃ.<br />
+$COL &gt;&nbsp; horse_${MOVE_HORSE}_position&nbsp; # ä¿å­˜æ–°ä½ç½®.<br />
 307&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <br />
 308&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-Ñ¡ÔñÒª»­µÄÂíµÄÀàĞÍ.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+é€‰æ‹©è¦ç”»çš„é©¬çš„ç±»å‹.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 309&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case
 $HORSE_TYPE in<br />
 310&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -851,27 +851,27 @@ $HORSE_TYPE in<br />
 313&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 esac&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 314&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
-$HORSE_TYPE &gt;&gt;&nbsp; horse_${MOVE_HORSE}_position # ±£´æµ±Ç°ÀàĞÍ.<br />
+$HORSE_TYPE &gt;&gt;&nbsp; horse_${MOVE_HORSE}_position # ä¿å­˜å½“å‰ç±»å‹.<br />
 315&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 316&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-°ÑÇ°¾°É«ÉèÎªºÚ,±³¾°É«ÉèÎªÂÌ.<br />
+æŠŠå‰æ™¯è‰²è®¾ä¸ºé»‘,èƒŒæ™¯è‰²è®¾ä¸ºç»¿.<br />
 317&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
 -ne '\E[30;42m'<br />
 318&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 319&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-°Ñ¹â±êÎ»ÖÃÒÆµ½ĞÂµÄÂíµÄÎ»ÖÃ.<br />
+æŠŠå…‰æ ‡ä½ç½®ç§»åˆ°æ–°çš„é©¬çš„ä½ç½®.<br />
 320&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tput
 cup `expr $MOVE_HORSE + 5`&nbsp; `cat&nbsp;
 horse_${MOVE_HORSE}_position | head -1`<br />
 321&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
-322&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # »­Âí.<br />
+322&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # ç”»é©¬.<br />
 323&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 $DRAW_HORSE<br />
 324&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 usleep $USLEEP_ARG<br />
 325&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 326&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-µ±ËùÓĞµÄÂí¶¼Ô½¹ı15ĞĞµÄÖ®ºó,ÔÙ´Î´òÓ¡»úÂÊ.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
+å½“æ‰€æœ‰çš„é©¬éƒ½è¶Šè¿‡15è¡Œçš„ä¹‹å,å†æ¬¡æ‰“å°æœºç‡.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 327&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 touch fieldline15<br />
 328&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -889,13 +889,13 @@ print_odds<br />
 fi&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 335&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 336&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-È¡µÃÁìÍ·µÄÂí.<br />
+å–å¾—é¢†å¤´çš„é©¬.<br />
 337&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 HIGHEST_POS=`cat *position | sort -n | tail
 -1`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 338&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br />
 339&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #
-°Ñ±³¾°É«ÖØÉèÎª°×É«.<br />
+æŠŠèƒŒæ™¯è‰²é‡è®¾ä¸ºç™½è‰².<br />
 340&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; echo
 -ne '\E[47m'<br />
 341&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tput
@@ -907,42 +907,42 @@ Current leader: `grep -w $HIGHEST_POS *position | cut
 343<br />
 344 done <br />
 345<br />
-346 # È¡µÃÈüÂí½áÊøµÄÊ±¼ä.<br />
+346 # å–å¾—èµ›é©¬ç»“æŸçš„æ—¶é—´.<br />
 347 FINISH_TIME=`date +%s`<br />
 348<br />
-349 # ±³¾°É«ÉèÎªÂÌÉ«²¢ÇÒÆôÓÃÉÁ¶¯µÄ¹¦ÄÜ.<br />
+349 # èƒŒæ™¯è‰²è®¾ä¸ºç»¿è‰²å¹¶ä¸”å¯ç”¨é—ªåŠ¨çš„åŠŸèƒ½.<br />
 350 echo -ne '\E[30;42m'<br />
 351 echo -en '\E[5m'<br />
 352<br />
-353 # Ê¹»ñÊ¤µÄÂíÉÁ¶¯.<br />
+353 # ä½¿è·èƒœçš„é©¬é—ªåŠ¨.<br />
 354 tput cup `expr $MOVE_HORSE + 5` `cat&nbsp;
 horse_${MOVE_HORSE}_position | head -1`<br />
 355 $DRAW_HORSE<br />
 356<br />
-357 # ½ûÓÃÉÁ¶¯ÎÄ±¾.<br />
+357 # ç¦ç”¨é—ªåŠ¨æ–‡æœ¬.<br />
 358 echo -en '\E[25m'<br />
 359<br />
-360 # °ÑÇ°¾°ºÍ±³¾°É«ÉèÎª°×É«.<br />
+360 # æŠŠå‰æ™¯å’ŒèƒŒæ™¯è‰²è®¾ä¸ºç™½è‰².<br />
 361 echo -ne '\E[37;47m'<br />
 362 move_and_echo 18 1 $BLANK80<br />
 363<br />
-364 # Ç°¾°É«ÉèÎªºÚÉ«.<br />
+364 # å‰æ™¯è‰²è®¾ä¸ºé»‘è‰².<br />
 365 echo -ne '\E[30m'<br />
 366<br />
-367 # ÉÁ¶¯»ñÊ¤µÄÂí.<br />
+367 # é—ªåŠ¨è·èƒœçš„é©¬.<br />
 368 tput cup 17 0<br />
 369 echo -e "\E[5mWINNER: $MOVE_HORSE\E[25m""&nbsp; Odds: `cat
 odds_${MOVE_HORSE}`"\<br />
 370 "&nbsp; Race time: `expr $FINISH_TIME - $START_TIME` secs"<br />
 371<br />
-372 # »Ö¸´¹â±êºÍ×î³õµÄÑÕÉ«.<br />
+372 # æ¢å¤å…‰æ ‡å’Œæœ€åˆçš„é¢œè‰².<br />
 373 echo -en "\E[?25h"<br />
 374 echo -en "\E[0m"<br />
 375<br />
-376 # »Ö¸´»ØÏÔ¹¦ÄÜ.<br />
+376 # æ¢å¤å›æ˜¾åŠŸèƒ½.<br />
 377 stty echo<br />
 378<br />
-379 # É¾³ıÈüÅÜµÄÁÙÊ±ÎÄ¼ş.<br />
+379 # åˆ é™¤èµ›è·‘çš„ä¸´æ—¶æ–‡ä»¶.<br />
 380 rm -rf $HORSE_RACE_TMP_DIR<br />
 381<br />
 382 tput cup 19 0<br />
@@ -950,18 +950,18 @@ odds_${MOVE_HORSE}`"\<br />
 384 exit 0<br />
 ################################End
 Script#########################################<br />
-²Î¿¼ Àı×Ó A-22.<br />
-×¢Òâ: È»¶ø,ÓĞÒ»¸öÖ÷ÒªµÄÎÊÌâ,ÄÇ¾ÍÊÇANSI ×ªÒåĞòÁĞÊÇ²»¿ÉÒÆÖ²µÄ. ÔÚÒ»Ğ©ÖÕ¶ËÔËĞĞµÄ<br />
-&nbsp; ºÜºÃµÄ´úÂë¿ÉÄÜÔÚÁíÍâÒ»Ğ©ÖÕ¶ËÉÏ¿ÉÄÜÔËĞĞµØºÜÔã¸â. ÔÚ²ÊÉ«½Å±¾×÷ÕßÖÕ¶ËÉÏÔËĞĞµÄ<br />
-&nbsp; ºÜºÃµÄ½Å±¾¿ÉÄÜÔÚÁíÍâÒ»Ğ©ÖÕ¶ËÉÏ¾Í²úÉú²»¿ÉÔÄ¶ÁµÄÊä³öÁË. Õâ¸ø²ÊÉ«½Å±¾µÄÓÃ´¦´ó<br />
-&nbsp; ´ó´òÁË¸öÕÛ¿Û,¶øºÜ¿ÉÄÜÊ¹ÕâĞ©¼¼Êõ±ä³ÉÒ»¸ö°µ»ú¹Ø»òÖ»ÊÇÒ»¸öÍæ¾ß¶øÒÑ.<br />
-Moshe JacobsonµÄÑÕÉ«¹¤¾ß(http://runslinux.net/projects.html#color)ÄÜÏàµ±ÈİÒ×µØÊ¹ÓÃ<br />
-ANSI×ªÒåĞòÁĞ. ËüÓÃÇåÎúºÍ½ÏÓĞÂß¼­µÄÓï·¨À´´úÌæ¸Õ²ÅÌÖÂÛµÄÄÑÓÃµÄ½á¹¹.<br />
-Henry/teikedvl Ò²Í¬Ñù¿ª·¢ÁËÒ»¸öÈí¼ş°üÀ´¼ò»¯²ÊÉ«½Å±¾µÄÒ»Ğ©²Ù×÷<br />
+å‚è€ƒ ä¾‹å­ A-22.<br />
+æ³¨æ„: ç„¶è€Œ,æœ‰ä¸€ä¸ªä¸»è¦çš„é—®é¢˜,é‚£å°±æ˜¯ANSI è½¬ä¹‰åºåˆ—æ˜¯ä¸å¯ç§»æ¤çš„. åœ¨ä¸€äº›ç»ˆç«¯è¿è¡Œçš„<br />
+&nbsp; å¾ˆå¥½çš„ä»£ç å¯èƒ½åœ¨å¦å¤–ä¸€äº›ç»ˆç«¯ä¸Šå¯èƒ½è¿è¡Œåœ°å¾ˆç³Ÿç³•. åœ¨å½©è‰²è„šæœ¬ä½œè€…ç»ˆç«¯ä¸Šè¿è¡Œçš„<br />
+&nbsp; å¾ˆå¥½çš„è„šæœ¬å¯èƒ½åœ¨å¦å¤–ä¸€äº›ç»ˆç«¯ä¸Šå°±äº§ç”Ÿä¸å¯é˜…è¯»çš„è¾“å‡ºäº†. è¿™ç»™å½©è‰²è„šæœ¬çš„ç”¨å¤„å¤§<br />
+&nbsp; å¤§æ‰“äº†ä¸ªæŠ˜æ‰£,è€Œå¾ˆå¯èƒ½ä½¿è¿™äº›æŠ€æœ¯å˜æˆä¸€ä¸ªæš—æœºå…³æˆ–åªæ˜¯ä¸€ä¸ªç©å…·è€Œå·².<br />
+Moshe Jacobsonçš„é¢œè‰²å·¥å…·(http://runslinux.net/projects.html#color)èƒ½ç›¸å½“å®¹æ˜“åœ°ä½¿ç”¨<br />
+ANSIè½¬ä¹‰åºåˆ—. å®ƒç”¨æ¸…æ™°å’Œè¾ƒæœ‰é€»è¾‘çš„è¯­æ³•æ¥ä»£æ›¿åˆšæ‰è®¨è®ºçš„éš¾ç”¨çš„ç»“æ„.<br />
+Henry/teikedvl ä¹ŸåŒæ ·å¼€å‘äº†ä¸€ä¸ªè½¯ä»¶åŒ…æ¥ç®€åŒ–å½©è‰²è„šæœ¬çš„ä¸€äº›æ“ä½œ<br />
 (http://scriptechocolor.sourceforge.net/).<br />
-×¢ÒâÊÂÏî:<br />
-[1]&nbsp; µ±È»,ANSIÊÇAmerican National Standards Institute(ÃÀ¹ú¹ú¼Ò±ê×¼×éÖ¯)µÄËõ<br />
-&nbsp; Ğ´. Õâ¸öÁîÈË¾´Î·µÄ×éÖ¯½¨Á¢ºÍÎ¬»¤×ÅĞí¶à¼¼ÊõºÍ¹¤ÒµµÄ±ê×¼.<br />
+æ³¨æ„äº‹é¡¹:<br />
+[1]&nbsp; å½“ç„¶,ANSIæ˜¯American National Standards Institute(ç¾å›½å›½å®¶æ ‡å‡†ç»„ç»‡)çš„ç¼©<br />
+&nbsp; å†™. è¿™ä¸ªä»¤äººæ•¬ç•çš„ç»„ç»‡å»ºç«‹å’Œç»´æŠ¤ç€è®¸å¤šæŠ€æœ¯å’Œå·¥ä¸šçš„æ ‡å‡†.<br />
 
 
 
@@ -988,7 +988,7 @@ VALIGN="top"
 ><A
 HREF="recursionsct.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -997,7 +997,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -1006,7 +1006,7 @@ VALIGN="top"
 ><A
 HREF="optimizations.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -1014,7 +1014,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->µİ¹é</TD
+>é€’å½’</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -1024,7 +1024,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->ÓÅ»¯</TD
+>ä¼˜åŒ–</TD
 ></TR
 ></TABLE
 ></DIV

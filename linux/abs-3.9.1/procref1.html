@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
 >/proc</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="/dev��/proc"
+TITLE="/dev和/proc"
 HREF="devproc.html"><LINK
 REL="PREVIOUS"
 TITLE="/dev"
 HREF="devref1.html"><LINK
 REL="NEXT"
-TITLE="Zero��Null"
+TITLE="Zero与Null"
 HREF="zeros.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="devref1.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->27. /dev��/proc</TD
+>27. /dev和/proc</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="zeros.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -83,14 +83,14 @@ CLASS="FILENAME"
 ><TT
 CLASS="FILENAME"
 >/proc</TT
->Ŀ¼ʵ������һ��α�ļ�ϵͳ. 
+>目录实际上是一个伪文件系统. 
 		  <TT
 CLASS="FILENAME"
 >/proc</TT
->Ŀ¼�е��ļ�����ӳ�䵱ǰ���е�ϵͳ, 
-		  �ں�<EM
->����</EM
->�Լ���������ص�״̬��ͳ����Ϣ. 
+>目录中的文件用来映射当前运行的系统, 
+		  内核<EM
+>进程</EM
+>以及与它们相关的状态与统计信息. 
 	</P
 ><P
 >         <TABLE
@@ -212,10 +212,10 @@ CLASS="COMPUTEROUTPUT"
 >
       </P
 ><P
->Shell�ű����Դ�<TT
+>Shell脚本可以从<TT
 CLASS="FILENAME"
 >/proc</TT
->Ŀ¼�µ�ĳЩ�ض��ļ�����ȡ����. 
+>目录下的某些特定文件中提取数据. 
 
 		   <A
 NAME="AEN14936"
@@ -236,7 +236,7 @@ WIDTH="100%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;FS=iso                       # �ں��Ƿ�֧��ISO�ļ�ϵͳ? 
+>  1&nbsp;FS=iso                       # 内核是否支持ISO文件系统? 
   2&nbsp;
   3&nbsp;grep $FS /proc/filesystems   # iso9660</PRE
 ></FONT
@@ -308,7 +308,7 @@ CLASS="PROGRAMLISTING"
   8&nbsp;if [ "$bus_speed" = "$USB1" ]
   9&nbsp;then
  10&nbsp;  echo "USB 1.1 port found."
- 11&nbsp;  # �������������Ӳ���USB 1.1����ض���. 
+ 11&nbsp;  # 可以在这里添加操作USB 1.1的相关动作. 
  12&nbsp;fi</PRE
 ></FONT
 ></TD
@@ -319,31 +319,31 @@ CLASS="PROGRAMLISTING"
 ><TT
 CLASS="FILENAME"
 >/proc</TT
->Ŀ¼�°����������Բ�ͬ������������Ŀ¼. 
-	   ��Щ��Ϊ��Ŀ¼���ֵ�����, �������ǵ�ǰ�������н��̵�<A
+>目录下包含有许多以不同数字命名的子目录. 
+	   这些作为子目录名字的数字, 代表的是当前正在运行进程的<A
 HREF="internalvariables.html#PPIDREF"
->����ID</A
+>进程ID</A
 >. 
-	   ����Щ��������������Ŀ¼��, 
-	   ÿһ����Ŀ¼���������ļ����������Ӧ���̵Ŀ�����Ϣ. 
-	   �ļ�<TT
+	   在这些以数字命名的子目录中, 
+	   每一个子目录都有许多文件用来保存对应进程的可用信息. 
+	   文件<TT
 CLASS="FILENAME"
 >stat</TT
->��<TT
+>和<TT
 CLASS="FILENAME"
 >status</TT
->�����Ž�������ʱ�ĸ���ͳ����Ϣ,  
-	   �ļ�<TT
+>保存着进程运行时的各项统计信息,  
+	   文件<TT
 CLASS="FILENAME"
 >cmdline</TT
->�����Ž��̱�����ʱ�������в���, 
-	   ���ļ�<TT
+>保存着进程被调用时的命令行参数, 
+	   而文件<TT
 CLASS="FILENAME"
 >exe</TT
->��һ����������, 
-	   �����������ָ��������н��̵�����·��. 
-	   �������������������ļ�, 
-	   ����ӽű����ӽ��������ǵĻ�, ��Щ�ļ����ǳ�������˼. 
+>是一个符号链接, 
+	   这个符号链接指向这个运行进程的完整路径. 
+	   还有许多类似这样的文件, 
+	   如果从脚本的视角来看它们的话, 这些文件都非常的有意思. 
 	   </P
 ><DIV
 CLASS="EXAMPLE"
@@ -352,7 +352,7 @@ NAME="PIDID"
 ></A
 ><P
 ><B
->���� 27-2. �ҳ������PID������Ľ���</B
+>例子 27-2. 找出与给定PID相关联的进程</B
 ></P
 ><TABLE
 BORDER="0"
@@ -365,9 +365,9 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# pid-identifier.sh: ������ָ��pid��������̵�����·����. 
+  2&nbsp;# pid-identifier.sh: 给出与指定pid相关联进程的完整路径名. 
   3&nbsp;
-  4&nbsp;ARGNO=1  # �����Ĳ�������. 
+  4&nbsp;ARGNO=1  # 期望的参数个数. 
   5&nbsp;E_WRONGARGS=65
   6&nbsp;E_BADPID=66
   7&nbsp;E_NOSUCHPROCESS=67
@@ -376,45 +376,45 @@ CLASS="PROGRAMLISTING"
  10&nbsp;
  11&nbsp;if [ $# -ne $ARGNO ]
  12&nbsp;then
- 13&nbsp;  echo "Usage: `basename $0` PID-number" &#62;&#38;2  # Error message &#62;stderr(������Ϣ�ض��򵽱�׼����). 
+ 13&nbsp;  echo "Usage: `basename $0` PID-number" &#62;&#38;2  # Error message &#62;stderr(错误信息重定向到标准错误). 
  14&nbsp;  exit $E_WRONGARGS
  15&nbsp;fi  
  16&nbsp;
  17&nbsp;pidno=$( ps ax | grep $1 | awk '{ print $1 }' | grep $1 )
- 18&nbsp;# ��"ps"������������������pid����, pidλ���ڵ�һ��#1, ��awk���˳���. 
- 19&nbsp;# Ȼ���ٴ�ȷ�������������Ҫ�ҵĽ���, ������������ű������������Ľ���. 
- 20&nbsp;# ����"grep $1"�����������˵����ֿ�����. 
+ 18&nbsp;# 从"ps"命令的输出中搜索带有pid的行, pid位置在第一列#1, 由awk过滤出来. 
+ 19&nbsp;# 然后再次确认这就是我们所要找的进程, 而不是由这个脚本调用所产生的进程. 
+ 20&nbsp;# 最后的"grep $1"就是用来过滤掉这种可能性. 
  21&nbsp;#
  22&nbsp;#    pidno=$( ps ax | awk '{ print $1 }' | grep $1 )
- 23&nbsp;#    ��ôд�Ϳ�����, ��һ����Teemu Huovilaָ��. 
+ 23&nbsp;#    这么写就可以了, 这一点由Teemu Huovila指出. 
  24&nbsp;
- 25&nbsp;if [ -z "$pidno" ]  # ����������еĹ���֮��, �õ��Ľ����һ������Ϊ0���ַ���, 
- 26&nbsp;then                # �Ǿ�˵�����pidû����Ӧ�Ľ���������. 
+ 25&nbsp;if [ -z "$pidno" ]  # 如果经过所有的过滤之后, 得到的结果是一个长度为0的字符串, 
+ 26&nbsp;then                # 那就说明这个pid没有相应的进程在运行. 
  27&nbsp;  echo "No such process running."
  28&nbsp;  exit $E_NOSUCHPROCESS
  29&nbsp;fi  
  30&nbsp;
- 31&nbsp;# Ҳ������ôд: 
+ 31&nbsp;# 也可以这么写: 
  32&nbsp;#   if ! ps $1 &#62; /dev/null 2&#62;&#38;1
- 33&nbsp;#   then                # û�������pid��ƥ��Ľ���������. 
+ 33&nbsp;#   then                # 没有与给定pid相匹配的进程在运行. 
  34&nbsp;#     echo "No such process running."
  35&nbsp;#     exit $E_NOSUCHPROCESS
  36&nbsp;#    fi
  37&nbsp;
- 38&nbsp;# Ϊ�˼���������, ����ʹ��"pidof". 
+ 38&nbsp;# 为了简化整个过程, 可以使用"pidof". 
  39&nbsp;
  40&nbsp;
- 41&nbsp;if [ ! -r "/proc/$1/$PROCFILE" ]  # ����Ȩ��. 
+ 41&nbsp;if [ ! -r "/proc/$1/$PROCFILE" ]  # 检查读权限. 
  42&nbsp;then
  43&nbsp;  echo "Process $1 running, but..."
  44&nbsp;  echo "Can't get read permission on /proc/$1/$PROCFILE."
- 45&nbsp;  exit $E_NOPERMISSION  # һ���û����ܷ���/procĿ¼�µ�ĳЩ�ļ�. 
+ 45&nbsp;  exit $E_NOPERMISSION  # 一般用户不能访问/proc目录下的某些文件. 
  46&nbsp;fi  
  47&nbsp;
- 48&nbsp;# ����������Կ���ʹ����������������: 
- 49&nbsp;#    if ! kill -0 $1 &#62; /dev/null 2&#62;&#38;1 # '0'����һ���ź�, but
- 50&nbsp;                                      # ������ô��, ���Բ���һ���Ƿ�
- 51&nbsp;                                      # ������ý��̷����ź�. 
+ 48&nbsp;# 最后两个测试可以使用下面的语句来代替: 
+ 49&nbsp;#    if ! kill -0 $1 &#62; /dev/null 2&#62;&#38;1 # '0'不是一个信号, but
+ 50&nbsp;                                      # 但是这么做, 可以测试一下是否
+ 51&nbsp;                                      # 可以向该进程发送信号. 
  52&nbsp;#    then echo "PID doesn't exist or you're not its owner" &#62;&#38;2
  53&nbsp;#    exit $E_BADPID
  54&nbsp;#    fi
@@ -422,30 +422,30 @@ CLASS="PROGRAMLISTING"
  56&nbsp;
  57&nbsp;
  58&nbsp;exe_file=$( ls -l /proc/$1 | grep "exe" | awk '{ print $11 }' )
- 59&nbsp;# ��       exe_file=$( ls -l /proc/$1/exe | awk '{print $11}' )
+ 59&nbsp;# 或       exe_file=$( ls -l /proc/$1/exe | awk '{print $11}' )
  60&nbsp;#
- 61&nbsp;# /proc/pid-number/exe��һ����������, 
- 62&nbsp;# ָ��������ý��̵�����·����. 
+ 61&nbsp;# /proc/pid-number/exe是一个符号链接, 
+ 62&nbsp;# 指向这个调用进程的完整路径名. 
  63&nbsp;
- 64&nbsp;if [ -e "$exe_file" ]  # ���/proc/pid-number/exe����...
- 65&nbsp;then                 # ��ô��Ӧ�Ľ��̾ʹ���. 
+ 64&nbsp;if [ -e "$exe_file" ]  # 如果/proc/pid-number/exe存在...
+ 65&nbsp;then                 # 那么相应的进程就存在. 
  66&nbsp;  echo "Process #$1 invoked by $exe_file."
  67&nbsp;else
  68&nbsp;  echo "No such process running."
  69&nbsp;fi  
  70&nbsp;
  71&nbsp;
- 72&nbsp;# ������������Ľű�, *����*�ܹ����±���һ�������: 
+ 72&nbsp;# 这个精心制作的脚本, *几乎*能够被下边这一行所替代: 
  73&nbsp;# ps ax | grep $1 | awk '{ print $5 }'
- 74&nbsp;# ����, ���������Ṥ��...
- 75&nbsp;# ��Ϊ'ps'����ĵ�5���ǽ��̵�argv[0](����ע: ���������е�һ������, ������ʱ�����õĳ���·������.)
- 76&nbsp;# �����ǿ�ִ���ļ���·��. 
+ 74&nbsp;# 但是, 这样并不会工作...
+ 75&nbsp;# 因为'ps'输出的第5列是进程的argv[0](译者注: 这是命令行第一个参数, 即调用时程序用的程序路径本身.)
+ 76&nbsp;# 而不是可执行文件的路径. 
  77&nbsp;#
- 78&nbsp;# Ȼ��, �±������ַ���������ȷ������������. 
+ 78&nbsp;# 然而, 下边这两种方法都能正确地完成这个任务. 
  79&nbsp;#       find /proc/$1/exe -printf '%l\n'
  80&nbsp;#       lsof -aFn -p $1 -d txt | sed -ne 's/^n//p'
  81&nbsp;
- 82&nbsp;# ����ע��, ��Stephane Chazelas���ӵ�. 
+ 82&nbsp;# 附加注释, 是Stephane Chazelas添加的. 
  83&nbsp;
  84&nbsp;exit 0</PRE
 ></FONT
@@ -460,7 +460,7 @@ NAME="CONSTAT"
 ></A
 ><P
 ><B
->���� 27-3. ��������״̬</B
+>例子 27-3. 网络连接状态</B
 ></P
 ><TABLE
 BORDER="0"
@@ -474,24 +474,24 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
-  3&nbsp;PROCNAME=pppd        # ppp�ػ�����
-  4&nbsp;PROCFILENAME=status  # ������Ѱ����Ϣ. 
+  3&nbsp;PROCNAME=pppd        # ppp守护进程
+  4&nbsp;PROCFILENAME=status  # 在这里寻找信息. 
   5&nbsp;NOTCONNECTED=65
-  6&nbsp;INTERVAL=2           # ÿ2��ˢ��һ��. 
+  6&nbsp;INTERVAL=2           # 每2秒刷新一次. 
   7&nbsp;
   8&nbsp;pidno=$( ps ax | grep -v "ps ax" | grep -v grep | grep $PROCNAME | awk '{ print $1 }' )
-  9&nbsp;# �ҳ�'pppd'����Ӧ�Ľ��̺�, ��'ppp�ػ�����'. 
- 10&nbsp;# ������˵������������������Ľ�����. 
+  9&nbsp;# 找出'pppd'所对应的进程号, 即'ppp守护进程'. 
+ 10&nbsp;# 必须过滤掉由搜索本身所产生的进程行. 
  11&nbsp;#
- 12&nbsp;#  Ȼ��, ����Oleg Philon��ָ��������, 
- 13&nbsp;#+ ���ʹ��"pidof"�Ļ�, �ͻ�ǳ���. 
+ 12&nbsp;#  然而, 就像Oleg Philon所指出的那样, 
+ 13&nbsp;#+ 如果使用"pidof"的话, 就会非常简单. 
  14&nbsp;#  pidno=$( pidof $PROCNAME )
  15&nbsp;#
- 16&nbsp;#  �Ӿ������ܽ�������Ҹ�: 
- 17&nbsp;#+ ���������б�÷ǳ����ӵ�ʱ��, һ��Ҫ�ҵ������ķ���. 
+ 16&nbsp;#  从经验中总结出来的忠告: 
+ 17&nbsp;#+ 当命令序列变得非常复杂的时候, 一定要找到更简洁的方法. 
  18&nbsp;
  19&nbsp;
- 20&nbsp;if [ -z "$pidno" ]   # ���û���ҵ�ƥ���pid, ��ô��˵����Ӧ�Ľ���û����. 
+ 20&nbsp;if [ -z "$pidno" ]   # 如果没有找到匹配的pid, 那么就说明相应的进程没运行. 
  21&nbsp;then
  22&nbsp;  echo "Not connected."
  23&nbsp;  exit $NOTCONNECTED
@@ -499,17 +499,17 @@ CLASS="PROGRAMLISTING"
  25&nbsp;  echo "Connected."; echo
  26&nbsp;fi
  27&nbsp;
- 28&nbsp;while [ true ]       # ��ѭ��, ������ԸĽ�һ��. 
+ 28&nbsp;while [ true ]       # 死循环, 这里可以改进一下. 
  29&nbsp;do
  30&nbsp;
  31&nbsp;  if [ ! -e "/proc/$pidno/$PROCFILENAME" ]
- 32&nbsp;  # ��������ʱ, ��Ӧ��"status"�ļ��ͻ����. 
+ 32&nbsp;  # 进程运行时, 相应的"status"文件就会存在. 
  33&nbsp;  then
  34&nbsp;    echo "Disconnected."
  35&nbsp;    exit $NOTCONNECTED
  36&nbsp;  fi
  37&nbsp;
- 38&nbsp;netstat -s | grep "packets received"  # ���һЩ����ͳ��. 
+ 38&nbsp;netstat -s | grep "packets received"  # 获得一些连接统计. 
  39&nbsp;netstat -s | grep "packets delivered"
  40&nbsp;
  41&nbsp;
@@ -520,12 +520,12 @@ CLASS="PROGRAMLISTING"
  46&nbsp;
  47&nbsp;exit 0
  48&nbsp;
- 49&nbsp;# �������ֹͣ����ű�, ֻ��ʹ��Control-C. 
+ 49&nbsp;# 如果你想停止这个脚本, 只能使用Control-C. 
  50&nbsp;
- 51&nbsp;#    ��ϰ:
+ 51&nbsp;#    练习:
  52&nbsp;#    -----
- 53&nbsp;#    �Ľ�����ű�, ʹ�����԰�"q"���˳�. 
- 54&nbsp;#    �������ű����û��Ѻ���. </PRE
+ 53&nbsp;#    改进这个脚本, 使它可以按"q"键退出. 
+ 54&nbsp;#    提高这个脚本的用户友好性. </PRE
 ></FONT
 ></TD
 ></TR
@@ -552,15 +552,15 @@ ALT="Warning"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->һ����˵, 
-		��<TT
+>一般来说, 
+		在<TT
 CLASS="FILENAME"
 >/proc</TT
->Ŀ¼��, 
-		����<EM
->д</EM
->�ļ������Ƿǳ�Σ�յ�, 
-	 ��Ϊ��ô�����ܻ��ƻ��ļ�ϵͳ, �����ڴݻ���������. 
+>目录中, 
+		进行<EM
+>写</EM
+>文件操作是非常危险的, 
+	 因为这么做可能会破坏文件系统, 甚至于摧毁整个机器. 
 	 </P
 ></TD
 ></TR
@@ -569,7 +569,7 @@ CLASS="FILENAME"
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -592,8 +592,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->ĳЩϵͳ����Ҳ�������Ƶ�����, 
-				   ����<A
+>某些系统命令也可做类似的事情, 
+				   比如<A
 HREF="system.html#PROCINFOREF"
 >procinfo</A
 >, 
@@ -609,7 +609,7 @@ HREF="system.html#VMSTATREF"
 HREF="system.html#LSDEVREF"
 >lsdev</A
 >, 
-	     ��<A
+	     和<A
 HREF="system.html#UPTIMEREF"
 >uptime</A
 >. 
@@ -635,7 +635,7 @@ VALIGN="top"
 ><A
 HREF="devref1.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -644,7 +644,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -653,7 +653,7 @@ VALIGN="top"
 ><A
 HREF="zeros.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -672,13 +672,13 @@ VALIGN="top"
 ><A
 HREF="devproc.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->Zero��Null</TD
+>Zero与Null</TD
 ></TR
 ></TABLE
 ></DIV

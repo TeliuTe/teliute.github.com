@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�ο���Ƭ</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>参考卡片</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="PREVIOUS"
-TITLE="���׵Ľű�"
+TITLE="捐献的脚本"
 HREF="contributed-scripts.html"><LINK
 REL="NEXT"
-TITLE="һ��ѧϰSed��Awk��С�ֲ�"
+TITLE="一个学习Sed和Awk的小手册"
 HREF="sedawk.html"></HEAD
 ><BODY
 CLASS="APPENDIX"
@@ -34,7 +34,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -44,7 +44,7 @@ VALIGN="bottom"
 ><A
 HREF="contributed-scripts.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
@@ -58,7 +58,7 @@ VALIGN="bottom"
 ><A
 HREF="sedawk.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -71,12 +71,12 @@ CLASS="APPENDIX"
 ><A
 NAME="REFCARDS"
 ></A
->Appendix B. �ο���Ƭ</H1
+>Appendix B. 参考卡片</H1
 ><P
->����Ĳο���Ƭ�ṩ�˶���ĳЩ�ض��Ľű������һ��<EM
->�ܽ�</EM
+>下面的参考卡片提供了对于某些特定的脚本概念的一个<EM
+>总结</EM
 >. 
-	֮ǰ�����Ѿ����������ἰ�ĸ����������ϸ�Ľ���, ���Ҹ�����ʹ�õ�����. </P
+	之前我们已经对这里所提及的概念进行了详细的解释, 并且给出了使用的例子. </P
 ><DIV
 CLASS="TABLE"
 ><HR><A
@@ -84,7 +84,7 @@ NAME="AEN17110"
 ></A
 ><P
 ><B
->���� B-1. �����shell����</B
+>表格 B-1. 特殊的shell变量</B
 ></P
 ><TABLE
 BORDER="1"
@@ -92,9 +92,9 @@ CLASS="CALSTABLE"
 ><COL><COL><THEAD
 ><TR
 ><TH
->����</TH
+>变量</TH
 ><TH
->����</TH
+>含义</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -105,7 +105,7 @@ CLASS="OPTION"
 >$0</CODE
 ></TD
 ><TD
->�ű�����</TD
+>脚本名字</TD
 ></TR
 ><TR
 ><TD
@@ -114,7 +114,7 @@ CLASS="OPTION"
 >$1</CODE
 ></TD
 ><TD
->λ�ò��� #1</TD
+>位置参数 #1</TD
 ></TR
 ><TR
 ><TD
@@ -123,7 +123,7 @@ CLASS="OPTION"
 >$2 - $9</CODE
 ></TD
 ><TD
->λ�ò��� #2 - #9</TD
+>位置参数 #2 - #9</TD
 ></TR
 ><TR
 ><TD
@@ -132,7 +132,7 @@ CLASS="OPTION"
 >${10}</CODE
 ></TD
 ><TD
->λ�ò��� #10</TD
+>位置参数 #10</TD
 ></TR
 ><TR
 ><TD
@@ -141,7 +141,7 @@ CLASS="OPTION"
 >$#</CODE
 ></TD
 ><TD
->λ�ò����ĸ���</TD
+>位置参数的个数</TD
 ></TR
 ><TR
 ><TD
@@ -150,7 +150,7 @@ CLASS="OPTION"
 >"$*"</CODE
 ></TD
 ><TD
->���е�λ�ò���(��Ϊ�����ַ���) *</TD
+>所有的位置参数(作为单个字符串) *</TD
 ></TR
 ><TR
 ><TD
@@ -159,7 +159,7 @@ CLASS="OPTION"
 >"$@"</CODE
 ></TD
 ><TD
->���е�λ�ò���(ÿ������Ϊ�������ַ���)</TD
+>所有的位置参数(每个都作为独立的字符串)</TD
 ></TR
 ><TR
 ><TD
@@ -168,7 +168,7 @@ CLASS="OPTION"
 >${#*}</CODE
 ></TD
 ><TD
->���ݵ��ű��е������в����ĸ���</TD
+>传递到脚本中的命令行参数的个数</TD
 ></TR
 ><TR
 ><TD
@@ -177,7 +177,7 @@ CLASS="OPTION"
 >${#@}</CODE
 ></TD
 ><TD
->���ݵ��ű��е������в����ĸ���</TD
+>传递到脚本中的命令行参数的个数</TD
 ></TR
 ><TR
 ><TD
@@ -186,7 +186,7 @@ CLASS="OPTION"
 >$?</CODE
 ></TD
 ><TD
->����ֵ</TD
+>返回值</TD
 ></TR
 ><TR
 ><TD
@@ -195,7 +195,7 @@ CLASS="OPTION"
 >$$</CODE
 ></TD
 ><TD
->�ű��Ľ���ID(PID)</TD
+>脚本的进程ID(PID)</TD
 ></TR
 ><TR
 ><TD
@@ -204,7 +204,7 @@ CLASS="OPTION"
 >$-</CODE
 ></TD
 ><TD
->���ݵ��ű��еı�־(ʹ��<EM
+>传递到脚本中的标志(使用<EM
 >set</EM
 >)</TD
 ></TR
@@ -215,7 +215,7 @@ CLASS="OPTION"
 >$_</CODE
 ></TD
 ><TD
->֮ǰ��������һ������</TD
+>之前命令的最后一个参数</TD
 ></TR
 ><TR
 ><TD
@@ -224,7 +224,7 @@ CLASS="OPTION"
 >$!</CODE
 ></TD
 ><TD
->�����ں�̨�����һ����ҵ�Ľ���ID(PID)</TD
+>运行在后台的最后一个作业的进程ID(PID)</TD
 ></TR
 ></TBODY
 ></TABLE
@@ -234,9 +234,9 @@ CLASS="OPTION"
 CLASS="COMMAND"
 >*</B
 > <EM
->���뱻��������</EM
+>必须被引用起来</EM
 >,
-        ����Ĭ��Ϊ<SPAN
+        否则默认为<SPAN
 CLASS="QUOTE"
 >"<CODE
 CLASS="VARNAME"
@@ -250,7 +250,7 @@ NAME="AEN17180"
 ></A
 ><P
 ><B
->���� B-2. ���Բ���: ��Ԫ�Ƚ�</B
+>表格 B-2. 测试操作: 二元比较</B
 ></P
 ><TABLE
 BORDER="1"
@@ -258,15 +258,15 @@ CLASS="CALSTABLE"
 ><COL><COL><COL><COL><COL><THEAD
 ><TR
 ><TH
->����</TH
+>操作</TH
 ><TH
->����</TH
+>描述</TH
 ><TH
 >-----</TH
 ><TH
->����</TH
+>操作</TH
 ><TH
->����</TH
+>描述</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -284,13 +284,13 @@ CLASS="CALSTABLE"
 ></TR
 ><TR
 ><TD
->�����Ƚ�</TD
+>算术比较</TD
 ><TD
 >&nbsp;</TD
 ><TD
 >&nbsp;</TD
 ><TD
->�ַ����Ƚ�</TD
+>字符串比较</TD
 ><TD
 >&nbsp;</TD
 ></TR
@@ -301,7 +301,7 @@ CLASS="OPTION"
 >-eq</CODE
 ></TD
 ><TD
->����</TD
+>等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -310,7 +310,7 @@ CLASS="OPTION"
 >=</CODE
 ></TD
 ><TD
->����</TD
+>等于</TD
 ></TR
 ><TR
 ><TD
@@ -325,7 +325,7 @@ CLASS="OPTION"
 >==</CODE
 ></TD
 ><TD
->����</TD
+>等于</TD
 ></TR
 ><TR
 ><TD
@@ -334,7 +334,7 @@ CLASS="OPTION"
 >-ne</CODE
 ></TD
 ><TD
->������</TD
+>不等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -343,7 +343,7 @@ CLASS="OPTION"
 >!=</CODE
 ></TD
 ><TD
->������</TD
+>不等于</TD
 ></TR
 ><TR
 ><TD
@@ -352,7 +352,7 @@ CLASS="OPTION"
 >-lt</CODE
 ></TD
 ><TD
->С��</TD
+>小于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -361,7 +361,7 @@ CLASS="OPTION"
 >\&#60;</CODE
 ></TD
 ><TD
->С�� (ASCII) *</TD
+>小于 (ASCII) *</TD
 ></TR
 ><TR
 ><TD
@@ -370,7 +370,7 @@ CLASS="OPTION"
 >-le</CODE
 ></TD
 ><TD
->С�ڵ���</TD
+>小于等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -385,7 +385,7 @@ CLASS="OPTION"
 >-gt</CODE
 ></TD
 ><TD
->����</TD
+>大于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -394,7 +394,7 @@ CLASS="OPTION"
 >\&#62;</CODE
 ></TD
 ><TD
->���� (ASCII) *</TD
+>大于 (ASCII) *</TD
 ></TR
 ><TR
 ><TD
@@ -403,7 +403,7 @@ CLASS="OPTION"
 >-ge</CODE
 ></TD
 ><TD
->���ڵ���</TD
+>大于等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -424,7 +424,7 @@ CLASS="OPTION"
 >-z</CODE
 ></TD
 ><TD
->�ַ���Ϊ��</TD
+>字符串为空</TD
 ></TR
 ><TR
 ><TD
@@ -439,7 +439,7 @@ CLASS="OPTION"
 >-n</CODE
 ></TD
 ><TD
->�ַ�����Ϊ��</TD
+>字符串不为空</TD
 ></TR
 ><TR
 ><TD
@@ -455,9 +455,9 @@ CLASS="OPTION"
 ></TR
 ><TR
 ><TD
->�����Ƚ�</TD
+>算术比较</TD
 ><TD
->˫����(( ... ))�ṹ</TD
+>双括号(( ... ))结构</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -472,7 +472,7 @@ CLASS="OPTION"
 >&#62;</CODE
 ></TD
 ><TD
->����</TD
+>大于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -487,7 +487,7 @@ CLASS="OPTION"
 >&#62;=</CODE
 ></TD
 ><TD
->���ڵ���</TD
+>大于等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -502,7 +502,7 @@ CLASS="OPTION"
 >&#60;</CODE
 ></TD
 ><TD
->С��</TD
+>小于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -517,7 +517,7 @@ CLASS="OPTION"
 >&#60;=</CODE
 ></TD
 ><TD
->С�ڵ���</TD
+>小于等于</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -533,12 +533,12 @@ CLASS="OPTION"
 CLASS="COMMAND"
 >*</B
 > <EM
->�����˫������</EM
+>如果在双中括号</EM
 > [[ ... ]] <EM
->���Խṹ��ʹ�õĻ�, 
-        ��ô�Ͳ���Ҫʹ��ת���</EM
+>测试结构中使用的话, 
+        那么就不需要使用转义符</EM
 >\<EM
->��. </EM
+>了. </EM
 ></P
 ><DIV
 CLASS="TABLE"
@@ -547,7 +547,7 @@ NAME="AEN17292"
 ></A
 ><P
 ><B
->���� B-3. �ļ����͵Ĳ��Բ���</B
+>表格 B-3. 文件类型的测试操作</B
 ></P
 ><TABLE
 BORDER="1"
@@ -555,15 +555,15 @@ CLASS="CALSTABLE"
 ><COL><COL><COL><COL><COL><THEAD
 ><TR
 ><TH
->����</TH
+>操作</TH
 ><TH
->��������</TH
+>测试条件</TH
 ><TH
 >-----</TH
 ><TH
->����</TH
+>操作</TH
 ><TH
->��������</TH
+>测试条件</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -574,7 +574,7 @@ CLASS="OPTION"
 >-e</CODE
 ></TD
 ><TD
->�ļ��Ƿ����</TD
+>文件是否存在</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -583,7 +583,7 @@ CLASS="OPTION"
 >-s</CODE
 ></TD
 ><TD
->�ļ���С��Ϊ0</TD
+>文件大小不为0</TD
 ></TR
 ><TR
 ><TD
@@ -592,9 +592,9 @@ CLASS="OPTION"
 >-f</CODE
 ></TD
 ><TD
->��һ��<EM
->��׼</EM
->�ļ�</TD
+>是一个<EM
+>标准</EM
+>文件</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -609,8 +609,8 @@ CLASS="OPTION"
 >-d</CODE
 ></TD
 ><TD
->��һ��<EM
->Ŀ¼</EM
+>是一个<EM
+>目录</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -620,9 +620,9 @@ CLASS="OPTION"
 >-r</CODE
 ></TD
 ><TD
->�ļ�����<EM
->��</EM
->Ȩ��</TD
+>文件具有<EM
+>读</EM
+>权限</TD
 ></TR
 ><TR
 ><TD
@@ -631,8 +631,8 @@ CLASS="OPTION"
 >-h</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->��������</EM
+>文件是一个<EM
+>符号链接</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -642,9 +642,9 @@ CLASS="OPTION"
 >-w</CODE
 ></TD
 ><TD
->�ļ�����<EM
->д</EM
->Ȩ��</TD
+>文件具有<EM
+>写</EM
+>权限</TD
 ></TR
 ><TR
 ><TD
@@ -653,8 +653,8 @@ CLASS="OPTION"
 >-L</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->��������</EM
+>文件是一个<EM
+>符号链接</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -664,9 +664,9 @@ CLASS="OPTION"
 >-x</CODE
 ></TD
 ><TD
->�ļ�����<EM
->ִ��</EM
->Ȩ��</TD
+>文件具有<EM
+>执行</EM
+>权限</TD
 ></TR
 ><TR
 ><TD
@@ -675,8 +675,8 @@ CLASS="OPTION"
 >-b</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->���豸</EM
+>文件是一个<EM
+>块设备</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -692,8 +692,8 @@ CLASS="OPTION"
 >-c</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->�ַ��豸</EM
+>文件是一个<EM
+>字符设备</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -703,9 +703,9 @@ CLASS="OPTION"
 >-g</CODE
 ></TD
 ><TD
->������<EM
+>设置了<EM
 >sgid</EM
->���</TD
+>标记</TD
 ></TR
 ><TR
 ><TD
@@ -714,8 +714,8 @@ CLASS="OPTION"
 >-p</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->�ܵ�</EM
+>文件是一个<EM
+>管道</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -725,9 +725,9 @@ CLASS="OPTION"
 >-u</CODE
 ></TD
 ><TD
->������<EM
+>设置了<EM
 >suid</EM
->���</TD
+>标记</TD
 ></TR
 ><TR
 ><TD
@@ -736,7 +736,7 @@ CLASS="OPTION"
 >-S</CODE
 ></TD
 ><TD
->�ļ���һ��<A
+>文件是一个<A
 HREF="devref1.html#SOCKETREF"
 >socket</A
 ></TD
@@ -748,9 +748,9 @@ CLASS="OPTION"
 >-k</CODE
 ></TD
 ><TD
->������<SPAN
+>设置了<SPAN
 CLASS="QUOTE"
->"ճ��λ"</SPAN
+>"粘贴位"</SPAN
 ></TD
 ></TR
 ><TR
@@ -760,9 +760,9 @@ CLASS="OPTION"
 >-t</CODE
 ></TD
 ><TD
->�ļ���һ��<EM
->�ն�</EM
->�����</TD
+>文件与一个<EM
+>终端</EM
+>相关联</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -789,7 +789,7 @@ CLASS="OPTION"
 >-N</CODE
 ></TD
 ><TD
->������ļ����һ�α���ȡ֮��, �����޸Ĺ�</TD
+>从这个文件最后一次被读取之后, 它被修改过</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -798,8 +798,8 @@ CLASS="OPTION"
 >F1 -nt F2</CODE
 ></TD
 ><TD
->�ļ�F1���ļ�F2<EM
->��</EM
+>文件F1比文件F2<EM
+>新</EM
 > *</TD
 ></TR
 ><TR
@@ -809,7 +809,7 @@ CLASS="OPTION"
 >-O</CODE
 ></TD
 ><TD
->����ļ�����������</TD
+>这个文件的宿主是你</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -818,8 +818,8 @@ CLASS="OPTION"
 >F1 -ot F2</CODE
 ></TD
 ><TD
->�ļ�F1���ļ�F2<EM
->��</EM
+>文件F1比文件F2<EM
+>旧</EM
 > *</TD
 ></TR
 ><TR
@@ -829,9 +829,9 @@ CLASS="OPTION"
 >-G</CODE
 ></TD
 ><TD
->�ļ���<EM
->��id</EM
->��������������ͬ</TD
+>文件的<EM
+>组id</EM
+>与你所属的组相同</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -840,8 +840,8 @@ CLASS="OPTION"
 >F1 -ef F2</CODE
 ></TD
 ><TD
->�ļ�F1���ļ�F2����ͬһ���ļ���<EM
->Ӳ����</EM
+>文件F1和文件F2都是同一个文件的<EM
+>硬链接</EM
 > *</TD
 ></TR
 ><TR
@@ -865,8 +865,8 @@ CLASS="OPTION"
 ><TD
 ><SPAN
 CLASS="QUOTE"
->"��"</SPAN
-> (��ת�ϱߵĲ��Խ��)</TD
+>"非"</SPAN
+> (反转上边的测试结果)</TD
 ><TD
 >&nbsp;</TD
 ><TD
@@ -882,8 +882,8 @@ CLASS="QUOTE"
 CLASS="COMMAND"
 >*</B
 > <EM
->��Ԫ</EM
->������(��Ҫ����������). </P
+>二元</EM
+>操作符(需要两个操作数). </P
 ><DIV
 CLASS="TABLE"
 ><HR><A
@@ -891,7 +891,7 @@ NAME="AEN17426"
 ></A
 ><P
 ><B
->���� B-4. �����滻����չ</B
+>表格 B-4. 参数替换和扩展</B
 ></P
 ><TABLE
 BORDER="1"
@@ -899,9 +899,9 @@ CLASS="CALSTABLE"
 ><COL><COL><THEAD
 ><TR
 ><TH
->����ʽ</TH
+>表达式</TH
 ><TH
->����</TH
+>含义</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -912,13 +912,13 @@ CLASS="OPTION"
 >${var}</CODE
 ></TD
 ><TD
->����<CODE
+>变量<CODE
 CLASS="PARAMETER"
 >var</CODE
->��ֵ, ��<CODE
+>的值, 与<CODE
 CLASS="PARAMETER"
 >$var</CODE
->��ͬ</TD
+>相同</TD
 ></TR
 ><TR
 ><TD
@@ -933,14 +933,14 @@ CLASS="OPTION"
 >${var-DEFAULT}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û�б�����, 
-			  ��ô����<CODE
+>没有被声明, 
+			  那么就以<CODE
 CLASS="PARAMETER"
 >$DEFAULT</CODE
->��Ϊ��ֵ *</TD
+>作为其值 *</TD
 ></TR
 ><TR
 ><TD
@@ -949,14 +949,14 @@ CLASS="OPTION"
 >${var:-DEFAULT}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û�б�����, ������ֵΪ��,
-		��ô����<CODE
+>没有被声明, 或者其值为空,
+		那么就以<CODE
 CLASS="PARAMETER"
 >$DEFAULT</CODE
->��Ϊ��ֵ *</TD
+>作为其值 *</TD
 ></TR
 ><TR
 ><TD
@@ -971,14 +971,14 @@ CLASS="OPTION"
 >${var=DEFAULT}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û�б�����, 
-			  ��ô����<CODE
+>没有被声明, 
+			  那么就以<CODE
 CLASS="PARAMETER"
 >$DEFAULT</CODE
->��Ϊ��ֵ *</TD
+>作为其值 *</TD
 ></TR
 ><TR
 ><TD
@@ -987,14 +987,14 @@ CLASS="OPTION"
 >${var:=DEFAULT}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û�б�����, ������ֵΪ��,
-			  ��ô����<CODE
+>没有被声明, 或者其值为空,
+			  那么就以<CODE
 CLASS="PARAMETER"
 >$DEFAULT</CODE
->��Ϊ��ֵ *</TD
+>作为其值 *</TD
 ></TR
 ><TR
 ><TD
@@ -1009,15 +1009,15 @@ CLASS="OPTION"
 >${var+OTHER}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->������, 
-			  ��ô��ֵ����<CODE
+>声明了, 
+			  那么其值就是<CODE
 CLASS="PARAMETER"
 >$OTHER</CODE
 >, 
-			  �����Ϊnull�ַ���</TD
+			  否则就为null字符串</TD
 ></TR
 ><TR
 ><TD
@@ -1026,15 +1026,15 @@ CLASS="OPTION"
 >${var:+OTHER}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->��������, 
-			  ��ô��ֵ����<CODE
+>被设置了, 
+			  那么其值就是<CODE
 CLASS="PARAMETER"
 >$OTHER</CODE
 >, 
-			  �����Ϊnull�ַ���</TD
+			  否则就为null字符串</TD
 ></TR
 ><TR
 ><TD
@@ -1049,11 +1049,11 @@ CLASS="OPTION"
 >${var?ERR_MSG}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û������, 
-			  ��ô�ʹ�ӡ<CODE
+>没被声明, 
+			  那么就打印<CODE
 CLASS="PARAMETER"
 >$ERR_MSG</CODE
 > *</TD
@@ -1065,11 +1065,11 @@ CLASS="OPTION"
 >${var:?ERR_MSG}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >var</CODE
->û������, 
-			  ��ô�ʹ�ӡ<CODE
+>没被设置, 
+			  那么就打印<CODE
 CLASS="PARAMETER"
 >$ERR_MSG</CODE
 > *</TD
@@ -1087,10 +1087,10 @@ CLASS="OPTION"
 >${!varprefix*}</CODE
 ></TD
 ><TD
->ƥ��֮ǰ������<CODE
+>匹配之前所有以<CODE
 CLASS="PARAMETER"
 >varprefix</CODE
->��ͷ���������ı���</TD
+>开头进行声明的变量</TD
 ></TR
 ><TR
 ><TD
@@ -1099,10 +1099,10 @@ CLASS="OPTION"
 >${!varprefix@}</CODE
 ></TD
 ><TD
->ƥ��֮ǰ������<CODE
+>匹配之前所有以<CODE
 CLASS="PARAMETER"
 >varprefix</CODE
->��ͷ���������ı���</TD
+>开头进行声明的变量</TD
 ></TR
 ></TBODY
 ></TABLE
@@ -1111,11 +1111,11 @@ CLASS="PARAMETER"
 ><B
 CLASS="COMMAND"
 >*</B
-> ��Ȼ, �������<CODE
+> 当然, 如果变量<CODE
 CLASS="PARAMETER"
 >var</CODE
->�Ѿ������õĻ�, 
-        ��ô��ֵ����<CODE
+>已经被设置的话, 
+        那么其值就是<CODE
 CLASS="PARAMETER"
 >$var</CODE
 >. </P
@@ -1126,7 +1126,7 @@ NAME="AEN17517"
 ></A
 ><P
 ><B
->���� B-5. �ַ�������</B
+>表格 B-5. 字符串操作</B
 ></P
 ><TABLE
 BORDER="1"
@@ -1134,9 +1134,9 @@ CLASS="CALSTABLE"
 ><COL><COL><THEAD
 ><TR
 ><TH
->����ʽ</TH
+>表达式</TH
 ><TH
->����</TH
+>含义</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -1150,7 +1150,7 @@ CLASS="OPTION"
 ><CODE
 CLASS="PARAMETER"
 >$string</CODE
->�ĳ���</TD
+>的长度</TD
 ></TR
 ><TR
 ><TD
@@ -1165,14 +1165,14 @@ CLASS="OPTION"
 >${string:position}</CODE
 ></TD
 ><TD
->��<CODE
+>在<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��, 
-			  ��λ��<CODE
+>中, 
+			  从位置<CODE
 CLASS="PARAMETER"
 >$position</CODE
->��ʼ��ȡ�Ӵ�
+>开始提取子串
 		</TD
 ></TR
 ><TR
@@ -1182,17 +1182,17 @@ CLASS="OPTION"
 >${string:position:length}</CODE
 ></TD
 ><TD
->��<CODE
+>在<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��, 
-			  ��λ��<CODE
+>中, 
+			  从位置<CODE
 CLASS="PARAMETER"
 >$position</CODE
->��ʼ��ȡ����Ϊ<CODE
+>开始提取长度为<CODE
 CLASS="PARAMETER"
 >$length</CODE
->���Ӵ�
+>的子串
 		</TD
 ></TR
 ><TR
@@ -1208,14 +1208,14 @@ CLASS="OPTION"
 >${string#substring}</CODE
 ></TD
 ><TD
->�ӱ���<CODE
+>从变量<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ŀ�ͷ, 
-			  ɾ�����ƥ��<CODE
+>的开头, 
+			  删除最短匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->���Ӵ�
+>的子串
 	      </TD
 ></TR
 ><TR
@@ -1225,14 +1225,14 @@ CLASS="OPTION"
 >${string##substring}</CODE
 ></TD
 ><TD
->�ӱ���<CODE
+>从变量<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ŀ�ͷ, 
-			  ɾ���ƥ��<CODE
+>的开头, 
+			  删除最长匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->���Ӵ�
+>的子串
 	      </TD
 ></TR
 ><TR
@@ -1242,14 +1242,14 @@ CLASS="OPTION"
 >${string%substring}</CODE
 ></TD
 ><TD
->�ӱ���<CODE
+>从变量<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ľ�β, 
-			  ɾ�����ƥ��<CODE
+>的结尾, 
+			  删除最短匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->���Ӵ�
+>的子串
 	      </TD
 ></TR
 ><TR
@@ -1259,14 +1259,14 @@ CLASS="OPTION"
 >${string%%substring}</CODE
 ></TD
 ><TD
->�ӱ���<CODE
+>从变量<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ľ�β, 
-			  ɾ���ƥ��<CODE
+>的结尾, 
+			  删除最长匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->���Ӵ�
+>的子串
 	      </TD
 ></TR
 ><TR
@@ -1282,11 +1282,11 @@ CLASS="OPTION"
 >${string/substring/replacement}</CODE
 ></TD
 ><TD
->ʹ��<CODE
+>使用<CODE
 CLASS="PARAMETER"
 >$replacement</CODE
 >, 
-	      �������һ��ƥ���<CODE
+	      来代替第一个匹配的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >
@@ -1299,13 +1299,13 @@ CLASS="OPTION"
 >${string//substring/replacement}</CODE
 ></TD
 ><TD
->ʹ��<CODE
+>使用<CODE
 CLASS="PARAMETER"
 >$replacement</CODE
 >, 
-	      ����<EM
->����</EM
->ƥ���<CODE
+	      代替<EM
+>所有</EM
+>匹配的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >
@@ -1318,19 +1318,19 @@ CLASS="OPTION"
 >${string/#substring/replacement}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��<EM
->ǰ׺</EM
->ƥ��<CODE
+>的<EM
+>前缀</EM
+>匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >, 
-	      ��ô����<CODE
+	      那么就用<CODE
 CLASS="PARAMETER"
 >$replacement</CODE
->������ƥ�䵽��<CODE
+>来代替匹配到的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 ></TD
@@ -1342,19 +1342,19 @@ CLASS="OPTION"
 >${string/%substring/replacement}</CODE
 ></TD
 ><TD
->���<CODE
+>如果<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��<EM
->��׺</EM
->ƥ��<CODE
+>的<EM
+>后缀</EM
+>匹配<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >, 
-	      ��ô����<CODE
+	      那么就用<CODE
 CLASS="PARAMETER"
 >$replacement</CODE
->������ƥ�䵽��<CODE
+>来代替匹配到的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 ></TD
@@ -1378,13 +1378,13 @@ CLASS="OPTION"
 >expr match "$string" '$substring'</CODE
 ></TD
 ><TD
->ƥ��<CODE
+>匹配<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��ͷ��<CODE
+>开头的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->*�ĳ���</TD
+>*的长度</TD
 ></TR
 ><TR
 ><TD
@@ -1393,13 +1393,13 @@ CLASS="OPTION"
 >expr "$string" : '$substring'</CODE
 ></TD
 ><TD
->ƥ��<CODE
+>匹配<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��ͷ��<CODE
+>开头的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->*�ĳ���</TD
+>*的长度</TD
 ></TR
 ><TR
 ><TD
@@ -1408,13 +1408,13 @@ CLASS="OPTION"
 >expr index "$string" $substring</CODE
 ></TD
 ><TD
->��<CODE
+>在<CODE
 CLASS="PARAMETER"
 >$string</CODE
->��ƥ�䵽��<CODE
+>中匹配到的<CODE
 CLASS="PARAMETER"
 >$substring</CODE
->�ĵ�һ���ַ����ֵ�λ��</TD
+>的第一个字符出现的位置</TD
 ></TR
 ><TR
 ><TD
@@ -1424,16 +1424,16 @@ CLASS="OPTION"
 	        $length</CODE
 ></TD
 ><TD
->��<CODE
+>在<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�д�λ��<CODE
+>中从位置<CODE
 CLASS="PARAMETER"
 >$position</CODE
->��ʼ��ȡ����Ϊ<CODE
+>开始提取长度为<CODE
 CLASS="PARAMETER"
 >$length</CODE
->���Ӵ�</TD
+>的子串</TD
 ></TR
 ><TR
 ><TD
@@ -1443,10 +1443,10 @@ CLASS="OPTION"
 	        '\($substring\)'</CODE
 ></TD
 ><TD
->��<CODE
+>从<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ŀ�ͷλ����ȡ<CODE
+>的开头位置提取<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >*</TD
@@ -1459,10 +1459,10 @@ CLASS="OPTION"
 	        '\($substring\)'</CODE
 ></TD
 ><TD
->��<CODE
+>从<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ŀ�ͷλ����ȡ<CODE
+>的开头位置提取<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >*</TD
@@ -1475,10 +1475,10 @@ CLASS="OPTION"
 	        '.*\($substring\)'</CODE
 ></TD
 ><TD
->��<CODE
+>从<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ľ�β��ȡ<CODE
+>的结尾提取<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >*</TD
@@ -1491,10 +1491,10 @@ CLASS="OPTION"
 	        '.*\($substring\)'</CODE
 ></TD
 ><TD
->��<CODE
+>从<CODE
 CLASS="PARAMETER"
 >$string</CODE
->�Ľ�β��ȡ<CODE
+>的结尾提取<CODE
 CLASS="PARAMETER"
 >$substring</CODE
 >*</TD
@@ -1509,8 +1509,8 @@ CLASS="COMMAND"
 > <CODE
 CLASS="PARAMETER"
 >$substring</CODE
->��һ��<EM
->�������ʽ</EM
+>是一个<EM
+>正则表达式</EM
 >. </P
 ><DIV
 CLASS="TABLE"
@@ -1519,7 +1519,7 @@ NAME="AEN17666"
 ></A
 ><P
 ><B
->���� B-6. һЩ�ṹ�Ļ���</B
+>表格 B-6. 一些结构的汇总</B
 ></P
 ><TABLE
 BORDER="1"
@@ -1527,9 +1527,9 @@ CLASS="CALSTABLE"
 ><COL><COL><THEAD
 ><TR
 ><TH
->����ʽ</TH
+>表达式</TH
 ><TH
->����</TH
+>解释</TH
 ></TR
 ></THEAD
 ><TBODY
@@ -1542,7 +1542,7 @@ CLASS="CALSTABLE"
 ><TR
 ><TD
 ><EM
->������</EM
+>中括号</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1554,7 +1554,7 @@ CLASS="OPTION"
 >if [ CONDITION ]</CODE
 ></TD
 ><TD
->���Խṹ</TD
+>测试结构</TD
 ></TR
 ><TR
 ><TD
@@ -1563,7 +1563,7 @@ CLASS="OPTION"
 >if [[ CONDITION ]]</CODE
 ></TD
 ><TD
->��չ�Ĳ��Խṹ</TD
+>扩展的测试结构</TD
 ></TR
 ><TR
 ><TD
@@ -1572,7 +1572,7 @@ CLASS="OPTION"
 >Array[1]=element1</CODE
 ></TD
 ><TD
->�����ʼ��</TD
+>数组初始化</TD
 ></TR
 ><TR
 ><TD
@@ -1583,8 +1583,8 @@ CLASS="OPTION"
 ><TD
 ><A
 HREF="regexp.html#REGEXREF"
->�������ʽ</A
->���ַ���Χ</TD
+>正则表达式</A
+>的字符范围</TD
 ></TR
 ><TR
 ><TD
@@ -1595,7 +1595,7 @@ HREF="regexp.html#REGEXREF"
 ><TR
 ><TD
 ><EM
->������</EM
+>大括号</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1607,7 +1607,7 @@ CLASS="OPTION"
 >${variable}</CODE
 ></TD
 ><TD
->�����滻</TD
+>参数替换</TD
 ></TR
 ><TR
 ><TD
@@ -1618,7 +1618,7 @@ CLASS="OPTION"
 ><TD
 ><A
 HREF="ivr.html#IVRREF"
->��ӱ�������</A
+>间接变量引用</A
 ></TD
 ></TR
 ><TR
@@ -1628,7 +1628,7 @@ CLASS="OPTION"
 >{ command1; command2; . . . commandN; }</CODE
 ></TD
 ><TD
->�����</TD
+>代码块</TD
 ></TR
 ><TR
 ><TD
@@ -1637,7 +1637,7 @@ CLASS="OPTION"
 >{string1,string2,string3,...}</CODE
 ></TD
 ><TD
->��������չ</TD
+>大括号扩展</TD
 ></TR
 ><TR
 ><TD
@@ -1654,7 +1654,7 @@ CLASS="OPTION"
 ><TR
 ><TD
 ><EM
->Բ����</EM
+>圆括号</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1668,8 +1668,8 @@ CLASS="OPTION"
 ><TD
 ><A
 HREF="subshells.html#SUBSHELLSREF"
->��shell</A
->��ִ�е�������</TD
+>子shell</A
+>中执行的命令组</TD
 ></TR
 ><TR
 ><TD
@@ -1678,7 +1678,7 @@ CLASS="OPTION"
 >Array=(element1 element2 element3)</CODE
 ></TD
 ><TD
->�����ʼ��</TD
+>数组初始化</TD
 ></TR
 ><TR
 ><TD
@@ -1687,7 +1687,7 @@ CLASS="OPTION"
 >result=$(COMMAND)</CODE
 ></TD
 ><TD
->����shell��ִ������, ���������ֵ������</TD
+>在子shell中执行命令, 并将结果赋值给变量</TD
 ></TR
 ><TR
 ><TD
@@ -1698,7 +1698,7 @@ CLASS="OPTION"
 ><TD
 ><A
 HREF="process-sub.html#PROCESSSUBREF"
->�����滻</A
+>进程替换</A
 ></TD
 ></TR
 ><TR
@@ -1708,7 +1708,7 @@ CLASS="OPTION"
 >&#60;(COMMAND)</CODE
 ></TD
 ><TD
->�����滻</TD
+>进程替换</TD
 ></TR
 ><TR
 ><TD
@@ -1719,7 +1719,7 @@ CLASS="OPTION"
 ><TR
 ><TD
 ><EM
->˫Բ����</EM
+>双圆括号</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1731,7 +1731,7 @@ CLASS="OPTION"
 >(( var = 78 ))</CODE
 ></TD
 ><TD
->��������</TD
+>整型运算</TD
 ></TR
 ><TR
 ><TD
@@ -1740,7 +1740,7 @@ CLASS="OPTION"
 >var=$(( 20 + 5 ))</CODE
 ></TD
 ><TD
->��������, ���������ֵ������</TD
+>整型运算, 并将结果赋值给变量</TD
 ></TR
 ><TR
 ><TD
@@ -1751,7 +1751,7 @@ CLASS="OPTION"
 ><TR
 ><TD
 ><EM
->����</EM
+>引号</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1763,7 +1763,7 @@ CLASS="OPTION"
 >"$variable"</CODE
 ></TD
 ><TD
->"��"����</TD
+>"弱"引用</TD
 ></TR
 ><TR
 ><TD
@@ -1772,7 +1772,7 @@ CLASS="OPTION"
 >'string'</CODE
 ></TD
 ><TD
->"ǿ"����</TD
+>"强"引用</TD
 ></TR
 ><TR
 ><TD
@@ -1783,7 +1783,7 @@ CLASS="OPTION"
 ><TR
 ><TD
 ><EM
->��������</EM
+>后置引用</EM
 ></TD
 ><TD
 >&nbsp;</TD
@@ -1795,7 +1795,7 @@ CLASS="OPTION"
 >result=`COMMAND`</CODE
 ></TD
 ><TD
->����shell����������, ���������ֵ������</TD
+>在子shell中运行命令, 并将结果赋值给变量</TD
 ></TR
 ></TBODY
 ></TABLE
@@ -1819,7 +1819,7 @@ VALIGN="top"
 ><A
 HREF="contributed-scripts.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -1828,7 +1828,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -1837,7 +1837,7 @@ VALIGN="top"
 ><A
 HREF="sedawk.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -1845,7 +1845,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->���׵Ľű�</TD
+>捐献的脚本</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -1855,7 +1855,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->һ��ѧϰSed��Awk��С�ֲ�</TD
+>一个学习Sed和Awk的小手册</TD
 ></TR
 ></TABLE
 ></DIV

@@ -1,22 +1,22 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->�����滻</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>参数替换</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="�߼�Bash�ű����ָ��"
+TITLE="高级Bash脚本编程指南"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="��������"
+TITLE="变量重游"
 HREF="variables2.html"><LINK
 REL="PREVIOUS"
-TITLE="�����ַ���"
+TITLE="操作字符串"
 HREF="string-manipulation.html"><LINK
 REL="NEXT"
-TITLE="ָ������������: ʹ��declare����typeset"
+TITLE="指定变量的类型: 使用declare或者typeset"
 HREF="declareref.html"></HEAD
 ><BODY
 CLASS="SECT1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->�߼�Bash�ű����ָ��: һ������ѧϰshell�ű��������鼮</TH
+>高级Bash脚本编程指南: 一本深入学习shell脚本艺术的书籍</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="string-manipulation.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->9. ��������</TD
+>9. 变量重游</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="declareref.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ></TABLE
@@ -74,7 +74,7 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="PARAMETER-SUBSTITUTION"
->9.3. �����滻</A
+>9.3. 参数替换</A
 ></H1
 ><P
 ><A
@@ -90,7 +90,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="PSSUB1"
 ></A
->������(��)��չ����</B
+>处理和(或)扩展变量</B
 ></P
 ><DL
 ><DT
@@ -100,26 +100,26 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->��<TT
+>与<TT
 CLASS="REPLACEABLE"
 ><I
 >$parameter</I
 ></TT
->��ͬ, 
-		  Ҳ���Ǳ���<TT
+>相同, 
+		  也就是变量<TT
 CLASS="REPLACEABLE"
 ><I
 >parameter</I
 ></TT
->��ֵ.
-		  ��ĳЩ��������, <TT
+>的值.
+		  在某些上下文中, <TT
 CLASS="REPLACEABLE"
 ><I
 >${parameter}</I
 ></TT
->���ٻ��������. </P
+>很少会产生混淆. </P
 ><P
->���԰ѱ������ַ����������ʹ��. </P
+>可以把变量和字符串组合起来使用. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -135,7 +135,7 @@ CLASS="PROGRAMLISTING"
   2&nbsp;echo "$your_id"
   3&nbsp;#
   4&nbsp;echo "Old \$PATH = $PATH"
-  5&nbsp;PATH=${PATH}:/opt/bin  #�ڽű�������������, /opt/bin�ᱻ���ӵ�$PATH������.
+  5&nbsp;PATH=${PATH}:/opt/bin  #在脚本的生命周期中, /opt/bin会被添加到$PATH变量中.
   6&nbsp;echo "New \$PATH = $PATH"</PRE
 ></FONT
 ></TD
@@ -153,9 +153,9 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->${parameter-default} -- �������parameterû������, ��ô��ʹ��Ĭ��ֵ.</P
+>${parameter-default} -- 如果变量parameter没被声明, 那么就使用默认值.</P
 ><P
->${parameter:-default} -- �������parameterû������, ��ô��ʹ��Ĭ��ֵ.</P
+>${parameter:-default} -- 如果变量parameter没被设置, 那么就使用默认值.</P
 ><P
 ><TABLE
 BORDER="0"
@@ -168,7 +168,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;echo ${username-`whoami`}
-  2&nbsp;# �������$username��û�б�����, ��ô��echoe��`whoami`�Ľ��(����ע: Ҳ���ǰ�'whoami'�Ľ����ֵ������$username). </PRE
+  2&nbsp;# 如果变量$username还没有被声明, 那么就echoe出`whoami`的结果(译者注: 也就是把'whoami'的结果赋值给变量$username). </PRE
 ></FONT
 ></TD
 ></TR
@@ -201,19 +201,19 @@ CLASS="REPLACEABLE"
 >${parameter-default}</I
 ></TT
 >
-				��<TT
+				和<TT
 CLASS="REPLACEABLE"
 ><I
 >${parameter:-default}</I
 ></TT
->�ھ������������¶�����ͬ��. 
-				ֻ����<EM
+>在绝大多数的情况下都是相同的. 
+				只有在<EM
 >parameter</EM
->�Ѿ�������, ���Ǳ���nullֵ��ʱ��, 
-				��������<SPAN
+>已经被声明, 但是被赋null值得时候, 
+				这个额外的<SPAN
 CLASS="TOKEN"
 >:</SPAN
->�Ż������ͬ�Ľ��. </P
+>才会产生不同的结果. </P
 ></TD
 ></TR
 ></TABLE
@@ -232,37 +232,37 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;# param-sub.sh
   3&nbsp;
-  4&nbsp;#  һ�������Ƿ�����������,
-  5&nbsp;#+ ����Ӱ����������Ƿ�ʹ��Ĭ��ֵ, 
-  6&nbsp;#+ ��ʹ�������ֵΪ��(null).
+  4&nbsp;#  一个变量是否被声明或设置,
+  5&nbsp;#+ 将会影响这个变量是否使用默认值, 
+  6&nbsp;#+ 即使这个变量值为空(null).
   7&nbsp;
   8&nbsp;username0=
   9&nbsp;echo "username0 has been declared, but is set to null."
  10&nbsp;echo "username0 = ${username0-`whoami`}"
- 11&nbsp;# ���������.
+ 11&nbsp;# 不会有输出.
  12&nbsp;
  13&nbsp;echo
  14&nbsp;
  15&nbsp;echo username1 has not been declared.
  16&nbsp;echo "username1 = ${username1-`whoami`}"
- 17&nbsp;# �������Ĭ��ֵ.
+ 17&nbsp;# 将会输出默认值.
  18&nbsp;
  19&nbsp;username2=
  20&nbsp;echo "username2 has been declared, but is set to null."
  21&nbsp;echo "username2 = ${username2:-`whoami`}"
  22&nbsp;#                            ^
- 23&nbsp;# �����, ��Ϊ:-���-��һ����������.
- 24&nbsp;# �������ϱߵ����ӱȽ�һ��.
+ 23&nbsp;# 会输出, 因为:-会比-多一个条件测试.
+ 24&nbsp;# 可以与上边的例子比较一下.
  25&nbsp;
  26&nbsp;
  27&nbsp;#
  28&nbsp;
- 29&nbsp;# ����һ��:
+ 29&nbsp;# 再来一个:
  30&nbsp;
  31&nbsp;variable=
- 32&nbsp;# �����Ѿ�������, ������Ϊ��ֵ. 
+ 32&nbsp;# 变量已经被声明, 但是设为空值. 
  33&nbsp;
- 34&nbsp;echo "${variable-0}"    # (û�����)
+ 34&nbsp;echo "${variable-0}"    # (没有输出)
  35&nbsp;echo "${variable:-1}"   # 1
  36&nbsp;#               ^
  37&nbsp;
@@ -278,10 +278,10 @@ CLASS="PROGRAMLISTING"
 ></TABLE
 ></P
 ><P
->����ű���û�н��յ����������еĲ���, 
-			��ô<EM
->Ĭ�ϲ���</EM
->�ṹ�����ṩһ��Ĭ��ֵ���ű�. </P
+>如果脚本并没有接收到来自命令行的参数, 
+			那么<EM
+>默认参数</EM
+>结构将会提供一个默认值给脚本. </P
 ><P
 >		  <TABLE
 BORDER="0"
@@ -295,10 +295,10 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;DEFAULT_FILENAME=generic.data
   2&nbsp;filename=${1:-$DEFAULT_FILENAME}
-  3&nbsp;#  ���û��ָ��ֵ, ��ô����Ĵ���齫��ʹ��filename
-  4&nbsp;#+ ������Ĭ��ֵ"generic.data".
+  3&nbsp;#  如果没有指定值, 那么下面的代码块将会使用filename
+  4&nbsp;#+ 变量的默认值"generic.data".
   5&nbsp;#
-  6&nbsp;#  ����������. </PRE
+  6&nbsp;#  后续的命令. </PRE
 ></FONT
 ></TD
 ></TR
@@ -306,23 +306,23 @@ CLASS="PROGRAMLISTING"
 >
 		</P
 ><P
->�ο�<A
+>参考<A
 HREF="special-chars.html#EX58"
->���� 3-4</A
+>例子 3-4</A
 >, <A
 HREF="zeros.html#EX73"
->���� 28-2</A
->, ��<A
+>例子 28-2</A
+>, 和<A
 HREF="contributed-scripts.html#COLLATZ"
->���� A-6</A
+>例子 A-6</A
 >.</P
 ><P
->��<A
+>与<A
 HREF="list-cons.html#ANDDEFAULT"
->ʹ��һ��<EM
->���б�</EM
->���ṩһ��Ĭ�ϵ������в���</A
->�ķ�����Ƚ�.</P
+>使用一个<EM
+>与列表</EM
+>来提供一个默认的命令行参数</A
+>的方法相比较.</P
 ></DD
 ><DT
 ><KBD
@@ -339,17 +339,17 @@ NAME="DEFPARAM"
 ></A
 ></P
 ><P
->${parameter=default} -- �������parameterû����, ��ô�Ͱ�����ֵ��Ϊdefault. </P
+>${parameter=default} -- 如果变量parameter没声明, 那么就把它的值设为default. </P
 ><P
->${parameter:=default} -- �������parameterû����, ��ô�Ͱ�����ֵ��Ϊdefault. </P
+>${parameter:=default} -- 如果变量parameter没设置, 那么就把它的值设为default. </P
 ><P
->��������ʽ��������һ����. ֻ���ڱ���<EM
+>这两种形式基本上是一样的. 只有在变量<EM
 >$parameter</EM
->���������ұ�����Ϊnullֵ��ʱ��, 
+>被声明并且被设置为null值的时候, 
 			<SPAN
 CLASS="TOKEN"
 >:</SPAN
->�Ż�������������ʽ�Ĳ�ͬ.
+>才会引起这两种形式的不同.
 		    <A
 NAME="AEN4933"
 HREF="#FTN.AEN4933"
@@ -358,7 +358,7 @@ CLASS="footnote"
 >[1]</SPAN
 ></A
 >
-		  ���ϱ���ʾ.
+		  如上边所示.
 		    </P
 ><P
 ><TABLE
@@ -372,7 +372,7 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;echo ${username=`whoami`}
-  2&nbsp;# ����"username"���ڱ���ֵΪ`whoami`.</PRE
+  2&nbsp;# 变量"username"现在被赋值为`whoami`.</PRE
 ></FONT
 ></TD
 ></TR
@@ -389,25 +389,25 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->${parameter+alt_value} -- �������parameter��������, 
-				��ô��ʹ��<KBD
+>${parameter+alt_value} -- 如果变量parameter被声明了, 
+				那么就使用<KBD
 CLASS="USERINPUT"
 >alt_value</KBD
->, �����ʹ��null�ַ���.</P
+>, 否则就使用null字符串.</P
 ><P
->${parameter:+alt_value} -- �������parameter��������, 
-				��ô��ʹ��<KBD
+>${parameter:+alt_value} -- 如果变量parameter被设置了, 
+				那么就使用<KBD
 CLASS="USERINPUT"
 >alt_value</KBD
->, �����ʹ��null�ַ���.</P
+>, 否则就使用null字符串.</P
 ><P
->��������ʽ�����������¶�һ��. ֻ����<EM
+>这两种形式绝大多数情况下都一样. 只有在<EM
 >parameter</EM
->��������������Ϊnullֵ��ʱ��, 
-				����������<SPAN
+>被声明并且设置为null值的时候, 
+				多出来的这个<SPAN
 CLASS="TOKEN"
 >:</SPAN
->�Ż�������������ʽ�Ĳ�ͬ, �����뿴�±ߵ�����. </P
+>才会引起这两种形式的不同, 具体请看下边的例子. </P
 ><P
 ><TABLE
 BORDER="0"
@@ -443,7 +443,7 @@ CLASS="PROGRAMLISTING"
  22&nbsp;param5=
  23&nbsp;a=${param5:+xyz}
  24&nbsp;echo "a = $a"      # a =
- 25&nbsp;# ������a=${param5+xyz}��ͬ�Ľ��.
+ 25&nbsp;# 产生与a=${param5+xyz}不同的结果.
  26&nbsp;
  27&nbsp;param6=123
  28&nbsp;a=${param6:+xyz}
@@ -467,18 +467,18 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->${parameter?err_msg} -- ���parameter�Ѿ�������, ��ô��ʹ�����õ�ֵ, �����ӡerr_msg������Ϣ.</P
+>${parameter?err_msg} -- 如果parameter已经被声明, 那么就使用设置的值, 否则打印err_msg错误消息.</P
 ><P
->${parameter:?err_msg} -- ���parameter�Ѿ�������, ��ô��ʹ�����õ�ֵ, �����ӡerr_msg������Ϣ.</P
+>${parameter:?err_msg} -- 如果parameter已经被设置, 那么就使用设置的值, 否则打印err_msg错误消息.</P
 ><P
->��������ʽ��������������һ����. ���ϱ����������һ��, 
-				ֻ����<EM
+>这两种形式绝大多数情况都是一样的. 和上边所讲的情况一样, 
+				只有在<EM
 >parameter</EM
->������������Ϊnullֵ��ʱ��, 
-				�������<SPAN
+>被声明并设置为null值的时候, 
+				多出来的<SPAN
 CLASS="TOKEN"
 >:</SPAN
->�Ż�������������ʽ�Ĳ�ͬ. </P
+>才会引起这两种形式的不同. </P
 ></DD
 ></DL
 ></DIV
@@ -489,7 +489,7 @@ NAME="EX6"
 ></A
 ><P
 ><B
->���� 9-15. ʹ�ò����滻�ʹ�����Ϣ</B
+>例子 9-15. 使用参数替换和错误消息</B
 ></P
 ><TABLE
 BORDER="0"
@@ -503,10 +503,10 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;
-  3&nbsp;#  ���һЩϵͳ��������.
-  4&nbsp;#  ����һ�ֿ�����һЩԤ���Ա�����ʩ�ĺ�ϰ��.
-  5&nbsp;#  ����, ���$USER(�û��ڿ���̨���е�����)û�б����õĻ�,
-  6&nbsp;#+ ��ôϵͳ�ͻ᲻����.
+  3&nbsp;#  检查一些系统环境变量.
+  4&nbsp;#  这是一种可以做一些预防性保护措施的好习惯.
+  5&nbsp;#  比如, 如果$USER(用户在控制台上中的名字)没有被设置的话,
+  6&nbsp;#+ 那么系统就会不认你.
   7&nbsp;
   8&nbsp;: ${HOSTNAME?} ${USER?} ${HOME?} ${MAIL?}
   9&nbsp;  echo
@@ -522,12 +522,12 @@ CLASS="PROGRAMLISTING"
  19&nbsp;
  20&nbsp;# ------------------------------------------------------
  21&nbsp;
- 22&nbsp;#  ${variablename?}�ṹ
- 23&nbsp;#+ Ҳ�ܹ����ű��б������������.
+ 22&nbsp;#  ${variablename?}结构
+ 23&nbsp;#+ 也能够检查脚本中变量的设置情况.
  24&nbsp;
  25&nbsp;ThisVariable=Value-of-ThisVariable
- 26&nbsp;#  ע��, ˳����һ��, 
- 27&nbsp;#+ ����ַ����������ܻᱻ����һЩ�Ƿ��ַ�.
+ 26&nbsp;#  注意, 顺便提一下, 
+ 27&nbsp;#+ 这个字符串变量可能会被设置一些非法字符.
  28&nbsp;: ${ThisVariable?}
  29&nbsp;echo "Value of ThisVariable is $ThisVariable".
  30&nbsp;echo
@@ -535,19 +535,19 @@ CLASS="PROGRAMLISTING"
  32&nbsp;
  33&nbsp;
  34&nbsp;: ${ZZXy23AB?"ZZXy23AB has not been set."}
- 35&nbsp;#  �������ZZXy23ABû�б����õĻ�, 
- 36&nbsp;#+ ��ô����ű����ӡһ��������Ϣ, Ȼ�����.
+ 35&nbsp;#  如果变量ZZXy23AB没有被设置的话, 
+ 36&nbsp;#+ 那么这个脚本会打印一个错误信息, 然后结束.
  37&nbsp;
- 38&nbsp;# ������Լ�ָ��������Ϣ.
+ 38&nbsp;# 你可以自己指定错误消息.
  39&nbsp;# : ${variablename?"ERROR MESSAGE"}
  40&nbsp;
  41&nbsp;
- 42&nbsp;# �ȼ���:    dummy_variable=${ZZXy23AB?}
+ 42&nbsp;# 等价于:    dummy_variable=${ZZXy23AB?}
  43&nbsp;#            dummy_variable=${ZZXy23AB?"ZXy23AB has not been set."}
  44&nbsp;#
  45&nbsp;#            echo ${ZZXy23AB?} &#62;/dev/null
  46&nbsp;
- 47&nbsp;#  ʹ������"set -u"���Ƚ���Щ�������Ƿ����õķ���.
+ 47&nbsp;#  使用命令"set -u"来比较这些检查变量是否被设置的方法.
  48&nbsp;#
  49&nbsp;
  50&nbsp;
@@ -555,9 +555,9 @@ CLASS="PROGRAMLISTING"
  52&nbsp;echo "You will not see this message, because script already terminated."
  53&nbsp;
  54&nbsp;HERE=0
- 55&nbsp;exit $HERE   # �����������˳�.
+ 55&nbsp;exit $HERE   # 不会在这里退出.
  56&nbsp;
- 57&nbsp;# ��ʵ��, ����ű������Է���ֵ1��Ϊ�˳�״̬(echo $?).</PRE
+ 57&nbsp;# 事实上, 这个脚本将会以返回值1作为退出状态(echo $?).</PRE
 ></FONT
 ></TD
 ></TR
@@ -570,10 +570,10 @@ NAME="USAGEMESSAGE"
 ></A
 ><P
 ><B
->���� 9-16. �����滻��<SPAN
+>例子 9-16. 参数替换和<SPAN
 CLASS="QUOTE"
 >"usage"</SPAN
->��Ϣ(����ע: ͨ�����ǰ�����Ϣ)</B
+>消息(译者注: 通常就是帮助信息)</B
 ></P
 ><TABLE
 BORDER="0"
@@ -589,18 +589,18 @@ CLASS="PROGRAMLISTING"
   2&nbsp;# usage-message.sh
   3&nbsp;
   4&nbsp;: ${1?"Usage: $0 ARGUMENT"}
-  5&nbsp;#  ���û���ṩ�����в����Ļ�, ��ô�ű����������˳���, 
-  6&nbsp;#+ ���Ҵ�ӡ���´�����Ϣ.
+  5&nbsp;#  如果没有提供命令行参数的话, 那么脚本就在这里退出了, 
+  6&nbsp;#+ 并且打印如下错误消息.
   7&nbsp;#    usage-message.sh: 1: Usage: usage-message.sh ARGUMENT
   8&nbsp;
   9&nbsp;echo "These two lines echo only if command-line parameter given."
  10&nbsp;echo "command line parameter = \"$1\""
  11&nbsp;
- 12&nbsp;exit 0  # ����ṩ�������в���, ��ô�ű��ͻ��������˳�.
+ 12&nbsp;exit 0  # 如果提供了命令行参数, 那么脚本就会在这里退出.
  13&nbsp;
- 14&nbsp;# �ֱ����������в���ʱ��û�������в���ʱ, �ű����˳�״̬.
- 15&nbsp;# ����������в���, ��ô"$?"����0.
- 16&nbsp;# ���û�еĻ�, ��ô"$?"����1.</PRE
+ 14&nbsp;# 分别检查有命令行参数时和没有命令行参数时, 脚本的退出状态.
+ 15&nbsp;# 如果有命令行参数, 那么"$?"就是0.
+ 16&nbsp;# 如果没有的话, 那么"$?"就是1.</PRE
 ></FONT
 ></TD
 ></TR
@@ -610,27 +610,27 @@ CLASS="PROGRAMLISTING"
 CLASS="FORMALPARA"
 ><P
 ><B
->�����滻��(��)��չ. </B
+>参数替换与(或)扩展. </B
 ><A
 NAME="PSUB2"
 ></A
->�±���Щ����ʽ���Ƕ����<TT
+>下边这些表达式都是对如何<TT
 CLASS="REPLACEABLE"
 ><I
->��</I
+>在</I
 ></TT
 ><B
 CLASS="COMMAND"
 >expr</B
->�ַ��������н���<B
+>字符串操作中进行<B
 CLASS="COMMAND"
 >match</B
->�Ĳ���.
-		�ο�<A
+>的补充.
+		参考<A
 HREF="moreadv.html#EX45"
->���� 12-9</A
+>例子 12-9</A
 >).
-		��Щ�ض���ʹ�÷���һ�㶼���������ļ����ڵ�Ŀ¼��. </P
+		这些特定的使用方法一般都用来解析文件所在的目录名. </P
 ></DIV
 ><P
 ></P
@@ -641,7 +641,7 @@ CLASS="VARIABLELIST"
 ><A
 NAME="PSOREX1"
 ></A
->��������/�Ӵ�ɾ��</B
+>变量长度/子串删除</B
 ></P
 ><DL
 ><DT
@@ -653,19 +653,19 @@ CLASS="USERINPUT"
 ><P
 ><KBD
 CLASS="USERINPUT"
->�ַ�������</KBD
->(����<CODE
+>字符串长度</KBD
+>(变量<CODE
 CLASS="VARNAME"
 >$var</CODE
->���ַ�����). 
-				����<A
+>得字符个数). 
+				对于<A
 HREF="arrays.html#ARRAYREF"
 >array</A
->��˵,
+>来说,
 		    <B
 CLASS="COMMAND"
 >${#array}</B
->��ʾ���������е�һ��Ԫ�صĳ���. </P
+>表示的是数组中第一个元素的长度. </P
 ><DIV
 CLASS="NOTE"
 ><P
@@ -687,7 +687,7 @@ ALT="Note"></TD
 ALIGN="LEFT"
 VALIGN="TOP"
 ><P
->		    �������:
+>		    例外情况:
 
 		  <P
 ></P
@@ -697,24 +697,24 @@ VALIGN="TOP"
 >		      <B
 CLASS="COMMAND"
 >${#*}</B
->��<B
+>和<B
 CLASS="COMMAND"
 >${#@}</B
->��ʾ<EM
->λ�ò����ĸ���</EM
+>表示<EM
+>位置参数的个数</EM
 >.
 		    </P
 ></LI
 ><LI
 ><P
->				����������˵, 
+>				对于数组来说, 
 				<B
 CLASS="COMMAND"
 >${#array[*]}</B
->��<B
+>和<B
 CLASS="COMMAND"
 >${#array[@]}</B
->��ʾ������Ԫ�صĸ���.
+>表示数组中元素的个数.
 		    </P
 ></LI
 ></UL
@@ -731,7 +731,7 @@ NAME="LENGTH"
 ></A
 ><P
 ><B
->���� 9-17. ��������</B
+>例子 9-17. 变量长度</B
 ></P
 ><TABLE
 BORDER="0"
@@ -748,7 +748,7 @@ CLASS="PROGRAMLISTING"
   3&nbsp;
   4&nbsp;E_NO_ARGS=65
   5&nbsp;
-  6&nbsp;if [ $# -eq 0 ]  # �����ʾ�ű������������в���.
+  6&nbsp;if [ $# -eq 0 ]  # 这个演示脚本必须有命令行参数.
   7&nbsp;then
   8&nbsp;  echo "Please invoke this script with one or more command-line arguments."
   9&nbsp;  exit $E_NO_ARGS
@@ -757,7 +757,7 @@ CLASS="PROGRAMLISTING"
  12&nbsp;var01=abcdEFGH28ij
  13&nbsp;echo "var01 = ${var01}"
  14&nbsp;echo "Length of var01 = ${#var01}"
- 15&nbsp;# ����, �����������ڱ�����Ƕ��һ���ո�.
+ 15&nbsp;# 现在, 让我们试试在变量中嵌入一个空格.
  16&nbsp;var02="abcd EFGH28ij"
  17&nbsp;echo "var02 = ${var02}"
  18&nbsp;echo "Length of var02 = ${#var02}"
@@ -782,31 +782,31 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->�ӱ���<CODE
+>从变量<CODE
 CLASS="VARNAME"
 >$var</CODE
->��<TT
+>的<TT
 CLASS="REPLACEABLE"
 ><I
->��ͷ</I
+>开头</I
 ></TT
->ɾ����̻��ƥ��<CODE
+>删除最短或最长匹配<CODE
 CLASS="VARNAME"
 >$Pattern</CODE
->���Ӵ�.
-			(����ע: ����һ���ܳ������÷�, ������μ�, һ��<SPAN
+>的子串.
+			(译者注: 这是一个很常见的用法, 请读者牢记, 一个<SPAN
 CLASS="QUOTE"
 >"#"</SPAN
->��ʾƥ�����, <SPAN
+>表示匹配最短, <SPAN
 CLASS="QUOTE"
 >"##"</SPAN
->��ʾƥ���.)
+>表示匹配最长.)
 		</P
 ><P
 ><A
 HREF="contributed-scripts.html#DAYSBETWEEN"
->���� A-7</A
->�е�һ���÷�ʾ��:
+>例子 A-7</A
+>中的一个用法示例:
 <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -817,13 +817,13 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;# ժ������"days-between.sh"��һ������.
-  2&nbsp;# ȥ�����ݽ���������ͷ��0.
+>  1&nbsp;# 摘自例子"days-between.sh"的一个函数.
+  2&nbsp;# 去掉传递进来参数开头的0.
   3&nbsp;
-  4&nbsp;strip_leading_zero () #  ȥ���Ӳ����д��ݽ�����,
-  5&nbsp;{                     #+ ���ܴ��ڵĿ�ͷ��0(Ҳ�����ж��0).
-  6&nbsp;  return=${1#0}       #  "1"��ʾ����"$1" -- ���ݽ����Ĳ���.
-  7&nbsp;}                     #  "0"�����������"$1"��ɾ�����Ӵ� -- ȥ����.</PRE
+  4&nbsp;strip_leading_zero () #  去掉从参数中传递进来的,
+  5&nbsp;{                     #+ 可能存在的开头的0(也可能有多个0).
+  6&nbsp;  return=${1#0}       #  "1"表示的是"$1" -- 传递进来的参数.
+  7&nbsp;}                     #  "0"就是我们想从"$1"中删除的子串 -- 去掉零.</PRE
 ></FONT
 ></TD
 ></TR
@@ -831,7 +831,7 @@ CLASS="PROGRAMLISTING"
 >
 		</P
 ><P
->�±���Manfred Schwarb������һ��������ϸ������:
+>下边是Manfred Schwarb给出的一个更加详细的例子:
 			<TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -842,13 +842,13 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;strip_leading_zero2 () # ȥ����ͷ���ܴ��ڵ�0(Ҳ�����ж��0), ��Ϊ�����ȡ���Ļ�,
-  2&nbsp;{                      # Bash�ͻ�����ֵ����8���Ƶ�ֵ������. 
-  3&nbsp;  shopt -s extglob     # ����չ��ͨ��(globbing).
-  4&nbsp;  local val=${1##+(0)} # ʹ�þֲ�����, ƥ���������һ������0.
-  5&nbsp;  shopt -u extglob     # �ر���չ��ͨ��(globbing).
+>  1&nbsp;strip_leading_zero2 () # 去掉开头可能存在的0(也可能有多个0), 因为如果不取掉的话,
+  2&nbsp;{                      # Bash就会把这个值当作8进制的值来解释. 
+  3&nbsp;  shopt -s extglob     # 打开扩展的通配(globbing).
+  4&nbsp;  local val=${1##+(0)} # 使用局部变量, 匹配最长连续的一个或多个0.
+  5&nbsp;  shopt -u extglob     # 关闭扩展的通配(globbing).
   6&nbsp;  _strip_leading_zero2=${val:-0}
-  7&nbsp;                       # �������Ϊ0, ��ô����0������"".
+  7&nbsp;                       # 如果输入为0, 那么返回0来代替"".
   8&nbsp;}</PRE
 ></FONT
 ></TD
@@ -857,7 +857,7 @@ CLASS="PROGRAMLISTING"
 >
 		</P
 ><P
->��һ���÷�ʾ��: 
+>另一个用法示例: 
 <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -868,16 +868,16 @@ WIDTH="90%"
 COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
->  1&nbsp;echo `basename $PWD`        # ��ǰ����Ŀ¼��basename(����ȥ��Ŀ¼��).
-  2&nbsp;echo "${PWD##*/}"           # ��ǰ����Ŀ¼��basename(����ȥ��Ŀ¼��). 
+>  1&nbsp;echo `basename $PWD`        # 当前工作目录的basename(就是去掉目录名).
+  2&nbsp;echo "${PWD##*/}"           # 当前工作目录的basename(就是去掉目录名). 
   3&nbsp;echo
-  4&nbsp;echo `basename $0`          # �ű�����.
-  5&nbsp;echo $0                     # �ű�����.
-  6&nbsp;echo "${0##*/}"             # �ű�����.
+  4&nbsp;echo `basename $0`          # 脚本名字.
+  5&nbsp;echo $0                     # 脚本名字.
+  6&nbsp;echo "${0##*/}"             # 脚本名字.
   7&nbsp;echo
   8&nbsp;filename=test.data
   9&nbsp;echo "${filename##*.}"      # data
- 10&nbsp;                            # �ļ���չ��.</PRE
+ 10&nbsp;                            # 文件扩展名.</PRE
 ></FONT
 ></TD
 ></TR
@@ -898,34 +898,34 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->�ӱ���<CODE
+>从变量<CODE
 CLASS="VARNAME"
 >$var</CODE
->��<TT
+>的<TT
 CLASS="REPLACEABLE"
 ><I
->��β</I
+>结尾</I
 ></TT
->ɾ����̻��ƥ��<CODE
+>删除最短或最长匹配<CODE
 CLASS="VARNAME"
 >$Pattern</CODE
->���Ӵ�.
-			(����ע: ����һ���ܳ������÷�, ������μ�, һ��<SPAN
+>的子串.
+			(译者注: 这是一个很常见的用法, 请读者牢记, 一个<SPAN
 CLASS="QUOTE"
 >"%"</SPAN
->��ʾƥ�����, <SPAN
+>表示匹配最短, <SPAN
 CLASS="QUOTE"
 >"%%"</SPAN
->��ʾƥ���.)
+>表示匹配最长.)
 		  </P
 ></DD
 ></DL
 ></DIV
 ><P
->Bash��<A
+>Bash的<A
 HREF="bashver2.html#BASH2REF"
->�汾2</A
->������һЩ����ѡ��. </P
+>版本2</A
+>添加了一些额外选项. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -933,7 +933,7 @@ NAME="PATTMATCHING"
 ></A
 ><P
 ><B
->���� 9-18. �����滻�е�ģʽƥ��</B
+>例子 9-18. 参数替换中的模式匹配</B
 ></P
 ><TABLE
 BORDER="0"
@@ -948,44 +948,44 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;# patt-matching.sh
   3&nbsp;
-  4&nbsp;# ʹ��# ## % %%�����в����滻������ģʽƥ��. parameter substitution operators.
+  4&nbsp;# 使用# ## % %%来进行参数替换操作的模式匹配. parameter substitution operators.
   5&nbsp;
   6&nbsp;var1=abcd12345abc6789
-  7&nbsp;pattern1=a*c  # *(ͨ���)ƥ��a - c֮��������ַ�.
+  7&nbsp;pattern1=a*c  # *(通配符)匹配a - c之间的任意字符.
   8&nbsp;
   9&nbsp;echo
  10&nbsp;echo "var1 = $var1"           # abcd12345abc6789
  11&nbsp;echo "var1 = ${var1}"         # abcd12345abc6789
- 12&nbsp;                              # (��һ����ʽ)
+ 12&nbsp;                              # (另一种形式)
  13&nbsp;echo "Number of characters in ${var1} = ${#var1}"
  14&nbsp;echo
  15&nbsp;
- 16&nbsp;echo "pattern1 = $pattern1"   # a*c  (ƥ��'a'��'c'֮��������ַ�)
+ 16&nbsp;echo "pattern1 = $pattern1"   # a*c  (匹配'a'到'c'之间的任意字符)
  17&nbsp;echo "--------------"
  18&nbsp;echo '${var1#$pattern1}  =' "${var1#$pattern1}"    #         d12345abc6789
- 19&nbsp;# ��̵Ŀ���ƥ��, ȥ��abcd12345abc6789��ǰ3���ַ�.
+ 19&nbsp;# 最短的可能匹配, 去掉abcd12345abc6789的前3个字符.
  20&nbsp;#                     |-|               ^^^^^
  21&nbsp;echo '${var1##$pattern1} =' "${var1##$pattern1}"   #                  6789
- 22&nbsp;# ��Ŀ���ƥ��, ȥ��abcd12345abc6789��ǰ12���ַ�
+ 22&nbsp;# 最长的可能匹配, 去掉abcd12345abc6789的前12个字符
  23&nbsp;#                     |----------|      ^^^^^^
  24&nbsp;
  25&nbsp;echo; echo; echo
  26&nbsp;
- 27&nbsp;pattern2=b*9            # ƥ��'b'��'9'֮��������ַ�
- 28&nbsp;echo "var1 = $var1"     # ����abcd12345abc6789
+ 27&nbsp;pattern2=b*9            # 匹配'b'到'9'之间的任意字符
+ 28&nbsp;echo "var1 = $var1"     # 还是abcd12345abc6789
  29&nbsp;echo
  30&nbsp;echo "pattern2 = $pattern2"
  31&nbsp;echo "--------------"
  32&nbsp;echo '${var1%pattern2}  =' "${var1%$pattern2}"     #     abcd12345a
- 33&nbsp;# ��̵Ŀ���ƥ��, ȥ��abcd12345abc6789�����6���ַ�
+ 33&nbsp;# 最短的可能匹配, 去掉abcd12345abc6789的最后6个字符
  34&nbsp;#                               |----|  ^^^^^^^
  35&nbsp;echo '${var1%%pattern2} =' "${var1%%$pattern2}"    #     a
- 36&nbsp;# ��Ŀ���ƥ��, ȥ��abcd12345abc6789�����12���ַ�
+ 36&nbsp;# 最长的可能匹配, 去掉abcd12345abc6789的最后12个字符
  37&nbsp;#                      |-------------|  ^^^^^^^^
  38&nbsp;
- 39&nbsp;# �μ�, #��##�Ǵ��ַ�����߿�ʼ, ����ȥ����ߵ��ַ���, 
- 40&nbsp;#       %��%%���ַ������ұ߿�ʼ, ����ȥ���ұߵ��ַ���. 
- 41&nbsp;# (����ע: �и��üǵķ���, �Ǿ��ǲ쿴����˳��, ��ס#��%�����. ^_^)
+ 39&nbsp;# 牢记, #和##是从字符串左边开始, 并且去掉左边的字符串, 
+ 40&nbsp;#       %和%%从字符串的右边开始, 并且去掉右边的字符串. 
+ 41&nbsp;# (译者注: 有个好记的方法, 那就是察看键盘顺序, 记住#在%的左边. ^_^)
  42&nbsp;echo
  43&nbsp;
  44&nbsp;exit 0</PRE
@@ -1001,7 +1001,7 @@ NAME="RFE"
 ></A
 ><P
 ><B
->���� 9-19. �޸��ļ���չ��<SPAN
+>例子 9-19. 修改文件扩展名<SPAN
 CLASS="TOKEN"
 >:</SPAN
 ></B
@@ -1017,31 +1017,31 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# rfe.sh: �޸��ļ���չ��.
+  2&nbsp;# rfe.sh: 修改文件扩展名.
   3&nbsp;#
-  4&nbsp;# �÷�:		rfe old_extension new_extension
+  4&nbsp;# 用法:		rfe old_extension new_extension
   5&nbsp;#
-  6&nbsp;# ʾ��:
-  7&nbsp;# ��ָ��Ŀ¼�����е�*.gif�ļ���������Ϊ*.jpg,
-  8&nbsp;# �÷�:		rfe gif jpg
+  6&nbsp;# 示例:
+  7&nbsp;# 将指定目录中所有的*.gif文件都重命名为*.jpg,
+  8&nbsp;# 用法:		rfe gif jpg
   9&nbsp;
  10&nbsp;
  11&nbsp;E_BADARGS=65
  12&nbsp;
  13&nbsp;case $# in
- 14&nbsp;  0|1)             # ����"|"�������ʾ"��"����.
+ 14&nbsp;  0|1)             # 竖线"|"在这里表示"或"操作.
  15&nbsp;  echo "Usage: `basename $0` old_file_suffix new_file_suffix"
- 16&nbsp;  exit $E_BADARGS  # ���ֻ��0����1�������Ļ�, ��ô���˳��ű�.
+ 16&nbsp;  exit $E_BADARGS  # 如果只有0个或1个参数的话, 那么就退出脚本.
  17&nbsp;  ;;
  18&nbsp;esac
  19&nbsp;
  20&nbsp;
  21&nbsp;for filename in *.$1
- 22&nbsp;# �Ե�һ������Ϊ��չ����ȫ���ļ����б�.
+ 22&nbsp;# 以第一个参数为扩展名的全部文件的列表.
  23&nbsp;do
  24&nbsp;  mv $filename ${filename%$1}$2
- 25&nbsp;  #  ��ɸѡ�������ļ�����չ��ȥ��, ��Ϊɸѡ�������ļ�����չ�����ǵ�һ������,
- 26&nbsp;  #+ Ȼ��ѵ�2��������Ϊ��չ��, ���ӵ���Щ�ļ��ĺ��.
+ 25&nbsp;  #  把筛选出来的文件的扩展名去掉, 因为筛选出来的文件的扩展名都是第一个参数,
+ 26&nbsp;  #+ 然后把第2个参数作为扩展名, 附加到这些文件的后边.
  27&nbsp;done
  28&nbsp;
  29&nbsp;exit 0</PRE
@@ -1059,16 +1059,16 @@ CLASS="VARIABLELIST"
 ><A
 NAME="EXPREPL1"
 ></A
->������չ/�Ӵ��滻</B
+>变量扩展/子串替换</B
 ></P
 ><DL
 ><DT
 ></DT
 ><DD
 ><P
->��Щ�ṹ���Ǵ�<EM
+>这些结构都是从<EM
 >ksh</EM
->�������.</P
+>中引入的.</P
 ></DD
 ><DT
 ><KBD
@@ -1077,17 +1077,17 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->����<TT
+>变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->��λ��<TT
+>从位置<TT
 CLASS="REPLACEABLE"
 ><I
 >pos</I
 ></TT
->��ʼ��չ(����ע: Ҳ����pos֮ǰ���ַ�������).
+>开始扩展(译者注: 也就是pos之前的字符都丢弃).
 		  </P
 ></DD
 ><DT
@@ -1097,27 +1097,27 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->����<TT
+>变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->��λ��<TT
+>从位置<TT
 CLASS="REPLACEABLE"
 ><I
 >pos</I
 ></TT
->��ʼ, 
-				����չ<TT
+>开始, 
+				并扩展<TT
 CLASS="REPLACEABLE"
 ><I
 >len</I
 ></TT
->���ַ�.
-		    �ο�<A
+>个字符.
+		    参考<A
 HREF="contributed-scripts.html#PW"
->���� A-14</A
->, �������չʾ�����ֲ�����һ�������Ե��÷�. 
+>例子 A-14</A
+>, 这个例子展示了这种操作的一个创造性的用法. 
 		  </P
 ></DD
 ><DT
@@ -1127,38 +1127,38 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->ʹ��<TT
+>使用<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
 ></TT
->���滻����<TT
+>来替换变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->�е�һ��ƥ��<TT
+>中第一个匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ���. 
+>的字符串. 
 			</P
 ><P
->���ʡ��<TT
+>如果省略<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
 ></TT
 >, 
-				��ô��һ��ƥ��<TT
+				那么第一个匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ��������滻Ϊ<EM
->��</EM
->, Ҳ���Ǳ�ɾ����.</P
+>的字符串将被替换为<EM
+>空</EM
+>, 也就是被删除了.</P
 ></DD
 ><DT
 ><KBD
@@ -1170,19 +1170,19 @@ CLASS="USERINPUT"
 CLASS="FORMALPARA"
 ><P
 ><B
->ȫ���滻. </B
->�����ڱ���<TT
+>全局替换. </B
+>所有在变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->ƥ��<TT
+>匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ���,
-		    ���ᱻ�滻Ϊ<TT
+>的字符串,
+		    都会被替换为<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
@@ -1190,21 +1190,21 @@ CLASS="REPLACEABLE"
 >. </P
 ></DIV
 ><P
->���ϱ�һ��, ���ʡ��<TT
+>和上边一样, 如果省略<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
 ></TT
 >, 
-				��ô����ƥ��<TT
+				那么所有匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ���, 
-			   �������滻Ϊ<EM
->��</EM
->, Ҳ���Ǳ�ɾ����. </P
+>的字符串, 
+			   都将被替换为<EM
+>空</EM
+>, 也就是被删除掉. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -1212,7 +1212,7 @@ NAME="EX7"
 ></A
 ><P
 ><B
->���� 9-20. ʹ��ģʽƥ�������������ַ���</B
+>例子 9-20. 使用模式匹配来解析任意字符串</B
 ></P
 ><TABLE
 BORDER="0"
@@ -1231,10 +1231,10 @@ CLASS="PROGRAMLISTING"
   5&nbsp;
   6&nbsp;t=${var1#*-*}
   7&nbsp;echo "var1 (with everything, up to and including first - stripped out) = $t"
-  8&nbsp;#  t=${var1#*-}  Ҳһ��,
-  9&nbsp;#+ ��Ϊ#ƥ����̵��ַ���,
- 10&nbsp;#+ ͬʱ*ƥ������ǰ׺, �������ַ���. 
- 11&nbsp;# (��л, Stephane Chazelas, ָ�����.)
+  8&nbsp;#  t=${var1#*-}  也一样,
+  9&nbsp;#+ 因为#匹配最短的字符串,
+ 10&nbsp;#+ 同时*匹配任意前缀, 包括空字符串. 
+ 11&nbsp;# (感谢, Stephane Chazelas, 指出这点.)
  12&nbsp;
  13&nbsp;t=${var1##*-*}
  14&nbsp;echo "If var1 contains a \"-\", returns empty string...   var1 = $t"
@@ -1251,20 +1251,20 @@ CLASS="PROGRAMLISTING"
  25&nbsp;echo "path_name = $path_name"
  26&nbsp;t=${path_name##/*/}
  27&nbsp;echo "path_name, stripped of prefixes = $t"
- 28&nbsp;# �����������, ��	t=`basename $path_name`		Ч����ͬ. 
- 29&nbsp;#  t=${path_name%/}; t=${t##*/}   �Ǹ�һ��Ľ������.
- 30&nbsp;#+ ����ʱ���ǻ�ʧ��.
- 31&nbsp;#  ���$path_name��һ�����з���β�Ļ�, ��ô	`basename $path_name` �Ͳ�������������,
- 32&nbsp;#+ �����ϱߵı���ʽ����.
- 33&nbsp;# (��л, S.C.)
+ 28&nbsp;# 在这个特例中, 与	t=`basename $path_name`		效果相同. 
+ 29&nbsp;#  t=${path_name%/}; t=${t##*/}   是更一般的解决方法.
+ 30&nbsp;#+ 但有时还是会失败.
+ 31&nbsp;#  如果$path_name以一个换行符结尾的话, 那么	`basename $path_name` 就不能正常工作了,
+ 32&nbsp;#+ 但是上边的表达式可以.
+ 33&nbsp;# (感谢, S.C.)
  34&nbsp;
  35&nbsp;t=${path_name%/*.*}
- 36&nbsp;# ��	t=`dirname $path_name`	Ч����ͬ.
+ 36&nbsp;# 与	t=`dirname $path_name`	效果相同.
  37&nbsp;echo "path_name, stripped of suffixes = $t"
- 38&nbsp;# ��ĳЩ����½�ʧЧ, ���� "../", "/foo////", # "foo/", "/".
- 39&nbsp;#  ɾ����׺, ��������basenameû�к�׺�������,
- 40&nbsp;#+ ����dirname����, ������ͬʱҲʹ���⸴�ӻ���.
- 41&nbsp;# (��л, S.C.)
+ 38&nbsp;# 在某些情况下将失效, 比如 "../", "/foo////", # "foo/", "/".
+ 39&nbsp;#  删除后缀, 尤其是在basename没有后缀的情况下,
+ 40&nbsp;#+ 但是dirname可以, 不过这同时也使问题复杂化了.
+ 41&nbsp;# (感谢, S.C.)
  42&nbsp;
  43&nbsp;echo
  44&nbsp;
@@ -1298,30 +1298,30 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->�������<TT
+>如果变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->��<EM
->ǰ׺</EM
->ƥ��<TT
+>的<EM
+>前缀</EM
+>匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
 >, 
-				��ô��ʹ��<TT
+				那么就使用<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
 ></TT
->���滻ƥ�䵽<TT
+>来替换匹配到<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ���.</P
+>的字符串.</P
 ></DD
 ><DT
 ><KBD
@@ -1330,30 +1330,30 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->�������<TT
+>如果变量<TT
 CLASS="REPLACEABLE"
 ><I
 >var</I
 ></TT
->��<EM
->��׺</EM
->ƥ��<TT
+>的<EM
+>后缀</EM
+>匹配<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
 >, 
-			��ô��ʹ��<TT
+			那么就使用<TT
 CLASS="REPLACEABLE"
 ><I
 >Replacement</I
 ></TT
->���滻ƥ�䵽<TT
+>来替换匹配到<TT
 CLASS="REPLACEABLE"
 ><I
 >Pattern</I
 ></TT
->���ַ���.</P
+>的字符串.</P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -1361,7 +1361,7 @@ NAME="VARMATCH"
 ></A
 ><P
 ><B
->���� 9-21. ���ַ�����ǰ׺�ͺ�׺ʹ��ƥ��ģʽ</B
+>例子 9-21. 对字符串的前缀和后缀使用匹配模式</B
 ></P
 ><TABLE
 BORDER="0"
@@ -1375,19 +1375,19 @@ COLOR="#000000"
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
   2&nbsp;# var-match.sh:
-  3&nbsp;# ���ַ�����ǰ׺�ͺ�׺����ģʽ�滻��һ����ʾ.
+  3&nbsp;# 对字符串的前缀和后缀进行模式替换的一个演示.
   4&nbsp;
-  5&nbsp;v0=abc1234zip1234abc    # ����ԭʼֵ.
+  5&nbsp;v0=abc1234zip1234abc    # 变量原始值.
   6&nbsp;echo "v0 = $v0"         # abc1234zip1234abc
   7&nbsp;echo
   8&nbsp;
-  9&nbsp;# ƥ���ַ�����ǰ׺(��ͷ).
+  9&nbsp;# 匹配字符串的前缀(开头).
  10&nbsp;v1=${v0/#abc/ABCDEF}    # abc1234zip1234abc
  11&nbsp;                        # |-|
  12&nbsp;echo "v1 = $v1"         # ABCDEF1234zip1234abc
  13&nbsp;                        # |----|
  14&nbsp;
- 15&nbsp;# ƥ���ַ����ĺ�׺(��β).
+ 15&nbsp;# 匹配字符串的后缀(结尾).
  16&nbsp;v2=${v0/%abc/ABCDEF}    # abc1234zip123abc
  17&nbsp;                        #              |-|
  18&nbsp;echo "v2 = $v2"         # abc1234zip1234ABCDEF
@@ -1396,15 +1396,15 @@ CLASS="PROGRAMLISTING"
  21&nbsp;echo
  22&nbsp;
  23&nbsp;#  ----------------------------------------------------
- 24&nbsp;#  ����ƥ���ַ����Ŀ�ͷ���β,
- 25&nbsp;#+ �����ǲ�������滻�����.
+ 24&nbsp;#  必须匹配字符串的开头或结尾,
+ 25&nbsp;#+ 否则是不会产生替换结果的.
  26&nbsp;#  ----------------------------------------------------
- 27&nbsp;v3=${v0/#123/000}       # ƥ��, �������ڿ�ͷ.
+ 27&nbsp;v3=${v0/#123/000}       # 匹配, 但不是在开头.
  28&nbsp;echo "v3 = $v3"         # abc1234zip1234abc
- 29&nbsp;                        # ���ᷢ���滻.
- 30&nbsp;v4=${v0/%123/000}       # ƥ��, �������ڽ�β.
+ 29&nbsp;                        # 不会发生替换.
+ 30&nbsp;v4=${v0/%123/000}       # 匹配, 但不是在结尾.
  31&nbsp;echo "v4 = $v4"         # abc1234zip1234abc
- 32&nbsp;                        # ���ᷢ���滻. 
+ 32&nbsp;                        # 不会发生替换. 
  33&nbsp;
  34&nbsp;exit 0			</PRE
 ></FONT
@@ -1423,9 +1423,9 @@ CLASS="USERINPUT"
 ></DT
 ><DD
 ><P
->ƥ������֮ǰ��������, ������<EM
+>匹配所有之前声明过的, 并且以<EM
 >varprefix</EM
->��ͷ�ı���.
+>开头的变量.
 		      <TABLE
 BORDER="0"
 BGCOLOR="#E0E0E0"
@@ -1439,12 +1439,12 @@ CLASS="PROGRAMLISTING"
 >  1&nbsp;xyz23=whatever
   2&nbsp;xyz24=
   3&nbsp;
-  4&nbsp;a=${!xyz*}      # չ��������"xyz"��ͷ��, ����֮ǰ�������ı�����.
+  4&nbsp;a=${!xyz*}      # 展开所有以"xyz"开头的, 并且之前声明过的变量名.
   5&nbsp;echo "a = $a"   # a = xyz23 xyz24
-  6&nbsp;a=${!xyz@}      # ͬ��.
+  6&nbsp;a=${!xyz@}      # 同上.
   7&nbsp;echo "a = $a"   # a = xyz23 xyz24
   8&nbsp;
-  9&nbsp;# Bash, �汾2.04, �������������.</PRE
+  9&nbsp;# Bash, 版本2.04, 添加了这个功能.</PRE
 ></FONT
 ></TD
 ></TR
@@ -1457,7 +1457,7 @@ CLASS="PROGRAMLISTING"
 ></DIV
 ><H3
 CLASS="FOOTNOTES"
->ע������</H3
+>注意事项</H3
 ><TABLE
 BORDER="0"
 CLASS="FOOTNOTES"
@@ -1480,14 +1480,14 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->�����һ���ǽ����ű���, $parameter������Ϊnull�Ļ�, 
-					��ô����ű����᷵��<A
+>如果在一个非交互脚本中, $parameter被设置为null的话, 
+					那么这个脚本将会返回<A
 HREF="exitcodes.html#EXITCODESREF"
 ><SPAN
 CLASS="RETURNVALUE"
 >127</SPAN
->��Ϊ�˳�״̬��</A
->(127�������Ӧ��Bash������Ϊ����δ����<SPAN
+>作为退出状态码</A
+>(127返回码对应的Bash错误码为命令未发现<SPAN
 CLASS="QUOTE"
 >"command not found"</SPAN
 >).</P
@@ -1512,7 +1512,7 @@ VALIGN="top"
 ><A
 HREF="string-manipulation.html"
 ACCESSKEY="P"
->ǰһҳ</A
+>前一页</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -1521,7 +1521,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->��ҳ</A
+>首页</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -1530,7 +1530,7 @@ VALIGN="top"
 ><A
 HREF="declareref.html"
 ACCESSKEY="N"
->��һҳ</A
+>下一页</A
 ></TD
 ></TR
 ><TR
@@ -1538,7 +1538,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->�����ַ���</TD
+>操作字符串</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -1546,16 +1546,16 @@ VALIGN="top"
 ><A
 HREF="variables2.html"
 ACCESSKEY="U"
->��һ��</A
+>上一级</A
 ></TD
 ><TD
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->ָ������������: ʹ��<B
+>指定变量的类型: 使用<B
 CLASS="COMMAND"
 >declare</B
->����<B
+>或者<B
 CLASS="COMMAND"
 >typeset</B
 ></TD

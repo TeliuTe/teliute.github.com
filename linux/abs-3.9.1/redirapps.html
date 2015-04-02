@@ -1,19 +1,19 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML
 ><HEAD
-><TITLE
->ÖØ¶¨ÏòµÄÓ¦ÓÃ</TITLE
+> <meta content="text/html; charset=UTF-8" http-equiv="content-type" /><TITLE
+>é‡å®šå‘çš„åº”ç”¨</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
 REL="HOME"
-TITLE="¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ"
+TITLE="é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—"
 HREF="index.html"><LINK
 REL="UP"
-TITLE="I/OÖØ¶¨Ïò"
+TITLE="I/Oé‡å®šå‘"
 HREF="io-redirection.html"><LINK
 REL="PREVIOUS"
-TITLE="´úÂë¿éÖØ¶¨Ïò"
+TITLE="ä»£ç å—é‡å®šå‘"
 HREF="redircb.html"><LINK
 REL="NEXT"
 TITLE="Here Document"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->¸ß¼¶Bash½Å±¾±à³ÌÖ¸ÄÏ: Ò»±¾ÉîÈëÑ§Ï°shell½Å±¾ÒÕÊõµÄÊé¼®</TH
+>é«˜çº§Bashè„šæœ¬ç¼–ç¨‹æŒ‡å—: ä¸€æœ¬æ·±å…¥å­¦ä¹ shellè„šæœ¬è‰ºæœ¯çš„ä¹¦ç±</TH
 ></TR
 ><TR
 ><TD
@@ -47,13 +47,13 @@ VALIGN="bottom"
 ><A
 HREF="redircb.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->16. I/OÖØ¶¨Ïò</TD
+>16. I/Oé‡å®šå‘</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -61,7 +61,7 @@ VALIGN="bottom"
 ><A
 HREF="here-docs.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ></TABLE
@@ -74,13 +74,13 @@ CLASS="SECT1"
 CLASS="SECT1"
 ><A
 NAME="REDIRAPPS"
->16.3. ÖØ¶¨ÏòµÄÓ¦ÓÃ</A
+>16.3. é‡å®šå‘çš„åº”ç”¨</A
 ></H1
 ><P
->ÇÉÃîµØÔËÓÃI/OÖØ¶¨Ïò, ÄÜ¹»½âÎöºÍÕ³ºÏÃüÁîÊä³öµÄ¸÷¸öÆ¬¶Ï(Çë²Î¿¼<A
+>å·§å¦™åœ°è¿ç”¨I/Oé‡å®šå‘, èƒ½å¤Ÿè§£æžå’Œç²˜åˆå‘½ä»¤è¾“å‡ºçš„å„ä¸ªç‰‡æ–­(è¯·å‚è€ƒ<A
 HREF="internal.html#READREDIR"
->Àý×Ó 11-7</A
->). ÕâÑù¾Í¿ÉÒÔ²úÉú±¨¸æÓëÈÕÖ¾ÎÄ¼þ. </P
+>ä¾‹å­ 11-7</A
+>). è¿™æ ·å°±å¯ä»¥äº§ç”ŸæŠ¥å‘Šä¸Žæ—¥å¿—æ–‡ä»¶. </P
 ><DIV
 CLASS="EXAMPLE"
 ><HR><A
@@ -88,7 +88,7 @@ NAME="LOGEVENTS"
 ></A
 ><P
 ><B
->Àý×Ó 16-12. ÊÂ¼þ¼ÍÂ¼</B
+>ä¾‹å­ 16-12. äº‹ä»¶çºªå½•</B
 ></P
 ><TABLE
 BORDER="0"
@@ -101,13 +101,13 @@ COLOR="#000000"
 ><PRE
 CLASS="PROGRAMLISTING"
 >  1&nbsp;#!/bin/bash
-  2&nbsp;# logevents.sh, ÓÉStephane ChazelasËù±àÐ´. 
+  2&nbsp;# logevents.sh, ç”±Stephane Chazelasæ‰€ç¼–å†™. 
   3&nbsp;
-  4&nbsp;# °ÑÊÂ¼þ¼ÇÂ¼ÔÚÒ»¸öÎÄ¼þÖÐ. 
-  5&nbsp;# ±ØÐëÒÔrootÉí·ÝÔËÐÐ (ÕâÑù²ÅÓÐÈ¨ÏÞ·ÃÎÊ/var/log). 
+  4&nbsp;# æŠŠäº‹ä»¶è®°å½•åœ¨ä¸€ä¸ªæ–‡ä»¶ä¸­. 
+  5&nbsp;# å¿…é¡»ä»¥rootèº«ä»½è¿è¡Œ (è¿™æ ·æ‰æœ‰æƒé™è®¿é—®/var/log). 
   6&nbsp;
-  7&nbsp;ROOT_UID=0     # Ö»ÓÐ$UIDÖµÎª0µÄÓÃ»§²Å¾ßÓÐrootÈ¨ÏÞ.
-  8&nbsp;E_NOTROOT=67   # ·ÇrootÓÃ»§µÄÍË³ö´íÎó. 
+  7&nbsp;ROOT_UID=0     # åªæœ‰$UIDå€¼ä¸º0çš„ç”¨æˆ·æ‰å…·æœ‰rootæƒé™.
+  8&nbsp;E_NOTROOT=67   # éžrootç”¨æˆ·çš„é€€å‡ºé”™è¯¯. 
   9&nbsp;
  10&nbsp;
  11&nbsp;if [ "$UID" -ne "$ROOT_UID" ]
@@ -121,15 +121,15 @@ CLASS="PROGRAMLISTING"
  19&nbsp;FD_DEBUG2=4
  20&nbsp;FD_DEBUG3=5
  21&nbsp;
- 22&nbsp;# È¥µôÏÂ±ßÁ½ÐÐ×¢ÊÍÖÐµÄÒ»ÐÐ, À´¼¤»î½Å±¾. 
+ 22&nbsp;# åŽ»æŽ‰ä¸‹è¾¹ä¸¤è¡Œæ³¨é‡Šä¸­çš„ä¸€è¡Œ, æ¥æ¿€æ´»è„šæœ¬. 
  23&nbsp;# LOG_EVENTS=1
  24&nbsp;# LOG_VARS=1
  25&nbsp;
  26&nbsp;
- 27&nbsp;log()  # °ÑÊ±¼äºÍÈÕÆÚÐ´ÈëÈÕÖ¾ÎÄ¼þ. 
+ 27&nbsp;log()  # æŠŠæ—¶é—´å’Œæ—¥æœŸå†™å…¥æ—¥å¿—æ–‡ä»¶. 
  28&nbsp;{
- 29&nbsp;echo "$(date)  $*" &#62;&#38;7     # Õâ»á°ÑÈÕÆÚ*¸½¼Ó*µ½ÎÄ¼þÖÐ. 
- 30&nbsp;                              # ²Î¿¼ÏÂ±ßµÄ´úÂë. 
+ 29&nbsp;echo "$(date)  $*" &#62;&#38;7     # è¿™ä¼šæŠŠæ—¥æœŸ*é™„åŠ *åˆ°æ–‡ä»¶ä¸­. 
+ 30&nbsp;                              # å‚è€ƒä¸‹è¾¹çš„ä»£ç . 
  31&nbsp;}
  32&nbsp;
  33&nbsp;
@@ -144,17 +144,17 @@ CLASS="PROGRAMLISTING"
  42&nbsp;FD_LOGVARS=6
  43&nbsp;if [[ $LOG_VARS ]]
  44&nbsp;then exec 6&#62;&#62; /var/log/vars.log
- 45&nbsp;else exec 6&#62; /dev/null               # ¶ªÆúÊä³ö. 
+ 45&nbsp;else exec 6&#62; /dev/null               # ä¸¢å¼ƒè¾“å‡º. 
  46&nbsp;fi
  47&nbsp;
  48&nbsp;FD_LOGEVENTS=7
  49&nbsp;if [[ $LOG_EVENTS ]]
  50&nbsp;then
  51&nbsp;  # then exec 7 &#62;(exec gawk '{print strftime(), $0}' &#62;&#62; /var/log/event.log)
- 52&nbsp;  # ÉÏÃæÕâÐÐ²»ÄÜÔÚ2.04°æ±¾µÄBashÉÏÔËÐÐ. 
- 53&nbsp;  exec 7&#62;&#62; /var/log/event.log        # ¸½¼Óµ½"event.log". 
- 54&nbsp;  log                                      # ¼ÇÂ¼ÈÕÆÚÓëÊ±¼ä. 
- 55&nbsp;else exec 7&#62; /dev/null                  # ¶ªÆúÊä³ö. 
+ 52&nbsp;  # ä¸Šé¢è¿™è¡Œä¸èƒ½åœ¨2.04ç‰ˆæœ¬çš„Bashä¸Šè¿è¡Œ. 
+ 53&nbsp;  exec 7&#62;&#62; /var/log/event.log        # é™„åŠ åˆ°"event.log". 
+ 54&nbsp;  log                                      # è®°å½•æ—¥æœŸä¸Žæ—¶é—´. 
+ 55&nbsp;else exec 7&#62; /dev/null                  # ä¸¢å¼ƒè¾“å‡º. 
  56&nbsp;fi
  57&nbsp;
  58&nbsp;echo "DEBUG3: beginning" &#62;&#38;${FD_DEBUG3}
@@ -163,7 +163,7 @@ CLASS="PROGRAMLISTING"
  61&nbsp;
  62&nbsp;echo "Done"                                # command2 
  63&nbsp;
- 64&nbsp;echo "sending mail" &#62;&#38;${FD_LOGEVENTS}   # ½«×Ö·û´®"sending mail"Ð´µ½ÎÄ¼þÃèÊö·û#7. 
+ 64&nbsp;echo "sending mail" &#62;&#38;${FD_LOGEVENTS}   # å°†å­—ç¬¦ä¸²"sending mail"å†™åˆ°æ–‡ä»¶æè¿°ç¬¦#7. 
  65&nbsp;
  66&nbsp;
  67&nbsp;exit 0</PRE
@@ -191,7 +191,7 @@ VALIGN="top"
 ><A
 HREF="redircb.html"
 ACCESSKEY="P"
->Ç°Ò»Ò³</A
+>å‰ä¸€é¡µ</A
 ></TD
 ><TD
 WIDTH="34%"
@@ -200,7 +200,7 @@ VALIGN="top"
 ><A
 HREF="index.html"
 ACCESSKEY="H"
->Ê×Ò³</A
+>é¦–é¡µ</A
 ></TD
 ><TD
 WIDTH="33%"
@@ -209,7 +209,7 @@ VALIGN="top"
 ><A
 HREF="here-docs.html"
 ACCESSKEY="N"
->ÏÂÒ»Ò³</A
+>ä¸‹ä¸€é¡µ</A
 ></TD
 ></TR
 ><TR
@@ -217,7 +217,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->´úÂë¿éÖØ¶¨Ïò</TD
+>ä»£ç å—é‡å®šå‘</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -225,7 +225,7 @@ VALIGN="top"
 ><A
 HREF="io-redirection.html"
 ACCESSKEY="U"
->ÉÏÒ»¼¶</A
+>ä¸Šä¸€çº§</A
 ></TD
 ><TD
 WIDTH="33%"
