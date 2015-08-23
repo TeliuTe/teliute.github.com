@@ -14,12 +14,25 @@ Teycjy 是《中小学教师网络培训学习日记(2010)》
 1、新建一个本学期的文件夹，命名Te+科目+年级学期+开始年份
 2、复制./lesson到新建文件夹里，
 3、将里面的的css/、help.html、 index.html、 cp.sh 剪切到新建的文件夹里
-4、修改lesson.html和index.html里面的描述、标题、大标题
+4、修改lesson.html和index.html里面的描述、关键字、标题、大标题
 5、运行cp.sh复制lesson1～lesson30，共30个课程文件夹
 6、0lesson文件夹里有7、8、9三个存放.txt和__.txt的板书和日志文件
 7、打开终端，运行__.txt里面是\r\n结尾，普通的文本文件是\n结尾
  rpl -Rde '\r\n'  '\n'  ./
  rpl -Rde '\n'  '<br />\n'  ./ 
 在每行后面加上<br />，便于复制到网页中
+===================================
+另外一种替换的方法，文件名'7'改成8和9即可
+#!/bin/bash
+for i in $(find . -name '7' -print)
+do
+        rpl  -Rde '\n' '<br />\n' $i
+done
 
-
+替换7__.txt 的脚本
+#!/bin/bash
+for i in $(find . -name '7__.txt' -print)
+do
+        rpl  -Rde '\r' '<br />\r' $i
+done
+==================================
