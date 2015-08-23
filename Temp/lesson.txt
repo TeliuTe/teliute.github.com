@@ -1,0 +1,4 @@
+1.新建一个课程文件夹
+2.复制/Temp里的4个文件，粘贴到第1步文件夹里
+3.打开lesson/lesson.html，在gedit里
+4.修改description描述，关键字，title复制过来标题
