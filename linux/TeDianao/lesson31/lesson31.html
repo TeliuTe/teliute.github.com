@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html style="direction: ltr;" lang="zh-cn"><head>
+
+
+ <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="author" content="TeliuTe"> 
+<meta content="TeliuTe系列教程之电脑操作基础(Ubuntu操作系统)" name="description"> 
+<meta content="TeliuTe,86团学校,基础教程网" name="Copyright"> 
+<meta content="proftpd,虚拟用户,批量,TeliuTe,教程,基础,入门" name="keywords">
+
+<style type="text/css">
+<!--
+body {
+background-color: #CCFFFF;
+}
+.title {
+font-family: "文泉驿正黑","黑体",Arial,Helvetica,sans-serif;
+color: #FF0000;
+font-size: 24px;
+text-align: center;
+}
+.brown {color: #800000}
+.smlgren { font-size: 12px;
+line-height: 20%;
+color: #008000;
+}
+.tblue { color: #0000FF;
+}
+-->
+</style><title>电脑基础|proftpd 批量虚拟用户登录</title></head><body style="direction: ltr;"><p class="title">proftpd 批量创建虚拟用户登录</p>
+<p class="smlgren">作者：TeliuTe　来源：基础教程网</p>
+<span class="tblue">三十一、创建proftpd多个虚拟用户</span>　<a href="../index.html">返回目录</a>　<a href="../lesson31/lesson31.html">下一课</a>
+<p>　proftpd 是ftp服务器，如何批量创建多个虚拟登录用户，下面我们来看一个练习；</p>
+<p class="tblue">　1、创建proftpd虚拟用户</p>
+<p>　1）首先安装好proftpd，这里是用XAMPP里自带的，程序文件在/opt/lampp/bin里，配置文件在/opt/lampp/etc里；</p>
+<p>　<img src="images/a1xampp.png" alt="a1xampp.png"></p>
+<p>　</p>
+<p>　2）创建虚拟用户，先切换到root管理员用户，提示符从$转变成#，再用cd命令切换到 ftpasswd 所在的 bin 文件夹；</p>
+<p>　<img src="images/a2bin.png" alt="a2biin.png"></p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;">
+$ sudo su<br>
+# cd /opt/lampp/bin
+</div>
+
+<p>　3）输入创建虚拟用户组的ftpasswd命令，假设添加test1和test2两个用户，以便查看文件的格式；</p>
+<div style="background-color: rgb(255, 255, 255); width: 1024px; color: green; margin-left: 20px;">
+./ftpasswd --group --name=stftp --gid=2000 --member=test1 --member=test2  --file=/opt/lampp/etc/group<br><br>
+参数说明，--group 表示创建用户组，<br>
+--name=stftp 表示用户组名是stftp，<br>
+--gid设到组号，<br>
+--member是添加到改组的成员，<br>
+--file=/opt/lampp/etc/group是组文件所在的文件夹和文件名，<br>
+但这个命令只能替换组用户，不能添加组用户，需要一次把所有用户都写到命令行；
+</div>
+<p>　4）这时到文件夹/opt/lampp/etc/ 中，就可以看到一个新生成的文件group，用管理员身份打开可以看到里面的内容，自己可以编辑修改；</p>
+<p>　<img src="images/a4group.png" alt="a4group.png"></p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;">
+stftp:x:2000:test1,test2<br><br>
+stftp是虚拟用户组名，2000是组号，后面的test1和test2是虚拟用户
+</div>
+<p>　5）再输入创建虚拟用户的命令还是用ftpasswd命令，只是参数不同，改成创建用户的参数；</p>
+<div style="background-color: rgb(255, 255, 255); width: 1024px; color: green; margin-left: 20px;">
+echo "test1psw" | ./ftpasswd --passwd --file=/opt/lampp/etc/passwd
+--name=test1 --uid=2000 --gid=2000 --home=/opt/lampp/htdocs/ftp/test1/
+--shell=/sbin/nologin --stdin<br><br>
+echo 这里把用户密码管道输入，<br>
+--passwd --file是设置用户密码所在的文件，<br>
+--name 是设置用户名，<br>
+--uid 是设置用户uid号，<br>
+--home 是用户的主目录，<br>
+最后的--stdin 是从键盘输入密码，这里从前面的echo导入密码；
+</div>
+<p>　6）到文件夹/opt/lampp/etc/ 中，就可以看到一个新生成的文件group，用管理员身份打开可以看到里面的内容，密码都是加密过的；</p>
+<p>　<img src="images/a6passwd.png" alt="apasswd.png"></p>
+<div style="background-color: rgb(255, 255, 255); width: 1024px; color: green; margin-left: 20px;">
+test1:$1$qqO5H1b7$ykHLxCSndy08UIlUA7edU0:2000:2000::/opt/lampp/htdocs/ftp/test1:/sbin/nologin<br><br>
+test1是虚拟用户名，前面2000是用户uid，后面的是组号，再后面是用户主目录，只能远程登录<br>
+添加其他用户可以继续输入这个命令，换一下里面的用户名、密码、uid，例如<br><br>
+echo "test2psw" | ./ftpasswd --passwd --file=/opt/lampp/etc/passwd
+--name=test2 --uid=2001 --gid=2000 --home=/opt/lampp/htdocs/ftp/test2/
+--shell=/sbin/nologin --stdin
+</div>
+<p>　7）了解了创建用户的命令后，我们可以创建一个shell脚本批量创建用户，每一行创建一个用户；</p>
+<p>　<a href="images/bftp.ods.7z">下载范例</a></p>
+<p>　</p>
+<p>　8）创建好用户后，还需要把用户添加到group组文件里，用户之间用逗号分隔，也可以用calc电子表格和文本编辑器的来实现；</p>
+<p>　<a href="images/group.7z">下载范例</a></p>
+<p>　</p>
+<p>　9）再用一个脚本来创建所有用户的主目录，并将属主改成对应的用户，基本命令是；</p>
+<div style="background-color: rgb(255, 255, 255); width: 1024px; color: green; margin-left: 20px;">
+mkdir /opt/lampp/htdocs/ftp/8-1a1 &amp;&amp; chown -R 2001:2000 /opt/lampp/htdocs/ftp/8-1a1
+</div>
+<p>　<a href="images/mkdirchown.sh.7z">下载范例</a></p>
+<p>　10）虚拟用户组、虚拟用户、用户主目录创建好以后，下一步修改proftpd的配置文件，在最后添加以下内容，以便允许虚拟用户登录；</p>
+<div style="background-color: rgb(255, 255, 255); width: 500px; color: green; margin-left: 20px;">
+#验证是否允许用户登录文件顺序<br>
+AuthOrder mod_auth_file.c<br>
+AuthUserFile /opt/lampp/etc/passwd<br>
+AuthGroupFile /opt/lampp/etc/group<br>
+<br><br>
+#限定登录用户到自己的主目录<br>
+DefaultRoot   ~
+</div>
+<p>　<a href="images/proftpd.conf.7z">下载范例</a></p>
+<p>　<span class="tblue">本节</span>学习了在Ubuntu中批量创建proftpd虚拟用户的基本操作，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p><a href="../index.html">返回目录</a>　<a href="../lesson31/lesson31.html">下一课</a></p>
+<p class="smlgren">本教程由86团学校TeliuTe制作|著作权所有</p>
+<p class="smlgren">基础教程网：<a href="http://teliute.org">http://teliute.org</a></p>
+<p class="smlgren">美丽的校园……</p>
+
+<font style="font-size: 12px;" color="green"><script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js"></script>
+<noscript><a href="http://www.51.la/?1132862" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/1132862.asp" style="border: medium none ;" height="20" width="20"></a> </noscript>
+</font><br><br>
+<div><table id="gg" border="0" cellpadding="0" cellspacing="0" width="800">
+<tbody><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td></tr>
+<tr><td>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td>
+</tr><tr>
+<td><script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br>
+</td></tr>
+</tbody></table>
+</div>
+<p align="center">转载和引用本站内容，请保留作者和本站链接。</p>
+
+
+
+</body></html>
