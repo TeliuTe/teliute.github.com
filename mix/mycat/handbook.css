@@ -25,7 +25,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_left_bg1.gif);
 	height: 33px;
 	visibility: inherit;
 	padding-top: 7px;
@@ -42,7 +41,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_left_bg.gif);
 	height: 33px;
 	visibility: inherit;
 	width: 104px;
@@ -57,7 +55,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_bg1.gif);
 	height: 33px;
 	border: 0px solid #FFFFFF;
 	width: 94px;
@@ -73,7 +70,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_bg.gif);
 	height: 33px;
 	width: 94px;
 	padding-top: 7px;
@@ -88,7 +84,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_right_bg1.gif);
 	height: 33px;
 	border-top-width: 0px;
 	border-right-width: 0px;
@@ -113,7 +108,6 @@ a:hover {
 	font-size: 12px;
 	line-height: 16px;
 	color: #595959;
-	background-image: url(images/menu_right_bg.gif);
 	height: 33px;
 	width: 95px;
 	padding-top: 7px;
@@ -150,7 +144,6 @@ input.but{
 	border-right-color: #CCCCCC;
 	border-bottom-color: #CCCCCC;
 	border-left-color: #DDDDDD;
-	background-image: url(images/button_bg.gif);
 
 
 }
@@ -503,7 +496,6 @@ a.ermenua:hover {
 	border-left-color: #FFB517;
 }
 .zfb-left-menu-td {
-	background-image: url(images/s/zfb/left_menu_bg.gif);
 	height: 29px;
 	width: 151px;
 	padding-top: 4px;
@@ -513,7 +505,6 @@ a.ermenua:hover {
 
 }
 .zfb-left-menu-td1 {
-	background-image: url(images/s/zfb/left_menu_bg1.gif);
 	height: 29px;
 	width: 151px;
 	padding-top: 4px;
