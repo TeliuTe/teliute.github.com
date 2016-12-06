@@ -53,13 +53,13 @@ color: #008000;
 <p>　5）稍等安装完成，再点击它旁边的“配置”按钮；</p>
 <p>　<img src="images/a5config.png" alt="a5config.png" /></p>
 <p>　</p>
-<p>　6）出来一个记事本窗口，删除里面的内容，复制下面的内容进去；</p>
+<p>　6）出来一个记事本窗口，删除里面的内容，复制下面的内容进去（注意修改iso文件名和vmlinuz.elf）；</p>
 <div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1024px; color: green;">title Install Ubuntu
 <br />
 <br />
 root (hd0,<span style="color: rgb(255, 0, 0);">0</span>)<br />
 <br />
-kernel /vmlinuz boot=casper iso-scan/filename=/ubuntu-<span style="color: rgb(255, 0, 0);">12.10</span>-desktop-i386.iso quiet splash ro locale=zh_CN.UTF-8 noprompt --
+kernel /<span style="color: rgb(255, 0, 0);">vmlinuz</span> boot=casper iso-scan/filename=/ubuntu-<span style="color: rgb(255, 0, 0);">12.10-desktop-i386</span>.iso quiet splash ro locale=zh_CN.UTF-8 noprompt --
 <br />
 <br />
 initrd /initrd.lz
