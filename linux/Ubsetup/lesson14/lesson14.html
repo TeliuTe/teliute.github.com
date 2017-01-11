@@ -30,7 +30,7 @@ color: #008000;
 .tblue { color: #0000FF;
 }
 -->
-  </style><title>Ubuntu安装|重装 grub</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+  </style><title>Ubuntu安装|重装 grub2/grub1</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
 <p class="smlgren">作者：Teliute　来源：基础教程网</p>
 <span class="tblue">十四、重装 gurb</span>　<a href="../index.html">返回目录</a>　<a href="../lesson15/lesson15.html">下一课</a>
 <p>　grub 是一个系统引导程序，可以通过 meun.lst 来加载指定的系统，grub4dos 是基于 grub 的，用法相同功能更多，下面我们来看一个练
@@ -38,7 +38,23 @@ color: #008000;
 <p>　当重装系统修改分区或者安装Windows时，有可能会弄丢grub，提示 grub rescue，这时可以重装grub<br>
 </p>
 <p>　注意细心，提前准备好，操作一定要仔细，可以先在虚拟机里练习，弄明白了再开始；<br></p><p>　<span class="tblue">1、重装 grub&nbsp;引导器(修复 grub)</span></p>
-<p>　1）首先要知道自己的 Ubuntu 是哪一个分区，这在安装到选择分区时可以看到，平时也可以在“系统设置－系统监视器－文件系统”查看 / 是在哪个分区；</p>
+<p>　当出现grub>提示符时，用 set root=(hd0, 然后按tab键，可以列出所有的磁盘，然后尝试输入linux所在的盘符</p>
+<p>　假设linux在msdos6分区里，/boot没有单独分区，输入 set root=(hd0,6) 等号两边不要有空格</p>
+<p>　然后输入 set pager=1 用来保证分屏显示</p>
+<p>　然后输入 cat /boot/grub/grub.cfg 查看配置文件，找到第一个menuentry 启动项，</p>
+<p>　在第一个menuentry 启动项下面，找到linux开头的一行，它上面一般是 fi ，抄下来或手机拍下来linux这一行一直到结尾，有可能折行到下一行，别漏了，如下：</p>
+<p>　linux	/boot/vmlinuz-3.13.0-96-generic root=UUID=0782a968-fec3-439f-a6dc-49d31debc911 ro  quiet splash $vt_handoff
+</p>
+<p>　然后下面一行  initrd	/boot/initrd.img-3.13.0-96-generic</p>
+<p>　然后依次输入三行命令 set root=(hd0,6)</p>
+<p>　linux /boot/vmlinuz-XXXX刚才记下来的，可以按tab键补全，后面的uuid比较麻烦</p>
+<p>　initrd /boot/initrd.img-xxx这里可以按tab键自动补全</p>
+<p>　boot 最后输入这一句，启动系统</p>
+<p>　系统启动成功后，打开终端输入命令重装grub2：  sudo grub-install --root-directory=/ /dev/sda</p>
+<p>　</p>
+<p>　如果是grub rescue>提示符，set root 命令后，再运行命令： insmod normal 和 normal ，此时菜单就出来了</p>
+<p>　</p>
+<p>　</p><p>　1）首先要知道自己的 Ubuntu 是哪一个分区，这在安装到选择分区时可以看到，平时也可以在“系统设置－系统监视器－文件系统”查看 / 是在哪个分区；</p>
 <p>　<img src="images/a1sys.png" alt="a1sys.png"></p>
 <p>　</p>
 <p>　2）启动到 Live cd，点左上角圆圈主按钮，输入 ter 然后打开终端，输入下面的命令，假设 / 是安装在 sda9 分区；</p>
