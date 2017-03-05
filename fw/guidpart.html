@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
+  
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+
+  
+  <meta name="author" content="TeliuTe" />
+
+  
+  <meta name="Copyright" content="TeliuTe,基础教程网" />
+
+  
+  <meta name="description" content="TeliuTe系列教程之gpt分区类型" />
+
+  
+  <meta name="keywords" content="TeliuTe,教学,基础,入门" />
+
+  
+  <link rel="stylesheet" href="css/css.css" type="text/css" />
+
+  
+  <link rel="Shortcut  Icon" href="css/qcqy.ico" />
+  <title>GPT 分区类型标识符id</title>
+
+  
+</head><body>
+<p class="title">GPT 分区类型标识符id 给efi分区设定或取消盘符<br />
+</p>
+
+<p class="green">来源：IT技术学习网
+http://www.itjsxx.com/system/partition_type_guid.html </p>
+
+<p> 分区类型与GUID对应表如下所示：</p>
+
+<table border="1" cellpadding="1" cellspacing="0">
+
+  <tbody>
+    <tr>
+      <td> 操作系统</td>
+      <td> 分区类型</td>
+      <td> GUID&nbsp; 类型 标识符<br />
+</td>
+    </tr>
+    <tr>
+      <td style="text-align: center;">通用</td>
+      <td> EFI文件系统（标准）</td>
+      <td> C12A7328-F81F-11D2-BA4B-00A0C93EC93B</td>
+    </tr>
+    <tr>
+      <td rowspan="4"> Windows</td>
+      <td> 微软保留分区</td>
+      <td> E3C9E316-0B5C-4DB8-817D-F92DF00215AE</td>
+    </tr>
+    <tr>
+      <td> 基本数据分区</td>
+      <td> EBD0A0A2-B9E5-4433-87C0-68B6B72699C7</td>
+    </tr>
+    <tr>
+      <td> 逻辑软盘管理工具元数据分区</td>
+      <td> 5808C8AA-7E8F-42E0-85D2-E1E90434CFB3</td>
+    </tr>
+    <tr>
+      <td> 逻辑软盘管理工具数据分区</td>
+      <td> AF9B60A0-1431-4F62-BC68-3311714A69AD</td>
+    </tr>
+    <tr>
+      <td rowspan="6"> Mac OS X</td>
+      <td> HFS+分区</td>
+      <td> 48465300-0000-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td> UFS</td>
+      <td> 55465300-0000-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td> 启动分区</td>
+      <td> 426F6F74-0000-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td> RAID分区</td>
+      <td> 52414944-0000-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td> RAID分区（Offline）</td>
+      <td> 52414944-5F4F-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td> 标签</td>
+      <td> 4C616265-6C00-11AA-AA11-00306543ECAC</td>
+    </tr>
+    <tr>
+      <td rowspan="5"> ChromeOS</td>
+      <td> Linux数据（标准）</td>
+      <td> EBD0A0A2-B9E5-4433-87C0-68B6B72699C7</td>
+    </tr>
+    <tr>
+      <td> ChromeOS内核</td>
+      <td> FE3A2A5D-4F32-41A7-B725-ACCC3285A309</td>
+    </tr>
+    <tr>
+      <td> ChromeOS根文件系统</td>
+      <td> 3CB8E202-3B7E-47DD-8A3C-7FF2A13CFCEC</td>
+    </tr>
+    <tr>
+      <td> ChromeOS固件</td>
+      <td> CAB6E88E-ABF3-4102-A07A-D4BB9BE3C1D3</td>
+    </tr>
+    <tr>
+      <td> ChromeOS将来使用</td>
+      <td> 2E0A753D-9E48-43B0-8337-B15192CB1B5E</td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<span style="font-weight: bold;">EFI系统分区设定盘符 取消盘符</span>（来源：http://jingyan.baidu.com/article/454316ab6efc05f7a7c03a33.html）<br />
+<br />
+给efi分区添加分区号，以管理员身份运行cmd，输入：<br />
+<br />
+　　diskpart <br />
+<br />
+　　sel disk 0 (此处为你的efi分区所在磁盘号，单硬盘为数字0) <br />
+<br />
+　　list part （列出磁盘中的所有分区，以便查出efi的分区号）<br />
+<br />
+　　sel part 1 (此处为EFI分区号，输入上一行查出的id号，第一个是分区1，类型一般为“主要”) <br />
+<br />
+　　set id=ebd0a0a2-b9e5-4433-87c0-68b6b72699c7 （分区类型id设为基本数据类型，如上表所示）<br />
+<br />
+　　assign letter=y (y为分配的盘符，任意)<br />
+<br />
+取消efi设定的分区号<br />
+<br />
+以管理员身份运行cmd，输入：<br />
+<br />
+　　diskpart <br />
+<br />
+　　sel disk M(M为你的efi分区所在磁盘号，一般为数字0) <br />
+<br />
+　　list part <br />
+<br />
+　　sel part x (x为EFI分区分区号，根据上面列出输入，一般是分区1，类型为“主要”) <br />
+<br />
+　　set id=c12a7328-f81f-11d2-ba4b-00a0c93ec93b （EFI系统分区ID）<br />
+
+
+
+
+
+<p><a href="../index.html">返回目录</a></p>
+
+<p class="green">本文来自网络，内容仅供参考，著作权归原作者所有</p>
+
+<p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
+
+<p class="green">美丽的校园……</p>
+
+<p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
+
+<p>
+<script type="text/javascript" src="http://js.users.51.la/1132862.js">
+</script></p>
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "image";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script><br />
+<script type="text/javascript"><!--
+google_ad_client = "pub-2989083345397211";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text";
+//2007-09-15: new1
+google_ad_channel = "9381269263";
+google_ui_features = "rc:6";
+//-->
+</script>
+<script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+
+</body></html>
