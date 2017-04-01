@@ -1,12 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN"><head>
 
-
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta name="author" content="TeliuTe" />
-  <meta content="TeliuTe系列教程之添加 Grub2 UEFI启动项" name="description" />
+  <meta content="TeliuTe系列教程之UEFI硬盘安装Ubuntu安装教程" name="description" />
   <meta content="TeliuTe,基础教程网" name="Copyright" />
-  <meta content="Ubuntu,UEFI,启动项,TeliuTe,安装,教程,基础,入门" name="keywords" />
+  <meta content="Ubuntu,UEFI,硬盘安装,TeliuTe,安装,教程,基础,入门" name="keywords" />
   <style type="text/css">
 <!--
 body {
@@ -25,52 +24,178 @@ color: #008000;
 .tblue { color: #0000FF;
 }
 -->
-  </style><title>Ubuntu安装|添加 Grub2 UEFI启动项</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
+  </style><title>Ubuntu安装|UEFI Win7/8/Ubuntu 硬盘安装Ubuntu14.04</title></head><body style="direction: ltr;"><p class="title">Ubuntu安装基础教程</p>
 <p class="green">作者：TeliuTe　来源：基础教程网</p>
-<span class="tblue">添加 Grub2 UEFI启动项</span>　<a href="../index.html">返回目录</a>　<a href="../jichu6/jichu6.html">下一课</a>
-<p>　UEFI 可以识别FAT32分区中的efi文件，我们可以在BIOS中添加一个自己的启动项，操作中注意细心，下面来看一个练习；</p>
-<p>　<span class="tblue">1、准备efi文件</span></p>
-<p>　1）正常启动计算机，或用U盘、Live cd 启动计算机，将64位 Ubuntu iso 镜像文件中的EFI文件夹解压到一个FAT32分区根目录下面；</p>
-<p>　<img src="images/a1efi.png" alt="a1efi.png" /></p>
+<p><strong>概述：</strong></p>
+<p>1.复制安装镜像和启动文件到FAT32分区</p>
+<p>2.查找出FAT32分区的分区号，修改启动配置文件</p>
+<p>3.启动FAT32分区的安装镜像，开始安装</p>
+<p>4.UEFI/GPT基础知识，请参阅：<a href="http://teliute.org/fw/index.html">网络文摘</a></p>
+<span class="tblue">UEFI Win7/8/Ubuntu 硬盘安装Ubuntu14.04</span>　<a href="../index.html">返回目录</a>　<a href="../jichu6/jichu6.html">下一课</a>
+<p>　UEFI 可以识别FAT32分区中的efi文件，一般用GPT硬盘分区表，系统第一个分区格式化为 FAT32 efi 分区，存放系统引导项，操作中注意细心，下面来看一个练习；</p>
+<p>　<span class="tblue">1、准备分区</span></p>
+<p>　1）先备份，在Windows 系统下，使用其他辅助工具，或者以管理员身份运行cmd，运行 diskpart ，给efi分区分配一个盘符，然后就可以打开，复制出里面的文件，然后再关闭盘符；</p>
+<p>　详细参阅：<a href="http://teliute.org/fw/guidpart.html">http://teliute.org/fw/guidpart.html</a></p>
 <p>　</p>
-<p>　2）打开分区，打开EFI/BOOT文件夹，将里面的BOOTx64.efi删除，留下grubx64.efi文件；</p>
-<p>　<img src="images/a2grub.png" alt="a2grub.png" /></p>
+<p>　2）准备存放安装镜像的FAT32分区，5G大小，再准备一个10G左右的空闲分区，作为要安装的系统分区，在 Ubuntu 的 gparted 里可以查得分区号是sda5；</p>
+<p>　<img src="images/a2part.png" alt="a2part.png" /></p>
 <p>　</p>
-<p>　3）重新启动计算机，按Del或F2或F12进入BIOS设置的boot启动项或startup项；</p>
-<p>　<img src="images/a3main.png" alt="a3main.png" /></p>
+<p>　3）将下载的Ubuntu14.04镜像文件，复制到FAT32分区中，用压缩软件7-zip或WinRAR等打开镜像文件，将其中的boot文件夹、EFI文件夹解压到FAT32分区中；</p>
+<p>　<img src="images/a3extra.png" alt="a3extra.png" /></p>
 <p>　</p>
-<p>　4）点击 Boot Maintenance Manager 菜单项，进入启动管理；</p>
-<p>　<img src="images/a4option.png" alt="a4option.png" /></p>
+<p>　4）再打开casper文件夹，将其中的 initrd.lz 和 vmlinuz.efi 也解压到FAT32分区中；</p>
+<p>　<img src="images/a4extra.png" alt="a4extra.png" /></p>
 <p>　</p>
-<p>　5）点 Boot Option  进入启动选项窗口，找到 Add Boot Option 添加启动项，点击进入；</p>
-<p>　<img src="images/a5add.png" alt="a5add.png" /></p>
+<p>　5）最终5G的FAT32分区中有两个文件夹、三个文件在里面，仔细检查一下；</p>
+<p>　<img src="images/a5files.png" alt="a5files.png" /></p>
 <p>　</p>
-<p>　6）选中grubx64.efi所在的分区，按回车键继续，可以根据分区号来查找；</p>
-<p>　<img src="images/a6hd.png" alt="a6hd.png" /></p>
+<p>　6）boot/grub/文件夹里的grub.cfg还要修改一下，我们需要查出FAT32分区的序号，接着下面的步骤；</p>
 <p>　</p>
-<p>　7）依次点击EFI/BOOT打开文件夹，找到 grubx64.efi；</p>
-<p>　<img src="images/a7dir.png" alt="a7dir.png" /></p>
+<p class="tblue">　2、启动 EFI SHell</p>
+<p>　1）重启动计算机，开机时按F12(或F2，或Del键)，进入BIOS设置，找到boot或startup菜单项，点击进入，如果可以将语言设为中文，</p>
+<p>　Win8需要关闭快速启动，关闭安全启动，请咨询系统或计算机提供商获得详细操作步骤；</p>
+<p>　<img src="images/b1bios.png" alt="b1bios.png" /></p>
 <p>　</p>
-<p>　8）按方向键进入 Input the description ，按回车键输入菜单文本 EFI File GRUB2 ；</p>
-<p>　<img src="images/a8grub1.png" alt="a8grub1.png" /></p>
+<p>　2）找到 Boot Manager 点击或按回车进入，在这里可以直接选择要启动的项；</p>
+<p>　<img src="images/b2bm.png" alt="b2bm.png" /></p>
 <p>　</p>
-<p>　9）按回车确认后，再把光标移到下面的 Commit Chanages and Exit，按回车保存退出；</p>
-<p>　<img src="images/a9commit.png" alt="a9commit.png" /></p>
+<p>　3）找到 EFI Internal Shell 点击启动，如果按F12可以看到也可以直接启动它；</p>
+<p>　<img src="images/b3shell.png" alt="b3shell.png" /></p>
 <p>　</p>
-<p class="tblue">　2、启动顺序</p>
-<p>　1）按Esc键返回到首页，进入 Boot Manager 里就可以看到多了一项 EFI File GRUB2 的启动项，按回车即可启动；</p>
-<p>　<img src="images/b1list.png" alt="b1list.png" /></p>
+<p>　4）如果首页找不到 Boot Manager，那么就点击进入 Boot Maintenance Manager 菜单项；</p>
+<p>　<img src="images/b4bmm.png" alt="b4bmm.png" /></p>
 <p>　</p>
-<p>　2）稍等就会启动到GRUB2的界面，出现grub提示符，可以输入grub2的命令了；</p>
-<p>　<img src="images/b2grub.png" alt="b2grub.png" /></p>
+<p>　5）在 Boot Maintenance Manager 中，点击进入 Boot Option，再点击 Change Boot Order，更改启动顺序；</p>
+<p>　<img src="images/b5option.png" alt="b5option.png" /></p>
 <p>　</p>
-<p>　3）如果想把它设为第一项启动，在Boot Option窗口，选择 Chanage Boot Order；</p>
-<p>　<img src="images/b3order.png" alt="b3order.png" /></p>
+<p>　6）进入排序界面后，按回车键调出蓝色排序框，再按减号键，将 DVD 和 Hard 排到下边，让 EFI Shell 排到最上边，按回车确认；</p>
+<p>　<img src="images/b6order.png" alt="b6order.png" /></p>
 <p>　</p>
-<p>　4）进入排序界面后，按回车键调出蓝色排序框，再按减号键，将其他启动项排到下边，让 EFI grub2 启动项排到最上面，按回车确认；</p>
-<p>　<img src="images/b4order.png" alt="b4order.png" /></p>
+<p>　7）点击 Commit Chanages and Exit，保存并退出；</p>
+<p>　<img src="images/b7commit.png" alt="b7commit.png" /></p>
 <p>　</p>
-<p>　<span class="tblue">本节</span>学习了添加 UEFI 启动项的基本方法，如果你成功地完成了练习，请继续学习下一课内容；</p>
+<p>　8）返回到首页后，点 Continue 开始启动，或者点Save and Exit 退出 BIOS 设置，开始启动计算机；</p>
+<p>　<img src="images/b8continue.png" alt="b8continue.png" /></p>
+<p>　</p>
+<p class="tblue">　3、查找FAT32分区号，修改/boot/grub/grub.cfg</p>
+<p>　如果在1.2里已经查出了FAT32的分区号，可以直接修改分区里面 /boot/grub/grub.cfg 文件；</p>
+<p>　</p>
+<p>　1）成功启动 EFL Shell 会列出所有设备，前面标有FS的是可启动的，找出5G的FAT32分区号，一般是第二个FS1，其中HD表示硬盘，DVD表示光盘，USB表示U盘；</p>
+<p>　<img src="images/c1shell.png" alt="c1shell.png" /></p>
+<p>　</p>
+<p>　2）输入exit退出或者按Ctrl+Alt+Del重启计算机，进入原来的系统或Live CD系统中，</p>
+<p>　打开5G的FAT32分区，依次打开 boot、grub 文件夹找到grub.cfg文件，用记事本或文本编辑器打开；</p>
+<p>　<img src="images/c2grub.png" alt="c2grub.png" /></p>
+<p>　</p>
+<p>　3）前面的内容不要动，找到 menuentry 开头的四段，把它们都删除了，换成下面的内容，</p>
+<p>　第二行后面的数字换成自己查出来的，第三、四行中的镜像文件名改成对应的，本课文件夹中有这个<a href="./grub.cfg">grub.cfg</a> 文件(点右键，选“目标另存为”)；</p>
+<div style="background-color: rgb(255, 255, 255); padding-left: 20px; width: 1124px; color: green;">
+menuentry "Install Ubuntu" {<br />
+        set root=(hd0,<span style="color: rgb(255, 0, 0);">gpt5</span>)<br />
+        loopback loop /ubuntu-<span style="color: rgb(255, 0, 0);">14.04</span>-desktop-amd64.iso<br />
+        linux (loop)/casper/vmlinuz.efi persistent boot=casper iso-scan/filename="/ubuntu-<span style="color: rgb(255, 0, 0);">14.04</span>-desktop-amd64.iso" quiet splash ro locale=zh_CN.UTF-8 noprompt --<br />
+        initrd (loop)/casper/initrd.lz<br />
+}
+<br /><br />
+</div>
+<p>　4）保存退出，重新启动计算机，启动到 EFI Shell 命令行界面；</p>
+<p>　<img src="images/c1shell.png" alt="c1shell.png" /></p>
+<p>　</p>
+<p class="tblue">　4、硬盘启动</p>
+<p>　1）进到 EFI Shell 后，输入5G FAT32分区前面的fs号，这里是 FS1:（fs1冒号），输入下面的命令后按回车键</p>
+<div style="background-color: rgb(255, 255, 255); width: 200px; color: green; text-indent: 2em;">
+fs1:
+</div>
+<p>　</p>
+<p>　2）这时前面的提示符变成了黄色的FS1:\&gt;，再接着输入 cd \efi\boot（依次输入字母 cd 空格，斜杠，字母efi，斜杠，boot，按回车键），</p>
+<p>　输入一个字母后按一下Tab键可以自动补全；</p>
+<div style="background-color: rgb(255, 255, 255); width: 200px; color: green; text-indent: 2em;">
+cd \efi\boot
+</div>
+<p>　</p>
+<p>　3）这时前面的提示符变成了黄色的FS1:\EFI\BOOT\&gt;，再接着输入 bootx64.efi，按回车键启动系统（输入字母b后按一下Tab键，自动补全输入）；</p>
+<div style="background-color: rgb(255, 255, 255); width: 200px; color: green; text-indent: 2em;">
+bootx64.efi
+</div>
+<p>　</p>
+<p>　4）这三行命令是切换到FAT32分区的 /EFI/BOOT 文件夹中，然后运行里面的 BOOTx64.EFI 文件，每个命令后面都要按一下回车键，如下图所示；</p>
+<p>　<img src="images/d4command.png" alt="d4command.png" /></p>
+<p>　</p>
+<p>　5）按回车后进入Grub引导菜单，默认选中了第一项“Install Ubuntu”，按回车键继续；</p>
+<p>　<img src="images/d5menu.png" alt="d5menu.png" /></p>
+<p>　</p>
+<p>　6）按回车键后开始引导 Ubuntu 系统；</p>
+<p>　<img src="images/d6ubuntu.png" alt="d6ubuntu.png" /></p>
+<p>　</p>
+<p>　7）等一会就进入一个桌面，这就是试用的 live cd 桌面，<span class="brown">桌面</span>左上边有有两个图标，右上角是“<span class="brown">关机</span>”按钮；</p>
+<p>　<img src="images/d7desktop.png" alt="d7desktop.png" /></p>
+<p>　</p>
+<p>　8）对于<span class="brown">硬盘</span>安装，点一下左上角的圆圈按钮，稍等在旁边出来的文本框中输入字母 ter 然后点击下边出来的终端图标，</p>
+<p>　如果出来中文，点一下输入条上的“中”变成“英”，拖到一边即可；</p>
+<p>　<img src="images/a4ter.jpg" alt="a4ter.jpg" /></p>
+<p>　</p>
+<p>　9）输入命令 sudo umount -l /isodevice 然后按一下<span class="brown">回车键</span>，没什么提示就是成功了，关闭终端；</p>
+<p>　<img src="images/a5umount.png" alt="a5umount.png" /></p>
+<p>　</p>
+<p>　10）点右上角的网络图标，点击把“启用网络”前面的勾去掉，断开网络；</p>
+<p>　<img src="images/a6net.png" alt="a6net.png" /></p>
+<p>　</p>
+<p class="tblue">　5、安装系统</p>
+<p>　1）双击桌面“<span class="brown">安装Ubuntu14.04 LTS</span>”图标，稍等出来一个“欢迎”面板，左侧应该选中了“中文(简体)”，</p>
+<p>　如果不是就在左边选中它，然后点右下角“<span class="brown">继续</span>”按钮；</p>
+<p>　<img src="images/b1language.png" alt="b1language.png" /></p>
+<p>　</p>
+<p>　2）第2步是检查准备情况，要求磁盘空间足够，不要连接网络，一般不勾选更新和第三方软件，<span class="brown">直接</span>点“继续”按钮；</p>
+<p>　<img src="images/b2check.png" alt="b2check.png" /></p>
+<p>　</p>
+<p>　3）接下来<span class="brown">第3步</span>是询问安装到哪个分区，选择最下边的“其他选项”，点“<span class="brown">继续</span>”按钮；</p>
+<p>　<img src="images/b3type.png" alt="b3type.png" /></p>
+<p>　</p>
+<p>　4）接下来出来磁盘分区情况，将要在sda1中存放efi引导文件，在sda4上安装系统，如果要新建分区和转换分区可以参考前面的第7、13、15、16、19课，这儿是<span class="brown">安装</span>到之前14.04的Ext4分区上；</p>
+<p>　<img src="images/b4part.png" alt="b4part.png" /></p>
+<p>　</p>
+<p>　5）点击选中第一个efi分区，从顶部的分区类型和大小已使用情况来判断，一般是第一个主分区，然后点下边的“<span class="brown">更改</span>”(Change..) 按钮；</p>
+<p>　<img src="images/b5change.png" alt="b5change.png" /></p>
+<p>　</p>
+<p>　6）在出来的对话框中，设定<span class="brown">用于</span> EFI 启动分区，不打勾“格式化”，点“确定”；</p>
+<p>　<img src="images/b6use.png" alt="b6use.png" /></p>
+<p>　</p>
+<p>　7）点击选中计划要安装系统的分区，可以根据分区类型和大小来确定，然后点下边的“<span class="brown">更改</span>”(Change..) 按钮，</p>
+<p>　在出来的对话框中，设定<span class="brown">用于</span>分区的格式Ext4，打勾“格式化”，在“挂载点”右边点一下，选 “/”，点“确定”，</p>
+<p>　<span class="brown">注意</span>，格式化会删除这个分区上的所有文件，请提前备份重要数据； </p>
+<p>　<img src="images/b6use1.png" alt="b6use1.png" /></p>
+<p>　</p>
+<p>　点“确定”出来提示点继续，回到分区面板，检查一下<span class="brown">分区</span>编辑好了，如果还有 /home 分区，按原来的设，一般不打勾“<span class="brown">格式化</span>”，只需提前清理里面的配置文件
+</p><p>　<img src="images/b7part.png" alt="b7part.png" /></p>
+<p>　</p>
+<p>　8）检查无误后，点“现在安装”，如果提示没有交换空间，点“继续”，这个是用于休眠的，大小跟内存相同的分区，一般不用它；</p>
+<p>　<img src="images/b8swap.png" alt="b8swap.png" /></p>
+<p>　</p>
+<p>　9）然后出来询问地区，点“继续”即可，或者在地图上找找自己所在的地区，这时已经开始安装了；</p>
+<p>　<img src="images/b9area.png" alt="b9area.png" /></p>
+<p>　</p>
+<p>　10）接下来是键盘布局，一般是“汉语”，直接点“前进”继续；</p>
+<p>　<img src="images/bb10keyboard.png" alt="bb10keyboard.png" /></p>
+<p>　</p>
+<p>　11）接下来是设定自己的用户名(小写字母)和密码等，从上到下依次输入即可，然后点“继续”；</p>
+<p>　<img src="images/bb11user.png" alt="bb11user.png" /></p>
+<p>　</p>
+<p>　12）然后接着继续安装过程，可以看一下系统的介绍；</p>
+<p>　<img src="images/bb12install.jpg" alt="bb12install.jpg" /></p>
+<p>　</p>
+<p>　13）耐心等待完成，然后出来一个对话框，点“<span class="brown">现在重启</span>”完成安装，按电源键也可以呼出关机对话框；</p>
+<p>　<img src="images/bb13restart.png" alt="bb13restart.png" /></p>
+<p>　</p>
+<p>　14）如果是光盘安装，稍等提示取出光盘，然后按<span class="brown">回车键</span>，重新启动计算机，安装完成；</p>
+<p>　进入BIOS可以在启动顺序里找到一个新增的启动项ubuntu；</p>
+<p>　<img src="images/bb14ushell.png" alt="bb14ushell.png" /></p>
+<p>　</p>
+<p>　15）成功进入系统后，打开主文件夹，打开计算机，再依次点开 boot、efi 文件夹，备份里面的文件夹，复制到一个安全的地方；</p>
+<p>　<img src="images/bb15efi.png" alt="bb15efi.png" /></p>
+<p>　</p>
+<p>　16）Ubuntu 系统的连网、换源、更新，请参考第3条： <a href="http://teliute.org/linux/Ubsetup/lesson23/lesson23.html">http://teliute.org/linux/Ubsetup/lesson23/lesson23.html</a></p>
+<p>　</p>
+<p>　<span class="tblue">本节</span>学习了UEFI 硬盘安装 ubuntu 14.04 的基本方法，如果你成功地完成了练习，请继续学习下一课内容；</p>
 <p><a href="../index.html">返回目录</a>　<a href="../jichu6/jichu6.html">下一课</a></p>
 <p class="green">本教程由86团学校TeliuTe制作|著作权所有</p>
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
@@ -125,5 +250,4 @@ google_ui_features = "rc:6";
 
 
 
-
-</div></body></html>
+</body></html>
