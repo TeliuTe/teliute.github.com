@@ -8,6 +8,7 @@
 
 
 
+
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta name="author" content="TeliuTe" />
   <meta content="TeliuTe系列教程之Ubuntu安装教程" name="description" />
@@ -61,66 +62,66 @@ color: #008000;
 <p>　Ubuntu 硬盘安装 Ubuntu 请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu2/jichu2.html">http://teliute.org/linux/Ubsetup/jichu2/jichu2.html</a></p>
 <p>　UEFI Win7/8/Ubuntu 硬盘安装请参阅：<a target="_blank" href="http://teliute.org/linux/Ubsetup/jichu4/jichu4.html">http://teliute.org/linux/Ubsetup/jichu4/jichu4.html</a></p>
 
-<p>　2）启动后稍等，系统自动运行，在下边出来两个图标时，可以按一下方向键呼出菜单项，再按右方向键选择“中文(简体)”，按回车键；</p>
-<p>　</p>
+<p>　2）启动后稍等，系统自动运行，在下边出来两个图标时<img src="images/a2tb.png" alt="a2tb.png" />，可以按一下方向键呼出菜单项，再按右方向键选择“中文(简体)”，按回车键；</p>
+<p>　<img src="images/a2menu.png" alt="a2menu.png" /></p>
 <p>　</p>
 <p>　3）等一会就进入一个桌面，这就是试用的 live cd 桌面，<span class="brown">桌面</span>左上边有有两个图标，右上角是“<span class="brown">关机</span>”按钮；</p>
-<p>　</p>
+<p><img src="images/a3desktop.png" alt="a3desktop.png" />　</p>
 <p>　</p>
 <p>　4）对于<span class="brown">硬盘</span>安装，点一下左上角的圆圈按钮，稍等在旁边出来的文本框中输入字母 ter 然后点击下边出来的终端图标，</p>
 <p>　如果出来中文，点一下输入条上的“中”变成“英”，拖到一边即可；</p>
-<p>　</p>
+<p>　<img src="images/a4ter.jpg" alt="a4ter.jpg" /></p>
 <p>　</p>
 <p>　5）输入命令 sudo umount -l /isodevice 然后按一下<span class="brown">回车键</span>，没什么提示就是成功了，关闭终端；</p>
-<p>　</p>
+<p>　<img src="images/a5umount.png" alt="a5umount.png" /></p>
 <p>　</p>
 <p>　6）点右上角的网络图标，点击把“启用网络”前面的勾去掉，断开网络；</p>
-<p>　<</p>
+<p>　<img src="images/a6net.png" alt="a6net.png" /></p>
 <p>　</p>
 <p>　<span class="tblue">2、安装系统</span></p>
 <p>　1）双击桌面“<span class="brown">安装Ubuntu14.04 LTS</span>”图标，稍等出来一个“欢迎”面板，左侧应该选中了“中文(简体)”，</p>
 <p>　如果不是就在左边选中它，然后点右下角“<span class="brown">继续</span>”按钮；</p>
-<p>　</p>
+<p>　<img src="images/b1language.png" alt="b1language.png" /></p>
 <p>　</p>
 <p>　2）第2步是检查准备情况，要求磁盘空间足够，不要连接网络，一般不勾选更新和第三方软件，<span class="brown">直接</span>点“继续”按钮；</p>
-<p>　</p>
+<p>　<img src="images/b2check.png" alt="b2check.png" /></p>
 <p>　</p>
 <p>　3）接下来<span class="brown">第3步</span>是询问安装到哪个分区，选择最下边的“其他选项”，点“<span class="brown">继续</span>”按钮；</p>
-<p>　</p>
+<p>　<img src="images/b3type.png" alt="b3type.png" /></p>
 <p>　</p>
 <p>　4）接下来出来磁盘分区情况，如果要新建分区和转换分区可以参考前面的第7、13、15、16、19课，这儿是<span class="brown">安装</span>到之前12.04的Ext4分区上；</p>
-<p>　</p>
+<p>　<img src="images/b4part.png" alt="b4part.png" /></p>
 <p>　</p>
 <p>　5）点击选中计划要安装的分区，可以根据分区类型和大小来确定，然后点下边的“<span class="brown">更改</span>”(Change..) 按钮；</p>
-<p>　</p>
+<p>　<img src="images/b5change.png" alt="b5change.png" /></p>
 <p>　</p>
 <p>　6）在出来的对话框中，设定<span class="brown">用于</span>分区的格式Ext4，打勾“格式化”，在“挂载点”右边点一下，选 “/”，点“确定”</p>
 
 <p>　<span class="brown">注意</span>，格式化会删除这个分区上的所有文件，请提前备份重要数据； </p>
-<p>　</p>
+<p>　<img src="images/b6use.png" alt="b6use.png" /></p>
 <p>　</p>
 <p>　7）点“确定”出来提示点继续，回到分区面板，检查一下<span class="brown">分区</span>编辑好了，如果还有 /home 分区，按原来的设，一般不打勾“<span class="brown">格式化</span>”，只需提前清理里面的配置文件
-<p>　<img src="images/b7part.png" alt="b7part.png" /></p>
+</p><p>　<img src="images/b7part.png" alt="b7part.png" /></p>
 <p>　在下边是安装grub引导器的选项，可以选择安装到 / 所在分区，然后用Windows来引导Ubuntu，参阅：<a href="http://teliute.org/linux/Ubsetup/jichu3/jichu3.html">用 EasyBCD 在 Win 7/8 硬盘安装 Ubuntu</a></p>
-<p>　</p>
+<p>　<img src="images/b8cont.png" alt="b8cont.png" /></p>
 <p>　</p>
 <p>　8）检查无误后，点“现在安装”，如果提示没有交换空间，点“继续”，这个是用于休眠的，大小跟内存相同的分区，一般不用它；</p>
-<p>　</p>
+<p>　<img src="images/b8swap.png" alt="b8swap.png" /></p>
 <p>　</p>
 <p>　9）然后出来询问地区，点“继续”即可，或者在地图上找找自己所在的地区，这时已经开始安装了；</p>
-<p>　</p>
+<p>　<img src="images/b9area.png" alt="b9area.png" /></p>
 <p>　</p>
 <p>　10）接下来是键盘布局，一般是“汉语”，直接点“前进”继续；</p>
-<p>　</p>
+<p>　<img src="images/bb10keyboard.png" alt="bb10keyboard.png" /></p>
 <p>　</p>
 <p>　11）接下来是设定自己的用户名(小写字母)和密码等，从上到下依次输入即可，然后点“继续”；</p>
-<p>　</p>
+<p>　<img src="images/bb11user.png" alt="bb11user.png" /></p>
 <p>　</p>
 <p>　12）然后接着继续安装过程，可以看一下系统的介绍；</p>
-<p>　</p>
+<p>　<img src="images/bb12install.jpg" alt="bb12install.jpg" /></p>
 <p>　</p>
 <p>　13）耐心等待完成，然后出来一个对话框，点“<span class="brown">现在重启</span>”完成安装，按电源键也可以呼出关机对话框；</p>
-<p>　</p>
+<p>　<img src="images/bb13restart.png" alt="bb13restart.png" /></p>
 <p>　</p>
 <p>　14）如果是光盘安装，稍等提示取出光盘，然后按<span class="brown">回车键</span>，重新启动计算机，安装完成；</p>
 <p>　</p>
@@ -194,7 +195,7 @@ color: #008000;
 <p class="green">基础教程网：<a href="http://teliute.org/">http://teliute.org/</a></p>
 <p class="green">美丽的校园……</p>
 <p style="text-align: center;">转载和引用本站内容，请保留作者和本站链接。</p>
-<script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js" />
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1132862.js">
 </script>
 <noscript><a href="http://www.51.la/?1132862" target="_blank"><img alt="我要啦免费统计" src="http://img.users.51.la/1132862.asp" style="border: medium none ;" height="20" width="20" /></a> </noscript>
 
@@ -241,5 +242,6 @@ google_ui_features = "rc:6";
 <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </script>
 </div>
+
 
 </body></html>
