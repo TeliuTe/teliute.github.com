@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #批量复制、重命名lesson1～lesson30个文件夹，只能算两位数
-for ((x=4; x <= 4; x++))
+for ((x=21; x <= 30; x++))
 do
 	
 
